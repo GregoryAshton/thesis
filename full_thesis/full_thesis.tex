@@ -1,0 +1,59 @@
+\documentclass[12pt,onesided]{report}
+
+\usepackage{/home/greg/thesis/style_file}
+
+\begin{document}
+\def\biblio{}
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\begin{center}
+
+\textsc{\LARGE University of Southampton}\\[0.2cm]
+\textsc{\Large Faculty Of Social And Human Sciences}\\[0.2cm]
+\textsc{\Large Mathematical Sciences}\\[1.5cm]
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Timing noise in pulsars \\[0.4cm] }
+
+\HRule \\[1.5cm]
+
+% Author and supervisor
+\noindent
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Gregory \textsc{Ashton}
+\end{flushleft}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisors:} \\
+Dr.~David~Ian \textsc{Jones} \\
+Dr.~Reinhard \textsc{Prix}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+
+
+\part{Introduction }
+
+%\pagestyle{mystyle} % Put here so it doesn't affect the TOC
+
+\chapter{Neutron star physics}
+\label{sec: neutron star physics}
+\subfile{../introduction/introduction}
+
+
+\bibliography{../bibliography}
+
+
+\end{document}

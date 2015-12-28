@@ -1,0 +1,61 @@
+We will now briefly outline the pulsar timing method, for a complete overview
+see \citet{Lyne2012book}. A single observation of a pulsar consists of
+collecting a series of pulses. While individual pulses show a rich diversity of
+behaviour, integrating over hundreds of pulses yields a stable pulse profile.
+Using this integrated pulse profile, the time of arrival (TOA) of a single pulse can be
+determined with great accuracy. The TOA constitutes the result of a single
+observation. 
+% ignore interplanetary scintillation?
+
+Once a number of TOAs have been measured we can generate a timing model.  A
+timing model attempts to exactly count each and every pulse occurring between
+any two observations. Typically between observations there may be several
+million pulses, this makes this method extremely accurate. The process is
+standardised by the software package \verb+TEMPO2 + developed by
+\citet{Hobbs2006}, but we will now describe the key features.
+
+The TOA of a pulse at the detector depends on many factors such as the relative
+motions of the source and detector, interplanetary scintillation; the method to
+correct for these and other effects is described by \citet{Edwards2006}.  Once
+these corrections are applied, the TOAs depend only on the intrinsic spindown
+of the pulsar which we model by a Taylor expansion in the phase
+\begin{equation}
+    \phi(t) = \sum_{n\ge 1}\frac{\nu^{(n-1)}}{n!}(t_{TOA}^{i} -
+    \tref)^{n} + \phi_{0}.
+    \label{eqn: Taylor compact}
+\end{equation}
+The $\{\nu^{(n)}\}$ and $\phi_{0}$ are free parameters,
+$\tref$ is some reference time, and $t_{TOA}^{i}$ are the collected TOAs. This
+expansion is usually truncated at the second order spindown $n=3$.
+
+Between any two TOAs an integer number of rotations must have occurred; this
+allows the use of the deviation of $\phi(t_{TOA}^{j})$ from an integer as a
+statistic to optimise the choice of free parameters. The reference time is
+chosen to be in the middle of the set of TOAs to minimise the fitting
+error. Usually it is chosen to coincide with the TOA of a pulse: due to
+this choice, the initial phase $\phi_{0}$ is zero. 
+
+The timing residual is defined as the difference between
+the phase as given by the timing model, and the observed phase from the TOAs. 
+If we set the arrival of a pulse to coincide with a phase of zero, the phase
+residual is then given by
+\begin{equation}
+    \Delta\phi \left(t^{i}_{\mathrm{TOA}}\right) = 
+    \phi \left(t=t^{i}_{\mathrm{TOA}}\right)
+\end{equation}
+The timing residual quantifies the choice of free parameters in equation 
+\eqref{eqn: Taylor compact} given the observed TOAs. 
+The timing model is the set of coefficients $\{\nu_{0}^{(n)}\}$ which minimise the
+timing residual; usually this minimisation is quantified by sum of squares of the
+residual.
+
+If the timing model is accurate enough to track the pulsar to within a single
+rotation the resulting timing solution is described as \emph{phase-connected}.
+For most pulsars this is the case and a single set of coefficients can track
+the spindown over periods greater than a year. For well timed pulsars the 
+timing residual will display a `white` noise with a mean of zero. Timing 
+variations exist which refer to structure in this residual which cannot be
+attributed to any known correction (e.g. see \citet{Edwards2006}. Two types of 
+variations exist: timing noise and glitches, we will now discuss these.
+
+
