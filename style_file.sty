@@ -12,7 +12,7 @@
 \newfloatcommand{capbtabbox}{table}[][\FBwidth]
 
 % Geometry
-\usepackage[top=20mm, bottom=20mm, left=20mm, right=20mm]{geometry}
+%\usepackage[top=20mm, bottom=20mm, left=20mm, right=20mm]{geometry}
 
 % Ams math
 \usepackage{amsmath}
@@ -49,8 +49,8 @@
 \numberwithin{figure}{section}
 \numberwithin{table}{section}
 
-\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
-\newcommand{\ntag}{}
+%\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+%\newcommand{\ntag}{}
 
 % Adding subfiles
 \newcommand{\inputpath}[1]{
@@ -60,22 +60,22 @@
 }
 
 % Header/Footer
-\usepackage[pagestyles]{titlesec}
-\newpagestyle{mystyle}{%
-    \headrule\sethead{\textbf{\chaptername~\thechapter~} \chaptertitle}{}{}
-  \setfoot{}{\thepage}{}}
+%\usepackage[pagestyles]{titlesec}
+%\newpagestyle{mystyle}{%
+%    \headrule\sethead{\textbf{\chaptername~\thechapter~} \chaptertitle}{}{}
+%  \setfoot{}{\thepage}{}}
 %\pagestyle{mystyle}
 % Commans to run when there is no chapter defined
-\providecommand{\chaptername}{}
-\providecommand{\thechapter}{}
-\@ifundefined{c@chapter}{
-    \newcounter{chapter}}
-
-%Part
-\titleclass{\part}{top}
-\titleformat{\part}[display]
-  {\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
-\titlespacing*{\part}{0pt}{50pt}{40pt}
+%\providecommand{\chaptername}{}
+%\providecommand{\thechapter}{}
+%\@ifundefined{c@chapter}{
+%    \newcounter{chapter}}
+%
+%%Part
+%\titleclass{\part}{top}
+%\titleformat{\part}[display]
+%  {\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
+%\titlespacing*{\part}{0pt}{50pt}{40pt}
 
 %Chapter
 %\titleclass{\chapter}{top}
@@ -138,7 +138,7 @@
 \newcommand{\zero}{\{\bdl^{i}\}=0}
 \newcommand{\zerolim}{\biggr\rvert_{\zero} }
 %\newcommand{\zerolim}{\left.\right|_{\zero}}
-\newcommand{\tref}{t_{\textrm{r}}}
+\renewcommand{\tref}{t_{\textrm{r}}}
 \newcommand{\s}[2]{\sum_{#1}^{#2}}
 \newcommand{\tn}{\delta}
 \newcommand{\dT}{\Delta T}
