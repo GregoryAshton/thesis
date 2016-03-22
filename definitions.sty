@@ -1,0 +1,93 @@
+% Math macros
+\newcommand{\Msun}{M_{\odot}}
+\newcommand{\Pdot}{\dot{P}}
+\newcommand{\spin}{\boldsymbol{\omega}}
+\newcommand{\To}{T_{\textrm{obs}}}
+
+\newcommand{\tauS}{\tau_{\mathrm{S}}}
+\newcommand{\tauA}{\tau_{\mathrm{A}}}
+\newcommand{\tauP}{\tau_{\mathrm{P}}}
+
+\newcommand{\epsI}{\epsilon_{\mathrm{I}}}
+\newcommand{\epsA}{\epsilon_{\mathrm{A}}}
+\newcommand{\x}{\boldsymbol{\hat{x}}}
+\newcommand{\y}{\boldsymbol{\hat{y}}}
+\newcommand{\z}{\boldsymbol{\hat{z}}}
+\newcommand{\1}{\boldsymbol{e}_{1}}
+\newcommand{\2}{\boldsymbol{e}_{2}}
+\newcommand{\3}{\boldsymbol{e}_{3}}
+
+\newcommand{\m}{\hat{\boldsymbol{m}}}
+\newcommand{\J}{\boldsymbol{J}}
+\newcommand{\n}{\hat{\boldsymbol{n}}}
+\newcommand{\V}{\boldsymbol{v}}
+
+\newcommand{\gw}[1]{{#1}_{\textrm{GW}}}
+\newcommand{\ee}[1]{\!\times\!10^{#1}}
+\newcommand{\f}{f}
+\newcommand{\fdot}{\dot{\f}}
+\newcommand{\fddot}{\ddot{\f}}
+\newcommand{\gv}[1]{\ensuremath{\mbox{\boldmath$ #1 $}}} 
+\newcommand{\bl}{{\bm{\lambda}}}
+\newcommand{\bdl}{\Delta \bm{\lambda}}
+\newcommand{\dl}{\Delta\lambda}
+\newcommand{\zero}{\{\bdl^{i}\}=0}
+\newcommand{\zerolim}{\biggr\rvert_{\zero} }
+%\newcommand{\zerolim}{\left.\right|_{\zero}}
+\renewcommand{\tref}{t_{\textrm{r}}}
+\newcommand{\s}[2]{\sum_{#1}^{#2}}
+\newcommand{\tn}{\delta}
+\newcommand{\dT}{\Delta T}
+\newcommand{\sigP}{\sigma_{\phi}^{2}}
+\newcommand{\sigF}{\sigma_{\f}^{2}}
+\newcommand{\sigS}{\sigma_{\fdot}^{2}}
+
+\newcommand{\dP}{\Delta\phi}
+\newcommand{\dPA}{\Delta\phi_{A}}
+\newcommand{\dPB}{\Delta\phi_{B}}
+
+\newcommand{\dF}{\Delta\f}
+\newcommand{\dFA}{\Delta\f_{A}}
+\newcommand{\dFB}{\Delta\f_{B}}
+
+\newcommand{\dS}{\Delta\fdot}
+\newcommand{\dSA}{\Delta\fdot_{A}}
+\newcommand{\dSB}{\Delta\fdot_{B}}
+
+\newcommand{\E}[1]{E\left[#1\right]}
+\newcommand{\CT}{\mathcal{C}^{(2)}}
+
+\newcommand{\mGRID}{m}
+\newcommand{\mumin}{\mu_{\mathrm{min}}}
+\newcommand{\muminAvg}{\langle\mumin\rangle}
+
+% Split cell in table use \\
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+% Editing Macros
+\newcommand{\meta}[1]{{\textcolor{red}{ #1}}}
+
+% ---------------------------- Figure next to table -------------------------%
+
+% first arg figure, second table, third label, fourth caption
+\newcommand{\FigureAndTable}[3]{
+\begin{figure}[htb]
+\begin{floatrow}
+\ffigbox{
+    \includegraphics[width=0.5\textwidth]{#1}
+}{
+  \caption{#3}
+  \label{fig: #2}
+}
+\capbtabbox{
+    \input{#1}
+}{
+  \caption{}
+  \label{tab: #2}
+}
+\end{floatrow}
+\end{figure}
+}
+
+

@@ -1,0 +1,100 @@
+\ProvidesPackage{custom_style}
+
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+% Modular .tex files
+\usepackage{subfiles}
+\usepackage{import}
+
+% Put tables next to figures
+\usepackage{floatrow}
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+
+% Geometry
+%\usepackage[top=20mm, bottom=20mm, left=20mm, right=20mm]{geometry}
+
+% Ams math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+
+% Include options such as \FloatBarrier
+\usepackage{placeins}
+
+% Include clickable links in the pdf
+\usepackage{hyperref}
+
+% Packages for setting figures
+\usepackage{graphicx}
+%\usepackage{caption}
+\usepackage{subfig}
+
+% Tables
+\usepackage{multirow}
+
+\usepackage{enumerate}
+\usepackage{color}
+
+% Appendix
+\usepackage{appendix}
+
+% Bibliography
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\def\biblio{\bibliography{/home/greg/thesis/bibliography}}
+
+% Labels
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+% Adding subfiles
+\newcommand{\inputpath}[1]{
+\makeatletter
+\def\input@path{{#1}}
+\makeatother
+}
+
+% Header/Footer
+%\usepackage[pagestyles]{titlesec}
+%\newpagestyle{mystyle}{%
+%    \headrule\sethead{\textbf{\chaptername~\thechapter~} \chaptertitle}{}{}
+%  \setfoot{}{\thepage}{}}
+%\pagestyle{mystyle}
+% Commans to run when there is no chapter defined
+%\providecommand{\chaptername}{}
+%\providecommand{\thechapter}{}
+%\@ifundefined{c@chapter}{
+%    \newcounter{chapter}}
+%
+%%Part
+%\titleclass{\part}{top}
+%\titleformat{\part}[display]
+%  {\normalfont\huge\bfseries}{\centering\partname\ \thepart}{20pt}{\Huge\centering}
+%\titlespacing*{\part}{0pt}{50pt}{40pt}
+
+%Chapter
+%\titleclass{\chapter}{top}
+%\titleformat{\chapter}[hang]
+%  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+%\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+
+% Appendix at the end of each chapter
+%\usepackage{etoolbox}
+%\usepackage{chngcntr}
+%\AtBeginEnvironment{subappendices}{%
+%    \chapter*{Appendix}
+%    \addcontentsline{toc}{chapter}{Appendices}
+%    %\counterwithin{figure}{section}
+%    %\counterwithin{table}{section}
+%}
+
+% Formatting for floats etc
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.7}  
