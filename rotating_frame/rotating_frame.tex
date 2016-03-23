@@ -2,103 +2,110 @@
 
 % Default image directory
 \newcommand{\thisdir}{../rotating_frame}
-\graphicspath{{\thisdir/img/}} 
+\graphicspath{{\thisdir/img/}}
 
-\begin{document} 
-
-We will now build a model of a neutron star starting with the simplest physics
-and adding complexity as we go. The eventual aim is to evaluate various
-interpretations of timing noise by comparing with the observed phenomena.
-Starting with Euler's rigid body equations, we will evaluate their numerical
-solutions under an electromagnetic torque in chapter \ref{sec: neutron star
-dynamics in the rotating frame}. In chapter \ref{sec: neutron star dynamics
-in the inertial frame: physical observables} we extend the model in
-order to compare the results with quantities measureable by pulsar astronomy.
+\begin{document}
+In this section we will develop intuition about the precession of a biaxial
+body under the action of the \citet{Goldreich1970} dipole spin-down torque.  We
+will do this by solving the Euler rigid body equations numerically and
+comparing with known analytic solutions and approximate solutions in the
+literature. This section considers solution exlusively in the rotating body frame
+of the star. In the torque-free case this means there is only one timescale: the
+precession period.  The torque introduces two new timescales; we will consider
+how solutions depend on the ordering of these timescales and discuss which of
+these are physically relevant to real neutron stars.
 
 \section{Defining the model}
 \label{sec: defining the model}
- 
-The rotation of a rigid body in the rotating reference frame is described by
-Euler's equations. To derive these, we begin with Euler's second law  for the
+
+Euler's rigid body equations describe the motion of a rigid body in the rotating
+reference frame. To derive these, we begin with Euler's second law for the
 angular momentum $\mathbf{L}$ in the inertial frame
 \begin{equation}
     \frac{d\mathbf{L}}{dt}=\mathbf{T},
 \end{equation}
-where $\mathbf{T}$ is the applied torque. The angular momentum can be written
-as $I \spin$, the product of the moment of inertia tensor and the spin vector.
-In the inertial frame both of these quantities vary in time; this does not lend
-itself to solving the equations. We can simplify solutions by transforming to a
-frame fixed in the rotating frame of the rigid body and aligning the axes with
-the principle axes of $I$. In such as frame the moment of inertia is constant
-and diagonal. The transformation to a rotating reference frame requires a
-modification of the time derivative in Euler's second law, see \citet{Landau1969}
-for details. The result is Euler's rigid body equations in the rotating frame:
+where $\mathbf{T}$ is the applied torque. The angular momentum is the product
+of the moment of inertia tensor and the spin-vector $I \spin$; in the inertial
+frame both of these quantities vary in time. We can simplify by
+transforming to a frame fixed in the rotating frame of the rigid body and
+aligning the axes with the principle axes of $I$. In such as frame the moment
+of inertia is constant and diagonal. The transformation to a rotating reference
+frame requires a modification of the time derivative in Euler's second law, see
+\citet{Landau1969} for details. The result is Euler's rigid body equations in
+the rotating frame
 \begin{equation}
     \frac{d\mathbf{L}}{dt} + \spin \times \mathbf{L} = \mathbf{T}.
     \label{eqn: eom}
 \end{equation}
-To begin with, we will restrict ourselves to consider only biaxial bodies with 
+To begin with, we will restrict ourselves to consider only biaxial bodies with
 principal moments given by
 \begin{equation}
-I_{x} = I_{y} = I_{0} \;\;\;\;\;\;\; I_{z} = I_{0}(1+\epsilon_{I}),
+I_{x} = I_{y} = I_{0} \;\;\;\;\;\;\; I_{z} = I_{0}(1+\epsI).
 \end{equation}
-where $I_{0}$ is the moment of inertia for which we use a canonical value of 
+For neutron stars their extreme gravity ensures that $\epsI \ll 1$ such that
+we take a typical moment of inertia to be
 \begin{equation}
-I_{0} = \frac{2}{5}MR^{2} \approx 10^{45}\textrm{g cm}^{2} M_{1.4}R^{2}.
+I_{0} = \frac{2}{5}MR^{2} \approx 10^{45}\textrm{g cm}^{2} M_{1.4}R_6^{2},
 \end{equation}
-Here was have defined the neutron star canonical mass $M_{1.4} = 1.4 M_{\odot}$ 
-and $R$, the neutron star radius.
-Equation \ref{eqn: eom} gives us three coupled ODEs for $\omega_{x}, 
-\omega_{y}$ and $\omega_{z}$. In the torque-free case analytic solutions can be
-found as shown in section \ref{sec: free precession}.
+where $M_{1.4} = 1.4 M_{\odot}$ and $R_6=10^{6}$~cm are typical values.
 
-To model the spindown of a neutron star we include a the torque from a dipole
-$m$ frozen into the star in the $\x-\z$ plane at an angle $\chi$ to the $\z$
-axis. \citet{Deutsch1955} demonstrated such a dipole exerts a torque on the
-star which has two components. It is presented here in form found in
-\citet{Goldreich1970}.
+In cartesian coordinates, equation \ref{eqn: eom} gives us three coupled ODEs
+for $\omega_{x}, \omega_{y}$ and $\omega_{z}$. In the torque-free case analytic
+solutions can be found as we demonstrated in section \ref{sec: free precession}.
+
+Neutron stars are acted on by torques from both their electromagnetic (EM)
+dipole and, if $\epsI \ne 0$, they may also be acted on by torques from the
+emission of gravitational waves. For now we will consider only the former
+effect which dominates for isolated neutron stars observed as pulsars. To model
+this EM torque, we imagine a dipole $\m$ frozen into the star. In the rotating
+frame the body is axially symmetric about the $\z$ axis; therefore we are free
+to fix the dipole in the $\x-\z$ plane at an angle $\chi$ to the $\z$ axis
+without loss of generality. \citet{Deutsch1955} demonstrated such a dipole
+exerts a torque on the star which has two components; we present it here in the
+form found in \citet{Goldreich1970}.
 \begin{equation}
-\boldsymbol{T}=\frac{2R}{3c} I_{0}\epsilon_{A}\omega^{2}
-               (\spin \times \hat{\boldsymbol{m}})\times \hat{\boldsymbol{m}} 
-               + \epsilon_{A}I_{0}(\spin \cdot \hat{\boldsymbol{m}})
-               (\spin \times \hat{\boldsymbol{m}}), \;\;\;\;\; \textrm{ with } 
-               \;\;\;\; \epsilon_{A} = \frac{m^{2}}{I_{0}R c^{2}},
+\boldsymbol{T}=\frac{2R}{3c} I_{0}\epsA\omega^{2}
+               (\spin \times \hat{\boldsymbol{m}})\times \hat{\boldsymbol{m}}
+               + \epsA I_{0}(\spin \cdot \hat{\boldsymbol{m}})
+               (\spin \times \hat{\boldsymbol{m}}),
 \label{eqn: torque}
 \end{equation}
-where $\epsilon_{A}$ the magnetic deformation as defined by \citet{Glampedakis2010}.
-The magnetic deformation can be related to the surface magnetic field strength
-by 
+where $\epsA$ is an effective magnetic `deformation' as defined by \citet{Glampedakis2010}
+and given by 
+\begin{align}
+\epsA = \frac{m^{2}}{I_{0}R c^{2}},
+\end{align}
+this can be related to the surface magnetic field strength by
 \begin{equation}
-    B_{0} = \left(\frac{4 \epsilon_{A} I_{0} c^{2}}{R^{5}}\right)^{1/2}
+    B_{0} = \left(\frac{4 \epsA I_{0} c^{2}}{R^{5}}\right)^{1/2}.
     \label{eqn: magnetic field epsA}
 \end{equation}
 
 The first term in the Deutsch torque is often referred to as the \emph{spin
-down}, or \emph{braking} torque. As this suggests it is responsible for the
+down}, or \emph{braking} torque. As the name suggests, it is responsible for the
 power law retardation of spin frequency and has an associated timescale
 $\tau_{S}$. The second term is known as the \emph{anomalous} torque which acts
 on a timescale $\tau_{A}$. The three timescales (including the precession timescale)
 in this problem are then given by
 \begin{equation}
 \tau_{P}=\frac{2\pi}{\epsilon_{I}\omega},  \;\;\;\;\;
-\tau_{A}=\frac{2\pi}{\epsilon_{A}\omega},  \;\;\;\;\; 
-\tau_{S}=\frac{3c}{2R}\frac{1}{\epsilon_{A}\omega^{2}}.
+\tau_{A}=\frac{2\pi}{\epsA\omega},  \;\;\;\;\;
+\tau_{S}=\frac{3c}{2R}\frac{1}{\epsA\omega^{2}}.
 \label{eqn: torque timescales}
 \end{equation}
-By considering the ratio $\tau_{A}/\tau_{S} \sim v/c$ where $v$ is the equatorial
-velocity, we see that $\tau_{A} \ll \tau_{S}$. It is worth noting that the
-spindown timescale here is exactly the same as that given in equation 
-\eqref{eqn: characteristic age}.
+The ordering of these timescales characterises the type of solutions found to
+Eqn.~\eqref{eqn: eom} with the torque of Eqn.~\eqref{eqn: torque}. There are
+six potential orderings, however by considering the ratio $\tau_{A}/\tau_{S}
+\sim v/c$ where $v$ is the equatorial velocity, we see that $\tau_{A} \ll
+\tau_{S}$ reducing the number of possible orderings to three.
 
-
-We now have the basic components of out neutron star: a biaxial rigid body 
-spun down by a dipole torque. In table~\ref{tab: definitions} we list the
-spherical components of spin vector and magnetic dipole. This is done in a system
-of coordinates where the polar angle is that made with the $\z$ axis and the 
-azimuthal is the angle between the projection of the vector onto the $\x-\y$ 
-plane, and the $\x$ axis. A sketch is provided in figure~\ref{fig: sketch01}
-showing the projection onto the $\x-\z$ plane.
-
+We now have the basic components of a neutron star: a biaxial rigid body spun
+down by a dipole torque. To help familiarise the reader with the notation, in
+table~\ref{tab: definitions} we list the spherical components of spin vector
+and magnetic dipole and also show their projection onto the $\x-\z$ plane in
+Fig.~\ref{fig: sketch01}. We work in a system of coordinates where the polar
+angle is that made with the $\z$ axis and the azimuthal angle is the angle between
+the projection of the vector onto the $\x-\y$ plane, and the $\x$ axis.
 \begin{table}[ht]
 \centering
 \begin{tabular}{|l|c|c|c|c|} \hline
@@ -120,32 +127,34 @@ azimuthal component given by $\phi$.}
 	\label{fig: sketch01}
 \end{figure}•
 
-We will now present results of this model found using numerical integration of
-\eqref{eqn: eom} with the torque defined in \eqref{eqn: torque}. This is done
-for a NS with a magnetic field of $B_{0}\approx10^{13}$~G, and a radius
-$R=10^{6}$~cm. We must also provide an initial condition for the angular
-frequency $\omega$. This is not the spin frequency at the birth of NS but the
-frequency at the start of the observation; typical values are of the order
-$\sim 10$~rad/s. However, at this frequency the numerical solutions are
-computationally expensive. To reduce the time required to produce solution we
-will work with an initial frequency of $\omega = 10^{4}$~rad/s. This does not
-change the form of solution, only the timescales over which they evolve. 
+In the following sections we will develop our intution for the different types
+of solutions to this model. These results are calculated by 
+exact numerical evolution of Eqn.~\eqref{eqn: eom} with the torque defined in
+Eqn.~\eqref{eqn: torque}. The simulations model a a NS with a magnetic field of
+$B_{0}\approx10^{13}$~G, and a radius $R=10^{6}$~cm. We must also provide an
+initial condition for the angular frequency $\omega$. This is not the spin
+frequency at the birth of NS but the frequency at the start of the observation;
+typical values are of the order $\sim 10$~rad/s. However, at this frequency the
+numerical solutions are computationally expensive. To reduce the time required
+to produce solution we will work with an initial frequency of $\omega =
+10^{4}$~rad/s. This does not change the form of solution, only the timescales
+over which they evolve.
+\meta{Greg: we could potentially use more realistic values..}
 
 \FloatBarrier
 \section{Spherical star}
 \label{sec: spherical}
 
-We begin by considering a spherical star with $\epsilon_{I}=0$, such a star will
-not precess.
-This model was first considered by \citet{Davis1970}
-and separately by \citet{Michel1970}; both sets of authors discovered that the
-spin axis aligns with the magnetic axis on the spindown timescale. This is
-incompatible with the observation of neutron stars as NSs as we need the
-dipole to be misaligned with the spin axes to observe pulses. 
+We begin by considering the simplest case: a spherical star with $\epsI=0$
+under the influence of the spin-down torque.  This model was first considered
+by \citet{Davis1970} and separately by \citet{Michel1970}; both sets of authors
+discovered that torque causes the spin axis to align with the magnetic axis on
+the spindown timescale.
 
-We set $\chi=30^{\circ}$ and $\epsilon_{A}=5\times10^{-11}$ and plot the
-components of the spherical components spin vector in figure~\ref{fig: NS
-spherical}. This shows a brief spin down which halts once the spin vector
+To observe this behaviour, we set $\chi=30^{\circ}$ with the spin-vector
+initially at $a=50^{\circ}$ and $\epsA=5\times10^{-11}$. Evolving the modely
+numerically, we plot the spherical components spin vector in figure~\ref{fig:
+NS spherical}. This shows a brief spin-down which halts once the spin vector
 aligns with the magnetic dipole $a \rightarrow \chi=30^{\circ}$.  The azimuthal
 angle $\phi$ does not vary, this is expected since precession, a monotonic
 increase in $\phi$, does not occur for spherical bodies. This result agrees
@@ -162,31 +171,41 @@ to the $\z$ axis.}
 \label{fig: NS spherical}
 \end{figure}•
 
-\FloatBarrier
+\meta{Greg: Ian I've forgotten what the issue was with this spherical solution
+which led Goldrecih to his results?}
+
 \section{Biaxial NS with no anomalous torque}
-We begin with the evolution of the spin vector neglecting the anomalous torque.
-This reduces the number of timescales to just two, the spin down and the
-precession timescale. The solutions are categorised by the ordering of these
-time scales; it is shown  in appendix \ref{sec: timescales} that these
-orderings remain valid for the duration of the spindown. The ordering of the
-two timescales gives three different types of solutions corresponding to three
-regions:
+\label{sec: biaxial NS with no anomalous torque}
+
+We will now consider a biaxial star with $\epsI\ne0$, but to first build some
+understanding we will remove the anomalous part of the torque. This is done so
+that later on when we consider solutions in the presence of the anomalous
+torque we understand which effects are due to the anomalous part, and which to
+the spin-down part.  Neglecting the anomalous torque reduces the number of
+timescales to just two, the spin down and the precession timescale. The
+solutions are categorised by the ordering of these time scales; it is shown  in
+appendix \ref{sec: timescales} that these orderings remain valid for the
+duration of the spindown. The ordering of the two timescales gives three
+different types of solutions corresponding to three regions:
 \begin{align}
-    \textrm{Regions A: } \tau_{S} > \tau_{P} &&& 
-    \textrm{Region B: } \tau_{S} \sim \tau_{P} &&& 
+    \textrm{Regions A: } \tau_{S} > \tau_{P} &&&
+    \textrm{Region B: } \tau_{S} \sim \tau_{P} &&&
     \textrm{Region C: } \tau_{S} < \tau_{P}
 \end{align}
-Since all solutions in each region display the same behaviour, we pick three 
-`neutron stars (NS)' and list their parameters in table \ref{tab: A B C params}. 
+Since all solutions in each region display the same characteristic behaviour,
+we will illustrate this by picking three `neutron stars' and presenting results
+for each of these. Each of these pulsars, defined by the parameters listed
+in table \ref{tab: A B C params} will help us to understand the types of solutions
+for each ordering of the timescales.
 
 \renewcommand{\arraystretch}{1.2}
 \begin{table}[htb]
 \centering
 {\small
 	\begin{tabular}[h]{|l|c|c|c|c|c|}\hline
-		&  $\epsilon_{I}$  & $\epsilon_{A} $ & 	$B_{S} \; $[Gauss] & $\tau_{S}$ [s] & $ \tau_{P}$  [s] \\ \hline
+		&  $\epsilon_{I}$  & $\epsA $ & 	$B_{S} \; $[Gauss] & $\tau_{S}$ [s] & $ \tau_{P}$  [s] \\ \hline
 	NS A 	&  $  1.0\times 10^{-9}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  6.3\times 10^{5}  $\\
-	NS B 	&  $  0.4\times 10^{-10}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  1.6\times 10^{7}  $\\ 
+	NS B 	&  $  0.4\times 10^{-10}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  1.6\times 10^{7}  $\\
 	NS C 	&  $  1.0\times 10^{-15}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  6.3\times 10^{11}  $\\ \hline
 	\end{tabular}
 }
@@ -196,10 +215,10 @@ Since all solutions in each region display the same behaviour, we pick three
 \label{tab: A B C params}
 \end{table}
 
-\subsubsection{Phase space}
 The phase space of solutions is plotted in figure~\ref{fig: phase space no anom}
 parameterised by the elastic deformation $\epsilon_{I}$ and the surface magnetic
-field $B_{S}$ which is given by~\citep[][ p. 278]{Shapiro83}
+field $B_{S}$. This illustrates how the phase space is sliced into separate
+regions by the ordering of the timescales.
 \begin{equation}
 B_{S} = \frac{2m}{R^{3}}
 \end{equation}•
@@ -216,58 +235,52 @@ B_{S} = \frac{2m}{R^{3}}
 Without the anomalous torque the ordering of the timescales defines  two
 distinct regions separated by $\tau_{S}=\tau_{P}$. In using an abnormally large
 value for the initial angular spin frequency ($\omega_{0}=10^{4}$[rads/s]) we
-have skewed this phase space - that is, it no cannot be compared with the real
-pulsar population. Using a more realistic value the type of solution remains
+have skewed this phase space - that is, it cannot be compared with the real
+pulsar population. Using a more realistic value the character of solutions remains
 the same only the time scales vary.
-%A comparison of this phase space with the
-%true NS population in section~\ref{sec: Connection with the known NS
-%population}.
 
 The elastic deformation $\epsilon_{I}$ may take either a positive or a negative
-values; these correspond to either an oblate or prolate mass distribution.
- In all of the following we use only positive values of
-$\epsilon_{I}$ as these are thought to be more physical. It will be noted when
-this is thought to be important. Finally we must choose the angle between the
-magnetic dipole and the elastic deformations $\chi$, because of the symmetry of
-the star about the $\z$ axis we choose two values $30^\circ$ and $75^\circ$ to
-demonstrate important cases. Initial conditions are thought to have some
-bearing on the solutions \citep[see][]{Melatos2000}. In the current work we
-will start with the spin vector having inclination angle of $50^{\circ}$ and
-azimuth $0^{\circ}$.
+values; these correspond to either an oblate or prolate mass distribution.  In
+all of the following we use only positive values of $\epsI$. It will be noted
+when this is important, but therwise solutions are invariant to the sign of
+$\epsI$. Finally we must choose the angle between the magnetic dipole and the
+elastic deformations $\chi$, because of the symmetry of the star about the $\z$
+axis we choose two values $30^\circ$ and $75^\circ$ to demonstrate important
+cases. Initial conditions are thought to have some bearing on the solutions
+\citep[see][]{Melatos2000}. In the current work we will start with the spin
+vector having inclination angle of $50^{\circ}$ and azimuth $0^{\circ}$.
 
 
-\FloatBarrier
-
-
-\FloatBarrier \subsection{NS A in region \texorpdfstring{$\tau_{S}\gg \tau_{P}$}{}}
-\label{sec: A_NA} 
-NSs in this region are described by the work of
-\citet{Goldreich1970}. In addressing the shortcomings of the analytic spherical solutions,
-Goldreich considered a neutron star with a solid crust capable of supporting
-elastic strains. In order to find an analytic solution Goldreich assumed that
-the precession timescale was significantly shorter than the spin down
-timescale. Averaging equations \eqref{eqn: eom} with this assumptions yields
+\subsection{NS A in region \texorpdfstring{$\tau_{S}\gg \tau_{P}$}{}}
+\label{sec: A_NA}
+NSs in this region are described by the work of \citet{Goldreich1970}. In
+addressing the shortcomings of the analytic spherical solutions
+\citep{Davis1970, Michel1970}, Goldreich considered a neutron star with a solid
+crust capable of supporting elastic strains. In order to find an analytic
+solution, Goldreich assumed that the precession timescale was significantly
+shorter than the spin down timescale $\tau_{S} \gg \tau_{P}$. Averaging
+over equations~\eqref{eqn: eom} with this assumption yeilds
 \begin{eqnarray}
 \Big\langle \frac{d \omega}{dt}\Big\rangle & = & -\frac{2R}{3c}\epsilon_{a}\omega^{3}\left[ \sin^{2} \chi +\sin^{2}a \left(1-\frac{3}{2}\sin^{2}\chi\right)\right], \\
 \Big\langle \frac{d a}{dt}\Big\rangle & = & -\frac{2R}{3c}\epsilon_{a}\omega^{2}\sin a \cos a \left(1-\frac{3}{2}\sin^{2}\chi\right).
 \label{eqn: goldreich_averaged_eqns}
 \end{eqnarray}•
-These expression indicate that the polar angle $a$ will either grow or decay on
-the spindown timescale depending on whether $\chi$ was greater or less than
-$\approx 55^{\circ}$. 
+Goldreich realised that the second equation tell us the polar angle $a$ will
+either grow or decay on the spindown timescale depending on whether $\chi$ was
+greater or less than a critical value~$\chi_{\mathrm{cr}} \approx 55^{\circ}$.
 
-We first present results for all the spherical components during the spindown 
+We first present results for all the spherical components during the spindown
 in figure~\ref{fig: NS A_NA}. For the angle $\chi$ we use two values
 $30^{\circ}$ and $75^{\circ}$ and find that $a$ tends to either $0$ or $\pi/2$
-on the spindown timescale as suggested by \citet{Goldreich1970}.
+on the spindown timescale in agreement with \citet{Goldreich1970}.
 During this alignment, the spin magnitude decays
 and $\phi$ monotonically increases corresponding to the spin vector precessing
-about the $\z$ axis. 
+about the $\z$ axis.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
 	\subfloat[$\chi=30^{\circ}<\chi_{cr}$]{\includegraphics[width=0.495\textwidth]
-             {{Spherical_Plot_no_anom_chi_30.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} & 
+             {{Spherical_Plot_no_anom_chi_30.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
     \subfloat[$\chi=75^{\circ}>\chi_{cr}$]{\includegraphics[width=0.495\textwidth]
              {{Spherical_Plot_no_anom_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}•
@@ -277,15 +290,14 @@ alignment of the spin vector on $\chi$.  }
 \label{fig: NS A_NA}
 \end{figure}•
 
-We investigate the differences between Goldreich's averaged equations
-\eqref{eqn: goldreich_averaged_eqns} and the exact solution without averaging
-in figure~\ref{fig: NS A_NA comparison}.
-
+In Fig.~\ref{fig: NS A_NA comparison} we investigate the differences between
+solutions to Goldreich's averaged equations \eqref{eqn:
+goldreich_averaged_eqns} and the exact solution without averaging.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
     \subfloat[$\chi=30^{\circ}<\chi_{cr}$]{\includegraphics[width=0.495\textwidth]
-             {{Plot_a_averaged_and_exact_chi_30}.png}} & 
+             {{Plot_a_averaged_and_exact_chi_30}.png}} &
     \subfloat[$\chi=75^{\circ}>\chi_{cr}$]{\includegraphics[width=0.495\textwidth]
              {{Plot_a_averaged_and_exact_chi_75}.png}}
 \end{tabular}
@@ -293,37 +305,69 @@ in figure~\ref{fig: NS A_NA comparison}.
 and the solution to the averaged equations \eqref{eqn: goldreich_averaged_eqns}.}
 \label{fig: NS A_NA comparison}
 \end{figure}•
-Our model agrees well with Goldreich's averaged result, but
-also exhibits oscillations due to precession. 
-\FloatBarrier
+This shows that, while both agree on the long term behaviour, the averaged
+equations do not include short term oscillations which are due to the precession.
 
 \paragraph{A geometric argument}
-To better understand the evolution of the spin vector and in particular the
-significance of $a \sim 55^{\circ}$ we introduce a geometric argument. 
-Writing the conservation of energy and momentum in terms
-of the angular momentum vector $J_{i}$ for a biaxial mass distribution we have 
+The significance of the critical value $\chi_{\textrm{cr}} \sim 55^{\circ}$
+seems has not been discussed in the literature. We will now develop a novel
+geometric argument which provides a way to intepret this value as a natural
+consequency of the conservation of energy and angular momentum.
+
+For a biaxial mass distribution as described above, the conservation of energy
+requies that
 \begin{eqnarray}
-1 & = & \frac{J_{x}^{2}}{2I_{x}E}+\frac{J_{y}^{2}}{2I_{y}E}+\frac{J_{z}^{2}}{2I_{z}E} =  \frac{J_{x}^{2}}{2I_{0}E}+\frac{J_{y}^{2}}{2I_{0}E}+\frac{J_{z}^{2}}{2I_{0}(1+\epsilon_{I})E},\\
-J^{2} & = & J_{x}^{2}+J_{y}^{2}+J_{z}^{2}.
-\label{eqn: sphere ellipsoid biaxial}
-\end{eqnarray}•
-The first equation describes a biaxial ellipsoid with semi-axis given by
-$\sqrt{2I_{0}E}$, $\sqrt{2I_{0}E}$ and $\sqrt{2I_{0}(1+\epsilon_{I})E}$.  The
-second describes a sphere of radius $J$. Both shapes are concentric with their origin
-at $\boldsymbol{0}$. Physical solutions require the conservation of both the energy
-and momentum, these solutions are therefore the intersection of the sphere and 
-ellipsoid. This bounds the radius of the sphere by
+1 & = & \frac{L_{x}^{2}}{2I_{x}E}+\frac{L_{y}^{2}}{2I_{y}E}+\frac{L_{z}^{2}}{2I_{z}E}
+=\frac{L_{x}^{2}}{2I_{0}E}+\frac{L_{y}^{2}}{2I_{0}E}+\frac{L_{z}^{2}}{2I_{0}(1+\epsilon_{I})E},
+\label{eqn: conservation of energy biaxial}
+\end{eqnarray}
+where $L_i$ are the components of the angular momentum. For the conservation of
+momentum we have that
+\begin{eqnarray}
+L^{2} & = & L_{x}^{2}+L_{y}^{2}+L_{z}^{2}.
+\label{eqn: conservation of momentum biaxial}
+\end{eqnarray}
+
+Both of these conservation equations have a geometric interpretation in the
+cartesian momentum space:
+Eqn.~\eqref{eqn: conservation of energy biaxial} describes a biaxial ellipsoid
+with semi-axis given by $\sqrt{2I_{0}E}$, $\sqrt{2I_{0}E}$ and
+$\sqrt{2I_{0}(1+\epsilon_{I})E}$ centered on the origin, while Eqn.~\eqref{eqn:
+conservation of momentum biaxial} describes a sphere of radius $L$ also
+centered on the origin. Physical solutions require the conservation of both
+the energy and momentum, possible solutions therefore lie on the intersection
+of the sphere and ellipsoid. In order that the two intersect and hence both
+conservation laws are satisfied, the radius of the sphere must be bound by
 \begin{equation}
-2EI_{0}<J^{2}<2EI_{0}(1+\epsilon_{I}).
-\end{equation}•
-For a fixed energy and momentum, the intersection describes a circle about the
-$\z$ axis. Several typical intersections are shown in figure~\ref{fig: plot
-sphere ellipse biaxial}. Points on the circle are the set of all possible
-solutions to the conservation equations for the angular momentum vector
-$J_{i}$. Since $J_{i}=I_{ij}\omega^{j}$ and the moment of inertia tensor is
-static, numerical solutions for the spin vector must also exist as points on a
-related circle. This related circle is exactly the precession of $\spin$ about
-the $\z$ axis.
+2EI_{0}<L^{2}<2EI_{0}(1+\epsI).
+\end{equation}
+
+If the energy and momentum of the system are fixed, the intersection of the
+sphere (describing the conservation of momentum) and ellipse (describing the
+conservation of momentum) always describes a circle about the $\z$ axis. To illustrate
+this, in Fig.~\ref{fig: plot sphere ellipse biaxial} we plot the intersection
+for three different sizes of the sphere holding the ellipsoid fixed. The
+intersection describes exactly the solution which satisfy both the conservation
+equations and therefore the set of all physical solutions. 
+\begin{figure}[ht]
+\centering
+\includegraphics[trim = 50mm 50mm 50mm 20mm, clip=true ,scale=0.8]{Ellipsoid_Sphere_Biaxial}
+\caption{Intersection of the sphere and ellipsoid defined in equations
+    \eqref{eqn: sphere ellipsoid biaxial} for three different values of $M$ at
+fixed $E$. The sphere's of radius $M$ are not visible, only the blue line shows
+where they would intersect the fixed ellipsoid.}
+\label{fig: plot sphere ellipse biaxial}
+\end{figure}
+\meta{Greg: should we have a figure of the cartesian space solutions of precession?}
+
+Over times much shorter than the spin-down timescale, the energy and momentum
+of our biaxial star acted on by the spin-down torque are fixed. As we have seen
+above, in order to satisfy the conservation equations this means that the
+angular momentum vector $L_i$ has a class of possible solution consisting of a
+ring about the momentum-space $\z$.  Since $L_{i}=I_{ij}\omega^{j}$ and the
+moment of inertia tensor is static, solutions for the spin vector $\omega^j$
+must also exist as points on a related circle. This related circle is exactly
+the precession of $\spin$ about the $\z$ axis.
 
 Both the energy and the momentum decay exponentially in time
 due to the spindown. As a result both the sphere and ellipsoid will shrink, but
@@ -332,7 +376,7 @@ that it appears to be fixed, we may see the sphere either shrink or grow with
 respect to the ellipsoid. We can parameterise the relative rate of shrinking by
 considering the quantity
 \begin{equation}
-A(t)  = \frac{J^{2}} {2EI_{0}} 
+A(t)  = \frac{L^{2}} {2EI_{0}}
 \label{eqn: A}
 \end{equation}•
 We could have chosen any one of the ellipsoids semi-axis since they are all
@@ -341,74 +385,105 @@ vector is related to the rate of change of $A$.
 This quantity determines whether the sphere shrinks or grows with respect to
 the ellipsoid. It is worth taking a moment to understand the different cases
 which are parameterised by the sign of $\dot{A}$:
-\begin{enumerate} 
+\begin{enumerate}
 \item $\dot{A}>0$ The sphere grows with respect to the ellipsoid. In this case
     the intersection circles will `close up' around the $\z$ axis. This
     agrees with the solution for $\chi=30^{\circ}$ given in
     figure~\ref{fig: NS A_NA comparison}(a). The angle between
     $\boldsymbol{\omega}$ and the $\z$ axis tends to zero while $\phi$
-    monotonically increases. This describes the spin vectors following a circle 
+    monotonically increases. This describes the spin vectors following a circle
     about the $z$ axis which gradually decreases in radius.
 \item $\dot{A}<0$ The sphere shrinks with respect to the ellipsoid. In this
-    case the intersection circles will increase in radius until $J\rightarrow
+    case the intersection circles will increase in radius until $L\rightarrow
     \sqrt{2EI_{0}}$. This describes exactly the solution in
     figure~\ref{fig: NS A_NA comparison}(b): that is $a\rightarrow
     90^{\circ}$ while $\phi$ monotonically increases.
 \end{enumerate}•
 
-\begin{figure}[ht]
-\centering
-\includegraphics[trim = 50mm 50mm 50mm 20mm, clip=true ,scale=0.8]{{Ellipsoid_Sphere_Biaxial}.pdf}
-\caption{Intersection of the sphere and ellipsoid defined in equations
-    \eqref{eqn: sphere ellipsoid biaxial} for three different values of $M$ at
-fixed $E$. The sphere's of radius $M$ are not visible, only the blue line shows
-where they would intersect the fixed ellipsoid.}
-\label{fig: plot sphere ellipse biaxial}
-\end{figure}•
-\FloatBarrier
-
-\paragraph{Connecting with Goldreich's result}
-\label{sec: connecting with goldreich}
-
-In appendix \ref{sec: goldreich} we verify that the time averaged rate of change
-of $A$ is given by the following.
+The sign of $\dot{A}$ tells us about the long-term evolution of the system. To
+determine it, we begin by differentiating Eqn.~\eqref{eqn: A}
 \begin{equation}
-\langle \dot{A} \rangle =\frac{1}{\langle E\rangle ^{2}}I_{0}^{2}\epsilon_{I}
-                          \omega^{6}\frac{2R}{3c}\epsilon{A} \cos^{2} a 
-                          \sin^{2}a\left(1-\frac{3}{2}\sin^{2}\chi\right) 
+\dot{A}=\frac{1}{(2EI_{0})^{2}}
+        \left(\frac{d}{dt}(L^{2})2EI_{0}-\frac{d}{dt}(2EI_{0})L^{2}\right),
 \end{equation}
-This result is valid only in the regime for which $\tau_{S}\gg \tau_{P}$ and
-neglects the anomalous torque and term of order $\epsilon_{I}^{2}$. It
-demonstrates that only two factors determine the sign of $\dot{A}$: the sign of
-$\epsilon_{I}$ and the term $1-\frac{3}{2}\sin^{2}\chi$ giving a critical value
-$\chi_{cr}\approx55^\circ$. The first we should expect on geometric grounds, a
+simplifying and writing in index notation such that $L^{2}=L^iL_i$, we have that
+\begin{equation}
+\dot{A}=\frac{1}{E^{2}}\left(2L^{i}\dot{L}_{i}E-\dot{E}L^{i}J_{i}\right).
+\end{equation}
+Now the energy is purely kinetic such that
+$E=\frac{1}{2}I_{ij}\omega^{i}\omega^{j}$, and therefore $\dot{E}=T^{i}\omega_{i}$.
+Then, noting that $\dot{L}^{i}=T^{i}$, we have
+\begin{equation}
+\dot{A}=\frac{1}{E^{2}}\left(L^{i}T_{i}I_{jk}\omega^{j}\omega^{k}
+                             -T^{i}\omega_{i}L^{j}L_{j}\right).
+\end{equation}
+For a diagonalised matrix, $I_{ij}$ has only 3 non zero components therefore
+$I_{jk}\omega^{j}\omega^{k}=(I\omega)_{j}\omega^{j}$. In addition we can write
+$L^{i}=(I\omega)^{i}$ and so we find
+\begin{equation}
+\dot{A}=\frac{1}{E^{2}}T^{i}\left((I\omega)_{i}\omega_{j}
+        -\omega_{i}(I\omega)_{j}\right)(I\omega)^{j},
+\end{equation}
+finally simplifying to
+\begin{equation}
+\dot{A}=\frac{1}{E^{2}}T^{i}\omega_{i}\omega_{j}
+        (I\omega)^{j}\left(I^{i}_{\;i}-I^{j}_{\;j}\right).
+\end{equation}
+Considering for the time being only the last few terms and expanding the
+summation, all terms for which $i=j$ will be zero. Working with a biaxial mass
+distribution where $I_{1}=I_{2}$, then the only non-zero terms are given by 
+\begin{eqnarray*}
+T^{i}\omega_{i}\omega_{j}(I\omega)^{j}\left(I^{i}_{\;i}-I^{j}_{\;j}\right)&=&
+T_{1}\omega_{1}I_{0}(1-\epsilon_{i})\omega^{2}_{3}
+(I_{0}-I_{0}(1+\epsilon_{I}))+
+T_{2}\omega_{2}I_{0}(1-\epsilon_{i})\omega^{2}_{3}(I_{0}-I_{0}(1+\epsilon_{I})) 
+\\ && + 
+T_{3}\omega_{3}(I_{0}(1+\epsilon_{I})-I_{0})
+               (I_{0}\omega_{1}^{2}+I_{0}\omega_{2}^{2}), \\
+&=& I_{0}^{2}\epsilon_{I}\omega_{3}\left(T_{3}(\omega_{1}^{2}+\omega_{2}^{2}) 
+    - \omega_{3}(1+\epsilon_{I})(T_{1}\omega_{1}+T_{2}\omega_{2})\right).
+\end{eqnarray*}
+Working up to 1st order in $\epsI$ and transforming to spherical polar
+coordinates we then insert the spindown torque and neglect the anomalous torque.
+This yields
+\begin{eqnarray*}
+\dot{A}E^{2}&=& I_{0}^{2}\epsilon_{I}\omega^{3}
+    \left(\frac{2R}{3c}\epsilon{A}\omega^{3}\right)
+    \cos a \left([\sin \chi \cos \chi \sin a \cos \phi 
+                 - \sin^{2}\chi \cos a]\sin^{2} a \right. \\
+&& \left.- \cos a ([\sin \chi \cos \chi \sin a \cos \phi 
+                   - \sin^{2}\chi \cos a]\cos \phi \sin a 
+                   - \sin^{2}a \sin^{2}\phi)\right).
+\end{eqnarray*}
+
+Now we work in the limit $\tau_P \ll \tau_S$ where $\phi$ varies on the 
+precession timescale, which is much faster than the evolution in either $a$ or $\omega$
+Therefore we can average over a free nutation period and drop the constant
+coefficients
+\begin{eqnarray*}
+\langle\dot{A}\rangle &\propto& \cos a \left(-\sin^{2}a\cos a \sin^{2}\chi + 
+       \frac{1}{2}\left(\sin^{2}a\cos a \cos^{2}\chi + 
+       \sin^{2}a \cos a \right) \right) \\
+& \propto& \cos^{2} a \sin^{2}a\left(1-\frac{3}{2}\sin^{2}\chi\right).
+\end{eqnarray*}
+Finally putting all the coefficeints back in, we have an expression for the averaged
+rate of change of $A$ under the same assumptions made by \citet{Goldreich1970}
+\begin{equation}
+\langle \dot{A} \rangle =\frac{1}{\langle E\rangle ^{2}}I_{0}^{2}
+                         \epsilon_{I}\omega^{6}\frac{2R}{3c}\epsilon{A} 
+                         \cos^{2} a \sin^{2}a
+                         \left(1-\frac{3}{2}\sin^{2}\chi\right) 
+\end{equation}
+
+This result demonstrates that only two factors determine the sign of
+$\langle\dot{A}\rangle$: the sign of $\epsilon_{I}$ and the term
+$1-\frac{3}{2}\sin^{2}\chi$, from which we find the critical value
+$\chi_{cr}\approx55^\circ$.  The first we should expect on geometric grounds, a
 change in sign of the deformation changes the geometry of the ellipsoid. The
-second is in perfect agreement with the findings of G70, and shows that this
-critical value is a tipping point between the rates of change of energy and
-angular momentum.
-
-%\paragraph{Connecting with the numeric results}
-%We can now interpret our numerical solutions as the evolution of these circles,
-%the spin vector is constrained to lie on the circle as it evolves. To
-%understand if the sphere shrinks or grows with respect to the ellipsoid we plot
-%the quantity $A$ for both values of chi in figure~\ref{fig: NS A A} using
-%$\epsilon_{I}=0.1$ for illustrative purposes. It is clear from this that the
-%sphere grows with respect to the ellipsoid for $\chi=30^{\circ}$, and shrinks,
-%reaching unity at late times for $\chi=75^{\circ}$.
-%
-%
-%
-%\begin{figure}[ht]
-%\centering
-%\includegraphics[scale=0.4]{{NS_A_NA_Combined_A}.png}
-%\caption{Plot of the quantity $A$ defined in equation \eqref{eqn: A} for NS A without the anomalous torque. So that the effect is visible a value of $\epsilon_{I}=0.1$ has been used rather than $\epsilon_{I}=1\times10^{-9}$ in the post-processing only. } 
-%\label{fig: NS A A}
-%\end{figure}•
-
-
-\paragraph{Summary} We find that, without the anomalous torque, the numerical
-model agrees well with analytic results in the literature. Further, we give an
-interpretation of the critical value of $\chi$ found by \citet{Goldreich1970}.
+second is in perfect agreement with the findings of \citet{Goldreich1970}.
+Moreover, by calculating the condition in this way, we have found that the
+critical value corresponds to a tipping point between the rates of change of
+energy and angular momentum.
 
 \FloatBarrier
 \subsection{NS B in region \texorpdfstring{$\tau_{S}\sim \tau_{P}$}{}}
@@ -424,7 +499,7 @@ same timescale.
 \FloatBarrier
 \subsection{NS C in region \texorpdfstring{$\tau_{S}\ll \tau_{P}$}{}}
 \label{sec: C_NA}
-In NS C the timescales take the ordering $\tau_{P}\gg \tau_{S}$. The limit of 
+In NS C the timescales take the ordering $\tau_{P}\gg \tau_{S}$. The limit of
 this region, is the spherical star
 ($\epsilon_{I}\rightarrow0$) discussed in section~\ref{sec: spherical}; as such
 we should expect the results to be similar. Solving
@@ -437,7 +512,7 @@ constant value. It is thought that this is due to the small but not vanishing
 magnitude of $\epsilon_{I}$. In the perfectly spherical limit we observe no
 such increase in $\phi$. Therefore the small
 deformation offsets the steady state solution of the spin axis from the
-magnetic dipole. 
+magnetic dipole.
 
 For an intuitive understanding consider that the torque acts to align the spin
 axis with the magnetic dipole; when this occurs the torque vanishes. Since the
@@ -448,8 +523,8 @@ point between the two weighted by the relative strength of each effect. In this
 case the torque dominates and so the spin vector lies close, but not exactly
 aligned, with the magnetic dipole. During this time the star spins down but
 upon alignment the spin frequency asymptotically approaches a constant non zero
-value. 
-%We also plot in figure~\ref{fig: NS C_NA alpha} the angle between the spin axis and magnetic dipole $\alpha$ for NS C confirming the previous findings. 
+value.
+%We also plot in figure~\ref{fig: NS C_NA alpha} the angle between the spin axis and magnetic dipole $\alpha$ for NS C confirming the previous findings.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
@@ -463,52 +538,62 @@ value.
 \FloatBarrier
 
 \section{Biaxial NS including the anomalous torque}
-We now include the anomalous torque component in equation \eqref{eqn: eom} and
-discuss the differences this makes to the numerical solutions. Before doing
-this we consider the appropriate reference frame in which to view the system.
+In the previous section we considered solutions to equation \eqref{eqn: eom}
+under the action of the torque in Eqn.~\eqref{eqn: torque} without the
+anomalous contribution. In this section we will include this contribution and
+understand the effect it has on the character of solutions. However, before
+doing so, we will first consider the appropriate reference frame in which to
+view the system.
 
-\subsection{Effective body frame} 
+\subsection{The effective body frame}
 \label{sec: effective body frame}
-Working with a biaxial body and the Deutsch torque 
-\cite{Melatos2000} discovered non-trivial solutions where the spin axis aligns with
-an unknown angle between the magnetic dipole and the principle axis of the MOI.
-This was interpreted by Melatos as evidence for persistent precession. We show 
-in section \ref{sec: B} that in fact the spin vector is aligning with another
+Working with a biaxial body and the Deutsch torque \cite{Melatos2000}
+discovered non-trivial solutions where the spin axis aligns with an unknown
+angle between the magnetic dipole and the principle axis of the MOI.  This was
+interpreted by Melatos as evidence for persistent precession. We show in
+section \ref{sec: B} that in fact the spin vector is aligning with another
 rotating reference frame that is held at a fixed angle to the original rotating
 reference frame. This reference frame, which we label the \emph{effective} body
-frame is a result of the inclusion of the anomalous torque.
+frame, is a direct result of the anomalous torque contribution in
+Eqn.~\eqref{eqn: torque}; we will know show how this comes about.
 
-Writing equation~\eqref{eqn: eom} with the Deutsch torque we have:
+Writing Eqn.~\eqref{eqn: eom} with the Deutsch torque, we then manipulate it as
+such
 \begin{eqnarray*}
-J^{i}_{\;,t}+\epsilon^{ijk}\omega_{j}J_{k} & = 
+L^{i}_{\;,t}+\epsilon^{ijk}\omega_{j}L_{k} & =
 & N^{i}_{\textrm{spin down}}+
-\epsilon_{A}I_{0}\omega^{a}\hat{m}_{a}\epsilon^{ijk}\omega_{j}\hat{m}_{k}, \\
-J^{i}_{\;,t}+
-\epsilon^{ijk}\omega_{j}\left(J_{k}-\epsilon_{A}I_{0}\omega^{a}\hat{m}_{a}\hat{m}_{k}\right) 
+\epsA I_{0}\omega^{a}\hat{m}_{a}\epsilon^{ijk}\omega_{j}\hat{m}_{k}, \\
+L^{i}_{\;,t}+
+\epsilon^{ijk}\omega_{j}\left(L_{k}-\epsA I_{0}\omega^{a}\hat{m}_{a}\hat{m}_{k}\right)
 & = & N^{i}_{\textrm{spin down}}, \\
-J^{i}_{\;,t}+
-\epsilon^{ijk}\omega_{j}\left(I_{ka}-\epsilon_{A}I_{0}\hat{m}_{a}\hat{m}_{k}\right)\omega^{a} 
-& = & N^{i}_{\textrm{spin down}}. 
+L^{i}_{\;,t}+
+\epsilon^{ijk}\omega_{j}\left(I_{ka}-\epsA I_{0}\hat{m}_{a}\hat{m}_{k}\right)\omega^{a}
+& = & N^{i}_{\textrm{spin down}}.
 \end{eqnarray*}•
-By separating the equation this way and making use of $J_{i}=I_{ij}\omega^{j}$
-we can write an effective moment of inertia tensor given by 
-\begin{eqnarray}
-I'_{jk}&=&I_{jk}-I_{0}\epsilon_{A}\hat{m}_{j}\hat{m}_{k}, \\
-&=& \left[ 
+By arranging the equation this way and making use of $L_{i}=I_{ij}\omega^{j}$
+we can write an effective moment of inertia tensor given by
+\begin{align}
+\begin{split}
+I'_{jk}&=I_{jk}-I_{0}\epsA\hat{m}_{j}\hat{m}_{k}, \\
+&= \left[
 \begin{array}{ccc}
-I_{0}(1-\epsilon_{A}\sin^{2}\chi) & 0 & -I_{0}\epsilon_{A}\sin\chi \cos \chi \\  
-0 & I_{0} & 0 \\  -I_{0}\epsilon_{A}\sin\chi \cos \chi& 0 &  
-I_{0}(1+\epsilon_{I}-\epsilon_{A}\cos^{2}\chi)
+I_{0}(1-\epsA\sin^{2}\chi) & 0 & -I_{0}\epsA\sin\chi \cos \chi \\
+0 & I_{0} & 0 \\  -I_{0}\epsA\sin\chi \cos \chi& 0 &
+I_{0}(1+\epsilon_{I}-\epsA\cos^{2}\chi)
 \end{array}
 \right].
+\end{split}
 \label{eqn: effective MOI}
-\end{eqnarray}•
-Note we will use the prime to denote the effective body frame axis when quoting
-results. This effective moment of inertia tensor can be shown to have
-Eigenvalues given by 
-\begin{equation}
-\lambda_{2}=I_{0}, \;\;\; \lambda_{\pm}=\frac{I_{0}}{2}\left(2+\epsilon_{I}-\epsilon_{A}\pm \sqrt{\epsilon_{A}^{2}+\epsilon_{I}^{2}-2\epsilon_{A}\epsilon_{I}\cos(2\chi)}\right).
-\end{equation}•
+\end{align}
+Note that we will use the prime to denote the effective body frame axis.
+
+We can calculate the Eigenvalues of the effective MOI, these are given by
+\begin{align}
+\lambda_{2}=I_{0}, &&&
+\lambda_{\pm}=\frac{I_{0}}{2}
+\left(2+\epsilon_{I}-\epsA\pm
+\sqrt{\epsA^{2}+\epsilon_{I}^{2}-2\epsA\epsilon_{I}\cos(2\chi)}\right).
+\end{align}
 If we diagonalise this effective moment of inertia tensor, these Eigenvalues
 are the diagonal entries, and the associated Eigenvector are the principle
 axis of the effective body frame axis. The Eigenvalues always take the ordering
@@ -525,9 +610,9 @@ and then define $\beta$ as the angle made by $\3$ with the
 $\hat{\boldsymbol{z}}$ axis. $\beta$ is then given by:
 \begin{equation}
 \beta = \arctan\left(\frac{\boldsymbol{e}_{3,1}}{\boldsymbol{e}_{3,3}}\right)
-=\arctan\left( \frac{ \epsilon_{I}-\epsilon_{A}\cos(2\chi)- 
-              \sqrt{\epsilon_{A}^{2}+\epsilon_{I}^{2}-2\epsilon_{A}\epsilon_{I}\cos(2\chi)}}
-              {2\epsilon_{A}\sin\chi \cos\chi}\right).
+=\arctan\left( \frac{ \epsilon_{I}-\epsA\cos(2\chi)-
+              \sqrt{\epsA^{2}+\epsilon_{I}^{2}-2\epsA\epsilon_{I}\cos(2\chi)}}
+              {2\epsA\sin\chi \cos\chi}\right).
 \label{eqn: beta}
 \end{equation}•
 A schematic of the various angles and axis is given in
@@ -545,56 +630,63 @@ which is defined to be into the page.}
 The effective body frame is a simple rotation of the axis defined by the moment
 of inertia tensor to accommodate the effects of the anomalous torque. We work
 in a case where the rotation is in only the $x-z$ plane by an angle
-$\beta$. 
+$\beta$.
 
 To understand when this becomes significant we plot $\beta$ as a function of
-$|\epsilon_{A}/\epsilon_{I}|$ in figure~\ref{fig: beta}. When $|\epsilon_{A} \ll
+$|\epsA/\epsilon_{I}|$ in figure~\ref{fig: beta}. When $|\epsA \ll
 \epsilon_{I}|$, such that the anomalous torque effects are negligible, we
 recover the usual moment of inertia tensor. That is, $\beta=0$ or
 $\beta=\pi/2$, dependent on the sign of $\epsilon_{I}$. This is a consequence
 of choosing $\3$ to take the largest Eigenvalue.  In the opposing limit
-$|\epsilon_{A} \gg \epsilon_{I}|$, in which the magnetic deformation dominates
+$|\epsA \gg \epsilon_{I}|$, in which the magnetic deformation dominates
 the sign of the elastic deformation no longer splits the solutions and both
 cases tend to $\chi - 90^{\circ}$. This means the effective body frame always
 aligns the $\1$ axis (which has the smallest Eigenvalue) with the magnetic
-dipole. 
+dipole.
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.4]{{beta}.png}
 \caption{Plot of $\beta$ as a function of the ratio
-    $|\epsilon_{A}/\epsilon_{I}|$ for a prolate, $\epsilon_{I}<0$ and oblate
-    $\epsilon_{I}>0$ mass distribution.  In the limit $\epsilon_{A} \gg
+    $|\epsA/\epsilon_{I}|$ for a prolate, $\epsilon_{I}<0$ and oblate
+    $\epsilon_{I}>0$ mass distribution.  In the limit $\epsA \gg
     \epsilon_{I}$ for both the oblate and prolate cases the effective body
     frame aligns with the magnetic dipole. In the opposing limit the magnetic
     dipole has little effect and the effective body frame aligns with the
     principle axis of the moment of inertia. There is a smooth transition
-    between these two extremes when $\epsilon_{A} \sim \epsilon_{I}$. The
+    between these two extremes when $\epsA \sim \epsilon_{I}$. The
     splitting into oblate and prolate solutions results from choosing to
     associate $\boldsymbol{e}_{3}$ with the largest Eigenvalue.}
 \label{fig: beta}
 \end{figure}
 
-It should be made clear the rotation to the effective body frame is done in the
-post processing stage after the numerical ODEs are solved in the usual body
-frame. All three of our NSs have a non vanishing $\beta$,  table \ref{tab: A
-B C params} lists the relevant timescales and $\beta$ for each NS.
+We will show in the following that, when the anomalous torque is included, it
+is the effective body frame with which the system aligns on the spin-down
+timescale (much as it is the body frame with which the system aligns when the
+anomalous torque contribution was neglected in Sec.~\ref{sec: biaxial NS
+with no anomalous torque}).
+
+For the three NS representive of different orderings of the timescales, all
+three have a non-zero $\beta$. To familiarse the reader with the magnitudes in
+the differeent regions in table \ref{tab: A B C params} we lists the relevant
+timescales and $\beta$ for each of the three NSs.
 \begin{table}[ht]
 {\footnotesize
 \centering
 	\begin{tabular}[ht]{|c|c|c|c|c|c|c|c|c|}\hline
-NS &  $\epsilon_{I}$  & $\epsilon_{A} $ & 	$B_{S} \; $[Gauss] & $\tau_{S}$ [s] & $\tau_{A}$ [s] & $ \tau_{P}$  [s] & $\beta (\chi=30^{\circ})$ & $\beta(\chi=75^{\circ})$ \\ \hline
+NS &  $\epsilon_{I}$  & $\epsA $ & 	$B_{S} \; $[Gauss] & $\tau_{S}$ [s] & $\tau_{A}$ [s] & $ \tau_{P}$  [s] & $\beta (\chi=30^{\circ})$ & $\beta(\chi=75^{\circ})$ \\ \hline
 A & $  1.0\times 10^{-9}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  6.3\times 10^{5}  $ & $ -1.27^{\circ} $& $ -0.7^{\circ} $ \\
-B & $  0.4\times 10^{-10}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  1.6\times 10^{7}  $ & $ -35.447^{\circ} $& $ -8.35^{\circ} $ \\ 
+B & $  0.4\times 10^{-10}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  1.6\times 10^{7}  $ & $ -35.447^{\circ} $& $ -8.35^{\circ} $ \\
 C & $  1.0\times 10^{-15}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  6.3\times 10^{11}  $ & $ -60.0^{\circ} $& $ -15.0^{\circ} $ \\ \hline
 	\end{tabular}•}
 \caption{Table of relevant values for the selected points. }
 \label{tab: A B C params beta}
 \end{table}
 
+In the following we will present results in the effective body frame axis. These
+are calcualted by numerical evolution of the Euler rigid body equations with the full
+torque Eqn.~\eqref{eqn: torque}, then in the post-processing stage we apply the
+effective body frame transformation (a rotation by the angle $\beta$).
 
-
-
-\FloatBarrier
 \subsubsection{Phase space}
 
 The introduction of the anomalous torque means we must also consider the
@@ -622,7 +714,7 @@ space}.
 \includegraphics[scale=0.5]{{phase_space}.png}
 \caption{Phase space diagram including the anomalous torque contributions.}
 \label{fig: phase space}
-\end{figure}• 
+\end{figure}•
 
 \FloatBarrier
 \subsubsection{NS A in region \texorpdfstring{$\tau_{S}>\tau_{A}>\tau_{P}$}{}}
@@ -654,35 +746,43 @@ behaviour appear similar to those shown in section~\ref{sec: A_NA}. For
 $\chi=75^{\circ}$ we have what appears to be a large discontinuity in the
 solution suggesting a significant difference between solutions when including
 the anomalous torque. To understand the cause of this, we return to the
-geometric argument made in section \ref{sec: A_NA}
+geometric argument made in Sec.~\ref{sec: A_NA}.
 
 \paragraph{A geometric argument}
 Working in the effective body frame for which the effective moment of inertia
-tensor is triaxial. The conservation of angular momentum and conservation of 
-energy are given by
+tensor is triaxial. The conservation of energy equation is
 \begin{equation}
-1 =    \frac{J_{1}^{2}}{2\lambda_{-}E}+\frac{J_{2}^{2}}{2I_{0}E}+\frac{J_{3}^{2}}{2\lambda_{+}E}.
-\label{eqn: coe}
+1 = \frac{L_{1}^{2}}{2\lambda_{-}E}+\frac{L_{2}^{2}}{2I_{0}E}+\frac{L_{3}^{2}}{2\lambda_{+}E}.
+\label{eqn: conservation of energy triaxial}
 \end{equation}
+while the conservation of momentum remains as in Eqn.~\eqref{eqn: conservation of momentum biaxial}, that is
 \begin{equation}
-J^{2}  =  J_{1}^{2}+J_{2}^{2}+J_{3}^{2}.
-\label{eqn: com}
+L^{2}  =  L_{1}^{2}+L_{2}^{2}+L_{3}^{2}.
+\label{eqn: conservation of mass triaxial}
 \end{equation}
-The conservation of angular momentum describes an ellipsoid with semi axis
-given by $\sqrt{2\lambda_{-}E}$, $\sqrt{2I_{0}E}$, and $\sqrt{2\lambda_{+}E}$.
-The conservation of energy describes a sphere of radius $J$ and for physical 
-solutions the radius of the sphere is bounded by 
+
+In analogue to the geometric argument of  Sec.~\ref{sec: A_NA}, the first equation,
+the conservation of momentum, describes a triaxial ellipsoid with semi axis
+given by $\sqrt{2\lambda_{-}E}$, $\sqrt{2I_{0}E}$, and $\sqrt{2\lambda_{+}E}$, while
+the conservation of energy still described a sphere of radius $L$. In order to
+satify both conservation equations, the sphere and ellipsoid must intersect
+bounding the radius of the sphere by
 \begin{equation}
-2E\lambda_{-}<J^{2}<2E\lambda_{+}.
+2E\lambda_{-}<L^{2}<2E\lambda_{+}.
 \end{equation}
-For a fixed energy and angular momentum we now have three distinct types of
-intersections as drawn in figure~\ref{fig: sphere ellipsoid}. 
+
+In the case of a biaxial moment of inertia we found that solution, where both
+conservation laws are satified, corresponded to circles around the $\z$ axis.
+Now that we have a triaxial MOI (due to the addition of the anomalous torque)
+the solutions correspond to the intersection of the triaxial ellipsoid with the
+sphere, for which three distinct types of
+intersections as drawn in figure~\ref{fig: sphere ellipsoid}.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{ccc}
     \subfloat[$2E\lambda_{-}<J^{2}<2EI_{0}$]
              {\includegraphics[trim = 70mm 50mm 50mm 20mm, clip=true, width=0.3\textwidth]
-             {Ellipsoid_Sphere_low.pdf}} & 
+             {Ellipsoid_Sphere_low.pdf}} &
     \subfloat[$ J^{2} = 2EI_{0}$]
              {\includegraphics[trim = 70mm 50mm 50mm 20mm, clip=true, width=0.3\textwidth]
              {Ellipsoid_Sphere.pdf}} &
@@ -691,30 +791,33 @@ intersections as drawn in figure~\ref{fig: sphere ellipsoid}.
              {{Ellipsoid_Sphere_high}.pdf}}
 \end{tabular}
 \caption{Intersection of the sphere and ellipsoid defined in equations
-    \eqref{eqn: coe} and  \eqref{eqn: com} respectively. }
+    \eqref{eqn: conservation of energy triaxial} and  \eqref{eqn: conservation of mass triaxial} respectively. }
 \label{fig: sphere ellipsoid}
-\end{figure}•
-We can now relate the three types of intersections to three types of solutions 
-for the spin vector.
+\end{figure}
+
+Each of these types of intersection can be understood through the orderings of
+the radius of the sphere, and the sizes of the three semi-axis of the ellipsoid.
 \begin{enumerate}[(a)]
-\item $2E\lambda_{-}<J^{2}<2EI_{0}$ In this region curves form two sets of
-    complete loops around the $\1$ axis. As $J^{2} \rightarrow 2E\lambda_{-}$
+\item When $2E\lambda_{-}<L^{2}<2EI_{0}$: in this region, curves form two sets of
+    complete loops around the $\1$ axis. As $L^{2} \rightarrow 2E\lambda_{-}$
     the intersection loops will close up about the $\1$ axis.
-\item$ J^{2} = 2EI_{0}$ A special case in which the intersection forms two
+\item When $L^{2} = 2EI_{0}$: this is a special case in which the intersection forms two
     closed ellipses
-\item  $2EI_{0}>J^{2}>2E\lambda_{+}$ In this region curves form two sets of
-    complete loops around the $\3$ axis. As $J^{2} \rightarrow 2E\lambda_{+}$
+\item When $2EI_{0}>L^{2}>2E\lambda_{+}$: in this region, curves form two sets of
+    complete loops around the $\3$ axis. As $L^{2} \rightarrow 2E\lambda_{+}$
     the intersection loops will close up about the $\3$ axis.
 \end{enumerate}
 
-\FloatBarrier
-All simulations begin in the same initial state. As previously observed,
+Now that we have understood the possible types of solution via the intersections
+of the sphere and ellipsoid, we can understand the cause of the unusual behavior
+in Fig.~\eqref{fig: NS A}(b). First we note that
+all simulations begin in the same initial state. As previously observed,
 changing $\chi$ through the critical value changes the sign of $\dot{A}$ and
 hence whether the sphere will grow or shrink with respect to the ellipsoid. So
 for $\chi=30^{\circ}$ the sphere grows with respect to the ellipsoid
 ($\dot{A}>0$) ending up with the loops closing up about the $\3$ axis. For
 $\chi=75^{\circ}$ the sphere shrinks with respect to the ellipsoid
-($\dot{A}<0$) ending up with the loops closing up about the $\1$ axis. The two 
+($\dot{A}<0$) ending up with the loops closing up about the $\1$ axis. The two
 end states are then the (a) and (c) pictures in figure \ref{fig: sphere ellipsoid}.
 
 If they both begin from the same initial configuration, then one of them must pass through
@@ -723,7 +826,7 @@ When this happens, we will observe a change in the axis about which the solution
 precesses.
 
 Both sets of solution start with the solution precessing about the $\3$ axis
-($\phi$ monotonically increasing) corresponding to figure \ref{fig: sphere ellipsoid}(c) 
+($\phi$ monotonically increasing) corresponding to figure \ref{fig: sphere ellipsoid}(c)
 In figure~\ref{fig: NS A}(b) the discontinuity is in fact exactly the point
 when the solution changes the axes of precession.
 
@@ -741,7 +844,7 @@ through a change of the axis about which it precesses.
 \begin{figure}
 \centering
 \begin{tabular}{cc}
-    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.495\textwidth]{{Angle_Space_Plot_3D_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} & 
+    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.495\textwidth]{{Angle_Space_Plot_3D_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
     \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.495\textwidth]{{ThreeD_Plot_Cartesian_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}
 \caption{Numerical solutions for NS A plotted on the unit sphere in the
@@ -765,19 +868,19 @@ nutation amplitude (oscillations in $a$) either decaying or remaining constant.
 Because the spin vector has not aligned with a principle axis of the moment of
 inertia this was interpreted as the spin vector undergoing persistent
 precession. Working in the body frame axis we confirm that $a\ne\pi/2$ at the
-end of the evolution in figure~\ref{fig: NS B}(a). 
+end of the evolution in figure~\ref{fig: NS B}(a).
 
 Transforming to the effective body frame in figure~\ref{fig: NS B}(b) we
 find that the spin vector in fact aligns with the principle axis of the
 effective moment of inertia ($a \rightarrow \pi /2$.  Therefore the persistent
-precession angle found by Melatos is precisely the angle $\beta$. 
+precession angle found by Melatos is precisely the angle $\beta$.
 The spin vector has therefore aligned with the principle axis of
 the effective moment of inertia tensor associated with the smallest Eigenvalue.
-Since the azimuthal angle is constant, we argue that this is not persistent 
+Since the azimuthal angle is constant, we argue that this is not persistent
 precession: the moment spin vector aligns with the effective body frame at which
 point the precession ceases.
 
-\begin{figure}[ht] 
+\begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
     \subfloat[In the body frame axis]
@@ -799,11 +902,11 @@ point the precession ceases.
 In figure \ref{fig: NS C} for all values of $\chi$ the spin vector is found to
 align with the effective body frame $\1$ axis.
 In this
-limit ($\epsilon_{A} \gg \epsilon_{I}$ and so from figure~\ref{fig: beta}) 
+limit ($\epsA \gg \epsilon_{I}$ and so from figure~\ref{fig: beta})
 we see that the $\1$ axis
 aligns with the magnetic dipole. This agrees with the results for a spherical
 star in which $\epsilon_{I} \rightarrow 0$. The addition of the anomalous torque
-introduces oscillations on the anomalous torque timescale. 
+introduces oscillations on the anomalous torque timescale.
 
 \begin{figure}[ht]
 \centering
@@ -820,14 +923,13 @@ C. }
 
 \FloatBarrier
 
-\subsection{Conclusion: Alignment of the spin vector}
+\section{Conclusion: Alignment of the spin vector}
 This simple model, comprising an elastic body supporting a biaxial strain and
 acted on by an electromagnetic torque, has been validated against known
 analytic results. Neglecting the anomalous torque we expand on the results of
 \citet{Goldreich1970}: the dependency on $\chi$ of the spin vector alignment is
-related to the ratios of angular momentum and energy. 
-
-When using the anomalous torque we introduce the effective body frame. 
+related to the ratios of angular momentum and energy.
+When using the anomalous torque we introduce the effective body frame.
 In all cases we find that the spin vector aligns with
 the principle axis of the effective moment of inertia tensor. For NSs in
 region A of figure~\ref{fig: phase space} the effective moment of inertia tensor
@@ -835,7 +937,7 @@ is triaxial. This means that it is possible for the spin vector to precess
 about either of the principle axis associated with the smallest and largest
 Eigenvalue. As a result solutions can admit apparent discontinuities, under
 inspection these are revealed as the points where the precession changes
-between the two axis. 
+between the two axis.
 
 %\section{Connection with the known NS population}
 %\label{sec: Connection with the known NS population}
@@ -881,7 +983,7 @@ between the two axis.
 %are due to precession.}
 %\label{fig: phase space for actual spin frequency}
 %\end{figure}•
-%Plotting the results in figure~\ref{fig: phase space for actual spin frequency} we observe that all NSs exist in Region A of the phase diagram. 
+%Plotting the results in figure~\ref{fig: phase space for actual spin frequency} we observe that all NSs exist in Region A of the phase diagram.
 %
 %\FloatBarrier
 %
@@ -901,7 +1003,7 @@ between the two axis.
 %precession. In addition we can check the ideas of \citet{Cordes2013} that the
 %periodicity results from stochastic resonance. Comparing the size and frequency
 %of kicks with realistic models  will help to ascertain the validity of this
-%idea. 
+%idea.
 
 \begin{subappendices}
 \input{\thisdir/Appendix}
