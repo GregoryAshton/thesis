@@ -6,7 +6,7 @@ main = introduction.pdf
 
 main : $(main)
 
-$(main): *.tex ../bibliography.bib ../style_file.sty
+$(main): *.tex ../bibliography.bib ../thesis.sty
 	pdflatex ${@:.pdf=} && bibtex ${@:.pdf=} && pdflatex ${@:.pdf=} && pdflatex ${@:.pdf=} && pdflatex ${@:.pdf=}
 
 clean :
