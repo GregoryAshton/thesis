@@ -6,42 +6,99 @@
 
 \begin{document} 
 
-\input{\thisdir/introduction_text}
+Neutrons stars were first postulated by Landau as `dense stars
+which look like giant atomic nuclei' \citep{Yakovlev2013} even before the
+discovery of the neutron by \citet{Chadwick1932}. However it was
+\citet{Baade1934} who made the explicit prediction of a neutron star whilst
+trying to explain the energy released in observed supernova.
+
+In a main-sequence star, the nuclear fusion of
+hydrogen atoms into helium provides outward pressure balancing the star in an
+equilibrium configuration with the inward pressure of the stars self-gravity.
+Eventually the star depletes its reserves of hydrogen and can no longer
+maintain the equilibrium. If the star has an initial mass greater than $\sim 8
+\Msun$, then it may undergo a \emph{core-collapse supernova} during which some
+of the mass is ejected, but the rest falls in creating a new compact object.
+In this object, temperatures and pressure rapidly sore and the
+electrons and protons undergo inverse beta decay combining to form neutrons and
+neutrinos
+\begin{equation}
+    e^{-} + p \rightarrow n + \nu.
+\end{equation}
+If the compact objects mass is less than $\sim 5 \Msun$, then once the pressures
+reaches nuclear densities of $\sim 2.3 \times10^{14}$~g/cm$^{3}$, neutron
+degeneracy pressure can halt the collapse in a new compact stable equilibrium
+configuration which we call a neutron star. For remnants with larger masses,
+this is not possible and the object will collapse to form a black-hole; the
+detail of exactly what the critical mass a neutron star can sustain is
+sensitive to the equation of state of matter under these conditions.
+
+Our knowledge of neutron stars is founded on observations made by
+electromagnetic astronomy. This has revealed a wealth of different neutron
+stars and their phenomena which we will introduce in the following sections.
+Many of these observed phenomena have well defined models which explain how
+they come about and allow us to infer properties of neutron stars themselves.
+However, our knowledge of neutron stars is far from complete: current
+observations can be contradictory or have features not explained by any known
+physical models. Improvements in electromagnetic astronomy will bring to light
+a greater number of new neutron stars and improve the resolution of those
+currently observed; it hoped that this will help us to better understand them.
+
+There are two other methods we can use to learn about neutron stars: improved
+modelling of current observations and by observing them from their
+gravitational wave emission. In this thesis, we will study how one of the
+observed phenomena, so-called `timing variations', can help us to learn more
+from current observations and also test whether it may hinder the current
+search for gravitational waves from neutrons stars.
+
+In this introduction, we will acquaint the reader with the current observations
+of neutron stars, introduce some of the basic physics of neutron, and describe
+exactly what we mean by timing variations.
 
 \section{Observation of pulsars and their identification with neutron stars}
 \input{\thisdir/observation_of_pulsars}
 
+\section{Pulsar timing}
+\label{sec: pulsar timing methods}
+\input{\thisdir/pulsar_timing_methods}
+
 \section{Categorising neutron stars}
+\label{sec: categorising neutron stars}
 \input{\thisdir/categorising_neutron_stars}
 
 \section{The physics of rotation powered pulsars} 
 \label{sec: rotation powered pulsars}
 \input{\thisdir/rotation_powered_pulsars}
 
-\FloatBarrier
-%\section{The importance of neutron stars}
-%%Neutron stars fill an important role in fundamental physics. Their extreme
-%%densities but low temperatures make then ideal laborotories to explore this
-%%region of the QCD phase diagram. In particular the study of the equation of
-%%state at nuclear densities. Their extreme compactness 
-%
-%\section{Neutron stars as a source of gravitational waves}
+\section{Neutron stars as a source of gravitational waves}
 
-\section{Pulsar timing methods}
-\label{sec: pulsar timing methods}
-\input{\thisdir/pulsar_timing_methods}
+\section{Plan of the thesis}
 
-\section{Glitches}
-\label{ref: glitches}
-\input{\thisdir/glitches}
+Following this introductory chapter, we will have a chapter introducing
+so-called timing variations in pulsars: glitches and timing-noise. This will
+introduce the observed phenomena and describe the current state of modelling,
+we will provide some original work on simple ways which the models could be
+tested.
 
-\section{Timing noise: observations}
-\label{sec: timing noise observations}
-\input{\thisdir/timing_noise_observations}
+In the next four chapters we evaluate models of timing noise in the face of
+current observations and attempt to constrain the models.  In Chapter~\ref{sec:
+rotating frame} we gain some intuition for how \emph{precession}, a possible
+model for timing-noise, operates in the inertial frame of the star.  Following
+this, Chapter~\ref{sec: rotating frame} looks at how precession will manifest
+in the observations made by pulsar astronomers. In Chapter~\ref{sec: testing
+models} we perform a rigourous model comparison between precession and the
+leading alternative, \emph{switching}, for PSR~B1828-11. This is then extended
+in Chapter.~\ref{sec: extending precession models} where we use the model
+comparison tools to discover previously unknown fundamental physics of the
+pulsar.
 
-\section{Timing noise: interpretations}
-\label{sec: timing noise interpretations}
-\input{\thisdir/timing_noise_interpretations}
+In the final three chapters we approach another important aspect of timing
+variations for neutron stars: the effect they may have on our ability to
+detection gravitational waves from neutron stars. In Chapter~\ref{sec: intro to
+cgw} we introduce the methods and formalisms used by gravitational wave
+astronomy before analysing the effect of glitches in Chapter~\ref{sec: glitches
+in cgw} and the effect of timing-noise in Chapter~\ref{sec: timing noise in
+cgw}.
 
 \biblio
 
