@@ -63,6 +63,7 @@
 \renewcommand{\chaptermark}[1]{\btypeout{\thechapter\space #1}\markboth{\@chapapp\ \thechapter\ #1}{\@chapapp\ \thechapter\ #1}}
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\subsectionmark}[1]{}
+\renewcommand{\baselinestretch}{1.1}
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
 \hbox{}
 \thispagestyle{empty}

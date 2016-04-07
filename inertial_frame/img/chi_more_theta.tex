@@ -1,0 +1,31 @@
+\documentclass{article}
+
+\usepackage{tikz_imports}
+
+\begin{document}
+
+\newcommand{\AxisRotator}[1][rotate=0] {%
+  \tikz[decoration={
+    markings,
+    mark=at position 1 with {\arrow{latex}}}]\draw[x = .5em, y = 2.75em, line width = .2ex,#1,postaction=decorate] (0,0)  arc (-150:150:.45 and .5) -- ++(-95:2pt);%                                                   
+  }
+
+
+\begin{figure}[ht]
+\centering
+
+\begin{tikzpicture}[scale=5]
+
+%define angles
+\pgfmathsetmacro{\thetaang}{30}
+\pgfmathsetmacro{\chiang}{50}
+\pgfmathsetmacro{\thetaanghat}{-5}
+
+\input{base_diagram}
+
+\draw[red!90!black] (0, 0.7)  arc (90: 90-(\thetaang - \chiang): 0.7);
+\node[red!90!black] at ({-0.73 * sin(.5*(\chiang-\thetaang))},{0.73 * cos(.5*(\chiang-\thetaang))}){$\chi- \theta$} ;
+
+\end{tikzpicture}
+\end{figure}
+\end{document}
