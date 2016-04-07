@@ -1,0 +1,50 @@
+\documentclass[../full_thesis/full_thesis.tex]{subfiles}
+
+% Default image directory
+\newcommand{\thisdir}{../analytic_timing_noise_cgw}
+\graphicspath{{\thisdir/img/}}
+
+\begin{document}
+In this section we use the generalised fully-coherent metric mismatch approximate
+to calculate the analytic mismatch for a variety of timing-noise models.
+
+\section{Random walk models}
+\label{sec: random walk models}
+
+Here  we consider a simplistic model of timing noise in which the phase,
+frequency, and spindown perform a random walk at fixed time intervals over N
+steps. Choosing fixed time intervals appears to introduce an additional
+timescale not usually present in random walk models. However, as discussed in
+section \ref{sec: physical interpretation of the monthly ephemeris} this is
+consistent with a large number of unresolved events which are measured over a
+fixed time scale. We therefore expect the fixed timescale to drop out when we
+write results in terms of the unresolved events.  While random walk models are
+not considered to be an accurate description of timing noise over long time
+scales, over typical CW search time scales they may provide a reasonable
+approximation.
+
+\subsection{Defining a random walk}
+\label{sec: Defining a random walk}
+\input{\thisdir/defining_a_random_walk}
+
+\subsection{Random walk models part I}
+\label{sec: Random walk models part I}
+\input{\thisdir/random_walk_models_part_I}
+
+\subsection{Random walk models part II} 
+\label{sec: Random walk models part II}
+\input{\thisdir/random_walk_models_part_II}
+
+\section{Two state switching model}
+\label{sec: Two state switching model}
+\input{\thisdir/lyne_switched_model}
+
+
+\begin{subappendices}
+    \input{\thisdir/summation_identities}
+\end{subappendices}
+
+
+\biblio
+
+\end{document}
