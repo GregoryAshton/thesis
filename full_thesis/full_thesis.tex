@@ -8,43 +8,47 @@
 \begin{document}
 \def\biblio{}
 
-\begin{titlepage}
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\begin{center}
-
-\textsc{\LARGE University of Southampton}\\[0.2cm]
-\textsc{\Large Faculty Of Social And Human Sciences}\\[0.2cm]
-\textsc{\Large Mathematical Sciences}\\[1.5cm]
-
-\HRule \\[0.4cm]
-{ \huge \bfseries Timing noise in pulsars \\[0.4cm] }
-
-\HRule \\[1.5cm]
-
-% Author and supervisor
-\noindent
-\begin{minipage}{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-Gregory \textsc{Ashton}
-\end{flushleft}
-\end{minipage}%
-\begin{minipage}{0.4\textwidth}
-\begin{flushright} \large
-\emph{Supervisors:} \\
-Dr.~David~Ian \textsc{Jones} \\
-Dr.~Reinhard \textsc{Prix}
-\end{flushright}
-\end{minipage}
-
-\vfill
-
-% Bottom of the page
-{\large \today}
-\end{center}
-\end{titlepage}
-
+\frontmatter
+\title      {Timing variations in neutron stars}
+\authors    {Gregory Ashton}
+\faculty  {Faculty of Social, Human and Mathematical Sciences}
+\department    {Gravity Group}
+%\addresses  {\groupname\\\deptname\\\univname}
+\date       {\today}
+\subject    {}
+\keywords   {}
+\maketitle
+\begin{abstract}
+This work is all about \dots
+\end{abstract}
 \tableofcontents
+%\listoffigures
+%\listoftables
+
+%% -----------------------
+%% lstpatch.sty
+%% -----------------------
+%% lstpatch cannot be distributed with these files. I believe it is only needed if the
+%% \lstlistoflistings is used. So this has been turned off by default. Re-add if required:
+%% \usepackage{lstpatch}
+%% \lstlistoflistings
+%% You will need to download lstpatch, possibly from:
+%% http://web.mit.edu/texsrc/source/latex/listings/lstpatch.sty
+%% -----------------------
+
+
+%% -----------------------
+%% Authorship declaration
+%% -----------------------
+%% Either include citations like below (as many as required spaced with commas or 'and').
+\authorshipdeclaration{\citep{Ashton2015} and \citep{Ashton2016}.}
+%% Or state no citations like below
+%% \authorshipdeclaration{}
+%% -----------------------
+
+\acknowledgements{Thanks to no one.}
+\listofsymbols{ll}{$w$ & The weight vector}
+\mainmatter
 
 \chapter{Introduction}
 \label{sec: neutron star physics}

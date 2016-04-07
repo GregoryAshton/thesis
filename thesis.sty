@@ -46,9 +46,9 @@
 \def\biblio{\bibliography{/home/greg/thesis/bibliography}}
 
 % Labels
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
 
 % Adding subfiles
 \newcommand{\inputpath}[1]{
@@ -56,6 +56,9 @@
 \def\input@path{{#1}}
 \makeatother
 }
+
+% For the title page
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 % Header/Footer
 %\usepackage[pagestyles]{titlesec}

@@ -163,22 +163,33 @@
     \vskip 60\p@
     \begin{center}
       \setlength{\parskip}{0pt}
-      {\large\textbf{\UNIVNAME}\par}
+      {\LARGE\textsc{\UNIVNAME}\par}
       \bigskip
-      {\normalsize \FACNAME \par}
+      {\large\textsc{\FACNAME} \par}
       \smallskip
-      {\normalsize \deptname \par}
-      \vfill
-  \bigskip
+      {\large\textsc{\deptname} \par}
+  \vspace{3cm}
+  \HRule \\[0.4cm]
+  {\huge \bfseries \@title \\[0.4cm]}
+  \HRule \\[1.5cm]
       \bigskip
-      \bigskip
-      \bigskip
-  {\large \bf \@title \par}
-      \bigskip
-      {\Large by \par}
-      \bigskip
-      \bigskip
-      {\large \textbf{\authornames} \par}
+
+% Author and supervisor
+\noindent
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Gregory \textsc{Ashton}
+\end{flushleft}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisors:} \\
+Dr.~David~Ian \textsc{Jones} \\
+Dr.~Reinhard \textsc{Prix}
+\end{flushright}
+\end{minipage}
+
       \vfill
       {\large Thesis for the degree of Doctor of Philosophy\par}
 
@@ -232,7 +243,7 @@
   \cleardoublepage
 }
 \addtocounter{secnumdepth}{1}
-\setcounter{tocdepth}{6}
+\setcounter{tocdepth}{2}
 \newcounter{dummy}
 \newcommand\addtotoc[1]{
 \refstepcounter{dummy}
