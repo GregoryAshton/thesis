@@ -4,25 +4,19 @@
 \newcommand{\thisdir}{../timing_noise_in_CGW}
 \graphicspath{{\thisdir/img/}}
 
+\newcommand{\tmid}{t^{\textrm{mid}}_{i}}
+
 \begin{document}
 
-% Shorthand math 
-%\newcommand{\f}{f}
-%\newcommand{\fdot}{\dot{\f}}
-%\newcommand{\fddot}{\ddot{\f}}
-%\newcommand{\To}{T_{\textrm{obs}}}
-%\newcommand{\mGRID}{m}
-%\newcommand{\mumin}{\mu_{\mathrm{min}}}
-%\newcommand{\muminAvg}{\langle\mumin\rangle}
-%
-%\newcommand{\dcc}{LIGO-P1400207-v1+}
+In this chapter we will investigate the effect of timing noise on targeted and
+narrow-band coherent searches for continuous gravitational waves from pulsars.
+In particular, we will use the so-called Crab ephemeris data (introduced in
+Sec.~\ref{sec: timing noise as described by the crab ephemeris}) to simulate
+`noisy' gravitational wave signals and study how standard search tools perform
+when attempting to detect the signals.
 
-\section{The effect of timing noise on targeted and
-    narrow-band coherent searches for continuous gravitational waves
-    from pulsars}
-
-\subsubsection{Introduction}
-\label{sec: narrow-band introduction} 
+\section{Introduction}
+\label{sec: narrow-band introduction}
 Rotating neutron stars capable of supporting non-axisymmetric mass
 distributions will emit continuous gravitational
 waves\footnote{Note that in general ``continuous waves'' can
@@ -51,9 +45,9 @@ The templates must model the monotonic spin-down of the source due to the
 electromagnetic (EM) and gravitational torque; this is done by Taylor expanding
 the phase:
 \begin{equation}
-\phi(t) = \phi_{0} + 2\pi\left(\f_{0} (t - t_{0}) + 
-          \frac{\fdot_{0}}{2!} (t - t_{0})^{2} 
-           %+ \frac{\fddot}{3!} (t - t_{i})^{3} 
+\phi(t) = \phi_{0} + 2\pi\left(\f_{0} (t - t_{0}) +
+          \frac{\fdot_{0}}{2!} (t - t_{0})^{2}
+           %+ \frac{\fddot}{3!} (t - t_{i})^{3}
            \right)
            + \ldots
            \,,
@@ -61,7 +55,7 @@ the phase:
 \end{equation}
 where $t_{0}$ is the reference time at which the pulsar frequency, and
 spin-down parameters $[\phi_{0}, \f_{0}, \fdot_{0}, \ldots]$ are defined. Note
-that all times refer to the solar system barycentre and we assume the 
+that all times refer to the solar system barycentre and we assume the
 timing model has already correctly accounted for the dispersion measure, proper motion
 and other parameters as discussed in \citet{Edwards2006}.
 Pulsar astronomers fit this model to observed time of arrivals (TOAs). If the
@@ -79,8 +73,8 @@ and spin-downs refer to the pulsars CW emission.
 
 While Taylor expansion models are on average reliable enough to track the
 spin-down, pulsars do show deviations. This can either be in the form of
-glitches, occasional sudden increases in the rotation frequency, or 
-continuous low-frequency 
+glitches, occasional sudden increases in the rotation frequency, or
+continuous low-frequency
 variations known as \emph{timing noise}. Glitches and timing-noise may be
 related phenomena, but are distinguishable by their relative frequency
 and magnitudes. In this work we restrict our focus to timing noise (we will comment
@@ -100,7 +94,7 @@ exists measures used to quantify the strength of timing noise such as the
 $\Delta_{8}$ value introduced by \citet{Arzoumanian1994}, the generalisation
 of the Allan variance \citep{Matsakis1997}, the covariance function of the
 residuals \citep{Coles2011}, and fitting for timing noise as part of the pulsar
-timing model \citep{Lentati2014}. These do not convert directly 
+timing model \citep{Lentati2014}. These do not convert directly
 into the effect that timing noise may have on CW searches for pulsars. To quantify this, we
 need to measure the \emph{mismatch} due to timing noise. This is closely
 related to the loss of signal to noise ratio due to the imperfect matching
@@ -169,7 +163,7 @@ phase model.
     ratio for single-template targeted searches that account for timing noise
     using an adapted phase model (for example \citet{ligo2008}).  Instead,
     these searches will now erroneously introduce timing noise into the
-    template while the signal will be a smooth Taylor expansion. 
+    template while the signal will be a smooth Taylor expansion.
 
 \end{itemize}
 
@@ -207,7 +201,7 @@ the Crab ephemeris and an adapted phase model to account for timing noise.  In
 addition to this single-template search, a narrow-band search for signals from
 the Crab was also performed by \citet{ligo2008} on the S5 data. Another
 narrow-band search for the Crab was carried out using data from the VIRGO
-VSR4 science run along with a search for the Vela pulsar \citep{LIGO2015}. 
+VSR4 science run along with a search for the Vela pulsar \citep{LIGO2015}.
 
 The structure of this paper is as follows. In section \ref{sec: timing noise as
 described by the crab ephemeris} we describe the observational data available
@@ -222,7 +216,7 @@ the duration of observation. We summarise our results in section \ref{sec:
 narrow-band conclusions}.
 
 
-\subsection{Timing noise as described by the Crab ephemeris}
+\section{Timing noise as described by the Crab ephemeris}
 \label{sec: timing noise as described by the crab ephemeris}
 The monthly Crab ephemeris \citep{Lyne1993} provides the phase evolution of the
 EM signal between 1982 and the present and can be found at
@@ -265,9 +259,9 @@ single global template to all the local ones.
 
 \begin{figure}[htb]
 \centering
-    \includegraphics{template_jumps} 
-\caption{Illustration of the jumps between 'local' per-month templates in 
-    frequency space, defining the frequency jump $\Delta \f$. This 
+    \includegraphics{template_jumps}
+\caption{Illustration of the jumps between 'local' per-month templates in
+    frequency space, defining the frequency jump $\Delta \f$. This
         depiction amplifies the order of magnitude of $\Delta \f$ in order to
         highlight the timing-noise: for the jumps in the ephemeris, $\Delta \f$
         is several orders of magnitude smaller than the change in frequency
@@ -280,28 +274,36 @@ noise in CW searches by generating signals from the Crab ephemeris. This
 is an empirical description of timing noise and so we
 make no assumptions on the underlying astrophysical model.
 
-\subsection{Distribution and magnitude of jumps}\label{sec: jumps}
-We now take some time to consider the distribution of jumps as described by the 
-Crab ephemeris. Considering the frequency first, since it is the simplest
-case, we then go on to look at the spindown and phase. This is a useful exercise and 
-provides an alternative description of timing noise in terms of the monthly
-jumps. 
+\subsection{Distribution and magnitude of jumps in the Crab ephemeris}
+\label{sec: jumps}
 
-\subsubsection{Frequency differences}
+The regular and independent measurements of the frequency and spin-down rate in
+the Crab ephemeris provide a unique way view of timing noise as a `jump' in the
+phase, frequency, and spin-down rate each month. Specifically by a jump we mean
+the discontinuity at the interface between two months as illustrated in
+Fig.~\ref{fig: template jumps}.  This data collection method provides a
+potential way to test timing-noise models by making a prediction for the
+distribution of jumps they predict under this data collection mechanism and
+comparing with the Crab distributions. In the this section we will
+calculate what these distributions look like and then in Section~\ref{sec:
+physical interpretation of the monthly ephemeris} we consider the relation of
+this data to random walk models.
 
-The frequency drift is the difference between the predicted values at the
-interface from adjacent data points as illustrated in figure~\ref{fig: template
-jumps}.  Defining the frequency $\f_{i}(t)$ as the frequency according to the
+There are three possible distributions we will consider here: the jumps in
+frequency, spin-down rate, and phase. It is not meaningful to simply look at
+the difference in frequency (for example) between any two months, what we want
+is the difference which occurs at the interface. To calculate this
+we define $\f_{i}(t)$ as the frequency according to the
 $i^{th}$ template as evaluated at time $t$. Then if $\Delta t_{i} = t_{i+1} -
-t_{i}$ the frequency drift is 
+t_{i}$ the frequency drift is
 \begin{align}
-\Delta\f_{i} &= \f_{i+1}\left(t_{i+1}-\Delta t_{i}/2\right) -  \f_{i}\left(t_{i}+\Delta t_{i}/2\right), \\ 
-    &= \left[\f_{i+1}- \frac{\Delta t_{i}}{2}\dot{\f}_{i+1} + \left(\frac{\Delta t_{i}}{2}\right)^{2}\frac{\ddot{\f}_{i+1}}{2}\right] 
+\Delta\f_{i} &= \f_{i+1}\left(t_{i+1}-\Delta t_{i}/2\right) -  \f_{i}\left(t_{i}+\Delta t_{i}/2\right), \\
+    &= \left[\f_{i+1}- \frac{\Delta t_{i}}{2}\dot{\f}_{i+1} + \left(\frac{\Delta t_{i}}{2}\right)^{2}\frac{\ddot{\f}_{i+1}}{2}\right]
      - \left[\f_{i} + \frac{\Delta t_{i}}{2}\dot{\f}_{i}+ \left(\frac{\Delta t_{i}}{2}\right)^{2}\frac{\ddot{\f}_{i}}{2}\right] .
 \end{align}
 The Crab ephemeris does not include the second order spin down, but since the
 first order spin down is not constant we assume a constant average second order
-spin down given by 
+spin down given by
 \newcommand{\fddotav}{\ddot{\f}_{\textrm{av}}}
 \begin{equation}
    \fddotav = \frac{1}{N}\sum_{i} \frac{\dot{\f}_{i+1} - \dot{\f_{i}}}{t_{i+1} - t_{i}},
@@ -311,82 +313,62 @@ where $N$ is in the number of data points in the ephemeris file. Inserting this
 into the Taylor expansion the second order terms cancel leaving a frequency
 drift given by
 \begin{equation}
-\Delta\f_{i} = \left(\f_{i+1}- \f_{i}\right) -  \left(\dot{\f}_{i+1} 
+\Delta\f_{i} = \left(\f_{i+1}- \f_{i}\right) -  \left(\dot{\f}_{i+1}
                + \dot{\f}_{i}\right)\frac{\Delta t_{i}}{2}.
 \label{eqn: crab frequency residuals}
 \end{equation}
 Note, this is not the difference in frequency between monthly
 updates, but the drift in frequency at the interface as illustrated in figure
-\ref{fig: template jumps}. 
+\ref{fig: template jumps}.
 
-Calculating the result of equation \eqref{eqn: crab frequency residuals} for
-the Crab ephemeris we plot the histogram results in figure \ref{fig: F0_hist}.
-Note that before binning the data, we have filtered out differences which
-occur over known glitches described as described by \citet{Espinoza2011}. This
-is because we are interested in the timing noise activity and not the effect
-of glitches.
-
+Calculating the result of Eqn.~\eqref{eqn: crab frequency residuals} for all
+the data points in the Crab ephemeris we plot the Gaussian kernel density
+estimate (KDE) in Fig.~\ref{fig: crab kde}A.  Note that before binning the
+data, we have filtered out differences which occur over known glitches
+described as described by \citet{Espinoza2011}. This is because we are
+interested in the timing noise activity and not the effect of glitches.
 \begin{figure}[ht]
 \centering
-\includegraphics[]{F0_hist.pdf}
-\caption{Histogram showing the distribution of frequency jumps in the Crab 
-        ephemeris as calculated by 
-        equation~\eqref{eqn: crab frequency residuals}. These results are filtered
-    against known glitches.}
-\label{fig: F0_hist}
-\end{figure}•
+\includegraphics[]{CrabTN_KDEs.pdf}
+\caption{KDEs for the `jumps' in frequency, spin-down rate, and phase between
+         adjacent templates in the Crab ephemeris. Adjacent templates over
+         glitches are filtered and for the spin-down rate and
+         phase large outliers have been removed once it was confirmed they
+         occur within 200 days of a glitch.}
+\label{fig: crab kde}
+\end{figure}
 
-
-\subsubsection{Spindown differences}
 Moving now to the spindown, we can calculate the drift in a similar way
 \begin{align}
 \Delta\dot{\f}_{i} & = \fdot_{i+1}\left(t_{i+1}-\Delta t_{i}/2\right) -  \fdot_{i}\left(t_{i}+\Delta t_{i}/2\right), \\
 & = \left(\dot{\f}_{i+1}-\dot{\f}_{i}\right) -  \fddotav \Delta t_{i}
 \label{eqn: crab spindown residuals}
 \end{align}
+For the spindown a population of large negative jumps was observed, these are
+found to occur in the post-glitch periods and hence are not the timing noise
+activity that we are interested in. As such in Fig.~\ref{fig: crab kde}B, we
+filter out these anomalous results to show the KDE for data points known to be
+related to timing noise.
 
-For the spindown a population of large negative jumps is observed, these are
-found to occur in the post-glitch periods and hence are not timing noise
-activity.  As such we introduce a cut-off so that the distribution of jumps due
-to timing noise can be inspected. The result is plotted in figure \ref{fig: F1_hist},
-again we have filtered against differences which occur over known glitches.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[]{F1_hist.pdf}
-\caption{Histogram showing the distribution of spindown jumps in the Crab ephemeris as 
- calculated by equation~\eqref{eqn: crab spindown residuals}. An inset graph
- repeats the calculation having cut off a population of events with large
- absolute magnitudes. These results are filtered against known glitches.}
-\label{fig: F1_hist}
-\end{figure}•
-
-\FloatBarrier
-\subsubsection{Phase differences}
-\newcommand{\tmid}{t^{\textrm{mid}}_{i}}
-
-For the phase we can use that each reference time given in the ephemeris coincides
-with a pulse. Therefore between two adjacent references times, the star has 
-undergone an integer number of rotations. We can evaluate how well the ephemeris
-performs here by calculating the residual number of
-rotations between the timing model at a given step and the pulse arrival time at the next
-step. The data in the ephemeris file does not directly provide
-information on the phase evolution, it provides the independent phase evolution
-in each month with the phase at the reference time being zero. To calculate the
-full phase evolution between two reference times, we need to calculate the
-phase difference between each reference time and the interface time between
-them. Take this interface to be halfway between such that $\tmid=(t_{i} +
+For the phase we can use that each reference time given in the ephemeris
+coincides with a pulse. Therefore between two adjacent references times, the
+star has undergone an integer number of rotations. We can evaluate how well the
+ephemeris performs here by calculating the residual number of rotations between
+the timing model at a given step and the pulse arrival time at the next step.
+The data in the ephemeris file does not directly provide information on the
+phase evolution, it provides the independent phase evolution in each month with
+the phase at the reference time being zero. To calculate the full phase
+evolution between two reference times, we need to calculate the phase
+difference between each reference time and the interface time between them.
+Take this interface to be halfway between such that $\tmid=(t_{i} +
 t_{i+1})/2$, then the total number of rotations between two reference times is
-
 \begin{equation}
-    N = \frac{1}{2\pi}\left(\left(\phi_{i}(\tmid) - \phi_{i}(t_{i})\right) -  
+    N = \frac{1}{2\pi}\left(\left(\phi_{i}(\tmid) - \phi_{i}(t_{i})\right) -
     \left(\phi_{i_i+1}(\tmid) - \phi_{i+1}(t_{i+1})\right)\right)
 \end{equation}
-
 The phase at the reference time is zero so this leaves $N =
 \frac{1}{2\pi}\left(\phi_{i}(\tmid) - \phi_{i+1}(\tmid)\right)$ where the terms
 are explicitly given by
-
 \begin{align}
 \phi_{i}(\tmid) & = 2\pi\left((\tmid - t_{i})\f_{i} +  \frac{\dot{\f}_{i}}{2!}(\tmid - t_{i})^{2}+\frac{\fddotav}{3!}(\tmid - t_{i})^{3}\right) \\
 \phi_{i+1}(\tmid) & = 2\pi\left((\tmid - t_{i+1})\f_{i+1} +  \frac{\dot{\f}_{i+1}}{2!}(\tmid - t_{i+1})^{2}+\frac{\fddotav}{3!}(\tmid - t_{i+1})^{3}\right) .
@@ -397,66 +379,60 @@ the length of a given month and the spindown parameters. Calculating this
 allows us to check how well phase connected lines of the ephemeris are. A phase
 connected solution tracks the rotation of the pulsar to within a single pulse.
 The residual number of rotations defined as
-
 \begin{equation}
 \Delta N = N - \textrm{round}(N)
-\end{equation}•
-quantifies how well phase connected the timing solution is.  
+\end{equation}
+quantifies how well phase connected the timing solution is.
 
-We plot the histogram of $\Delta N$ in figure~\ref{fig: N_hist} having filtered
-against known glitch events.  Again we find a small number (4) of large phase
-offsets which are found to occur within $\sim200$~days of known glitched. We
-therefore introduce a cutoff and in the right hand panel of figure \ref{fig:
-N_hist} plot the histogram of phase differences due to timing noise. 
-\begin{figure}[ht]
-\centering
-\subfloat[Histogram of $\Delta N$]{\includegraphics[]{N_hist.pdf}}
-\subfloat[Histogram of $\Delta N$ filtering results with $\Delta N > 0.1$]
-         {\includegraphics[]{N_hist_cutoff.pdf}}
-\caption{Histograms showing the distribution of $\Delta N$ as defined by
-    equation~\eqref{eqn: crab frequency residuals} for the Crab ephemeris. In
-    the left panel a histogram of $\Delta N$ is given for all data in the Crab
-    ephemeris excluding lines which cross a glitch. Several large jumps occur,
-    but since all $\Delta N < 1.0$ the timing solution is phase-connected. In
-the right hand plot we filter out the jumps larger than $0.1$. These were all
-found to occur in the post-glitch epoch within$\sim 200$ days of a glitch.}
-\label{fig: N_hist}
-\end{figure}•
+In Fig.~\ref{fig: crab kde}C we plot the KDE of $\Delta N$ having filtered
+against known glitch events. We found four jumps where $0.1 < \Delta N < 1.0$;
+again these were found to be occur within~$\sim200$~days of known glitches and
+so were removed to focus attention on the timing-noise activity.
 
-\FloatBarrier
-
-\subsection{Physical interpretation of the monthly ephemeris}
+{\color{blue}
+% And all references
+\subsection{Interpretating jumps in the Crab ephemeris: random walks}
 \label{sec: physical interpretation of the monthly ephemeris}
-Many of the features used to distinguish the source of timing noise, for
-example the state switching, occur over time scales much longer than typical 
-CW searches. The observation of \citet{Hobbs2010} that over sufficiently 
-long time scales residuals tend to admit quasi-periodic features can be 
-turned around to argue that over sufficiently short time scales timing noise
-is approximated by a random walk. For our purposes then it is sufficient 
-to think of timing noise as a random walk. 
+%Many of the features used to distinguish the source of timing noise, for
+%example the state switching, occur over time scales much longer than typical
+%CW searches. The observation of \citet{Hobbs2010} that over sufficiently
+%long time scales residuals tend to admit quasi-periodic features can be
+%turned around to argue that over sufficiently short time scales timing noise
+%is approximated by a random walk. For our purposes then it is sufficient
+%to think of timing noise as a random walk.
 
-We now demonstrate the relation of
-compound Poisson process random walks to the Crab ephemeris.
+Random walk models of timing noise are disvoured by recent findings
+\citep{Hobbs2010}, but they nevertheless remain a good description of timing
+noise over short time periods. Therefore, let us now consider the prediction of
+a random walk model for the jumps in the Crab ephemeris.
 
 Consider a parameter $\Delta X(t) \in [\Delta\phi, \Delta\f,\Delta\fdot]$ being
 the difference between the real noisy signal and the search template. $\Delta
-X(t)$ encodes the deviations due to timing noise without concerning the secular
-spindown. We model timing noise by allowing $\Delta X(t)$ to undergo a compound
-Poisson process with events Poisson distributed in time occurring with a rate
-$\lambda$ while the events are drawn from a distribution with zero mean and 
-a mean square value $\langle\Delta X^{2}\rangle$. Note the mean square value is
-the expectation of the second moment of the distribution. Then setting $\Delta
-X(0)=0$ after an observation time $\dT$  the parameter will have expectation
-and variance given by \begin{align} \textrm{E}[\Delta X(\dT)] = 0 \label{eqn:
-    Poisson expectation} \\ \textrm{Var}[\Delta X(\dT)] = \lambda \dT
-    \langle\Delta X^{2}\rangle \label{eqn: Poisson variance} \end{align}
+X(t)$ then encodes the deviations due to timing noise without concerning the secular
+spindown.
+
+We model timing noise by allowing $\Delta X(t)$ to undergo a \emph{compound
+Poisson process}: a random walk where events are Poisson distributed in time
+occurring with a rate $\lambda$, but the size the events are drawn from a
+normal distribution with zero mean and a variance, or mean square value of
+$\langle\Delta X^{2}\rangle$.
+
+Then if initially $\Delta X(0)=0$, after an observation time $\dT$  the
+parameter will have expectation
+and variance given by
+\begin{align}
+\textrm{E}[\Delta X(\dT)] = 0
+\label{eqn: Poisson expectation} \\
+\textrm{Var}[\Delta X(\dT)] = \lambda \dT \langle\Delta X^{2}\rangle
+\label{eqn: Poisson variance}
+\end{align}
 
 By selecting month long periods over which to fit to the Crab ephemeris, means
 we observe the accumulated effect of the compound Poisson process during that
 interval. If we then label the parameter offset in each given month as $\Delta
 X_{i}(\dT)$ then $\{\Delta X_{1}, \Delta X_{2}, \dots\}$ is a sequence of
 independent and identically distributed random variables with mean and variance
-as given above.  If the event rate $\lambda$ is sufficiently large such that a
+as given above. If the event rate $\lambda$ is sufficiently large such that a
 significant number of events occur over the observation period $\dT$, then the
 distribution of $\Delta X_{i}$ is approximately a standard normal distribution
 with variance $\textrm{Var}[\Delta X(\dT)] =\sigma_{X}^{2} = \lambda \dT
@@ -468,7 +444,7 @@ more details see \citet{Feller1968}
 %we may interpret the description of timing noise given by the Crab ephemeris as
 %a compound Poisson process with a large event rate. To test this idea
 %dependence of $\sigF$ or $\sigS$ on $\dT$ should be measured, a linear relation
-%could provide some evidence for this interpretation. 
+%could provide some evidence for this interpretation.
 
 We measure directly from the Crab ephemeris the distribution of
 $[\Delta\f,\Delta\fdot]$, in both  cases the results can be approximated by
@@ -491,18 +467,20 @@ the results are independent of the timing noise model, we simply note that the
 timing noise described by the Crab ephemeris is consistent with a compound
 Poisson process provided the event rate is larger with respect to the period of
 a month.
+}
 
-\subsection{Method}
+
+\section{Method}
 \label{sec: narrow-band method}
 We now describe the method to quantify the effect of timing noise on CW
-searches for signals from isolated pulsar. 
+searches for signals from isolated pulsar.
 To be relevant to current pulsar CW search methods, we will base our
 method on the narrow-band searches of \citet{ligo2008} and \citet{LIGO2015}. The results can be interpreted as measuring the consequence of
 special case 1 on narrow-band and single-template searches; that is we assume
 the CW signal has a similar level of timing noise as the EM signal and search
 using global Taylor expansion templates. For this study, a single-template
 search refers to a single Taylor expansion template and not the adapted phase
-model proposed by \citet{Pitkin2004}. 
+model proposed by \citet{Pitkin2004}.
 
 We begin by generating a CW signal emulating timing noise using the Crab
 ephemeris. This is done by stringing together month-long smooth Taylor expansion
@@ -551,10 +529,10 @@ This
 method creates a fake CW signal, lasting several months, which includes timing noise corresponding to the monthly
 ephemeris.
 
-\end{enumerate} 
+\end{enumerate}
 
 Once we have produced data, we then use \verb+LALSuite+ tools to recover the
-signal using the $\mathcal{F}$-statistic \citep{Jaranowski1998}. This is a 
+signal using the $\mathcal{F}$-statistic \citep{Jaranowski1998}. This is a
 matched filtering method in which the output of the detector is compared to a
 signal template (see \citet{Prix2009} for more details).
 
@@ -572,7 +550,7 @@ the value found in step 2 above.
  The grid spacing is parameterised
 by $\mGRID$, the one-dimensional maximal mismatch between two adjacent Taylor
 expansion templates. From
-\citet{LIGO2013_EAH} the corresponding grid spacing is given by 
+\citet{LIGO2013_EAH} the corresponding grid spacing is given by
 \begin{align}
     d\f = \frac{\sqrt{12 \mGRID}}{\pi \To} &&&
     d\fdot = \frac{\sqrt{720 \mGRID}}{\pi \To^{2}},
@@ -586,14 +564,14 @@ loss compared to the perfectly phase-matched squared SNR
 $\rho^{2}_{\mathrm{s}}$, we define the mismatch in the usual way (e.g.\ see
 \citet{Prix2007}) as
 \begin{equation}
-    \mu = \frac{{\rho^{2}_{\mathrm{s}} - 
+    \mu = \frac{{\rho^{2}_{\mathrm{s}} -
                                   \rho^{2}}}{\rho^{2}_{\mathrm{s}}}.
 \label{eqn:mismatch}
 \end{equation}
 It is well known (e.g.\ see \citet{Prix2009}) that the SNR for a
 perfectly phase-matched signal is independent of the signal phase
 evolution. Therefore, in the absence of timing
-noise the measured value of~$\rho^{2}$ can reach the maximum value 
+noise the measured value of~$\rho^{2}$ can reach the maximum value
 of~$\rho^{2}_{s}$, and the mismatch therefore vanishes in that template.
 In the presence of timing noise, even the best-matching template will
 suffer some mismatch, and this effect will increase with the level of
@@ -609,12 +587,12 @@ over which to minimise the mismatch. The grid point with the minimum mismatch,
 which we denote by $\mumin$, is the best candidate and will used to quantify
 the success of the search.  Because the narrow-band can minimise the mismatch,
 $\mumin$ must always be equal or smaller than the mismatch in the
-single-template search. 
+single-template search.
 
 
-\subsection{Results}
+\section{Results}
 \label{sec: narrow-band results}
-\subsubsection{The effect of timing noise on narrow-band searches} We begin by
+\subsection{The effect of timing noise on narrow-band searches} We begin by
 describing how timing noise degrades a narrow-band search. This is done by
 comparing the result for a signal containing no timing noise with a signal
 generated from the Crab ephemeris between MJD 45150 and 56668. This period
@@ -647,7 +625,7 @@ Crab ephemeris between MJD 45150 and 45668.}
 \end{figure}
 
 
-\subsubsection{Results relevant to recent narrow-band searches}
+\subsection{Results relevant to recent narrow-band searches}
 
 First we consider two particular periods of the Crab ephemeris corresponding to
 recent narrow-band searches for the Crab: the LIGO S5 period \citep{ligo2008}
@@ -656,7 +634,7 @@ and the minimum mismatch for the narrow-band searches during both periods are
 listed in table~\ref{tab: Results}. For these periods timing noise is
 found to produce a mismatch of~$\approx 1\%$. As expected, the narrow-band
 mismatch is smaller than the single-template search. The fractional difference
-between the two searches is relatively small. 
+between the two searches is relatively small.
 
 Provided that the timing noise observed in the CW signal is at the same level
 (or less) as that observed in the EM signal, this result signifies that the
@@ -675,16 +653,16 @@ evident.
 
 \begingroup
 \small
-\begin{table}[ht] 
+\begin{table}[ht]
 \centering
-\begin{tabular}{lccc} 
-    & 
-    \specialcell{Dates \\ MJD} & 
+\begin{tabular}{lccc}
+    &
+    \specialcell{Dates \\ MJD} &
     \specialcell{Single  template \\ $\mu$} &
     \specialcell{Narrow band \\ $\mumin$} \\ \hline
-S5 & 53673 - 53977 & $0.00968$ & $0.00933$ \\ 
-VSR4 & 55681 - 55839 & $0.00659$ & $0.00584$ \\ 
-\end{tabular}•
+S5 & 53673 - 53977 & $0.00968$ & $0.00933$ \\
+VSR4 & 55681 - 55839 & $0.00659$ & $0.00584$ \\
+\end{tabular}
 \caption{Measurements of the mismatch during the S5 and VSR4 narrow-band search
          periods.}
 \label{tab: Results}
@@ -710,13 +688,13 @@ of grid spacing parameter $\mGRID$ (see eqn.~\eqref{eqn: Grid spacing}), for the
     we are resolving a mismatch due to timing noise instead of the effect of finite
     grid resolution.}
 \label{fig: conv}
-\end{figure}•
+\end{figure}
 
 
 
 
 
-\subsubsection{Minimum mismatch as a function of the observation epoch}
+\subsection{Minimum mismatch as a function of the observation epoch}
 \label{sec: Minimum mismatch as a function of the observation epoch}
 
 We will now investigate how the best mismatch $\mumin$ varies as a function of
@@ -734,10 +712,10 @@ The Crab frequently glitches and these are catalogued by \citet{Espinoza2011}
 and available at \url{http://www.jb.man.ac.uk/pulsar/glitches.html}.
 The mechanism which causes a glitch is not well understood and may involve
 unpredictable variations in the CW signal. As a result, targeted CW searches
-either avoid periods with known glitches \citep{ligo2008}, or 
+either avoid periods with known glitches \citep{ligo2008}, or
 allow for an arbitrary jump in gravitational wave phase at the time of
 the glitch \citep{LIGO2010}. For this work, we ignore
-the complicating factor introduced by glitches and consider 
+the complicating factor introduced by glitches and consider
 only the effect of timing noise. We do this by
 omitting windows which include glitches from the search by using
 the aforementioned glitch catalogue.
@@ -750,7 +728,7 @@ found at the edge of the narrow-band grid; such candidates  are not true local
 minima in the mismatch. If this is the case, the search is repeated with an
 increasingly larger grid size, but the same fixed grid spacing.  This process
 continues until we find a minimum mismatch which is not at the edge of the
-grid. 
+grid.
 
 Figure~\ref{fig: sliding window} shows the measured minimum mismatch in the
 narrow-band search for a sliding 6-month window at the centre of the
@@ -770,15 +748,15 @@ between $\mumin \sim 10^{-3} - 10^{-2}$ for these 6-month searches.
 \caption{Minimum mismatch $\mumin$ found in 6-month sliding window searches
     as a function of epoch
      at the centre of  window.  Vertical dashed lines
-    indicate glitch events as described by \citet{Espinoza2011}. The solid  
-    vertical line indicates the date MJD 55362, a period of anomalously 
+    indicate glitch events as described by \citet{Espinoza2011}. The solid
+    vertical line indicates the date MJD 55362, a period of anomalously
     large mismatch.}
 \label{fig: sliding window}
-\end{figure}•
+\end{figure}
 
 
 
-\subsubsection{Averaged minimum mismatch as a function of the observation duration}
+\subsection{Averaged minimum mismatch as a function of the observation duration}
 \label{sec: averaged mismatch as a function of the observation duration}
 
 We can study the averaged behaviour of the mismatch $\mumin$ as a function of
@@ -798,18 +776,18 @@ following ways:
     \item We do not consider any windows that
     include or are bounded by glitch events
 
-    \item Windows including the anomalous epoch MJD 55362 are omitted. We 
+    \item Windows including the anomalous epoch MJD 55362 are omitted. We
     wish to study the fluctuations due to timing noise, and this
     period is either an unidentified glitch, or another highly unusual and
     unrepresentative form of timing noise
-        
+
    \item While each entry of the ephemeris is on average valid over a whole
    month, some months were truncated due to glitches. The sliding window, which
    works on a fixed number of entries of the ephemeris will occasionally be
    shorter than average. To ensure we are averaging over windows of a
    similar length we omit windows for which the observation time differs from
    the average by 2 weeks.
-   
+
 \end{itemize}
 
 In figure~\ref{fig: mismatch Tobs} we plot the averaged minimum
@@ -820,15 +798,15 @@ resembling a power law.
 \centering
 \includegraphics{Crab_mismatch_Tobs}
 \caption{Averaging the mismatch for sliding window searches and varying the
-observation times. The points give the mean while the bars correspond to one 
+observation times. The points give the mean while the bars correspond to one
 standard deviation.}
 \label{fig: mismatch Tobs}
-\end{figure}•
+\end{figure}
 
-To quantify the growth of the mismatch, we perform a least-squares fitting 
+To quantify the growth of the mismatch, we perform a least-squares fitting
 to a power law. Fitting the expression:
 \begin{equation}
-\muminAvg_{\textrm{fit}} = \kappa 
+\muminAvg_{\textrm{fit}} = \kappa
                                    \left(\frac{\To}{1\textrm{ sec}}\right)^{n},
 \end{equation}
 we find the best fit parameters
@@ -858,7 +836,7 @@ averaged mismatch we have
 \end{equation}
 Differentiating and solving for~$\To$ yields an expression for the
 observation time (in seconds)
-beyond which the~$\rho^{2}$ value of a signal containing timing 
+beyond which the~$\rho^{2}$ value of a signal containing timing
 noise starts to decrease
 \begin{equation}
 \To = \left(\frac{1}{\kappa(1+n)}\right)^{1/n}.
@@ -879,10 +857,10 @@ setting a mismatch of~$0.1$ as the decoherence criteria; using the fit to the
 averaged mismatch this gives us a decoherence time of $\To\approx 400 $~days.
 
     The growth of mismatch as a power law is suggestive of
-random walk timing noise models (see~\citet{Cordes1981}) 
+random walk timing noise models (see~\citet{Cordes1981})
     for which the rms phase residual also grows as a power law. However,
     such a scaling in the phase residual must first be converted into a mismatch,
-    which will depend on the search method, before a comparison can be made. In 
+    which will depend on the search method, before a comparison can be made. In
     future work we will present a method to achieve this.
 
 %For the S5 narrow-band search which
@@ -892,7 +870,7 @@ random walk timing noise models (see~\citet{Cordes1981})
 %close to glitches or in the noisy period of MJD 55362. For longer observation
 %times these outliers become less important as the average mismatch increases.
 
-\subsection{Conclusions}
+\section{Conclusions}
 \label{sec: narrow-band conclusions}
 We have used observational data on the Crab pulsar to characterise the possible
 effects of timing noise on coherent targeted single-template  and narrow-band
@@ -901,8 +879,8 @@ signals based on the Crab ephemeris data and searching for them using templates
 without timing noise. Our analysis clarifies the impact for current searches;
 accordingly, our methods mimic those used by \citet{ligo2008} and \citet{LIGO2015}.
 
-Our primary results is summarised by Fig.~\ref{fig: mismatch Tobs}: 
-when considering the average mismatch as 
+Our primary results is summarised by Fig.~\ref{fig: mismatch Tobs}:
+when considering the average mismatch as
 a function of observation time,  we find that the averaged
 mismatch grows as a power law. In addition to this, we found two interesting
 aspects when considering the data without averaging over the epoch:
