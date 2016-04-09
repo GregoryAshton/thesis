@@ -38,11 +38,22 @@ maximum posterior values to the data; see Fig.~\ref{fig: noise-only beam-width
 posterior fit} for a complete description.}
 
 \begin{document} 
-
-\section{Comparing models of the periodic variations in spin-down
-         and beam-width for PSR B1828-11}
-
 \input{\thisdir/Evidence.tex}
+In Chapter.~\ref{sec: timing variations} we discussed a variety of models to
+explain timing-noise including two, precession and magnetospheric switching,
+which applied to pulsars with periodic modulations. Such pulsars are particuarly
+interesting given the conclusion of \citet{Hobbs2010} that, as more data is
+collected for pulsars, more quasi-periodic features are observed. Therefore it
+is hoped that understanding what causes the periodic modulations may eventually
+lead to a more complete understanding of timing noise across the population.
+
+The primary source of evidence for both periodic models is the pulsar
+PSR~B1828-11, `\emph{a young pulsar which is observed on about 30 occasions
+each year using the 76-m Lovell radio telescope at Jodrell Bank}'
+\citep{Stairs2000}.  In this chapter we will develop predictions for the
+observed data on B1828-11 from both the the precession and switching models and
+then perform a model comparison to determine, quantiatively, which model best
+fits the data. This work has been published in \citet{Ashton2015}.
 
 \section{Introduction}
 \label{sec: introduction}
@@ -136,7 +147,7 @@ state or the other, an idea developed by  \citet{Jones2012}. The models
 considered here cover the precession and switching interpretations, but we do
 not claim the models to be the `best' that these hypotheses could produce.
 
-The rest of the work is organised as follows: in Sec.~\ref{sec: methodology} we
+The rest of the chapter is organised as follows: in Sec.~\ref{sec: methodology} we
 will describe the framework to fit and evaluate a given model, in
 Sec.~\ref{sec: defining and fitting the models} we will define and fit several
 predictive models from the conceptual ideas, and then in Sec.~\ref{sec:
@@ -585,7 +596,7 @@ beam-width parameter estimation.
 
 \begin{figure*}
 \centering
-\includegraphics[]{Spindown_Switching_PosteriorWithFit}
+\includegraphics[width=\textwidth]{Spindown_Switching_PosteriorWithFit}
 \caption{\bigfigurecaptions{Switching}{spin-down}}
 \label{fig: perera spin-down posterior}
 \end{figure*}
@@ -696,7 +707,7 @@ which is less than the 2ms required in the noise-only model. This indicates
 that some of the variability is being explained by the signal model.
 \begin{figure*}
 \centering
-\includegraphics[]{{Beamwidth_Switching_0.1_PosteriorWithFit}.pdf}
+\includegraphics[width=\textwidth]{{Beamwidth_Switching_0.1_PosteriorWithFit}.pdf}
 \caption{\bigfigurecaptions{Switching}{beam-width}}
 \label{fig: perera beam-width posterior}
 \end{figure*}
@@ -780,8 +791,7 @@ $\theta$ limit, to give a spin-down rate
 \begin{align}
 \begin{split}
 \dot{\nu}(t) = \frac{1}{\tauAge P}&\left(-1 + n\frac{1}{\tauAge} (t-\tref)
-                \right. \\
-& + \theta \left.\left[
+ + \theta \left[
 2\cot\chi\sin\left(\psi(t)\right) - \frac{\theta}{2}\cos\left(2\psi(t)\right)
 \right]\right),
 \end{split}
@@ -826,10 +836,11 @@ convenience.
 \caption{Measured and inferred values of the precession spin-down model parameters
 from the ATNF pulsar catalogue \citep{ATNF}, these are given at epoch MJD~49621}
 \label{tab: ATNF}
-\begin{tabular}{ll} \hline
+\begin{tabular}{ll} \hline \rule{0pt}{3ex}    
 $P^{\mathrm{ATNF}}$ & 0.405043321630 $\pm 1.2\times10^{-11}$~s \\
 $n^{\mathrm{ATNF}}$ & 16.08 $\pm$ 0.17 \\
 $\tauAge^{\mathrm{ATNF}}$ & 213827.91 $\pm 0.32$~ yrs\\
+ \hhline{==}
 \end{tabular}
 \end{table}
 Finally for $\psi_0$ we give the full domain of
@@ -840,7 +851,7 @@ relevant range.
 
 \begin{figure*}
 \centering
-\includegraphics[]{Spindown_Precession_PosteriorWithFit}
+\includegraphics[width=\textwidth]{Spindown_Precession_PosteriorWithFit}
 \caption{$\textbf{A}$: The estimated marginal posterior probability distribution for the
 precession spin-down model parameters. For the secular spin-down
 quantities, we show the difference with respect to the values as listed in
@@ -1087,7 +1098,7 @@ averaged beam-width, it cannot simultaneously fit the amplitude of periodic
 modulations.
 \begin{figure*}
 \centering
-\includegraphics[]{Beamwidth_Gaussian_PosteriorWithFit}
+\includegraphics[width=\textwidth]{Beamwidth_Gaussian_PosteriorWithFit}
 \caption{\bigfigurecaptions{Gaussian}{spin-down}}
 \label{fig: gaussian beam-width posterior}
 \end{figure*}
@@ -1321,7 +1332,7 @@ This confirms that our generalisation of the Gaussian intensity,
 Eqn.~\eqref{eqn: rho2}, is important in fitting the data.
 \begin{figure*}
 \centering
-\includegraphics[]{{Beamwidth_ModifiedGaussian_0.1_PosteriorWithFit}.pdf}
+\includegraphics[width=\textwidth]{{Beamwidth_ModifiedGaussian_0.1_PosteriorWithFit}.pdf}
 \caption{\bigfigurecaptions{modified-Gaussian precession}{beam-width}}
 \label{fig: modified-gaussian beam-width posterior}
 \end{figure*}
@@ -1630,7 +1641,7 @@ variations in $f$ from 0.05 to 0.5.
 \section{Discussion}
 \label{sec: discussion}
 
-In this work we are using a data set (provided by \citet{Lyne2010}) on the
+In this chapter we are using a data set (provided by \citet{Lyne2010}) on the
 spin-down and beam-width of B1828-11 to compare models for the observed
 periodic variations.  The two concepts under consideration are free precession
 and magnetospheric switching.  In order to be quantitative, we built signal
@@ -1650,7 +1661,7 @@ a combination of the two).  Further we believe there is good grounds to develop
 models combining the precession and switching interpretation like those
 discussed in \citet{Jones2012}.
 
-In addition to the data considered in this work, a number of
+In addition to the data considered here, a number of
 high-time-resolution observations of B1828-11 were performed
 by the Parkes telescope, as discussed in \citet{Stairs2003}.
 This data set shows interesting variability in beam width on short
@@ -1676,22 +1687,22 @@ beam to dominate at certain phases. Since no such interpulse is reported,
 either the second beam is weaker, or the beams must have a kink of greater than
 $4.6\degr$ (see appendix~\ref{sec: implications for the unobserved beam}).
 
-In this work we have developed the framework to evaluate models for the
+In this chapter we have developed the framework to evaluate models for the
 variations observed in B1828-11. This is not intended as an exhaustive review
 of all models, but rather a discussion on the intricacies that arise such as
-setting up proper and well-motivated priors. This work lays the groundwork
+setting up proper and well-motivated priors. This lays the groundwork
 for a more exhaustive test of all available models and can also be extended
 by improvements to the data sources.
 
-\section*{Acknowledgements}
-GA acknowledges financial support from the University of Southampton and the
-Albert Einstein Institute (Hannover).  DIJ acknowledge support from STFC via
-grant number ST/H002359/1, and also travel support from NewCompStar (a
-COST-funded Research Networking Programme).  We especially thank Will Farr,
-Danai Antonopoulou, and Ben Stappers for valuable discussions and comments,
-\citet{dan_foreman_mackey_2014_11020} for the software used in generating
-posterior probability distributions, and \citet{Lyne2010} for generously sharing
-the data for B1828-11.
+%\section*{Acknowledgements}
+%GA acknowledges financial support from the University of Southampton and the
+%Albert Einstein Institute (Hannover).  DIJ acknowledge support from STFC via
+%grant number ST/H002359/1, and also travel support from NewCompStar (a
+%COST-funded Research Networking Programme).  We especially thank Will Farr,
+%Danai Antonopoulou, and Ben Stappers for valuable discussions and comments,
+%\citet{dan_foreman_mackey_2014_11020} for the software used in generating
+%posterior probability distributions, and \citet{Lyne2010} for generously sharing
+%the data for B1828-11.
 
 \biblio
 
@@ -1840,4 +1851,5 @@ shown at times that differ by half a rotation period.}
 \label{fig: J observer plane other pole}
 \end{figure}
 \end{subappendices}
+
 \end{document}
