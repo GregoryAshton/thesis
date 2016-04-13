@@ -2,13 +2,12 @@
 
 % Default image directory
 \newcommand{\thisdir}{../comparing_periodic_modulations}
-\graphicspath{{\thisdir/img/}} 
+\graphicspath{{\thisdir/img/}}
 
 \newcommand{\PATNF}{P^{\mathrm{ATNF}}}
 
 % Precession macros
 \newcommand{\degr}{^{\circ}}
-\newcommand{\tauAge}{\tau_{\textrm{age}}}
 \newcommand{\PhiO}{\Phi_{\mathrm{obs}}}
 \newcommand{\DeltaNudotGeo}{\Delta\dot{\nu}_{\textrm{geo}}}
 \newcommand{\DeltaNudotEm}{\Delta\dot{\nu}_{\textrm{em}}}
@@ -37,7 +36,7 @@ $\textbf{A}$: The estimated marginal posterior probability distribution for the
 maximum posterior values to the data; see Fig.~\ref{fig: noise-only beam-width
 posterior fit} for a complete description.}
 
-\begin{document} 
+\begin{document}
 \input{\thisdir/Evidence.tex}
 In Chapter.~\ref{sec: timing variations} we discussed a variety of models to
 explain timing-noise including two, precession and magnetospheric switching,
@@ -802,6 +801,7 @@ where
 \psi(t)= 2\pi\frac{t-\tref}{\tauP} + \psi_{0}.
 \end{equation}
 As in the switching model, $\tref= \textrm{MJD } 49621$.
+This result is derived in full in Appendix~\ref{sec: derivation of spin-down rate}.
 The first two terms are the secular spin-down rate and its first derivative.
 The term in the square brackets is the modulation and can be found from appropriate
 manipulation of Eqn.~(58) and (73) in \citet{Jones2001}, or Eqn.~(20) in
@@ -836,7 +836,7 @@ convenience.
 \caption{Measured and inferred values of the precession spin-down model parameters
 from the ATNF pulsar catalogue \citep{ATNF}, these are given at epoch MJD~49621}
 \label{tab: ATNF}
-\begin{tabular}{ll} \hline \rule{0pt}{3ex}    
+\begin{tabular}{ll} \hline \rule{0pt}{3ex}
 $P^{\mathrm{ATNF}}$ & 0.405043321630 $\pm 1.2\times10^{-11}$~s \\
 $n^{\mathrm{ATNF}}$ & 16.08 $\pm$ 0.17 \\
 $\tauAge^{\mathrm{ATNF}}$ & 213827.91 $\pm 0.32$~ yrs\\
@@ -1790,6 +1790,114 @@ posterior is a suitable fit to the data, i.e. we compare the data to the model
 prediction when the model parameters are set to the values corresponding to the
 peaks of the posterior probability  distributions.
 
+\section{Derivation of the precession spin-down rate}
+\label{sec: derivation of spin-down rate}
+From the definition of the vacuum point-dipole spin-down torque we have that,
+\begin{align}
+\ddot{\Phi} = -k \dot{\Phi}^{n} \sin^{2}\Theta,
+\label{eqn: EM DE}
+\end{align}
+where $k$ is a positive constant. From \citet{Jones2001}, we also have
+\begin{align}
+\cos\Theta = \sin\theta \sin \psi \sin \chi + \cos\theta \cos\chi.
+\end{align}
+Rearranging and expanding about $\theta = 0$, we find
+\begin{align}
+\sin^{2}\Theta & =
+\left[
+\sin^{2}\chi + \theta^{2}\left(\cos^{2}\chi - \frac{\sin^{2}\chi}{2}\right)
+\right]
+- 2\theta \sin\chi\cos\chi \sin\psi
+ + \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi),
+\label{eqn: sin 2 Theta}
+\end{align}
+where the first term, in square brackets, is a constant while the second two
+terms provide the first and second harmonic modulations in $\psi(t)$.
+
+In order to find approximate solutions to Eqn.~\eqref{eqn: EM DE}, we begin by
+defining the time-averaged (constant) value of $\sin^{2}\Theta$ as
+\begin{align}
+\sin^{2}\Theta_0 =
+\sin^{2}\chi + \theta^{2}\left(\cos^{2}\chi - \frac{\sin^{2}\chi}{2}\right),
+\label{eqn: sin2Theta0}
+\end{align}
+then solving Eqn.~\eqref{eqn: EM DE} with this constant value we get
+\begin{align}
+\dot{\Phi}(t) = \left(\frac{1}{\dot{\Phi}_0^{(n-1)}}
+                      + (n-1)k\sin^{2}\Theta_0 t + \right)^{\frac{-1}{n-1}},
+\label{eqn: zeroth order soln}
+\end{align}
+where $\dot{\Phi}_0 = \dot{\Phi}(0)$. Now we define the spin-down time-scale as
+\begin{align}
+\tauAge = \frac{|\dot{\Phi}_0|}{|\ddot{\Phi}_0|}
+\approx \frac{1}{k|\dot{\Phi}_0|^{(n-1)} \sin^{2}\Theta_0}.
+\end{align}
+Rearranging gives
+\begin{align}
+k = \frac{1}{\tauAge \dot{|\Phi}_0|^{(n-1)} \sin^{2}\Theta_0}.
+\end{align}
+Then Eqn.~\eqref{eqn: zeroth order soln}, our zeroth-order solution to the
+spin-down (under a constant $\Theta$), can be written as
+\begin{align}
+\dot{\Phi}(t) = \dot{\Phi}_0\left(1 + (n-1)\frac{t}{\tauAge}\right)^{\frac{-1}{n-1}}.
+\label{eqn: zeroth order soln complete}
+\end{align}
+
+Now, we substiture Eqn.~\eqref{eqn: zeroth order soln complete} back into
+Eqn.~\eqref{eqn: EM DE} along with the expanded, but complete variation in
+$\sin^{2}\Theta$, given by Eqn.~\eqref{eqn: sin 2 Theta}.
+\begin{align}
+\begin{split}
+\ddot{\Phi}(t)  = {} & \frac{-1}{\tauAge |\dot{\Phi}_0|^{(n-1)} \sin^{2}\Theta_0}
+\dot{\Phi}_0^n\left(1 + (n-1)\frac{t}{\tauAge}\right)^{\frac{-n}{1-n}} \\
+& \times \left(\sin^{2}\Theta_0
+- 2\theta \sin\chi\cos\chi \sin\psi
+ + \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi).
+\right)
+\end{split}
+\end{align}
+In principle, this is complete and constitutes an approximation of the spin-down
+under precession.
+To simplify this expression, we expand the second bracket with $t/\tauAge\ll1$, then
+\begin{align}
+\begin{split}
+\ddot{\Phi}(t) = {} & \frac{1}{\tauAge} \dot{\Phi}_0
+\left(-1 + n\frac{t}{\tauAge} +
+\frac{1}{\sin^{2}\Theta_0}\left(
+2\theta \sin\chi\cos\chi \sin\psi
+- \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi)
+\right)\right) \\
+& +
+\mathcal{O}\left(\left(\frac{t}{\tauAge}\right)^{2},
+                 \theta\left(\frac{t}{\tauAge}\right)\right)
+\end{split}
+\end{align}
+Next we expand $1/\sin^{2}\Theta_0$, from Eqn.~\eqref{eqn: sin2Theta0}, in $\theta$:
+\begin{align}
+\left(\sin^{2}\chi + \theta^{2}\left(\cos^{2}\chi - \frac{\sin^{2}\chi}{2}\right)\right)^{-1}
+\approx
+\frac{1}{\sin^{2}\chi} + \mathcal{O}(\theta^{2}).
+\end{align}
+Note that we only to expand to this order since this term is multiplied by a
+factor of $\theta$ and we are neglecting $\mathcal{O}(\theta^{3})$ terms.
+Then simpifying we have
+\begin{align}
+\ddot{\Phi}(t) = \frac{1}{\tauAge} \dot{\Phi}_0
+\left(-1 + n \frac{t}{\tauAge} +
+\left( 2\theta \cot\chi \sin\psi
+- \frac{1}{2}\theta^{2}\cos(2\psi)
+\right)\right).
+\end{align}
+Finally converting to spin-frequencies and periods
+\begin{align}
+\dot{\nu}(t) = \frac{1}{P\tauAge}
+\left(-1 + n \frac{t}{\tauAge} +
+2\theta \cot\chi \sin\psi
+- \frac{1}{2}\theta^{2}\cos(2\psi)
+\right)
+\end{align}
+We then transform $t\rightarrow t-\tref$ to give the expression used for
+the precession spin-down rate.
 
 \section{Implications for the unobserved beam}
 \label{sec: implications for the unobserved beam}
@@ -1850,6 +1958,8 @@ arrowhead is the `kinked' beam.  For clarity, the north and south poles are
 shown at times that differ by half a rotation period.}
 \label{fig: J observer plane other pole}
 \end{figure}
+
+
 \end{subappendices}
 
 \end{document}
