@@ -12,4 +12,4 @@
 *.cb2
 *.blg
 *.bbl
-*.pdf
+#*.pdf
