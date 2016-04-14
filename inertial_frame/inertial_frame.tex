@@ -597,7 +597,7 @@ as the motion of the Earth since $\Phiexact$ is given in the inertial frame.
 We then use a least-squares fitting method to minimise the squared error
 between the timig model Taylor expansion and $\Phiexact$. The resulting
 coefficients $\{\phi_{0}, \f_{0}, \fdot_{0}, \fddot_{0}\}$ are the quantities
-best describing the NS under a power law spindown. We will refer to the
+best describing the NS under a power law spin-down. We will refer to the
 best-fit phase as described by  these coefficients as
 \begin{equation}
     \Phifit(t) = \Phi(t; t_{0}, \phi_{0}, \f_{0}, \fdot_{0}, \fddot_{0})
@@ -618,7 +618,7 @@ period
     \label{eqn: phase to timing}
 \end{equation}
 Over a typical observation periods it is possible for the period to
-fractionally change due to the spindown, but effect is negligible compared to
+fractionally change due to the spin-down, but effect is negligible compared to
 other variations. Therefore in this work we will report only on
 phase-residuals.
 
@@ -740,9 +740,9 @@ in table \ref{tab: 75 verification properties}. This is used to illustrate the
 agreement with the magnitude of variations from equation \eqref{eqn: Jones 75}
 taken from \citet{Jones2001}.}
 
-\section{Physical observables: spindown rate $\dot{\nu}$}
+\section{Physical observables: spin-down rate $\dot{\nu}$}
 An observable which is often considered in characterising periodic patterns in
-pulsar signals is the spin-down rate $\spindown$. In our numerical model, the
+pulsar signals is the spin-down rate $\spin-down$. In our numerical model, the
 spin-down rate is the same as the second derivative of the magnetic dipoles
 azimuthal angle (i.e. $\ddot{\Phi}$).
 
@@ -766,9 +766,9 @@ numerically differentiate eqn.~\eqref{eqn: Phi} (the angular phase of the
 magnetic dipole). However, since we are comparing our results with measured
 values from pulsar astronomers, an alternative is use the method proposed by
 \citet{Lyne2010}: a second order Taylor expansions is fitted to short sections
-of data of length $T$ and the resulting coefficient $\spindown$ is recorded the
+of data of length $T$ and the resulting coefficient $\spin-down$ is recorded the
 mid-point in time of the section of data. Repeating this process every $\sim
-T/4$ in a `sliding-window', we build a picture of how the spindown varies with time.
+T/4$ in a `sliding-window', we build a picture of how the spin-down varies with time.
 In the following our numerical results will use this technique which we refer
 to as the \emph{Lyne-method}.
 We choose $T$ such that it is a fraction of the precession period over which we
@@ -807,7 +807,7 @@ which is given by Eqn.~\eqref{eqn: euler angles torque free evolution}.
 It is also useful to calculate the magnitude of variations: this is done by
 differentiating Eqn.~\eqref{eqn: Jones 49} twice giving
 \begin{equation}
-    |\Delta\spindown|_{\mathrm{p}} =\frac{\dot{\psi}^{2} \theta \cot\chi}{2\pi}.
+    |\Delta\spin-down|_{\mathrm{p}} =\frac{\dot{\psi}^{2} \theta \cot\chi}{2\pi}.
     \label{eqn: spin-down variations FP}
 \end{equation}
 
@@ -822,11 +822,11 @@ Eqn.~\eqref{eqn: spin-down variations FP}.
     spin-down variations FP}, and the red-dashed line indicates the analytic
     prediction of Eqn.~\eqref{eqn: Phi_ddot FP}}
 The variations seen in Fig.~\ref{fig: nu_dot no torque} are the result of
-free precession. As there is no torque, the average spindown rate is zero. However,
+free precession. As there is no torque, the average spin-down rate is zero. However,
 due to precession the magnetic dipole performs a slow rotation about the
 deformation axis. During half the cycle it counter-rotates and in the other
 half it corotates with the rapid rotation about the angular momentum vector.
-The result is a symmetric modulation of the spindown rate about zero with magnitude
+The result is a symmetric modulation of the spin-down rate about zero with magnitude
 given by Eqn.~\eqref{eqn: spin-down variations FP}.
 
 \subsection{Spin-down variations due to torqued precession}
@@ -982,7 +982,7 @@ are approximately the same as in the torque free case, that is:
 \end{align}
 In Fig.~\ref{fig: nu_dot with torque EM} we plot the results of a simulation
 for which this amplifcation factor is greater than unity. This confirms that the
-spindown variations are given by Eqn.~\ref{eqn: spin-down variations FP EM} rather
+spin-down variations are given by Eqn.~\ref{eqn: spin-down variations FP EM} rather
 than Eqn.~\eqref{eqn: spin-down variations FP}.
 
 \FigureAndTable{nu_dot_with_torque_EM_amplification}{nu_dot with torque EM}{
@@ -1075,7 +1075,7 @@ to precession, but simply consider a single switch in the torque at some time
 $t_{\mathrm{switch}}$; for the time being we set this to be half the
 observation period, such that $t_{\mathrm{switch}} = \To/2$.
 
-In the EM dipole spindown model the torque has two distinct components: the
+In the EM dipole spin-down model the torque has two distinct components: the
 regular spin-down part and the so-called anomalous component. This later term 
 does not contribute to the spin-down, but as discussed in section \ref{sec: effective
 body frame} it will modify the axis of precession. The torque switching will 
@@ -1122,7 +1122,7 @@ a_{0} = \beta(\epsI, \epsA, \chi),
 we refer to such a simulation as `minimal precession' since the wobble angle 
 remains non-zero.
 
-In this case the wobble angle will given by equation \eqref{eqn: spindown wobble angle}:
+In this case the wobble angle will given by equation \eqref{eqn: spin-down wobble angle}:
 The magnitude of variations in the phase-residuals is given by inserting this
 wobble angle
 \begin{equation}
@@ -1137,7 +1137,7 @@ predicted magnitude of variations. In table \ref{tab: NoSwitching properties}
 we give the simulation properties: note that the initial polar angle is exactly
 the angle $\beta$ which can be calculated using equation \eqref{eqn: beta}. 
 The wobble angle is given by equation \eqref{eqn: wobble angle} and is non-zero
-due to the spindown torque. 
+due to the spin-down torque. 
 
 \begin{figure}[htb]
 \begin{floatrow}
@@ -1162,12 +1162,12 @@ manually switch the torque. We choose a NS where the EM torque amplification
 given in equation \eqref{eqn: Jones 75} is important.
 
 \subsection{Switching without the anomalous torque}
-We now consider manually switching the spindown torque halfway though the simulation.
+We now consider manually switching the spin-down torque halfway though the simulation.
 That is we set
 \begin{align}
     t_{\mathrm{switch}} = \frac{\To}{2}, &&& \Ss = 0.4, &&& \Sa = 0.0,
 \end{align}
-such that halfway though the simulation the spindown torque is reduced by a
+such that halfway though the simulation the spin-down torque is reduced by a
 fraction $0.4$ while the anomalous torque remains unaffected. 
 
 In figure \ref{fig: switching without anom} we plot the phase residuals from
@@ -1190,13 +1190,13 @@ free precession during each period.
 
 The simulations begin in the minimal precession state where the spin-vector
 is aligned with the effective body frame axis such that the wobble angle is given
-by equation \eqref{eqn: spindown wobble angle}. After the switch, the wobble
+by equation \eqref{eqn: spin-down wobble angle}. After the switch, the wobble
 angle is smaller by a factor $\Ss$ and as a result we see the precession is
 reduced by this fraction.
 
 
 \subsection{Switching with the anomalous torque}
-We now consider manually switching both the spindown and anomalous torque
+We now consider manually switching both the spin-down and anomalous torque
 halfway though the simulation.  That is we set
 \begin{align}
     t_{\mathrm{switch}} = \frac{\To}{2}, &&& \Ss = \Sa = 0.01
@@ -1232,7 +1232,7 @@ by $\epsA$, related to the surface magnetic field strength by
     \epsA = \frac{R^{5}}{4I_{0} c^{2}} B_{0}^{2}.
 \end{align}
 Rearranging equation (1.4.8) of my transfer thesis we can then write the 
-spindown as 
+spin-down as 
 \begin{align}
     \dot{\omega}_{0} & = -\frac{B_{0}^{2}R^{6} \sin^{2}(\alpha) \omega_{0}^{3}}{6 I_{0} c^{3}} \\
     & = - \frac{2 R \epsA \sin^{2}(\alpha) \omega_{0}^{3}}{3 c},
@@ -1289,7 +1289,7 @@ Since it is hard to gauge the significance of this we will apply it to the
 PSR B1828-11; a pulsar which demonstrated evidence for precession \citet{Stairs2000}
 and has since been reinterpreted as two-state switching \citep{Lyne2010}. This
 has a frequency of $\f = 2.47$~Hz, a spin-down $\fdot=-3.65\times10^{-13}$~Hz/s, switches are
-observed to occur every $T\approx 1.4$ yrs, and the spindown changes by $\upsilon = 0.71$.
+observed to occur every $T\approx 1.4$ yrs, and the spin-down changes by $\upsilon = 0.71$.
 
 We are unable to directly calculate $\Delta\beta$ from this information, since
 we do now know $\epsI$ or $\chi$. Nevertheless, we can at least find the maximum
