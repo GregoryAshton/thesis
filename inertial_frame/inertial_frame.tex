@@ -268,9 +268,11 @@ variety of behaviours, but these can be understood by first decomposing the
 spin-vector into rotations about the angular momentum and rotation about the
 deformation axis:
 \begin{equation}
-  \spin = \dot{\phi}\n_{J} + \dot{\psi}\n_{d}.
+  \spin = \dot{\phi}\n_{J} + \dot{\psi}\n_{d},
 \label{eqn: decomp}
 \end{equation}
+where $\n_J$ and $\n_d$ are unit vectors along the angular momentum and deformation
+axis, see Fig.~\ref{fig: reference plane} for an illustration.
 Any fixed vector in the body frame can be understood, in the inertial frame, as
 undergoing two motions: keeping $\phi$ fixed and increasing $\psi$ rotates the
 vector in a cone about the $\n_{d}$ axis; holding instead $\psi$ fixed and
@@ -279,7 +281,7 @@ axis. Calling these cones the precession and spin cones respectively the
 resulting motion can be understood as the superposition of the two.
 
 \citet{Jones2001} found that the types of solutions these cones produced
-depended on the ordering of $\theta$ and $\chi$. To understand why this is, in
+depended on whether ordering of $\theta$ and $\chi$. To understand why this is, in
 Fig.~\ref{fig: cones} we provide three illustrations of the two cones projected
 into the reference plane for the three possible orderings of $\theta$ and $\chi$.
 \begin{figure}[ht]
@@ -484,14 +486,14 @@ explaining how the average value and size of oscillations arises.
 
 \section{Physical observables: pulse frequency}
 The azimuthal angle $\Phi$ given in Eqn.~\eqref{eqn: Phi} gives us the phase of
-the dipole. For the observer, the pulsation happens when the dipole passes through
-the plane containing them and the angular momentum vector si we can always reorient
-them such that the pulsation occurs every time $\Phi$ is a multiple of $2\pi$.
+the dipole. For the observer, the pulsation occurs when the dipole passes through
+the plane containing the observer and the angular momentum vector,  we can always reorient
+the observer such that the pulsation occurs every time $\Phi$ is a multiple of $2\pi$.
 In this way, $\Phi$ is also the phase of the observed pulsations and as such
 we can generate timing residuals from it; we will demonstrate this method in
 Sec.~\ref{sec: timing residuals}.
 
-The spin frequency of a pulsar is often used as a tool to study them, but when
+The spin frequency of a pulsar is often discussed in pulsar astronomy, but when
 precessing the observed frequency is not given by $\omega$ due to the
 additional motions of precession. Instead, we note that the observer would
 fit a timing model to the TOAs as the pulse passes through the plane containing
@@ -505,7 +507,7 @@ by the first derivative of $\Phi$:
 }{(\sin\theta \cos \chi - \cos \theta \sin \psi \sin \chi)^{2} + \cos^{2}\psi \sin^{2} \chi}.
 \label{eqn: Phi_dot}
 \end{equation}
-This is the \emph{instantaneous electromagnetic frequency}, an observer
+This is the \emph{instantaneous electromagnetic frequency}; an observer
 will measure the time averaged value of $\dot{\Phi}$ as the `spin frequency' of
 the star.
 
