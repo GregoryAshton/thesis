@@ -64,7 +64,7 @@ both for the motion of the spin-vector in the rotating frame and the Euler
 angles we need to solve all six ODEs together. To be specific, the six ODEs are
 given in equations~\eqref{eqn: ODEs}: the in left-hand triplet is the
 components of the Euler rigid body equations first given in Eqn.~\eqref{eqn:
-EOM}; in the right-hand triplet we give the rearranged set of Euler angles ODEs
+eom}; in the right-hand triplet we give the rearranged set of Euler angles ODEs
 from \citet{Landau1969}.
 \begin{align}
 \begin{split}
@@ -362,7 +362,7 @@ and so rearranging we find that
 \section{Evolution of the Euler angles for a torque free biaxial body}
 \label{sec: biaxial body with no torque}
 
-In Eqn.~\eqref{eqn: Euler angles torque free evolution} we saw that
+In Eqn.~\eqref{eqn: euler angles torque free evolution} we saw that
 \citet{Jones2001} had derived analytic solutions for the Euler angle evolution
 in which the wobble angle $\theta$ remains fixed; the azimuthal angle $\phi$
 monotonically increases at the `spin frequency' $\dot{\phi}$; the body frame
@@ -401,7 +401,7 @@ evolution of the Euler angles as given in Eqn.~\eqref{eqn: euler angles torque f
 \end{figure}
 
 \section{Evolution of the Euler angles for a torqued biaxial body}
-To see the difference introducing the EM torque of Eqn.~\eqref{eqn: toque}  makes to the
+To see the difference introducing the EM torque of Eqn.~\eqref{eqn: torque}  makes to the
 solutions, in Fig.~\ref{fig: biaxial body with torque} we repeat the simulation
 plotted in Fig.~\ref{fig: biaxial body no torque} with both the anomalous
 and spin-down components of the EM torque. The most
@@ -671,7 +671,7 @@ The two ratios of time-scales define an `amplification factor':
 The amplification increases
 the magnitude of phase residuals for young pulsars with short periods.
 
-We simulate such a star using the properties in table \ref{tab: 63} noting that
+We simulate such a star using the properties in table \ref{tab: PR 63} noting that
 the amplification factor is $\sim 3$ when including the factor of $\pi$. The
 resulting phase residual is plotted in figure \ref{fig: PR 63} along with the
 magnitude of variations due to free precession along and the amplification due
@@ -680,7 +680,7 @@ agree well with the analytic results of equation \eqref{eqn: Jones 63}.
 
 \FigureAndTable{63_verification}{PR 63}{
 The phase residual in cycles for a simulated NS with the properties described
-in table \ref{tab: 63 verification properties}. This is used to illustrate the
+in table \ref{tab: PR 63}. This is used to illustrate the
 agreement with the magnitude of variations from equation \eqref{eqn: Jones 63}
 taken from \citet{Jones2001}.}
 
@@ -724,11 +724,11 @@ In figure \ref{fig: PR 75} we simulate the B1828-11 pulsar taking the values
 from \citet{Stairs2000} and modifying them to allow the simulation to complete
 in a reasonable time. The modification was setup such that the amplification
 factor remained the same along with the ratio of timescales. The properties
-of the simulation are given in \ref{tab: 75}
+of the simulation are given in \ref{tab: PR 75}
 
 \FigureAndTable{75_verification}{PR 75}{
 The phase residual in cycles for a simulated NS with the properties described
-in table \ref{tab: 75 verification properties}. This is used to illustrate the
+in table \ref{tab: PR 75}. This is used to illustrate the
 agreement with the magnitude of variations from equation \eqref{eqn: Jones 75}
 taken from \citet{Jones2001}.}
 
@@ -851,7 +851,7 @@ due to $\ddot{nu}$ are typically small. Therefore, we can take the initial value
 of $\dot{\nu}$ as a good estimate for the average spin-down rate
 \begin{align}
 \langle\dot{\nu}\rangle \approx -\frac{1}{3\pi}\frac{R \Omega_{0}^{3}}{c} \sin^{2}\alpha \epsA
-    \label{eqn: spin-down initial EM}
+\label{eqn: spin-down initial EM}
 \end{align}
 In this expression, $\alpha$ is the angle between the spin-vector and the
 magnetic dipole. For small wobble angles, the angle $\hat{\theta}$ (see figure
@@ -928,7 +928,7 @@ prediction) show good agreement.
 Modulation in the spin-down rate due to precession. The solid black line
 indicates the numerical solution including a torque; the solid red line indicates
 the approximate average spin-down rate due to the EM toque as calculated
-from equation \eqref{eqn: spin-down initial EM chi}; the blue lines indicate
+from equation \eqref{eqn: spin-down initial EM}; the blue lines indicate
 the magnitude of modulation about the average spin-down due to precession; finally
 the red-dashed line is the prediction of Eqn.~\eqref{eqn: 1238}.}.
 
@@ -1058,8 +1058,8 @@ precession which provides this clock. Ultimately, the numerical model developed
 in this section could study this effect. For example by implementing a hybrid
 model in which propensity for a magnetospheric switch to occur is related to
 the angle $\Theta$. In this way, the observed switching would undergo
-stochastic resonance as suggested by \citet{Cordes2013} (see Appendix~\ref{App
-Stochastic} for further details).
+stochastic resonance as suggested by \citet{Cordes2013} (see Appendix~\ref{app:
+stochastic} for further details).
 
 In this section we will present preliminary results on a simplified hybrid model
 in which we consider single switching events. We will not connect the switching
@@ -1114,7 +1114,7 @@ a_{0} = \beta(\epsI, \epsA, \chi),
 we refer to such a simulation as `minimal precession' since the wobble angle 
 remains non-zero.
 
-In this case the wobble angle will given by equation \eqref{eqn: spin-down wobble angle}:
+In this case the wobble angle will given by equation \eqref{eqn: wobble angle}:
 The magnitude of variations in the phase-residuals is given by inserting this
 wobble angle
 \begin{equation}
@@ -1182,7 +1182,7 @@ free precession during each period.
 
 The simulations begin in the minimal precession state where the spin-vector
 is aligned with the effective body frame axis such that the wobble angle is given
-by equation \eqref{eqn: spin-down wobble angle}. After the switch, the wobble
+by equation \eqref{eqn: wobble angle}. After the switch, the wobble
 angle is smaller by a factor $\Ss$ and as a result we see the precession is
 reduced by this fraction.
 

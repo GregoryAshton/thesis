@@ -4,8 +4,6 @@
 \newcommand{\thisdir}{../timing_noise_in_CGW}
 \graphicspath{{\thisdir/img/}}
 
-\newcommand{\tmid}{t^{\textrm{mid}}_{i}}
-
 \begin{document}
 
 In this chapter we will investigate the effect of timing noise on targeted and
@@ -17,67 +15,7 @@ when attempting to detect the signals.
 
 \section{Introduction}
 \label{sec: narrow-band introduction}
-Rotating neutron stars capable of supporting non-axisymmetric mass
-distributions will emit continuous gravitational
-waves\footnote{Note that in general ``continuous waves'' can
-    refer to any quasi-monochromatic long-lasting gravitational-wave
-        signals, such as emitted by binaries of white dwarfs, neutron
-        stars or black holes, which would be detectable by LISA or pulsar
-        timing arrays. Here we refer to CWs exclusively in the context of
-        spinning nonaxisymmetric neutron stars as relevant to ground-based
-        detectors.}
-(CWs) due to their
-time-varying quadrupole moments. These may be detectable by next-generation ground-based detectors. The emitted
-signals can persist for longer than
-typical search durations, but are weak in amplitude, making them difficult to detect
-in the noise of the detector.
-
-To find a signal, CW searches use matched
-filtering techniques such as the $\mathcal{F}$-statistic \citep{Jaranowski1998}
-which compare the output of the detector with a template.  These techniques are
-powerful provided that the signal and template remain coherent for the duration
-of the observation. If the signal can be perfectly matched by a template then
-the signal to noise ratio, used to quantify the detection likelihood, scales as
-$\rho^{2} \propto \To$ (e.g.\ see~\citep{Prix2009}). This suggests searching
-over longer observations increases the chances of making a detection.
-
-The templates must model the monotonic spin-down of the source due to the
-electromagnetic (EM) and gravitational torque; this is done by Taylor expanding
-the phase:
-\begin{equation}
-\phi(t) = \phi_{0} + 2\pi\left(\f_{0} (t - t_{0}) +
-          \frac{\fdot_{0}}{2!} (t - t_{0})^{2}
-           %+ \frac{\fddot}{3!} (t - t_{i})^{3}
-           \right)
-           + \ldots
-           \,,
-\label{eqn: Taylor}
-\end{equation}
-where $t_{0}$ is the reference time at which the pulsar frequency, and
-spin-down parameters $[\phi_{0}, \f_{0}, \fdot_{0}, \ldots]$ are defined. Note
-that all times refer to the solar system barycentre and we assume the
-timing model has already correctly accounted for the dispersion measure, proper motion
-and other parameters as discussed in \citet{Edwards2006}.
-Pulsar astronomers fit this model to observed time of arrivals (TOAs). If the
-best fit model is accurate enough to track the pulsar to within a single
-rotation the resulting timing solution is described as \emph{phase-connected}.
-Often such solutions are capable of tracking the pulsar over durations greater
-than  a year \citep{Lyne2012book}.  For gravitational-wave searches, this level of accuracy
-motivates the use of the same Taylor expansion phase models to account for the
-spin-down.  Pulsar observers measure the frequency $\f_{0}^{EM}$ and higher
-order coefficients describing the rotation of the pulsar itself. In this
-work we will consider searches for
-emission from non-axisymmetric neutron stars at
-$\f_{0}^{CW}=2\f_{0}^{EM}$~\citep{Shapiro83}; from hereon all frequencies
-and spin-downs refer to the pulsars CW emission.
-
-While Taylor expansion models are on average reliable enough to track the
-spin-down, pulsars do show deviations. This can either be in the form of
-glitches, occasional sudden increases in the rotation frequency, or
-continuous low-frequency
-variations known as \emph{timing noise}. Glitches and timing-noise may be
-related phenomena, but are distinguishable by their relative frequency
-and magnitudes. In this work we restrict our focus to timing noise (we will comment
+In this work we restrict our focus to timing noise (we will comment
         on glitches in sec.~\ref{sec: Minimum mismatch as a function of the observation epoch})
 
 
@@ -136,7 +74,7 @@ of EM data necessitates wide bands in the frequency and its derivatives. For
 fully coherent matched filtering methods these searches can rapidly become
 computationally prohibitive. To circumvent this, semi-coherent search
 techniques are used that incoherently combine short fully-coherent sections of
-data \citep{LIGO2012}; these will be less sensitive to timing noise.
+data \citep{ligo2012}; these will be less sensitive to timing noise.
 Nevertheless, semi-coherent searches  ultimately need to be followed up by
 targeted fully coherent searches, for which timing noise may be an issue.
 
@@ -178,7 +116,7 @@ methods.  That is, timing noise in the signal but not in the template is
 equivalent to timing noise in the template but not the signal.
 
 While all known pulsars are potential CW sources, young pulsars are the most
-promising due to their large spin-downs (see~\citet{LIGO2010} for a
+promising due to their large spin-downs (see~\citet{ligo2010} for a
         review). However, it was found by \citet{Hobbs2010} that the amount of timing
 noise is correlated with the spin-down  magnitude. This motivated us to study
 the effect of timing noise on CW searches for neutron stars with large spin-downs.
@@ -186,7 +124,7 @@ the effect of timing noise on CW searches for neutron stars with large spin-down
 The realisation of timing noise we will use to investigate timing noise
 in CW pulsar sources is based on the young Crab pulsar. The Crab is a
 potentially detectable  source of gravitational waves due to its high spin-down
-rate and it has the highest spin-down upper limit compared to the LIGO noise
+rate and it has the highest spin-down upper limit compared to the ligo noise
 floor \citep{ligo2008}. The EM signal from the Crab is well documented (see
         sec.~\ref{sec: timing noise as described by the crab ephemeris}) and contains
 exceptional levels of timing noise: it was estimated by \citet{Jones2004} that
@@ -196,12 +134,12 @@ searches.
 Several targeted searches have already
 been performed for CWs from the Crab pulsar.
 A single-template search for CWs from the Crab pulsar was performed on data
-collected during the LIGO S5 science run \citep{ligo2008}.  This search used
+collected during the ligo S5 science run \citep{ligo2008}.  This search used
 the Crab ephemeris and an adapted phase model to account for timing noise.  In
 addition to this single-template search, a narrow-band search for signals from
 the Crab was also performed by \citet{ligo2008} on the S5 data. Another
 narrow-band search for the Crab was carried out using data from the VIRGO
-VSR4 science run along with a search for the Vela pulsar \citep{LIGO2015}.
+VSR4 science run along with a search for the Vela pulsar \citep{ligo2015}.
 
 The structure of this paper is as follows. In section \ref{sec: timing noise as
 described by the crab ephemeris} we describe the observational data available
@@ -475,7 +413,7 @@ a month.
 We now describe the method to quantify the effect of timing noise on CW
 searches for signals from isolated pulsar.
 To be relevant to current pulsar CW search methods, we will base our
-method on the narrow-band searches of \citet{ligo2008} and \citet{LIGO2015}. The results can be interpreted as measuring the consequence of
+method on the narrow-band searches of \citet{ligo2008} and \citet{ligo2015}. The results can be interpreted as measuring the consequence of
 special case 1 on narrow-band and single-template searches; that is we assume
 the CW signal has a similar level of timing noise as the EM signal and search
 using global Taylor expansion templates. For this study, a single-template
@@ -550,7 +488,7 @@ the value found in step 2 above.
  The grid spacing is parameterised
 by $\mGRID$, the one-dimensional maximal mismatch between two adjacent Taylor
 expansion templates. From
-\citet{LIGO2013_EAH} the corresponding grid spacing is given by
+\citet{ligo2013_EAH} the corresponding grid spacing is given by
 \begin{align}
     d\f = \frac{\sqrt{12 \mGRID}}{\pi \To} &&&
     d\fdot = \frac{\sqrt{720 \mGRID}}{\pi \To^{2}},
@@ -628,8 +566,8 @@ Crab ephemeris between MJD 45150 and 45668.}
 \subsection{Results relevant to recent narrow-band searches}
 
 First we consider two particular periods of the Crab ephemeris corresponding to
-recent narrow-band searches for the Crab: the LIGO S5 period \citep{ligo2008}
-and the VIRGO VSR4 period \citep{LIGO2015}. The mismatch in the single-template
+recent narrow-band searches for the Crab: the ligo S5 period \citep{ligo2008}
+and the VIRGO VSR4 period \citep{ligo2015}. The mismatch in the single-template
 and the minimum mismatch for the narrow-band searches during both periods are
 listed in table~\ref{tab: Results}. For these periods timing noise is
 found to produce a mismatch of~$\approx 1\%$. As expected, the narrow-band
@@ -638,7 +576,7 @@ between the two searches is relatively small.
 
 Provided that the timing noise observed in the CW signal is at the same level
 (or less) as that observed in the EM signal, this result signifies that the
-recent LIGO and VIRGO narrow-band searches would not suffer significantly
+recent ligo and VIRGO narrow-band searches would not suffer significantly
 from the effects of timing noise.
 
 In addition to producing a mismatch, timing noise may result in the best
@@ -714,7 +652,7 @@ The mechanism which causes a glitch is not well understood and may involve
 unpredictable variations in the CW signal. As a result, targeted CW searches
 either avoid periods with known glitches \citep{ligo2008}, or
 allow for an arbitrary jump in gravitational wave phase at the time of
-the glitch \citep{LIGO2010}. For this work, we ignore
+the glitch \citep{ligo2010}. For this work, we ignore
 the complicating factor introduced by glitches and consider
 only the effect of timing noise. We do this by
 omitting windows which include glitches from the search by using
@@ -877,7 +815,7 @@ effects of timing noise on coherent targeted single-template  and narrow-band
 continuous gravitational-wave searches for pulsars.  This was done by generating fake
 signals based on the Crab ephemeris data and searching for them using templates
 without timing noise. Our analysis clarifies the impact for current searches;
-accordingly, our methods mimic those used by \citet{ligo2008} and \citet{LIGO2015}.
+accordingly, our methods mimic those used by \citet{ligo2008} and \citet{ligo2015}.
 
 Our primary results is summarised by Fig.~\ref{fig: mismatch Tobs}:
 when considering the average mismatch as
