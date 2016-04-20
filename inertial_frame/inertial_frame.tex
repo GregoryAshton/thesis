@@ -425,7 +425,8 @@ $\spin$ both wobbles and undergoes a secular spin down.
 {{Euler_Angles_Unknown_SpindownTorqueSwitching_1_chi0_8.0000000000e+01_omega0_1.00e+01_epsI3_1.00e-03_AnomTorqueSwitching_1_n_10000_a0_1.5000000000e+01_T_5.00e+03_upsilon_0.00e+00_epsA_5.00e-04_epsI1_0.00e+00_AnomTorque_1}.pdf}}
 \caption{Solution to the ODEs defined in Eqn.~\eqref{eqn: ODEs} including the
 torque defined in Eqn.~\eqref{eqn: torque} for a biaxial body with
-$\epsA=\epsI/2$ and $\epsI=1\times10^{-3}$.}
+$\epsA=\epsI/2$ and $\epsI=1\times10^{-3}$. Note the x-axis is in units of
+$\tauP$, the initial precession period.}
 \label{fig: biaxial body with torque}
 \end{figure}
 
@@ -574,7 +575,7 @@ for either.
 \citet{Jones2001} found that, for free precession with $\theta < \chi$,
 the phase residual is given by
 \begin{equation}
-    \Delta\Phi_{49}(t) = -\wobbleangle \cot\chi\cos(\dot{\psi}t + \frac{\pi/2}),
+    \Delta\Phi_{49}(t) = -\wobbleangle \cot\chi\cos\left(\dot{\psi}t + \frac{\pi}{2}\right),
     \label{eqn: Jones 49}
 \end{equation}
 where the subscript here refers to the equation number of \citet{Jones2001}.
@@ -689,15 +690,14 @@ taken from \citet{Jones2001}.}
 %taken from \citet{Jones2001}.}
 
 \section{Physical observables: frequency}
-; we will demonstrate this method in
-Sec.~\ref{sec: timing residuals}.
 
-The spin frequency of a pulsar is often discussed in pulsar astronomy, but when
-precessing the observed frequency is not given by $\omega$ due to the
-additional motions of precession. Instead, we note that the observer would
-fit a timing model to the TOAs as the pulse passes through the plane containing
-them and the angular momentum vector. So the frequency measured would be given
-by the first derivative of $\Phi$:
+The spin frequency of a pulsar is the rate with which observers measure the
+observed pulsations, usually we think of this as exactly the rotation frequency
+$\omega$. However, for a precessing star the observed frequency is not given by
+$\omega$ due to the additional motions of precession. Instead, we note that the
+observer would fit a timing model to the TOAs as the pulse passes through the
+plane containing them and the angular momentum vector, the phase of which is
+$\Phi$. So the frequency measured would be given by the first derivative of $\Phi$:
 \begin{equation}
 \dot{\Phi} = \dot{\phi}
 + \frac{\sin\chi \left(
@@ -711,86 +711,79 @@ will measure the time averaged value of $\dot{\Phi}$ as the `spin frequency' of
 the star.
 
 In Fig.~\ref{fig: frequency variations} we plot the frequency modulations for the
-three free precession cases considered in Fig.~\eqref{fig: polar angle variations}.
+three free precession cases discussed in Sec.~\ref{sec: understanding the motion of m}.
 \begin{figure}[ht]
 \centering
   \includegraphics[width=0.7\textwidth]{frequency_variation_with_chi.pdf}
-\caption{Variations in the spin-frequency of the dipole $\m$ under free precession}
+\caption{Variations in the instantaneous electromagnetic frequency for three choices
+of $\chi$ and $\theta$ under free precession}
 \label{fig: frequency variations}
 \end{figure}
-Again this shows that free precession causes periodic modulations of the spin
-frequency about an average value. To understand these and relate the spin
-frequency to the underlying properties of the star, in the next section will
-build an intuition for the motion of the dipole in the inertial frame.
-
-
+Additionally for the two cases $\chi>\theta$ and $\chi < \theta$ we have
+plotted the average spin frequencies $\dot{\phi}$ and $\dot{\phi}+\dot{\psi}$
+as predicted by \citet{Jones2001}. This shows the periodic modulations in all
+three instances, and the instantaneous drop in spin frequency to zero in the
+case of $\chi=\theta$.
 
 
 \section{Physical observables: spin-down rate}
-An observable which is often considered in characterising periodic patterns in
-pulsar signals is the spin-down rate $\spindown$. In our numerical model, the
-spin-down rate is the same as the second derivative of the magnetic dipoles
-azimuthal angle (i.e. $\ddot{\Phi}$).
 
-As we will now show, the spin-down rate is modulated by free precession, but
-this effect can also be amplified by the electromagnetic torque in the same way
-the timing residuals modulations were amplified in the previous section.
-In order to understand all of the subtle physics which
-may be present in the spin-down rate, we will now build our intuition by starting
-with the simplest models and gradually introducing new features.
+Like the spin frequency, the spin-down rate observed from a precessing pulsar
+will not be only the the secular spin-down of $\omega$, but will also undergo
+periodic modulation. Modulations in the spin-down rate for several pulsars have
+been observed \citep{Lyne2010, Perera2015} using the method used to do this,
+described in Sec.~\ref{sec: pulsar timing methods} involves measured the
+spin-down rate in a sliding window.
 
-Calculation of the spin-down rate can be done in two ways: either analytically
-building on results from \citet{Jones2001}, or we can numerically solve the
-system of equations and measure the spin-down rate (discussed shortly). Using the
-latter method we include by default all of the interplay between precession and
-the EM torque. We then compare this `exact' solution with analytic results
-which allows us to understand which parts of the system are responsible for the
-observed phenomena.
+In our numerical model, the spin-down rate is the second derivative of the
+magnetic dipoles azimuthal angle, i.e.  $\ddot{\Phi}$. We can calculate this
+directly by differentiating Eqn.~\eqref{eqn: Phi} twice. This will useful in
+some analytic circumstances which allow it, and could be done numerically to
+calculate the spin-down rate after numerically evolving the original ODEs
+of equations~\eqref{eqn: ODEs}.
 
-In order to calculate the spin-down rate from numerical solutions we could
-numerically differentiate eqn.~\eqref{eqn: Phi} (the angular phase of the
-magnetic dipole). However, since we are comparing our results with measured
-values from pulsar astronomers, an alternative is use the method proposed by
-\citet{Lyne2010}: a second order Taylor expansions is fitted to short sections
-of data of length $T$ and the resulting coefficient $\spindown$ is recorded the
-mid-point in time of the section of data. Repeating this process every $\sim
-T/4$ in a `sliding-window', we build a picture of how the spin-down varies with time.
-In the following our numerical results will use this technique which we refer
-to as the \emph{Lyne-method}.
+However, an alternative way to calculate the spin-down rate is to model the
+data collection mechanism used by observers: this has the added benefit of
+capturing any additional nauances specific to this method. Specifically,
+following the method of \citet{Lyne2010}, we fit a second order Taylor
+expansions to short sections of data of length $T$ and the resulting
+coefficient $\spindown$ is recorded at the mid-point of the section of data.
+Repeating this process every $\sim T/4$ in a `sliding-window', we build a
+picture of how the spin-down varies with time.  In the following our numerical
+results will use this technique which we refer to as the \emph{Lyne-method}.
 We choose $T$ such that it is a fraction of the precession period over which we
 expect quantities to be modulated. This is consistent with the observers method
 where $T$ is chosen in order to resolve the observed modulations.
 
-We now proceed to compare this numerical spin-down rate calculation with analytic
-predictions gradually introducing new features when required. Since the geometric
-variations can be quite complex, we consider only $\theta < \chi$ and start
-with $\theta \approx 3^{\circ}$ and $\chi=60^{\circ}$. This produces simple
-simple oscillatory behaviour. The solution become more complex if either
-the inequality is not satisfied or $\chi \approx \pi/2$ which we will not
-consider here.
+PSR~B1828-11 is a normal radio pulsar which displays strong periodic modulation
+in its spin-down rate. This has been modelled analytically by several authors
+\citep{Stairs2000, Jones2001, Link2001, Akgun2006}; in Chapter.~\ref{sec: testing models}
+we will discuss the spin-down rate of this pulsar in more detail. \citet{Jones2001}
+noted that, as in the case of the timing residuals, the spin-down rate modulations
+can be amplified by electromagnetic torques. In the following sections we will
+investigate this comparing our numerical model with the analytic models.
 
-\subsection{Spin-down variations due to free-precession}
+\subsection{Effect of torque-free precession on the spin-down rate}
 \label{sec: spin-down free precession}
 
 Without an EM torque, the average spin-down rate should be zero. However, if
 the body undergoes free precession, this will produce periodic variations.
-These can be calculated exactly by differentiating Eqn. \eqref{eqn: Phi_dot}
-twice. Since the system is torque free, we have $\dot{\theta} = 0$ leaving
+These can be calculated analytically by differentiating Eqn. \eqref{eqn: Phi}
+twice. Since the system is torque free the Euler angles evolutions are given
+by Eqn.~\eqref{eqn: euler angles torque free evolution} such that
 \begin{equation}
-    \ddot{\Phi}(t)_{\mathrm{p}} = \ddot{\phi} + \frac{d}{dt}\left(
+    \ddot{\Phi}(t)_{\mathrm{p}} = 
+%\ddot{\phi} 
++ \frac{d}{dt}\left(
         \sin\chi\dot{\psi} \frac{\cos\theta\sin\chi - \sin \psi \sin \theta \cos\chi
 }{(\sin\theta \cos \chi - \cos \theta \sin \psi \sin \chi)^{2} + \cos^{2}\psi \sin^{2} \chi}
 \right)
 \label{eqn: Phi_ddot FP}
 \end{equation}
-The expanded expression is unwieldy and so we do not report it here. For a
-freely precessing biaxial body we demonstrated in Sec.~\ref{sec: biaxial body
-with no torque} that, in the absence of any torque, the Euler angles evolution's
-are linear functions of time. As such the first term in this expression
-vanishes and we are left with a complicated trigonometric function of $\psi(t)$
-which is given by Eqn.~\eqref{eqn: euler angles torque free evolution}.
+The expanded expression is unwieldy and so we do not report it here.
 
-It is also useful to calculate the magnitude of variations: this is done by
+\meta{WORK FROM HERE: probably remove the magnitudes and just give the analytic?}
+Additionally, we can easily calculate the  magnitude of variations by
 differentiating Eqn.~\eqref{eqn: Jones 49} twice giving
 \begin{equation}
     |\Delta\spindown|_{\mathrm{p}} =\frac{\dot{\psi}^{2} \theta \cot\chi}{2\pi}.
@@ -815,7 +808,7 @@ half it corotates with the rapid rotation about the angular momentum vector.
 The result is a symmetric modulation of the spin-down rate about zero with magnitude
 given by Eqn.~\eqref{eqn: spin-down variations FP}.
 
-\subsection{Spin-down variations due to torqued precession}
+\subsection{Effect of torqued precession on the spin-down rate}
 In this section we will develop analytic models for the periodic variations
 due to precession under an EM torque. This problem has been considered before
 in the context of PSR~B1828-11 \citep{Jones2001, Link2001, Akgun2006}, we will
