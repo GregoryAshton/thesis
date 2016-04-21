@@ -10,15 +10,15 @@
 In Sec.~\ref{sec: rotating frame} we developed our intuition for the precession
 of neutron stars by working in the rotating body frame of the star.  However,
 pulsar astronomers report on physical observations of the star made in the
-inertial frame, in particular those quantities calculable from the radio
+inertial frame, in particular those quantities calculable from radio
 pulsations. In this section, we will develop our precession model by making
 predictions for how precession manifests in the observable features of a
 pulsar. This will require us to understand and model the data collection
 methods of pulsar astronomy. We will study each `physical observable' separately
 and discuss how exact numerical results can be computed, derive analytic
-approximations and compare with the results in the literature.
+approximations, and compare with the results in the literature.
 Modelling in this way develops our understanding of the precession model, but
-more than this it allows us to add new physics into the model and directly
+more than this, it allows us to add new physics into the model and directly
 understand the predictions it make for observations. To demonstrate this we
 finish the chapter by showing some preliminary results of a model in which the
 EM torque undergoes switching events as suggested by \citet{Lyne2010}.
@@ -581,7 +581,7 @@ the phase residual is given by
 where the subscript here refers to the equation number of \citet{Jones2001}.
 For a precessing star $\dot{\psi}$ is given by Eqn.~\eqref{eqn: psi dot} and
 the initial value of the cosine argument is $\psi(t=0)=\pi/2$ as derived in
-Sec.~\ref{sec: initial values}.
+Sec.~\ref{sec: initial conditions}.
 
 Equation \eqref{eqn: Jones 49} is calculated in the absence of any EM torque.
 Nevertheless, it is still appropriate when a torque is applied provided
@@ -1049,7 +1049,7 @@ Then, taking a Gaussian beam geometry, the intensity of the pulse will be given 
 \begin{equation}
 A(\Theta, \Phi, \iota, \PhiO, \sigmaB) =
 A_{0} \exp\left(-\frac{\Delta\sigma^{2}(\Theta, \Phi, \iota, \PhiO)}{2\sigmaB^{2}}\right)
-\label{eqn: beam intensity}
+\label{eqn: gaussian beam intensity}
 \end{equation}
 where $A_{0}$ is some constant amplitude, $\sigmaB$ is a measure of the
 angular beam width.
@@ -1073,7 +1073,7 @@ A_{\mathrm{max}}(\Theta, \Phi, \iota, \sigmaB) =
 A_{0}\exp\left(\frac{-(\Theta-\iota)^{2}}{2\sigmaB^{2}}\right),
 \label{eqn: A max}
 \end{align}
-this is also shown in Fig.~\ref{fig: amplitude variation}.
+this is also shown in Fig.~\ref{fig: intensity variation}.
 
 \subsection{Variations in the beam-width}
 It is unlikely that the variations seen in Fig.~\ref{fig: intensity variation}
@@ -1086,7 +1086,7 @@ the observed maximum intensity. Note that this is not the maximum intensity that
 the beam produces, $A_0$, but the maximum at that instant in time which is
 given by Eqn.~\eqref{eqn: A max}
 
-To model the beam-width we first note that in Eqn.~\eqref{eqn: beam intensity},
+To model the beam-width we first note that in Eqn.~\eqref{eqn: gaussian beam intensity},
 $\Theta$ varies on the slow precession timescale, while $\Phi$ varies on the
 rapid spin timescale: we are looking to measure the variations with respect to
 the slow precession timescale.  The pulse width is measured by the time spent
@@ -1094,7 +1094,7 @@ above a percentage $p$ of the maximum pulse amplitude, this can be defined as
 \begin{align}
 A(\Phi, \Theta, \ThetaO, \PhiO, \sigmaB) > A_{\textrm{max}} \frac{p}{100}.
 \end{align}
-Substituting in Eqn.~\eqref{eqn: beam intensity} and Eqn.~\eqref{eqn: A max}
+Substituting in Eqn.~\eqref{eqn: gaussian beam intensity} and Eqn.~\eqref{eqn: A max}
 then rearranging yields
 \begin{equation}
 \cos(\Phi - \PhiO) < \frac{
@@ -1437,16 +1437,17 @@ any signs of precession.
 
 In this chapter we have developed a method to simulate observable properties of
 neutron stars by evolving the governing system of ODEs. These equations
-\eqref{eqn: ODE} contain both the components of the spin vector in the rotating
-body frame and the Euler rotation angles required to transform properties from
+\eqref{eqn: ODEs} contain both the components of the spin vector in the rotating
+body frame and the Euler rotation angles required to transform from
 the rotating frame to the inertial frame. This step is important since it is in
 this reference frame that observers see the peculiar features of precession.
 
-We developed an intuitive model for how the magnetic dipole, along
-which EM radiation is emitted, moves in the inertial frame. Comparing with
-analytic models where possible, we showed how the calculate the evolution of
-the stars timing properties (the phase, frequency, and spin-down rate) and how
-to calculate features of the beam shape such as the beam-width.
+We developed an intuitive model for how the magnetic dipole, along which EM
+radiation is emitted, moves in the inertial frame. Comparing with analytic
+models where possible, we showed how the calculate from the motion of the
+dipole the evolution of the stars timing properties (the phase, frequency, and
+spin-down rate) and how to calculate features of the beam shape such as the
+beam-width.
 
 Finally, we used the phase residuals to investigate the effect of a simple torque
 switching model in which the components of the torque instantaneously change.
