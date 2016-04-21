@@ -19,7 +19,7 @@ and discuss how exact numerical results can be computed, derive analytic
 approximations and compare with the results in the literature.
 Modelling in this way develops our understanding of the precession model, but
 more than this it allows us to add new physics into the model and directly
-understand the predictions it make for observations. To demonstrae this we
+understand the predictions it make for observations. To demonstrate this we
 finish the chapter by showing some preliminary results of a model in which the
 EM torque undergoes switching events as suggested by \citet{Lyne2010}.
 
@@ -744,7 +744,7 @@ of equations~\eqref{eqn: ODEs}.
 
 However, an alternative way to calculate the spin-down rate is to model the
 data collection mechanism used by observers: this has the added benefit of
-capturing any additional nauances specific to this method. Specifically,
+capturing any additional nuances specific to this method. Specifically,
 following the method of \citet{Lyne2010}, we fit a second order Taylor
 expansions to short sections of data of length $T$ and the resulting
 coefficient $\spindown$ is recorded at the mid-point of the section of data.
@@ -770,7 +770,7 @@ Without an EM torque, the average spin-down rate of the star is zero. However, i
 the body undergoes free precession, this will produce periodic modulations about
 that average value.
 These can be calculated analytically by differentiating Eqn. \eqref{eqn: Phi}
-twice. Since the system is torque free the Euler angles evolutions are given
+twice. Since the system is torque free the Euler angles evolution's are given
 by Eqn.~\eqref{eqn: euler angles torque free evolution} such that
 \begin{equation}
     \ddot{\Phi}(t)_{\mathrm{p}} =
@@ -1020,7 +1020,7 @@ variations}.
 \end{figure}
 
 \subsection{Variations in the pulse intensity}
-The intensity of radiation recieved by an observer will depend on the
+The intensity of radiation received by an observer will depend on the
 orientation of the magnetic dipole with respect to the observer and the beam
 geometry. It will be maximal when pointing directly at the observer and
 presumably fall off as the angle between the two grows. For each rotation of
@@ -1055,10 +1055,10 @@ where $A_{0}$ is some constant amplitude, $\sigmaB$ is a measure of the
 angular beam width.
 
 Given a value for $A_0$ and $\sigmaB$, we can use a numerical solution to the
-governing ODEs to simulate this pulse intensity exactly This is deone in
+governing ODEs to simulate this pulse intensity exactly This is done in
 Fig.~\ref{fig: intensity variation} for a system where the variations in
 $\Theta$ occur on a time scale not much longer than the pulse period. This
-unphysical simulation is intended to show the modulation of the individual
+nonphysical simulation is intended to show the modulation of the individual
 pulsations due to precession.
 \begin{figure}[htb]
 \centering
@@ -1067,7 +1067,7 @@ pulsations due to precession.
 \label{fig: intensity variation}
 \end{figure}
 We can also predict the maximum pulse intensity at any given instance by setting
-$\Phi=\PhiO$, then simplifiying we find that
+$\Phi=\PhiO$, then simplifying we find that
 \begin{align}
 A_{\mathrm{max}}(\Theta, \Phi, \iota, \sigmaB) =
 A_{0}\exp\left(\frac{-(\Theta-\iota)^{2}}{2\sigmaB^{2}}\right),
@@ -1076,10 +1076,10 @@ A_{0}\exp\left(\frac{-(\Theta-\iota)^{2}}{2\sigmaB^{2}}\right),
 this is also shown in Fig.~\ref{fig: amplitude variation}.
 
 \subsection{Variations in the beam-width}
-It is unlikely that the variatioins seen in Fig.~\ref{fig: intensity variation}
+It is unlikely that the variations seen in Fig.~\ref{fig: intensity variation}
 will ever be visible, over longer time-scales of course, in nature. This is because
 in real observations the intensity will also be subject to variations in the
-amount of dispersion from the interstellar medium. Therefore, pulsar astronmers
+amount of dispersion from the interstellar medium. Therefore, pulsar astronomers
 do not typically report on intensities themselves, but characterise the pulsation
 by their beam-width. This is the width of the pulse at some percentage $p$ of
 the observed maximum intensity. Note that this is not the maximum intensity that
@@ -1095,7 +1095,7 @@ above a percentage $p$ of the maximum pulse amplitude, this can be defined as
 A(\Phi, \Theta, \ThetaO, \PhiO, \sigmaB) > A_{\textrm{max}} \frac{p}{100}.
 \end{align}
 Substituting in Eqn.~\eqref{eqn: beam intensity} and Eqn.~\eqref{eqn: A max}
-then rearranging yeilds
+then rearranging yields
 \begin{equation}
 \cos(\Phi - \PhiO) < \frac{
 \cos\left(
@@ -1108,11 +1108,11 @@ polar angle $\Theta$.
 
 Lets consider a single rotation with the magnetic dipole starting and ending in
 the antipodal point to the observers position. During this rotation, $\Phi -
-\PhiO$ increase beween $-\pi$ and $\pi$, and so the left hand side of the
+\PhiO$ increase between $-\pi$ and $\pi$, and so the left hand side of the
 inequality is a simple cosine function as illustrated in Fig.~\ref{fig:
 CosineIllustration}.  Since we expect $\Theta$ to vary slowly compared to the
 rotation period we can, over a single pulsation, think of $\Theta$ as a
-constant; then the whole right hand side of ineqality~\eqref{eqn: 6737} is a
+constant; then the whole right hand side of inequality~\eqref{eqn: 6737} is a
 constant. In Fig.~\ref{fig: CosineIllustration} we illustrate this constant
 along with the evolution of the left hand side: the fraction of the rotation
 for which the cosine is less than the constant, i.e. inequality~\eqref{eqn: 6737}
@@ -1128,7 +1128,7 @@ is satisfied, defines the beam-width.
 \end{figure}
 
 We can calculate the beam width by first calculating the angular width $\Delta\Phi$
-when the eqeality is not satisified:
+when the inequality is not satisfied:
 \begin{equation}
     \Delta\Phi = 2\cos^{-1}\left(
                 \frac{\cos\left(\sqrt{2\sigmaB^{2} \ln(f)}\right) - \sin(\Theta)\sin(\Theta)}
@@ -1136,7 +1136,7 @@ when the eqeality is not satisified:
                       \right).
 \end{equation}
 Then the angular fraction at which the inequality \emph{is} satisfied is given by
-$2\pi - \Delta\Phi$. To convert this into the beam-width reporeted by pulsar
+$2\pi - \Delta\Phi$. To convert this into the beam-width reported by pulsar
 astronomers we multiply by the pulse period
 \begin{align}
     W_{p} & = P \frac{2\pi - \Delta\Phi}{2\pi}\\
@@ -1168,7 +1168,7 @@ interesting two-peak structure. This structure can be understood by realising
 that the polar angle of the dipole $\Theta$ `passes over' the observer such
 that for some of the precessional phase the observer sees the beam from below,
 and other from above. This leads to the two-peaked structure due to the
-symmetry of the emmision geometry.
+symmetry of the emission geometry.
 
 
 \section{Application: switching and precession}
@@ -1201,7 +1201,7 @@ are based on evidence that the spin-down rate is switching, therefore the torque
 switching must occur in the spin-down component. However, it is unclear if it would
 also occur in the anomalous component, to answer this would need a detail model
 of each how the magnetosphere reconfigures during a switching. We will not do
-this here, but instead investigate a simple phenomlogical switching in which we
+this here, but instead investigate a simple phenomenological switching in which we
 modify Eqn.~\eqref{eqn: torque} as follows
 \newcommand{\Ss}{S_{\mathrm{S}}}
 \newcommand{\Sa}{S_{\mathrm{A}}}
@@ -1262,13 +1262,13 @@ zero. In all simulations, we consider a biaxial body with the full torque given
 by \eqref{eqn: single switch torque}. From our previous discussion on the
 wobble angle we can minimise the precession initially by setting the initial polar angle
 of the spin vector in the body frame to lie along the effective body-frame
-axis. In the presense of the anomalous torque this is done with
+axis. In the presence of the anomalous torque this is done with
 \begin{equation}
 a_{0} = \beta(\epsI, \epsA, \chi),
 \end{equation}
 
 In Fig.~\ref{fig: no switching} we illustrate the behaviour of our simulation
-in the absense of a switching event; the simulation parameters are listed in
+in the absence of a switching event; the simulation parameters are listed in
 table \ref{tab: NoSwitching properties}, note that the initial polar angle is
 exactly the angle $\beta$ which can be calculated using equation \eqref{eqn:
 beta}.
@@ -1292,7 +1292,7 @@ beta}.
 Notably this minimal precession solution does show some precession with phase
 residuals $\sim 10^{-4}$. This is because the spin-down torque produces a wobble
 in the angular momentum vector and as a result the wobble angle is not truly
-zero. In addition to this precessional wobble, there is also an inaccuricies
+zero. In addition to this precessional wobble, there is also an inaccuracies
 in the polynomial fitting which produces structure with a period equal to that
 of the observation span.
 
@@ -1302,7 +1302,7 @@ is important.
 
 \subsection{Switching in the spin-down torque only}
 We now consider manually switching the spin-down torque halfway though the
-simulation, with no switch occuring in the anomalous component.
+simulation, with no switch occurring in the anomalous component.
 That is we set
 \begin{align}
     t_{\mathrm{switch}} = \frac{\To}{2}, &&& \Ss = 0.4, &&& \Sa = 0.0,
@@ -1318,7 +1318,7 @@ in the initial minimal precession are swamped by the larger variations due to
 the switch. To study this simulation further,
 in the lower plot we plot two residuals: the first is calculated
 in the region $[0, t_{\mathrm{switch}}]$ and the second in $[t_{\mathrm{switch}}, \To]$,
-the are marked by different colors.
+the are marked by different colours.
 Because the switch does not occur in either of these periods we can resolve the
 free precession during each period and note that the precession modulation is
 in fact smaller after the switch.
@@ -1404,7 +1404,7 @@ as much as a few degrees although it tends to zero in the limit $\epsI \gg
 \end{figure}
 
 A simple application of this work is to apply our findings to PSR~B1828-11,
-which was interpreted by \citet{Lyne2010} as underdoing switching with a fractional
+which was interpreted by \citet{Lyne2010} as undergoing switching with a fractional
 change in the spin-down rate given by
 \begin{align}
 \frac{\Delta\dot{\nu}}{\dot{\nu}} = 0.0071
@@ -1427,11 +1427,38 @@ precession. Nevertheless, we numerically maximise over $\epsI$ to find
 \Delta\beta_{\textrm{max}}(\epsI=2.89\times10^{-11}, \epsI=2.87\times10^{-11})
 = 0.048 \textrm{ degs}
 \end{align}
-This is the new wobble angle which must occur everytimne B1828-11 undergoes a
+This is the new wobble angle which must occur every time B1828-11 undergoes a
 switching event, if the switch also occurs in the anomalous torque. This
 therefore provides a method to probe how the switching mechanism works by
 looking at timing residuals in the post-switch timing data to check for
 any signs of precession.
+
+\section{Conclusions}
+
+In this chapter we have developed a method to simulate observable properties of
+neutron stars by evolving the governing system of ODEs. These equations
+\eqref{eqn: ODE} contain both the components of the spin vector in the rotating
+body frame and the Euler rotation angles required to transform properties from
+the rotating frame to the inertial frame. This step is important since it is in
+this reference frame that observers see the peculiar features of precession.
+
+We developed an intuitive model for how the magnetic dipole, along
+which EM radiation is emitted, moves in the inertial frame. Comparing with
+analytic models where possible, we showed how the calculate the evolution of
+the stars timing properties (the phase, frequency, and spin-down rate) and how
+to calculate features of the beam shape such as the beam-width.
+
+Finally, we used the phase residuals to investigate the effect of a simple torque
+switching model in which the components of the torque instantaneously change.
+This was done to model, in a simple way, the magnetospheric switching which is
+proposed by \citet{Lyne2010} as an explanation of the periodic modulation of
+B1828-11. Our numerical model is ideally suited to this task as it captures the
+complicated feedback between precession and the changing torque.
+A future application of this model is to link the switching to the precessional
+phase in a probabilistic way as proposed by \citet{Jones2012}. In this way
+precession provides the clock to the switching. We feel that, by virtue of
+being probabilistic, such a system will display stochastic resonance as first
+described by \citet{Cordes2013}.
 
 \biblio
 
