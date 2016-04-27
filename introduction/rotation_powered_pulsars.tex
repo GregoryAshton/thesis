@@ -35,10 +35,10 @@ $I_{0}$ is given by
     E = \frac{1}{2}I_{0}\Omega^{2}.
 \end{equation}
 Differentiating this expression with respect to time gives the loss of rotational
-energy $\dot{E}=I_0 \Omega\dot{\Omega}$. Assuming that all the energy is lost
+energy, $\dot{E}=I_0 \Omega\dot{\Omega}$. Assuming that all the energy is lost
 to the rotation of the dipole, hence the name rotation powered pulsars, we can
-equate $\dot{E} = -I$, then we rearrange
-to give a power-law relation between the spin-down rate and the spin-frequency
+equate $\dot{E} = -I$. We then rearrange
+to give a power-law relation between the spin-down rate and the spin-frequency:
 \begin{align}
 \dot{\Omega} = -\frac{B_0^{2} R^{6} \sin^{2}\alpha}{6 c^{3} I_0} \Omega^{3}.
 \end{align}
@@ -53,17 +53,17 @@ Generalising in this way suggests a powerful method to determine the type of
 braking for a given pulsar. Specifically, differentiating Eqn.~\eqref{eqn: power law spin-down}
 and rearranging it can be shown that
 \begin{equation}
-    n = \frac{\ddot{\Omega}\Omega}{\dot{\Omega}^{2}},
+    n = \frac{\ddot{\Omega}\Omega}{\dot{\Omega}^{2}}.
     \label{eqn: measured braking index}
 \end{equation}
-therefore, if $\ddot{\Omega}$ can be measured, then $n$ can be determined and
-hence used to determine the type of braking. For example, measuring $n=3$ would
+Therefore, if $\ddot{\Omega}$ can be measured, then $n$ can be determined, and
+hence used to infer the type of braking. For example, measuring $n=3$ would
 indicate the pulsar braking is dominated by losses due to the magnetic dipole,
-in contrast it can be shown (see \citet{Shapiro83} for example) that
-gravitational wave braking would produce $n=5$. Unfortunately in reality
-pulsars do not constrain this value, braking index's have been measured with
-values as large as $\sim10^{6}$, we will return to this issue in Sec.~
-\ref{sec: evidence from anomalous braking indices}.
+in contrast, it can be shown that gravitational wave braking would produce
+$n=5$ \citep{Shapiro83}. Unfortunately, in reality, pulsars do not constrain this
+value. Braking indexes have been measured with values as large as $\sim10^{6}$.
+We will return to this issue in Sec.~ \ref{sec: evidence from anomalous braking
+indices}.
 
 To infer the age of the pulsar, Eqn.~\eqref{eqn: power law spin-down} can
 be integrated between the initial values ($t=0, \Omega=\Omega_{i}$) and the
@@ -79,13 +79,13 @@ such that $N=3$. Then additionally assuming that $\Omega_{i} \gg
 \Omega_{\mathrm{o}}$ we can approximate to a characteristic age
 \begin{equation}
     \tau_c = \frac{-1}{2}\frac{\Omega_{\mathrm{o}}}{\dot\Omega_{\mathrm{o}}}
-         = \frac{1}{2}\frac{P}{\Pdot}.
+         = \frac{1}{2}\frac{P}{\Pdot},
 \end{equation}
-Where $P=\frac{2\pi}{\Omega}$ is the pulse period and
+where $P=\frac{2\pi}{\Omega}$ is the pulse period and
 $\dot{P}=-2\pi\frac{\dot{\Omega}}{\Omega^{2}}$ is the period derivative.
 
 To infer the approximate surface magnetic field strength, we first note that
-in the EM dipole braking model,
+in the EM dipole braking model:
 \begin{align}
 k = \frac{B_0^{2} R^{6} \sin^{2}\alpha}{6c^{3}I_0}.
 \end{align}
@@ -100,10 +100,18 @@ spin-down} we can estimate the surface magnetic field strength by
 \end{equation}
 In general we do not know the inclination angle $\alpha$, but we can evaluate a 
 minimum magnetic field strength by setting $\alpha=\pi/2$. In CGS units, for a
-canonical pulsar with $R=10^{6}$~cm, $I_{0}=10^{45}$~g~cm$^{2}$, we can approximate
+canonical pulsar with $R=10^{6}$~cm, $I_{0}=10^{45}$~g~cm$^{2}$ \citep{Lyne2012book}, we can approximate
 the magnetic field strength as
 \begin{equation}
     B_{0} = 3.2 \times 10^{19} \sqrt{P \Pdot}.
 \label{eqn: surface magnetic field canonical}
 \end{equation}
+
+In this section, we have introduced some of the simple results that can be
+obtained by modelling the time evolution of pulsars with a power law. In
+practise this model is consisent with most pulsar observations and provides a
+useful way to categorise them via their spin-down age and magnetic field.
+However, such a model does not capture all of the subtle variations which are
+the focus of this thesis.  We will frequently refer back to this model as it
+provides a useful platform from which to begin understanding neutron stars.
 
