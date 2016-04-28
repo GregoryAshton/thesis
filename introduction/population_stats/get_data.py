@@ -1,7 +1,7 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from matplotlib import rc_file
-rc_file("/home/greg/Neutron_star_modelling/matplotlibrc")
+plt.style.use("thesis")
 
 DATA_FILE = "ATNF_data_file.txt"
 
