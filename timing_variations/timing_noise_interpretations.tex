@@ -251,12 +251,13 @@ testing models}.
 \label{sec: two state switching}
 
 Recently a new model has been proposed by \citet{Lyne2010} to explain the
-observation that, over long time periods, the timing noise structure is
-quasi-periodic. This began with the observation by \citet{Kramer2006} that the
-pulses from PSR B1931+24 where intermittent: the pulsar acts as a normal pulsar
+observation that of quasi-periodicity in timing noise structure.
+This work was motivated by the observations of \citet{Kramer2006} that the
+pulses from PSR~B1931+24 where intermittent: the pulsar acts as a normal pulsar
 for $\sim10$~days and then switches off, being undetectable for $\sim25$~days,
-before switching on again. Analysing the spin-down rate between the on and off
-states, they determined the spin-down rate $\dot{\f}$ was $\sim50\%$ faster in
+before switching on again. This behaviour can be understood as the pulsar switching
+between two states. Analysing the spin-down rate between the on and off
+states, they determined the spin-down rate $\dot{\nu}$ was $\sim50\%$ faster in
 the on state. The figure illustrating this is reproduced in Fig.~\ref{fig:
 kramer 2006 fig2}.
 \begin{figure}
@@ -266,27 +267,31 @@ kramer 2006 fig2}.
              of pulsar PSR B1931+24}
     \label{fig: kramer 2006 fig2}
 \end{figure}
-In the  upper panel (\textbf{A}), the authors show the evolution of the
-rotational frequency over a 160 day period encompassing several switching
-events. The line shows the long-term spin-down of the pulsar while the dots show
-individual measurements made during the on state. During these on states the
-gradient of the reduction in frequency is increased: the spin-down rate is faster.
-It is thought that measurements of the frequency in the off state
-would produce a line with decreased spin-down connecting the dots. This is
-accompanied by the timing residual measured over the same period in the lower
-panel (\textbf{B}). This shows significant quasi-periodic modulations correlated
-with the switching. This work proposed that the switching was a magnetospheric
-phenomenon. The sharpness of the switches certainly requires something acting
-on a short timescale and it intuitively makes sense that the greater spin-down
-results from greater torque produced by the emissions observed during the on
-state.
+The  upper panel, Fig.~\ref{fig: kramer 2006 fig2}\textbf{A}, shows the
+evolution of the rotational frequency over a 160 day period encompassing
+several switching events. The line shows the long-term averaged spin-down of
+the pulsar while the dots show individual measurements made during the on
+state. During these on states, the gradient of the reduction in frequency is
+increased: the spin-down rate is faster.  It is thought that measurements of
+the frequency in the off state would produce a line with decreased spin-down
+connecting the dots. Plotted in Fig.~\ref{fig: kramer 2006 fig2}\textrm{B} is
+the timing residual; this shows significant quasi-periodic modulations
+correlated with the switching.
+
+PSR~B1931+24 evidently switches suddenly and periodically between two distinct
+states. The authors, \citet{Kramer2006}, realised that the neutron star
+magnetosphere is the only mechanism which could produce such sharp changes with
+correlated changes in the spin-down rate and beam.  It intuitively makes sense
+that magnetospheric state which does not produce EM emission may have a lower
+spin-down rate while the state which does produce radiation has a higher
+spin-down rate.
 
 Motivated by this observation, the authors of \citet{Lyne2010} tested a range
 of other pulsars and presented a study of 17 pulsars for which they found
 evidence for `two-state magnetospheric switching'. Unlike in PSR~B1931+24,
 these pulsars are not intermittent, but are seen to continuously pulse.  The
 authors measured the spin-down rate of each pulsar (for a description of the
-method used to do this see Sec.~\ref{sec: switching}) over a $\sim20$~year
+so called observational-method used to do this see Sec.~\ref{sec: switching}) over a $\sim20$~year
 period; they found a variety of smooth periodic fluctuations with typical
 periods of years. In Fig.~\ref{fig: lyne 2010 fig2} we reproduce their original
 plot showing the periodic variations in spin-down rates.
@@ -320,13 +325,15 @@ To test if the mechanism causing these variations is smooth or instantaneous
 (i.e. switching) the authors needed to look at an observed property not subject
 to the time-averaging process.  This is possible by looking at individual
 measurements of the pulse width which are taken during each short $\sim30$~mins
-observation. In this way they are time averaged over a duration much shorter
+observation. In this way, they are time averaged over a duration much shorter
 than the modulation period and could, in principle, resolve individual
-switching events. They were able to do this for two pulsars B1822-09 and
-B1828-11 and argues that the individual beam-width measurements, by eye, can be
+switching events. They were able to do this for two pulsars, B1822-09 and
+B1828-11, and argue that the individual beam-width measurements, by eye, can be
 interpreted as taking one of two values with few observations seen in between.
 They took this as evidence that the pulsars were indeed undergoing sudden,
-instantaneous, and periodic switching between two states.
+instantaneous, and periodic switching between two states. We note that the
+stronger of these two condidates, B1828-11, was previously discussed in the
+context of free precession in Sec.~\ref{sec: free precesson}.
 
 Since this initial study, evidence for switching in two others pulsars have
 been reported by \citet{Perera2014} and \citet{Perera2016} with additions added
@@ -336,12 +343,8 @@ which both causes the switching between states and provides the clock regulating
 the period.
 
 \citet{Lyne2010} argue that the fast state changes seem to rule out free
-precession as the origin of oscillatory behaviour observed in timing residuals.
-One of the pulsars which shows some evidence for two state switching is PSR
-B1828-11; this pulsar was cited as evidence for free precession by
-\citet{Akgun2006}. \citet{Lyne2010} argue that the fluctuations from this pulsar
-should be reinterpreted as two-state switch due to the observed fast state
-changes.
+precession as the origin of oscillatory behaviour observed in timing residuals,
+in particular for B1828-11.
 
 \citet{Jones2012} argues that such dismissal of precession is premature since
 the modulation period of the switching has yet to be explained.  Instead, the
@@ -355,37 +358,48 @@ of existing in one state or the other, sharp changes would be caused by an
 the timescale for switching along with the ability for the switching to be
 quasi-periodic since the precession only biases the probability.
 
-A alternative idea proposed by \citet{Cordes2013} interpreted two state
+Another idea proposed by \citet{Cordes2013} interpreted two state
 switching as evidence for a system in a state of `stochastic resonance'.  This
 occurs in systems in which, under certain conditions, a weak periodic forcing
 function is amplified by stochastic noise. To explain this phenomenon in
-appendix \ref{app: stochastic} we present a toy model of stochastic resonance
+appendix~\ref{app: stochastic} we present a toy model of stochastic resonance
 for a particle in a well. The switching could therefore be the result of any
 periodic modulation, such as precession, coupled to random fluctuations. This
 would quite naturally explain the stability of states, the timescales over
 which the occur, and the fact that it is observed in only some pulsars.
 
-In Chapter~\ref{sec: testing models} we present as quantitative
-model comparison of magnetospheric switching with precession for PSR B1828-11.
-In the following sections we will present the basics of the empirical switching
-model and then develop an idea of how pulsar astronomers could test for switching.
+As already mentioned, determining the cause of periodic modulations has
+important implications for neutron star physics. Later on in Chapter~\ref{sec:
+testing models} we will investigate this issue, particuarly in the context of
+PSR~B1828-11, using a quantiative model comparison. In the remainder of this
+section we will build a model for magnetospheric switching incorparating all
+the ideas of \citet{Lyne2010} and \citet{Perera2014}; this model forms the basis
+of the model compared against precession in Chapter~\ref{sec: testing models}.
+Finally, in Sec.\ref{sec: switching predictions} we show how this simple
+emperical model of switching makes a testable prediction which could be
+checked by pulsar astronomers using current data.
 
 \subsubsection{Simple empirical model}
 
 In the supplementary material to \citet{Lyne2010}, the authors presented
 results from a simple empirical switching model to demonstrate the resulting
-phase residuals. In this section we will similarly develop a simple model and
-show the effecting of switching on the time-averaged spin-down rate and phase
+phase residuals. In this section, we will similarly develop a simple model and
+show the effect of switching on the time-averaged spin-down rate and phase
 residuals.
 
-Firstly we model a pulsar as spinning down in the usual way except that its
-spin-down switched between two distinct values $\dot{\nu}_{A}$ and $\dot{\nu}_{B}$
-staying in each for $t_A$ and $t_B$ respectively; we use
-$A$ and $B$ to denote the two magnetospheric states. Then, we
-define the ratio of time spent state in state $A$ and $B$ as $R =
-t_{B}/t_{A}$.  This is a purely deterministic model and, having generated the
-spin-down values, we can integrate twice to get the phase. From the phase, we can
-use the method of \citet{Lyne2010} (described in Sec.~\ref{sec: switching})
+We model a pulsar as spinning down in the usual way except that its
+magnetosphere periodically and suddenly between two magnetospheric states which
+we label $A$ and $B$. The star spends a time $t_A$ and $t_B$ in each state such
+that $t_A+t_B$ gives the total period of switching. We then associate spin-down
+rates, $\dot{\nu}_{A}$ and $\dot{\nu}_{B}$ to each of the states such that the
+underlying spin-down rate is a square wave oscillating between these values.
+Since we do not concern ourself in this description with the exact periods,
+only the gross features, let us define the ratio of time spent state in state
+$A$ and $B$ as $R = t_{B}/t_{A}$.
+
+This is a purely deterministic model and, having generated the
+spin-down values, we can integrate twice to get the phase. From the phase, we
+can use the method of \citet{Lyne2010} (described in Sec.~\ref{sec: switching})
 to get the time-averaged spin-down rate $\langle\dot{\nu}\rangle$, or we can
 fit a polynomial to the entire phase evolution and remove it to get a phase
 residual.
@@ -405,14 +419,14 @@ difference by the period in order to get the phase residual in cycles.
     \label{fig: lyne example D=0}
 \end{figure}
 
-The phase residuals in figure \ref{fig: lyne example D=0} are strictly periodic
+The phase residuals in Fig.~\ref{fig: lyne example D=0} are strictly periodic
 which is inconsistent with the observed variations in the majority of pulsars
-\citep{Hobbs2010}.  To develop this, \citet{Lyne2010} added a probabilistic
+\citep{Hobbs2010}. To develop this, \citet{Lyne2010} added a probabilistic
 'dither' $D$ in the waiting time between switches. Now we have periods
 $t_{A}^{i}$ and $t_{B}^{i}$ which are Gaussian distributed with a mean of
 $t_{A}$ and $t_{B}$ and a standard deviation $D t_{A}$ and $D t_{B}$. In
-Fig.~\ref{fig: lyne example D=0.3} we repeat the results of Fig.~\ref{fig: lyne example D=0}
-with $D=0.3$.
+Fig.~\ref{fig: lyne example D=0.3} we repeat the results of Fig.~\ref{fig: lyne
+example D=0} with $D=0.3$.
 \begin{figure}[htb]
     \centering
     \includegraphics[]{{R_3.0_D_0.3}.pdf}
@@ -420,43 +434,49 @@ with $D=0.3$.
              observed quasi-period structure.}
     \label{fig: lyne example D=0.3}
 \end{figure}
+This dither can be used to understand why the residuals and averaged spin-down
+rate are quasi-periodic rather than strictly periodic. However, this model
+is missing a substantive physical explanation.
 
-\subsubsection{Simple empirical model: four time periods}
-The spin-down rates seen in Figs.~\ref{fig: lyne example D=0} and Fig.~\ref{fig:
-lyne example D=0.3} result from having two spin-down rates and two durations
-which the system spends in those states. These results can be contrasted with
-the spin-down rates of B1828-11 seen in Fig.~\ref{fig: lyne 2010 fig2}.
-With only the ingredients described by \citet{Lyne2010}, it is not possible
-to consistently replicate the double peaked spin-down rate variations seen
-for this pulsar. A similar problem was faced by \citet{Perera2014} for
-PSR B0919+06 and the authors devised the following solution. Rather than introduce
-a third spin-down state, they simply required that the system has four periods
-instead of two as in the original \citet{Lyne2010} description. The system then
-switches between the two states four times during a single cycle.
+\subsubsection{Simple empirical model: four time periods} 
 
-To illustrate this, in Fig.~\ref{fig: test lyne underlying} we show a single
-cycle in which the four periods are $100$, $100$, $50$, and $100$ days.
+The time averaged spin-down rates in Fig.~\ref{fig: lyne example D=0} and
+Fig.~\ref{fig: lyne example D=0.3} result from having two spin-down rates and
+two durations which the system spends in those states. These results can be
+contrasted with the spin-down rates of B1828-11 seen in Fig.~\ref{fig: lyne
+2010 fig2}.  With only the ingredients described by \citet{Lyne2010}, it is not
+possible to consistently replicate the double peaked spin-down rate variations
+seen for this pulsar. A similar problem was faced by \citet{Perera2014} for
+PSR~B0919+06, in response the authors devised the following solution. Rather
+than introduce a third spin-down state, they simply required that the system
+has four periods instead of two as in the original \citet{Lyne2010}
+description; that is, we have four times $\tI{A}, \tI{B}, \tI{C},$ and $\tI{D}$
+which sum up to the total period.
+The system then switches between the two states four times during
+a single cycle.  To illustrate this, in Fig.~\ref{fig: test lyne underlying} we
+show a single cycle in which the four periods are $100$, $100$, $50$, and $100$
+days.
 \begin{figure}[htb]
     \centering
     \includegraphics[]{TestLyneUnderlying}
     \caption{The spin-down rate $\dot{\nu}$ and its time-average $\langle\dot{\nu}\rangle$
     for a single cycle of the \citet{Perera2014} switching model in which the
     system switches between the two states four times during a single cycle.
-    For the time-averaged spin-down rate, we have used a baseline for $100$~days,
-    which is longer than the shortest period of 50~days; for this period we
+    For the time-averaged spin-down rate, we have used a baseline of $100$~days,
+    which is longer than the shortest period of $\tI{C}=$50~days; for this period we
     highlight the true spin-down rate by a red dot and the maximum time-average
     spin-down rate by a blue dot.}
     \label{fig: test lyne underlying}
 \end{figure}
 
 The \citet{Perera2014} switching model naturally produces the doubly peaked
-time-averaged spin-down rate seen in B1828-11 when the time-averaging is longer
+time-averaged spin-down rate seen in B1828-11 when the time-averaging baseline is longer
 than one of the switching periods. To explain more fully, when the time
 averaging baseline is longer than a single period, then the time-average over
 that section of the data will always include some amount of the other spin-down
 rate. This can be seen in Fig.~\ref{fig: test lyne underlying} for the third
 period which has duration 50~days, while the time averaging baseline is
-100~days. In Fig.~\ref{fig: perera example} we give the spin-down rate and
+100~days. In Fig.~\ref{fig: perera example}, we give the spin-down rate and
 phase residual for this model to illustrate the variations in the residuals.
 \begin{figure}[htb]
     \centering
@@ -472,125 +492,142 @@ model further in the context of B1828-11 and develop a complete model for the
 spin-down rate and beam-width modulations.
 
 \subsubsection{A simple test of the switching hypothesis}
-PSR B1828-11, which has a distinct doubly peaked spin-down, is one of two pulsars
-used in \citet{Lyne2010} as evidence of magnetospheric switching. We describe now
-a simple method to test the switching hypothesis which so far, to our knowledge,
-has not been tried.
+
+PSR B1828-11, which has a distinct doubly peaked spin-down, is one of two
+pulsars used in \citet{Lyne2010} as evidence of magnetospheric switching. Since
+that result several other pulsars have been found with a similar double-peaked
+structure \citep{Perera2014, Perera2016}. In the previous section we introduced
+a basic empirical model to explain this double-peak in the context of
+magnetospheric switching. We will now describe a simple method to test this
+switching hypothesis which so far, to our knowledge, has not been attempted,
+but could be applied to current observational data.
 
 If the double peaked spin-down rates of B1828-11, B0919+06, or any other pulsar
 is due to model proposed by \citet{Perera2014}, then the maximum spin-down rate
-of lower of the two peaks is a function of the time-averaging process and not
+of the lower of the two peaks is a function of the time-averaging process and not
 the pulsar itself.  Specifically, if the time-averaging was shorter than the
-shortest period there would be no second, lower peak: both peaks would have a
-value $\dot{\nu}$.  Therefore, if one had access to the original data used to
+shortest period there would be no second lower peak: both peaks would have the same
+value, $\dot{\nu}$.  Therefore, if one had access to the raw data used to
 produce the time-averaged spin-down rate, one could repeat the time-averaging
 process varying the time-averaging baseline which we denote by $T$. Then we
 could imagine measuring the maximum spin-down rate of the two peaks in the
-time-averaged spin-down rate and taking their ratio $R$. Then, if the Perera
-switching model is to be believed $R$ should depend on $T$.
+time-averaged spin-down rate and taking their ratio
+\begin{align}
+\mathcal{R} = \frac{\dot{\nu}_\textrm{max of lower peak}}
+                   {\dot{\nu}_\textrm{max of larger peak}}.
+\label{eqn: R-test}
+\end{align}
+Then, if the Perera switching model is to be believed, $\mathcal{R}$ should depend on $T$.
 
-To demonstrate this, we can simulate the result numerically. That is, following
-the method defined above, we generate the time-averaged spin-down rate and
-calculate the spin-down rate of the second peak (the blue dot in Fig.~\ref{fig:
-test lyne underlying}). Repeating this for a range of time-averaging baselines
-we keep the underlying model fixed with the values used in Fig.~\ref{fig: test
-lyne underlying}, then in Fig.~\ref{fig: test lyne} we plot the ratio $R$ of
-the maximum spin-down rates of the two peaks.
+To demonstrate this, we can simulate the result numerically. We will do this by
+varying the time averaging baseline for the simulation in Fig.~\ref{fig: test
+lyne underlying} and calculating $\mathcal{R}$. The numerical results are
+plotted in Fig.~\ref{fig: test lyne}.
 \begin{figure}[htb]
     \centering
     \includegraphics[]{TestLyne}
-    \caption{Demonstrating of how to test the Perera switching hypothesis
-             by varying the time-averaging baseline and measuring $R$ the ratio
-             of the two peaks in the spin-down rate.}
+    \caption{Demonstration of the variations in $\mathcal{R}$, defined in
+             Eqn.~\eqref{eqn: R-test}, in response to changing the time averaging
+             baseline, $T$}
     \label{fig: test lyne}
 \end{figure}
-This clearly shows that for $T\le50$~days the ratio $R=1$ because the two peaks
-are of equal size, there is no reduction in the peak because the $T$ is shorter
-than the shortest segment of length $50$~days. However, for $T>50$~days $R$
-decays up to $T=150$~days, above this the time-averaging is of a similar length
-to the total period of switching and so we can't resolve any of the features.
-The important point here is that, if one observes a doubly-peaked spin-down
-rate the Perera switching model can be tested by measuring the time-averaged
-spin-down rate with two or more $T$ values: variations in the ratio of the
-two peaks would provide clear evidence in favour of the model.
+This clearly shows that for $T\le50$~days, when the time averaging baseline is
+shorter than the shortest switching duration $\tI{C}$ (see Fig.~\ref{fig:
+perera example}), $\mathcal{R}=1$ because the two peaks are of equal size.  For
+$T>50$~days, $\mathcal{R}$ decreases until $T=150$~days, above this the
+time-averaging is of a similar length to the total period of switching and so
+we can't resolve any of the features.
 
+To test the hypothesis that an observed $\dot{\nu}$ variations calculated using
+the observer-method is due to the \citet{Perera2014} model of switching, the
+$\dot{\nu}$ calculation can be repeated at two or more time averaging
+baselines.  Variations in the ratio of the two peaks would provide clear
+evidence in favour of this model. Of course in this example we have considered
+a simple situation where we have known apriori which peak is being
+underestimated due to the observational-method of calculating the time averaged
+spin-down rate. In real data, the situation may be more complicated: it could
+be that it is the trough which is overestimated instead of the peak being
+underestimated; or more than one switching duration may be shorter than the
+time averaging baseline.  Nevertheless, the changing ratio of the two peaks (or
+troughs) may still prove a simple way to test the Perera model.
 
-\subsection{Evidence from anomalous braking indices}
-\label{sec: evidence from anomalous braking indices}
+%\subsection{Evidence from anomalous braking indices}
+%\label{sec: evidence from anomalous braking indices}
+%
+%An alternative motivation to study timing noise comes from the measurement of
+%anomalous braking indices. The pulsar braking index is defined by $n$ in
+%equation \ref{eqn: power law spin-down}.  Rearranging this equation as in
+%\eqref{eqn: measured braking index} the braking index can be measured for
+%observed pulsars. Different types of braking exhibit different braking indices.
+%It is therefore a reasonable idea to measure the braking index and calculate
+%the type of braking. Pulsars spun down by an electromagnetic torque should
+%follow a braking index of $n=3$, while gravitational wave spin-down has $n=5$.
+%
+%Measuring these indices for the known pulsar population we do not find a consensus
+%on the type of braking. Values from from unity up to $10^{6}$ and even negative
+%braking indices have been measured. These are known as \emph{anomalous}
+%braking indices.
+%
+%Recent work by \citet{Biryukov2012} observed that
+%younger pulsars tend to have braking indices of the correct order of
+%magnitude. However, beyond~$\tau_{ch}\approx10^{5}$~years
+%the absolute value of the braking index rapidly grows,
+%reaching values as large as $10^{6}$ for the oldest pulsar. In addition an
+%almost equal number of pulsars have positive and negative values of the braking
+%index. The figure demonstrating this is plotted in
+%figure~\ref{fig: braking indices}.
+%
+%\begin{figure}[ht]
+%\centering
+%	\includegraphics[width=0.5\textwidth,trim=0mm -10mm 0mm 0mm]
+%               {{Biryukov_2012_Figure_7}.png}
+%\caption{Pulsar population in the $n_{obs}-\tau_{ch}$ diagram image from
+%\citet{Biryukov2012}}
+%\label{fig: braking indices}
+%\end{figure}
+%
+%\citet{Biryukov2012} proposed that the spin-down $\dot{\nu}(t)$ may contain the
+%secular spin down $\dot{\nu}_{\textrm{sec}}(t)$ and a cyclic component
+%$\dot{\nu}_{\textrm{sec}}(t)\epsilon(t)\nu(t)$ oscillating the spin-down about
+%a mean value. Taking a simple case where the cyclic term has the form $A
+%\cos\phi(t)$ where $A$ is the relative amplitude of the oscillations and
+%$\phi(t)$ is linear in $t$, the authors derive an equation for the observed braking
+%index
+%
+%\begin{equation}
+%n_{obs}(t) =
+%\frac{n}{1+A\cos(\dot{\phi}t+\phi_0)}
+%+\frac{(n-1)(kt-c)}{(1+A\cos(\dot{\phi}t+\phi_{0}))^{2}}A\dot{\phi}\sin(\dot{\phi}t+\phi_{0}).
+%\label{eqn: nobs}
+%\end{equation}•
+%
+%This observed braking index contains a constant positive term oscillating about
+%the true braking index and a term which grows linearly in time. The authors found
+%that for $\tau_{ch}<10^{5}$ yrs the linear term is negligible and so we observe
+%approximately the real braking index $n$. At later times the linear term
+%drives the observed braking index to larger values while a sinusoidal term produces
+%positive and negative values. In figure \ref{fig: nobs} we plot the trajectory
+%of a single pulsar following equation \eqref{eqn: nobs}. The authors claim each
+%of the pulsars in \ref{fig: braking indices} is following a similar trajectory.
+%
+%\begin{figure}[ht]
+%\centering
+%	\includegraphics[width=0.5\textwidth]
+%               {{Analytic_Monotonic_and_Cyclic}.png}
+%\caption{A sketch of the observed braking index according to
+%equation \eqref{eqn: nobs}, the values here are intended for a qualitative
+%overview rather than analysis. }
+%\label{fig: nobs}
+%\end{figure}
+%
+%This simplistic idea is able to explain some of the defining features of the
+%known pulsar population braking indices. This requires a mechanism to modulate
+%the spin-down over long timescales. By fitting their model to data, they
+%estimate the timescale to be of the order $10^{3}-10^{4}$~years. At least one
+%physical model, precession, could produce variations on the required timescale.
+%However, this is significantly longer than the precession timescales invoked to
+%explain the fluctuations in timing residuals which were $1-10$~years.
 
-An alternative motivation to study timing noise comes from the measurement of
-anomalous braking indices. The pulsar braking index is defined by $n$ in
-equation \ref{eqn: power law spin-down}.  Rearranging this equation as in
-\eqref{eqn: measured braking index} the braking index can be measured for
-observed pulsars. Different types of braking exhibit different braking indices.
-It is therefore a reasonable idea to measure the braking index and calculate
-the type of braking. Pulsars spun down by an electromagnetic torque should
-follow a braking index of $n=3$, while gravitational wave spin-down has $n=5$.
-
-Measuring these indices for the known pulsar population we do not find a consensus
-on the type of braking. Values from from unity up to $10^{6}$ and even negative
-braking indices have been measured. These are known as \emph{anomalous}
-braking indices.
-
-Recent work by \citet{Biryukov2012} observed that
-younger pulsars tend to have braking indices of the correct order of
-magnitude. However, beyond~$\tau_{ch}\approx10^{5}$~years
-the absolute value of the braking index rapidly grows,
-reaching values as large as $10^{6}$ for the oldest pulsar. In addition an
-almost equal number of pulsars have positive and negative values of the braking
-index. The figure demonstrating this is plotted in
-figure~\ref{fig: braking indices}.
-
-\begin{figure}[ht]
-\centering
-	\includegraphics[width=0.5\textwidth,trim=0mm -10mm 0mm 0mm]
-               {{Biryukov_2012_Figure_7}.png}
-\caption{Pulsar population in the $n_{obs}-\tau_{ch}$ diagram image from
-\citet{Biryukov2012}}
-\label{fig: braking indices}
-\end{figure}
-
-\citet{Biryukov2012} proposed that the spin-down $\dot{\nu}(t)$ may contain the
-secular spin down $\dot{\nu}_{\textrm{sec}}(t)$ and a cyclic component
-$\dot{\nu}_{\textrm{sec}}(t)\epsilon(t)\nu(t)$ oscillating the spin-down about
-a mean value. Taking a simple case where the cyclic term has the form $A
-\cos\phi(t)$ where $A$ is the relative amplitude of the oscillations and
-$\phi(t)$ is linear in $t$, the authors derive an equation for the observed braking
-index
-
-\begin{equation}
-n_{obs}(t) =
-\frac{n}{1+A\cos(\dot{\phi}t+\phi_0)}
-+\frac{(n-1)(kt-c)}{(1+A\cos(\dot{\phi}t+\phi_{0}))^{2}}A\dot{\phi}\sin(\dot{\phi}t+\phi_{0}).
-\label{eqn: nobs}
-\end{equation}•
-
-This observed braking index contains a constant positive term oscillating about
-the true braking index and a term which grows linearly in time. The authors found
-that for $\tau_{ch}<10^{5}$ yrs the linear term is negligible and so we observe
-approximately the real braking index $n$. At later times the linear term
-drives the observed braking index to larger values while a sinusoidal term produces
-positive and negative values. In figure \ref{fig: nobs} we plot the trajectory
-of a single pulsar following equation \eqref{eqn: nobs}. The authors claim each
-of the pulsars in \ref{fig: braking indices} is following a similar trajectory.
-
-\begin{figure}[ht]
-\centering
-	\includegraphics[width=0.5\textwidth]
-               {{Analytic_Monotonic_and_Cyclic}.png}
-\caption{A sketch of the observed braking index according to
-equation \eqref{eqn: nobs}, the values here are intended for a qualitative
-overview rather than analysis. }
-\label{fig: nobs}
-\end{figure}
-
-This simplistic idea is able to explain some of the defining features of the
-known pulsar population braking indices. This requires a mechanism to modulate
-the spin-down over long timescales. By fitting their model to data, they
-estimate the timescale to be of the order $10^{3}-10^{4}$~years. At least one
-physical model, precession, could produce variations on the required timescale.
-However, this is significantly longer than the precession timescales invoked to
-explain the fluctuations in timing residuals which were $1-10$~years.
 \begin{subappendices}
 \subsection{Toy model of stochastic resonance: particle in a potential}
 \label{app: stochastic}
