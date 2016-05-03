@@ -1,7 +1,8 @@
-Radio pulsars make up the majority of observations of neutron stars and will be
+Radio pulsars make up the majority of the observed neutron star population and will be
 the focus of discussion in this thesis. In this section, we will provide some
 population statistics for the normal radio pulsar population: we ignore the
-millisecond population, but include the young pulsars. All data
+millisecond population since they are disjoint from the normal population and
+have a distinct history, but include the young pulsars. All data
 in this section is taken from the ATNF pulsar catalogue \citet{ATNF} and it
 should be stated that in each case the observed property is an average
 over all observations made for each pulsar.
@@ -9,13 +10,13 @@ over all observations made for each pulsar.
 For each observable property of the population of neutron stars (such as the
 frequency), we will present the data as a histogram choosing an appropriate
 binning size in each instance. In order to make simple inferences about the
-population, we also calculate the mean and standard-deviation. By eye, the
-histograms are tightly clustered and appear to be normal. We test normality
-using the \citet{Scipy} implementation of the \citet{d1971omnibus} test. This
-results in a $p$-value, which, if less than 0.05, rejects the hypothesis that
-the data is normal with $95\%$ confidence. We give this $p$-value in the legend
-for each observable property and show the normal distribution with the calculated
-mean and standard-deviation.
+population, we will also calculate the mean and standard-deviation.
+We will test normality using the \citet{Scipy} implementation of the
+\citet{d1971omnibus} test. This results in a $p$-value, which, if less than
+0.05, rejects the hypothesis that the data is normal with $95\%$ confidence. We
+will give this $p$-value in the legend for each observable property and show
+the normal distribution with the calculated mean and standard-deviation.
+
 
 In Fig.~\ref{fig: pop stats timing} we present the data for the three timing
 properties measured directly from the pulsar timing models. For normal radio
@@ -36,8 +37,9 @@ The population sizes are 1942, 1686, 339 for $\nu$,
 $\dot{\nu}$, $\ddot{\nu}$ respectively.}
 \label{fig: pop stats timing}
 \end{figure}
-For all three properties, the normal hypothesis is rejected; we note that the
-level of rejection is dependent on the number of data points.
+By eye, the histograms are clustered and appear to be approximately normal.
+However, for all three properties, the normal hypothesis is rejected; we note
+that the level of rejection is dependent on the number of data points.
 
 In Fig.~\ref{fig: pop stats others} we present some other interesting quantities
 held in the ATNF catalogue. Firstly, in the left-hand panel we plot the characteristic
