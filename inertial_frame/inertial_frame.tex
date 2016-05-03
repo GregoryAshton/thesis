@@ -6,22 +6,107 @@
 
 
 \begin{document}
+\chapter{Modelling observations of precessing pulsars}
 
 In Sec.~\ref{sec: rotating frame} we developed our intuition for the precession
-of neutron stars by working in the rotating body frame of the star.  However,
-pulsar astronomers report on physical observations of the star made in the
-inertial frame, in particular those quantities calculable from radio
-pulsations. In this section, we will develop our precession model by making
+of neutron stars by working in the rotating frame of the star. However, pulsar
+astronomers report on direct observations of the radio pulsations in the
+inertial frame. In this section, we will develop our precession model by making
 predictions for how precession manifests in the observable features of a
 pulsar. This will require us to understand and model the data collection
-methods of pulsar astronomy. We will study each `physical observable' separately
-and discuss how exact numerical results can be computed, derive analytic
-approximations, and compare with the results in the literature.
-Modelling in this way develops our understanding of the precession model, but
-more than this, it allows us to add new physics into the model and directly
-understand the predictions it make for observations. To demonstrate this we
-finish the chapter by showing some preliminary results of a model in which the
-EM torque undergoes switching events as suggested by \citet{Lyne2010}.
+methods of pulsar astronomy. We will study each `physical observable'
+separately and discuss how exact numerical results can be computed and derive
+analytic approximations. Many of these features have already been discussed in
+the literature: \citet{Nelson1990} calculated phase residuals both analytically
+and numerically for freely precessing stars; torqued precession was considered
+for a general torque by \citet{Jones1988excitation} and \citet{Cordes1993} and
+then for the \citet{Deutsch1955} torque by \citet{Melatos1999}. In this work,
+we will closely follow the analytic results of \citet{Jones2001}. The novel
+material here is in developing a numerical solution which allows direct
+prediction of the physical observable features measured by observers, even
+modelling the data collection mechanisms such as the observer-method to measure
+$\dot{\nu}$. This chapter has two important aims: first, we want to develop our
+intuition for precession which will be used in Chapter.~\ref{sec: testing
+models}; second, this numerical model allows us add physics into the model and
+directly under the predictions it makes for observations. To demonstrate this
+we finish the chapter by showing some preliminary results of a model in which
+the EM torque undergoes switching events as suggested by \citet{Lyne2010}.
+
+\section{Introduction}
+We begin by writing the moment of inertia as
+\begin{align}
+I^{a}_{\;\;b} = I_{0} \delta^{a}_{\;\;b} + \Delta I n^a n_b,
+\end{align}
+where $n^a$ is the \emph{deformation axis}, a unit vector pointing along the
+body's symmetry axis. Then, if the body is biaxial about the $\z$ axis,
+the angular momentum is given by
+\begin{align}
+J_{a} = I_0 \Omega_a + \Delta I \Omega_z n_a.
+\end{align}
+As discussed by \citet{Pines1972}, this shows that the three vectors $J_a$,
+$\Omega_a$ and $n_a$ are always in the so-called reference plane as shown in
+Fig.~\ref{fig: reference plane}.
+\begin{figure}[htb]
+    \includegraphics[width=0.2\textwidth]{ReferencePlane.pdf}
+    \caption{The reference plane containing the angular momentum vector $\spin$,
+    the angular momentum vector $\mathbf{J}$ and the symmetry axis $\mathbf{n}$ lying along the
+    body-frame $\z$ axis. The dotted line indicates the polar angle $a$ between
+    the body-frame $\z$ axis and the spin-vector.}
+    \label{fig: reference plane}
+\end{figure}
+In this figure we have defined the angle between anglular momentum and $n_a$ as
+$\theta$, this conventionally referred to as the \emph{wobble-angle} of
+precession.
+
+
+\section{Wobble angle}
+In Section~\ref{sec: inertial frame}, we have reported results on the spherical
+components of the spin-vector in the rotating body frame of the star. However,
+much of our intuition about precession is based on the so-called wobble angle
+of precession. We will now introduce this, and discuss how it can be
+calculated.
+
+Fig.~\ref{fig: sketch01} shows the position of the spin-vector relative to the
+$\z$ axis, which in our definition is the deformation axis $\mathbf{n}$ of the
+MOI. It was shown by \citet{Jones2001} that the deformation axis $\mathbf{n}$,
+spin-vector $\mathbf{\omega}$, and angular momentum vector of the star
+$\mathbf{J}$ are always \emph{coplanar}. Then, following \citet{Pines1972}, the
+authors defined this plane as the \emph{reference plane}. In Fig.~\ref{fig:
+reference plane}, we have sketched this reference plane along with the angles
+$a$ (as reported on earlier in this chapter), the angle between the deformation
+axis and the angular momentum $\theta$, and the angle between the spin-vector
+and the angular momentum $\hat{\theta}$.
+
+\citet{Jones2001} referred to $\theta$ as the \emph{wobble angle} as its
+magnitude defines the amplitude of precession. Moreover, they related the two
+angles and in the limit $\theta \ll 1$ and $\epsI \ll 1$ found that
+\begin{align}
+\hat{\theta} \approx \epsI\theta.
+\label{eqn: theta hat theta}
+\end{align}
+With this in mind, from Fig.~\ref{fig: reference plane} we see that $a\approx
+\theta$.
+
+The wobble angle defined by \citet{Jones2001} does not have the intuitive
+interpretation of the `amount' of precession due to the effects of the EM
+torque.  In particular, the torque defined Eqn.~\eqref{eqn: torque} introduces
+two subtle effects. We will now discuss these effects and define a new wobble
+angle $\wobbleangle$ which accounts for them.
+
+In Sec.~\ref{sec: A}, we demonstrated that, when acted on by the anomalous part
+of the torque, the star can precess even when $a=0$ and hence $\theta=0$.
+Instead, we have shown that the proper reference frame to evaluate precession is the
+effective body frame. Let us then define a new wobble angle
+\begin{align}
+\wobbleangle = \theta - \beta.
+\label{eqn: wobble angle}
+\end{align}
+That is, we rotate by the angle $\beta$ defined in Eqn.~\eqref{eqn: beta}. In
+the limit where $\beta \rightarrow 0$ we recover the usual wobble angle referred
+to by \citet{Jones2001} $\theta = \wobbleangle$, but if the effects of the
+anomalous torque are important then our new wobble angle $\wobbleangle$ will
+measure the amount of precession (i.e. its magnitude determines the amplitude
+of precession).
 
 \section{Rotating into the inertial frame}
 
@@ -1038,8 +1123,6 @@ the beam geometry, the intensity of pulsations will vary with the angular
 separation of the vector from the centre of the star to the observer and the
 magnetic dipole vector. By considering the intersection of these vectors with
 the unit sphere, the angular separation can be shown to be
-\newcommand{\ThetaO}{\Theta_{\mathrm{obs}}}
-\newcommand{\PhiO}{\Phi_{\mathrm{obs}}} \newcommand{\sigmaB}{\sigma_{B}}
 \begin{equation}
 \Delta\sigma = \cos^{-1}\left(\sin(\Theta)\sin(\iota) +
                              \cos(\Theta)\cos(\iota)\cos(\Phi - \PhiO)\right)
