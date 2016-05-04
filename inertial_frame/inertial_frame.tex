@@ -103,7 +103,7 @@ inertial system of coordinates to the rotating frame. So for $A^{\textrm{in}}$,
 a vector defined in the inertial frame, in the rotating frame this has
 components given by
 \begin{align}
-A^{\textrm{rot}}_{a} = R^{b}_{\;\;a} A^{\textrm{in}}_{b}.
+A^{\textrm{in}}_{a} = R^{b}_{\;\;a} A^{\textrm{rot}}_{b}.
 \end{align}
 
 \subsection{Evolution of the Euler angles}
@@ -171,7 +171,7 @@ can be meaningfully interpreted. In particular, we need to be sure we understand
 how the inertial frame is orientated. Let us note that the angular
 momentum in the two frames are related by
 \begin{equation}
-\Jr_a = R^{b}_{\;\;a} \Ji_b .
+\Ji_a = R^{b}_{\;\;a} \Jr_b .
 \label{eqn: transform}
 \end{equation}
 where $R^{a}_{\;\;b}$ is defined in Eqn.~\eqref{eqn: rotation matrix}.
@@ -194,7 +194,7 @@ The magnitude of the angular momentum is
 \begin{equation}
 |J| = |I \omega_{a}|=\omega_{0}\sqrt{(I_{xx}\sin a_{0})^{2} + (I_{zz}\cos a_{0})^{2}},
 \end{equation}
-then substituting into Eqn.~\eqref{eqn: transform} we have
+then substituting into the inverted form of Eqn.~\eqref{eqn: transform}, we have
 \begin{equation}
 \left[ \begin{array}{c}
 I_{xx}\sin a_{0} \\
@@ -505,7 +505,7 @@ we are particular interested in the motion of $\m$ in the inertial frame.
 
 In the rotating frame, we set $\m$ to lie at an angle $\chi$ to the $z'$ axis
 with unit vector $[\sin(\chi), 0, \cos(\chi)]$ without loss of generality.
-Using the inverse of Eqn.~\eqref{eqn: rotation matrix}, the Euler angles
+Using the Eqn.~\eqref{eqn: rotation matrix}, the Euler angles
 rotation matrix, we can transform to the inertial frame; the components of the
 magnetic dipole in the inertial frame are
 \begin{equation}
@@ -515,7 +515,7 @@ magnetic dipole in the inertial frame are
 + \sin \phi \sin \theta \cos \chi \\
 \sin\phi\cos\psi\sin\chi + \cos\phi \cos \theta \sin \psi \sin \chi
 - \cos \phi \sin \theta \cos \chi \\
-\sin\theta \cos\psi \sin\chi + \cos\theta \cos \chi
+\sin\theta \sin\psi \sin\chi + \cos\theta \cos \chi
 \end{array}\right].
 \label{eqn: m inertial}
 \end{equation}•
