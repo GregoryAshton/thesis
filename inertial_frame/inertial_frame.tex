@@ -1339,7 +1339,7 @@ Fig.~\ref{fig: Pulse width modulation}.}
 \label{tab: pulse width modulation}
 \end{table}
 To demonstrate an example of the beam-width modulation, in Fig.~\ref{fig: Pulse width
-modulation} we plot $\Theta$ calculated from a numerical simulation with
+modulation} we plot $\Theta$ calculated from a numerical simulation with the
 simulation parameter listed in Table~\ref{tab: pulse width modulation} and
 $W_{10}$ as calculated from Eqn.~\eqref{eqn: Wp} with $\iota=6^{\circ}$.
 \begin{figure}[ht]
@@ -1363,7 +1363,7 @@ a single period occilatory behavior.
 
 \section{Application: switching and precession}
 
-Recently, some workers in the field \citep{Lyne2010, Perera2015} are suggesting
+Recently, some workers in the field \citep{Lyne2010, Perera2015} have suggested
 that quasi-periodic structure observed in pulsar timing residuals is a result
 of magnetospheric torque-switching events as described in Sec.~\ref{sec: two
 state switching}. In such models, the spin-down periodically switches between
@@ -1377,11 +1377,14 @@ the angle $\Theta$. In this way, the observed switching would undergo
 stochastic resonance as suggested by \citet{Cordes2013} and discussed in Appendix~\ref{app:
 stochastic}.
 
-In this section we will present preliminary results on a simplified hybrid model
-in which we consider single switching events. We will not connect the switching
-to precession, but simply consider a single switch in the torque at some time
-$t_{\mathrm{switch}}$; for the time being we set this to be half the
-observation period, such that $t_{\mathrm{switch}} = \To/2$.
+In this section, we will present novel, but preliminary results on a simplified
+hybrid magnetocpheric switching - precession model. Ultimately we would like to
+realise the ideas discussed above in a full numerical model, however, for now
+we will simply consider the effect of a single magnetospheric switch. Our numerical
+code is able to model the full hybrid model, but we must first understand the
+basic physics. In particular, we will simulate a star in which at
+$t_{\mathrm{switch}} = \To/2$ the EM torque suddenly changes. This is a qualitatvely
+new idea which has not yet been discussed in the literature.
 
 In the EM dipole spin-down model, the torque has two distinct components: the
 regular spin-down component and the anomalous component. This latter term
@@ -1439,11 +1442,12 @@ during a switching, then the spin-down rate also changes as
 \end{equation}
 during a switching event.
 
-
 \subsubsection{Minimal precession initial state}
 In the following section we will investigate the effects of a single switch, but
-we first need to define a `minimal precession' initial state to which the
-switch is applied so that we understand the behaviour without the switch.
+first we choose to define an initial `minimal precession' from which to begin
+our simulations. This is done to mimic the state of real pulsars, which in
+general are not found to be precessing. Moreover, it helps to discern the
+effects of the switching from that of precession.
 
 Precession will not occur when the spin vector is aligned with the axis about
 which it rotates. The angle between these two we have defined as the wobble
@@ -1456,29 +1460,26 @@ axis. In the presence of the anomalous torque this is done with
 \begin{equation}
 a_{0} = \beta(\epsI, \epsA, \chi),
 \end{equation}
+where $\beta$ is defined in Eqn.~\ref{eqn: beta}.
 
 In Fig.~\ref{fig: no switching} we illustrate the behaviour of our simulation
 in the absence of a switching event; the simulation parameters are listed in
-Table~\ref{tab: NoSwitching properties}, note that the initial polar angle is
-exactly the angle $\beta$ which can be calculated using equation \eqref{eqn:
-beta}.
+Table~\ref{tab: switching properties}. Note that the initial polar angle is
+exactly the angle $\beta$ which can be calculated using Eqn.~\eqref{eqn: beta}.
 \begin{figure}[htb]
-\begin{floatrow}
-\ffigbox{%
 \includegraphics[width=0.5\textwidth]{NoSwitching.pdf}
-}{%
-    \caption{The phase residual for a minimal precession simulation with no
-             switching event.}
-  \label{fig: no switching}
-}
-\capbtabbox{%
-  \input{\thisdir/NoSwitching.tex}
-}{%
-  \caption{}%
-  \label{tab: NoSwitching properties}
-}
-\end{floatrow}
+\caption{The phase residual for a minimal precession simulation with no
+         switching event.}
+\label{fig: no switching}
 \end{figure}
+\begin{table}[htb]
+\centering
+\input{NoSwitching}
+\caption{Simulation properties used for Fig.~\ref{fig: switching without anom torque}
+and Fig.~\ref{fig: switching with anom torque}}
+\label{tab: switching props}
+\end{table}
+
 Notably this minimal precession solution does show some precession with phase
 residuals $\sim 10^{-4}$. This is because the spin-down torque produces a wobble
 in the angular momentum vector and as a result the wobble angle is not truly
@@ -1487,8 +1488,11 @@ in the polynomial fitting which produces structure with a period equal to that
 of the observation span.
 
 We will now setup simulations of this `minimal precession` NS, and then
-manually switch the torque. We choose a NS where the EM torque amplification
-is important.
+manually switch the torque. We choose a NS where the EM torque amplification is
+important.  In the following sections, we will consider first switching in the
+spin-down torque, and then also in the anomalous torque. For all simulations
+considered here we will use the properties listed in Table~\ref{tab: switching
+props}.
 
 \subsection{Switching in the spin-down torque only}
 We now consider manually switching the spin-down torque halfway though the
@@ -1502,8 +1506,9 @@ fraction $0.4$ while the anomalous torque remains unaffected.
 
 In Fig.~\ref{fig: switching without anom} we plot the phase residuals from
 this simulation. In the top plot is the residual as calculated over the entire
-observation period. We find a single periodic variation which is a direct result
-of the sudden change in the spin-down rate. The precession features which existed
+observation period. We find a single periodic variation with a period of the
+observation time $\To$: due to sudden change in spin-down rate the Taylor
+expansion fit is not finding a suitable fit. The precession features which existed
 in the initial minimal precession are swamped by the larger variations due to
 the switch. To study this simulation further,
 in the lower plot we plot two residuals: the first is calculated
@@ -1513,7 +1518,7 @@ Because the switch does not occur in either of these periods we can resolve the
 free precession during each period and note that the precession modulation is
 in fact smaller after the switch.
 \begin{figure}[htb]
-\includegraphics[width=.5\textwidth]{SwitchingWithoutAnomTorque}
+\includegraphics[]{SwitchingWithoutAnomTorque}
 \caption{Phase residuals for a simulation with a single switch in the spin-down
 torque. In the top plot we show the residual calculated using the whole observation
 time, in the bottom plot is the separate residuals calculated in the region before
@@ -1521,9 +1526,10 @@ and after the switch.}
 \label{fig: switching without anom}
 \end{figure}
 This reduction in the size of modulations is because the precession is due to
-the spin-down torque wobbling the angular moment vector. After the switch the
-spin-down torque is reduced by a factor $\Ss$ and therefore the size of the
-modulation is similarly reduced.
+the spin-down torque wobbling the angular moment vector and being amplified by
+the EM torque. After the switch the spin-down torque, and hence $\Aem$, is
+reduced by a factor $\Ss$ and therefore the size of the modulation is similarly
+reduced.
 
 \subsection{Switching with the anomalous torque}
 We now consider manually switching both the spin-down and anomalous torque
@@ -1534,10 +1540,11 @@ halfway though the simulation.  That is we set
 
 In a similar fashion to Fig.~\ref{fig: switching without anom} we show first
 the total residual in the top plot of Fig.~\ref{fig: switching with anom}, and
-then the individual residuals in the lower plot. Again the overall phase residual
-shows strong periodic modulation resulting from the switch. In contrast to the
-spin-down only switching, the amount of precession when considered before and
-after the glitch now increases.
+then the individual residuals in the lower plot. Again the overall phase
+residual periodic modulation with a period of the observation time $\To$
+resulting from the failing of the fitting algorithm to find an appropriate fit.
+In contrast to the spin-down only switching, the amount of precession when
+considered before and after the glitch now increases.
 
 To understand this, recall that we begin with a minimal precession state, where
 $\theta = \beta$ and the precession results from effect of the spin-down
@@ -1550,9 +1557,8 @@ increase in the phase residuals fitted in the post-switch period. The effect is
 not observable when fitting to the entire simulation period since the switching
 event remains dominant. In the next section we will calculate this new wobble
 angle.
-
 \begin{figure}[htb]
-\includegraphics[width=.5\textwidth]{SwitchingWithAnomTorque} \caption{Phase
+\includegraphics[]{SwitchingWithAnomTorque} \caption{Phase
 residuals for a simulation with a single switch in the spin-down and anomalous
 torque. In the top plot we show the residual calculated using the whole
 observation time, in the bottom plot is the separate residuals calculated in
@@ -1561,8 +1567,9 @@ the region before and after the switch.}
 \end{figure}
 
 \subsubsection{Calculating the new wobble angle after a switch}
-We now calculate the change in wobble angle and hence phase-residual variations
-after switching a fraction of the anomalous torque.
+We now estimate the change in wobble angle after switching a fraction of the
+anomalous torque, this will be useful in making testable predictions for
+anomalous torque switching.
 
 The two-state switching changes the value of $\epsA$ according to
 Eqn.~\eqref{eqn: epsA switch}, which in turn redefined the effective rotating frame
@@ -1572,12 +1579,14 @@ amount $\Sa$, no longer be aligned with the rotating frame axis. This is
 because the effective rotating frame will have shifted to $\beta' = \beta(\epsI,
 \Sa\epsA, \chi)$. As a result, we should expect the previously
 non-precessing NS to begin precessing after a torque switching event.
-
-The NS will precess at the usual precession frequency in a cone  of half-angle
+The exact size of the new precession wobble angle will depend on the phase of
+precession (if it was precessing) at the instant before the switching event.
+However, by referring to the reference plane of Fig.~\ref{fig: reference plane}
+we can estimate the upper limit by
 \begin{equation}
-    \Delta\beta(\epsI, \epsA, \chi, \Sa)=|\beta - \beta'|,
+    \Delta\beta(\epsI, \epsA, \chi, \Sa) \sim |\beta - \beta'|.
 \end{equation}
-about the new effective body-frame axis.  The expression for $\Delta \beta$ is
+The expression for $\Delta \beta$ is
 not easily amenable to analytic calculation, but can easily be explored
 graphically.  This is done in Fig.~\ref{fig: DeltaBetaPlot} for several choices
 of $\Sa$. This illustrates that the new precession angle after a switch can be
@@ -1612,12 +1621,13 @@ Rearranging Eqn.~\ref{eqn: spin-down of epsA} we then have
 
 Now in this interpretation, $\epsI$ is unconstrained for B1828-11 since the
 periodic modulations are assumed to be resulting from switching and not
-precession. Nevertheless, we numerically maximise over $\epsI$ to find
+precession. Nevertheless, we numerically maximise $\Delta\beta$ over $\epsI$ to
+find
 \begin{align}
-\Delta\beta_{\textrm{max}}(\epsI=2.89\times10^{-11}, \epsI=2.87\times10^{-11})
-= 0.048 \textrm{ degs}
+\Delta\beta_{\textrm{max}}(\epsA=2.89\times10^{-11}, \epsI=2.87\times10^{-11})
+= 0.048 \textrm{ degs}.
 \end{align}
-This is the new wobble angle which must occur every time B1828-11 undergoes a
+This is the maximum new wobble angle which must occur every time B1828-11 undergoes a
 switching event, if the switch also occurs in the anomalous torque. This
 therefore provides a method to probe how the switching mechanism works by
 looking at timing residuals in the post-switch timing data to check for
