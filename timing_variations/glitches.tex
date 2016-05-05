@@ -10,9 +10,10 @@ for each glitch pulsar astronomers add on an additional term to
 Eqn.~\eqref{eqn: Taylor compact}:
 \begin{align}
 \begin{split}
-\phi_{\textrm{g}} = H(\tTOA-\tg)& {}\left(
-\Delta\phi + \Delta\nu(\tTOA - \tg) + \frac{\Delta\dot{\nu}}{2}(\tTOA - \tg)^{2} \right.\\
-& \hspace{3mm}+ \left.\left[1-\exp\left(-\frac{\tTOA - \tg}{\tau}\right)\right]\Delta\nu_{\textrm{t}}(\tTOA - \tg)
+\phi_{\textrm{g}} = H(t - \tg)& {}\left(
+\Delta\phi + \Delta\nu(t - \tg) + \frac{\Delta\dot{\nu}}{2}(t - \tg)^{2} \right.\\
+& \hspace{3mm}+ \left.\left[1-\exp\left(-\frac{t - \tg}{\tau}\right)\right]
+\Delta\nu_{\textrm{t}}(t - \tg)
 \right),
 \end{split}
 \label{eqn: glitch timing model}
@@ -28,7 +29,7 @@ a component $\Delta\nu_{\textrm{t}}$ which is `recovered'.
 \centering
 \includegraphics[]{glitch_sketch}
 \caption{Illustration of the glitch model fitted by pulsar astronomers.}
-\label{glitch sketch}
+\label{fig: glitch sketch}
 \end{figure}
 
 In effect, pulsar astronomers fit separate Taylor expansions either side of the
@@ -56,17 +57,17 @@ glitch date. (b) Timing residuals after fitting all data in the plot; note
 that the glitch feature is still visible. Both these panels have the same
 scale, covering 500 ms. (c) Frequency residuals, obtained by subtracting the
 main slope given by an average $\dot\nu$. (d) The behaviour of $\dot\nu$
-through the glitch. This figure and caption are taken from Fig.~1 of
-\citet{Espinoza2011}}
+through the glitch. This figure and caption are adapted from Fig.~(1) of
+\citet{Espinoza2011}}.
     \label{fig: glitch}
 \end{figure}
 
-Over 165 of the 2000 observed pulsars have been seen to glitch, often multiple
+Over 165 of the $\sim$2000 observed pulsars have been seen to glitch, often multiple
 times. Typical values of the instantaneous frequency change range form
 $10^{-9}$~Hz to $10^{-4}$~Hz For some pulsars this is accompanied by a change,
 with either sign, in the spin-down rate $\Delta\dot{\nu}$ with absolute
 magnitudes between $10^{-19}$~Hz/s to $10^{-12}$~Hz/s.
-In most pulsars, the fraction of the change in frequency
+In most pulsars the \emph{glitch recovery parameter}, defined as
 \begin{align}
 Q = \frac{\Delta\nu_\textrm{t}}{\Delta\nu + \Delta\nu_\textrm{t}},
 \end{align}
@@ -101,8 +102,8 @@ contains a superfluid component in which the angular momentum is stored in an
 array of vortices which are `pinned' to the crust. The magnetic dipole, rigidly
 fixed to the crust, exerts a torque on the crust gradually spinning it down.
 The superfluid component cannot decrease its angular momentum without
-destroying the vortices into which it stores angular momentum and so does not
-spin-down at the same rate.  A lag in frequency between the superfluid
+reducing he number of vortices per unit area, so does not spin down at the
+same rate. A lag in frequency between the superfluid
 component and rest of the crust develops until the forces are sufficiently
 large to cause an avalanche of unpinning events rapidly transferring the stored
 angular momentum in the superfluid component to the crust. The observed
@@ -112,10 +113,11 @@ frequency.
 
 The second model, starquakes, follows from the observation that a rapidly
 spinning fluid body has an oblate `rest shape' with a bulge about its equator
-due to the centrifugal force. The crust of a star spinning at a frequency $\nu_0$
-will solidify with a corresponding oblateness. Subsequently, as the star spins down,
-it will have a different rest shape due to its decreased frequency, but the crust
-will retain a memory of the earlier shape at which it solidified. This will cause
+due to the centrifugal force. The crust of a star spinning at a some frequency
+will solidify with a corresponding oblateness which we call the reference
+oblateness. Subsequently, as the star spins down, it will have a different rest
+oblateness due to its decreased frequency, but the crust will retain a memory
+of the earlier reference oblateness at which it solidified. This will cause
 strains in the crust which eventually cause a starquake relieving the strain,
 resetting the reference rest shape, and producing glitch like features. This
 model was first proposed by \citet{Ruderman1969} and later built upon by

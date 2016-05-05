@@ -11,7 +11,7 @@ def Perera(time, nudot1, nudot2, nuddot, T, tA, tB, tC, phi0):
     Spindown[(tA < ti_mod) & (ti_mod < tA+tB)] = nudot2
     Spindown[tA + tB + tC < ti_mod] = nudot2
     Spindown = Spindown + nuddot * time
-    
+
     return Spindown
 
 
@@ -111,11 +111,11 @@ ax.plot(time[idx_to_measure]/86400, obsH, "or")
 ax.plot(time[idx_to_measure]/86400, actH, "ob")
 
 
-Td = T * 86400
-tAd = tA * 86400
-tBd = tB * 86400
-tCd = tC * 86400
-tDd = tD * 86400
+Td = T / 86400
+tAd = tA / 86400
+tBd = tB / 86400
+tCd = tC / 86400
+tDd = tD / 86400
 #ax.annotate("$T$", xy=(T*(0.5 - 0.02), 0.45*nudot1))
 #ax.annotate("", xy=(0, 0.5*nudot1), xytext=(T, 0.5*nudot1),
 #            arrowprops=dict(arrowstyle="<|-|>", facecolor='k', linewidth=1.0))
@@ -126,7 +126,7 @@ ax.annotate("$t_{\mathrm{A}}$", xy=(.5*tAd + deltax, dy2*nudot1) )
 ax.annotate("", xy=(0, dy*nudot1), xytext=(tAd, dy*nudot1),
             arrowprops=dict(arrowstyle="<|-|>, head_width=0.1, head_length=0.1"))
 ax.annotate("$t_{\mathrm{B}}$", xy=(tAd + .5*tBd + deltax, dy2*nudot1) )
-ax.annotate("", xy=(tA, dy*nudot1), xytext=(tAd+tBd, dy*nudot1),
+ax.annotate("", xy=(tAd, dy*nudot1), xytext=(tAd+tBd, dy*nudot1),
             arrowprops=dict(arrowstyle="<|-|>, head_width=0.1, head_length=0.1"))
 ax.annotate("$t_{\mathrm{C}}$", xy=(tAd + tBd + .5*tCd + deltax, dy2*nudot1) )
 ax.annotate("", xy=(tAd+tBd, dy*nudot1), xytext=(tAd+tBd+tCd, dy*nudot1),
