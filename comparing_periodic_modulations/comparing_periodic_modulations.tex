@@ -14,26 +14,34 @@ posterior fit} for a complete description.}
 
 \begin{document}
 \input{\thisdir/Evidence.tex}
+
+\meta{
+In this thesis, we endeavor to understand the cause of timing variations in pulsars
+with the aim being that in doing so, we can understand more about their physics.
 In Chapter.~\ref{sec: timing variations} we discussed a variety of models to
 explain timing-noise including two, precession and magnetospheric switching,
 which applied to pulsars with periodic modulations. Such pulsars are particuarly
 interesting given the conclusion of \citet{Hobbs2010} that, as more data is
 collected for pulsars, more quasi-periodic features are observed. Therefore it
 is hoped that understanding what causes the periodic modulations may eventually
-lead to a more complete understanding of timing noise across the population.
+lead to a more complete understanding of timing noise across the population.}
 
-The poster child pulsar used as evidence for both precession and switching
-models is the pulsar PSR~B1828-11, `\emph{a young pulsar which is observed on
-about 30 occasions each year using the 76-m Lovell radio telescope at Jodrell
-Bank}' \citep{Stairs2000}. In this chapter, we develop complete model
-predictions for the observed data on B1828-11 from both the precession and
-switching hypothesese. For the precession model we build on the intuition
-developed in Chapter.~\ref{sec: rotating frame} and Chapter.~\ref{sec: inertial
-frame}.  Once we have defined the models, we perform a model comparison to
-determine, quantiatively, which model best fits the data.  This chapter
-contains material reprinted with permission from \citet{Ashton2016} as follows:
-Ashton, G.; Jones, D. I.; Prix, R. Volume 458, Issue 1, p.881-899 (2016).
-Copyright (2016) by the Monthly Notices of the Royal Astronomical Society.
+\meta{
+In Chapter~\ref{sec: rotating frame} and Chapter~\ref{sec: inertial frame}, we
+have investigated precession and its predictions for the observed features of
+pulsars. One pulsar, PSR~B1828-11, provides strong evidence for precession
+\citep{Stairs2000}, but has also been put forth as a candidate for
+magnetospheric switching \citep{Lyne2010}. There is no decisive feature in the
+data on PSR~B1828-11 which rules out either model. Therefore, in this chapter
+we will apply a Bayesian model comparison to dertermine quantiatively, which
+model best fits the data. In doing this, we will fully develop both the
+precession model and the switching model into complete predictive models for
+the spin-down rate and beam-width for which we have observational data.  This
+chapter contains material reprinted with permission from \citet{Ashton2016} as
+follows: Ashton, G.; Jones, D. I.; Prix, R. Volume 458, Issue 1, p.881-899
+(2016).  Copyright (2016) by the Monthly Notices of the Royal Astronomical
+Society.
+}
 
 \section{Introduction}
 \label{sec: introduction}
@@ -51,16 +59,17 @@ the vortex-pinning model used to explain the pulsar glitches since the pinning
 should lead to much shorter modulation period than observed \citep{Shaham1977},
 and fast damping of the modulation \citep{Link2003}.
 
-The idea of precession for B1828-11 has been studied extensively in the
+\meta{The idea of precession for B1828-11 has been studied extensively in the
 literature: \citet{Jones2001} derived the observable modulations due to
 precession and noted that the electromagnetic spin-down torque will amplify
-these modulations.  \citet{Link2001} fitted a torqued-precession model to the
-spin-down and beam-shape followed by \citet{Akgun2006} where a variety of
-shapes and the form of the spin-down torque were tested.  All of these authors
-agree that precession is a credible candidate to explain the observed periodic
-variations: furthermore to explain the double-peaked spin-down modulations, the
-so-called wobble angle must be small while the magnetic dipole must be close to
-$\pi/2$.
+these modulations (see Sec.~\ref{sec: phase residual torqued} for more
+details).  \citet{Link2001} fitted a torqued-precession model to the spin-down
+and beam-shape followed by \citet{Akgun2006} where a variety of shapes and the
+form of the spin-down torque were tested.  All of these authors agree that
+precession is a credible candidate to explain the observed periodic variations:
+furthermore, as we found in Sec.~\ref{sec: spin-down rate B1828}, to explain
+the double-peaked spin-down modulations, the so-called wobble angle must be
+small while the magnetic dipole must be close to $\pi/2$.}
 
 More recently \citet{Arzamasskiy2015} updated the previous estimates (based on
 a vacuum approximation) to a plasma filled magnetosphere. They also find that
@@ -79,7 +88,7 @@ The precession hypothesis was challenged by \citet{Lyne2010} when reanalysing
 the data.   They noted that in order to measure the spin-down and beam-shape
 with any accuracy required time averaging over periods~$\sim100$~days,
 smoothing out any behaviour acting on this time-scale. Motivated by the
-intermittent pulsar B1931+24, they put forward the phenomenological hypothesis
+intermittent pulsar PSR~B1931+24, they put forward the phenomenological hypothesis
 that instead the magnetosphere is undergoing periodic switching between (at
 least) two metastable states. Such switching would result in correlated changes
 in the beam-width and spin-down rate. They returned to the data and instead of
@@ -425,11 +434,12 @@ noise about the beam-width model, black dots are the original data.}
 \subsection{Switching model}
 \label{sec: switching}
 
-The switching idea is phenomenological and we will build the model based on the
+\meta{The switching idea is phenomenological and we will build the model based on the
 modification of \citet{Lyne2010} by \citet{Perera2015}: that is we assume the
 magnetosphere switches between two meta-stable states \emph{twice} during a
-single period (the motivation for this is discussed in Sec.~\ref{sec: spin-down
-rate}). For this work we will assume the switching to be deterministic,
+single period (the motivation for this was discussed in Sec.~\ref{sec: two state switching}
+and we will further motivate it in Sec.~\ref{sec: spin-down
+rate})}. For this work we will assume the switching to be deterministic,
 although improvements could be made by allowing the switching time to dither,
 or probabilistic variations in the switching states themselves; see
 \citet{Lyne2010} for some exploration of such ideas. This fully deterministic
@@ -752,10 +762,14 @@ B1828-11 has been developed by \citet{Akgun2006} where a non-vacuum
 dipole torque was considered and additionally by \citet{Arzamasskiy2015}
 where the effect of a plasma-filled magnetosphere was investigated. All of these are
 potential areas of improvement, but in this work we will restrict our focus
-to the simplest
-specification capable of explaining the observations.  In particular, we will
-use a generalisation of the vacuum dipole torque to allow for a braking index
-$n\ne3$, but retain the angular dependence; this ansatz may be written as
+to the simplest specification capable of explaining the observations.
+
+\meta{For this model comparison, we will use the spin-down rate under an EM torque
+derived in Sec.~\ref{sec: derivation of the spin-down rate} and verified
+numerically in Sec.~\ref{sec: spin-down rate numerical} and Sec.~\ref{sec: spin-down rate
+numerical B1828}. This derivation uses a generalisation of the vacuum dipole torque to
+allow for a braking index $n\ne3$, but retains the angular dependence; this
+ansatz may be written as}
 \begin{equation}
 \dot{\nu} = -k\nu^{n}\sin^{2}\Theta,
 \end{equation}
@@ -781,8 +795,9 @@ where
 \begin{equation}
 \psi(t)= 2\pi\frac{t-\tref}{\tauP} + \psi_{0}.
 \end{equation}
-As in the switching model, $\tref= \textrm{MJD } 49621$.
-This result is derived in full in Sec.~\ref{sec: derivation of spin-down rate}.
+\meta{This is Eqn.~\ref{sec: spin-down rate} derived in Sec.~\ref{sec: derivation of
+the spin-down rate} with the tranformation $t \rightarrow t-\tref$ where,
+as in the switching model, $\tref= \textrm{MJD } 49621$.}
 The first two terms are the secular spin-down rate and its first derivative.
 The term in the square brackets is the modulation and can be found from appropriate
 manipulation of Eqn.~(58) and (73) in \citet{Jones2001}, or Eqn.~(20) in
@@ -874,7 +889,19 @@ is similar to that found by \citet{Link2001}.
 
 \subsubsection{Defining the beam-width model: Gaussian intensity}
 
+\meta{
 Modulation of the observed beam due to precession is a purely geometric effect.
+We have already investigated the beam-width for a Gaussian intensity using our
+numerical model in Sec.~\ref{sec: numerical beam-width}; in this subsection we
+will develop the corresponding analytic model of the beam-width under a
+Gaussian intensity. This is an original development of the pressesion model,
+although \citet{Akgun2006} have considered the equivalent calculation for the
+so-called shape parameter $S$. Ultimately, in agreement with \citet{Akgun2006},
+we will find that a Gaussian intensity profile will not produce the required
+variations in $W_{10}$, but a modified-Gaussian intensity, developed in
+Sec.~\ref{sec: refining the beam-width model}, can.
+}
+
 Fixing the beam-axis to coincide with the magnetic dipole $\mathbf{m}$ and
 following \citet{Jones2001}, we define $\Theta$ and $\Phi$ as the polar and
 azimuthal angles of $\mathbf{m}$ with respect to a fixed Cartesian coordinate
@@ -1163,7 +1190,7 @@ nature of the Gaussian intensity under changes in the impact parameter.
 \label{sec: refining the beam-width model}
 
 As we have demonstrated that the Gaussian beam is unable to explain both the
-observed variations and average beam-width we must now consider how it could be
+observed variations and average beam-width, we must now consider how it could be
 varied in a natural way which does explain the data. One suggestion from
 \citet{Akgun2006} is to impose a sharper cut-off, or introduce a conal
 component in addition to the Gaussian core emission.  We will follow a slightly
@@ -1622,7 +1649,8 @@ variations in $f$ from 0.05 to 0.5.
 \section{Discussion}
 \label{sec: discussion}
 
-In this chapter we are using a data set (provided by \citet{Lyne2010}) on the
+\meta{
+In this chapter, we are using a data set (provided by \citet{Lyne2010}) on the
 spin-down and beam-width of B1828-11 to compare models for the observed
 periodic variations.  The two concepts under consideration are free precession
 and magnetospheric switching.  In order to be quantitative, we built signal
@@ -1632,21 +1660,22 @@ parameters, we then perform a Bayesian model comparison between the models
 asking ``which model does the beam-width data support?". For the models
 considered here, the data most strongly supports a precession model with a
 modified-Gaussian beam geometry allowing for an elliptical beam where the
-ellipticity has a latitudinal dependence.
+ellipticity has a latitudinal dependence.}
 
+\meta{
 To be clear, this does not rule out the switching interpretation since we have
 not tested an exhaustive set of models---we can only compare between particular
 models. As an example we could imagine modifying the switching model such that
 either the switching times, or the magnetospheric states are probabilistic (or
 a combination of the two).  Further we believe there is good grounds to develop
 models combining the precession and switching interpretation like those
-discussed in \citet{Jones2012}.
+discussed in \citet{Jones2012} and the preliminary results of Sec.~\ref{sec: application switching and precession}.}
 
 In addition to the data considered here, a number of
 high-time-resolution observations of B1828-11 were performed
 by the Parkes telescope, as discussed in \citet{Stairs2003}.
 This data set shows interesting variability in beam width on short
-timescales of ~O(100) pulses. While the qualitative "noisiness" of the
+timescales of ~O(100) pulses. While the qualitative `noisiness' of the
 beam-width data is already apparent from the current data-set (eg. see
 Fig.1), such high-time-resolution data could be very interesting to
 include in a more detailed future model comparison.
@@ -1668,12 +1697,13 @@ beam to dominate at certain phases. Since no such interpulse is reported,
 either the second beam is weaker, or the beams must have a kink of greater than
 $4.6\degr$ (see appendix~\ref{sec: implications for the unobserved beam}).
 
-In this chapter we have developed the framework to evaluate models for the
+\meta{
+In this chapter, we have developed the framework to evaluate models for the
 variations observed in B1828-11. This is not intended as an exhaustive review
 of all models, but rather a discussion on the intricacies that arise such as
 setting up proper and well-motivated priors. This lays the groundwork
 for a more exhaustive test of all available models and can also be extended
-by improvements to the data sources.
+by improvements to the data sources.}
 
 \biblio
 
