@@ -16,18 +16,17 @@ In Sec.~\ref{sec: Defining a random walk} we have defined a random walk model
 for which we subsequently calculated the fully-coherent mismatch in
 Sec.~\ref{sec: Random walk models part I}. However, this is a special case in
 which the random walk for each parameter offsets begins at the origin and then
-grows with time. The parameter offsets, defined in equation \eqref{eqn:
-parameter space offsets}, depend both on the signal and the template
-$\bdl_{0}$. It is the signal which undergoes a random walk, in Sec.~\ref{sec:
+grows with time. The parameter offsets $\Delta\lambda^{\alpha}$, depend both on
+the signal and the template $\lt^{\alpha}$. It is the signal which undergoes a random walk, in Sec.~\ref{sec:
 Random walk models part I} we chose the template such that the parameter offset
 was zero at the origin. This choice does not minimise the mismatch and therefore
 Eqn.~\eqref{eqn: expectation} may overestimate the minimum mismatch
 with which the random walk signal could be recovered if we minimised over the
-template parameters $\bdl_0$.
+template parameters $\lt^{\alpha}$.
 
 To calculate the minimised mismatch from random walks we first consider
 fitting and removing a $k^{th}$-order polynomial from a generic random walk. This
-is done in Appendix~\ref{ref: Least squares minimisation of a random walk} and
+is done in Appendix~\ref{sec: least squares minimisation of a random walk} and
 helps to build intuition for the more complicated case of random walk in
 GW signals. In the following sections, we will calculate the minimimum
 mismatch for random walks in either the phase or frequency (i.e. we do
@@ -43,7 +42,7 @@ mismatch from, are given by
 \Delta^{(2)}\lambda_{\alpha i} = \Delta\lambda_{\alpha i} - \Delta\lambda_{\alpha i}^{2}.
 \end{equation}
 
-The generic random walk considered in Appendix~\ref{sec: Least-squares
+The generic random walk considered in Appendix~\ref{sec: least squares
 minimisation of a random walk} was minimised with respect to the sum of squared
 differences between the fit and the random walk. Ideally in calculating the
 mismatch we should minimise $\Delta\lambda_{\alpha i}^{2}$ with respect to the
