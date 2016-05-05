@@ -85,21 +85,27 @@ this can be related to the surface magnetic field strength by
 The first term in the Deutsch torque is often referred to as the
 \emph{spin-down}, or \emph{braking} torque. As the name suggests, it is
 responsible for the power law retardation of spin frequency and has an
-associated timescale $\tau_{S}$. The second term is known as the
-\emph{anomalous} torque which acts on a timescale $\tau_{A}$. The three
+associated timescale $\tauS$. The second term is known as the
+\emph{anomalous} torque which acts on a timescale $\tauA$. The three
 timescales (including the precession timescale) in this problem are then given
 by
 \begin{equation}
-\tau_{P}=\frac{2\pi}{\epsilon_{I}\omega},  \;\;\;\;\;
-\tau_{A}=\frac{2\pi}{\epsA\omega},  \;\;\;\;\;
-\tau_{S}=\frac{3c}{2R}\frac{1}{\epsA\omega^{2}}.
+\tauP=\frac{2\pi}{\epsilon_{I}\omega},  \;\;\;\;\;
+\tauA=\frac{2\pi}{\epsA\omega},  \;\;\;\;\;
+\tauS=\frac{3c}{2R}\frac{1}{\epsA\omega^{2}}.
 \label{eqn: torque timescales}
 \end{equation}
+The spin-down age defined here, $\tauS$, is equivalent to the original
+definition of $\tauAge$ in Eqn.~\eqref{eqn: tauAge definition} up to a factor
+of $1/\sin^{2}(\alpha)$ where $\alpha$ is the angle between the spin-vector and
+the magnetic dipole. Since we are considering cases where this angle evolves, we
+will parameterise by $\tauS$ in this chapter.
+
 The ordering of these timescales characterises the type of solutions found to
 Eqn.~\eqref{eqn: eom} with the torque of Eqn.~\eqref{eqn: torque}. There are
-six potential orderings, however by considering the ratio $\tau_{A}/\tau_{S}
-\sim v/c$, where $v$ is the equatorial velocity, we see that $\tau_{A} \ll
-\tau_{S}$ reducing the number of possible orderings to three.
+six potential orderings, however by considering the ratio $\tauA/\tauS
+\sim v/c$, where $v$ is the equatorial velocity, we see that $\tauA \ll
+\tauS$ reducing the number of possible orderings to three.
 
 We now have the basic components of a neutron star: a biaxial rigid-body spun
 down by a dipole torque. To help familiarise the reader with the notation, in
@@ -186,9 +192,9 @@ appendix \ref{sec: timescales} that these orderings remain valid for the
 duration of the spin-down. The ordering of the two timescales gives three
 different types of solutions corresponding to three regions:
 \begin{align}
-    \textrm{Regions A: } \tau_{S} > \tau_{P} &&&
-    \textrm{Region B: } \tau_{S} \sim \tau_{P} &&&
-    \textrm{Region C: } \tau_{S} < \tau_{P}
+    \textrm{Regions A: } \tauS > \tauP &&&
+    \textrm{Region B: } \tauS \sim \tauP &&&
+    \textrm{Region C: } \tauS < \tauP
 \end{align}
 Since all solutions in each region display the same characteristic behaviour,
 we will illustrate this by picking three `neutron stars' and presenting results
@@ -201,7 +207,7 @@ for each ordering of the timescales.
 \centering
 {\small
 	\begin{tabular}[h]{|l|c|c|c|c|c|}\hline
-		&  $\epsilon_{I}$  & $\epsA $ & 	$B_{S} \; $[Gauss] & $\tau_{S}$ [s] & $ \tau_{P}$  [s] \\ \hline
+		&  $\epsilon_{I}$  & $\epsA $ & 	$B_{S} \; $[Gauss] & $\tauS$ [s] & $ \tauP$  [s] \\ \hline
 	NS A 	&  $  1.0\times 10^{-9}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  6.3\times 10^{5}  $\\
 	NS B 	&  $  0.4\times 10^{-10}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  1.6\times 10^{7}  $\\
 	NS C 	&  $  1.0\times 10^{-15}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  6.3\times 10^{11}  $\\ \hline
@@ -232,7 +238,7 @@ ordering of the timescales.
 \end{figure}
 
 Without the anomalous torque, the ordering of the timescales defines  two
-distinct regions separated by $\tau_{S}=\tau_{P}$. In using an abnormally large
+distinct regions separated by $\tauS=\tauP$. In using an abnormally large
 value for the initial angular spin frequency ($\omega_{0}=10^{4}$[rads/s]), we
 have skewed this phase space - that is, it cannot be compared with the real
 pulsar population. Using a more realistic value, the character of solutions remains
@@ -250,14 +256,14 @@ cases. Initial conditions are thought to have some bearing on the solutions
 vector having an inclination angle of $50^{\circ}$ and azimuth of $0^{\circ}$.
 
 
-\subsection{NS A in region \texorpdfstring{$\tau_{S}\gg \tau_{P}$}{}}
+\subsection{NS A in region \texorpdfstring{$\tauS\gg \tauP$}{}}
 \label{sec: A_NA}
 NSs in this region are described by the work of \citet{Goldreich1970}. In
 addressing the shortcomings of the analytic spherical solutions
 \citep{Davis1970, Michel1970}, Goldreich considered a neutron star with a solid
 crust capable of supporting elastic strains. In order to find an analytic
 solution, Goldreich assumed that the precession timescale was significantly
-shorter than the spin-down timescale $\tau_{S} \gg \tau_{P}$. Averaging
+shorter than the spin-down timescale $\tauS \gg \tauP$. Averaging
 over equations~\eqref{eqn: eom} with this assumption yields
 \begin{eqnarray}
 \Big\langle \frac{d \omega}{dt}\Big\rangle & = & -\frac{2R}{3c}\epsilon_{a}\omega^{3}\left[ \sin^{2} \chi +\sin^{2}a \left(1-\frac{3}{2}\sin^{2}\chi\right)\right], \\
@@ -485,10 +491,10 @@ critical value corresponds to a tipping point between the rates of change of
 energy and angular momentum.
 
 \FloatBarrier
-\subsection{NS B in region \texorpdfstring{$\tau_{S}\sim \tau_{P}$}{}}
+\subsection{NS B in region \texorpdfstring{$\tauS\sim \tauP$}{}}
 \label{sec: B_NA}
 Unlike the previous examples, there is no comparison in the literature which
-considers $\tau_{P}\sim\tau_{S}$ while neglecting the anomalous torque. This is
+considers $\tauP\sim\tauS$ while neglecting the anomalous torque. This is
 primarily because the similarity of the timescales means simplifying
 assumptions cannot be made. The results have not been included here as they are
 exactly alike with the results of NS A, except the similarity of time
@@ -496,9 +502,9 @@ scales means both the precession and alignment of the spin-vector occur on the
 same timescale.
 
 \FloatBarrier
-\subsection{NS C in region \texorpdfstring{$\tau_{S}\ll \tau_{P}$}{}}
+\subsection{NS C in region \texorpdfstring{$\tauS\ll \tauP$}{}}
 \label{sec: C_NA}
-In NS C, the timescales take the ordering $\tau_{P}\gg \tau_{S}$. The limit of
+In NS C, the timescales take the ordering $\tauP\gg \tauS$. The limit of
 this region is the spherical star
 ($\epsilon_{I}\rightarrow0$) discussed in section~\ref{sec: spherical}; as such
 we should expect the results to be similar. Solving
@@ -673,7 +679,7 @@ timescales and $\beta$ for each of the three NSs.
 {\footnotesize
 \centering
 	\begin{tabular}[ht]{|c|c|c|c|c|c|c|c|c|}\hline
-NS &  $\epsilon_{I}$  & $\epsA $ & 	$B_{S} \; $[Gauss] & $\tau_{S}$ [s] & $\tau_{A}$ [s] & $ \tau_{P}$  [s] & $\beta (\chi=30^{\circ})$ & $\beta(\chi=75^{\circ})$ \\ \hline
+NS &  $\epsilon_{I}$  & $\epsA $ & 	$B_{S} \; $[Gauss] & $\tauS$ [s] & $\tauA$ [s] & $ \tauP$  [s] & $\beta (\chi=30^{\circ})$ & $\beta(\chi=75^{\circ})$ \\ \hline
 A & $  1.0\times 10^{-9}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  6.3\times 10^{5}  $ & $ -1.27^{\circ} $& $ -0.7^{\circ} $ \\
 B & $  0.4\times 10^{-10}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  1.6\times 10^{7}  $ & $ -35.447^{\circ} $& $ -8.35^{\circ} $ \\
 C & $  1.0\times 10^{-15}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  6.3\times 10^{11}  $ & $ -60.0^{\circ} $& $ -15.0^{\circ} $ \\ \hline
@@ -694,15 +700,15 @@ anomalous torque timescale as given in equation \eqref{eqn: torque timescales}. 
 timescales can take six orderings. However, the spin-down and anomalous timescale
 obey the following relation
 \begin{equation}
-\tau_{S} = \frac{3c}{2R}\frac{1}{\nu_{0}}\tau_{A}.
+\tauS = \frac{3c}{2R}\frac{1}{\nu_{0}}\tauA.
 \end{equation}
 The coefficient $2R/3c$ effectively measures the importance of special
 relativity at the surface of the star. Since we expect $c\gg R \omega_{0}$, this
 means that only three physical orderings exist:
 \begin{enumerate}
-\item Region A: $\tau_{S}>\tau_{A}> \tau_{P}$
-\item Region B: $\tau_{S}>\tau_{P}> \tau_{A}$
-\item Region C: $\tau_{P}>\tau_{S}> \tau_{A}$
+\item Region A: $\tauS>\tauA> \tauP$
+\item Region B: $\tauS>\tauP> \tauA$
+\item Region C: $\tauP>\tauS> \tauA$
 \end{enumerate}•
 
 We can therefore update the phase space of possible solutions with the
@@ -717,7 +723,7 @@ space}.
 \end{figure}•
 
 \FloatBarrier
-\subsubsection{NS A in region \texorpdfstring{$\tau_{S}>\tau_{A}>\tau_{P}$}{}}
+\subsubsection{NS A in region \texorpdfstring{$\tauS>\tauA>\tauP$}{}}
 \label{sec: A}
 
 We expect the alignment of the spin axis to agree with the findings in section
@@ -857,7 +863,7 @@ used to illustrate the evolution with time, progressing from green to blue.}
 \end{figure}•
 
 \FloatBarrier
-\subsubsection{NS B in region \texorpdfstring{$\tau_{S}> \tau_{P}>\tau_{A}$}{}}
+\subsubsection{NS B in region \texorpdfstring{$\tauS> \tauP>\tauA$}{}}
 \label{sec: B}
 
 This NS takes on a new significance having included the anomalous torque -
@@ -897,7 +903,7 @@ point the precession ceases.
 
 \FloatBarrier
 
-\subsubsection{NS C in region \texorpdfstring{$\tau_{P}> \tau_{S}>\tau_{A}$}{}}
+\subsubsection{NS C in region \texorpdfstring{$\tauP> \tauS>\tauA$}{}}
 \label{sec: C}
 
 In figure \ref{fig: NS C}, for all values of $\chi$, the spin-vector is found

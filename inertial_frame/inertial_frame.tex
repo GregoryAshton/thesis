@@ -318,7 +318,7 @@ considering realistic values.
 \subfloat[Euler angles ]
          {\includegraphics[width=0.7\textwidth]
          {{Euler_Angles_Unknown_SpindownTorqueSwitching_1_chi0_8.0000000000e+01_omega0_1.00e+01_epsI3_1.00e-03_AnomTorqueSwitching_1_n_10000_a0_1.5000000000e+01_T_5.00e+03_upsilon_0.00e+00_epsA_0.00e+00_epsI1_0.00e+00_AnomTorque_1}.pdf}}
-\caption{Solution to the ODEs defined in Eqn.~\eqref{eqn: ODEs} for a
+\caption{Solutions to the ODEs defined in Eqn.~\eqref{eqn: ODEs} for a
 torque free biaxial NS with a deformation of $\epsI = 10^{-3}$. The red
 dashed line is the analytic calculation found by \citet{Jones2001} for the
 evolution of the Euler angles as given in Eqn.~\eqref{eqn: euler angles torque free evolution}.}
@@ -346,9 +346,10 @@ the inherent errors in such a method produce the observed noise.
 \subfloat[Euler angles and selected derivatives]
          {\includegraphics[width=0.7\textwidth]
 {{Euler_Angles_Unknown_SpindownTorqueSwitching_1_chi0_8.0000000000e+01_omega0_1.00e+01_epsI3_1.00e-03_AnomTorqueSwitching_1_n_10000_a0_1.5000000000e+01_T_5.00e+03_upsilon_0.00e+00_epsA_5.00e-04_epsI1_0.00e+00_AnomTorque_1}.pdf}}
-\caption{Solution to the ODEs defined in Eqn.~\eqref{eqn: ODEs} including the
+\caption{Solutions to the ODEs defined in Eqn.~\eqref{eqn: ODEs} including the
 torque defined in Eqn.~\eqref{eqn: torque} for a biaxial body with
-$\epsA=\epsI/2$ and $\epsI=1\times10^{-3}$. Note the x-axis is in units of
+$\epsA=\epsI/2$ and $\epsI=1\times10^{-3}$; the ratio of the precession timescale
+to the spin-down age is $\approx 7\times10^{-4}$. Note the x-axis is in units of
 $\tauP$, the initial precession period.}
 \label{fig: biaxial body with torque}
 \end{figure}
@@ -982,7 +983,7 @@ From the definition of the vacuum point-dipole spin-down torque we have that,
 \end{align}
 where $k$ is a positive constant. From \citet{Jones2001}, we also have
 \begin{align}
-\cos\Theta = \sin\theta \sin \psi \sin \chi + \cos\theta \cos\chi.
+\cos\Theta = \sin\theta \sin \psi(t) \sin \chi + \cos\theta \cos\chi.
 \end{align}
 Rearranging and expanding about $\theta = 0$, we find
 \begin{align}
@@ -990,8 +991,8 @@ Rearranging and expanding about $\theta = 0$, we find
 \left[
 \sin^{2}\chi + \theta^{2}\left(\cos^{2}\chi - \frac{\sin^{2}\chi}{2}\right)
 \right]
-- 2\theta \sin\chi\cos\chi \sin\psi
- + \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi),
+- 2\theta \sin\chi\cos\chi \sin\psi(t)
+ + \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi(t)),
 \label{eqn: sin 2 Theta}
 \end{align}
 where the first term, in square brackets, is a constant while the second two
@@ -1010,7 +1011,8 @@ then solving Eqn.~\eqref{eqn: EM DE} with this constant value we get
                       + (n-1)k\sin^{2}\Theta_0 t + \right)^{\frac{-1}{n-1}},
 \label{eqn: zeroth order soln}
 \end{align}
-where $\dot{\Phi}_0 = \dot{\Phi}(0)$. Now we define the spin-down time-scale as
+where $\dot{\Phi}_0 = \dot{\Phi}(0)$. Now the spin-down time-scale,
+as first defined in Eqn.~\eqref{eqn: tauAge definition}, is
 \begin{align}
 \tauAge = \frac{|\dot{\Phi}_0|}{|\ddot{\Phi}_0|}
 \approx \frac{1}{k|\dot{\Phi}_0|^{(n-1)} \sin^{2}\Theta_0}.
@@ -1034,8 +1036,8 @@ $\sin^{2}\Theta$, given by Eqn.~\eqref{eqn: sin 2 Theta}.
 \ddot{\Phi}(t)  = {} & \frac{-1}{\tauAge |\dot{\Phi}_0|^{(n-1)} \sin^{2}\Theta_0}
 \dot{\Phi}_0^n\left(1 + (n-1)\frac{t}{\tauAge}\right)^{\frac{-n}{1-n}} \\
 & \times \left(\sin^{2}\Theta_0
-- 2\theta \sin\chi\cos\chi \sin\psi
- + \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi).
+- 2\theta \sin\chi\cos\chi \sin\psi(t)
+ + \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi(t)).
 \right)
 \end{split}
 \end{align}
@@ -1047,8 +1049,8 @@ To simplify this expression, we expand the second bracket with $t/\tauAge\ll1$, 
 \ddot{\Phi}(t) = {} & \frac{1}{\tauAge} \dot{\Phi}_0
 \left(-1 + n\frac{t}{\tauAge} +
 \frac{1}{\sin^{2}\Theta_0}\left(
-2\theta \sin\chi\cos\chi \sin\psi
-- \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi)
+2\theta \sin\chi\cos\chi \sin\psi(t)
+- \frac{1}{2}\theta^{2}\sin^{2}\chi\cos(2\psi(t))
 \right)\right) \\
 & +
 \mathcal{O}\left(\left(\frac{t}{\tauAge}\right)^{2},
@@ -1067,19 +1069,29 @@ Then simplifying we have
 \begin{align}
 \ddot{\Phi}(t) = \frac{1}{\tauAge} \dot{\Phi}_0
 \left(-1 + n \frac{t}{\tauAge} +
-\left( 2\theta \cot\chi \sin\psi
-- \frac{1}{2}\theta^{2}\cos(2\psi)
+\left( 2\theta \cot\chi \sin\psi(t)
+- \frac{1}{2}\theta^{2}\cos(2\psi(t))
 \right)\right).
 \end{align}
 Finally, converting to spin-frequencies and periods
 \begin{align}
 \dot{\nu}(t) = \frac{1}{P\tauAge}
 \left(-1 + n \frac{t}{\tauAge} +
-2\theta \cot\chi \sin\psi
-- \frac{1}{2}\theta^{2}\cos(2\psi)
+2\theta \cot\chi \sin\psi(t)
+- \frac{1}{2}\theta^{2}\cos(2\psi(t))
 \right)
 \label{eqn: spin-down rate}
 \end{align}
+We have not made any assumptions on $\psi(t)$ in this derivation. However, since
+we are interested in cases where $\tauP \ll \tauAge$ we can make an assumption
+that
+\begin{align}
+\psi(t) = \dot{\psi} t + \psi_0.
+\end{align}
+From Fig.~\ref{fig: biaxial body with torque} (where $\tauP/\tauAge \approx
+7\times10^{-4}$) we see that the torque causes modulations in $\dot{\psi}$.
+However, in all the cases where we apply this formulae, these modulations will
+be negligible.
 
 The $\mathcal{O}(\theta)$ modulation term in this expression can be calculated
 by differentiating Eqn.~\eqref{eqn: Jones 63} twice; this reflects that this
@@ -1090,6 +1102,7 @@ the geometric dominated spin-down rates in this work, although our simulation
 code was tested against known analytic results and found to agree.
 
 \subsection{Modulation of the spin-down rate}
+\label{sec: spin-down rate numerical}
 To verify that Eqn.~\eqref{eqn: spin-down rate} accurately models the spin-down
 rate evolution of precessing pulsars in an EM amplification regime, we simulate
 a star with the properties given in Table~\ref{tab: spin-down rate normal}.
@@ -1121,7 +1134,9 @@ This figure demonstrates good agreement: small variations result from the
 application of the observer-method, most notably the numerical results under
 and over estimates the minimum and maximums due to the time averaging.
 
-\subsection{Modulation of the spin-down rate: PSR~B1828-11} While
+\subsection{Modulation of the spin-down rate: PSR~B1828-11}
+\label{sec: spin-down rate numerical B1828}
+ While
 Fig.~\ref{fig: spin-down rate normal} captures the essential features of
 spin-down rate modulation amplified by an EM torque it lacks one essential
 feature. Most notably this is the `double-peaked' spin-down rate which is
