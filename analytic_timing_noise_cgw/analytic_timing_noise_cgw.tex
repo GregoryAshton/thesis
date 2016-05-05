@@ -18,57 +18,45 @@ may violate this assumption and lead to a loss of SNR in the detection process.
 In Chapter.~\ref{sec: timing noise in cgw} we used a realisation of
 timing-noise from the Crab to estimate the effect of timing noise in
 fully-coherent searches. In this chapter, we will calculate the mismatch
-analytically for some models of timing noise. We will do this using the
+analytically for random walk models of timing noise. We will do this using the
 generalised metric mismatch defined in Sec.~\ref{sec: generalising the
 metric-mismatch}. Already we have used this technique to calculate the mismatch
-due to glitches in Sec.~\eqref{sec: mismatch due to glitches}, now we will
-apply to it random walk models and manetospheric switching. While the latter of
-these is quite specific, random walk models may be used to estimate the
-mismatch in a variety of systems.
-
-\section{Random walk models}
-\label{sec: random walk models}
+due to glitches in Sec.~\eqref{sec: mismatch due to glitches}. 
 
 In Sec.~\ref{sec: TN interpretations random walk models} we described the
 random walk model for timing noise. Recent observations \citep{Hobbs2010}
-suggest that such a description does not capture the physics of timing noise
-in isolated radio pulsars and hence is not a useful way to infer neutron star
-physics. However, empirically the timing residuals of many pulsars are indistinct
-from a random walk, so while it cannot help with inference, it is a useful
-description if we only need to know what timing noise `looks like'. With this
-in mind, in this section we consider a simplistic random walk model of timing noise.
-Moreover, this can also be applied to searches for GWs from LMXBs where
-fluctuations in the spin-down torque may cause a random walk around some fixed
-frequency.
+suggest that such a description does not capture the physics of timing noise in
+isolated radio pulsars and hence is not a useful way to infer neutron star
+physics. However, empirically the timing residuals of many pulsars are
+indistinct from a random walk, so while it cannot help with inference, it is a
+useful description if we only need to know what timing noise `looks like'. With
+this in mind, in this section we consider a simplistic random walk model of
+timing noise. This can be applied to searches for GWs from isolated neutron
+stars, but also to to searches for GWs from LMXBs where fluctuations in the
+spin-down torque may cause a random walk around some fixed frequency.
 
 To calculate the mismatch, we will model the random walk as a zero-mean
 gaussian walk in the phase, frequency, and spin-down which occurs at $N$ fixed
 time intervals, $\Delta T$. Choosing fixed time intervals appears to introduce
 an additional timescale not usually present in random walk models. However, as
-discussed in section \ref{sec: physical interpretation of the monthly
+discussed in Sec.~\ref{sec: physical interpretation of the monthly
 ephemeris} this is consistent with a large number of unresolved events which
-are measured over a fixed time scale. We therefore expect the fixed timescale
-to drop out when we write results in terms of the unresolved events.
+are measured over a fixed time scale.
 
-\subsection{Defining a random walk}
+\section{Defining a random walk}
 \label{sec: Defining a random walk}
 \input{\thisdir/defining_a_random_walk}
 
-\subsection{Random walk models part I}
+\section{Random walk models part I}
 \label{sec: Random walk models part I}
 \input{\thisdir/random_walk_models_part_I}
 
-\subsection{Random walk models part II} 
+\section{Random walk models part II} 
 \label{sec: Random walk models part II}
 \input{\thisdir/random_walk_models_part_II}
 
-\section{Two state switching model}
-\label{sec: Two state switching model}
-\input{\thisdir/lyne_switched_model}
-
-
 \begin{subappendices}
-    \input{\thisdir/summation_identities}
+\input{\thisdir/summation_identities}
 
 \section{Least-squares minimisation of a random walk}
 \label{sec: least squares minimisation of a random walk}
