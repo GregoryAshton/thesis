@@ -26,7 +26,7 @@ spin-down will undergo a sudden discontinuity. The waiting times between such ev
 are Poisson distributed with a rate $R$ such that over a period $T$ the number of
 events follows a Poisson distribution with mean $RT$. All the jumps are
 independent and the magnitudes are randomly distributed with means given by
-$\langle\dP\rangle$, $\langle\dF\rangle$, and $\langle\dS\rangle$ for the phase,
+$\langle\Delta\phi\rangle$, $\langle\Delta\nu\rangle$, and $\langle\Delta\dot{\nu}\rangle$ for the phase,
 frequency, and spin-down.
 
 \citet{Boynton1972} and others since investigate the statistical properties of
@@ -42,9 +42,9 @@ occurring at times $t_{i}$
 \begin{align}
     \Delta\phi_{\mathrm{R}} & = \s{i=1}{N}\Delta\phi_{i} H(t - t_{i})
      && \mathrm{(phase),} \\
-    \Delta\phi_{\mathrm{R}} & = \s{i=1}{N}\Delta\f_{i} (t-t_{i})H(t - t_{i})
+    \Delta\phi_{\mathrm{R}} & = \s{i=1}{N}\Delta\nu_{i} (t-t_{i})H(t - t_{i})
      && \mathrm{(frequency),} \\
-    \Delta\phi_{\mathrm{R}} & = \s{i=1}{N}\frac{1}{2}\Delta\fdot_{i} (t-t_{i})^{2}H(t - t_{i})
+    \Delta\phi_{\mathrm{R}} & = \s{i=1}{N}\frac{1}{2}\Delta\dot{\nu}_{i} (t-t_{i})^{2}H(t - t_{i})
      && \textrm{(spin-down),}
 \end{align}
 where $H(t)$ is the Heaviside step function. It should be noted that in this
@@ -57,14 +57,14 @@ The timing residuals can be calculated by fitting and removing a second order
 Taylor expansion, provided the perturbations
 of $\phi_{\mathrm{s}}$ are small then the remainder will be exactly given by
 $\phi_{\mathrm{s}}$. Then, as described by \citet{Boynton1972}, we can
-average over the $\dP_{i}, \dF_{i}$, or $\dS_{i}$
+average over the $\Delta\phi_{i}, \Delta\nu_{i}$, or $\Delta\dot{\nu}_{i}$
 distributions, the $t_{i}$ distribution, and the $N$ distributions to give
 \begin{align}
-    \langle \Delta\phi_{R} \rangle & = \langle \dP \rangle R T
+    \langle \Delta\phi_{R} \rangle & = \langle \Delta\phi \rangle R T
     = S_{\mathrm{PN}}T && \mathrm{(phase),} \\
-    \langle \Delta\phi_{R} \rangle & = \frac{1}{2}\langle \dF \rangle R T^{2}
+    \langle \Delta\phi_{R} \rangle & = \frac{1}{2}\langle \Delta\nu \rangle R T^{2}
     = \frac{1}{2}S_{\mathrm{FN}}T^{2} && \mathrm{(frequency),} \\
-    \langle \Delta\phi_{R} \rangle & = \frac{1}{6}\langle \dS \rangle R T^{3}
+    \langle \Delta\phi_{R} \rangle & = \frac{1}{6}\langle \Delta\dot{\nu} \rangle R T^{3}
     = \frac{1}{6}S_{\mathrm{SN}}T^{3} && \textrm{(spin-down).}
 \end{align}
 Here we have implicitly defined the strength parameters which combine the rate
@@ -75,7 +75,7 @@ measured, not the rate and average magnitude.
 
 The three types of noise are distinguishable by their dependence on the
 observation time $T$. The type of noise can be measured by translating this
-into the standard deviation of $\Delta\fddot$ after fitting a cubic polynomial.
+into the standard deviation of $\Delta\ddot{\nu}$ after fitting a cubic polynomial.
 Using this method, \citet{Boynton1972} categorised timing noise in
 the Crab pulsar as `frequency-like' noise.  They found that over a $5$~year
 period the noise process was stationary and consistent with the frequency noise
@@ -201,7 +201,7 @@ and is illustrated in Fig.~\ref{fig: precession}.
 \centering
 \includegraphics[scale=0.2]{Precession.png}
 \caption{Illustration of free precession for a simple biaxial body. The spin
-    axis $\Omega$ traces out a cone about the angular momentum vector $\mathbf{J}$.}
+    axis $\mathbf{\Omega}$ traces out a cone about the angular momentum vector $\mathbf{J}$.}
 \label{fig: precession}
 \end{figure}•
 
