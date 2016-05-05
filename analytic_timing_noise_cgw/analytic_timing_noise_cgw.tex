@@ -17,7 +17,7 @@ or in the case of LMXBs a constant frequency signal. However, timing-variations
 may violate this assumption and lead to a loss of SNR in the detection process.
 In Chapter.~\ref{sec: timing noise in cgw} we used a realisation of
 timing-noise from the Crab to estimate the effect of timing noise in
-fully-coherent searches. In this chapter, we will calculate the mismatch
+fully-coherent searches. In this chapter, we will calculate the fully-coherent mismatch
 analytically for random walk models of timing noise. We will do this using the
 generalised metric mismatch defined in Sec.~\ref{sec: generalising the
 metric-mismatch}. Already we have used this technique to calculate the mismatch
@@ -35,7 +35,7 @@ timing noise. This can be applied to searches for GWs from isolated neutron
 stars, but also to to searches for GWs from LMXBs where fluctuations in the
 spin-down torque may cause a random walk around some fixed frequency.
 
-To calculate the mismatch, we will model the random walk as a zero-mean
+To calculate the fully-coherent mismatch, we will model the random walk as a zero-mean
 gaussian walk in the phase, frequency, and spin-down which occurs at $N$ fixed
 time intervals, $\Delta T$. Choosing fixed time intervals appears to introduce
 an additional timescale not usually present in random walk models. However, as
@@ -54,6 +54,32 @@ are measured over a fixed time scale.
 \section{Random walk models part II} 
 \label{sec: Random walk models part II}
 \input{\thisdir/random_walk_models_part_II}
+
+\section{Conclusion}
+
+In this section, we have calculated the expectation of the fully-coherent
+mismatch when searching for a GW signal which undergoes a random walk in one of
+the phase, frequency, or spin-down rate. We did this initially for an
+unminimised system and then minimised with respect to the template parameters
+$f_\textrm{t}$ and $\dot{f}_\textrm{t}$. In the future we would like to develop
+these predictions further to make direct predictions for GW searches. For example,
+searches for GWs from LMXBs assume a constant frequency, but torque fluctuations
+could produce a random walk in the frequency; we could model this and, given
+an estimate for the random walk parameters, estimate for what observation span
+GW searches may be at risk of loosing the signal.
+
+Another observation which we would like to understand further is the
+implication of the power-law dependence on the observation time. In particular,
+in Eqn.~\eqref{eqn: Expected mismatch RW in frequency k2} we found that for
+a random walk in the frequency
+$E[\mutilde] \propto \Tobs ^{3}$ while in Chapter.~\ref{sec: timing noise in
+cgw} we found that the expected fully-coherent mismatch for timing noise as
+described by the Crab ephemeris scales as $\propto \Tobs^{2.88\pm-0.03}$ (see
+Eqn.~\eqref{eqn: fit values}). This suggests that the data in Crab ephemeris
+may be consistent with a random walk in the frequency (something that was
+first noted by \citet{Boynton1972}), but requires further investigation to
+establish this.
+
 
 \begin{subappendices}
 \input{\thisdir/summation_identities}

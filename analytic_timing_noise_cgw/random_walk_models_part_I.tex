@@ -5,16 +5,16 @@ section.
 Let us begin by expanding the metric-mismatch summation from Eqn.~\eqref{eqn:
 mismatch}.  Writing the summations explicitly, we have
 \begin{align}
-m & = g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
+\mutilde & = g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
 &=\s{i=1}{N}\s{j=1}{N}g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
 &= \s{i=1}{N}g_{\alpha\beta i i}\dl^{\alpha i}\dl^{\beta i}
 + \s{i=1}{N} \s{\substack{j=1\\ j \ne i}}{N} g_{\alpha \beta ij}\dl^{\alpha i}\dl^{\beta j}.
 \end{align}
 The summation has been intentionally split into terms for which the two
 segments are the same and those for which they are different. The metric when
-the reference time is at the beginning of each segment is given by equation
-\eqref{eqn: metric equal segments tref 0}. By considering the metric for the
-two cases, we can write the two distinct components as
+the reference time is at the beginning of each segment is given by
+Eqn.~\eqref{eqn: metric equal segments tref 0}. By considering the metric for
+the two cases, we can write the two distinct components as
 \begin{equation}
 g_{\alpha\beta ij} = \left\{
 \begin{array}{cc}
@@ -24,7 +24,7 @@ g_{\alpha\beta}^{\mathrm{NE}} & \textrm{ if } i  \ne j
 \end{equation}
 Then the mismatch can be calculated from
 \begin{align}
-m &= \s{i=1}{N}g_{\alpha\beta}^{\mathrm{E}}\dl^{\alpha i}\dl^{\beta i}
+\mutilde &= \s{i=1}{N}g_{\alpha\beta}^{\mathrm{E}}\dl^{\alpha i}\dl^{\beta i}
 + 2\s{i=1}{N} \s{j=1}{i-1} g_{\alpha \beta}^{\mathrm{NE}}\dl^{\alpha i}\dl^{\beta j} .
 \label{eqn: mismatch sep}
 \end{align}
@@ -76,7 +76,7 @@ these into Eqn.~\eqref{eqn: mismatch sep}. However, since we are dealing with
 statistical quantities, we can instead infer the behaviour of the mismatch
 under the random walk by taking an expectation.
 
-Inseting Eqn.~\eqref{eqn: delta fdot n}, Eqn.~\eqref{eqn: delta f n},
+Inserting Eqn.~\eqref{eqn: delta fdot n}, Eqn.~\eqref{eqn: delta f n},
 Eqn.~\eqref{eqn: delta phi n}  in Eqn.~\eqref{eqn: mismatch sep} yields a
 number of terms with all the permutations of two terms from $[\tn \phi, \tn \f,
 \tn \fdot]$. Taking the expection, all the cross-correlated terms, such as
@@ -90,7 +90,7 @@ E[\tn\fdot_{i}\tn\fdot_{j}] &= \delta_{ij}\sigS,
 After some simplification we find that the mismatch is given by
 \begin{align}
 \begin{split}
-E[m]   = &  \frac{A_{\phi}}{6} \left(N - \frac{1}{N}\right)
+E[\mutilde]   = &  \frac{A_{\phi}}{6} \left(N - \frac{1}{N}\right)
 + \frac{\pi^{2} A_{{f}}}{30}\left(4 N^{3} + 5 N^{2} + \frac{1}{N}\right)\\
  & +  \frac{\pi^{2} A_{{\dot{f}}}}{3780} \left(66 N^{5} - 21 N^{3} + 105 N^{2}
  + 217 N + 63 - \frac{94}{N}\right),
@@ -101,7 +101,7 @@ where
 \begin{equation}
 	A_{\phi} = \sigP \;\;\;\;\;
     A_{\f} = \sigF\Delta T^{2} \;\;\;\;\;
-    A_{\fdot} = \sigF\Delta T^{4},
+    A_{\fdot} = \sigS\Delta T^{4},
 \end{equation}
 define three `activity parameters'.
 
@@ -110,9 +110,9 @@ Recalling that $N=\Tobs/\Delta T$, Eqn.~\eqref{eqn: expectation} makes
 predictions for the leading order
 scaling of the three random walks with observation period
 \begin{equation}
-E[m]_{PN} \sim \sigP \Tobs, \hspace{10mm}
-E[m]_{FN} \sim \sigF \Tobs^{3}, \hspace{10mm}
-E[m]_{FN} \sim \sigS \Tobs^{5}.
+E[\mutilde]_{\mathrm{PN}} \sim \sigP \Tobs, \hspace{10mm}
+E[\mutilde]_{\mathrm{FN}} \sim \sigF \Tobs^{3}, \hspace{10mm}
+E[\mutilde]_{\mathrm{SN}} \sim \sigS \Tobs^{5}.
 \end{equation}
 
 We can observe this behaviour directly and verify the predictions made by
