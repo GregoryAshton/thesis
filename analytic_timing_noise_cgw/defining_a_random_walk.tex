@@ -1,62 +1,68 @@
 We allow the spin-down, frequency, and phase to undergo a random walk such that
-each step proceeds from the previous value and the steps themselves are
-normally distributed. Constraining the spin-down to be the highest order term
-allowed to vary we have
+after an interval $\Delta T$, they step with a value taken from a zero-mean
+normal distribution. We choose the spin-down rate to be the highest order term
+which undergoes a random walk such that
 \begin{equation}
-\Delta \fdot_{i} - \Delta\fdot_{i-1} = \tn \fdot_{i} \sim N(0, \sigS)
-\end{equation}•
-Notice that the residual between parameter space offsets is denoted by $\tn$
-which is always normally distributed. Rearranging this gives an expression for
+\Delta \fdot_{i} - \Delta\fdot_{i-1} = \tn \fdot_{i} \sim N(0, \sigS),
+\end{equation}
+where we have defined $\sigS$ as the standard-deviation of the step sizes in
+the spin-down rate. The residual between parameter space offsets is denoted by $\tn$
+which is normally distributed. Rearranging this gives an expression for
 the offset in the $i^{th}$ segment, by induction we can also write down the
 $i-1$ term
 \begin{align}
 \Delta\fdot_{i} &  = \tn\fdot_{i} + \Delta\fdot_{i-1}  \\
 \Delta\fdot_{i-1} &  = \tn\fdot_{i-1} + \Delta\fdot_{i-2}  .
 \end{align}
-As each step proceeds from the previous step, and the random walk begins at the
-origin, we can write
+Let us start each random walk from the origin (we will return to this point in 
+Sec.~\ref{sec: Random walk models part II}), then
+as each step proceeds from the previous step, we have that
 \begin{equation} 
 \Delta\fdot_{i} = \s{j=1}{i}\tn\fdot_{j}.
-\label{eqn: fdot offset} 
+\label{eqn: delta fdot n} 
 \end{equation}
 
-If we want to build a realistic model, then we must consider the effect that a
-random walk in spin-down may have on the frequency and phase. For example if we
-increase the spin-down for a period of time, then we would expect the frequency
-to decrease at a greater rate during this period. In our discreet model it is
+To illustrate this, in Fig.~\ref{fig: Illustration fdot int} we plot an example
+of a random walk in spin-down as given by \eqref{eqn: delta fdot n}.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\textwidth]{Illustration_F1_int}
+\caption{An example of a random walk in the spin-down rate, 
+Eqn.~\eqref{eqn: delta fdot n}. The filled green blocks indicate the
+summation defined in Eqn.~\eqref{eqn: f offset induced} required to
+calculate the induced change in frequency at $t^{i}$ due to the random walk in
+spin-down rate.}
+\label{fig: Illustration fdot int}
+\end{figure}
+
+If we want to model a random walk in the phase, frequency, and spin-down rate
+concurrently, then we must consider the effect that a
+random walk in spin-down will have on the frequency and phase. For example, if we
+increase the spin-down rate for a period of time, then we would expect the frequency
+to decrease at a greater rate during this period. In our discreet model, it is
 not possible to dynamically change the frequency during a single segment.
 However, we can approximate this by updating the frequency in the next
 segment with the induced frequency offset due to the spin-down in previous
-segments. This must be done for lower order terms for each random walk in the
-frequency and spin-down. For the phase no lower order terms exist so there is no
-induced effect.
+segments. This must be done for the induced effect from the random walk in spin-down rate on
+the phase and frequency, and for the induced effect from the random walk in frequency
+on the phase. There is induced effect for the spin-down rate: the effect only
+propagates to lower order terms.
 
 Because the random walk is discreet and constant in any given segment, we can
 calculate the offset in the lower order terms from a Taylor expansion. The
 total offset at the  $i^{th}$ reference time is then given by the summation of
-the offset caused by higher order terms up to that reference time. The reference times
-can be arbitrarily chosen, but setting each to start at the beginning of the segment
-simplifies the calculation.
-In figure~\ref{fig: Illustration fdot int} we plot the random walk in spin-down as given by 
-\eqref{eqn: fdot offset}. The frequency offset induced by the spin-down can be
+the offset caused by all higher order terms up to that reference time. The
+reference times can be arbitrarily chosen, but setting each to start at the
+beginning of the segment simplifies the calculation. 
+The frequency offset induced by the spin-down can be
 calculated using a Taylor expansion
 \begin{equation}
-\Delta \f_{i} = \s{j=1}{i-1}\Delta\fdot_{j} \dT 
+\Delta \f_{i} = \s{j=1}{i-1}\Delta\fdot_{j} \dT .
 \label{eqn: f offset induced} 
 \end{equation}
-
 This can be though of as the integration of the spin-down up to the $i^{th}$
-reference time and is illustrated by the shaded region in figure~\ref{fig:
+reference time and is illustrated by the green blocks in Fig.~\ref{fig:
 Illustration fdot int}. 
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.7\textwidth]{Illustration_F1_int}
-\caption{Illustration of equation~\eqref{eqn: f offset induced} demonstrating
-a random walk in the spin-down and the filled in region which we
-integrate over to find the frequency offset at $t_{i}$.}
-\label{fig: Illustration fdot int}
-\end{figure}
 
 Since we want to consider random walks in all three parameters we now add in a
 random walk in frequency. Each step is independent of the induced effect from
@@ -65,14 +71,15 @@ effects will sum linearly such that the frequency offset is
 \begin{equation}
 \Delta \f_{i} = \s{j=1}{i}\tn \f_{j} + \s{j=1}{i-1}\Delta\fdot_{j} \dT.
 \label{eqn: f offset} 
-\end{equation}•
+\end{equation}
 
 By a similar process we can calculate the induced effect of the frequency and
 spin-down on the phase. In full the phase offset is given by
 \begin{equation}
 \Delta\phi_{i}  =  \s{j=1}{i}\tn \phi_{j} 
 + 2\pi\left(\s{j=1}{i-1}\Delta \f_{j}\dT 
-+ \frac{1}{2}\s{j=1}{i-1}\Delta \fdot_{j}\dT^{2}\right) \label{eqn: phi offset} 
++ \frac{1}{2}\s{j=1}{i-1}\Delta \fdot_{j}\dT^{2}\right).
+\label{eqn: phi offset}
 \end{equation}
 
 %Equations \eqref{eqn: f offset} and \eqref{eqn: phi offset} will allows us to

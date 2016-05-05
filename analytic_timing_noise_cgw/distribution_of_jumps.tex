@@ -1,0 +1,59 @@
+\subsubsection{Distribution of jumps}
+In equation~\eqref{eqn: delta fdot n}  we defined the steps in spin-down to be
+normally distributed. Therefore the jumps between spin-down values will also be
+normally distributed, that is $\fdot_{i} - \fdot_{i-1} \sim N(0, \sigS)$. In
+the lower order terms, for example the frequency, we can have a mix of the
+random walk in frequency and the induced effect of the random walk in spin-down;
+the same is true for the phase but with an induced effect from the frequency
+and spin-down.  We now investigate how the induced effect of higher order random
+walks effects on the distributed of jumps in frequency and phase. To check this
+we  look at the distribution at the $i^{th}$ step using equation 
+\eqref{eqn: delta f n}
+\begin{align}
+\Delta \f_{i} - \Delta \f_{i-1} & = \s{j=1}{i}\tn \f_{j}
+-  \s{j=1}{i-1}\tn \f_{j} + \left(\s{j=1}{i-1}(i-j)\tn \fdot_{j}  
+-  \s{j=1}{i-2}(i-1-j)\tn \fdot_{k} \right)\dT  \\
+& = \tn \f_{i} + \left(\tn \fdot_{i-1} 
++ \s{j=1}{i-2}(i-j-i+1+j)\tn \fdot_{j}\right)\dT \\
+& = \tn \f_{i} + \s{j=1}{i-1}\tn \fdot_{j} \dT \\
+& \sim N(0, \sigF) + \s{j=1}{i-1}N(0, \sigS) \dT 
+\end{align}
+To combine the distributions we use the summation property of normal
+distributions. For a central normal distribution $X_{i}\sim N(0,
+\sigma_{i}^{2})$, the sum of $N$ terms with real coefficients $a_{i}$ is given
+by 
+\begin{equation}
+\s{i=1}{N}a_{i}X_{i} \sim N\left(0, \s{i=1}{N}(a_{i}\sigma_{i})^{2}\right).
+\end{equation}
+Then we have
+\begin{align}
+\Delta \f_{i} - \Delta \f_{i-1} & \sim N(0, \sigF) 
++ N\left(0, \s{j=1}{i-1}(\sigS\dT)^{2}\right) \\
+& \sim N(0, \sigF) + N(0, (i-1)\sigS\dT^{2}) \\
+& \sim N(0, \sigF + (i-1)\sigS\dT^2)  
+\end{align}
+Similarly for the phase 
+\begin{align}
+\Delta \phi_{i} - \Delta \phi_{i-1} = &  \left(\s{j=1}{i}\tn \phi_{j} 
+-  \s{j=1}{i-1}\tn \phi_{j}\right) + 2\pi\left(\s{j=1}{i-1}(i-j)\tn \f_{j}  
+-  \s{j=1}{i-2}(i-1-j)\tn \f_{k} \right)\dT \notag \\
+& + \pi\left(\s{j=1}{i-1}(i-j)^{2}\tn \fdot_{j} 
+- \s{j=1}{i-2}(i-1-j)^{2}\tn \fdot_{j}\right)\dT^{2} \\
+= &  \tn \phi_{i} +  2\pi \s{j=1}{i-1}\tn\f_{j} 
++ \pi \s{j=1}{i-1}(2i - 2j -1)\fdot_{j}\dT^{2} \\
+\sim &  N(0, \sigS) + \s{j=1}{i-1}N(0, \sigF) \dT 
++ \s{j=1}{i-1}(2i - 2j -1)N(0, \sigS) \dT^{2}  \\
+\sim &  N\left(0, \sigS\right) + N\left(0, (i-1)\sigF\dT^{2}\right) 
++ N\left(0, \s{j=1}{i-1}(2i - 2j -1)\sigS\dT^{4}\right)  \\
+\sim &  N\left(0, \sigS\right) + N\left(0, (i-1)\sigF\dT^{2}\right) 
++ N\left(0, (i-1)^{2}\sigS\dT^{4}\right)  \\
+\Delta \phi_{i} - \Delta \phi_{i-1}  \sim & N\left(0, \sigS 
++ (i-1)\sigF\dT^{2} + (i-1)^{2}\sigS\dT^{4}\right)
+\end{align}
+
+This result indicates that the integrated effect of random walks in higher
+order terms will create a normal distribution in the monthly ephemeris. The
+standard deviation will
+depend on the observation time. 
+
+
