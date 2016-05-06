@@ -11,14 +11,16 @@ risk to efforts to discover continuous GWs from neutron stars. This is because
 searches rely on \emph{matched-filtering} which searches the data using a
 template; if the template and signal don't match, due to timing variations in
 the signal, the template may be unable to detect the signal. In this section,
-we will give a general introduction to detection methods used in GW data
-analysis, explain why timing variations pose a risk, and introduce some simple
-calculations. The details of estimating the risk posed by glitches to GW
-searches will be discussed in Chapter~\ref{sec: glitches in cgw} and then in
-Chapter~\ref{sec: timing noise in cgw} and Chapter.~\ref{sec: timing noise in
-cgw analytic} we will investigate the role of timing-noise for GW searches.
+we will give a general introduction to the detection methods used in GW data
+analysis and then develop our tools which will used in later chapters to
+quantify the significance of timing variations for continuous GW searches. The
+details of estimating the risk posed by glitches to GW searches will be
+discussed in Chapter~\ref{sec: glitches in cgw} and then in Chapter~\ref{sec:
+timing noise in cgw} and Chapter.~\ref{sec: timing noise in cgw analytic} we
+will investigate the role of timing-noise for GW searches.
 
 \section{Introduction}
+\label{sec: introduction cgw}
 Rotating neutron stars capable of supporting non-axisymmetric mass
 distributions will emit continuous gravitational
 waves\footnote{Note that in general ``continuous waves'' can
@@ -72,6 +74,16 @@ work generally we will consider only searches for
 emission from non-axisymmetric neutron stars at
 $\f_{0}^{GW}=2\f_{0}^{EM}$~\citep{Shapiro83}; from hereon all frequencies
 and spin-downs refer to the pulsars GW emission.
+
+The rest of this chapter is organised as follows: in Sec.~\ref{sec:
+introduction to the mismatch} we will define the \emph{mismatch} which
+quantifies the loss of signal to noise ratio for imperfectly matched signals.
+In Sec.~\ref{sec: mismatch from differences in the gw phase} we will
+familiarise the reader with methods to calculate the mismatch when the phase of
+the GW is not a smooth Taylor expansion and describe why this method of
+calculating the mismatch becomes intractable for complicated signals. Then, in
+Sec.~\ref{sec: generalising the metric-mismatch} we will define a new approach
+to calculating the mismatch by splitting the signal into a separate subdomains.
 
 
 \section{Introduction to the mismatch}
@@ -328,6 +340,7 @@ deviations in the phase.
 
 
 \section{Mismatch from differences in the GW phase}
+\label{sec: mismatch from differences in the gw phase}
 
 The $\mathcal{F}$-statistic considered in \citet{Brady1998} analytically
 minimises over the phase. Therefore if the signal and template can both be
@@ -520,6 +533,276 @@ over several cycles the mismatch will approach a constant value dependent on
 the maximum amplitude of the residuals.  For a quasi-periodic signal the same
 overall picture will emerge with the size of the mismatch dependent on the mean
 average size of oscillations in the residual.
+
+\section{Generalising the metric-mismatch approximation to arbitrary signals}
+\label{sec: generalising the metric-mismatch}
+In Sec.~\ref{sec: the metric-mismatch approximation for fully-coherent searches}
+we introduced the metric-mismatch, a tool to estimate
+the loss of SNR for Taylor expansion signals and templates in fully-coherent
+and semi-coherent searches. In this section we will extend the fully-coherent
+formalism to handle cases where the signal is not a Taylor expansion, but can
+be approximated by a \emph{piecewise} Taylor expansion. Specifically we mean
+breaking any arbitrary signal into $\Nsd$ \emph{sub-domains} each of which we
+describe the signal by a single Taylor expansion; the resulting collection of
+all individual Taylor expansions is a piecewise Taylor expansion. We will
+distinguish between a sub-domain, which describes a part of the piecewise
+function and a segment, which is the division of an observation period for a
+semi-coherent search as discussed in Sec.~\ref{sec: the metric-mismatch
+approximation for semi-coherent searches}. In this section we
+will develop a general formalism for a signal described by an arbitrary number
+of sub-domains; this will be used in Sec.~\ref{sec: glitches in cgw} to calculate the
+mismatch due to glitches and in Sec.~\ref{sec: timing noise in cgw analytic}
+to calculate the mismatch due to a random walk model of timing noise.
+
+
+%In this work we will be modelling glitches which can be described by a
+%piecewise Taylor expansion with two sub-domains. However, in this section we
+%will develop a general formalism for a signal described by an arbitrary number
+%$\Nsd$ sub-domains.
+
+\subsection{Piecewise Taylor expansion}
+Before we get into the details of formulating a general metric-mismatch it is
+worth stating some details about piecewise Taylor expansions.
+Allowing the signal to be piecewise amounts to placing a second index on the
+signal parameters, $\ls^{\alpha a}$, which labels the sub-domain of the piecewise function.
+Note that we discriminate between
+Greek indices, labelling the parameter components, and Roman indices which
+label the sub-domain.
+For the $a^{th}$ sub-domain of the piecewise function, we define $\tref^{a}$
+as the reference time of the Taylor expansion in that sub-domain. These can
+be defined arbitrarily, although it is usual to either define them
+relative to each segment, or at a fixed value for all the segments.
+The piecewise signal function in the $a^{th}$ sub-domain is then
+\begin{align}
+\PhiS(t; \{\ls^{\alpha a}\}) & = \phiS^a + 2\pi \left(\nuS^a (t - \tref^a)
++ \frac{\nudotS^a}{2}(t - \tref^a)^{2} \right),
+\label{eqn: piecewise Taylor lambda signal}
+\end{align}
+when $t_{a} < t \le t_{a+1}$ and otherwise undefined: in future this condition will
+be assumed.  By $\{\ls^{\alpha a}\}$ we indicate the set of all signal
+parameters and by implication their reference times.
+
+Since we will be calculating the phase difference between the signal and template
+it is convenient to similarly make the template a piecewise function with
+parameters $\lt^{\alpha a}$ such that
+\begin{align}
+\PhiT(t; \{\lt^{\alpha a}\}) = \phi^a + 2\pi \left(\nuT^a (t - \tref^a)
++ \frac{\nudotT^a}{2}(t - \tref^a)^{2} \right).
+\label{eqn: piecewise Taylor lambda template}
+\end{align}
+Then we may write the parameter space difference as
+$\dl^{\alpha a} = \ls^{\alpha a} - \lt^{\alpha a}$, where both the signal and
+template must refer to the same reference time.
+
+Since we have set up the template phase in Eqn.~\eqref{eqn: piecewise Taylor
+lambda template} as a piecewise Taylor expansion, the template can
+be any arbitrary function described by a piecewise Taylor expansion. However,
+all current and planned searches use a single global Taylor expansion template.
+To model this, we must introduce \emph{consistency relations}
+which ensure that the local sub-domains all lie along a single global template
+with parameters $[\phiT, \nuT, \nudotT]$ defined at $\tref$. These consistency
+relations may be written as
+\begin{align}
+\begin{split}
+\phiT^a & = \phiT + \nuT(\tref^a - \tref) + \frac{\nudotT^{2}}{2}(\tref^a - \tref)^{2}, \\
+\nuT^a & = \nuT + \nudotT(\tref^a - \tref), \\
+\nudotT^a & = \nudotT.
+\end{split}
+\end{align}
+Note the subtle distinction between $\tref$, the global reference time and
+$\tref^{a}$ the reference time for the $a^{th}$ sub-domain.
+
+Finally we can generalise Eqn.~\eqref{eqn: Delta Phi} for the phase difference
+to the piecewise Taylor expansion description of the signal and template:
+\begin{align}
+\begin{split}
+\Delta\Phi^{a}(t)& =  \PhiS(t; \ls^{\alpha a}) - \PhiT(t; \lt^{\alpha a})\\
+& = \Deltaphi^{a} + 2\pi\left(\Deltanu^{a}(t-\tref^{a})
++ \frac{\Deltanudot^{a}}{2}(t - \tref^{a})^{2}\right).
+\end{split}
+\end{align}
+
+\subsection{The generalised metric-mismatch approximation for fully-coherent
+            searches}
+
+We will now generalise the metric-mismatch approximation first introduced by
+\citet{Brady1998} to the case where the signal and template are piecewise
+Taylor expansions. This calculation follows that given in Sec.~\ref{sec: the
+metric-mismatch approximation for fully-coherent searches} with the addition
+of an index labelling the sub-domains.
+
+Using a piecewise Taylor expansion
+to describe the signal and template, the discreet nature of the phase offset
+$\Delta\Phi^{a}$ allows us to partition the matched filtering amplitude due to
+the additivity of integration on intervals. The matched filtering amplitude,
+given the set of template parameters and parameter offsets $\{\lt^{\alpha a},
+\dl^{\alpha a}\}$, is then
+\begin{align}
+\begin{split}
+X(\{\lt^{\alpha a}, \dl^{\alpha a}\}) & =
+\frac{1}{\Tcoh}\int_{0}^{\Tcoh}e^{i \Delta \Phi(t)}dt  \\
+& =  \frac{1}{\Tcoh}\sum_{c}^{\Nsd} \int_{t^{c}}e^{i \Delta \Phi^{c}}dt,
+\end{split}
+\end{align}
+where the integration is taken over the bounds of the $c^{th}$ sub-domain. The
+mismatch, in this general formulation, is then defined by
+\begin{equation}
+\mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\}) =
+ 1 -  |X(\{\lt^{\alpha a}, \dl^{\alpha a}\})|^{2}
+\end{equation}
+The mismatch has a local minimum of zero when $\zero$. Expanding in powers of
+$\dl^{\alpha a}$, the leading order term is
+\begin{align}
+\begin{split}
+\mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\}) =
+ & \frac{1}{2} \partial_{\alpha a} \partial_{\beta b}
+                \mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\})
+                \dl^{\alpha a}\dl^{\beta b},
+\label{eqn: mismatch expansion}
+\end{split}
+\end{align}
+where $\partial_{\alpha a} \equiv \partial_{\dl^{\alpha a}}$.  The metric in
+this formalism is identified as
+\begin{equation}
+g_{\alpha\beta ab} =
+\frac{1}{2} \partial_{\alpha a} \partial_{\beta b}
+            \mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\})
+            \zerolim.
+\end{equation}
+We can then write the mismatch as
+\begin{equation}
+\mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\}) =
+ g_{\alpha\beta ab} \dl^{\alpha a}\dl^{\beta b}
+\label{eqn: mismatch}
+\end{equation}•
+On the right hand side we sum over the repeated indices. The mismatch is a
+scalar value quantifying the loss of signal to noise due to the set of
+parameter offsets~$\{\dl^{\alpha a}\}$.
+
+Partially evaluating the metric we have
+\begin{align}
+\begin{split}
+g_{\alpha\beta ab} = &  \frac{1}{\Tcoh}\sum_{c} \int_{t_{c}}
+                        \partial_{\alpha a}\Delta \Phi^{c}
+                        \partial_{\beta b}\Delta \Phi^{c}  dt\\
+ & -
+\frac{1}{\Tcoh^{2}}
+\sum_{b} \int_{t_{c}}\partial_{\alpha a}\Delta \Phi^{c} dt
+\sum_{b'} \int_{t_{c'}}\partial_{\beta c'}\Delta \Phi^{c'} dt.
+\end{split}
+\label{eqn: general metric}
+\end{align}
+Expanding the summation over the $a$ index, we note that,
+\begin{equation}
+ \partial_{\alpha a}\Delta \Phi^{c}  = \left[1, 2\pi (t - t_{r}^{a}),
+                                           \pi (t - t_{r}^{a})^{2}
+                                           \right]^{\alpha} \delta_{ac},
+\label{eqn: NEterm}
+\end{equation}
+and so we can simplify Eqn.~\eqref{eqn: general metric} by dropping the terms
+which vanish from the summation
+\begin{align}
+\begin{split}
+g_{\alpha\beta ab} =& \frac{1}{\Tcoh}\delta_{ab} \int_{t_{a}}
+                      \partial_{\alpha a}\Delta \Phi^{a}
+                      \partial_{\beta a}\Delta \Phi^{a} dt \\
+ & - \frac{1}{\Tcoh^{2}} \int_{t_{a}} \partial_{\alpha a}\Delta \Phi^{a} dt
+  \int_{t_{b}} \partial_{\beta b}\Delta \Phi^{b} dt.
+\end{split}
+\label{eqn: metric}
+\end{align}
+This expression, given a choice of decomposition of the observation time $T$ into
+$\Nsd$ (not necessarily equal) time subdomains labelled $t_{a}$, will result in a rank 4
+tensor.
+%To help with the calculation we can also write out the term
+%\begin{equation}
+% \partial_{\alpha}\Delta \Phi^{i}  \partial_{\beta}\Delta \Phi^{i}  =
+% \left[\begin{array}{ccc}
+%1  & 2\pi (t - t_{r}^{i}) &  \cdots \\
+%2\pi (t - t_{r}^{i}) & (2\pi)^{2} (t - t_{r}^{i})^{2} & \cdots \\
+%2\pi (t - t_{r}^{i}) & (2\pi)^{2} (t - t_{r}^{i})^{2} & \cdots \\
+%\vdots & \vdots & \ddots
+%\end{array}•
+%\right]^{\alpha\beta}.
+%\label{eqn: Eterm}
+%\end{equation}
+%In general calculating the metric requires the integration of each term in
+%equations \eqref{eqn: Eterm} and \eqref{eqn: NEterm} with consideration given
+%to the reference time
+
+\subsection{Explicit calculation of the metric}
+In this final subsection, we will derive two explicit calculation of the metric
+given choices for the reference times. These will be used later on in this
+thesis.
+\subsubsection{Reference times in the middle of the sub-domains}
+If there are $\Nsd$
+sub-domains with the $a^{th}$ sub-domain of duration $\dT_a$ then we can bound the
+integration over each segment by $t_{a}, t_{a} + \dT_a$. We are free to choose
+the reference time
+in any way we like; for this example, we define the reference time in each sub-domain
+to be halfway through, that is $\tref^{a} = t_{a} + \dT_a/2$. Using the following identity
+\begin{align}
+\int_{t_{a}}^{t_{a}+\dT_a} \left(t - (t_{a} + \frac{\dT_a}{2})\right)^{n}
+dt \equiv  \frac{\left(1
++(-1)^{n}\right)}{n+1}\left(\frac{\dT_a}{2}\right)^{n+1},
+\end{align}
+we have that
+\begin{equation}
+\int_{t_{a}}^{t_{a}+\dT_a} \partial_{\alpha}\Delta \Phi^{a}  \partial_{\beta}\Delta \Phi^{a} dt =  \left[\begin{array}{ccc}
+\dT_a  & 0 &  \frac{\pi \dT_a^{3}}{12}\\
+0 & \frac{\pi^{2}\dT_a^{3}}{3} &  0\\
+\frac{\pi \dT_a^{3}}{12} & 0  &  \frac{\pi^{2}\dT_a^{5}}{80}\\
+\end{array}•
+\right]^{\alpha\beta},
+\end{equation}
+and
+\begin{equation}
+\int_{t^{a}}^{t_{a}+\dT_a} \partial_{\alpha}\Delta \Phi^{a}  dt =
+ \left[\dT, 0 , \frac{\pi \dT_a^{3}}{12} \right]^{\alpha}.
+\end{equation}
+which can be inserted into Eqn.~\eqref{eqn: metric} to calculate the metric.
+
+The rank 4 metric $g_{\alpha\beta a b}$ is degenerate in the segment indices
+$a$ and $b$ having only two distinct terms. We can distinguish these by either
+$a=b$ or $a\ne b$. This allows to write the metric $g_{\alpha \beta a b}$
+compactly as
+\begin{align}
+g_{\alpha\beta ij} = \left[\begin{array}{ccc}
+\delta_{ab}\frac{\dT_a}{\Tcoh} -\left(\frac{\dT_a}{\Tcoh}\right)^{2}
+& 0
+& \frac{\delta_{ab}}{\Tcoh}\frac{\pi \dT_a^{3}}{12} - \frac{\pi \dT_a^{4}}{12\Tcoh^{2}}\\
+0
+& \delta_{ab}\frac{\pi^{2}\dT_a^{3}}{3\Tcoh}
+&  0\\
+\frac{\delta_{ab}}{\Tcoh}\frac{\pi \dT_a^{3}}{12} - \frac{\pi \dT_a^{4}}{12\Tcoh^{2}}
+& 0
+&  \frac{\delta_{ab}}{\Tcoh}\frac{\pi^{2}\dT_a^{5}}{80} -  \left(\frac{\pi \dT_a^{3}}{12 \Tcoh}\right)^{2} \\
+\end{array}
+\right]^{\alpha\beta}.
+\label{eqn: metric tref half}
+\end{align}
+
+\subsubsection{Reference times at the start of each sub-domain}
+If instead we set the reference time to be at the start of each segment then,
+following the method used to derive Eqn.~\eqref{eqn: metric tref half}, the
+metric can be written compactly as
+\begin{equation}
+g_{\alpha\beta ij}  =  \left[\begin{array}{ccc}
+\delta_{ij}N^{-1}  -N^{-2}  &
+\pi\dT \left( \delta_{ij}N^{-1} - N^{-2}\right)&
+\frac{\dT^{2}\pi}{3} \left( \delta_{ij}N^{-1} - N^{-2}\right)\\
+\pi\dT \left( \delta_{ij}N^{-1} - N^{-2}\right)&
+\pi^{2}\dT^{2}\left(\delta_{ij}\frac{4N^{-1}}{3} - N^{-2}\right) &
+\pi^{2}\dT^{3}\left(\delta_{ij}\frac{N^{-1}}{2} - \frac{N^{-2}}{3}\right) \\
+\frac{\dT^{2}\pi}{3} \left( \delta_{ij}N^{-1} - N^{-2}\right) &
+\pi^{2}\dT^{3}\left(\delta_{ij}\frac{N^{-1}}{2} - \frac{N^{-2}}{3}\right)  &
+\pi^{2}\dT^{4}\left(\frac{N^{-1}}{5} - \frac{N^{-2}}{9}\right) \\
+\end{array}
+\right]^{\alpha, \beta}.
+\label{eqn: metric equal segments tref 0}
+\end{equation}
+
+
 
 \biblio
 
