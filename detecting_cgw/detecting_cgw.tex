@@ -582,9 +582,9 @@ Note that we discriminate between
 Greek indices, labelling the parameter components, and Roman indices which
 label the sub-domain.
 For the $a^{th}$ sub-domain of the piecewise function, we define $\tref^{a}$
-as the reference time of the Taylor expansion in that sub-domain. These can
+as the reference time of the Taylor expansion in that subdomain. These can
 be defined arbitrarily, although it is usual to either define them
-relative to each segment, or at a fixed value for all the segments.
+relative to each subdomain, or at a fixed value for all the subdomains.
 The piecewise signal function in the $a^{th}$ sub-domain is then
 \begin{align}
 \PhiS(t; \{\ls^{\alpha a}\}) & = \phiS^a + 2\pi \left(\nuS^a (t - \tref^a)
@@ -752,7 +752,7 @@ thesis.
 \subsubsection{Reference times in the middle of the sub-domains}
 If there are $\Nsd$
 sub-domains with the $a^{th}$ sub-domain of duration $\dT_a$ then we can bound the
-integration over each segment by $t_{a}, t_{a} + \dT_a$. We are free to choose
+integration over each subdomain by $t_{a}, t_{a} + \dT_a$. We are free to choose
 the reference time
 in any way we like; for this example, we define the reference time in each sub-domain
 to be halfway through, that is $\tref^{a} = t_{a} + \dT_a/2$. Using the following identity
@@ -777,7 +777,7 @@ and
 \end{equation}
 which can be inserted into Eqn.~\eqref{eqn: metric} to calculate the metric.
 
-The rank 4 metric $g_{\alpha\beta a b}$ is degenerate in the segment indices
+The rank 4 metric $g_{\alpha\beta a b}$ is degenerate in the subdomain indices
 $a$ and $b$ having only two distinct terms. We can distinguish these by either
 $a=b$ or $a\ne b$. This allows to write the metric $g_{\alpha \beta a b}$
 compactly as
@@ -798,7 +798,7 @@ g_{\alpha\beta ij} = \left[\begin{array}{ccc}
 \end{align}
 
 \subsubsection{Reference times at the start of each sub-domain}
-If instead we set the reference time to be at the start of each segment then,
+If instead we set the reference time to be at the start of each subdomain then,
 following the method used to derive Eqn.~\eqref{eqn: metric tref half}, the
 metric can be written compactly as
 \begin{equation}
@@ -814,7 +814,7 @@ g_{\alpha\beta ij}  =  \left[\begin{array}{ccc}
 \pi^{2}\dT^{4}\left(\frac{N^{-1}}{5} - \frac{N^{-2}}{9}\right) \\
 \end{array}
 \right]^{\alpha, \beta}.
-\label{eqn: metric equal segments tref 0}
+\label{eqn: metric equal subdomains tref 0}
 \end{equation}
 
 
