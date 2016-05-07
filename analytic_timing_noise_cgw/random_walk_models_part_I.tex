@@ -1,4 +1,4 @@
-We will now calculat the mismatch for a fully-coherent search given the
+We will now calculate the mismatch for a fully-coherent search given the
 random walk in phase, frequency, and spin-down rate defined in the previous
 section.
 
@@ -6,14 +6,14 @@ Let us begin by expanding the metric-mismatch summation from Eqn.~\eqref{eqn:
 mismatch}.  Writing the summations explicitly, we have
 \begin{align}
 \mutilde & = g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
-&=\s{i=1}{N}\s{j=1}{N}g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
-&= \s{i=1}{N}g_{\alpha\beta i i}\dl^{\alpha i}\dl^{\beta i}
-+ \s{i=1}{N} \s{\substack{j=1\\ j \ne i}}{N} g_{\alpha \beta ij}\dl^{\alpha i}\dl^{\beta j}.
+&=\s{i=1}{\Nsd}\s{j=1}{\Nsd}g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
+&= \s{i=1}{\Nsd}g_{\alpha\beta i i}\dl^{\alpha i}\dl^{\beta i}
++ \s{i=1}{\Nsd} \s{\substack{j=1\\ j \ne i}}{\Nsd} g_{\alpha \beta ij}\dl^{\alpha i}\dl^{\beta j}.
 \end{align}
 The summation has been intentionally split into terms for which the two
-segments are the same and those for which they are different. The metric when
-the reference time is at the beginning of each segment is given by
-Eqn.~\eqref{eqn: metric equal segments tref 0}. By considering the metric for
+subdomains are the same and those for which they are different. The metric when
+the reference time is at the beginning of each subdomain is given by
+Eqn.~\eqref{eqn: metric equal subdomains tref 0}. By considering the metric for
 the two cases, we can write the two distinct components as
 \begin{equation}
 g_{\alpha\beta ij} = \left\{
@@ -22,10 +22,10 @@ g_{\alpha\beta}^{\mathrm{E}} & \textrm{ if } i =j \\
 g_{\alpha\beta}^{\mathrm{NE}} & \textrm{ if } i  \ne j
 \end{array}\right.  .
 \end{equation}
-Then the mismatch can be calculated from
+Then the fully-coherent metric-mismatch can be calculated from
 \begin{align}
-\mutilde &= \s{i=1}{N}g_{\alpha\beta}^{\mathrm{E}}\dl^{\alpha i}\dl^{\beta i}
-+ 2\s{i=1}{N} \s{j=1}{i-1} g_{\alpha \beta}^{\mathrm{NE}}\dl^{\alpha i}\dl^{\beta j} .
+\mutilde &= \s{i=1}{\Nsd}g_{\alpha\beta}^{\mathrm{E}}\dl^{\alpha i}\dl^{\beta i}
++ 2\s{i=1}{\Nsd} \s{j=1}{i-1} g_{\alpha \beta}^{\mathrm{NE}}\dl^{\alpha i}\dl^{\beta j} .
 \label{eqn: mismatch sep}
 \end{align}
 
@@ -79,7 +79,7 @@ under the random walk by taking an expectation.
 Inserting Eqn.~\eqref{eqn: delta fdot n}, Eqn.~\eqref{eqn: delta f n},
 Eqn.~\eqref{eqn: delta phi n}  in Eqn.~\eqref{eqn: mismatch sep} yields a
 number of terms with all the permutations of two terms from $[\tn \phi, \tn \f,
-\tn \fdot]$. Taking the expection, all the cross-correlated terms, such as
+\tn \fdot]$. Taking the expectation, all the cross-correlated terms, such as
 $\tn\phi_{i}\tn \fdot$, will have an expectation of zero since the steps of the
 random walk are independent. The only non-vanishing terms are given by
 \begin{align}
@@ -90,10 +90,10 @@ E[\tn\fdot_{i}\tn\fdot_{j}] &= \delta_{ij}\sigS,
 After some simplification we find that the mismatch is given by
 \begin{align}
 \begin{split}
-E[\mutilde]   = &  \frac{A_{\phi}}{6} \left(N - \frac{1}{N}\right)
-+ \frac{\pi^{2} A_{{f}}}{30}\left(4 N^{3} + 5 N^{2} + \frac{1}{N}\right)\\
- & +  \frac{\pi^{2} A_{{\dot{f}}}}{3780} \left(66 N^{5} - 21 N^{3} + 105 N^{2}
- + 217 N + 63 - \frac{94}{N}\right),
+E[\mutilde]   = &  \frac{A_{\phi}}{6} \left(\Nsd - \frac{1}{\Nsd}\right)
++ \frac{\pi^{2} A_{{f}}}{30}\left(4 \Nsd^{3} + 5 \Nsd^{2} + \frac{1}{\Nsd}\right)\\
+ & +  \frac{\pi^{2} A_{{\dot{f}}}}{3780} \left(66 \Nsd^{5} - 21 \Nsd^{3} + 105 \Nsd^{2}
+ + 217 \Nsd + 63 - \frac{94}{\Nsd}\right),
 \end{split}
 \label{eqn: expectation}
 \end{align}
@@ -105,27 +105,40 @@ where
 \end{equation}
 define three `activity parameters'.
 
-\subsection{Verifying the results}
-Recalling that $N=\Tobs/\Delta T$, Eqn.~\eqref{eqn: expectation} makes
+Recalling that $\Nsd=\Tobs/\Delta T$, Eqn.~\eqref{eqn: expectation} makes
 predictions for the leading order
-scaling of the three random walks with observation period
+scaling of the three random walks with the observation period
 \begin{equation}
-E[\mutilde]_{\mathrm{PN}} \sim \sigP \Tobs, \hspace{10mm}
-E[\mutilde]_{\mathrm{FN}} \sim \sigF \Tobs^{3}, \hspace{10mm}
-E[\mutilde]_{\mathrm{SN}} \sim \sigS \Tobs^{5}.
+E[\mutilde]_{\mathrm{PN}} \sim \sigP \frac{\Tobs}{\Delta T}, \hspace{10mm}
+E[\mutilde]_{\mathrm{FN}} \sim \sigF \frac{\Tobs^{3}}{\Delta T}, \hspace{10mm}
+E[\mutilde]_{\mathrm{SN}} \sim \sigS \frac{\Tobs^{5}}{\Delta T}.
+\label{eqn: scalings}
 \end{equation}
 
-We can observe this behaviour directly and verify the predictions made by
-Eqn.~\eqref{eqn: expectation} by comparing with exact numerical results. That
-is, using the signal injection and recovery tools developed in Sec.~\ref{sec:
-narrow-band method} of Chapter.~\ref{sec: timing noise in cgw} we simulate
-signals undergoing a random walk and calculate the corresponding mismatch (no
-minimisation step is done here, this is discussed in the next section). In
-particular, we perform three Monte Carlo studies for a random walk in the
-phase, frequency, and spin-down rate and in each case compre the simulated
-results with the analytic prediction. The results are shown in Fig.~\ref{fig: rw I}
-and demonstrate good agreement between the simulation means and the prediction
-of Eqn.~\eqref{eqn: expectation}.
+These results are a function both of the observation span $\Tobs$ and the
+random walk model parameters $\sigP, \sigF, \sigS$ and $\Delta T$. In
+Appendix~\ref{sec: physical interpretation of the monthly ephemeris}, we showed
+that for a compound Poisson process random walk, the variance after a duration
+$\Delta T$ scaled as $\sigma^{2} \propto \Delta T$. This means that the leading
+order scalings in Eqn.~\eqref{eqn: scalings} are insensitive to how the random
+walk is parameterised: changing $\Delta T$ produces a corresponding change in
+$\sigma^{2}$ such that the leading order mismatch remains the same for a fixed
+observation time.
+
+\subsection{Verifying the results}
+
+We can observe the leading order scaling of Eqn.~\eqref{eqn: scalings}
+directly and verify the predictions made by Eqn.~\eqref{eqn: expectation} by
+comparing with exact numerical results. That is, using the signal injection and
+recovery tools developed in Sec.~\ref{sec: narrow-band method} of
+Chapter.~\ref{sec: timing noise in cgw} we simulate signals undergoing a random
+walk and calculate the corresponding mismatch (no minimisation step is done
+here, this is discussed in the next section). In particular, we perform three
+Monte Carlo studies for a random walk in the phase, frequency, and spin-down
+rate and in each case compare the simulated results with the analytic
+prediction. The results are shown in Fig.~\ref{fig: rw I} and demonstrate good
+agreement between the simulation means and the prediction of Eqn.~\eqref{eqn:
+expectation}.
 
 \begin{figure}[ht]
 \centering
@@ -137,29 +150,5 @@ and spin-down rate.}
 \label{fig: rw I}
 \end{figure}
 
-\subsection{Implied scaling}
+\subsection{Implied scalings}
 
-Eqn.~\eqref{eqn: expectation} predicts the variation in mismatch with
-observation time due to a random walk in the parameters of the signal. The
-random walk occurs at fixed intervals of $\dT$ and in three parameters, as such
-the mismatch is a function of all these variables. This method differs from
-results in the literature studying timing noise \citep{Cordes1981} where the
-steps are Poisson distributed in time with an average rate. The choice of a
-fixed $\dT$ is necceciated by the ease of calculation for regular intervals,
-but is consisent with the description of timing noise provided by the Crab
-ephemeris in Sec.~\ref{sec: timing noise in cgw}.  For the expectation of the
-mismatch to be physical, we should expect that, at least to leading order, it
-is invariant to a suitable combination of $\dT$ and $\sigma$. Equivalently we
-imagine that if the Crab ephemeris was updated every half a month instead of
-once a month, we should measure the same mismatch for the same observation
-period.
-
-To leading order, for the expected mismatch to be invariant to changes in $\dT$
-we require
-\begin{equation}
-\sigP \sim \dT \;\;\;\;\; \sigF \sim \dT \;\;\;\;\; \sigS \sim \dT
-\end{equation}
-Importantly this result agrees with the description of a Compound Poisson
-process in the limit where the many events occur during the observation period
-$\dT$.
-\meta{Greg: not sure about this claim}

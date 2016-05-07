@@ -8,14 +8,14 @@ tackle more difficult models. For this calculation we do not need to use the
 metric formalism, we only need equations \eqref{eqn: matched filtering amplitude}
 to \eqref{eqn: full mismatch}.
 
-\subsection{Two segments with a phase offset}
-\label{sec: Two segments with a phase offset}
+\subsection{Two subdomains with a phase offset}
+\label{sec: Two subdomains with a phase offset}
 
-We will consider a CW signal composed of two Taylor expansions segments.  Both
-segments are of equal duration and follow a smooth spin-down expect there is a
+We will consider a CW signal composed of two Taylor expansions subdomains.  Both
+subdomains are of equal duration and follow a smooth spin-down expect there is a
 phase jump at their interface. Parameterising by the offset with respect to
 the template $\bl_{0}$ for some arbitrary template and phase jump, we write the
-phase deviations in the two segments as
+phase deviations in the two subdomains as
 
 \begin{equation}
  \Delta\Phi(t) = \left\{
@@ -55,34 +55,34 @@ The absolute square value of the matched filtering amplitude is then
 The mismatch can then be calculated from equation \eqref{eqn: full mismatch}.
 \begin{equation}
 m = \frac{1}{2}\left(1 - \cos(\Delta\phi_{1} - \Delta\phi_{2})\right).
-\label{eqn: two segment phase mismatch}
+\label{eqn: two subdomain phase mismatch}
 \end{equation}
 From this result we that it is not the phase difference with respect to the
 Taylor expansion which is important, but the phase jump between the two
-segments. For $\Delta \phi_{1} = \Delta \phi_{2}$ the mismatch vanishes
-demonstrating that this method is consistent with a single segment model where
+subdomains. For $\Delta \phi_{1} = \Delta \phi_{2}$ the mismatch vanishes
+demonstrating that this method is consistent with a single subdomain model where
 the phase offset does not produce a mismatch.
 
 
 \paragraph{Comparing with a signal injection} We can verify equation
-\eqref{eqn: two segment phase mismatch} by comparing with the results of a
+\eqref{eqn: two subdomain phase mismatch} by comparing with the results of a
 signal injection. This involves defining the signal such that it describes two
-segments with a phase offset, then injecting and recovering the signal using
+subdomains with a phase offset, then injecting and recovering the signal using
 \texttt{LALApps} software. We do this in the absence of noise and compute the mismatch 
 against a perfectly matched signal.  The signal comprises two adjacent
-transient windows of fixed duration. We set the phase offset in the first segment
-to zero and subject the second segment to a phase
+transient windows of fixed duration. We set the phase offset in the first subdomain
+to zero and subject the second subdomain to a phase
 jump $\Delta \phi$, therefore 
 \begin{align}
     \Delta \phi_{1} &= 0 &  \textrm{ and } && \Delta \phi_{2} =& \Delta\phi.
 \end{align}
 Increasing $\Delta\phi$ and measuring the mismatch the results along
-with the prediction of equation~\eqref{eqn: two segment phase mismatch} are
+with the prediction of equation~\eqref{eqn: two subdomain phase mismatch} are
 plotted in figure~\ref{fig: two plot}
 \begin{figure}
 \centering
-\includegraphics[width=0.65\textwidth]{Exact_analytic_phase_two_segments}
-\caption{Plot of the theoretical prediction of equation~\eqref{eqn: two segment
+\includegraphics[width=0.65\textwidth]{Exact_analytic_phase_two_subdomains}
+\caption{Plot of the theoretical prediction of equation~\eqref{eqn: two subdomain
 phase mismatch} given a time dependent phase offset as in equation\eqref{eqn:
 phase offset}. This is compared  with a signal injection and recovery
 using \texttt{LALapps} software.}
@@ -90,8 +90,8 @@ using \texttt{LALapps} software.}
 \end{figure}•
 
 \FloatBarrier
-\subsection{Generalisation to N-segments}
-Take now a signal over observation time $T$ cut into $N$ equal length segments
+\subsection{Generalisation to N-subdomains}
+Take now a signal over observation time $T$ cut into $N$ equal length subdomains
 each of which suffers a phase offset $\Delta \phi_{i}$ with respect to the same
 reference time. Then the matched filtering amplitude can be written
 \begin{eqnarray}

@@ -14,7 +14,7 @@
 %Having obtained the phase residual we know proceed to calculate the mismatch which would be
 %induced for a CW search. 
 %Initially lets consider the mismatch over a single cycle such that the observation time is $T_{\textrm{obs}} =T$.
-%Then the matched filtering amplitude can be calculated by segmenting the intergral into contribution
+%Then the matched filtering amplitude can be calculated by subdomaining the intergral into contribution
 %when in the $A$ domain and those in $B$
 %\begin{align}
 %X & = \frac{1}{T}\left(\int_{A}e^{i\Delta\Phi(t)} dt + \int_{B}e^{i\Delta\Phi(t)} dt\right)
@@ -64,7 +64,7 @@ Then the mismatch over a single cycle can be calculated from
 m = & g_{\alpha\beta ij}\bdl^{\alpha i} \bdl^{\beta j},
 \end{align}
 where $g_{\alpha\beta i j}$ can be calculated from equation~\eqref{eqn: metric}
-using the reference times for each segment and setting the observation time
+using the reference times for each subdomain and setting the observation time
 from $t=0$ to $t=T$ (e.g. one cycle). Substituting the correct expression in we find a mismatch given by
 \begin{equation}
 m = \frac{\pi^{2} R^{2}}{180} T^{4} \dST^{2} \left(R - 1\right)^{2} 
@@ -92,7 +92,7 @@ $T_{\mathrm{obs}} = \kappa T$ when calculating the mismatch.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.5\textwidth]{mismatch_during_one_segment}
+\includegraphics[width=.5\textwidth]{mismatch_during_one_subdomain}
 \caption{Illustration of the variation in mismatch with observation time 
 parameterised by $\kappa$ the fraction of a cycle that we observe over.}
 \label{fig: Lyne mismatch kappa}

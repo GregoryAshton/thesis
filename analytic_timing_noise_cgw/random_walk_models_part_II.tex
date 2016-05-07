@@ -28,9 +28,9 @@ To calculate the minimised mismatch from random walks we first consider
 fitting and removing a $k^{th}$-order polynomial from a generic random walk. This
 is done in Appendix~\ref{sec: least squares minimisation of a random walk} and
 helps to build intuition for the more complicated case of random walk in
-GW signals. In the following sections, we will calculate the minimimum
+GW signals. In the following sections, we will calculate the minimum
 mismatch for random walks in either the phase or frequency (i.e. we do
-consider both happening cocurrently, only one at a time).
+consider both happening concurrently, only one at a time).
 
 We will model the parameter offsets $\Delta\phi_{i}, \Delta \f_{i}$
 following the definitions in Sec.~\ref{sec: Defining a random walk}.
@@ -54,7 +54,7 @@ which will be similar to the minimisation with respect to the mismatch.
 \subsection{Random walk in the phase}
 We begin with the simplest case of a random walk in phase for which we have
 \begin{equation}
-\Delta\phi_{i} = \s{j=1}{i}N(0, \sigP).
+\Delta\phi_{i} = \s{j=1}{i}\mathcal{N}(0, \sigP).
 \end{equation}
 Then we note that
 \begin{equation}
@@ -64,22 +64,22 @@ The mismatch for a random walk in the phase having removed a second order
 fit is given by
 \begin{align}
 \mutilde & = g_{\alpha \beta i j} \Delta^{(2)}\lambda^{\alpha i}\Delta^{(2)}\lambda^{\beta j} \\
-& = \s{i=1}{N}g_{00}^{E} \Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}
-+ 2 \s{i=1}{N}\s{j=1}{i-1}g_{00}^{NE}\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{j}.
+& = \s{i=1}{\Nsd}g_{00}^{E} \Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}
++ 2 \s{i=1}{\Nsd}\s{j=1}{i-1}g_{00}^{NE}\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{j}.
 \label{eqn: 4202540871}
 \end{align}
 To calculate the expectation of the mismatch, we need to evaluate the
 expectation of
 \begin{align}
 \Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i} = & \left(\Delta\phi_{i}
-- \s{k=1}{N}\CT_{ik}\Delta\phi_{k}\right)
- \left(\Delta\phi_{j} - \s{l=1}{N}\CT_{jl}\Delta\phi_{l}\right) \\
+- \s{k=1}{\Nsd}\CT_{ik}\Delta\phi_{k}\right)
+ \left(\Delta\phi_{j} - \s{l=1}{\Nsd}\CT_{jl}\Delta\phi_{l}\right) \\
 \begin{split}
 = & \Delta\phi_{i}\Delta\phi_{j} -
-\left(\s{k=1}{N}\CT_{ik} \Delta\phi_{j}\Delta\phi_{k}
-+ \s{l=1}{N}\CT_{jl}\Delta\phi_{i}\Delta\phi_{l}\right) \\
+\left(\s{k=1}{\Nsd}\CT_{ik} \Delta\phi_{j}\Delta\phi_{k}
++ \s{l=1}{\Nsd}\CT_{jl}\Delta\phi_{i}\Delta\phi_{l}\right) \\
 & +
-\s{k=1}{N}\s{l=1}{N}\CT_{ik}\CT_{jl} \Delta\phi_{k}\Delta\phi_{l},
+\s{k=1}{\Nsd}\s{l=1}{\Nsd}\CT_{ik}\CT_{jl} \Delta\phi_{k}\Delta\phi_{l},
 \end{split}
 \end{align}
 where $\CT_{ij}$ is defined Eqn.~\ref{eqn: C_2} and Eqn.~\ref{eqn:  MCC_2}
@@ -87,29 +87,29 @@ and we have replaced $\Delta x$ with the time $\dT$. Then taking the expectation
 \begin{align}
 \E{\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}} & =
 %E\left[\Delta\phi_{i}\Delta\phi_{j}\right] -
-%\left(\s{k=1}{N}E[\Delta\phi_{j}\Delta\phi_{k}]
-%+ \s{l=1}{N}E[\Delta\phi_{i}\Delta\phi_{l}]\right) +
-%\s{k=1}{N}\s{l=1}{N}E[\Delta\phi_{k}\Delta\phi_{l}]\\
+%\left(\s{k=1}{\Nsd}E[\Delta\phi_{j}\Delta\phi_{k}]
+%+ \s{l=1}{\Nsd}E[\Delta\phi_{i}\Delta\phi_{l}]\right) +
+%\s{k=1}{\Nsd}\s{l=1}{\Nsd}E[\Delta\phi_{k}\Delta\phi_{l}]\\
 %& = 
-\sigma^{2}_{\phi} \left(\min(i, j) - \left(\s{k=1}{N}\CT_{ik} \min(j, k)
-+ \s{l=1}{N}\CT_{jl}\min(i, l) \right)\right. \notag \\
-& \hspace{13mm} \left. + \s{k=1}{N}\s{l=1}{N}\CT_{ik}\CT_{jl}\min(k, l)\right).
+\sigma^{2}_{\phi} \left(\min(i, j) - \left(\s{k=1}{\Nsd}\CT_{ik} \min(j, k)
++ \s{l=1}{\Nsd}\CT_{jl}\min(i, l) \right)\right. \notag \\
+& \hspace{13mm} \left. + \s{k=1}{\Nsd}\s{l=1}{\Nsd}\CT_{ik}\CT_{jl}\min(k, l)\right).
 \label{eqn: expected mismatch dP0idP0j_k2}
 \end{align}
 Using symbolic mathematics packages we
-calculate an analytic expression which is a function of $\dT, i, j$ and $N$.
+calculate an analytic expression which is a function of $\dT, i, j$ and $\Nsd$.
 Inserting this into Eqn.~\eqref{eqn: 4202540871} and simplifying we find that
 \begin{align}
-E[\mutilde]  & = \s{i=1}{N}g_{00}^{E} E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}\right]
-+ 2 \s{i=1}{N}\s{j=1}{i-1}g_{00}^{NE}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{j}\right]  \\
-& = \frac{1}{70}\sigP\left(3N - \frac{27}{N}\right).
+E[\mutilde]  & = \s{i=1}{\Nsd}g_{00}^{E} E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}\right]
++ 2 \s{i=1}{\Nsd}\s{j=1}{i-1}g_{00}^{NE}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{j}\right]  \\
+& = \frac{1}{70}\sigP\left(3N - \frac{27}{\Nsd}\right).
 \label{eqn: Expected mismatch RW in phase k2}
 \end{align}
 This expression can be compared to Eqn.~\eqref{eqn: expectation} ignoring the
 effect of the random walk in spin-down rate. Notably, we retain the same
-leading order scaling of $N$, but the overall coefficient is decreased.
+leading order scaling of $\Nsd$, but the overall coefficient is decreased.
 Rearranging the expression in the bracket demonstrates the mismatch is negative
-or zero for $1 \ge N \ge 3$: this is a reflection of the minimum number of
+or zero for $1 \ge \Nsd \ge 3$: this is a reflection of the minimum number of
 points needed in order to perform the quadratic fit.
 
 \subsection{Random walk in the frequency}
@@ -118,14 +118,14 @@ For a random walk in the frequency we have an added complexity caused by the
 effect the frequency offsets induces in the phase. For the frequency offset we
 have
 \begin{align}
-\Delta f_{i} &= \s{j=1}{i}N(0, \sigF).
+\Delta f_{i} &= \s{j=1}{i}\mathcal{N}(0, \sigF).
 \end{align}
-Recalling that we set the reference time at the beginning of each segment,
+Recalling that we set the reference time at the beginning of each subdomain,
 then as in Sec.~\ref{sec: Defining a random walk}, the induced phase offset is
 \begin{align}
 \Delta\phi_{i} &=2\pi \s{j=1}{i-1}f_{j}\dT \\
- & = 2\pi\dT \s{j=1}{i-1}\s{k=1}{j}N(0, \sigF) \\
-& = 2\pi\dT \s{j=1}{i}(i-j)N(0, \sigF).
+ & = 2\pi\dT \s{j=1}{i-1}\s{k=1}{j}\mathcal{N}(0, \sigF) \\
+& = 2\pi\dT \s{j=1}{i}(i-j)\mathcal{N}(0, \sigF).
 \end{align}
 The expected values of combinations of these quantities we find to be
 \begin{align}
@@ -139,10 +139,10 @@ Then calculating the expected mismatch due to a random walk in frequency
 \begin{align}
 \begin{split}
 E[\mutilde] = &
-\s{i=1}{N}\left(g_{00}^{E}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}\right]
+\s{i=1}{\Nsd}\left(g_{00}^{E}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}\right]
 + 2 g_{01}^{E}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\f_{i}\right]
 +  g_{11}^{E} E\left[\Delta^{(2)}\f_{i}\Delta^{(2)}\f_{i}\right] \right) \\
-& + 2\s{i=1}{N}\s{j=1}{i-1}\left(\right.
+& + 2\s{i=1}{\Nsd}\s{j=1}{i-1}\left(\right.
 g_{00}^{NE}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{j}\right] +
 g_{01}^{NE}E\left[\Delta^{(2)}\phi_{j}\Delta^{(2)}\f_{i}\right] +  \\
 &\hspace{20mm}\left. g_{10}^{NE}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\f_{j}\right] +
@@ -154,10 +154,10 @@ expected mismatch dP0idP0j_k2} replacing the relevant expectations with those
 given in Eqn.~\eqref{eqn: Expectations raw}. This yields an expected
 mismatch given by
 \begin{equation}
-E[\mutilde] = \frac{\pi^{2} }{630} \sigF \dT^{2}  \left(N^{3} - 7N- \frac{18}{N} \right).
+E[\mutilde] = \frac{\pi^{2} }{630} \sigF \dT^{2}  \left(\Nsd^{3} - 7\Nsd- \frac{18}{\Nsd} \right).
 \label{eqn: Expected mismatch RW in frequency k2}
 \end{equation}
-Again this can be compared with Eqn.~\eqref{eqn: expectation} ignorring the
+Again this can be compared with Eqn.~\eqref{eqn: expectation} ignoring the
 mismatch due to the random walk in the spin-down rate.
 
 \subsection{Verification}
@@ -177,7 +177,7 @@ mismatches.
 \subfloat[Random walk in phase]{\includegraphics[width=0.5\textwidth]{ExpectationPhase_NarrowBand}}
 \subfloat[Random walk in frequency]{\includegraphics[width=0.5\textwidth]{ExpectationFrequency_NarrowBand}}\\
 %\subfloat[Random walk in spin-down]{\includegraphics[width=0.5\textwidth]{ExpectationSpindown}}
-\caption{A comparison of the Monto Carlo numerical simulated mismatch with the
+\caption{A comparison of the Monte Carlo numerical simulated mismatch with the
 predictions of Eqn.~\eqref{eqn: Expected mismatch RW in
 frequency k2} and Eqn.~\eqref{eqn: Expected mismatch RW in phase k2}; this differs
 from Fig.~\ref{fig: rw I} in that the numerical mismatch is minimised by selecting

@@ -1,15 +1,19 @@
 In this appendix, we will describe the process of fitting and remove a
-polynomial from some data $(y_i, x_i)$ which undergoes a random walk. The
+polynomial from $N$ data points $(y_i, x_i)$ which undergoes a random walk. The
 polynomial will be fitted using a least squares minimisation. The $x_i$ are
 the independent points at which $y_i$ (which undergoes a random walk) is
-measured. We begin by defining the least-sqaures fitting method then
+measured. We begin by defining the least-squares fitting method then
 go on to calculate the residual for several different degrees of polynomial.
+This introduces the method in a generic setting which is then applied
+in Sec.~\ref{sec: Random walk models part II} to calculate the mismatch for
+a GW signal which undergoes a random walk, but in which the search minimises
+the mismatch over the search frequency and frequency derivative.
 
 \subsection{Least square fitting of a polynomial}
 %For a full description see
 %\url{http://mathworld.wolfram.com/LeastSquaresFittingPolynomial.html}.
 
-Given some data $x_{i}$, $y_{i}$ we define the residual from a least-squares
+Given some data $x_{i}$, $y_{i}$, we define the residual from a least-squares
 polynomial fit of order $k$, as
 \begin{equation}
     \Delta^{(k)}y_{i} = y_{i} - y^{\textrm{(k)}}_{i},
@@ -22,9 +26,9 @@ y^{\textrm{(k)}}_{i} = a_{0} + a_{1}x_{i} + a_{2}x_{i}^{2} + \dots
 Then the residual which we want to minimise is
 \begin{equation}
 R^{2} = \s{i=1}{N}\left(y_{i} - \left(a_{0} + a_{1}x_{i} + a_{2}x_{i}^{2} +
-        \dots + a_{k} x_{i}^{k}\right)\right)
+        \dots + a_{k} x_{i}^{k}\right)\right).
 \end{equation}
-Partial differentiation with respect to the parameters $a_{i}$ yields $k$
+Partial differentiation with respect to the parameters $a_{i}$, yields $k$
 simultaneous equations. Writing these as a matrix and then solving
 for the best fit it can be shown \citep{WolframLeastSquares} that
 \begin{align}
@@ -36,8 +40,8 @@ X & = \left[\begin{array}{ccccc}
 1 & x_{n} & x_{n}^{2} & \dots & x_{n}^{k} \\
 \end{array}\right]
 \end{align}
-Here $X$ is an example of a Vandermonde matrix. To help with calculations
-fit, it is useful to note that
+Here $X$ is an example of a \emph{Vandermonde} matrix in which the terms follow
+a geometric progression. It is useful to note that
 \begin{equation}
 XX^{T} = \left[\begin{array}{cccc}
 N & \s{i=1}{N}x_{i} & \cdots &  \s{i=1}{N}x_{i}^{k} \\
@@ -48,14 +52,14 @@ N & \s{i=1}{N}x_{i} & \cdots &  \s{i=1}{N}x_{i}^{k} \\
 \end{equation}
 
 Provided that the $x_{i}$ are suitably defined, then an analytic fit can be
-found.
+found for any $k$, the difficulty lies in inverting the matrix.
 
 \subsection{Least squares fitting a polynomial to a random walk}
 We now take a Gaussian random walk beginning at the origin. To define this let
 $\delta y_{i} \sim N(0, \sigma^{2})$ be i.i.r.d.v for which their sum generates
 the random walk:
 \begin{equation}
-y_{i} = \sum_{j=1}^{i}\delta y_{i}
+y_{i} = \sum_{j=1}^{i}\delta y_{i}.
 \label{eqn: ToyModel RW definition}
 \end{equation}
 We also set each random walk event to occur according to $x_{i} = i \Delta
@@ -67,13 +71,13 @@ $k^{th}$ order polynomial to the random walk.
 \label{eqn: fitted residual}
 \end{equation}
 This suggests the residual will be similar to the random walk, but modified by
-the least squares fitting.  To illustrate this in figure \ref{fig: ToyModelRW}
+the least squares fitting.  To illustrate this, in Fig.~\ref{fig: ToyModelRW}
 we plot a simulated random walk along with several fits. In the right hand plot
 is the corresponding residual; this residual is a random walk that on averaged
 will centre around the origin.
 \begin{figure}[htb]
 \centering
-\includegraphics[width=.75\textwidth]{ToyModelRW}
+\includegraphics[width=.9\textwidth]{ToyModelRW}
 \caption{Example of a random walk on the left along with three polynomial fits
 of varying order. On the right is the corresponding residual after subtracting
 these fits. A dotted line marks the origin in both plots.}
@@ -87,8 +91,9 @@ that
 \begin{equation}
 X \left(X^{T}X\right)^{-1} X^{T} = \frac{1}{N} J_{N}
 \end{equation}
-where $J_{N}$ is the $N\times N$ matrix of ones.  Inserting this into equation
-\eqref{eqn: fitted residual} the residual from a zeroth order fit is given by
+where $J_{N}$ is the $N\times N$ matrix of ones.  Inserting this into
+Eqn.~\eqref{eqn: fitted residual}, the residual from a zeroth order fit is given
+by
 \begin{equation}
 \Delta^{(0)}  y_{i}= y_{i} - \frac{1}{N} \s{j=1}{N}y_{j}.
 \end{equation}
@@ -105,19 +110,19 @@ averaged value.
 
 We can now take expectations to understand the behaviour of the residual when
 compared to the original definition of the random
-walk in equation \ref{eqn: ToyModel RW definition}. For example, consider
+walk in Eqn.~\ref{eqn: ToyModel RW definition}. For example, consider
 the mean square translation distance from the origin of a random walk after $i$
-steps. This has the well known result:
+steps. For a normal random walk, this has the well known result
 \begin{equation}
-E[y_{i}^{2}] = i \sigma^{2}
+E[y_{i}^{2}] = i \sigma^{2}.
 \end{equation}
-we can calculate the corresponding quantity of the residual by first noting
-that
+We can calculate the corresponding quantity of the $k=0$ residual by first
+noting that
 \begin{align}
 E\left[y_{i}y_{j}\right] & = E\left[\s{k=1}{i}\delta y_{k} \s{l=1}{j}\delta y_{l} \right] \\
 & = \s{k=1}{i}\s{l=1}{j}E\left[\delta y_{k} \delta y_{l}\right] \\
 & = \s{k=1}{i}\s{l=1}{j} \delta_{kl} \sigma^{2} \\
-& = \sigma^{2}\min(i, j)
+& = \sigma^{2}\min(i, j),
 \end{align}
 where $\delta_{kl}$ is the Kronecker delta. Then we have
 \begin{align}
@@ -132,22 +137,22 @@ E\left[\Delta^{(0)} y_{i}^{2} \right] & = \sigma^{2}\left(i - \frac{2}{N}\left(\
 The expectation after $i$ steps for the residual depends on the length of data
 $N$ that was fitted. It can be shown the expectation has a minimum at $i=N/2$.
 
-To gain a better understanding of the difference between the origin random walk
-and the residual lets consider the sum of squares after $N$ steps
+To gain a better understanding of the difference between the random walk and
+the residual random walk, lets consider the sum of squares after $N$ steps for
+the random walk
 \begin{equation}
 E\left[\s{i=1}{N} y_{i}^{2}\right] = \s{i=1}{N} i \sigma^{2} =
                                \frac{1}{2}\left(N^{2} + N\right)\sigma^{2}.
 \label{eqn: sum of squares}
 \end{equation}
-We can compare this with the sum of squares for the residual to see how such a
-property transforms.
+Now we calculate the sum of squares for the residual random walk
 \begin{equation}
 E\left[\s{i=1}{N} \Delta^{(0)} y_{i}^{2}\right] = \frac{1}{6}\left(N^{2} -1\right)\sigma^{2}.
 \label{eqn: sum of squares k0}
 \end{equation}
-Comparing equations \eqref{eqn: sum of squares} and \eqref{eqn: sum of squares k0}
-we note that, for the leading
-order term, the coefficient is reduced but the power remains the same.
+Comparing equations \eqref{eqn: sum of squares} and \eqref{eqn: sum of squares
+k0} we note that, for the leading order term, the coefficient is reduced, but
+the power remains the same.
 
 %We verify this behaviour with a simple script that produces a random walk of
 %length $N$ then fits and subtracts a $0^{th}$ order polynimial; we then
@@ -219,12 +224,13 @@ $i^{th}$ row of each matrix on the $j^{th}$ column
 We have now defined the first order residual, we can again compute the expectation
 of the $i^{th}$ term
 \begin{align}
+\begin{split}
 E\left[\Delta^{(1)} y^{2}_{i}\right]  =
 \frac{1}{15 N \left(N^{2} - 1\right)} &
-\left(2 N^{4} - 18 N^{3} i + 9 N^{3} + 78 N^{2} i^{2} -
-      78 N^{2} i + 14 N^{2} - 120 N i^{3} \right. \\
- & \left. + 180 N i^{2} - 78 N i + 9 N + 60 i^{4} - 120 i^{3}
-          + 78 i^{2} - 18 i + 2\right)
+\left(2 N^{4} - 18 N^{3} i + 9 N^{3} + 78 N^{2} i^{2} - 78 N^{2} i \right.\\
+      &\hspace{3mm} + 14 N^{2} - 120 N i^{3} + 180 N i^{2} - 78 N i \\
+      &\hspace{3mm} \left. + 9 N + 60 i^{4} - 120 i^{3} + 78 i^{2} - 18 i + 2\right)
+\end{split}
 \end{align}
 
 Then the expected sum of squares is
