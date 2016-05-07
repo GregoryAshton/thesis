@@ -8,7 +8,7 @@
 
 Timing variations, in the form of glitches or timing-noise, may pose a serious
 risk to efforts to discover continuous GWs from neutron stars. This is because
-searches rely on \emph{matched-filtering} which searches the data using a
+searches rely on \emph{matched-filtering}, which searches the data using a
 template; if the template and signal don't match, due to timing variations in
 the signal, the template may be unable to detect the signal. In this section,
 we will give a general introduction to the detection methods used in GW data
@@ -37,7 +37,7 @@ typical search durations, but are weak in amplitude, making them difficult to de
 in the noise of the detector.
 
 To find a signal, continuous GW searches use matched
-filtering techniques such as the $\mathcal{F}$-statistic \citep{Jaranowski1998}
+filtering techniques such as the $\mathcal{F}$-statistic \citep{Jaranowski1998},
 which compare the output of the detector with a template.  These techniques are
 powerful, provided that the signal and template remain coherent for the duration
 of the observation. If the signal can be perfectly matched by a template then
@@ -47,33 +47,35 @@ over longer observations increases the chances of making a detection.
 
 The templates must model the monotonic spin-down of the source due to the
 electromagnetic (EM) and gravitational torque; this is done by Taylor expanding
-the phase:
-\begin{equation}
-\Phi(t) = \phi_{0} + 2\pi\left(\f_{0} (t - \tref) +
-          \frac{\fdot_{0}}{2!} (t - \tref)^{2}
-           %+ \frac{\fddot}{3!} (t - t_{i})^{3}
-           \right)
-           + \ldots
-           \,,
-\label{eqn: Taylor}
-\end{equation}
-where $\tref$ is the reference time at which the pulsar frequency, and
-spin-down parameters $[\phi_{0}, \f_{0}, \fdot_{0}, \ldots]$ are defined. Note
-that all times refer to the solar system barycentre and we assume the
-timing model has already correctly accounted for the dispersion measure, proper motion
-and other parameters as discussed in \citet{Edwards2006}.
-Pulsar astronomers fit this model to observed time of arrivals (TOAs). If the
-best fit model is accurate enough to track the pulsar to within a single
-rotation, the resulting timing solution is described as \emph{phase-connected}.
-Often such solutions are capable of tracking the pulsar over durations greater
-than  a year \citep{Lyne2012book}.  For gravitational-wave searches, this level of accuracy
-motivates the use of the same Taylor expansion phase models to account for the
-spin-down.  Pulsar observers measure the frequency $\f_{0}^{EM}$ and higher
-order coefficients describing the rotation of the pulsar itself. In this
-work generally we will consider only searches for
-emission from non-axisymmetric neutron stars at
-$\f_{0}^{GW}=2\f_{0}^{EM}$~\citep{Shapiro83}; from hereon all frequencies
-and spin-downs refer to the pulsars GW emission.
+the phase (see Eqn.~\eqref{eqn: Taylor compact}) about some reference time
+$\tref$.
+%\begin{equation}
+%\Phi(t) = \phi_{0} + 2\pi\left(\f_{0} (t - \tref) +
+%          \frac{\fdot_{0}}{2!} (t - \tref)^{2}
+%           %+ \frac{\fddot}{3!} (t - t_{i})^{3}
+%           \right)
+%           + \ldots
+%           \,,
+%\label{eqn: Taylor}
+%\end{equation}
+%$\tref$ is the reference time at which the pulsar frequency and
+%spin-down parameters $[\phi_{0}, \f_{0}, \fdot_{0}, \ldots]$ are defined.
+
+Note that all times refer to the solar system barycentre and we assume the
+timing model has already correctly accounted for the dispersion measure, proper
+motion and other parameters as discussed in \citet{Edwards2006}.  Pulsar
+astronomers fit this model to observed time of arrivals (TOAs). If the best fit
+model is accurate enough to track the pulsar to within a single rotation, the
+resulting timing solution is described as \emph{phase-connected}.  Often such
+solutions are capable of tracking the pulsar over durations greater than  a
+year \citep{Lyne2012book}.  For gravitational-wave searches, this level of
+accuracy motivates the use of the same Taylor expansion phase models to account
+for the spin-down.  Pulsar astronomers measure the frequency $\nu$ and higher
+order coefficients describing the rotation of the pulsar itself. In this work
+we will denote the GW frequency and its derivatives by $f, \dot{f}$,
+etc. The relation between the GW frequency and rotation frequency depends on
+the emmision; in this work we will consider only searches ;or emission from
+non-axisymmetric neutron stars such that $f=2\nu$~\citep{Shapiro83}.
 
 The rest of this chapter is organised as follows: in Sec.~\ref{sec:
 introduction to the mismatch} we will define the \emph{mismatch} which
@@ -92,17 +94,17 @@ While Taylor expansion models are on average reliable enough to track the
 spin-down, pulsars do show timing variations either in the form of glitches,
 occasional sudden increases in the rotation frequency, or continuous
 low-frequency variations known as \emph{timing noise} (see Chapter~\ref{sec:
-timing variations} for an overview). To quantify the effect these variation
-will cause, we will use the \emph{mismatch} which is the loss of signal to
+timing variations} for an overview). To quantify the effect these variations
+will cause, we will use the \emph{mismatch}, which is the loss of signal to
 noise ratio due to the imperfect matching the template and the signal. The
 mismatch is non-zero whenever the signal and template are not perfectly
 matched. Even if the signal does not contain any timing variations a mismatch
 can occur when the template, chosen from a finite grid of points in parameter
 space, does not share exactly the same parameters as the signal. This problem
 has been studied in detail since finite computing resources limit the number of
-templates which can be used in a search and ensure that any prospective search
+templates that can be used in a search ensuring that any prospective search
 must have some level of mismatch. In this section, we introduce the tools
-which have been developed to understand this problem. We will return to the
+that have been developed to understand this problem. We will return to the
 problem of timing variations later on in this chapter.
 
 \subsection{Defining the mismatch}
@@ -133,7 +135,7 @@ with SNR $\rhotilde_{0}$ such that
 \begin{align}
 \rhotilde = |X|\rhotilde_{0}.
 \end{align}
-An simple dimensionless measure of the loss of SNR is found by rearranging
+A simple, dimensionless measure of the loss of SNR is found by rearranging
 and defining the fully-coherent \emph{mismatch} as
 \begin{equation}
 \mutilde(\ls^{\alpha}, \lt^{\alpha}) = 1 - |X(\ls^{\alpha}, \lt^{\alpha})|^{2},
@@ -148,14 +150,14 @@ such that
 
 \subsection{Interpreting the mismatch}
 In this work we will quantify the effect of glitches by the mismatch. However,
-it may useful to interpret a mismatch in the following way. For a perfectly
+it may be useful to interpret a mismatch in the following way. For a perfectly
 matched continuous GW signal it can be shown \citep{Jaranowski1998} that the SNR scales as
 \begin{equation}
 \rho_{0} \propto \frac{h_{0}}{\sqrt{\textrm{S}_{\textrm{n}}}}
                                \sqrt{\Tobs \mathcal{N}},
 \end{equation}
-where $h_{0}$ is the strain-amplitude from an optimally oriented source with
-respect to the detector, $\sqrt{\textrm{S}_{\textrm{n}}}$ measured the noise
+where $h_{0}$ is the strain-amplitude for an optimally oriented source with
+respect to the detector, $\sqrt{\textrm{S}_{\textrm{n}}}$ the noise measured
 in the detector and $\mathcal{N}$ is the number of detectors.
 
 Combining this equation with Eqn.~\eqref{eqn: numeric mismatch}, the SNR of a signal
@@ -199,17 +201,17 @@ template parameters, Eqn.~\eqref{eqn: phase diff}, the phase difference, is
 \end{align}
 where $\dl^{\alpha} = \ls^{\alpha} - \lt^{\alpha}$. Note that
 by choosing any two of $\ls^{\alpha}, \lt^{\alpha}$, and $\dl^{\alpha}$
-we have a choice of three parameterisation which are all equivalent.
+we have a choice of three equivalent parameterisations.
 When the parameter offset $\dl^{\alpha}$ vanishes, the matched filtering
 amplitude tends to unity and hence the mismatch tends to zero. In the other
-extreme, for suitably
+extreme, for a suitably
 large parameter space offsets the mismatch approaches zero and so the signal is
 completely lost.
 
 Substituting Eqn.~\eqref{eqn: Delta Phi} into Eqn.~\eqref{eqn: full mismatch}
 gives the mismatch between a smooth Taylor expansion signal and template. In
-this work we will calculate the mismatch for a signal which is not a smooth
-Taylor expansion. This can done in this way for some special cases, for
+this work we will calculate the mismatch for a signal that is not a smooth
+Taylor expansion. This can done in this way for some special cases. For
 example, taking $\dl^{\alpha} = [\Deltaphi, 0, 0]$, the mismatch is found to be
 zero: this reflects the fact that fully-coherent matched-filtering is
 insensitive to any arbitrary phase offset between the signal and template. In
@@ -253,25 +255,27 @@ are defined, but not the signal itself. Partially evaluating the metric, we find
 
 This metric formulation provides a method to measure mismatches between a
 signal and template that are both Taylor expansions. \citet{Brady1998} proposed
-this method with the aim to pick the spacing of templates in parameter space
+this method with the aim of picking the spacing of templates in parameter space
 such that the maximum allowable mismatch would not rise above a pre-defined
 threshold. In this work, we will instead use this metric-mismatch approximation to
 calculate mismatches between signals and Taylor expansion templates.
 
 It is worth commenting that the full mismatch, as calculated from
 Eqn.~\eqref{eqn: full mismatch}, is bounded by $[0, 1]$. In contrast, the
-approximate metric-mismatch is bounded by $[0, \infty)$. This is because the expansion
-of the mismatch in equation~\eqref{eqn: mismatch metric single} was taken
-about $\Delta\lambda^{\alpha}=0$ and so for sufficiently large parameter
+approximate metric-mismatch is bounded by $[0, \infty)$. This is because the
+expansion of the mismatch in equation~\eqref{eqn: mismatch metric single} was
+taken about $\Delta\lambda^{\alpha}=0$ and so for sufficiently large parameter
 space offsets the expansion breaks down. In this case, the metric-mismatch
-approximation non-linearly overestimates the true mismatch. A metric-mismatch above one, while loosing the interpretation as a direct loss of SNR, still
+approximation non-linearly overestimates the true mismatch. A metric-mismatch
+above one, while losing the interpretation as a direct loss of SNR, still
 corresponds to a large true mismatch, and hence a significant loss of SNR.
-\meta{Greg: Reinhard is there a reference to Karl's work on this?}
+
+%\meta{Greg: Reinhard is there a reference to Karl's work on this?}
 
 \subsection{The metric-mismatch for semi-coherent searches}
 \label{sec: the metric-mismatch approximation for semi-coherent searches}
 
-Fully-coherent searches are computationally demanding, so much so that it
+Fully-coherent searches are computationally demanding, so much so that it is
 unfeasible to perform fully-coherent searches for wide-parameter searches
 such as the all-sky search. Instead, \emph{semi-coherent}
 searches are used which require far fewer templates and result in more
@@ -331,13 +335,17 @@ must be careful to sum all the mismatches at the same point in parameter space.
 
 In this section we have introduced: the fully-coherent mismatch, used to
 quantify the loss of SNR in fully-coherent GW searches; the metric-mismatch
-approximation, a useful way to calculate mismatches which avoids the
-complicated integrations; and the semi-coherent mismatch, quantifying the loss
-of SNR in semi-coherent GW searches. In the following chapters these definitions
-will be used to understand the risk posed by GW searches to timing variations.
-We finish this chapter with some simple calculations of the mismatch due to
-deviations in the phase.
-
+approximation, a useful way to calculate mismatches that avoids the complicated
+integrations; and the semi-coherent mismatch, quantifying the loss of SNR in
+semi-coherent GW searches. The mismatch is a useful way to quantify how well a
+search performs given a particular GW signal. However, the tools discussed in
+this section to calculate this mismatch apply only to smooth Taylor expansion
+signals and templates. Signal which contain timing variations are by definition
+not smooth Taylor expansions. Therefore, we need a method to calculate the
+mismatch for arbitary signals. In the next chapter, we will discuss some
+special cases of timing variations where the mismatch can be calculated
+exactly. Then in the final chapter we will introduce a new tool which can be
+used to calculate the mismatch for arbitrary signals.
 
 \section{Mismatch from differences in the GW phase}
 \label{sec: mismatch from differences in the gw phase}
@@ -359,7 +367,7 @@ the more difficult real astrophysical systems.
 We begin with a simple system in which the signal undergoes an instantaneous
 `jump' in its GW phase halfway through the observation. We can model this
 signal by a \emph{piecewise} Taylor expansion with two subdomains.  Both
-subdomains are of equal duration and follow a smooth spin-down except that
+subdomains are of equal duration and follow a smooth spin-down, except that
 there is a phase discontinuity at their interface; we illustrate this setup in
 Fig.~\ref{fig: PhaseJump}.
 \begin{figure}[htb]
@@ -408,14 +416,15 @@ to be
 \end{equation}
 
 From this result, we learn that it is not the phase difference with respect to
-each of the Taylor expansion ($\Delta\phi_1$ or $\Delta\phi_2$) which is
+each of the Taylor expansions ($\Delta\phi_1$ or $\Delta\phi_2$) that is
 important, but the total phase jump at their interface. For $\Delta \phi_{1} =
 \Delta \phi_{2}$ the mismatch vanishes, this recovering the case of a single
-Taylor expansion signal with an arbitrary overall phase offset which always has
+Taylor expansion signal with an arbitrary overall phase offset, which always has
 zero mismatch. This result can be used to calculate the mismatch due to a glitch,
-if the glitch is purely in the phase; in reality we know that glitches are
-discontinuities in the frequency and spin-down rate which will be considered in
-Chapter~\ref{sec: glitches in cgw}.
+if the glitch is purely in the phase. In reality we know that glitches are
+discontinuities in the frequency and spin-down rate, this will discussed further
+in Chapter~\ref{sec: glitches in cgw}, but this simple calculation provides
+a stepping stone to understanding the more complicated complete result.
 
 %\paragraph{Comparing with an exact numerical result}
 %\meta{Greg: potentially cut this} We can verify equation
@@ -478,7 +487,10 @@ Then the fully-coherent mismatch is given by:
 
 This result could be used to estimate the mismatch due to a random walk model
 of timing noise where the random walk was purely in the phase (see
-Sec.~\ref{sec: TN interpretations random walk models} for example)
+Sec.~\ref{sec: TN interpretations random walk models} for example). In
+Chapter.~\ref{sec: timing noise in cgw analytic} we will discuss random walks
+in GW signals in more detail and also calculate the
+mismatch for random walks in the frequency and spin-down rate.
 
 \subsection{Oscillating phase deviations}
 
@@ -529,7 +541,7 @@ OscillatoryPhaseMismatch}.
 
 This simple model demonstrates that if the signal and template are on average
 coherent, but the phase residual between them oscillates about the mean, then
-over several cycles the mismatch will approach a constant value dependent on
+over several cycles the mismatch will approach a constant value, which depends on
 the maximum amplitude of the residuals.  For a quasi-periodic signal the same
 overall picture will emerge with the size of the mismatch dependent on the mean
 average size of oscillations in the residual.
@@ -539,8 +551,8 @@ average size of oscillations in the residual.
 In Sec.~\ref{sec: the metric-mismatch approximation for fully-coherent searches}
 we introduced the metric-mismatch, a tool to estimate
 the loss of SNR for Taylor expansion signals and templates in fully-coherent
-and semi-coherent searches. In this section we will extend the fully-coherent
-formalism to handle cases where the signal is not a Taylor expansion, but can
+and semi-coherent searches. In this section, we will extend the fully-coherent
+mismatch to handle cases where the signal is not a Taylor expansion, but can
 be approximated by a \emph{piecewise} Taylor expansion. Specifically we mean
 breaking any arbitrary signal into $\Nsd$ \emph{sub-domains} each of which we
 describe the signal by a single Taylor expansion; the resulting collection of
@@ -548,11 +560,12 @@ all individual Taylor expansions is a piecewise Taylor expansion. We will
 distinguish between a sub-domain, which describes a part of the piecewise
 function and a segment, which is the division of an observation period for a
 semi-coherent search as discussed in Sec.~\ref{sec: the metric-mismatch
-approximation for semi-coherent searches}. In this section we
-will develop a general formalism for a signal described by an arbitrary number
-of sub-domains; this will be used in Sec.~\ref{sec: glitches in cgw} to calculate the
-mismatch due to glitches and in Sec.~\ref{sec: timing noise in cgw analytic}
-to calculate the mismatch due to a random walk model of timing noise.
+approximation for semi-coherent searches}. 
+
+This \emph{generalised metric-mismatch} will be used in Sec.~\ref{sec: glitches
+in cgw} to calculate the mismatch due to glitches and in Sec.~\ref{sec: timing
+noise in cgw analytic} to calculate the mismatch due to a random walk model of
+timing noise.
 
 
 %In this work we will be modelling glitches which can be described by a
@@ -669,12 +682,12 @@ g_{\alpha\beta ab} =
             \mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\})
             \zerolim.
 \end{equation}
-We can then write the mismatch as
+We can then write the fully-coherent metric-mismatch as
 \begin{equation}
 \mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\}) =
- g_{\alpha\beta ab} \dl^{\alpha a}\dl^{\beta b}
+ g_{\alpha\beta ab} \dl^{\alpha a}\dl^{\beta b}.
 \label{eqn: mismatch}
-\end{equation}•
+\end{equation}
 On the right hand side we sum over the repeated indices. The mismatch is a
 scalar value quantifying the loss of signal to noise due to the set of
 parameter offsets~$\{\dl^{\alpha a}\}$.
@@ -713,7 +726,9 @@ g_{\alpha\beta ab} =& \frac{1}{\Tcoh}\delta_{ab} \int_{t_{a}}
 \end{align}
 This expression, given a choice of decomposition of the observation time $T$ into
 $\Nsd$ (not necessarily equal) time subdomains labelled $t_{a}$, will result in a rank 4
-tensor.
+tensor. Then, given a set of $\{\dl^{\alpha a}\}$ which together with the decomposition
+of the time into subdomains defines the signal and template evolution, the
+fully-coherent metric-mismatch can be calculated from Eqn.~\eqref{eqn: mismatch}.
 %To help with the calculation we can also write out the term
 %\begin{equation}
 % \partial_{\alpha}\Delta \Phi^{i}  \partial_{\beta}\Delta \Phi^{i}  =
