@@ -8,30 +8,48 @@
 \begin{document}
 
 \meta{
-The rotation of a neutron star is gradually slowed by torques. For most
-isolated stars, the dominant torque is thought to be the electromagnetic
-dipole. In Sec.~\ref{sec: free precession} we introduced free precession,
-in this section, we will study precession under the action of a dipole torque.
-The form of this torque was first written down by \citet{Deutsch1955} where it
-was found there there were two distinct components: the spin-down component and
-the anomalous component (defined in Sec.~\ref{sec: defining the model}). Often
-this second component is neglected and in doing so it is possible to find
-analytic solutions; for example, \citet{Goldreich1970} uses these to discuss
-the alignment of the magnetic axis. The addition of the anomalous torque makes
-analytic solutions difficult, so \citet{Melatos2000} found numerical solutions
-for the full torque. In doing so, the authors discovered solutions with `persistent
-precession', something which is not yet understood in the literature.
+The rotation of an isolated neutron star is gradually slowed by torques. For
+most stars, the dominant torque is thought to be the electromagnetic torque due
+to an inclined magnetic dipole \citep{Pacini1968, Gunn1969}. In Sec.~\ref{sec:
+free precession} we introduced free precession, the most general motion for an
+non-axisymmetric body. In later chapters we will be considering precession as a
+potential candidate to explain long term periodicities seen in pulsar timing
+residuals. Therefore, it is appropriate to first understand how precession
+manifests under the action of an electromagnetic torque and discuss the
+alignment of various axis of star during its lifetime (as first investigated
+for a biaxial star by \citet{Goldreich1970}).
 }
 
 \meta{
-In this chapter, we will solve the Euler rigid-body equations numerically and
-compare with known analytic and numerical solutions. This will
-familiarse the reader with current work in the field and achieve two tasks:
-first, to understand the role of the anomalous torque with respect to
-precession (and in doing so clear up confusion about persistent precession);
-second, to provide an intuitive understanding of the alignment predictions made by
-\citet{Goldreich1970}
+The full form of the
+electromagnetic torque was first written down by \citet{Deutsch1955} where it
+was found there there were two distinct components: the spin-down component and
+the anomalous component (defined in Sec.~\ref{sec: defining the model}). The
+subject of precession under the electromagnetic torque has already been
+studied, but many authors neglect the anomalous component in order to simplify
+the analytic calculations. In this chapter, we will build a numerical model
+solving the Euler rigid-body equations with the Deutsch torque. This will allow
+us to compare solutions in which the anomalous torque is `switched off' with
+solutions to the full torque; in doing so we hope to better understand the
+important of the anomalous torque and verify that in cases where it has been
+neglected (see for example \citep{Goldreich1970}) that such an assumption was
+appropriate. A similar numerical model was studied by \citet{Melatos2000},
+although the authors did not switch on and off the anomalous component.
+Moreover the authors found solutions which they labelled as `persistent
+precession': in Sec.~\ref{sec: biaxial NS with anomalous torque} we will
+confirm that such solutions exist and give a physical explanation from which we
+conclude that the precession is not pesistent.
 }
+
+\meta{ The rest of this chapter is organised as follows: in Sec.~\ref{sec:
+defining the model} we will define the Euler rigid-body equations and the
+\citet{Deutsch1955} torque. In Sec.~\ref{sec: spherical} we will discuss the
+simple case of a spherical star, then in Sec.~\ref{sec: biaxial NS with no anomalous
+torque} and Sec.~\ref{sec: biaxial NS with anomalous torque} we will discuss a
+biaxial star with and without the anomalous part of the torque; in these
+sections we will give an intuitive geometric way to understand the alignment
+predictions made by \citet{Goldreich1970}. Finally, we will conclude the chapter
+in Sec.~\ref{sec: conclusion rotating frame}.}
 
 \section{Defining the model}
 \label{sec: defining the model}
@@ -525,12 +543,14 @@ $\langle\dot{A}\rangle$: the sign of $\epsI$ and the term
 $1-\frac{3}{2}\sin^{2}\chi$. However, for the argument which led to this
 conclusion, we assumed that $\epsI > 0$. Repeating the argument with $\epsI <
 0$ (starting from Eqn.~\eqref{eqn: orderings} which would need to be rearranged
-to reflect this change) we find that Eqn.~\eqref{eqn: A dot} is multiplied by
+to reflect this change), we find that Eqn.~\eqref{eqn: A dot} is multiplied by
 an overall minus sign. Therefore, the only factor which determines the sign of
 $\langle\dot{A}\rangle$ is in fact $1-\frac{3}{2}\sin^{2}\chi$, from which we
-find the critical value $\chi_{\textrm{\textrm{cr}}}\approx55^\circ$.  This is in agreement with
+find the critical value $\chi_{\textrm{\textrm{cr}}}\approx55^\circ$.  This is
+in agreement with
 the findings of \citet{Goldreich1970}.  Moreover, by calculating the condition
-in this way, we have found that the critical value corresponds to a tipping
+in this way, we have found a new interpretation for the critical value
+as a tipping
 point between the rates of change of energy and angular momentum.}
 
 \FloatBarrier
@@ -730,7 +750,7 @@ B & $  0.4\times 10^{-10}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ &
 C & $  1.0\times 10^{-15}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  6.3\times 10^{11}  $ & $ -60.0^{\circ} $& $ -15.0^{\circ} $ \\ \hline
 	\end{tabular}}
 \caption{Table of relevant values for the selected points, all simulations star
-from an initial spin-frequency $\omega_0=10^{4}$ rad Hz.}
+from an initial spin-frequency $\omega_0=10^{4}$ rad/s.}
 \label{tab: A B C params beta}
 \end{table}
 
@@ -926,7 +946,7 @@ precession. Working in the body frame axis, we confirm that $a\ne\pi/2$ at the
 end of the evolution in figure~\ref{fig: NS B}(a).
 
 \meta{
-Transforming to the effective body frame in figure~\ref{fig: NS B}(b), we find
+Transforming to the effective body frame in Fig.~\ref{fig: NS B}(b), we find
 that the spin-vector in fact aligns with the principal axis of the effective
 moment of inertia ($a' \rightarrow \pi /2$).  Therefore, the persistent
 precession angle found by Melatos is precisely the angle $\beta$.  The
@@ -934,8 +954,8 @@ spin-vector has therefore aligned with the principal axis of the effective
 moment of inertia tensor associated with the smallest eigenvalue.  Since both
 the the polar angle $a'$ and azimuthal angle $\phi'$ are constant, we argue
 that the angular velocity is constant and this is not persistent precession:
-the moment spin-vector aligns with the effective body frame at which point the
-precession ceases.}
+the spin-vector always aligns with the effective body frame and in doing so
+the precession of the body is damped.}
 
 \begin{figure}[ht]
 \centering
@@ -981,6 +1001,7 @@ C. }
 \FloatBarrier
 
 \section{Conclusion}
+\label{sec: conclusion rotating frame}
 
 \meta{In this chapter we have studied a numerical model comprising a rigid body
 supporting a biaxial strain and acted on by the \citet{Deutsch1955} dipole
@@ -988,8 +1009,8 @@ torque. In agreement with \citet{Melatos2000}, we confirm the analytic
 solutions of \citet{Goldreich1970}: when $\tauP \ll \tauS$ the inclination of
 the spin-vector $a$ either damps or grows on the spin-down timescale depending
 on whether $\chi$ is smaller or larger than $\chi_{\textrm{\textrm{cr}}}\approx
-50^{\circ}$. Moreover, we provide a new interpretation of this critical value
-through the ratios of the loss of angular momentum and energy.
+55^{\circ}$. Moreover, we provide a new interpretation of this critical value
+as a tipping point between the rates of change of energy and angular momentum.
 }
 
 \meta{
@@ -1000,7 +1021,7 @@ $\tauP \sim \tauS$, we confirm the existence of so-called persistent precession
 solutions found by \citet{Melatos2000} in which the spin-vector does not align
 with either the principal axis of the MOI tensor or the magnetic dipole.
 However, we provide a new insight into this by showing that for all orderings
-of the three timescales the spin-vector aligns with the principal axes of the
+of the three timescales, the spin-vector aligns with the principal axes of the
 effective MOI tensor (defined in Sec.~\ref{sec: effective body frame}).  In this
 sense, there is no persistent precession.
 }
@@ -1079,7 +1100,50 @@ that we use in the rest of this thesis.
 %idea.
 
 \begin{subappendices}
-\input{\thisdir/Appendix}
+\section{Considerations for the timescales}\label{sec: timescales}
+We have used the ordering of the three timescales at $\omega_{0}=\omega(t=0)$
+to categorise the results. However, clearly the magnitude of the spin-vector
+will decrease and the different dependencies on the spin-vector could cause a
+`crossing' of the timescales producing unexpected results. Writing the
+timescales as
+\begin{equation}
+\tauP(t)=\frac{2\pi}{\epsilon_{I}\omega(t)}, \;\;\;\;\;
+\tauA(t)=\frac{2\pi}{\epsilon_{A}\omega(t)},  \;\;\;\;\;
+\tauS(t)=\frac{3c}{2R}\frac{2\pi}{\epsilon_{A}\omega(t)^{2}},
+\end{equation}
+only $\tauS$ could `cross' with the other two timescales since the spin-down
+and anomalous timescales obey $\tauS>\tauA$ provided that
+\begin{equation*}
+\omega(t)>\frac{3c}{2R}.
+\end{equation*}
+This condition is satisfied by setting the initial rotational spin frequency at
+less than $\omega_{0} \sim 10^{4}$ [rad/s], that is the star should not break
+special relativity. At later times, the spin frequency will decay and so this
+condition is still satisfied.
+
+For the anomalous torque and precession timescale crossings, two cases exists:
+either the deformations are such that the spin-down timescale is initially larger than
+the precession timescale (region A and B) or, as in region C, the precession
+timescale is larger than the spin-down timescale. Let us consider the first case:
+\begin{equation}
+\tau_{S}>\tau_{P} \;\;\;
+\Rightarrow \omega(t)<\frac{3c}{2R}\frac{\epsilon_{I}}{\epsilon_{A}}.
+\end{equation}
+In this particular state, $\epsilon_{I}>\epsilon_{A}$ and so, as in the previous
+case, while the spin-vector decays this inequality is always satisfied and the
+orderings remain the same. In the other case we have
+\begin{equation}
+\tau_{P}>\tau_{S} \;\;\;
+\Rightarrow \omega(t)>\frac{3c}{2R}\frac{\epsilon_{I}}{\epsilon_{A}}.
+\end{equation}
+In this case, it is possible for the timescales to cross at
+$\omega_{cr}=\frac{3c}{2R}\frac{\epsilon_{I}}{\epsilon_{A}}$. For pulsar C this
+corresponds to a rotational spin frequency of $0.9$ [rad/s], which is four
+orders of magnitude smaller than the initial frequency. For this reason, we can
+rule out this crossing of the timescales as an important factor in
+calculations.
+
+
 \end{subappendices}
 
 \biblio
