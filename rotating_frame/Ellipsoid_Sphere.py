@@ -85,16 +85,15 @@ if "bi" in sys.argv:
         ax.plot_surface(x, y, z,  rstride=7, cstride=9, color='green',alpha=0.9,lw=0.2,shade=True)
         ax.set_axis_off()
 
+    ax.set_aspect('equal', "box")
 
-    ax.set_aspect('equal',"box")
-
-    mx=3.8
-    ax.plot(py.linspace(-mx,mx,n),py.zeros(n),py.zeros(n),color="k",ls="-",lw=1.2)
-    ax.text(mx*1.2,0.05,0.05,r"$\hat{y}$")
-    ax.plot(py.zeros(n),py.linspace(-mx,mx,n),py.zeros(n),color="k",ls="-",lw=1.2)
-    ax.text(0.05,-mx*1.2,0.05,r"$\hat{x}$")
-    ax.plot(py.zeros(n),py.zeros(n),py.linspace(-mx,mx,n),color="k",ls="-",lw=1.2)
-    ax.text(0.0,0.0,mx*1.1,r"$\hat{z}$")
+    mx = 3.8
+    ax.plot(py.linspace(-mx, mx, n), py.zeros(n), py.zeros(n), color="k", ls="-", lw=1.2)
+    ax.text(mx*1.1, 0.05, -0.2, r"$\hat{y}$")
+    ax.plot(py.zeros(n), py.linspace(-mx, mx, n), py.zeros(n), color="k", ls="-", lw=1.2)
+    ax.text(0.05, -mx*1.2, -0.05, r"$\hat{x}$")
+    ax.plot(py.zeros(n), py.zeros(n), py.linspace(-mx, mx, n), color="k", ls="-", lw=1.2)
+    ax.text(-0.3, 0.0, mx*1.1, r"$\hat{z}$")
 
 
 
