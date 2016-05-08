@@ -89,11 +89,11 @@ if "bi" in sys.argv:
 
     mx = 3.8
     ax.plot(py.linspace(-mx, mx, n), py.zeros(n), py.zeros(n), color="k", ls="-", lw=1.2)
-    ax.text(mx*1.1, 0.05, -0.2, r"$\hat{y}$")
+    ax.text(mx*1.1, 0.05, -0.2, r"$y$")
     ax.plot(py.zeros(n), py.linspace(-mx, mx, n), py.zeros(n), color="k", ls="-", lw=1.2)
-    ax.text(0.05, -mx*1.2, -0.05, r"$\hat{x}$")
+    ax.text(0.05, -mx*1.2, -0.05, r"$x$")
     ax.plot(py.zeros(n), py.zeros(n), py.linspace(-mx, mx, n), color="k", ls="-", lw=1.2)
-    ax.text(-0.3, 0.0, mx*1.1, r"$\hat{z}$")
+    ax.text(-0.3, 0.0, mx*1.1, r"$z$")
 
 
 
