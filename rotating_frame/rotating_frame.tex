@@ -7,9 +7,10 @@
 
 \begin{document}
 
+\meta{
 The rotation of a neutron star is gradually slowed by torques. For most
 isolated stars, the dominant torque is thought to be the electromagnetic
-dipole. In Sec.~\ref{sec: free precession} we introduced the free precession,
+dipole. In Sec.~\ref{sec: free precession} we introduced free precession,
 in this section, we will study precession under the action of a dipole torque.
 The form of this torque was first written down by \citet{Deutsch1955} where it
 was found there there were two distinct components: the spin-down component and
@@ -20,7 +21,9 @@ the alignment of the magnetic axis. The addition of the anomalous torque makes
 analytic solutions difficult, so \citet{Melatos2000} found numerical solutions
 for the full torque. In doing so, the authors discovered solutions with `persistent
 precession', something which is not yet understood in the literature.
+}
 
+\meta{
 In this chapter, we will solve the Euler rigid-body equations numerically and
 compare with known analytic and numerical solutions. This will
 familiarse the reader with current work in the field and achieve two tasks:
@@ -28,6 +31,7 @@ first, to understand the role of the anomalous torque with respect to
 precession (and in doing so clear up confusion about persistent precession);
 second, to provide an intuitive understanding of the alignment predictions made by
 \citet{Goldreich1970}
+}
 
 \section{Defining the model}
 \label{sec: defining the model}
@@ -635,7 +639,7 @@ I_{0}(1+\epsI-\epsA\cos^{2}\chi)
 Note that we will use the prime to denote the coordinates in the
 effective body frame.
 
-We can calculate the eigenvalues of the effective MOI, which are given by
+We can calculate the eigenvalues of the effective MOI tensor, which are given by
 \begin{align}
 \lambda_{2}=I_{0}, &&&
 \lambda_{\pm}=\frac{I_{0}}{2}
@@ -822,7 +826,7 @@ bounding the radius of the sphere by
 
 In the case of a biaxial moment of inertia, we found that solution for which both
 conservation laws are satisfied, corresponded to circles around the $\z$ axis.
-Now that we have a triaxial MOI (due to the addition of the anomalous torque),
+Now that we have a triaxial MOI tensor (due to the addition of the anomalous torque),
 the solutions correspond to the intersection of the triaxial ellipsoid with the
 sphere, for which there are three distinct types of
 intersections as drawn in figure~\ref{fig: sphere ellipsoid}.
@@ -978,7 +982,7 @@ C. }
 
 \section{Conclusion}
 
-In this chapter we have studied a numerical model comprising a rigid body
+\meta{In this chapter we have studied a numerical model comprising a rigid body
 supporting a biaxial strain and acted on by the \citet{Deutsch1955} dipole
 torque. In agreement with \citet{Melatos2000}, we confirm the analytic
 solutions of \citet{Goldreich1970}: when $\tauP \ll \tauS$ the inclination of
@@ -986,7 +990,9 @@ the spin-vector $a$ either damps or grows on the spin-down timescale depending
 on whether $\chi$ is smaller or larger than $\chi_{\textrm{\textrm{cr}}}\approx
 50^{\circ}$. Moreover, we provide a new interpretation of this critical value
 through the ratios of the loss of angular momentum and energy.
+}
 
+\meta{
 When $\tauP \ll \tauS$ we find that spin-vector aligns with the magnetic
 dipole; this also agrees with the numerical and analytic solutions found by
 \citet{Melatos2000}. When including the anomalous torque, in the regime where
@@ -997,12 +1003,14 @@ However, we provide a new insight into this by showing that for all orderings
 of the three timescales the spin-vector aligns with the principal axes of the
 effective MOI tensor (defined in Sec.~\ref{sec: effective body frame}).  In this
 sense, there is no persistent precession.
+}
 
-In conclusion, the anomalous torque is not important for realistic systems
+\meta{In conclusion, the anomalous torque is not important for realistic systems
 since it amounts to nothing more a small shift in the axes about which
 precession is best described. For this reason, the solutions found by
 \citet{Goldreich1970} is the most relevant for real pulsars and it will be this
 that we use in the rest of this thesis.
+}
 
 %\section{Connection with the known NS population}
 %\label{sec: Connection with the known NS population}
