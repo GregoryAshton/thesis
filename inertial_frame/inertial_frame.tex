@@ -7,7 +7,7 @@
 
 \begin{document}
 
-In Sec.~\ref{sec: rotating frame} we investigated the role of precession under
+In Section~\ref{sec: rotating frame} we investigated the role of precession under
 an EM torque in the rotating frame of the star. However, pulsar astronomers
 report on direct observations of the radio pulsations made in the inertial
 frame. In this section, we will develop our precession model by making
@@ -30,28 +30,28 @@ from the literature, in particular we will use the work of \citet{Jones2001} as
 it is the most complete work on the subject. By comparing with a numerical
 model, we can gain confidence in the use of analytic solutions. For example, in
 Chapter.~\ref{sec: testing models} we will make use of the analytic solution
-for the spin-down rate of a precessing pulsar derived in Sec.~\ref{sec:
+for the spin-down rate of a precessing pulsar derived in Section~\ref{sec:
 derivation of the spin-down rate}; this derivation neglects the anomalous
-torque discussed in Sec.~\ref{sec: rotating frame}, but we can be confident in
+torque discussed in Section~\ref{sec: rotating frame}, but we can be confident in
 its predictions since we compare it against numerical solutions calculated with
-the full torque in Sec.~\ref{sec: spin-down rate numerical}.
+the full torque in Section~\ref{sec: spin-down rate numerical}.
 
-This chapter is organised in the following way. In Sec.~\ref{sec: rotating} we
+This chapter is organised in the following way. In Section~\ref{sec: rotating} we
 will introduce the idea of the Euler rotation angles and how to formulate a
 predictive model for precessing pulsars in the inertial frame. In
-Sec.~\ref{sec: evolving the euler angles} we compare some typical numerical
+Section~\ref{sec: evolving the euler angles} we compare some typical numerical
 solutions to analytic solutions in the torque free case and then illustrate the
 effect of the full \citet{Deutsch1955} torque on the evolution of the Euler
 angles. Before discussing the observable features of pulsars, we need some
-intuition to understand the results, so in Sec.~\ref{sec: precessing pulsars}
+intuition to understand the results, so in Section~\ref{sec: precessing pulsars}
 we give a detailed account of the motion of the magnetic dipole of a freely
 precessing pulsar. The obserable features of a precessing pulsar are discussed
-in Sec.~\ref{sec: observable features: timing residuals}, Sec.~\ref{sec:
-observable features: spin-down rate}, and Sec.~\ref{sec: observable features:
+in Section~\ref{sec: observable features: timing residuals}, Section~\ref{sec:
+observable features: spin-down rate}, and Section~\ref{sec: observable features:
 shape} for the timing residuals, spin-down rate, and shape of pulsations
-respectively. Finally, in Sec.~\ref{sec: application switching and precession}
+respectively. Finally, in Section~\ref{sec: application switching and precession}
 we give some preliminary findings on a hybrid model of precession and
-magnetospheric switching before concluding in Sec.~\ref{sec: conclusion
+magnetospheric switching before concluding in Section~\ref{sec: conclusion
 inertial}.
 
 
@@ -114,7 +114,7 @@ R(\theta, \phi, \psi) & = BCD \\
 Here we are using the
 $(\phi, \theta, \psi)$ Euler
 angle parameterisation as described by \citet{Landau1969}; a diagram of how
-these angles is given in Fig.~\ref{fig: Euler}.\begin{figure}[ht]
+these angles is given in Figure~\ref{fig: Euler}.\begin{figure}[ht]
 \centering
 \includegraphics[scale=0.25]{Eulerangles-alternative_filled.png}
 \caption{Schematic of the Euler rotation angles between the rotating
@@ -164,7 +164,7 @@ This set of six coupled ODEs can be solved numerically using a time stepper; we
 will use the \texttt{rkf45} stepper provided by GSL \citep{gough2009gnu}.
 Solutions give the components of the spin-vector in the rotating frame and the
 evolution of the Euler angles which can be used to transform rotating frame
-quantities into the inertial frame. Unlike the results of Sec.~\ref{sec:
+quantities into the inertial frame. Unlike the results of Section~\ref{sec:
 rotating frame}, numerical solutions to these ODEs require the fast spin frequency
 to be resolved and hence require greater computing time.
 
@@ -178,7 +178,7 @@ to be resolved and hence require greater computing time.
 \subsection{Initial conditions}
 \label{sec: initial conditions}
 
-Solving the rigid-body equations, as in Sec.~\ref{sec:
+Solving the rigid-body equations, as in Section~\ref{sec:
 rotating frame}, we set
 $\Omega_a(t=0)$ to lie in the $x' - z'$ plane at an angle $a_{0}$ to the
 $z'$ axis. This gives a set of three initial conditions
@@ -289,8 +289,8 @@ initial conditions, we can now simulate the evolution of the spin-vector and
 Euler angles. The ultimate aim of this section is to go on to simulate physical
 observables, however, let us first consider the evolution of the simulation
 parameters themselves first (the components of $\Omega_a$ and the three Euler
-angles). We will consider first a torque free simulation in Sec.~\ref{sec:
-biaxial body with no torque} and then add in the full torque in Sec.~\ref{sec:
+angles). We will consider first a torque free simulation in Section~\ref{sec:
+biaxial body with no torque} and then add in the full torque in Section~\ref{sec:
 biaxial body with torque}.
 
 \subsection{Torque free biaxial body}
@@ -319,7 +319,7 @@ This set of analytic solutions gives
 us a method to verify our numerical solver of Eqn.~\eqref{eqn: ODEs} with the
 appropriate initial conditions.
 
-In Fig.~\ref{fig: biaxial body no torque} we present the Euler angle solutions
+In Figure~\ref{fig: biaxial body no torque} we present the Euler angle solutions
 of equations~\eqref{eqn: ODEs} for some arbitrary values of the simulation
 parameters along with the analytic prediction of Eqn.~\eqref{eqn: euler angles
 torque free evolution} and Eqn.~\eqref{eqn: spherical spin torque free
@@ -353,8 +353,8 @@ evolution of the Euler angles as given in Eqn.~\eqref{eqn: euler angles torque f
 \subsection{Torqued biaxial body}
 \label{sec: biaxial body with torque}
 To see the difference introducing the EM torque of Eqn.~\eqref{eqn: torque}  makes to the
-solutions, in Fig.~\ref{fig: biaxial body with torque} we repeat the simulation
-plotted in Fig.~\ref{fig: biaxial body no torque} with both the anomalous
+solutions, in Figure~\ref{fig: biaxial body with torque} we repeat the simulation
+plotted in Figure~\ref{fig: biaxial body no torque} with both the anomalous
 and spin-down components of the EM torque. The most
 striking contrast is the `wobble' in both $\theta$ and $a$; on closer
 inspection one also finds this wobble in the other angles, while the magnitude of
@@ -391,7 +391,7 @@ the observable properties.
 %To ensure that the small wobble in $\theta$, which should remain constant, is
 %a numerical effect rather than a lack of physics we can plot the fractional
 %size of the wobble whilst changing the absolute error tolerance given to the
-%ODE stepping procedure. This is done in Fig.~\ref{fig: error}
+%ODE stepping procedure. This is done in Figure~\ref{fig: error}
 % \begin{figure}[ht]
 %\centering
 %\includegraphics[scale=0.4]{error_plot.pdf}
@@ -445,7 +445,7 @@ J_{a} = I_0 \Omega_a + \Delta I \Omega_z \n_a.
 \end{align}
 As found by \citet{Pines1972}, this shows that the three vectors $J_a$,
 $\Omega_a$, and $\n_a$ are coplanar in the so-called reference plane as shown in
-Fig.~\ref{fig: reference plane}.
+Figure~\ref{fig: reference plane}.
 \begin{figure}[htb]
     \includegraphics[width=0.25\textwidth]{ReferencePlane.pdf}
     \caption{The reference plane containing the angular momentum vector $\mathbf{\Omega}$,
@@ -455,11 +455,11 @@ Fig.~\ref{fig: reference plane}.
 In this figure, we have defined the angle between angular momentum and $\n_a$ as
 $\theta$, conventionally referred to as the \emph{wobble-angle} of
 precession. We have also given $a$, the angle between the 3-axis and the
-spin-vector as defined in Sec.~\ref{sec: rotating frame}.
+spin-vector as defined in Section~\ref{sec: rotating frame}.
 
 Following \citet{Jones2001}, let us now decompose the angular velocity into the
 Euler angle components along the angular momentum and deformation axis (these
-are the same Euler angles as defined in Sec.~\ref{sec: euler rotation
+are the same Euler angles as defined in Section~\ref{sec: euler rotation
 matrices})
 \begin{equation}
   \Omega_a = \dot{\phi}\hat{J}_a + \dot{\psi}\n_{a},
@@ -518,7 +518,7 @@ slower frequency as seen from Eqn.~\eqref{eqn: psi phi}.
 We will now understand the motion of $\m$, the magnetic dipole, under torque
 free precession. We will do this initially by application of the Euler angle
 rotations and then we will return to this reference frame picture in
-Sec.~\ref{sec: understanding the motion of m} to provide a deeper intuitive
+Section~\ref{sec: understanding the motion of m} to provide a deeper intuitive
 understanding.
 
 \subsection{Dynamics of the magnetic dipole}
@@ -577,7 +577,7 @@ the magnetic dipole in the inertial frame in the torque free case.
 Using our numerical solution, we simulate a star without any EM torque. The
 resulting solutions for the Euler angles can then be substituted into Eqn.~\eqref{eqn: Theta 2}
 to give the evolution of $\Theta$. This is done for three choices of $\theta$
-and $\chi$ in Fig.~\ref{fig: polar angle variations}
+and $\chi$ in Figure~\ref{fig: polar angle variations}
 \begin{figure}[htb]
 \centering
   \includegraphics[width=0.7\textwidth]{polar_angle_variation_with_chi.pdf}
@@ -609,8 +609,8 @@ This is the \emph{instantaneous electromagnetic frequency}; an observer
 will measure the time averaged value of $\dot{\Phi}$ as the `spin frequency' of
 the star.
 
-In Fig.~\ref{fig: frequency variations} we plot the frequency modulations for
-the three choices of $\theta$ and $\chi$ used in Fig.~\ref{fig: polar angle variations}.
+In Figure~\ref{fig: frequency variations} we plot the frequency modulations for
+the three choices of $\theta$ and $\chi$ used in Figure~\ref{fig: polar angle variations}.
 Again, we see modulation at the precession period; in the following section to
 will provide a deeper understanding of these modulations and the choices of
 $\theta$ and $\chi$.
@@ -626,10 +626,10 @@ of $\chi$ and $\theta$ under free precession}
 \subsection{Understanding the dynamics of the magnetic dipole}
 \label{sec: understanding the motion of m}
 
-We will now return to the reference plane picture discussed in Sec.~\ref{sec:
+We will now return to the reference plane picture discussed in Section~\ref{sec:
 reference plane}. In particular, we will now provide a detailed description of
 the motion of $\m$ as seen by the observer and use this to explain the
-modulations seen in Fig.~\ref{fig: polar angle variations} and Fig.~\ref{fig:
+modulations seen in Figure~\ref{fig: polar angle variations} and Figure~\ref{fig:
 frequency variations}.
 
 From Eqn.~\eqref{eqn: decomp}, the motion of the magnetic dipole, a vector
@@ -640,7 +640,7 @@ this $\m$ is swung in a cone about $\n_a$ at the slower precession frequency
 $\dot{\psi}$. The resulting motion is best understood by considering three
 choices of $\chi$ and $\theta$: $\chi < \theta$, the special case $\chi =
 \theta$, and $\chi > \theta$. We we illustrate the projection of the two
-cones onto the reference plane for these three choices in Fig.~\ref{fig: cones}.
+cones onto the reference plane for these three choices in Figure~\ref{fig: cones}.
 \begin{figure}[ht]
 \centering
 	\subfloat[$\chi < \theta$]{\includegraphics[width=0.33\textwidth]
@@ -665,16 +665,16 @@ $\n_a$ during a precessional cycle, but this modulation is slower by a factor
 $\epsI$ compared to the spin frequency. We can then imagine the motion of $\m$
 as seen by on observer as a cone, the \emph{dipole cone}, swept out by $\m$ at
 the fast spin frequency; the half-angle of this cone will be exactly $\Theta$
-and will be modulated at the precession period (as shown in Fig.~\ref{fig:
+and will be modulated at the precession period (as shown in Figure~\ref{fig:
 polar angle variations}).  The frequency with which $\m$ rotates around dipole
 cone is $\dot{\Phi}$ given by Eqn.~\eqref{eqn: Phi_dot}. Let us now describe
-the evolution of the dipole cone for the three cases in Fig.~\ref{fig: cones}:
+the evolution of the dipole cone for the three cases in Figure~\ref{fig: cones}:
 \begin{itemize}
 \item The $\chi < \theta$ case ($\chi = \theta/2$): the precession cone is
 narrow and does not extend over the angular momentum vector. The polar angle
 $\Theta$ of the dipole cone oscillates periodically between $\theta+\chi$ and
-$\theta-\chi$ during a precession cycle, as shown in Fig.~\ref{fig: polar angle
-variations}.  The spin frequency $\dot{\Phi}$ (see Fig.~\ref{fig: frequency
+$\theta-\chi$ during a precession cycle, as shown in Figure~\ref{fig: polar angle
+variations}.  The spin frequency $\dot{\Phi}$ (see Figure~\ref{fig: frequency
 variations} has an average value of $\dot{\phi}$ and oscillates about this
 value, comparing with the $\Theta$ variations demonstrates these oscillations
 are locked in phase with the rotation of $\m$ in the precession cone. Recalling
@@ -698,7 +698,7 @@ average are large while as $\chi$ increases the deviations get smaller as
 the half angle of the dipole cone increases.
 \end{itemize}
 We will comment on these results further by verifying them numerically in
-Fig.~\ref{fig: polar angle variations} and Fig.~\ref{fig: frequency variations}.
+Figure~\ref{fig: polar angle variations} and Figure~\ref{fig: frequency variations}.
 
 \meta{..}
 Additionally for the two cases $\chi>\theta$ and $\chi < \theta$ we have
@@ -709,7 +709,7 @@ case of $\chi=\theta$.
 
 \subsection{The effective wobble angle}
 \label{sec: wobble angle}
-The angle $\theta$ (see Fig.~\ref{fig: reference plane})) is referred to as the
+The angle $\theta$ (see Figure~\ref{fig: reference plane})) is referred to as the
 \emph{wobble angle} since, in torque-free precession, its magnitude determines
 the `amount' of precession. \citet{Jones2001} demonstrated that
 for nearly spherical stars where $\epsI \ll 1$ and when $\theta \ll 1$ the
@@ -718,13 +718,13 @@ angles are related by
 \hat{\theta} \approx \epsI\theta.
 \label{eqn: theta hat theta}
 \end{align}
-Consequently, from Fig.~\ref{fig: reference plane} we see that $a\approx
+Consequently, from Figure~\ref{fig: reference plane} we see that $a\approx
 \theta$.
 
 When including the EM torque the wobble angle
 does not have the intuitive interpretation of the `amount' of precession.  In
 particular, the anomalous part of the torque defined Eqn.~\eqref{eqn: torque}
-can be understood to create an effective rotating frame as shown in Sec.~\ref{sec:
+can be understood to create an effective rotating frame as shown in Section~\ref{sec:
 effective body frame}. This means that solutions exist which appear to undergo
 `persistent precession' where $\theta \approx a\ne0$ such that the body remains
 misaligned from the principal axes of its moment of inertia tensor. However, we
@@ -748,11 +748,11 @@ which initially have a minimal amount of precession.
 
 %\subsection{Pulse frequency and polar angle under torqued precession}
 %Having a physical understanding of why $\Theta$ and $\dot{\Phi}$ evolve under
-%free precession as in Fig.~\ref{fig: polar angle variations} and Fig.~\ref{fig:
+%free precession as in Figure~\ref{fig: polar angle variations} and Figure~\ref{fig:
 %frequency variations}, we will study what happens to such a system when
 %including the effects of the EM torque.
 %
-%In Fig.~\ref{fig: polar angle variations with torque}  we give the variations in
+%In Figure~\ref{fig: polar angle variations with torque}  we give the variations in
 %the polar angle under torqued precession.The torque introduces two
 %additional effects: $\dot{\Phi}$ the instantaneous electromagnetic frequency
 %decays slowly, this is caused by the spin-down torque and is full agreement
@@ -782,7 +782,7 @@ which initially have a minimal amount of precession.
 
 The principal observational quantify reported on for a pulsar is the timing
 residual. This is the difference between the measured TOA of a pulse and a
-timing model of the pulsar as discussed in Sec.~\ref{sec: pulsar timing
+timing model of the pulsar as discussed in Section~\ref{sec: pulsar timing
 methods}.  The phase modulation of pulsars due to precession was first modelled
 in response to periodic variations observed in the frequency of the Crab pulsar
 \citep{Ruderman1970, chiuderi1970shape}. Precession as a candidate for 
@@ -821,7 +821,7 @@ a Taylor expansion to the phase about some reference time $\tref$ up to $\ddot{f
 \label{eqn: TR taylor expansion}
 \end{equation}
 with the timing properties ($f$, $\dot{f}$, $\ddot{f}$) as free parameters.
-Higher order terms can be included, as discussed in Sec.~\ref{sec: timing noise
+Higher order terms can be included, as discussed in Section~\ref{sec: timing noise
 observations}, but here we truncate at $\ddot{f}$. We do not include an initial
 phase since we can arbitrarily define our reference time to coincide with a
 pulsation such that the initial phase is zero.  Unlike pulsar astronomers, we
@@ -853,7 +853,7 @@ on phase-residuals.
 
 In the following subsections we will compare analytic results for the phase
 residuals due to precession with our numerical results found by fitting and
-removing a polynomial. As shown in Sec.~\ref{sec: understanding the motion of m}
+removing a polynomial. As shown in Section~\ref{sec: understanding the motion of m}
 the form of solution will depend on whether $\chi < \theta$ or $\chi > \theta$.
 Of these two choices, \citet{Jones2001} concluded that `the wobble angle of
 rapidly rotating stars are limited to small values for the finite crustal
@@ -876,7 +876,7 @@ given by
 where the subscript here refers to the equation number of \citet{Jones2001}.
 For a precessing star $\dot{\psi}$ is given by Eqn.~\eqref{eqn: psi phi} and
 the initial value of the cosine argument is $\psi(t=0)=\pi/2$ as derived in
-Sec.~\ref{sec: initial conditions}.
+Section~\ref{sec: initial conditions}.
 
 Equation \eqref{eqn: Jones 49} is calculated in the absence of any EM torque.
 Nevertheless, it is still appropriate when a torque is applied provided
@@ -886,11 +886,11 @@ listed in Table~\ref{tab: PR 49}.
 \begin{table}
 \centering
 \include{49_verification}
-\caption{Simulation parameters used for the phase residual plotted in Fig.~\ref{fig: PR 49}}
+\caption{Simulation parameters used for the phase residual plotted in Figure~\ref{fig: PR 49}}
 \label{tab: PR 49}
 \end{table}
 The resulting phase residual, in cycles, is
-given in Fig.~\ref{fig: PR 49}.
+given in Figure~\ref{fig: PR 49}.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{49_verification}
@@ -948,10 +948,10 @@ unity.
 \begin{table}
 \centering
 \include{63_verification}
-\caption{Simulation parameters used for the phase residual plotted in Fig.~\ref{fig: PR 63}}
+\caption{Simulation parameters used for the phase residual plotted in Figure~\ref{fig: PR 63}}
 \label{tab: PR 63}
 \end{table}
-The resulting phase residual is plotted in Fig.~\ref{fig: PR 63} along with the
+The resulting phase residual is plotted in Figure~\ref{fig: PR 63} along with the
 predictions of Eqn.~\eqref{eqn: Jones 63} and Eqn.~\eqref{eqn: Jones 49}. This
 clearly demonstrates that the amplified residuals agree with the results
 calculated numerically.
@@ -969,7 +969,7 @@ analytic prediction of Eqn.~\eqref{eqn: Jones 49} and Eqn.~\eqref{eqn: Jones 63}
 
 The derivatives of the phase (the frequency, spin-down rate, etc.) display
 similar long term departures from their secular evolution's: periodic
-modulations which can be amplified by the EM torque. In Fig.~\ref{fig:
+modulations which can be amplified by the EM torque. In Figure~\ref{fig:
 frequency variations} we have already briefly discussed the modulations of the
 frequency due to free precession. However, long term modulations of the
 frequency (on top of the usual secular spin-down), are not reported in the
@@ -1116,7 +1116,7 @@ that
 \begin{align}
 \psi(t) = \dot{\psi} t + \psi_0.
 \end{align}
-From Fig.~\ref{fig: biaxial body with torque} (where $\tauP/\tauAge \approx
+From Figure~\ref{fig: biaxial body with torque} (where $\tauP/\tauAge \approx
 7\times10^{-4}$) we see that the torque causes modulations in $\dot{\psi}$.
 However, in all the cases where we apply this formulae, these modulations will
 be negligible.
@@ -1167,14 +1167,14 @@ solutions are qualitatively unchanged.
 \begin{table}[htb]
 \centering
 \input{\thisdir/SpindownRate_normal}
-\caption{Simulation parameters for the spin-down rate plotted in Fig.~\ref{fig:
+\caption{Simulation parameters for the spin-down rate plotted in Figure~\ref{fig:
 spin-down rate normal}}
 \label{tab: spin-down rate normal}
 \end{table}
 
 The numerical spin-down rate variations, calculated using th observer-method
 are plotted along with the analytic predictions of Eqn.\eqref{eqn: spin-down rate}
-in Fig.~\ref{fig: spin-down rate normal}.
+in Figure~\ref{fig: spin-down rate normal}.
 \begin{figure}[htb]
 \centering
 \includegraphics[]{SpindownRate_normal}
@@ -1187,7 +1187,7 @@ This figure demonstrates good agreement: small variations result from the
 application of the observer-method, most notably the numerical results under
 and over estimates the minimum and maximums due to the time averaging.
 
-While Fig.~\ref{fig: spin-down rate normal} captures the essential features of
+While Figure~\ref{fig: spin-down rate normal} captures the essential features of
 spin-down rate modulation amplified by an EM torque, it lacks one essential
 feature. This is the `double-peaked' spin-down rate which is
 observed in PSR~B1828-11 \citep{Lyne2010} (see also Chapter.~\ref{sec: testing
@@ -1202,12 +1202,12 @@ orthog}.
 \begin{table}[htb]
 \centering
 \input{\thisdir/SpindownRate_orthog}
-\caption{Simulation parameters for the spin-down rate plotted in Fig.~\ref{fig:
+\caption{Simulation parameters for the spin-down rate plotted in Figure~\ref{fig:
 spin-down rate orthog}}
 \label{tab: spin-down rate orthog}
 \end{table}
 The spin-down rate for this `almost orthogonal' dipole simulation is plotted
-in the top panel of Fig.~\ref{fig: spin-down rate orthog} and demonstrates the
+in the top panel of Figure~\ref{fig: spin-down rate orthog} and demonstrates the
 distinctive double peak.
 \begin{figure}[htb]
 \centering
@@ -1220,10 +1220,10 @@ angle of the magnetic dipole, $\Theta$, for the simulation.}
 \end{figure}
 
 We can understand this double-peaked feature by recalling that the dipole-cone
-(introduced in Sec.~\ref{sec: understanding the motion of m}) is the the cone
+(introduced in Section~\ref{sec: understanding the motion of m}) is the the cone
 swept out by the magnetic dipole, $\m$, at the fast spin frequency; the
 half-angle this cone makes with the angular momentum vector is $\Theta$ (see
-Eqn.~\eqref{eqn: Theta 2}).  In the lower panel of Fig.~\ref{fig: spin-down
+Eqn.~\eqref{eqn: Theta 2}).  In the lower panel of Figure~\ref{fig: spin-down
 rate orthog} we plot this polar angle for the same simulation. Notably the
 occurrence of the double-peak in the spin-down rate coincides with times when
 $\Theta > 90^{\circ}$. What we are seeing is the magnetic dipole entering the
@@ -1272,7 +1272,7 @@ is given by
 \end{equation}
 Since $\iota$ is fixed, variations in $\Delta\Theta$ come solely from
 variations in the polar angle $\Theta$. We studied these variations in
-Fig.~\ref{fig: polar angle variations} and found that the $\Theta$ has an
+Figure~\ref{fig: polar angle variations} and found that the $\Theta$ has an
 average value of the larger of $\theta$ or $\chi$, then oscillates about this
 on the precession period with a magnitude given by the smaller value of
 $\theta$ or $\chi$.
@@ -1294,7 +1294,7 @@ and the angular momentum vector; at this instance the angle between the
 observer and the beam is given by Eqn.~\eqref{eqn: delta Theta}. If the star is
 precessing, then the periodic pulses of intensity due to the azimuthal rotation
 of the star will be modulated by the slower variations in $\Theta$ seen in
-Fig.~\ref{fig: polar angle variations}.
+Figure~\ref{fig: polar angle variations}.
 
 To model this we take an observer's with azimuth and polar angle $(\PhiO, \iota)$ and then
 assume the beam geometry follows Gaussian profile with a single conal emission.
@@ -1319,7 +1319,7 @@ angular beam-width.
 
 Given a value for $A_0$ and $\sigmaB$, we can use a numerical solution to the
 governing ODEs to simulate this pulse intensity exactly This is done in
-Fig.~\ref{fig: intensity variation} for a system where the variations in
+Figure~\ref{fig: intensity variation} for a system where the variations in
 $\Theta$ occur on a timescale not much longer than the pulse period. This
 nonphysical simulation is intended to show the modulation of the individual
 pulsations due to precession.
@@ -1336,11 +1336,11 @@ A_{\mathrm{max}}(\Theta, \Phi, \iota, \sigmaB) =
 A_{0}\exp\left(\frac{-(\Theta-\iota)^{2}}{2\sigmaB^{2}}\right),
 \label{eqn: A max}
 \end{align}
-this is also shown in Fig.~\ref{fig: intensity variation}.
+this is also shown in Figure~\ref{fig: intensity variation}.
 
 \subsection{Variations in the beam-width}
 \label{sec: numerical beam-width}
-It is unlikely that the absolute variations in intensity seen in Fig.~\ref{fig:
+It is unlikely that the absolute variations in intensity seen in Figure~\ref{fig:
 intensity variation} will ever be unambiguously visible in nature. This is
 because in real observations the intensity will also be
 subject to variations in the
@@ -1374,11 +1374,11 @@ polar angle $\Theta$ as given by Eqn.~\eqref{eqn: Theta 2}.
 Let's consider a single rotation with the magnetic dipole starting and ending in
 the antipodal point to the observer's position. During this rotation, $\Phi -
 \PhiO$ increase between $-\pi$ and $\pi$, and so the left hand side of the
-inequality is a simple cosine function as illustrated in Fig.~\ref{fig:
+inequality is a simple cosine function as illustrated in Figure~\ref{fig:
 CosineIllustration}.  Since we expect $\Theta$ to vary slowly compared to the
 rotation period we can, over a single pulsation, think of $\Theta$ as a
 constant; then the whole right hand side of inequality~\eqref{eqn: 6737} is a
-constant. In Fig.~\ref{fig: CosineIllustration} we illustrate this constant
+constant. In Figure~\ref{fig: CosineIllustration} we illustrate this constant
 along with the evolution of the left hand side: the fraction of the rotation
 for which the cosine is less than the constant, i.e. inequality~\eqref{eqn: 6737}
 is satisfied, defines the beam-width.
@@ -1420,10 +1420,10 @@ frequency and $p$ is the percentage of beam-width.
 \centering
 \input{\thisdir/Pulse_width_modulation}
 \caption{Simulation parameters for the beam-width modulations plotted in
-Fig.~\ref{fig: Pulse width modulation}.}
+Figure~\ref{fig: Pulse width modulation}.}
 \label{tab: pulse width modulation}
 \end{table}
-To demonstrate an example of the beam-width modulation, in Fig.~\ref{fig: Pulse width
+To demonstrate an example of the beam-width modulation, in Figure~\ref{fig: Pulse width
 modulation} we plot $\Theta$ calculated from a numerical simulation with the
 simulation parameter listed in Table~\ref{tab: pulse width modulation} and
 $W_{10}$ as calculated from Eqn.~\eqref{eqn: Wp} with $\iota=6^{\circ}$.
@@ -1451,7 +1451,7 @@ a single period oscillatory behaviour.
 
 Recently, some workers in the field \citep{Lyne2010, Perera2015} have suggested
 that quasi-periodic structure observed in pulsar timing residuals is a result
-of magnetospheric torque-switching events as described in Sec.~\ref{sec: two
+of magnetospheric torque-switching events as described in Section~\ref{sec: two
 state switching}. In such models, the spin-down periodically switches between
 two distinct values and these changes correlate with changes in the beam-width.
 These models however are lacking a key feature: the clock which provides the
@@ -1474,7 +1474,7 @@ new idea which has not yet been discussed in the literature.
 
 In the EM dipole spin-down model, the torque has two distinct components: the
 regular spin-down component and the anomalous component. This latter term
-does not contribute to the spin-down, but as discussed in Sec.~\ref{sec: effective
+does not contribute to the spin-down, but as discussed in Section~\ref{sec: effective
 body frame} will modify the axis of precession. Magnetospheric switching models
 are based on evidence that the spin-down rate is switching, therefore the torque
 switching must occur in the spin-down component. However, it is unclear if it would
@@ -1548,7 +1548,7 @@ a_{0} = \beta(\epsI, \epsA, \chi),
 \end{equation}
 where $\beta$ is defined in Eqn.~\ref{eqn: beta}.
 
-In Fig.~\ref{fig: no switching} we illustrate the behaviour of our simulation
+In Figure~\ref{fig: no switching} we illustrate the behaviour of our simulation
 in the absence of a switching event; the simulation parameters are listed in
 Table~\ref{tab: switching props}. Note that the initial polar angle is
 exactly the angle $\beta$ which can be calculated using Eqn.~\eqref{eqn: beta}.
@@ -1561,8 +1561,8 @@ exactly the angle $\beta$ which can be calculated using Eqn.~\eqref{eqn: beta}.
 \begin{table}[htb]
 \centering
 \input{\thisdir/NoSwitching}
-\caption{Simulation properties used for Fig.~\ref{fig: switching without anom}
-and Fig.~\ref{fig: switching with anom}}
+\caption{Simulation properties used for Figure~\ref{fig: switching without anom}
+and Figure~\ref{fig: switching with anom}}
 \label{tab: switching props}
 \end{table}
 
@@ -1590,7 +1590,7 @@ That is we set
 such that halfway though the simulation the spin-down torque is reduced by a
 fraction $0.4$ while the anomalous torque remains unaffected.
 
-In Fig.~\ref{fig: switching without anom} we plot the phase residuals from
+In Figure~\ref{fig: switching without anom} we plot the phase residuals from
 this simulation. In the top plot is the residual as calculated over the entire
 observation period. We find a single periodic variation with a period of the
 observation time $\To$: due to sudden change in spin-down rate the Taylor
@@ -1624,8 +1624,8 @@ halfway though the simulation.  That is we set
     t_{\mathrm{switch}} = \frac{\To}{2}, &&& \Ss = \Sa = 0.01
 \end{align}
 
-In a similar fashion to Fig.~\ref{fig: switching without anom} we show first
-the total residual in the top plot of Fig.~\ref{fig: switching with anom}, and
+In a similar fashion to Figure~\ref{fig: switching without anom} we show first
+the total residual in the top plot of Figure~\ref{fig: switching with anom}, and
 then the individual residuals in the lower plot. Again the overall phase
 residual periodic modulation with a period of the observation time $\To$
 resulting from the failing of the fitting algorithm to find an appropriate fit.
@@ -1659,7 +1659,7 @@ anomalous torque switching.
 
 The two-state switching changes the value of $\epsA$ according to
 Eqn.~\eqref{eqn: epsA switch}, which in turn redefined the effective rotating frame
-as defined in Sec.~\ref{sec: effective body frame}. A non-precessing NS at an
+as defined in Section~\ref{sec: effective body frame}. A non-precessing NS at an
 angle $\beta(\epsI, \epsA, \chi)$ will, after an anomalous torque switch by a fractional
 amount $\Sa$, no longer be aligned with the rotating frame axis. This is
 because the effective rotating frame will have shifted to $\beta' = \beta(\epsI,
@@ -1667,14 +1667,14 @@ because the effective rotating frame will have shifted to $\beta' = \beta(\epsI,
 non-precessing NS to begin precessing after a torque switching event.
 The exact size of the new precession wobble angle will depend on the phase of
 precession (if it was precessing) at the instant before the switching event.
-However, by referring to the reference plane of Fig.~\ref{fig: reference plane}
+However, by referring to the reference plane of Figure~\ref{fig: reference plane}
 we can estimate the upper limit by
 \begin{equation}
     \Delta\beta(\epsI, \epsA, \chi, \Sa) \sim |\beta - \beta'|.
 \end{equation}
 The expression for $\Delta \beta$ is
 not easily amenable to analytic calculation, but can easily be explored
-graphically.  This is done in Fig.~\ref{fig: DeltaBetaPlot} for several choices
+graphically.  This is done in Figure~\ref{fig: DeltaBetaPlot} for several choices
 of $\Sa$. This illustrates that the new precession angle after a switch can be
 as much as a few degrees although it tends to zero in the limit $\epsI \gg
 \epsA$.
@@ -1735,7 +1735,7 @@ models where possible, we showed how to calculate from the motion of the
 dipole the evolution of the stars timing properties (the phase, frequency, and
 spin-down rate) and how to calculate features of the beam shape such as the
 beam-width. In doing this, we derived the spin-down rate for a precessing pulsar
-(see Sec.~\ref{sec: derivation of the spin-down rate}) which will be used in
+(see Section~\ref{sec: derivation of the spin-down rate}) which will be used in
 Chapter.~\ref{sec: testing models} and verified it against numerical solutions.
 
 Finally, we used the phase residuals to investigate the effect of a simple torque
