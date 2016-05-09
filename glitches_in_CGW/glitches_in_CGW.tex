@@ -712,7 +712,7 @@ We find that
 \begin{align}
 \begin{split}
 \nuT^{\textrm{min}} = &
-\nu^A + \Dnuglitch(1-R)^2(2R+1)
+\nuS^A + \Dnuglitch(1-R)^2(2R+1)
       + \frac{3\Dphiglitch}{\pi \Tcoh}R(1-R) \\
 & + \frac{\Tcoh}{2}\left(\nudotS^A(1-R)+\Dnudotglitch(1-R)^{3}(1+R)\right),
 \end{split}
@@ -723,18 +723,19 @@ and
 \nudotT^{\textrm{min}} = &
 \nudotS^{A} + \Dnudotglitch(1-R)^{3}(6R^{2} + 3R + 1) \\
 & + \frac{30\Dnuglitch}{\Tcoh} R^{2}(1-R)^{2} +
-\frac{30\Dphiglitch}{\pi \Tcoh^{2}} R (1-R)(2R-1).
+\frac{30\Dphiglitch}{\pi \Tcoh^{2}} R (1-R)(2R-1),
 \end{split}
 \end{align}
+which are expressed at the global reference time $\tref$.
 
 Inserting these into Eqn.~\eqref{eqn: mutilde fully-coherent unminimised} and
 simplifying yields a minimum mismatch of
 \begin{align}
 \begin{split}
-\mutilde = & \frac{R(1-R)}{3}(4R(1-R)(5R(1-R)-2) + 1)\Dphiglitch^{2} \\
+\mutilde = & R(1-R){3}(4R(1-R)(5R(1-R)-2) + 1)\Dphiglitch^{2} \\
 & + \frac{\pi^{2}\Tcoh^{2}}{3} R^{3}(1-R)^{3}(4 - 15R(1-R)) \Dnuglitch^{2}\\
 & + \frac{\pi^{2}\Tcoh^{4}}{5} R^{5}(1-R)^{5}\Dnudotglitch^{2} \\
-& + 2\pi\Tcoh(1-2R)(1-R)^{2}(5R(1-R)-1)\Dnuglitch\Dphiglitch\\
+& + 2\pi\Tcoh R^{2}(1-R)^{2}(1-2R)(5R(1-R)-1)\Dnuglitch\Dphiglitch\\
 & + \pi^{2} \Tcoh^{3}R^{4}(1-R)^{4}(2R-1)\Dnudotglitch\Dnuglitch \\
 & + \frac{\pi\Tcoh^{2}}{3}R^{3}(1-R)^{3}(2-12R(1-R))\Dphiglitch\Dnudotglitch.
 \end{split}
