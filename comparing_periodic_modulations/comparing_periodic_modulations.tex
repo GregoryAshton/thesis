@@ -19,7 +19,7 @@ posterior fit} for a complete description.}
 In this thesis, we endeavor to understand the cause of timing variations in pulsars
 with the aim being that in doing so, we can understand more about their physics.
 In Chapter.~\ref{sec: timing variations} we discussed a variety of models to
-explain timing-noise including two, precession and magnetospheric switching,
+explain timing noise including two, precession and magnetospheric switching,
 which applied to pulsars with periodic modulations. Such pulsars are particuarly
 interesting given the conclusion of \citet{Hobbs2010} that, as more data is
 collected for pulsars, more quasi-periodic features are observed. Therefore it
@@ -82,7 +82,7 @@ The distinctive spin-down of B1828-11 was analysed by \citet{Seymour2013} for
 evidence of chaotic behaviour. They found evidence that B1828-11 was subject to
 three dynamic equations with the spin-down rate being one governing variable.
 This further motivates the precession model since it results from applying
-Euler's three rigid body equations to a non-spherical body \citep{Landau1969}.
+Euler's three rigid-body equations to a non-spherical body \citep{Landau1969}.
 
 The precession hypothesis was challenged by \citet{Lyne2010} when reanalysing
 the data.   They noted that in order to measure the spin-down and beam-shape
@@ -96,7 +96,7 @@ studying a time-averaged beam-shape-parameter as done by \citet{Stairs2000},
 they instead considered the beam-width at 10\% of the observed maximum
 $W_{10}$. This quantity is time-averaged, but only for each observation
 lasting~$\sim1$hr. This makes $W_{10}$ insensitive to any changes which occur on
-time-scales shorter than an hour. If the meta-stable states last longer than
+timescales shorter than an hour. If the meta-stable states last longer than
 this, $W_{10}$ will be able to resolve the switching. The  relevant data was
 kindly supplied to us courtesy of \citet{Lyne2010}, and is reproduced in
 Fig.~\ref{fig: B1828-11 data}. From these observations,
@@ -225,7 +225,7 @@ P(\data| \params, \M_{i})P(\params | \M_{i}).
 In particular we will use the \citet{Foreman-Mackay2013} implementation of the
 affine-invariant MCMC sampler \citep{Goodman2010} to approximate the posterior
 density of the model parameters.  Further details of our MCMC calculations can
-be found in appendix~\ref{sec: procedure for the mcmc parameter estimation}.
+be found in Appendix~\ref{sec: procedure for the mcmc parameter estimation}.
 
 Once we are satisfied that we have a good approximation for the joint-posterior
 density of the model parameters we discuss how to recover the normalising
@@ -320,7 +320,7 @@ beam-width data with uniform priors based on crude estimates.
 Specifically, we found the posteriors to be non-Gaussian and multimodal.
 To deal with this we would
 need to use a more sophisticated methodology than that discussed in
-appendix~\ref{sec: procedure for the mcmc parameter estimation}. By contrast this
+Appendix~\ref{sec: procedure for the mcmc parameter estimation}. By contrast this
 is not the case when conditioning on the spin-down data first (results
 presented in Sec.~\ref{sec: defining and fitting the models}). This is expected
 since, even by eye, we see that the spin-down data contains an easily visible
@@ -511,7 +511,7 @@ the data analysis, we have chosen to parametrize by the total cycle duration
 $T$ and three of the segment durations $\tI{A}$, $\tI{B}$ and $\tI{C}$.
 
 This model is subject to label-switching degeneracy in the choice of
-$\nudotOne$ and $\nudotTwo$ and also between the various time-scales and
+$\nudotOne$ and $\nudotTwo$ and also between the various timescales and
 initial phase $\phi_0$.  This degeneracy may cause difficulties in the MCMC
 search algorithm, and we therefore fix this gauge freedom by specifying that
 $|\nudotOne| < |\nudotTwo|$, $\tI{A} \ge \tI{C}$, and we require that $\tI{A}$
@@ -549,7 +549,7 @@ frequency offsets since we discard them when calculating the spin-down rate.
 The resulting spin-down rates constitutes our signal model which is the
 time-average of Eqn.~\eqref{eqn: switching spin-down model}.  A schematic
 representation of the sort of spin-down that is then found is given by the
-dotted curve in Figure  Fig.~\ref{fig: perera illustration}.  Clearly, the
+dotted curve in Fig.~\ref{fig: perera illustration}.  Clearly, the
 time-averaged spin-down is much smoother than than the underlying spin-down.
 
 
@@ -662,7 +662,7 @@ Having obtained a sensible fit to the spin-down data, we use the resulting
 posteriors (as summarised in Table~\ref{tab: perera spin-down posterior}) to
 inform our priors for the beam-width data. We can do this only for those
 parameters common to both the beam-width and spin-down predictions of the
-switching model: namely the four time-scales, and the phase-offset. We would
+switching model: namely the four timescales, and the phase-offset. We would
 like to relate the spin-down rates $\nudotOne$ and $\nudotTwo$ to the
 beam-widths. However, the underlying physics is not
 understood, and so instead we will take a naive approach and set a prior on the
@@ -853,7 +853,7 @@ relevant range.
 \caption{$\textbf{A}$: The estimated marginal posterior probability distribution for the
 precession spin-down model parameters. For the secular spin-down
 quantities, we show the difference with respect to the values as listed in
-table~\ref{tab: ATNF}.
+Table~\ref{tab: ATNF}.
 $\textbf{B}$: Checking the fit of the model using the
 maximum posterior values to the data; see Fig.~\ref{fig: noise-only beam-width
 posterior fit} for a complete description.}
@@ -871,7 +871,7 @@ not significantly improve our estimates.
 \centering
 \caption{Posterior estimates for the spin-down precession model. For the secular spin-down
 quantities, we report the posterior difference with respect to the values as listed in
-table~\ref{tab: ATNF}.}
+Table~\ref{tab: ATNF}.}
 \label{tab: precession spin-down posterior}
 \input{\thisdir/Table_Spindown_Precession_posterior.tex}
 \end{table}
@@ -963,7 +963,7 @@ The analysis by \citet{Stairs2000} characterised the beam by a shape parameter.
 \citet{Link2001} used an expansion in $\Delta\Theta$ to model the beam-width
 and hence the shape-parameter. This allowed them to use their fit to the
 timing-data to infer the beam-geometry which they found to be hour-glass
-shaped; see their Figure 5 for a schematic illustration.   The authors of
+shaped; see their Fig.~5 for a schematic illustration.   The authors of
 \citet{Lyne2010} did not use a shape-parameter as it requires time-averaging
 over a longer base-line, something they wish to avoid in order to be able to
 observe the switching. Instead, they considered the beam-width at 10\% of the
@@ -1321,7 +1321,7 @@ standard-deviation for $\rho_2''$ at $1/0.15\approx7$.
 We also tested different choices of $\rho_2''$ and found that the
 posteriors and odds-ratios where robust to the choice, provided the
 standard-deviation did not exclude the posterior value reported in
-table~\ref{tab: modified-gaussian beam-width posterior}.
+Table~\ref{tab: modified-gaussian beam-width posterior}.
 \begin{table}
 \centering
 \caption{Prior distributions for the beam-width modified-Gaussian precession
@@ -1333,7 +1333,7 @@ labelled by $^{*}$.}
 
 The MCMC simulations converge quickly to a Gaussian distribution as shown in
 Fig.~\ref{fig: modified-gaussian beam-width posterior}A and the posterior is
-summarised in Table.~\ref{tab: modified-gaussian beam-width posterior}. The model parameters
+summarised in Table~\ref{tab: modified-gaussian beam-width posterior}. The model parameters
 common to the spin-down model do not vary significantly from the spin-down
 posterior: this indicates the two models are consistent. We find that $\iota$
 is close to $\pi/2$ as expected, $\rho_2$ is sufficiently small indicating a
@@ -1376,7 +1376,7 @@ $\rho_1$; therefore we consider that there are a family of beam-geometries
 parametrized by $\rho_1 = \lambda \rho_2^0$ where $\lambda$ is an arbitrary
 scale parameter and $\rho_2^0$ is the MPE value.
 
-In figure \ref{fig: modified-gaussian beam-width recreate geometry} we pick
+In Fig.~ \ref{fig: modified-gaussian beam-width recreate geometry} we pick
 four illustrative values for $\lambda$ and plot the resulting beam-geometry as
 contour lines at fixed fractions of the maximum beam intensity (which occurs at
 the origin).  This demonstrates that the beam-geometry has an hour-glass shape
@@ -1558,7 +1558,7 @@ our prior on $\rho_2''$ the odds-ratio will depend on $f$.
 
 To test the dependence, in Fig.~\ref{fig: beamwidth switching frac variation}
 we plot the log odds-ratio as a function of $\log_{10}(f)$ (note that $f=0.1$
-corresponds to the result in Table.~\ref{tab: log odds-ratio}). There are
+corresponds to the result in Table~\ref{tab: log odds-ratio}). There are
 several features to understand. First, for $f\lesssim 0.024$ the
 odds-ratio rapidly grows, favouring precession; this is because for such small
 values of $f$ the beam-width switching prior excludes the values of
@@ -1693,11 +1693,11 @@ The posteriors for the precession model indicate that B1828-11 is a
 near-orthogonal rotator and we observe it from close to the equatorial plane.
 If this is the case, and the two beams of the pulsar are symmetric about the
 origin, then we expect to see the second beam as an interpulse. Indeed, we
-discuss further in appendix~\ref{sec: implications for the unobserved beam} how
+discuss further in Appendix~\ref{sec: implications for the unobserved beam} how
 during the precessional cycle we should expect the intensity of this second
 beam to dominate at certain phases. Since no such interpulse is reported,
 either the second beam is weaker, or the beams must have a kink of greater than
-$4.6\degr$ (see appendix~\ref{sec: implications for the unobserved beam}).
+$4.6\degr$ (see Appendix~\ref{sec: implications for the unobserved beam}).
 
 \meta{
 In this chapter, we have developed the framework to evaluate models for the

@@ -209,7 +209,7 @@ single global template to the non-smooth signal.
 \caption{Illustration of the jumps between 'local' per-month signals in
     frequency space, defining the frequency jump $\Delta \nu$. This
         depiction amplifies the order of magnitude of $\Delta \nu$ in order to
-        highlight the timing-noise: for the jumps in the ephemeris, $\Delta \nu$
+        highlight the timing noise: for the jumps in the ephemeris, $\Delta \nu$
         is several orders of magnitude smaller than the change in frequency
         due to spin-down alone.}
 \label{fig: template jumps}
@@ -350,7 +350,7 @@ generated from the Crab ephemeris between MJD 45150 and 56668. This period
 holds no special significance and is used simply to demonstrate the essential
 features of a signal containing timing noise.
 
-In figure ~\ref{fig: narrow-band example} we show the mismatch as a function of
+In Fig.~\ref{fig: narrow-band example} we show the mismatch as a function of
 parameter space offset for (a) a signal without timing noise, and (b) a signal
 containing timing noise. The signal without timing noise is injected at the
 interpolated coefficients~$[f_{0}, \dot{\nu}_{0}, \ddot{\nu}_{0}]$.  Therefore, we find
@@ -366,10 +366,10 @@ search.
 \begin{figure}[htb]
 \centering
 \includegraphics{narrow-band_examples}
-\caption{In figure (a) we show the mismatch as a function of parameter space
+\caption{In Fig.~(a) we show the mismatch as a function of parameter space
     for a signal without timing noise. The injected signal has
     parameters~$[f_{0}, \dot{f}_{0}, \ddot{\nu}_{0}]$, as a result the mismatch has
-    a minimum at this point. This can be compared with figure (b) showing the
+    a minimum at this point. This can be compared with Fig.~(b) showing the
 mismatch from a signal including timing noise. The signal is generated from the
 Crab ephemeris between MJD 45150 and 45668.}
 \label{fig: narrow-band example}
@@ -382,7 +382,7 @@ First we consider two particular periods of the Crab ephemeris corresponding to
 recent narrow-band searches for the Crab: the ligo S5 period \citep{ligo2008}
 and the VIRGO VSR4 period \citep{ligo2015}. The mismatch in the single-template
 and the minimum mismatch for the narrow-band searches during both periods are
-listed in table~\ref{tab: Results}. For these periods timing noise is
+listed in Table~\ref{tab: Results}. For these periods timing noise is
 found to produce a mismatch of~$\approx 1\%$. As expected, the narrow-band
 mismatch is smaller than the single-template search. The fractional difference
 between the two searches is relatively small.
@@ -423,7 +423,7 @@ VSR4 & 55681 - 55839 & $0.00659$ & $0.00584$ \\
 Figure~\ref{fig: conv} shows the convergence of the measured best mismatch
 $\mumin$ for the narrow-band search over the S5 period with the value
 of~$\mGRID$.  This demonstrates that the non-zero values of $\mumin$ given in
-table~\ref{tab: Results} are not the result of grid coarseness.  For signals
+Table~\ref{tab: Results} are not the result of grid coarseness.  For signals
 without timing noise, the measured best mismatch $\mumin$ will have a minimum
 of $\sim\mGRID$ when the putative signal is located halfway between grid
 points. In the limit of~$\mGRID \rightarrow 0$ we then expect the measured
@@ -566,7 +566,7 @@ we find the best fit parameters
     \label{eqn: fit values}
 \end{align}
 In Chapter.~\ref{sec: timing noise in cgw analytic} we will return to this
-and try to analyse if this fit can help to constrain the source of timing-noise.
+and try to analyse if this fit can help to constrain the source of timing noise.
 
 For perfectly matched signals the squared SNR
 increases linearly \citep{Prix2009} with observation time.
@@ -620,7 +620,7 @@ the frequency.
 
 %For the S5 narrow-band search which
 %lasted 10 months, the averaged mismatch predicts a value of~$0.036$; this is
-%relatively large when compared to table~\ref{tab: Results}. This suggests
+%relatively large when compared to Table~\ref{tab: Results}. This suggests
 %either the S5 period is relatively quite or the data is skewed by outliers
 %close to glitches or in the noisy period of MJD 55362. For longer observation
 %times these outliers become less important as the average mismatch increases.
@@ -685,7 +685,7 @@ the Crab ephemeris provide a unique way view of timing noise as a `jump' in the
 phase, frequency, and spin-down rate each month. Specifically by a jump we mean
 the discontinuity at the interface between two months as illustrated in
 Fig.~\ref{fig: template jumps}.  This data collection method provides a
-potential way to test timing-noise models by making a prediction for the
+potential way to test timing noise models by making a prediction for the
 distribution of jumps they predict under this data collection mechanism and
 comparing with the Crab distributions.  In this appendix, we will discuss the
 statistical properties which can be calculated and then intepret these in the
@@ -795,7 +795,7 @@ quantifies how well phase connected the timing solution is.
 In Fig.~\ref{fig: crab kde}C we plot the KDE of $\Delta N$ having filtered
 against known glitch events. We found four jumps where $0.1 < \Delta N < 1.0$;
 again these were found to be occur within~$\sim200$~days of known glitches and
-so were removed to focus attention on the timing-noise activity.
+so were removed to focus attention on the timing noise activity.
 
 Fig.~\ref{fig: crab kde} shows that the distribution of jumps in the frequency,
 spin-down rate, and residual number of rotations is centered on zero, as
@@ -806,10 +806,10 @@ we intepret these in the context of a random walk.
 \subsection{Interpretating jumps in the Crab ephemeris: random walks}
 \label{sec: physical interpretation of the monthly ephemeris}
 %Many of the features used to distinguish the source of timing noise, for
-%example the state switching, occur over time scales much longer than typical
+%example the state switching, occur over timescales much longer than typical
 %GW searches. The observation of \citet{Hobbs2010} that over sufficiently
-%long time scales residuals tend to admit quasi-periodic features can be
-%turned around to argue that over sufficiently short time scales timing noise
+%long timescales residuals tend to admit quasi-periodic features can be
+%turned around to argue that over sufficiently short timescales timing noise
 %is approximated by a random walk. For our purposes then it is sufficient
 %to think of timing noise as a random walk.
 

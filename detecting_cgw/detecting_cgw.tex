@@ -6,7 +6,7 @@
 
 \begin{document}
 
-Timing variations, in the form of glitches or timing-noise, may pose a serious
+Timing variations, in the form of glitches or timing noise, may pose a serious
 risk to efforts to discover continuous GWs from neutron stars. This is because
 searches rely on \emph{matched-filtering}, which searches the data using a
 template; if the template and signal don't match, due to timing variations in
@@ -17,7 +17,7 @@ quantify the significance of timing variations for continuous GW searches. The
 details of estimating the risk posed by glitches to GW searches will be
 discussed in Chapter~\ref{sec: glitches in cgw} and then in Chapter~\ref{sec:
 timing noise in cgw} and Chapter.~\ref{sec: timing noise in cgw analytic} we
-will investigate the role of timing-noise for GW searches.
+will investigate the role of timing noise for GW searches.
 
 \section{Introduction}
 \label{sec: introduction cgw}
@@ -399,8 +399,8 @@ X & = &\frac{1}{T } \int_{0}^{T}e^{i\Delta\Phi(t)} dt\\
 \int_{T/2}^{T} e^{i\Delta\phi_{2}}dt\right)\\
 & = & \frac{1}{2}\left(e^{i\Delta\phi_{1}} + e^{i\Delta\phi_{2}}\right).
 \end{eqnarray}
-Because our choice in splitting up the integral exactly matches the sub-domains
-defined in Eqn.~\eqref{eqn: phase offset} and in each sub-domain $\Delta\Phi(t)$
+Because our choice in splitting up the integral exactly matches the subdomains
+defined in Eqn.~\eqref{eqn: phase offset} and in each subdomain $\Delta\Phi(t)$
 is constant, we can compute the integrals.
 The absolute square value of the matched filtering amplitude is then
 \begin{eqnarray}
@@ -528,7 +528,7 @@ fully-coherent mismatch we find that
 \end{equation}
 In the limit $T \rightarrow \infty$ this tends to $\varepsilon^{2}/2$. Before
 this, the mismatch oscillates around this value over observation times similar
-to the oscillation period; this is shown in figure \ref{fig:
+to the oscillation period; this is shown in Fig.~\ref{fig:
 OscillatoryPhaseMismatch}.
 \begin{figure}[ht]
 \centering
@@ -554,10 +554,10 @@ the loss of SNR for Taylor expansion signals and templates in fully-coherent
 and semi-coherent searches. In this section, we will extend the fully-coherent
 mismatch to handle cases where the signal is not a Taylor expansion, but can
 be approximated by a \emph{piecewise} Taylor expansion. Specifically we mean
-breaking any arbitrary signal into $\Nsd$ \emph{sub-domains} each of which we
+breaking any arbitrary signal into $\Nsd$ \emph{subdomains} each of which we
 describe the signal by a single Taylor expansion; the resulting collection of
 all individual Taylor expansions is a piecewise Taylor expansion. We will
-distinguish between a sub-domain, which describes a part of the piecewise
+distinguish between a subdomain, which describes a part of the piecewise
 function and a segment, which is the division of an observation period for a
 semi-coherent search as discussed in Sec.~\ref{sec: semi-coherent mismatch}. 
 
@@ -568,23 +568,23 @@ timing noise.
 
 
 %In this work we will be modelling glitches which can be described by a
-%piecewise Taylor expansion with two sub-domains. However, in this section we
+%piecewise Taylor expansion with two subdomains. However, in this section we
 %will develop a general formalism for a signal described by an arbitrary number
-%$\Nsd$ sub-domains.
+%$\Nsd$ subdomains.
 
 \subsection{Piecewise Taylor expansion}
 Before we get into the details of formulating a general metric-mismatch it is
 worth stating some details about piecewise Taylor expansions.
 Allowing the signal to be piecewise amounts to placing a second index on the
-signal parameters, $\ls^{\alpha a}$, which labels the sub-domain of the piecewise function.
+signal parameters, $\ls^{\alpha a}$, which labels the subdomain of the piecewise function.
 Note that we discriminate between
 Greek indices, labelling the parameter components, and Roman indices which
-label the sub-domain.
-For the $a^{th}$ sub-domain of the piecewise function, we define $\tref^{a}$
+label the subdomain.
+For the $a^{th}$ subdomain of the piecewise function, we define $\tref^{a}$
 as the reference time of the Taylor expansion in that subdomain. These can
 be defined arbitrarily, although it is usual to either define them
 relative to each subdomain, or at a fixed value for all the subdomains.
-The piecewise signal function in the $a^{th}$ sub-domain is then
+The piecewise signal function in the $a^{th}$ subdomain is then
 \begin{align}
 \PhiS(t; \{\ls^{\alpha a}\}) & = \phiS^a + 2\pi \left(\nuS^a (t - \tref^a)
 + \frac{\nudotS^a}{2}(t - \tref^a)^{2} \right),
@@ -611,7 +611,7 @@ lambda template} as a piecewise Taylor expansion, the template can
 be any arbitrary function described by a piecewise Taylor expansion. However,
 all current and planned searches use a single global Taylor expansion template.
 To model this, we must introduce \emph{consistency relations}
-which ensure that the local sub-domains all lie along a single global template
+which ensure that the local subdomains all lie along a single global template
 with parameters $[\phiT, \nuT, \nudotT]$ defined at $\tref$. These consistency
 relations may be written as
 \begin{align}
@@ -622,7 +622,7 @@ relations may be written as
 \end{split}
 \end{align}
 Note the subtle distinction between $\tref$, the global reference time and
-$\tref^{a}$ the reference time for the $a^{th}$ sub-domain.
+$\tref^{a}$ the reference time for the $a^{th}$ subdomain.
 
 Finally we can generalise Eqn.~\eqref{eqn: Delta Phi} for the phase difference
 to the piecewise Taylor expansion description of the signal and template:
@@ -641,7 +641,7 @@ We will now generalise the metric-mismatch approximation first introduced by
 \citet{Brady1998} to the case where the signal and template are piecewise
 Taylor expansions. This calculation follows that given in Sec.~\ref{sec: the
 metric-mismatch approximation for fully-coherent searches} with the addition
-of an index labelling the sub-domains.
+of an index labelling the subdomains.
 
 Using a piecewise Taylor expansion
 to describe the signal and template, the discreet nature of the phase offset
@@ -656,7 +656,7 @@ X(\{\lt^{\alpha a}, \dl^{\alpha a}\}) & =
 & =  \frac{1}{\Tcoh}\sum_{c}^{\Nsd} \int_{t^{c}}e^{i \Delta \Phi^{c}}dt,
 \end{split}
 \end{align}
-where the integration is taken over the bounds of the $c^{th}$ sub-domain. The
+where the integration is taken over the bounds of the $c^{th}$ subdomain. The
 mismatch, in this general formulation, is then defined by
 \begin{equation}
 \mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\}) =
@@ -748,12 +748,12 @@ fully-coherent metric-mismatch can be calculated from Eqn.~\eqref{eqn: mismatch}
 In this final subsection, we will derive two explicit calculation of the metric
 given choices for the reference times. These will be used later on in this
 thesis.
-\subsubsection{Reference times in the middle of the sub-domains}
+\subsubsection{Reference times in the middle of the subdomains}
 If there are $\Nsd$
-sub-domains with the $a^{th}$ sub-domain of duration $\dT_a$ then we can bound the
+subdomains with the $a^{th}$ subdomain of duration $\dT_a$ then we can bound the
 integration over each subdomain by $t_{a}, t_{a} + \dT_a$. We are free to choose
 the reference time
-in any way we like; for this example, we define the reference time in each sub-domain
+in any way we like; for this example, we define the reference time in each subdomain
 to be halfway through, that is $\tref^{a} = t_{a} + \dT_a/2$. Using the following identity
 \begin{align}
 \int_{t_{a}}^{t_{a}+\dT_a} \left(t - (t_{a} + \frac{\dT_a}{2})\right)^{n}
@@ -796,7 +796,7 @@ g_{\alpha\beta ij} = \left[\begin{array}{ccc}
 \label{eqn: metric tref half}
 \end{align}
 
-\subsubsection{Reference times at the start of each sub-domain}
+\subsubsection{Reference times at the start of each subdomain}
 If instead we set the reference time to be at the start of each subdomain then,
 following the method used to derive Eqn.~\eqref{eqn: metric tref half}, the
 metric can be written compactly as

@@ -60,9 +60,9 @@ inertial}.
 
 \subsection{Euler rotation matrices}
 \label{sec: euler rotation matrices}
-The Euler rigid body equation of Eqn.~\eqref{eqn: eom} is defined in the
+The Euler rigid-body equation of Eqn.~\eqref{eqn: eom} is defined in the
 rotating frame of the star. To discuss results in the inertial frame of an
-observer, we need to transform the solutions of Euler's rigid body equations
+observer, we need to transform the solutions of Euler's rigid-body equations
 into the inertial frame.  An efficient way to do this is to determine the three
 Euler angles which transform the rotating frame axes, denoted by $(x',y',
 z')$, to the inertial frame axis, denoted by $(x, y, z)$. In particular, we
@@ -139,7 +139,7 @@ the other Euler angles and the components of the spin-vector. To have solutions
 both for the motion of the spin-vector in the rotating frame and the Euler
 angles we need to solve all six ODEs together. To be specific, the six ODEs are
 given in equations~\eqref{eqn: ODEs}: in the left-hand triplet is the
-components of the Euler rigid body equations first given in Eqn.~\eqref{eqn:
+components of the Euler rigid-body equations first given in Eqn.~\eqref{eqn:
 eom}; in the right-hand triplet we give the rearranged set of Euler angles ODEs
 from \citet{Landau1969}.
 \begin{align}
@@ -178,7 +178,7 @@ to be resolved and hence require greater computing time.
 \subsection{Initial conditions}
 \label{sec: initial conditions}
 
-Solving the rigid body equations, as in Sec.~\ref{sec:
+Solving the rigid-body equations, as in Sec.~\ref{sec:
 rotating frame}, we set
 $\Omega_a(t=0)$ to lie in the $x' - z'$ plane at an angle $a_{0}$ to the
 $z'$ axis. This gives a set of three initial conditions
@@ -309,7 +309,7 @@ simple analytic solutions given by
 \label{eqn: euler angles torque free evolution}
 \end{align}
 where in the second step we have inserted the initial conditions. Solution to
-the rigid body equations where derived in Eqn.~\eqref{eqn: free precession},
+the rigid-body equations where derived in Eqn.~\eqref{eqn: free precession},
 transforming these into the spherical components we have
 \begin{align}
 |\Omega_a| = \omega_0, && a = a_0, &&\textrm{and} && \varphi=\epsI\omega_0 \cos(a_0) t.
@@ -330,7 +330,7 @@ frequency. The polar angle $\theta$ should remain constant during this
 simulation. Inspecting its value however, we find it varies fractionally by
 $\sim 10^{-11}$.  This is caused by the finite numerical precision when
 performing the subtraction in equation \eqref{eqn: ODEs} for $\dot{\theta}$. On
-short time scales, these errors remain small; over sufficiently long time scale
+short timescales, these errors remain small; over sufficiently long timescale
 these errors can accumulate and eventually lead to a complete loss of numerical
 accuracy. We must therefore be vigilant to ensure this does not occur when
 considering realistic values.
@@ -391,7 +391,7 @@ the observable properties.
 %To ensure that the small wobble in $\theta$, which should remain constant, is
 %a numerical effect rather than a lack of physics we can plot the fractional
 %size of the wobble whilst changing the absolute error tolerance given to the
-%ODE stepping procedure. This is done in figure \ref{fig: error}
+%ODE stepping procedure. This is done in Fig.~\ref{fig: error}
 % \begin{figure}[ht]
 %\centering
 %\includegraphics[scale=0.4]{error_plot.pdf}
@@ -757,7 +757,7 @@ which initially have a minimal amount of precession.
 %additional effects: $\dot{\Phi}$ the instantaneous electromagnetic frequency
 %decays slowly, this is caused by the spin-down torque and is full agreement
 %with what we expect; a fast sinusoidal oscillation in $\dot{\Phi}$ on the spin
-%time scale, observable as a broadening of the line, is a result of the
+%timescale, observable as a broadening of the line, is a result of the
 %anomalous torque. As for the polar angle $\Theta$ the anomalous torque causes
 %slight changes in the limits of the sinusoidal variation. Both the anomalous
 %torque effects can be understood by realising that this effectively adds a
@@ -882,7 +882,7 @@ Equation \eqref{eqn: Jones 49} is calculated in the absence of any EM torque.
 Nevertheless, it is still appropriate when a torque is applied provided
 that the geometric effect is stronger that any other (this is discussed in
 the next few sections). As such, we begin by simulating a NS with the properties
-listed in table \ref{tab: PR 49}.
+listed in Table~\ref{tab: PR 49}.
 \begin{table}
 \centering
 \include{49_verification}
@@ -931,7 +931,7 @@ magnitude of modulations in term of Eqn.~\eqref{eqn: Jones 49} as
                                     |\Delta\Phi_{49}|
 \label{eqn: Jones 63 mag}
 \end{equation}
-The two ratios of time-scales define an `amplification factor'
+The two ratios of timescales define an `amplification factor'
 \begin{equation}
     \mathcal{A}_{\mathrm{EM}} = \left(\frac{\tau_{P}}{P}\right)
                                 \left(\frac{\tau_{P}}{\tauAge}\right).
@@ -1320,7 +1320,7 @@ angular beam-width.
 Given a value for $A_0$ and $\sigmaB$, we can use a numerical solution to the
 governing ODEs to simulate this pulse intensity exactly This is done in
 Fig.~\ref{fig: intensity variation} for a system where the variations in
-$\Theta$ occur on a time scale not much longer than the pulse period. This
+$\Theta$ occur on a timescale not much longer than the pulse period. This
 nonphysical simulation is intended to show the modulation of the individual
 pulsations due to precession.
 \begin{figure}[htb]
@@ -1384,7 +1384,7 @@ for which the cosine is less than the constant, i.e. inequality~\eqref{eqn: 6737
 is satisfied, defines the beam-width.
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.5\textwidth]{CosineIllustration.pdf}
+\includegraphics[width=.75\textwidth]{CosineIllustration.pdf}
 \caption{Illustration of the inequality in equation \eqref{eqn: 6737} the constant
          value represents the right hand side of this equation. The
          width $\Delta\Phi$ indicates the angular period during which inequality
@@ -1535,13 +1535,13 @@ our simulations. This is done to mimic the state of real pulsars, which in
 general are not found to be precessing. Moreover, it helps to discern the
 effects of the switching from that of precession.
 
-Precession will not occur when the spin vector is aligned with the axis about
+Precession will not occur when the spin-vector is aligned with the axis about
 which it rotates. The angle between these two we have defined as the wobble
 angle.  For minimal precession we should therefore set this wobble angle to
 zero. In all simulations, we consider a biaxial body with the full torque given
 by \eqref{eqn: single switch torque}. From our previous discussion on the
 wobble angle we can minimise the precession initially by setting the initial polar angle
-of the spin vector in the rotating frame to lie along the effective body-frame
+of the spin-vector in the rotating frame to lie along the effective body-frame
 axis. In the presence of the anomalous torque this is done with
 \begin{equation}
 a_{0} = \beta(\epsI, \epsA, \chi),
@@ -1724,7 +1724,7 @@ any signs of precession.
 
 In this chapter, we have developed a method to simulate observable properties
 of neutron stars by evolving the governing system of ODEs. These equations,
-given in Eqn.~\eqref{eqn: ODEs}, contain both the components of the spin vector
+given in Eqn.~\eqref{eqn: ODEs}, contain both the components of the spin-vector
 in the rotating frame and the Euler rotation angles required to transform from
 the rotating frame to the inertial frame. This step is important since it is in
 this reference frame that observers see the peculiar features of precession.

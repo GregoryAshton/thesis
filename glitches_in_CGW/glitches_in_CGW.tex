@@ -93,18 +93,18 @@ the template, a Taylor expansion in the phase usually up to second order, does
 not match the signal. For GW signals from non-axisymmetric distortions of NSs,
 we can expect that discrepancies from such a template may manifest in one of
 two ways. Firstly, we know from pulsar timing that the spin-down of a pulsars
-differs from a Taylor expansion due to timing-noise. We will
-consider the effect of timing-noise in Chapter~\ref{sec: timing noise in cgw}
+differs from a Taylor expansion due to timing noise. We will
+consider the effect of timing noise in Chapter~\ref{sec: timing noise in cgw}
 and Chapter~\ref{sec: timing noise in cgw analytic};
 %This is
 %continuous low-frequency structure in the residual between the best-fit Taylor
 %expansion timing model and the observed pulsations; for a review see
-%\citet{Hobbs2010}. The effect of timing-noise on continuous GW searches was
+%\citet{Hobbs2010}. The effect of timing noise on continuous GW searches was
 %first studied by \citet{Jones2004}. When performing a targeted search for a
 %known radio pulsar, \citet{Pitkin2004} developed a method to include the
-%contribution of timing-noise, as seen in the EM channel, into the GW template. In
+%contribution of timing noise, as seen in the EM channel, into the GW template. In
 %\citet{Ashton2015} we have previously used the Crab pulsar to estimate the
-%effect of timing-noise for fully-coherent searches. 
+%effect of timing noise for fully-coherent searches. 
 in this chapter we will
 address the second potential manifestation: glitches.
 
@@ -269,7 +269,7 @@ peaks, although the lower peak could be interpreted as two modes close together.
 
 By eye it is clear that there are at least two modes to the histogram. However,
 it is also possible that there may be more modes with less distinct differences
-in their mean. We investigate this issue in appendix~\ref{sec: Bayesian model
+in their mean. We investigate this issue in Appendix~\ref{sec: Bayesian model
 comparison} by applying a Bayesian model comparison for so-called Gaussian
 mixture models varying the number of components and also allowing for a skew as
 described in \citet{Ohagan1976}.  We find that all models with 2 or more
@@ -468,7 +468,7 @@ same colour labels as in Fig.~\ref{fig: Espinoza dF dF1}}
 \label{fig: extrapolation fit}
 \end{figure}
 
-Fitting a linear function in log-log space (see Appendix.~\ref{sec: linear regression in log-space} for details) our resulting fitting formulae for
+Fitting a linear function in log-log space (see Appendix~\ref{sec: linear regression in log-space} for details) our resulting fitting formulae for
 the frequency jump due to each separate population is
 \begin{align}
 \begin{split}
@@ -516,7 +516,7 @@ which have not yet been observed to glitch. From this grouping, the authors
 used the measured number of glitches $N_{g}$ to calculate a mean
 glitch rate~$\langle \dot{N}_{g}\rangle$. In Fig.~10 of their work they
 show that, to a good approximation, in log-space the mean glitch rate depends linearly on the spin-down rate;
-we reproduce this in Fig.~\ref{fig: Espinoza 10} using the data from table~4
+we reproduce this in Fig.~\ref{fig: Espinoza 10} using the data from Table~4
 of \citet{Espinoza2011}.
 \begin{figure}[htb]
 \centering
@@ -623,7 +623,7 @@ dynamics and a rise-time during which the glitch occurs; for now all such
 phenomena will be ignored, but we return to this in Sec.~\ref{sec: recovery}.
 
 Our glitch signal can be modelled by a piecewise Taylor-expansion with two
-sub-domains. We denote the time of the glitch as $R\Tobs$ where $R$
+subdomains. We denote the time of the glitch as $R\Tobs$ where $R$
 is a dimensionless fractional quantity such that $R\in[0, 1]$.
 Then labelling the period before the glitch as $A$ and after as
 $B$, the parameter offsets may be written
@@ -637,7 +637,7 @@ $B$, the parameter offsets may be written
 \label{eqn: delta lambda alpha glitch}
 \end{align}
 where $\dl^{\alpha j} = \ls^{\alpha j} - \lt^{\alpha j}$. We will set the
-reference times for each sub-domain half-way through the sub-domain and also define a global
+reference times for each subdomain half-way through the subdomain and also define a global
 reference time $\tref$ at the glitch, $R\Tcoh$. To help orient the reader with
 these choices, we provide a schematic of the signal frequency over the glitch
 in Fig.~\ref{fig: frequency jump}.
@@ -648,7 +648,7 @@ in Fig.~\ref{fig: frequency jump}.
 Note that the global reference time $\tref$ is set to coincide with the time
 at which the glitch occurs; in this instant it is half-way through, but could
 in general be at any time during the observation. The local reference times are
-set halfway through each sub-domain.}
+set halfway through each subdomain.}
 \label{fig: frequency jump}
 \end{figure}
 
@@ -663,7 +663,7 @@ The jumps at the glitch itself may then be parameterised as
 \end{align}
 The time-dependence here indicates that one must account for the
 changes due to lower order terms between the reference time, halfway through
-the sub-domain, and the glitch. Since we do not consider second-order spin-down
+the subdomain, and the glitch. Since we do not consider second-order spin-down
 terms this is not required for the $\Dnudotglitch$ calculation.
 
 In the following sections, we consider fully-coherent and semi-coherent GW
@@ -680,7 +680,7 @@ minimisation step into the calculation.
 \subsubsection{Fully-coherent searches: analytic calculation}
 
 To calculate the fully-coherent mismatch, we first expand
-the summation in Eqn.~\eqref{eqn: mismatch} over the two sub-domains giving three terms
+the summation in Eqn.~\eqref{eqn: mismatch} over the two subdomains giving three terms
 \begin{align}
 \begin{split}
 \mutilde = &
@@ -764,7 +764,7 @@ simplifying yields a minimum fully-coherent mismatch of
 \label{eqn: mismatch fully-coherent glitch}
 \end{align}
 An important distinction must be made here between $\Deltanu^{a}$ which is the
-frequency offset between the signal and template in the $a^{th}$ sub-domain, and $\Dnuglitch$
+frequency offset between the signal and template in the $a^{th}$ subdomain, and $\Dnuglitch$
 the signal frequency jump at the glitch. Notably, the minimum mismatch
 depends only on $\DphiRglitch, \Dnuglitch$, and $\Dnudotglitch$; it is
 independent of the overall phase, frequency, or spin-down of the signal.
@@ -815,7 +815,7 @@ T_\textrm{coh} =
 \end{align}
 We have parameterised using the largest jumps seen in the
 glitch-catalogue.  This is a useful order-of-magnitude estimate and tells us
-that over time-scales comparable to current and future searches (at least the
+that over timescales comparable to current and future searches (at least the
 fully-coherent follow up) the mismatch can potentially rise above 0.1.
 We will investigate the predictions of Eqn.~\eqref{eqn: R-averaged fully coherent}
 in depth later on in Sec.~\ref{sec: estimating the mismatch}.
@@ -1089,7 +1089,7 @@ effect here.
 %based on the prior assumption that, for the target population, the fraction of
 %Vela-like and normal glitches is identical to the observed popultion. Therefore
 %the probabilities are given by the weights of the two mixtures as given in
-%table~\ref{tab: mixture components}.
+%Table~\ref{tab: mixture components}.
 
 
 \subsection{Fully-coherent searches}
@@ -1126,7 +1126,7 @@ is, for most of the parameter space, lower than 1, but not vanishingly so.
 We note here that these plots only show the `best-fit' contour lines predicted
 by our fitting for glitch sizes. There is substantial variability in the population
 glitch sizes and this is reflected in large error bars in the fitting formulae
-derived in Sec.~\ref{sec: statistical properties}. In appendix.~\ref{sec: uncertainties}
+derived in Sec.~\ref{sec: statistical properties}. In Appendix~\ref{sec: uncertainties}
 we translate these estimates into uncertainties on the mismatch contour lines.
 
 \subsection{Semi-coherent searches}
@@ -1273,7 +1273,7 @@ expect with no glitch recovery.
 \centering
 \caption{Predictions for the expected number of glitches and mismatch at the
          largest spin-down rates for the searches listed in
-         table~\ref{tab: searches}. We present results both for the initial
+         Table~\ref{tab: searches}. We present results both for the initial
          semi-coherent search mismatch and then for the mismatch in a fully-coherent
          search over the full observation time; note that the supernova
          remnants search was a fully-coherent search only and we give only the
@@ -1432,7 +1432,7 @@ and the simplest model, a GMM with $N=1$  components. This is computed by
 
 We use the \emph{emcee} \citep{Foreman-Mackay2013} MCMC algorithm to sample from the
 posterior and thermodynamic integration to estimate the evidence integrals
-\citep{Goggans2004}. In table~\ref{tab: BF} we provide the $\log_{10}$ of the
+\citep{Goggans2004}. In Table~\ref{tab: BF} we provide the $\log_{10}$ of the
 Bayes factor for several possible models.
 \begin{table}[htb]
 \centering
@@ -1447,7 +1447,7 @@ simplest N=1 GMM. The error is an estimate of the numerical error in the
 thermodynamic integration. }
 \label{tab: BF}
 \end{table}
-The Bayes factor between any two of the models given in table~\ref{tab: BF} can
+The Bayes factor between any two of the models given in Table~\ref{tab: BF} can
 be calculated from their difference.
 
 This table clearly shows that the data is decisive: a Gaussian mixture model
@@ -1466,7 +1466,7 @@ found for each model.
 \includegraphics[width=0.5\textwidth]{GMM_comparison}
 \caption{The distribution of glitch sizes in frequency along with the predictions
          for the components of several GMM. The Bayes-factor for these models
-         can be found in table~\ref{tab: BF}.}
+         can be found in Table~\ref{tab: BF}.}
 \label{fig: pdf}
 \end{figure}
 It is clear from these plots that the $N=2$ model is unable to explain
