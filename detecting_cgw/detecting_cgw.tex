@@ -8,7 +8,7 @@
 
 Timing variations, in the form of glitches or timing noise, may pose a serious
 risk to efforts to discover continuous GWs from neutron stars. This is because
-searches rely on \emph{matched-filtering}, which searches the data using a
+searches rely on \emph{matched filtering}, which searches the data using a
 template; if the template and signal don't match, due to timing variations in
 the signal, the template may be unable to detect the signal. In this section,
 we will give a general introduction to the detection methods used in GW data
@@ -112,7 +112,7 @@ problem of timing variations later on in this chapter.
 We begin by assuming that the gravitational-wave detector strain data contains
 a periodic GW signal with phase $\PhiS(t; \ls^{\alpha})$, where $\ls^{\alpha}$
 is a vector of the signal parameters. A fully-coherent search consists of
-applying a matched-filtering algorithm over a coherence time $\Tcoh$ to search
+applying a matched filtering algorithm over a coherence time $\Tcoh$ to search
 the data using a \emph{template}; let us then denote the phase evolution of the
 template as $\PhiT(t; \lt^{\alpha})$, such that $\lt^{\alpha}$ is a vector of
 the template parameters.
@@ -123,13 +123,13 @@ Defining the phase-difference between the signal and the template as
 \label{eqn: phase diff}
 \end{align}
 then, following the work of \citet{Prix2005} and neglecting amplitude modulations
-in the signal, we can define the matched-filtering amplitude
+in the signal, we can define the matched filtering amplitude
 \begin{equation}
 X = \frac{1}{\Tcoh}\int_{\Tcoh}e^{i\Delta\Phi} dt.
 \label{eqn: matched filtering amplitude}
 \end{equation}
 Defining $\rhotilde$ as the signal to noise ratio (SNR) measured in a fully-coherent
-search, then the matched-filtering amplitude defines the loss of SNR incurred
+search, then the matched filtering amplitude defines the loss of SNR incurred
 due to the non-zero phase difference with respect to a perfectly matched signal
 with SNR $\rhotilde_{0}$ such that
 \begin{align}
@@ -213,7 +213,7 @@ gives the mismatch between a smooth Taylor expansion signal and template. In
 this work we will calculate the mismatch for a signal that is not a smooth
 Taylor expansion. This can done in this way for some special cases. For
 example, taking $\dl^{\alpha} = [\Deltaphi, 0, 0]$, the mismatch is found to be
-zero: this reflects the fact that fully-coherent matched-filtering is
+zero: this reflects the fact that fully-coherent matched filtering is
 insensitive to any arbitrary phase offset between the signal and template. In
 more complicated cases, the integrals become intractable. To aid in
 calculation, we will use the so-called metric approximation. In the next section
@@ -240,7 +240,7 @@ where $g_{\alpha\beta}$ is the parameter space metric given by
 \end{equation}
 Note that we define $\partial_{\alpha} \equiv \partial_{\dl^{\alpha}}$.
 The metric is a function  of both the total coherence time~$\Tcoh$ over which the
-matched-filter is performed and the reference time at which the Taylor expansions
+matched filter is performed and the reference time at which the Taylor expansions
 are defined, but not the signal itself. Partially evaluating the metric, we find that
 \begin{align}
 \begin{split}

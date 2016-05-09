@@ -62,7 +62,7 @@ assume that the EM and GW signals are strongly coupled, then we can use a
 of timing noise in the EM signal is small, then a single Taylor expansion is
 sufficient.  If instead the level of timing noise is large, then the EM data
 can be used to account for it; this is done by applying an adapted
-matched-filtering phase-model that closely follows the observed EM phase model
+matched filtering phase-model that closely follows the observed EM phase model
 \citep{Pitkin2004}. If instead we assume that the EM and GW signals are
 loosely coupled, then we should perform a \emph{narrow-band} search in a small
 area of parameter space.  These narrow-band searches aim to allow for small
@@ -784,15 +784,14 @@ are explicitly given by
 
 The total number of rotations $N$ between months is arbitrarily a function of
 the length of a given month and the spindown parameters. Calculating this
-allows us to check how well phase connected lines of the ephemeris are. A phase
-connected solution tracks the rotation of the pulsar to within a single pulse.
-The residual number of rotations defined as
+allows us to check how well phase-connected lines of the ephemeris are,
+we quantify this by the residual number of rotations, defined as
 \begin{equation}
-\Delta N = N - \textrm{round}(N)
+\Delta N = N - \textrm{round}(N),
 \end{equation}
-quantifies how well phase connected the timing solution is.
+where by `round` we indicate rounding to the nearest integer number of rotations.
 
-In Figure~\ref{fig: crab kde}C we plot the KDE of $\Delta N$ having filtered
+In Figure~\ref{fig: crab kde}C we plot the gaussian KDE of $\Delta N$ having filtered
 against known glitch events. We found four jumps where $0.1 < \Delta N < 1.0$;
 again these were found to be occur within~$\sim200$~days of known glitches and
 so were removed to focus attention on the timing noise activity.
