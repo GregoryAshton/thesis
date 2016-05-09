@@ -1050,7 +1050,7 @@ from which we arrive at
 W_{10}(t) = \frac{P}{\pi} \cos^{-1}\left(
 \frac{\cos \Psi(t) - \cos\Theta(t)\cos\iota}{\sin\Theta(t)\sin\iota}
 \right).
-\label{eqn: w10 beam-width gaussian}
+\label{eqn: w10 beam-width Gaussian}
 \end{align}
 
 In order for the observer to measure the width at 10\% of the maximum, the beam
@@ -1064,7 +1064,7 @@ spin-down analysis, we know the first of these conditions is true for B1828-11
 since $\chi$ is close to $\pi/2$. The second condition is based on the assumption
 that the observer would not see a tightly pulsed beam if they are not close to the
 polar angle of the beam. In this special instance, inserting
-Eqn.~\eqref{eqn: Psi} into Eqn.~\eqref{eqn: w10 beam-width gaussian}, the beam-width is
+Eqn.~\eqref{eqn: Psi} into Eqn.~\eqref{eqn: w10 beam-width Gaussian}, the beam-width is
 \begin{align}
 W_{10} \bigg|_{\Theta=\iota=\pi/2} = \frac{P}{\pi}\sqrt{2\ln10} \rho.
 \end{align}
@@ -1086,7 +1086,7 @@ bias into the model comparison.
 \subsubsection{Parameter estimation for the Gaussian beam-width model}
 
 We are in a position to fit the Gaussian beam model to the observed $W_{10}$
-values. In Table~\ref{tab: gaussian beam-width prior} we list the priors taken
+values. In Table~\ref{tab: Gaussian beam-width prior} we list the priors taken
 from the spin-down fit along with three additional priors. For $\iota$ we
 choose a uniform prior in $\cos\iota$ on $[-1, 1]$, this corresponds to
 allowing $\iota$ to range from $[0, \pi]$ (the observer could be in either
@@ -1097,12 +1097,12 @@ data (again we use the same prior for all three models).
 \centering
 \caption{Prior distributions for the beam-width Gaussian precession model. Parameters
 for which the prior is taken from spin-down posteriors are labelled by $^{*}$.}
-\label{tab: gaussian beam-width prior}
+\label{tab: Gaussian beam-width prior}
 \input{\thisdir/Table_Beamwidth_Gaussian_prior.tex}
 \end{table}
 
-Fitting Eqn.~\eqref{eqn: w10 beam-width gaussian} to the data we discover that
-the Gaussian beam model is a poor fit to the data. In Figure~\ref{fig: gaussian
+Fitting Eqn.~\eqref{eqn: w10 beam-width Gaussian} to the data we discover that
+the Gaussian beam model is a poor fit to the data. In Figure~\ref{fig: Gaussian
 beam-width posterior}B the MPE shows that while the model is able to fit the
 averaged beam-width, it cannot simultaneously fit the amplitude of periodic
 modulations.
@@ -1110,10 +1110,10 @@ modulations.
 \centering
 \includegraphics[width=\textwidth]{Beamwidth_Gaussian_PosteriorWithFit}
 \caption{\bigfigurecaptions{Gaussian}{spin-down}}
-\label{fig: gaussian beam-width posterior}
+\label{fig: Gaussian beam-width posterior}
 \end{figure*}
 
-The posterior distribution (as seen in Figure~\ref{fig: gaussian beam-width
+The posterior distribution (as seen in Figure~\ref{fig: Gaussian beam-width
 posterior}A) is Gaussian for all of the parameters except $\cos\iota$ for which
 it concentrates the probability at $\iota\approx0$: the observer looks almost
 down the angular momentum vector. Since $\chi\approx\pi/2$ and $\theta \ll 1$,
@@ -1138,7 +1138,7 @@ nature of the Gaussian intensity under changes in the impact parameter.
 %effectively only provides one free parameter $\rho$ to fit both the average
 %beam-width and the variations.
 %
-%To demonstrate this let us expand Eqn.~\eqref{eqn: w10 beam-width gaussian}
+%To demonstrate this let us expand Eqn.~\eqref{eqn: w10 beam-width Gaussian}
 %about $\Theta = \iota$ such that $\Delta\Theta \ll 1$. First we define the
 %coefficients of each term as
 %\begin{align}
@@ -1148,7 +1148,7 @@ nature of the Gaussian intensity under changes in the impact parameter.
 %\end{align}
 %The zeroth-order term $PC_0/\pi$ is the beam-width as would be measured if/when
 %the beam-axis cuts the observer's line-of-sight. For convenience let us define
-%$p=2\rho^{2}\ln 10$. Then, expanding Eqn.~\eqref{eqn: w10 beam-width gaussian}
+%$p=2\rho^{2}\ln 10$. Then, expanding Eqn.~\eqref{eqn: w10 beam-width Gaussian}
 %we find
 %\begin{align}
 %C_0 & = \arccos\left(\frac{\cos(2\rho^{2}\ln10) - \cos^{2}\iota}{\sin^{2}\iota}\right) ,
@@ -1256,7 +1256,7 @@ the beam-width measure because $W_{10}$ is defined by the ratio of the
 intensity to that at the observed peak $\In_{\textrm{max}}$.
 
 This loss of a degree of freedom means that Eqn.~\eqref{eqn: W10 elliptical} is
-an equivalent to an expansion of Eqn.~\eqref{eqn: w10 beam-width gaussian} in
+an equivalent to an expansion of Eqn.~\eqref{eqn: w10 beam-width Gaussian} in
 the planar limit (i.e. the non-circular nature introduced by Eqn.~\eqref{eqn: 2D intensity}
 does not manifest in the prediction for $W_{10}$)
 and so will suffer the same problems if fitted to the data. To further
