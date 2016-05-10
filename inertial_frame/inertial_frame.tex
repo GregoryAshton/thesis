@@ -207,18 +207,18 @@ due to the fact that the torque is not parallel to the angular momentum.
 We have already set the initial condition on $\Omega_a$ in Eqn.~\eqref{eqn:
 spin init}, therefore the initial angular momentum in the rotating frame is given by
 \begin{equation}
-  \Jr_a(t=0) = I \Omega_a(t=0).
+  \Jr_a(t=0) = I^{b}_{\; a} \Omega_b(t=0).
 \end{equation}
 If we set an initial condition on the angular momentum in the inertial frame
-$\Ji$ then Eqn.~\eqref{eqn: rotation matrix} uniquely defines the initial
+$\Ji_a$ then Eqn.~\eqref{eqn: rotation matrix} uniquely defines the initial
 Euler angles. We choose to set the initial angular momentum in the inertial
 frame to lie along the inertial $z$ axis such that
 \begin{equation}
-  \Ji_a(t=0) = |\Ji| \hat{z}.
+  \Ji_a(t=0) = |\Ji_a| \hat{z}.
 \end{equation}
 The magnitude of the angular momentum is
 \begin{equation}
-|J| = |I \Omega_{a}|=\omega_{0}\sqrt{(I_{xx}\sin a_{0})^{2} + (I_{zz}\cos a_{0})^{2}},
+|J_a| = |I^{b}_{\; a} \Omega_{b}|=\omega_{0}\sqrt{(I_{xx}\sin a_{0})^{2} + (I_{zz}\cos a_{0})^{2}},
 \end{equation}
 then substituting into the inverted form of Eqn.~\eqref{eqn: transform}, we have
 \begin{equation}
@@ -235,7 +235,7 @@ I_{zz} \cos a_{0}
 \end{array}\right].
 \label{eqn: 010203}
 \end{equation}
-This gives us three equations for two unknowns. Our choice to set $\Ji$ along
+This gives us three equations for two unknowns. Our choice to set $\Ji_a$ along
 the $z$ axis leaves the initial value of $\phi$ a free variable,
 we set $\phi(t=0) = 0$ without loss of generality.
 Rearranging the third component of Eqn.~\eqref{eqn: 010203} yields
