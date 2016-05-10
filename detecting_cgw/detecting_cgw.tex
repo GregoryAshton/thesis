@@ -74,7 +74,7 @@ for the spin-down.  Pulsar astronomers measure the frequency $\nu$ and higher
 order coefficients describing the rotation of the pulsar itself. In this work
 we will denote the GW frequency and its derivatives by $f, \dot{f}$,
 etc. The relation between the GW frequency and rotation frequency depends on
-the emmision; in this work we will consider only searches ;or emission from
+the emmision mechanism; in this work we will consider only searches for emission from
 non-axisymmetric neutron stars such that $f=2\nu$~\citep{Shapiro83}.
 
 The rest of this chapter is organised as follows: in Section~\ref{sec:
@@ -85,7 +85,7 @@ familiarise the reader with methods to calculate the mismatch when the phase of
 the GW is not a smooth Taylor expansion and describe why this method of
 calculating the mismatch becomes intractable for complicated signals. Then, in
 Section~\ref{sec: generalising the metric-mismatch} we will define a new approach
-to calculating the mismatch by splitting the signal into a separate subdomains.
+to calculating the mismatch by splitting the signal into separate subdomains.
 
 
 \section{Introduction to the mismatch}
@@ -125,15 +125,18 @@ Defining the phase-difference between the signal and the template as
 then, following the work of \citet{Prix2005} and neglecting amplitude modulations
 in the signal, we can define the matched filtering amplitude
 \begin{equation}
-X = \frac{1}{\Tcoh}\int_{\Tcoh}e^{i\Delta\Phi} dt.
+X %= \frac{1}{\Tcoh}\int e^{i\PhiS(t)} e^{-i\PhiT} dt
+= \frac{1}{\Tcoh}\int_{\Tcoh}e^{i\Delta\Phi} dt,
 \label{eqn: matched filtering amplitude}
 \end{equation}
-Defining $\rhotilde$ as the signal to noise ratio (SNR) measured in a fully-coherent
-search, then the matched filtering amplitude defines the loss of SNR incurred
-due to the non-zero phase difference with respect to a perfectly matched signal
-with SNR $\rhotilde_{0}$ such that
+This amplitude will have a global maximum of $|X|=1$ for a perfectly matched
+signal and will decrease for increasing phase mismatches. In this way, if we
+define $\rhotilde$ as the signal to noise ratio (SNR) measured in a fully-coherent
+search, then $X$ defines the loss of SNR incurred
+due to the non-zero phase difference $\Delta\Phi$ as compared to a perfectly matched signal
+with SNR $\rhotilde_{\textrm{pm}}$ such that
 \begin{align}
-\rhotilde = |X|\rhotilde_{0}.
+\rhotilde = |X|\rhotilde_{\textrm{pm}}%.
 \end{align}
 A simple, dimensionless measure of the loss of SNR is found by rearranging
 and defining the fully-coherent \emph{mismatch} as
@@ -153,7 +156,7 @@ In this work we will quantify the effect of glitches by the mismatch. However,
 it may be useful to interpret a mismatch in the following way. For a perfectly
 matched continuous GW signal it can be shown \citep{Jaranowski1998} that the SNR scales as
 \begin{equation}
-\rho_{0} \propto \frac{h_{0}}{\sqrt{\textrm{S}_{\textrm{n}}}}
+\rho_{\mathrm{pm}} \propto \frac{h_{0}}{\sqrt{\textrm{S}_{\textrm{n}}}}
                                \sqrt{\Tobs \mathcal{N}},
 \end{equation}
 where $h_{0}$ is the strain-amplitude for an optimally oriented source with
@@ -190,7 +193,7 @@ derivative of the frequency.
 
 For blind searches, where we have no hints about the phase evolution,
 typical continuous GW searches assume that the GW signal is a Taylor expansion and
-search for it using Taylor expansion template. Defining $\lt^{\alpha} = [\phiT,
+search for it using a Taylor expansion template. Defining $\lt^{\alpha} = [\phiT,
 \nuT, \nudotT]$ as the Taylor expansion
 template parameters, Eqn.~\eqref{eqn: phase diff}, the phase difference, is
 \begin{align}
@@ -301,24 +304,25 @@ For each fully-coherent segment, we can rearrange Eqn.~\eqref{eqn: numeric misma
 to give
 \begin{align}
 \rhotilde^{2}_{j}(\lt^{\alpha}, \dl^{\alpha}) =
- \rhotilde^{2}_{0}(1 - \mutilde_{j}(\lt^{\alpha}, \dl^{\alpha})).
+ \rhotilde^{2}_{\mathrm{pm}}(1 - \mutilde_{j}(\lt^{\alpha}, \dl^{\alpha})).
 \end{align}
-Here we take $\rhotilde_{0}$ to be the same for all segments such that
+Here we take $\rhotilde_{\mathrm{pm}}$ to be the same for all segments such that
 it does not carry a $j$-index; in this way we neglect variations
 in the signal such as the signal amplitude or the motion of the Earth and also require
 all segments to be of equal duration.
 For the semi-coherent
-detection statistic we may define $\rhohat^{2}_0$ as the squared SNR in the
-absence of any mismatch such that
+detection statistic we may define $\rhohat^{2}_\mathrm{pm}$ as the squared SNR in the
+absence of any mismatch. Then the semi-coherent mismatch $\muhat$ can be implicitly
+defined as
 \begin{align}
 \rhohat^{2}(\lt^{\alpha}, \dl^{\alpha}) =
- \rhohat^{2}_0(1 - \muhat(\lt^{\alpha}, \dl^{\alpha})),
+ \rhohat^{2}_\mathrm{pm}(1 - \muhat(\lt^{\alpha}, \dl^{\alpha})),
 \end{align}
 where $\muhat$ is the semi-coherent mismatch.
 When there is no mismatch, the sum of the $\rhotilde^{2}_{\mathrm{pm}}$ is equal the
 semi-coherent $\rhohat^{2}_{\mathrm{pm}}$ such that
 \begin{align}
-\rhohat^{2}_0 = \Nseg\rhotilde^{2}_0.
+\rhohat^{2}_\textrm{pm} = \Nseg\rhotilde^{2}_\textrm{pm}.
 \end{align}
 Inserting all these expressions into Eqn.~\eqref{eqn: semi-coherent sum} we see that
 the semi-coherent mismatch is an average over the individual full-coherent segment
@@ -344,10 +348,10 @@ signals and templates. Signals which contain timing variations are by definition
 not smooth Taylor expansions. Therefore, we need a method to calculate the
 mismatch for arbitary signals. In the next section, we will discuss some
 special cases of timing variations where the mismatch can be calculated
-exactly. Then in the final chapter we will introduce a new tool which can be
+exactly. Then in the final section, we will introduce a new tool which can be
 used to calculate the mismatch for arbitrary signals.
 
-\section{Mismatch from differences in the GW phase}
+\section{Exact mismatch from irregularities in the phase}
 \label{sec: mismatch from differences in the gw phase}
 
 The $\mathcal{F}$-statistic considered in \citet{Brady1998} analytically
@@ -356,7 +360,7 @@ modelled by a single smooth Taylor expansion, but with a finite phase-offset,
 the mismatch is zero: the mismatch is insensitive to any overall phase
 difference between the signal and template. However, a mismatch will occur if
 the overall phase between the signal and template changes during an
-observation. In this section we will investigate three scenarios where this
+observation. In this section, we will investigate three scenarios where this
 occurs. While not all these scenarios are physically relevant to real astrophysical
 systems, this introduces some concepts in a simple setting before we tackle
 the more difficult real astrophysical systems.
@@ -452,7 +456,7 @@ a stepping stone to understanding the more complicated complete result.
 %\label{fig: two plot}
 %\end{figure}
 
-\subsection{N subdomains with phase discontinuity's}
+\subsection{N subdomains with phase discontinuities}
 We can further generalise Eqn.~\eqref{eqn: two segment phase mismatch} by
 letting the signal be comprised of $N$ equal duration subdomains with a phase discontinuity
 $\Delta\phi_i$ for the $i^{th}$ subdomain.
@@ -478,7 +482,7 @@ will exist in the sum. This leads to a cancellation of the imaginary part and a
 doubling of the real part
 \begin{equation}
 |X|^{2}  = \left(\frac{1}{N} + \frac{1}{N^{2}}\sum_{i=1}^{N}\sum_{\substack{j=1 \\j\ne i}}^{N} \cos(\Delta\phi_{i} - \Delta \phi_{j})\right).
-\end{equation}•
+\end{equation}
 Then the fully-coherent mismatch is given by:
 \begin{equation}
 \mutilde = 1 - \frac{1}{N} - \frac{1}{N^{2}}\sum_{i=1}^{N}\sum_{\substack{j=1 \\j\ne i}}^{N} \cos(\Delta\phi_{i} - \Delta\phi_{j}).
@@ -504,7 +508,7 @@ oscillations, the mismatch is non-zero.
 We model a small sinusoidal phase offset by a trigonometric function
 \begin{equation}
 \Delta \Phi(t) = \varepsilon \cos(\omega t),
-\end{equation}•
+\end{equation}
 where $\varepsilon$ is the amplitude of variations and $\omega$ is the angular
 frequency of the oscillations. If we assume that the variations are small
 $\varepsilon \ll 1$, we can Taylor expand the exponential phase offset in
@@ -532,34 +536,40 @@ to the oscillation period; this is shown in Figure~\ref{fig:
 OscillatoryPhaseMismatch}.
 \begin{figure}[ht]
 \centering
-\includegraphics[width=.6\textwidth]{OscillatoryPhaseMismatch}
-\caption{Plot demonstrating the behaviour of equation
-         \eqref{eqn: Oscillating mismatch}, the mismatch for an oscillating
-         phase offset.}
+\includegraphics[width=.75\textwidth]{OscillatoryPhaseMismatch}
+\caption{Plot demonstrating the behaviour of Eqn.~\eqref{eqn: Oscillating
+mismatch}, the mismatch for an oscillating phase offset.}
 \label{fig: OscillatoryPhaseMismatch}
 \end{figure}
 
 This simple model demonstrates that if the signal and template are on average
 coherent, but the phase residual between them oscillates about the mean, then
-over several cycles the mismatch will approach a constant value, which depends on
-the maximum amplitude of the residuals.  For a quasi-periodic signal the same
-overall picture will emerge with the size of the mismatch dependent on the mean
-average size of oscillations in the residual.
+over several cycles the mismatch will approach a constant value, which depends
+on the maximum amplitude of the residuals.  For a quasi-periodic signal, we
+expect the same overall picture will emerge with the size of the mismatch
+dependent on the mean average size of oscillations in the residual.
 
 \section{Generalising the metric-mismatch approximation to arbitrary signals}
 \label{sec: generalising the metric-mismatch}
-In Section~\ref{sec: the metric-mismatch approximation for fully-coherent searches}
-we introduced the metric-mismatch, a tool to estimate
-the loss of SNR for Taylor expansion signals and templates in fully-coherent
-and semi-coherent searches. In this section, we will extend the fully-coherent
-mismatch to handle cases where the signal is not a Taylor expansion, but can
-be approximated by a \emph{piecewise} Taylor expansion. Specifically we mean
-breaking any arbitrary signal into $\Nsd$ \emph{subdomains} each of which we
-describe the signal by a single Taylor expansion; the resulting collection of
-all individual Taylor expansions is a piecewise Taylor expansion. We will
-distinguish between a subdomain, which describes a part of the piecewise
-function and a segment, which is the division of an observation period for a
-semi-coherent search as discussed in Section~\ref{sec: semi-coherent mismatch}. 
+
+In the previous section, we discussed some special cases where the mismatch can be
+calculated exactly for a signal which has a phase which can't be described by
+a single Taylor expansion.
+For more general signals, where the frequency and spin-down rate may
+vary, the equations soon become unwieldy. In Section~\ref{sec: the
+metric-mismatch approximation for fully-coherent searches} we introduced the
+metric-mismatch, a tool to estimate the loss of SNR for Taylor expansion
+signals and templates in fully-coherent searches. In this section, we will
+extend the fully-coherent metric-mismatch to handle cases where the
+signal is not a Taylor expansion, but can be approximated by a \emph{piecewise}
+Taylor expansion; this will allow us to handle any arbitrary phase evolution of
+the signal. By piecewise Taylor expansion we mean breaking any arbitrary signal into
+$\Nsd$ \emph{subdomains} each of which we describe the signal by a single
+Taylor expansion; the resulting collection of all individual Taylor expansions
+is a piecewise Taylor expansion. We will distinguish between a \emph{subdomain}, which
+describes a part of the piecewise function and a \emph{segment}, which is the division
+of an observation period for a semi-coherent search as discussed in
+Section~\ref{sec: semi-coherent mismatch}. 
 
 This \emph{generalised metric-mismatch} will be used in Section~\ref{sec: glitches
 in cgw} to calculate the mismatch due to glitches and in Section~\ref{sec: timing
@@ -736,7 +746,7 @@ fully-coherent metric-mismatch can be calculated from Eqn.~\eqref{eqn: mismatch}
 %2\pi (t - t_{r}^{i}) & (2\pi)^{2} (t - t_{r}^{i})^{2} & \cdots \\
 %2\pi (t - t_{r}^{i}) & (2\pi)^{2} (t - t_{r}^{i})^{2} & \cdots \\
 %\vdots & \vdots & \ddots
-%\end{array}•
+%\end{array}
 %\right]^{\alpha\beta}.
 %\label{eqn: Eterm}
 %\end{equation}
@@ -766,7 +776,7 @@ we have that
 \dT_a  & 0 &  \frac{\pi \dT_a^{3}}{12}\\
 0 & \frac{\pi^{2}\dT_a^{3}}{3} &  0\\
 \frac{\pi \dT_a^{3}}{12} & 0  &  \frac{\pi^{2}\dT_a^{5}}{80}\\
-\end{array}•
+\end{array}
 \right]^{\alpha\beta},
 \end{equation}
 and
