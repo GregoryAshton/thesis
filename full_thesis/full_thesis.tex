@@ -1,4 +1,4 @@
-\documentclass[twoside]{thesis}
+\documentclass[twoside, 11pt]{thesis}
 
 \usepackage{/home/greg/thesis/thesis}
 \usepackage{/home/greg/thesis/definitions}
@@ -24,26 +24,25 @@
 
 \begin{abstract}
 
-Timing variations in pulsars, low frequency ubiquitous structure
-known as timing noise and sudden increases in frequency which we
-call glitches, provide a means to study neutron stars. Since the first
-observations were made of these phenomena, many models have been proposed to
-explain them, yet no definitive explanation has arisen. In particular timing
+Timing variations in pulsars, low frequency ubiquitous structure known as
+timing noise and sudden increases in frequency which we call glitches, provide
+a means to study neutron stars. Since the first observations, many models have
+been proposed, yet no definitive explanation has arisen. In particular timing
 noise, perhaps due to the variety of phenomena it pertains too, lacks any
 universal description.
 
 In this thesis, we aim to improve this situation by developing models of timing
 noise, we focus chiefly on precession models which explain periodic modulation.
-Developing such models is important as it provides an opportunity to infer the
+Developing models and testing them provides an opportunity to infer the
 elemental properties of neutron stars: evidence for long period precession has
-implications for the superfluid component predicted by models which are used to
-explain the occurrence of glitches. However, often more than one model can
+implications for the superfluid component predicted by models used to explain
+glitches. However, often more than one model can
 qualitatively explain the data, therefore we need a method to decide which
-model best fits the data. This is precisely the case for one particular pulsar, 
-PSR~B1828-11. This pulsar is used as evidence for both precession
+model best fits the data. This is precisely the case for
+PSR~B1828-11 which has been used as evidence for both precession
 and so-called magnetospheric switching. We address this confusion by applying the tools of
 probability theory to develop a Bayesian model comparison and
-find that evidence in favour of precession.
+find that the evidence is in favour of precession.
 
 Our knowledge of neutron stars is exclusively derived from our electromagnetic
 observations. In the future we may detect gravitational waves from neutron
@@ -58,9 +57,6 @@ electromagnetic observations to predict for what types of searches this may be
 an issue. We find that while timing noise is unlikely to be an issue for current
 searches, glitches may cause a significant problem for all-sky searches
 for gravitational waves from neutron stars.
-
-
-
 \end{abstract}
 
 {
@@ -81,8 +77,8 @@ for gravitational waves from neutron stars.
 }
 
 \tableofcontents
-%\listoffigures
-%\listoftables
+\listoffigures
+\listoftables
 
 %% -----------------------
 %% Authorship declaration
@@ -147,6 +143,144 @@ and beam-width for PSR B1828-11}
 
 \chapter{Conclusion}
 \label{sec: final conclusion}
+
+Timing variations in pulsars have long been used as a way to infer the
+elemental properties of neutron stars. However, while in isolated cases models
+for glitches and timing noise have successfully explained the observations, we
+are some way from having a complete and universal understanding. For timing
+noise, this may be due to the varied ways in which it manifests, but in the
+comprehensive review by \citet{Hobbs2010} the authors suggest that over
+sufficiently long timescales (which may be much longer than we are able to
+observe) timing residuals show quasi-periodic features. With this in mind, in
+this thesis we investigated two mechanisms of strictly periodic variations in
+detail: magnetospheric switching and precession.
+
+We began in Chapter~\ref{sec: rotating frame} by studying the action of the
+electromagnetic torque on precessing pulsars using numerical solutions to the
+Euler rigid-body equations coupled to the \citet{Deutsch1955} torque. This allowed
+us to investigate the role of the anomalous component of the torque and conclude
+that, for realistic neutron stars, this can safely by ignored. We cleared up some
+confusion in the literature by showing that the `persistent precession' solutions
+found by \citet{Melatos2000} where in fact not precessing, but aligning with
+the effective body frame which results from the inclusion of the anomalous torque.
+
+In order to test models they need to be predictive, in the sense that they
+model the features of a neutron star observed by pulsar astronomers. To address
+this in the context of precession, in Chapter~\ref{sec: inertial frame} we
+developed numerical solutions which, together with solving the Euler rigid-body
+equations, solve for the Euler rotation angles which transform from the
+rotating frame to the inertial frame. This allowed us to directly model the
+phase residual, spin-down rate, and pulse profile of a precessing pulsar.
+These numerical solution where compared to relevant analytic solutions from the
+literature and we also derived the spin-down rate which was used in
+Chapter~\ref{sec: testing models}. We finished this chapter by discussing some
+preliminary results from a hybrid model which couples precession to
+magnetospheric switching. In the future, it would be interesting to explore
+this further by understanding better how reconfiguring the magnetosphere will
+effect the \citet{Deutsch1955} torque and then testing different mechanisms to
+bias, in a probabilistic way, the switching using the precessional cycle. The
+numerical model is perfectly suited to this task as it captures the complicated
+feedback between the precession and switching.
+
+PSR~B1828-11 stands out in the literature for the strong $\sim 500$~day
+periodic modulations observed in its timing properties. As a result, it has
+been used as evidence for both precession and magnetospheric switching.
+\citet{Jones2001} and \citet{Cordes2013} suggested that these models may not be
+mutually exclusive, which prompted the hybrid model discussed in
+Chapter~\ref{sec: inertial frame}. However, neglecting these hybrid models,
+precession and magnetospheric switching are mutually exclusive, but it is
+important to know which is favoured since both have important implications for
+neutron star physics. To decide this, in Chapter~\ref{sec: inertial frame}, we
+applied a Bayesian model comparison. We found an odds-ratio of $10^{2.7\pm
+0.5}$ in favour of the precession model, a key result of this thesis which was
+published in \citet{Ashton2016}. This does not rule out the switching
+interpretation as we have not tested an exhaustive set of models, but it does
+provide a framework to evaluate models. This chapter deals primarily with the
+methods to ensure an unbiased comparison is made, although there is some
+development for the modulations of the beam-width due to precession. In
+the future, we intend to use these tools to test further modifications of the
+models. Furthermore, we would like to combine the data from many pulsars with
+long period modulations, such as PSR~0919+06 \citep{Perera2014}, and repeat the
+model comparison to see how this changes the odds-ratio.
+
+Detecting gravitational waves from an isolated neutron star would provide a
+unique opportunity to learn about them, especially if we additionally saw the
+object electromagnetically as well. However, signals which are subject to
+timing variations may be difficult to detect if, as in the case of many current
+searches, we use matched filtering templates which do not include timing
+variations. This issue has not been properly tackled in the literature and so
+in the last chapters of this thesis we begin the process of quantifying the
+risks.
+
+In Chapter~\ref{sec: intro to cgw} we set out the tools which can be used to
+calculate the mismatch, defined to be the loss of signal to noise ratio. In
+doing so we defined a new approach, the generalised metric mismatch, which can
+calculate the mismatch for any arbitrary signal by approximating it by a
+piecewise Taylor expansion.
+
+Glitches can be handled for gravitational wave searches from known pulsars
+because we known when they have occurred. In Chapter~\ref{sec: glitches in cgw}
+we showed that for blind searches, where we have no electromagnetic signal,
+glitches pose a substantial risk, especially since many searches target young
+rapidly spinning-down pulsars which we found to have a larger and more frequent
+glitches. Many of these searches use an initial semi-coherent stage and then
+follow up candidates with fully-coherent searches.  We showed how a signal can
+be identified as a candidate in the semi-coherent stage and then subsequently
+lost in the follow up. In the future, we would like to develop search methods
+which are robust to glitches. These could then be applied to past data to
+ensure that we have not already missed a continuous gravitational wave signal.
+
+Quantifying the effect of timing noise on gravitational wave searches is a more
+difficult task due to the fact that we have no universal empirical description
+of what constitutes timing noise; therefore, it is difficult to predict what
+timing noise may exist in gravitational wave signals from isolated neutron stars.
+One way to approach this, discussed in Chapter~\ref{sec: timing noise in cgw},
+was to use data on the frequency and spin-down
+rate evolution of the Crab pulsar to generate `noisy gravitational wave signals'.
+We searched for these using standard matched filtering tools and calculated
+the minimum mismatch having searched in a narrow band of frequency and spin-down
+rate. The conventional wisdom for continuous wave searches contends that, since
+the SNR scales with the square-root of the observation time, provided we look
+for a sufficiently long time the signal will eventually become detectable.
+However, by investigating how the minimum mismatch scaled with the observation
+time, we found that $\langle \mutilde_{\textrm{min}} \rangle \propto \Tobs^{2.88}$.
+This result, published in \citet{Ashton2015}, means that for noisy signals the
+conventional wisdom does not hold, there is in fact an observation time after
+which the SNR decreases with observation time; for the Crab pulsar this was
+found to be $ \approx 600$~days.
+
+In Chapter~\ref{sec: timing noise in cgw analytic} we approached the issue of
+timing noise in continuous gravitational waves from a different angle. Namely
+by modelling timing noise as a random walk in the phase, frequency, or
+spin-down rate: a phenomenological description dating back to
+\citet{Boynton1972}. Recently, this model has been disfavoured
+\citep{Hobbs2010} as a substantive explanation of timing noise, but it
+nevertheless provides a simple empirical description which is consistent with
+the timing residuals of many pulsars. Moreover, while it can be applied to
+isolated neutron stars, it also can be applied to low-mass X-ray binary systems
+where spin-wandering due to fluctuations in the torque can be modelled by a
+random walk. In this chapter, we calculated the mismatch due to random walks and
+showed how to include the minimisation step modelling a narrow-band search over
+the template frequency and spin-down rate. Combining these equations with an analysis for the
+types and strengths of random walks expected in searches for gravitational
+waves from isolated neutron stars or low-mass X-ray binary systems, we hope in
+the future to predict the important of such fluctuations for current searches.
+Interestingly, we also found that the dependence of the minimum mismatch on
+the observation time for a frequency-like random walk scaled as $\propto \Tobs^{3}$,
+hinting at a connection with the results found in Chapter~\ref{sec: timing noise in cgw};
+this may prove an interesting area to study.
+
+In this thesis, we hope to have developed the understanding of timing noise in
+neutron stars. Most significantly, by providing a framework with which to debate
+the merits of models explaining periodic signals and quantify their comparison.
+We also hope that by understanding the role of timing variations in continuous
+gravitational waves, we help to guide efforts to detect these elusive signals
+in the future.
+
+
+
+
+
 
 \bibliography{../bibliography}
 
