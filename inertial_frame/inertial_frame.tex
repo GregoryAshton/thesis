@@ -7,14 +7,16 @@
 
 \begin{document}
 
-In Section~\ref{sec: rotating frame} we investigated the role of precession under
-an EM torque in the rotating frame of the star. However, pulsar astronomers
-report on direct observations of the radio pulsations made in the inertial
-frame. In this section, we will develop our precession model by making
-predictions for how precession manifests in the `observable features' such as
-the phase residual and spin-down rate of a pulsar; this will require us to
-understand and model the data collection methods of pulsar astronomy as part of
-our predictive model of pulsar precession.
+In Section~\ref{sec: rotating frame} we investigated the role of precession
+under an EM torque in the rotating frame of the star. From this we learnt that
+the \citet{Goldreich1970} analytic solutions, which ignore the anomalous
+component of the \citet{Deutsch1955} torque, are the relevant solutions for the
+precession of a torqued pulsar. We will now develop the precession model by
+modelling the effect of precession on the `observable features' of a pulsar, by
+which we mean the phase residual, spin-down rate, and pulse profile.  This will
+require us to view the pulsar in the inertial frame of an observer and model
+the data collection methods of pulsar astronomy as part of a predictive model
+of pulsar precession.
 
 Modelling observations of precessing pulsars has a history dating back to
 \citet{Ruderman1970} and \citet{chiuderi1970shape} when they were attempting to
@@ -22,19 +24,22 @@ explain a small amplitude `wobble' in the frequency of the Crab pulsar
 \citep{Richards1969, Richards1969b}. Since then, new observations have prompted
 many workers in the field to develop predictive models and in the course of
 this chapter we will discuss their contributions when relevant.  The novel
-material presented here is in developing a numerical solution which allows
-direct prediction of the observable features measured by observers, even
-modelling the data collection mechanisms such as the observer-method to measure
-$\dot{\nu}$. We will compare this numerical model against the analytic results
-from the literature, in particular we will use the work of \citet{Jones2001} as
-it is the most complete work on the subject. By comparing with a numerical
-model, we can gain confidence in the use of analytic solutions. For example, in
-Chapter.~\ref{sec: testing models} we will make use of the analytic solution
-for the spin-down rate of a precessing pulsar derived in Section~\ref{sec:
-derivation of the spin-down rate}; this derivation neglects the anomalous
-torque discussed in Section~\ref{sec: rotating frame}, but we can be confident in
-its predictions since we compare it against numerical solutions calculated with
-the full torque in Section~\ref{sec: spin-down rate numerical}.
+material presented here is in numerically solving the Euler rigid-body
+equations under the full \citet{Deutsch1955} torque in addition to solving for
+the Euler angles which allows us to make direct predictions of the observable
+features measured by observers. Moreover, we will also model the data
+collection mechanisms such as the observer-method to measure the evolution of
+the spin-down rate. We will compare this numerical model against the analytic
+results from the literature, in particular we will use the work of
+\citet{Jones2001} as it is the most complete work on the subject. By comparing
+with a numerical model, we can gain confidence in the use of analytic
+solutions. For example, in Chapter.~\ref{sec: testing models} we will make use
+of the analytic solution for the spin-down rate of a precessing pulsar which we
+will derive in Section~\ref{sec: derivation of the spin-down rate}; this
+derivation neglects the anomalous torque discussed in Section~\ref{sec:
+rotating frame}, but we can be confident in its predictions because in
+Section~\ref{sec: spin-down rate numerical} we compare the analytic
+approximation against numerical solutions calculated with the full torque.
 
 This chapter is organised in the following way. In Section~\ref{sec: rotating} we
 will introduce the idea of the Euler rotation angles and how to formulate a
@@ -60,30 +65,30 @@ inertial}.
 
 \subsection{Euler rotation matrices}
 \label{sec: euler rotation matrices}
-The Euler rigid-body equation of Eqn.~\eqref{eqn: eom} is defined in the
-rotating frame of the star. To discuss results in the inertial frame of an
-observer, we need to transform the solutions of Euler's rigid-body equations
-into the inertial frame.  An efficient way to do this is to determine the three
-Euler angles which transform the rotating frame axes, denoted by $(x',y',
-z')$, to the inertial frame axis, denoted by $(x, y, z)$. In particular, we
-define three rotation matrices
+The Euler rigid-body equation, introduced in Chapter~\ref{sec: rotating frame},
+is defined in the rotating frame of the star. To discuss results in the
+inertial frame of an observer, we need to transform the solutions of Euler's
+rigid-body equations into the inertial frame.  An efficient way to do this is
+to determine the three Euler angles which transform the rotating frame axes,
+denoted by $(x',y', z')$, to the inertial frame axis, denoted by $(x, y, z)$.
+In particular, we define three rotation matrices
 \begin{align}
 \begin{split}
-D = \left[\begin{array}{ccc}
+D & = \left[\begin{array}{ccc}
 \cos\phi & \sin\phi & 0 \\
 -\sin\phi & \cos\phi & 0 \\
 0 & 0 & 1
 \end{array}
 \right],
 \\
-C =
+C & =
 \left[\begin{array}{ccc}
 1 & 0 & 0 \\
 0 & \cos\theta & \sin\theta \\
 0 & -\sin\theta & \cos\theta
 \end{array}
 \right], \\
-B = \left[\begin{array}{ccc}
+B & = \left[\begin{array}{ccc}
 \cos\psi & \sin\psi & 0 \\
 -\sin\psi & \cos\psi & 0 \\
 0 & 0 & 1
@@ -94,7 +99,7 @@ B = \left[\begin{array}{ccc}
 Then their product defines the Euler angle rotation matrix
 \begin{align}
 \begin{split}
-R(\theta, \phi, \psi) & = BCD \\
+R & = BCD \\
 & \left[
 \begin{array}{ccc}
 \cos\psi \cos\phi - \cos\theta \sin\phi \sin \psi &
@@ -114,16 +119,16 @@ R(\theta, \phi, \psi) & = BCD \\
 Here we are using the
 $(\phi, \theta, \psi)$ Euler
 angle parameterisation as described by \citet{Landau1969}; a diagram of how
-these angles is given in Figure~\ref{fig: Euler}.\begin{figure}[ht]
+these angles are defined is given in Figure~\ref{fig: Euler}.\begin{figure}[ht]
 \centering
 \includegraphics[scale=0.25]{Eulerangles-alternative_filled.png}
-\caption{Schematic of the Euler rotation angles between the rotating
+\caption{The Euler rotation angles between the rotating
 frame $(x', y', 'z')$ and the inertial frame $(x, y, z)$. Image courtesy of
  \citet{WikipediaEuler}.}
 \label{fig: Euler}
 \end{figure}
-This matrix, given values for the Euler angles, transforms from the fixed
-inertial system of coordinates to the rotating frame. So for $A^{\textrm{in}}$,
+This matrix, given values for the Euler angles, transforms from the rotating
+frame to the fixed inertial system of coordinates. So for $A^{\textrm{rot}}_b$,
 a vector defined in the inertial frame, in the rotating frame this has
 components given by
 \begin{align}
@@ -132,34 +137,34 @@ A^{\textrm{in}}_{a} = R^{b}_{\;\;a} A^{\textrm{rot}}_{b}.
 
 \subsection{Evolution of the Euler angles}
 \label{sec: evolution of the euler angles}
-The Euler angles themselves will evolve with time. To calculate this, we express
-the components of $\Omega_a$ along the moving axes ($x', y', z')$. As shown by
-\citet{Landau1969} this results in a set of three ODEs which are coupled both to
-the other Euler angles and the components of the spin-vector. To have solutions
-both for the motion of the spin-vector in the rotating frame and the Euler
-angles we need to solve all six ODEs together. To be specific, the six ODEs are
-given in equations~\eqref{eqn: ODEs}: in the left-hand triplet is the
-components of the Euler rigid-body equations first given in Eqn.~\eqref{eqn:
-eom}; in the right-hand triplet we give the rearranged set of Euler angles ODEs
-from \citet{Landau1969}.
+The Euler angles themselves will evolve with time. To calculate this, we
+express the components of $\Omega_a$ along the moving axes ($x', y', z')$. As
+shown by \citet{Landau1969} this results in a set of three ODEs which are
+coupled both to the other Euler angles and the components of the spin-vector.
+To have solutions both for the motion of the spin-vector in the rotating frame
+and the Euler angles we need to solve all six ODEs together. To be specific,
+the six ODEs are given in Equations~\eqref{eqn: ODEs}: in the left-hand triplet
+we give the the Euler rigid-body equations for a biaxial body with a moment of
+inertia tensor given by Eqn.~\eqref{eqn: MOI}; in the right-hand triplet we
+give the rearranged set of Euler angles ODEs from \citet{Landau1969}.
 \begin{align}
 \begin{split}
-\dot{\Omega}_{x} & = \frac{1}{I_{xx}}\left[T_{x} +
-                      \left(I_{yy} - I_{zz}\right) \Omega_{y} \Omega_{z}\right],
+\dot{\Omega}_{x} & = \frac{1}{I_{0}}\left[T_{x} +
+                      -\epsI \Omega_{y} \Omega_{z}\right],
 \\
-\dot{\Omega}_{y} & = \frac{1}{I_{yy}}\left[T_{y} +
-                      \left(I_{zz} - I_{xx}\right) \Omega_{x} \Omega_{z}\right],
+\dot{\Omega}_{y} & = \frac{1}{I_{0}}\left[T_{y} +
+                      \epsI \Omega_{x} \Omega_{z}\right],
 \\
-\dot{\Omega}_{z} & =\frac{1}{I_{zz}}\left[T_{z} +
-                      \left(I_{xx} - I_{yy}\right) \Omega_{x} \Omega_{y}\right],
+\dot{\Omega}_{z} & =\frac{1}{I_{0}}T_{z},
 \end{split}
 \begin{split}
 \dot{\phi} & = \frac{\Omega_{x} \sin \psi + \Omega_{y} \cos \psi}{\sin \theta},\\
 \dot{\theta} & = \Omega_{x} \cos \psi - \Omega_{y} \sin \psi,\\
-\dot{\psi} & = \Omega_{z} - \dot{\phi} \cos \theta.
+\dot{\psi} & = \Omega_{z} - \dot{\phi} \cos \theta,
 \end{split}
 \label{eqn: ODEs}
 \end{align}
+where $\epsI = \Delta I/I_0$ is the deformation of star.
 This set of six coupled ODEs can be solved numerically using a time stepper; we
 will use the \texttt{rkf45} stepper provided by GSL \citep{gough2009gnu}.
 Solutions give the components of the spin-vector in the rotating frame and the
@@ -210,7 +215,7 @@ spin init}, therefore the initial angular momentum in the rotating frame is give
   \Jr_a(t=0) = I^{b}_{\; a} \Omega_b(t=0).
 \end{equation}
 If we set an initial condition on the angular momentum in the inertial frame
-$\Ji_a$ then Eqn.~\eqref{eqn: rotation matrix} uniquely defines the initial
+$\Ji_a$, then Eqn.~\eqref{eqn: rotation matrix} uniquely defines the initial
 Euler angles. We choose to set the initial angular momentum in the inertial
 frame to lie along the inertial $z$ axis such that
 \begin{equation}
@@ -284,7 +289,7 @@ how the inertial frame is orientated.
 \section{Evolving the Euler angles}
 \label{sec: evolving the euler angles}
 
-Having defined our numerical ODEs, Eqn.~\eqref{eqn: ODEs}, and appropriate
+Having defined the coupled ODEs in Eqn.~\eqref{eqn: ODEs} and appropriate
 initial conditions, we can now simulate the evolution of the spin-vector and
 Euler angles. The ultimate aim of this section is to go on to simulate physical
 observables, however, let us first consider the evolution of the simulation
@@ -323,15 +328,17 @@ In Figure~\ref{fig: biaxial body no torque} we present the Euler angle solutions
 of equations~\eqref{eqn: ODEs} for some arbitrary values of the simulation
 parameters along with the analytic prediction of Eqn.~\eqref{eqn: euler angles
 torque free evolution} and Eqn.~\eqref{eqn: spherical spin torque free
-evolution}. This demonstrates `almost' perfect agreement between the two. For
-the Euler angles, $\phi$ monotonically
-increases at the spin frequency while $\psi$ decreases at the slower precession
-frequency. The polar angle $\theta$ should remain constant during this
-simulation. Inspecting its value however, we find it varies fractionally by
-$\sim 10^{-11}$.  This is caused by the finite numerical precision when
+evolution}. This demonstrates `almost' perfect agreement between the two: the
+components of $\Omega_a$ behave as expected;
+%for the Euler angles, 
+$\phi$ monotonically
+increases at the spin frequency; $\psi$ decreases at the slower precession
+frequency; the polar angle $\theta$ should remain constant during this
+simulation, however, we find it varies fractionally by
+$\sim 10^{-11}$.  This error is caused by the finite numerical precision when
 performing the subtraction in equation \eqref{eqn: ODEs} for $\dot{\theta}$. On
 short timescales, these errors remain small; over sufficiently long timescale
-these errors can accumulate and eventually lead to a complete loss of numerical
+these errors can accumulate anerror is eventually lead to a complete loss of numerical
 accuracy. We must therefore be vigilant to ensure this does not occur when
 considering realistic values.
 \afterpage{\clearpage}
@@ -361,7 +368,7 @@ inspection one also finds this wobble in the other angles, while the magnitude o
 $\Omega_a$ both wobbles and undergoes a secular spin-down. To help illustrate
 this we have additionally plotted the derivatives $\dot{\phi}$ and $\dot{\psi}$
 which were constant in the torque free case. These are calculated numerically,
-the inherent errors in such a method produce the observed noise.
+the numerical errors produce the observed noise.
 \afterpage{\clearpage}
 \begin{figure}[p]
     \centering
@@ -380,7 +387,7 @@ $\tauP$, the initial precession period.}
 \end{figure}
 
 These solutions show how, using numerical simulation of Eqn.~\eqref{eqn: ODEs},
-we can easily simulate the effect of the \citet{Deutsch1955} torque. In the rest
+we can easily simulate the effect of the full \citet{Deutsch1955} torque. In the rest
 of this chapter, we will discuss how to model the features of a star observed
 by pulsar astronomers. This will allow us to change the physics of the star,
 i.e. by modifying the torque, and directly simulate the effect this has on
@@ -434,11 +441,11 @@ vectors into rotations about cones.
 
 We begin by writing the moment of inertia as
 \begin{align}
-I^{a}_{\;\;b} = I_{0} \delta^{a}_{\;\;b} + \Delta I n^a \n_b,
+I^{a}_{\;\;b} = I_{0} \delta^{a}_{\;\;b} + \Delta I \n^a \n_b,
 \end{align}
 where $n^a$ is the \emph{deformation axis}, a unit vector pointing along the
-body's deformation axis. Then, if the body is biaxial about the $\z$ axis,
-the angular momentum is given by
+body's deformation axis. Then, if the body is biaxial with $\n_{a}$ lies along
+$\z$ axis, the angular momentum is given by
 \begin{align}
 J_{a} = I_0 \Omega_a + \Delta I \Omega_z \n_a.
 \label{eqn: ang mom}
@@ -454,7 +461,7 @@ Figure~\ref{fig: reference plane}.
 \end{figure}
 In this figure, we have defined the angle between angular momentum and $\n_a$ as
 $\theta$, conventionally referred to as the \emph{wobble-angle} of
-precession. We have also given $a$, the angle between the 3-axis and the
+precession. We have also given $a$, the angle between the $\z$-axis and the
 spin-vector as defined in Section~\ref{sec: rotating frame}.
 
 Following \citet{Jones2001}, let us now decompose the angular velocity into the
@@ -535,7 +542,7 @@ treatment by \citet{Jones2001}.
 
 In the rotating frame, we set $\m$ to lie at an angle $\chi$ to the $z'$ axis
 with unit vector $[\sin(\chi), 0, \cos(\chi)]$ without loss of generality.
-Using the Eqn.~\eqref{eqn: rotation matrix}, the Euler angles
+Using Eqn.~\eqref{eqn: rotation matrix}, the Euler
 rotation matrix, we can transform to the inertial frame; the components of the
 magnetic dipole in the inertial frame are
 \begin{equation}
@@ -565,13 +572,13 @@ while the polar angle is
 \label{eqn: Theta 2}
 \end{equation}
 
-Eqn.~\eqref{eqn: Phi} and Eqn.~\eqref{eqn: Theta 2} are exact results and will
-be used later on to derive physical observables such as the phase residuals.
+Eqn.~\eqref{eqn: Phi} and Eqn.~\eqref{eqn: Theta 2} are exact results and we
+we will use them later in this chapter to model the observable features such
+as the phase residuals and spin-down rate.
 Specifically, given a numerical solution of equations~\eqref{eqn: ODEs}, i.e.
 the evolution of the spin-vector and three Euler angles, we can use these two
 equations to describe the evolution of the magnetic dipole orientation in the
-inertial frame which can subsequently be used to calculate the phase of
-pulsations. Before we do this, we will build some feeling for the dynamics of
+inertial frame. Before we do this, let us now build some feeling for the dynamics of
 the magnetic dipole in the inertial frame in the torque free case.
 
 Using our numerical solution, we simulate a star without any EM torque. The
@@ -585,7 +592,7 @@ and $\chi$ in Figure~\ref{fig: polar angle variations}
 \label{fig: polar angle variations}
 \end{figure}
 From this figure, we see that the polar angle is modulated at the precession
-period, $\tauP$. In the next section we will provide a deeper understanding
+period, $\tauP$. In the next section, we will provide a deeper understanding
 of where the size of modulations comes from and the significance in the choice
 of $\theta$ and $\chi$.
 
@@ -1235,7 +1242,7 @@ this the absolute value decreases again causing the distinctive double-peak in
 the spin-down rate.
 
 
-\section{Observable features: the shape of pulsation}
+\section{Observable features: pulse profile}
 \label{sec: observable features: shape}
 
 So far we have considered physical observables which are calculable from the
