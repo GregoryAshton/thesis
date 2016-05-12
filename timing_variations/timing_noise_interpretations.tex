@@ -158,19 +158,23 @@ rotating about an axis $\Omega$, with a moment of inertia given by
             I_{0} & 0 & 0 \\
             0 & I_{0} & 0 \\
             0 & 0 & I_{0} + \Delta I
+            \end{array}\right]
+      = \left[\begin{array}{ccc}
+            I_{0} & 0 & 0 \\
+            0 & I_{0} & 0 \\
+            0 & 0 & I_{0}(1 + \epsI)
             \end{array}\right],
 \label{eqn: MOI}
 \end{equation}
 where $I_0$ is the total moment of inertia of the star involved in precession
-and $\Delta I/I_0$ is the measure of oblateness or prolateness. If the
+and $\epsI = \Delta I/I_0$ is the measure of oblateness or prolateness. If the
 body is free from torques, then in the rotating frame of the body, Euler's
 equations of motion \citep{Landau1969} are given by
 \begin{equation}
     I\dot{\bm{\Omega}} + \bm{\Omega} \times \left(I\bm{\Omega}\right)=0.
 \end{equation}
 This is a system of three coupled ODEs. Writing the components of the
-spin-vector as $\bm{\Omega} = [\Omega_{x}, \Omega_{y}, \Omega{z}]$ and
-defining $\epsI = \Delta I / I_0$, we have the
+spin-vector as $\bm{\Omega} = [\Omega_{x}, \Omega_{y}, \Omega{z}]$, we have the
 set of equations:
 \begin{align}
 \dot{\Omega}_x = -\epsI \Omega_y\Omega_z, &&

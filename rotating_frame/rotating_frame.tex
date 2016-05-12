@@ -73,9 +73,10 @@ the rotating frame
     \frac{d\mathbf{J}}{dt} + \mathbf{\Omega} \times \mathbf{J} = \mathbf{T}.
     \label{eqn: eom}
 \end{equation}
-We will consider only biaxial bodies with principal moments given by
+We will consider a biaxial body with the moment  of inertia tensor
+defined in Eqn.~\eqref{eqn: MOI} which has principal moments given by
 \begin{equation}
-I_{x} = I_{y} = I_{0} \;\;\;\;\;\;\; I_{z} = I_{0}(1+\epsI).
+I_{xx} = I_{yy} = I_{0} \;\;\;\;\;\;\; I_{zz} = I_{0}(1+\epsI).
 \end{equation}
 For neutron stars, their extreme gravity ensures that $\epsI \ll 1$. For
 a uniform density imcompressible star, we take a typical moment of inertia to be
@@ -374,7 +375,7 @@ consequence of the conservation of energy and angular momentum.
 For a biaxial mass distribution as described above, the conservation of energy
 requires that
 \begin{eqnarray}
-1 & = & \frac{J_{x}^{2}}{2I_{x}E}+\frac{J_{y}^{2}}{2I_{y}E}+\frac{J_{z}^{2}}{2I_{z}E}
+1 & = & \frac{J_{x}^{2}}{2I_{xx}E}+\frac{J_{y}^{2}}{2I_{yy}E}+\frac{J_{z}^{2}}{2I_{zz}E}
 =\frac{J_{x}^{2}}{2I_{0}E}+\frac{J_{y}^{2}}{2I_{0}E}+\frac{J_{z}^{2}}{2I_{0}(1+\epsI)E},
 \label{eqn: conservation of energy biaxial}
 \end{eqnarray}
@@ -620,7 +621,7 @@ view the system.
 Working with a biaxial body and the Deutsch torque, \cite{Melatos2000}
 discovered non-trivial solutions where the spin axis aligns with a non-zero
 angle between the magnetic dipole and the principal axis of the moment of
-inertia (MOI) tensor.  This was
+inertia tensor.  This was
 interpreted by Melatos as evidence for persistent precession. We show in
 Section~\ref{sec: B} that in fact the spin-vector is aligning with another
 rotating reference frame that is held at a fixed angle to the original rotating
@@ -660,7 +661,7 @@ I_{0}(1+\epsI-\epsA\cos^{2}\chi)
 Note that we will use the prime to denote the coordinates in the
 effective body frame.
 
-We can calculate the eigenvalues of the effective MOI tensor, which are given by
+We can calculate the eigenvalues of the effective moment of inertia tensor, which are given by
 \begin{align}
 \lambda_{2}=I_{0}, &&&
 \lambda_{\pm}=\frac{I_{0}}{2}
@@ -847,7 +848,7 @@ bounding the radius of the sphere by
 
 In the case of a biaxial moment of inertia, we found that solution for which both
 conservation laws are satisfied, corresponded to circles around the $\z$ axis.
-Now that we have a triaxial MOI tensor (due to the addition of the anomalous torque),
+Now that we have a triaxial moment of inertia tensor (due to the addition of the anomalous torque),
 the solutions correspond to the intersection of the triaxial ellipsoid with the
 sphere, for which there are three distinct types of
 intersections as drawn in figure~\ref{fig: sphere ellipsoid}.
@@ -1014,18 +1015,16 @@ on whether $\chi$ is smaller or larger than $\chi_{\textrm{\textrm{cr}}}\approx
 as a tipping point between the rates of change of energy and angular momentum.
 }
 
-\meta{
-When $\tauP \ll \tauS$ we find that spin-vector aligns with the magnetic
+\meta{ When $\tauP \ll \tauS$ we find that spin-vector aligns with the magnetic
 dipole; this also agrees with the numerical and analytic solutions found by
 \citet{Melatos2000}. When including the anomalous torque, in the regime where
 $\tauP \sim \tauS$, we confirm the existence of so-called persistent precession
 solutions found by \citet{Melatos2000} in which the spin-vector does not align
-with either the principal axis of the MOI tensor or the magnetic dipole.
-However, we provide a new insight into this by showing that for all orderings
-of the three timescales, the spin-vector aligns with the principal axes of the
-effective MOI tensor (defined in Section~\ref{sec: effective body frame}).  In this
-sense, there is no persistent precession.
-}
+with either the principal axis of the moment of inertia tensor or the magnetic
+dipole.  However, we provide a new insight into this by showing that for all
+orderings of the three timescales, the spin-vector aligns with the principal
+axes of the effective moment of inerta tensor (defined in Section~\ref{sec:
+effective body frame}). In this sense, there is no persistent precession.  }
 
 \meta{In conclusion, the anomalous torque is not important for realistic systems
 since it amounts to nothing more a small shift in the axes about which
