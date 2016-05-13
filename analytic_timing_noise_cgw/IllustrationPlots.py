@@ -92,7 +92,7 @@ ax1.set_xticklabels(xticklabels)
 ax1.set_yticks([0])
 ax1.set_yticklabels(["0"])
 
-ax1.set_ylabel("spin-down rate", rotation="vertical",
+ax1.set_ylabel("Spin-down rate", rotation="vertical",
               labelpad=18.0)
 r = Rectangle((0, 0), 1, 1, color="g", alpha=.5) # creates rectangle patch for legend use.
 plt.legend([p0, r],
@@ -103,4 +103,4 @@ plt.legend([p0, r],
             ],
             loc=2, frameon=False)
 plt.tight_layout()
-plt.savefig("Illustration_F1_int.pdf")
+plt.savefig("img/Illustration_F1_int.pdf")
