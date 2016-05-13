@@ -30,9 +30,9 @@ large such in a typical observation time $\Tobs$ we observe the superposition
 of many events. Following the method of \citet{Cordes1980}, the \emph{strength}
 of the three types of timing noise can be defined as
 \begin{align}
-S_{\textrm{PN}} = \lambda \langle \delta \phi^{2}\rangle, \label{eqn: SPN} \\
-S_{\textrm{FN}} = \lambda \langle \delta \nu^{2}\rangle, \label{eqn: SFN} \\
-S_{\textrm{SN}} = \lambda \langle \delta \dot{\nu}^{2}\rangle, \label{eqn: SSN}
+S_{\textrm{PN}} = \lambda \langle \delta \phi^{2}\rangle, \label{eqn: SPN def} \\
+S_{\textrm{FN}} = \lambda \langle \delta \nu^{2}\rangle, \label{eqn: SFN def} \\
+S_{\textrm{SN}} = \lambda \langle \delta \dot{\nu}^{2}\rangle, \label{eqn: SSN def}
 \end{align}
 where $\langle \delta \phi^{2} \rangle$, $\langle \delta \nu^{2} \rangle$, and
 $\langle \delta \dot{\nu}^{2} \rangle$ are the mean-square values of the steps
@@ -53,10 +53,11 @@ Furthermore, the authors related this to the strengths of each noise component
 \sigma^{2}_{\phi}(T) = \left\{
 \begin{array}{cc}
 \frac{S_{\textrm{PN}} T}{2}, \\
-\frac{S_{\textrm{FN}} T^{3}}{12},  \\
+\frac{S_{\textrm{FN}} T^{3}}{12}, \\
 \frac{S_{\textrm{SN}} T^{5}}{120}.
 \end{array}
 \right.
+\label{eqn: S calc}
 \end{align}
 So combining this with an estimate of $\sigma^{2}_\phi$ as derived from the
 data using Eqn.~\eqref{eqn: sig phi T}, these relations give the strength of
@@ -327,7 +328,7 @@ beam-shape.  They found that for 6 pulsars the pulse width did indeed correlate
 with changes in the spin-down rate, although for some pulsars this was an
 anticorrelation rather than a correlation. However, like the spin-down rate
 these pulse shape variations are also smooth and subject to the same time
-averaging process. 
+averaging process.
 
 To test if the mechanism causing these variations is smooth or instantaneous
 (i.e. switching) the authors needed to look at an observed property not subject
@@ -451,7 +452,7 @@ rate are quasi-periodic rather than strictly periodic. However, this model
 is missing a substantive physical explanation, namely what causes the switching
 and why it is quasiperiodic.
 
-\subsubsection{Simple empirical model: four time periods} 
+\subsubsection{Simple empirical model: four time periods}
 
 The time averaged spin-down rates in Figure~\ref{fig: lyne example D=0} and
 Figure~\ref{fig: lyne example D=0.3} result from having two spin-down rates and
