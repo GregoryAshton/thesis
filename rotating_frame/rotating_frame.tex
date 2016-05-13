@@ -36,7 +36,7 @@ neglected (see for example \citep{Goldreich1970}) that such an assumption was
 appropriate. A similar numerical model was studied by \citet{Melatos2000},
 although the authors did not switch on and off the anomalous component.
 Moreover the authors found solutions which they labelled as `persistent
-precession': in Section~\ref{sec: biaxial NS with anomalous torque} we will
+precession': in Section~\ref{sec: biaxial neutron star with anomalous torque} we will
 confirm that such solutions exist and give a physical explanation from which we
 conclude that the precession is not pesistent.
 }
@@ -44,8 +44,8 @@ conclude that the precession is not pesistent.
 \meta{ The rest of this chapter is organised as follows: in Section~\ref{sec:
 defining the model} we will define the Euler rigid-body equations and the
 \citet{Deutsch1955} torque. In Section~\ref{sec: spherical} we will discuss the
-simple case of a spherical star, then in Section~\ref{sec: biaxial NS with no anomalous
-torque} and Section~\ref{sec: biaxial NS with anomalous torque} we will discuss a
+simple case of a spherical star, then in Section~\ref{sec: biaxial neutron star with no anomalous
+torque} and Section~\ref{sec: biaxial neutron star with anomalous torque} we will discuss a
 biaxial star with and without the anomalous part of the torque; in these
 sections we will give an intuitive geometric way to understand the alignment
 predictions made by \citet{Goldreich1970}. Finally, we will conclude the chapter
@@ -132,12 +132,11 @@ associated timescale $\tauS$. The second term is known as the
 \emph{anomalous} torque which acts on a timescale $\tauA$. The three
 timescales (including the precession timescale) in this problem are then given
 by
-\begin{equation}
-\tauP=\frac{2\pi}{\epsI\omega},  \;\;\;\;\;
-\tauA=\frac{2\pi}{\epsA\omega},  \;\;\;\;\;
-\tauS=\frac{3c}{2R}\frac{1}{\epsA\omega^{2}}.
-\label{eqn: torque timescales}
-\end{equation}
+\begin{align}
+\tauP &=\frac{2\pi}{\epsI\omega},  \\
+\tauA &=\frac{2\pi}{\epsA\omega}, \label{eqn: anomalous timescale} \\
+\tauS &=\frac{3c}{2R}\frac{1}{\epsA\omega^{2}}.
+\end{align}
 The spin-down age defined here, $\tauS$, is equivalent to the original
 definition of $\tauAge$ in Eqn.~\eqref{eqn: tauAge definition} up to a factor
 of $1/\sin^{2}(\alpha)$ where $\alpha$ is the angle between the spin-vector and
@@ -164,7 +163,7 @@ the projection of the vector onto the $\x-\y$ plane and the $\x$ axis.
 Spin-vector  & $\boldsymbol{\Omega}$ & $\omega$ & $a$ & $\phi$ \\ \hline
 Magnetic dipole &  $\boldsymbol{m}$ & $m$ & $\chi$ & 0 \\ \hline
 \end{tabular}
-\caption{Table of spherical coordinates for the spin-vector and magnetic dipole}
+\caption{Spherical coordinates of the spin-vector and magnetic dipole.}
 \label{tab: definitions}
 \end{table}
 
@@ -179,28 +178,28 @@ azimuthal component given by $\phi$.}
 \end{figure}
 
 In the following sections we will develop our intuition for the different types
-of solutions to this model. These results are calculated by
-exact numerical evolution of Eqn.~\eqref{eqn: eom} with the torque defined in
-Eqn.~\eqref{eqn: torque}. The simulations model a NS with a magnetic field of
+of solutions to this model. These results are calculated by exact numerical
+evolution of Eqn.~\eqref{eqn: eom} with the torque defined in Eqn.~\eqref{eqn:
+torque}. The simulations model a neutron star with a magnetic field of
 $B_{0}\approx10^{13}$~G and a radius $R=10^{6}$~cm. We must also provide an
 initial condition for the angular frequency $\omega$. This is not the spin
-frequency at the birth of the NS, but the frequency at the start of the observation;
-typical values are of the order $\sim 10$~rad/s. However, at this frequency the
-numerical solutions are computationally expensive. To reduce the time required
-to produce a solution we will work with an initial frequency of $\omega =
-10^{4}$~rad/s. This does not change the form of solution, only the timescales
-over which they evolve.
+frequency at the birth of the neutron star, but the frequency at the start of
+the observation; typical values are of the order $\sim 10$~rad/s. However, at
+this frequency the numerical solutions are computationally expensive. To reduce
+the time required to produce a solution we will work with an initial frequency
+of $\omega = 10^{4}$~rad/s. This does not change the form of solution, only the
+timescales over which they evolve.
 
-The rest of this chapter is organised as follows: in Section~\ref{sec: spherical}
-we will begin by discussing a spherical star. Since we particuarly aim to
-understand the role of the anomalous torque, in Chapter.~\ref{sec: biaxial NS
-with no anomalous torque} we will investigate a biaxial star acted on by only
-the spin-down component of the torque. In Chapter.~\ref{sec: biaxial NS with
-anomalous torque} we then repeat the investigation of a biaxial star, but this
-time include the anomalous torque and compare the results. In doing this we
-hope to better understand the role of the anomalous torque on precession.
+The rest of this chapter is organised as follows: in Section~\ref{sec:
+spherical} we will begin by discussing a spherical star. Since we particuarly
+aim to understand the role of the anomalous torque, in Chapter.~\ref{sec:
+biaxial neutron star with no anomalous torque} we will investigate a biaxial
+star acted on by only the spin-down component of the torque. In
+Chapter.~\ref{sec: biaxial neutron star with anomalous torque} we then repeat
+the investigation of a biaxial star, but this time include the anomalous torque
+and compare the results. In doing this we hope to better understand the role of
+the anomalous torque on precession.
 
-\FloatBarrier
 \section{Spherical star}
 \label{sec: spherical}
 
@@ -213,7 +212,7 @@ the spin-down timescale.
 To observe this behaviour, we set $\chi=30^{\circ}$ with the spin-vector
 initially at $a=50^{\circ}$ and $\epsA=5\times10^{-11}$. Evolving the model
 numerically, we plot the spherical coordinates of the spin-vector in figure~\ref{fig:
-NS spherical}. This shows a brief spin-down which halts once the spin-vector
+neutron star spherical}. This shows a brief spin-down which halts once the spin-vector
 aligns with the magnetic dipole $a \rightarrow \chi=30^{\circ}$.  The azimuthal
 angle $\phi$ does not vary; this is expected since precession, a monotonic
 increase in $\phi$, does not occur for spherical bodies. This result agrees
@@ -227,11 +226,11 @@ scale $\sim 3.6\times 10^{8}$~s.
 \caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for a
 spherical star. Note that the magnetic dipole is inclined at $\chi=30^{\circ}$
 to the $\z$ axis.}
-\label{fig: NS spherical}
-\end{figure}•
+\label{fig: neutron star spherical}
+\end{figure}
 
-\section{Biaxial NS with no anomalous torque}
-\label{sec: biaxial NS with no anomalous torque}
+\section{Biaxial neutron star with no anomalous torque}
+\label{sec: biaxial neutron star with no anomalous torque}
 
 We will now consider a biaxial star with $\epsI\ne0$, but to first build some
 understanding we will remove the anomalous part of the torque. This is done so
@@ -258,16 +257,18 @@ for each ordering of the timescales.
 \begin{table}[htb]
 \centering
 {\small
+\tabcolsep=0.11cm
 	\begin{tabular}[h]{|l|c|c|c|c|c|}\hline
-		&  $\epsI$  & $\epsA $ & 	$B_{S} \; $[Gauss] & $\tauS$ [s] & $ \tauP$  [s] \\ \hline
-	NS A 	&  $  1.0\times 10^{-9}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  6.3\times 10^{5}  $\\
-	NS B 	&  $  0.4\times 10^{-10}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  1.6\times 10^{7}  $\\
-	NS C 	&  $  1.0\times 10^{-15}  $  & $  0.5\times 10^{-10}  $ & 	$  1.3\times 10^{13}  $   & $  3.6\times 10^{8}  $ & $  6.3\times 10^{11}  $\\ \hline
+		&  $\epsI$  & $\epsA $ & 	$B_{0} \; $[Gauss] & $\tauS$ [s] & $ \tauP$  [s] \\ \hline
+	Neutron star A 	&  $  1.0{\times} 10^{-9}  $  & $  0.5{\times} 10^{-10}  $ & 	$  1.3{\times} 10^{13}  $   & $  3.6{\times} 10^{8}  $ & $  6.3{\times} 10^{5}  $\\
+	Neutron star B 	&  $  0.4{\times} 10^{-10}  $  & $  0.5{\times} 10^{-10}  $ & 	$  1.3{\times} 10^{13}  $   & $  3.6{\times} 10^{8}  $ & $  1.6{\times} 10^{7}  $\\
+	Neutron star C 	&  $  1.0{\times} 10^{-15}  $  & $  0.5{\times} 10^{-10}  $ & 	$  1.3{\times} 10^{13}  $   & $  3.6{\times} 10^{8}  $ & $  6.3{\times} 10^{11}  $\\ \hline
 	\end{tabular}
 }
 \caption{Table of relevant values for the selected points. In calculating the
-    magnetic fields, we have assumed canonical value of $R=1\times10^{6}$cm for
-    the radius and a value $\omega_{0} = 1\times10^{4}$ rads $s^{-1}$}
+    magnetic fields and timescales, we have used a canonical value of
+    $R=1\times10^{6}$~cm for the radius and the initial value
+    of the spin frequency, $\omega_{0} = 1\times10^{4}$ rads/s.}
 \label{tab: A B C params}
 \end{table}
 
@@ -275,17 +276,17 @@ The phase space of solutions is plotted in figure~\ref{fig: phase space no
 anom}, parameterised by the elastic deformation $\epsI$ and the surface
 magnetic field
 \begin{equation}
-B_{S} = \frac{2m}{R^{3}}.
+B_{0} = \frac{2m}{R^{3}}.
 \end{equation}
 This illustrates how the phase space is sliced into separate regions by the
 ordering of the timescales.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.5]{{phase_space_no_anom}.png}
+\includegraphics[]{{phase_space_no_anom}.png}
 \caption{Phase space of solutions categorised by the ordering of the two
-    timescales as a function of the elastic deformation $\epsI$ and the
-    surface magnetic fields $B_{s}$.}
+         timescales as a function of the elastic deformation $\epsI$ and the
+         surface magnetic fields $B_{0}$.}
 \label{fig: phase space no anom}
 \end{figure}
 
@@ -309,9 +310,9 @@ spin-vector having an inclination angle of $a_0=50^{\circ}$ and azimuth of
 $\phi=0^{\circ}$.
 
 
-\subsection{NS A in region \texorpdfstring{$\tauS\gg \tauP$}{}}
+\subsection{Neutron star A in region \texorpdfstring{$\tauS\gg \tauP$}{}}
 \label{sec: A_NA}
-NSs in this region are described by the work of \citet{Goldreich1970}. In
+Neutron stars in this region are described by the work of \citet{Goldreich1970}. In
 addressing the shortcomings of the analytic spherical solutions
 \citep{Davis1970, Michel1970}, Goldreich considered a neutron star with a solid
 crust capable of supporting elastic strains. In order to find an analytic
@@ -322,13 +323,13 @@ over equations~\eqref{eqn: eom} with this assumption yields
 \Big\langle \frac{d \omega}{dt}\Big\rangle & = & -\frac{2R}{3c}\epsilon_{a}\omega^{3}\left[ \sin^{2} \chi +\sin^{2}a \left(1-\frac{3}{2}\sin^{2}\chi\right)\right], \\
 \Big\langle \frac{d a}{dt}\Big\rangle & = & -\frac{2R}{3c}\epsilon_{a}\omega^{2}\sin a \cos a \left(1-\frac{3}{2}\sin^{2}\chi\right).
 \label{eqn: goldreich_averaged_eqns}
-\end{eqnarray}•
+\end{eqnarray}
 Goldreich realised that the second equation tells us whether the polar angle $a$ will
 either grow or decay on the spin-down timescale depending on whether $\chi$ was
 greater or less than a critical value~$\chi_{\mathrm{\textrm{cr}}} \approx 55^{\circ}$.
 
 We first present results for all the spherical coordinates during the spin-down
-in figure~\ref{fig: NS A_NA}. For the angle $\chi$, we use two values,
+in figure~\ref{fig: neutron star A_NA}. For the angle $\chi$, we use two values,
 $30^{\circ}$ and $75^{\circ}$, and find that $a$ tends to either $0$ or $\pi/2$
 on the spin-down timescale in agreement with \citet{Goldreich1970}.
 During this alignment, the spin magnitude decays
@@ -342,13 +343,13 @@ about the $\z$ axis.
     \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]
              {{Spherical_Plot_no_anom_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for NS
+\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star
 A. The two choices of $\chi$ allow us to confirm Goldreich's dependence of the
 alignment of the spin-vector on $\chi$.  }
-\label{fig: NS A_NA}
+\label{fig: neutron star A_NA}
 \end{figure}
 
-In Figure~\ref{fig: NS A_NA comparison}, we investigate the differences between
+In Figure~\ref{fig: neutron star A_NA comparison}, we investigate the differences between
 solutions to Goldreich's averaged equations \eqref{eqn:
 goldreich_averaged_eqns} and the exact solution without averaging.
 \begin{figure}[ht]
@@ -361,8 +362,8 @@ goldreich_averaged_eqns} and the exact solution without averaging.
 \end{tabular}
 \caption{Plot of the angle $a$ for both the exact solution of \eqref{eqn: eom}
 and the solution to the averaged equations \eqref{eqn: goldreich_averaged_eqns}.}
-\label{fig: NS A_NA comparison}
-\end{figure}•
+\label{fig: neutron star A_NA comparison}
+\end{figure}
 This shows that, while both agree on the long term behaviour, the averaged
 equations do not include short term oscillations which are due to the precession.
 
@@ -452,16 +453,16 @@ which are parameterised by the sign of $\dot{A}$:
 \item $\dot{A}>0$ The sphere grows with respect to the ellipsoid. In this case,
     the intersection circles will `close up' around the $\z$ axis. This
     agrees with the solution for $\chi=30^{\circ}$ given in
-    figure~\ref{fig: NS A_NA comparison}(a). The angle between
+    figure~\ref{fig: neutron star A_NA comparison}(a). The angle between
     $\boldsymbol{\omega}$ and the $\z$ axis tends to zero while $\phi$
     monotonically increases. This describes the spin-vectors following a circle
     about the $\z$ axis, which gradually decreases in radius.
 \item $\dot{A}<0$ The sphere shrinks with respect to the ellipsoid. In this
     case the intersection circles will increase in radius until $J\rightarrow
     \sqrt{2EI_{0}}$. This describes exactly the solution in
-    figure~\ref{fig: NS A_NA comparison}(b): that is $a\rightarrow
+    figure~\ref{fig: neutron star A_NA comparison}(b): that is $a\rightarrow
     90^{\circ}$ while $\phi$ monotonically increases.
-\end{enumerate}•
+\end{enumerate}
 
 The sign of $\dot{A}$ tells us about the long-term evolution of the system. To
 determine it, we begin by differentiating Eqn.~\eqref{eqn: A}
@@ -498,8 +499,8 @@ distribution where $I_{1}=I_{2}$, then the only non-zero terms are given by
 \begin{eqnarray*}
 T^{i}\omega_{i}\omega_{j}(I\omega)^{j}\left(I^{i}_{\;i}-I^{j}_{\;j}\right)&=&
 T_{1}\omega_{1}I_{0}(1-\epsilon_{i})\omega^{2}_{3}
-(I_{0}-I_{0}(1+\epsI))+
-T_{2}\omega_{2}I_{0}(1-\epsilon_{i})\omega^{2}_{3}(I_{0}-I_{0}(1+\epsI))
+(I_{0}-I_{0}(1+\epsI)) \\
+ && + T_{2}\omega_{2}I_{0}(1-\epsilon_{i})\omega^{2}_{3}(I_{0}-I_{0}(1+\epsI))
 \\ && +
 T_{3}\omega_{3}(I_{0}(1+\epsI)-I_{0})
                (I_{0}\omega_{1}^{2}+I_{0}\omega_{2}^{2}), \\
@@ -554,26 +555,24 @@ in this way, we have found a new interpretation for the critical value
 as a tipping
 point between the rates of change of energy and angular momentum.}
 
-\FloatBarrier
-\subsection{NS B in region \texorpdfstring{$\tauS\sim \tauP$}{}}
+\subsection{Neutron star B in region \texorpdfstring{$\tauS\sim \tauP$}{}}
 \label{sec: B_NA}
 Unlike the previous examples, there is no comparison in the literature which
 considers $\tauP\sim\tauS$ while neglecting the anomalous torque. This is
 primarily because the similarity of the timescales means simplifying
 assumptions cannot be made. The results have not been included here as they are
-exactly alike with the results of NS A, except that the
+exactly alike with the results of neutron star A, except that the
 precession, the alignment of the spin-vector, and the
 spin-down all happen on the same timescale.
 
-\FloatBarrier
-\subsection{NS C in region \texorpdfstring{$\tauS\ll \tauP$}{}}
+\subsection{Neutron star C in region \texorpdfstring{$\tauS\ll \tauP$}{}}
 \label{sec: C_NA}
-In NS C, the timescales take the ordering $\tauP\gg \tauS$. The limit of
+In neutron star C, the timescales take the ordering $\tauP\gg \tauS$. The limit of
 this region is the spherical star
 ($\epsI\rightarrow0$) discussed in section~\ref{sec: spherical}; as such
 we should expect the results to be similar. Solving
-the equations of motion for NS C, the spherical coordinates of the spin axis
-are given in figure~\ref{fig: NS C_NA}. Both choices of $\chi$ yield a
+the equations of motion for neutron star C, the spherical coordinates of the spin axis
+are given in figure~\ref{fig: neutron star C_NA}. Both choices of $\chi$ yield a
 similar result; the polar angle $a$ tends to $\chi$ on the spin-down timescale
 as anticipated by the likeness to the spherical star. In contrast, the azimuthal
 angle $\phi$ appears to begin increasing monotonically before decreasing to a
@@ -594,21 +593,19 @@ case, the torque dominates and so the spin-vector lies close to, but not exactly
 aligned with, the magnetic dipole. During this time, the star spins down but
 upon alignment the spin frequency asymptotically approaches a constant non-zero
 value.
-%We also plot in figure~\ref{fig: NS C_NA alpha} the angle between the spin axis and magnetic dipole $\alpha$ for NS C confirming the previous findings.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
     \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]{{Spherical_Plot_no_anom_chi_30.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}&
     \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]{{Spherical_Plot_no_anom_chi_75.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for NS C. }
-\label{fig: NS C_NA}
-\end{figure}•
+\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star C. }
+\label{fig: neutron star C_NA}
+\end{figure}
 
-\FloatBarrier
 
-\section{Biaxial NS including the anomalous torque}
-\label{sec: biaxial NS with anomalous torque}
+\section{Biaxial neutron star including the anomalous torque}
+\label{sec: biaxial neutron star with anomalous torque}
 In the previous section we considered solutions to Eqn.~\eqref{eqn: eom}
 under the action of the torque in Eqn.~\eqref{eqn: torque} without the
 anomalous contribution. In this section, we will include this contribution and
@@ -688,7 +685,7 @@ $\hat{\boldsymbol{z}}$ axis. $\beta$ is then given by
               \sqrt{\epsA^{2}+\epsI^{2}-2\epsA\epsI\cos(2\chi)}}
               {2\epsA\sin\chi \cos\chi}\right).
 \label{eqn: beta}
-\end{equation}•
+\end{equation}
 A schematic of the various angles and axes is given in
 figure~\ref{fig: schematic}
 \begin{figure}[ht]
@@ -735,24 +732,29 @@ dipole.
 We will show in the following sections that, when the anomalous torque is included, it
 is the effective body frame to which the system aligns on the spin-down
 timescale (much as it is the body frame to which the system aligns when the
-anomalous torque contribution was neglected in Section~\ref{sec: biaxial NS
+anomalous torque contribution was neglected in Section~\ref{sec: biaxial neutron star
 with no anomalous torque}).
 
-For the three NSs (A, B, and C as first used in Section~\ref{sec: biaxial NS with no anomalous torque}) representative of different orderings of the timescales, all
-three have a non-zero $\beta$ values. To familiarise the reader with the magnitudes in
-the different regions, in Table~\ref{tab: A B C params beta} we list the relevant
-timescales and $\beta$ for each of the three NSs.
+For the three neutron stars (A, B, and C as first used in Section~\ref{sec:
+biaxial neutron star with no anomalous torque}) representative of different orderings of
+the timescales, all three have a non-zero $\beta$ values. To familiarise the
+reader with the magnitudes in the different regions, in Table~\ref{tab: A B C
+params beta} we list the relevant timescales and $\beta$ for each of the three
+neutron stars.
 \begin{table}[ht]
 {\footnotesize
 \centering
+\tabcolsep=0.11cm
 	\begin{tabular}[ht]{|c|c|c|c|c|c|c|c|c|}\hline
-NS &  $\epsI$  & $\epsA $ & 	$B_{S} \; $[Gauss] & $\tauS$ [s] & $\tauA$ [s] & $ \tauP$  [s] & $\beta (\chi=30^{\circ})$ & $\beta(\chi=75^{\circ})$ \\ \hline
-A & $  1.0\times 10^{-9}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  6.3\times 10^{5}  $ & $ -1.27^{\circ} $& $ -0.7^{\circ} $ \\
-B & $  0.4\times 10^{-10}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  1.6\times 10^{7}  $ & $ -35.447^{\circ} $& $ -8.35^{\circ} $ \\
-C & $  1.0\times 10^{-15}  $ & $  5\times 10^{-9}  $ & $  1.3\times 10^{13}  $ & $  3.6\times 10^{8}  $ & $  1.3\times 10^{7}  $ & $  6.3\times 10^{11}  $ & $ -60.0^{\circ} $& $ -15.0^{\circ} $ \\ \hline
+Neutron star &  $\epsI$  & $\epsA $ & 	$B_{0} \; $[Gauss] & $\tauS$ [s] & $\tauA$ [s] & $ \tauP$  [s] & $\beta (\chi=30^{\circ})$ & $\beta(\chi=75^{\circ})$ \\ \hline
+A & $  1.0{\times} 10^{-9}  $ & $  5{\times} 10^{-9}  $ & $  1.3{\times} 10^{13}  $ & $  3.6{\times} 10^{8}  $ & $  1.3{\times} 10^{7}  $ & $  6.3{\times} 10^{5}  $ & $ -1.27^{\circ} $& $ -0.7^{\circ} $ \\
+B & $  0.4{\times} 10^{-10}  $ & $  5{\times} 10^{-9}  $ & $  1.3{\times} 10^{13}  $ & $  3.6{\times} 10^{8}  $ & $  1.3{\times} 10^{7}  $ & $  1.6{\times} 10^{7}  $ & $ -35.447^{\circ} $& $ -8.35^{\circ} $ \\
+C & $  1.0{\times} 10^{-15}  $ & $  5{\times} 10^{-9}  $ & $  1.3{\times} 10^{13}  $ & $  3.6{\times} 10^{8}  $ & $  1.3{\times} 10^{7}  $ & $  6.3{\times} 10^{11}  $ & $ -60.0^{\circ} $& $ -15.0^{\circ} $ \\ \hline
 	\end{tabular}}
-\caption{Table of relevant values for the selected points, all simulations star
-from an initial spin-frequency $\omega_0=10^{4}$ rad/s.}
+\caption{Table of relevant values for the selected points. In calculating the
+    magnetic fields and timescales, we have used a canonical value of
+    $R=1\times10^{6}$~cm for the radius and the initial value
+    of the spin frequency, $\omega_{0} = 1\times10^{4}$ rads/s.}
 \label{tab: A B C params beta}
 \end{table}
 
@@ -766,7 +768,7 @@ rotation by the angle $\beta$).
 \subsubsection{Phase space}
 
 The introduction of the anomalous torque means we must also consider the
-anomalous torque timescale as given in Eqn.~\eqref{eqn: torque timescales}. Three
+anomalous torque timescale as given in Eqn.~\eqref{eqn: anomalous timescale}. Three
 timescales can take six orderings. However, the spin-down and anomalous timescale
 obey the following relation
 \begin{equation}
@@ -787,22 +789,23 @@ space}.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[scale=0.5]{{phase_space}.png}
-\caption{Phase space diagram including the anomalous torque contributions.}
+\includegraphics[]{{phase_space}.png}
+\caption{Phase space diagram including the anomalous torque contributions. This
+         differs from Figure~\ref{fig: phase space no anom} in that there is an
+         additional grey band marking `region B' where $\tauS>\tauP>\tauA$.}
 \label{fig: phase space}
 \end{figure}
 
-\FloatBarrier
-\subsubsection{NS A in region \texorpdfstring{$\tauS>\tauA>\tauP$}{}}
+\subsubsection{Neutron star A in region \texorpdfstring{$\tauS>\tauA>\tauP$}{}}
 \label{sec: A}
 
 We expect the alignment of the spin axis to agree with the findings in section
 \ref{sec: A_NA} and study the changes in behaviour due to the introduction of
 the anomalous torque. Working in the effective body frame rotates the
 solutions by a few degrees as shown in Table~\ref{tab: A B C params beta}.
-Plotted in figure~\ref{fig: NS A} are the spherical coordinates of the
+Plotted in figure~\ref{fig: neutron star A} are the spherical coordinates of the
 spin-vector in the effective body. This can be compared with the result
-in figure~\ref{fig: NS A_NA}, which is the same system without the anomalous
+in figure~\ref{fig: neutron star A_NA}, which is the same system without the anomalous
 torque.
 
 \begin{figure}
@@ -811,8 +814,9 @@ torque.
     \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]{{Spherical_Plot_Transform_chi_30.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
     \subfloat[$\chi=70^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]{{Spherical_Plot_Transform_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of the spin-vector during the spin-down of NS A.}
-\label{fig: NS A}
+\caption{Plot of the spherical coordinates of the spin-vector during the
+spin-down of neutron star A.}
+\label{fig: neutron star A}
 \end{figure}
 
 The final state alignment agrees well with results neglecting the anomalous
@@ -867,8 +871,7 @@ intersections as drawn in figure~\ref{fig: sphere ellipsoid}.
 \end{tabular}
 \caption{Intersection of the sphere and ellipsoid defined in Eqn.~\eqref{eqn:
 conservation of energy triaxial} and Eqn.~\eqref{eqn: conservation of mass
-triaxial} respectively for three different values of $M$ at
-fixed $E$}
+triaxial} respectively for three different values of $M$ at fixed $E$.}
 \label{fig: sphere ellipsoid}
 \end{figure}
 
@@ -887,7 +890,7 @@ the radius of the sphere and the sizes of the three semi-axes of the ellipsoid:
 
 Now that we have understood the possible types of solution via the intersections
 of the sphere and ellipsoid, we can understand the cause of the unusual behaviour
-in Figure~\eqref{fig: NS A}(b). First, we note that
+in Figure~\eqref{fig: neutron star A}(b). First, we note that
 all simulations begin in the same initial state. As previously observed,
 changing $\chi$ through the critical value changes the sign of $\dot{A}$ and
 hence whether the sphere will grow or shrink with respect to the ellipsoid. So
@@ -904,19 +907,20 @@ precesses.
 
 Both sets of solution start with the solution precessing about the $\3$ axis
 ($\phi$ monotonically increasing) corresponding to Figure~\ref{fig: sphere ellipsoid}(c).
-In Figure~\ref{fig: NS A}(b), the discontinuity is in fact exactly the point
+In Figure~\ref{fig: neutron star A}(b), the discontinuity is in fact exactly the point
 when the solution changes the axis of precession.
 
-To better understand this, we plot the data from the
-$\chi=75^{\circ}$ simulation (\ref{fig: NS A}(b)) in figure~\ref{fig: NS A 3D}. Firstly in (a),
-we project the spherical coordinates onto the unit sphere and choose three
-short sections of data. This shows that at early times (in blue) the solution
-precesses about the $\3$ axis. During the discontinuity (in red) the solution
-shows similarities with the $J^{2}=2EI_{0}$ case from figure~\ref{fig: sphere
-ellipsoid}. Finally at late times, in black, the solution precesses about
-the~$\1$~axis. In Figure~\ref{fig: NS A 3D}(b) we also plot the solution in
-3D during the apparent discontinuity. This again shows that the solution goes
-through a change of the axis about which it precesses.
+To better understand this, we plot the data from the $\chi=75^{\circ}$
+simulation (\ref{fig: neutron star A}(b)) in figure~\ref{fig: neutron star A
+3D}. Firstly in (a), we project the spherical coordinates onto the unit sphere
+and choose three short sections of data. This shows that at early times (in
+blue) the solution precesses about the $\3$ axis. During the discontinuity (in
+red) the solution shows similarities with the $J^{2}=2EI_{0}$ case from
+figure~\ref{fig: sphere ellipsoid}. Finally at late times, in black, the
+solution precesses about the~$\1$~axis. In Figure~\ref{fig: neutron star A
+3D}(b) we also plot the solution in 3D during the apparent discontinuity. This
+again shows that the solution goes through a change of the axis about which it
+precesses.
 
 \begin{figure}
 \centering
@@ -924,31 +928,31 @@ through a change of the axis about which it precesses.
     \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.495\textwidth]{{Angle_Space_Plot_3D_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
     \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.495\textwidth]{{ThreeD_Plot_Cartesian_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}
-\caption{Numerical solutions for NS A plotted on the unit sphere in the
+\caption{Numerical solutions for neutron star A plotted on the unit sphere in the
 body frame axis. Figure~(a) shows three distinct time steps; blue, the time before the
 discontinuity, red is during the discontinuity, and black is some time after.
 Figure~(b) demonstrates the solution during the discontinuity, the changing colour is
 used to illustrate the evolution with time, progressing from green to blue.}
-\label{fig: NS A 3D}
-\end{figure}•
+\label{fig: neutron star A 3D}
+\end{figure}
 
-\FloatBarrier
-\subsubsection{NS B in region \texorpdfstring{$\tauS> \tauP>\tauA$}{}}
+\subsubsection{Neutron star B in region \texorpdfstring{$\tauS> \tauP>\tauA$}{}}
 \label{sec: B}
 
-This NS takes on a new significance having included the anomalous torque -
-we can now make a comparison with the work of \citet{Melatos2000}. In this
-work, Melatos found that when the precession timescale and anomalous torque
-timescales are comparable, the solutions involve \emph{persistent precession}. Specifically,
-this is defined as the polar angle $a$ tending to a constant, non-zero value with the
-nutation amplitude (oscillations in $a$) either decaying or remaining constant.
-Because the spin-vector has not aligned with a principal axis of the moment of
-inertia, this was interpreted as the spin-vector undergoing persistent
-precession. Working in the body frame axis, we confirm that $a\ne\pi/2$ at the
-end of the evolution in figure~\ref{fig: NS B}(a).
+Solution for neutron star B take on a new significance having included the
+anomalous torque - we can now make a comparison with the work of
+\citet{Melatos2000}. In this work, Melatos found that when the precession
+timescale and anomalous torque timescales are comparable, the solutions involve
+\emph{persistent precession}. Specifically, this is defined as the polar angle
+$a$ tending to a constant, non-zero value with the nutation amplitude
+(oscillations in $a$) either decaying or remaining constant.  Because the
+spin-vector has not aligned with a principal axis of the moment of inertia,
+this was interpreted as the spin-vector undergoing persistent precession.
+Working in the body frame axis, we confirm that $a\ne\pi/2$ at the end of the
+evolution in figure~\ref{fig: neutron star B}(a).
 
 \meta{
-Transforming to the effective body frame in Figure~\ref{fig: NS B}(b), we find
+Transforming to the effective body frame in Figure~\ref{fig: neutron star B}(b), we find
 that the spin-vector in fact aligns with the principal axis of the effective
 moment of inertia ($a' \rightarrow \pi /2$).  Therefore, the persistent
 precession angle found by Melatos is precisely the angle $\beta$.  The
@@ -969,18 +973,17 @@ the precession of the body is damped.}
              {\includegraphics[width=0.495\textwidth]
              {{Spherical_Plot_Transform_chi_75.0_epsI_4.0e-11_epsA_5.0e-11_omega0_1.0e4_t1_2.0e8}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for NS B.
+\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star B.
          Crucially, at late times the polar angles $a$ and $a'$ differ by a
          factor $8.35^{\circ}$, the value of $\beta$ in Table~\ref{tab: A B C params beta}.}
-\label{fig: NS B}
-\end{figure}•
+\label{fig: neutron star B}
+\end{figure}
 
-\FloatBarrier
 
-\subsubsection{NS C in region \texorpdfstring{$\tauP> \tauS>\tauA$}{}}
+\subsubsection{Neutron star C in region \texorpdfstring{$\tauP> \tauS>\tauA$}{}}
 \label{sec: C}
 
-In Figure~\ref{fig: NS C}, for all values of $\chi$, the spin-vector is found
+In Figure~\ref{fig: neutron star C}, for all values of $\chi$, the spin-vector is found
 to align with the effective body frame $\1$ axis.  In this limit ($\epsA \gg
 \epsI$ and so from figure~\ref{fig: beta}), we see that the $\1$ axis
 aligns with the magnetic dipole. This agrees with the results for a spherical
@@ -995,12 +998,11 @@ torque introduces oscillations on the anomalous torque timescale.
     \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]
              {{Spherical_Plot_Transform_chi_75.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for NS
+\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star
 C. }
-\label{fig: NS C}
+\label{fig: neutron star C}
 \end{figure}
 
-\FloatBarrier
 
 \section{Conclusion}
 \label{sec: conclusion rotating frame}
@@ -1033,14 +1035,14 @@ precession is best described. For this reason, the solutions found by
 that we use in the rest of this thesis.
 }
 
-%\section{Connection with the known NS population}
-%\label{sec: Connection with the known NS population}
+%\section{Connection with the known neutron star population}
+%\label{sec: Connection with the known neutron star population}
 %TBD
 
 %\label{sec: connection with pp}
 %
 %Having an understanding of how the different types of solutions behave, we now
-%compare this with the known NS population to estimate which types of solutions
+%compare this with the known neutron star population to estimate which types of solutions
 %are physically relevant.
 %
 %Using a large value of the initial spin period will skew the phase diagrams in
@@ -1048,13 +1050,13 @@ that we use in the rest of this thesis.
 %diagram in figure~\ref{fig: phase space for actual spin frequency} for a
 %realistic spin frequency of $\nu=1.6$~Hz. The strongest candidates displaying a
 %periodic signal, which may be explained by precession, were collected in
-%\citet{Lyne2010}. The 18 NSs where listed along with their: spin frequency,
+%\citet{Lyne2010}. The 18 neutron stars where listed along with their: spin frequency,
 %frequency derivative and the peak fluctuation frequency of the power spectra
 %$F$. It is a standard calculation to find the magnetic field from the first two
 %parameters:
 %
 %\begin{equation}
-%B_{s} = 3.3 \times^{19}\sqrt{-\dot{\nu}\nu^{-3}},
+%B_{0} = 3.3 \times^{19}\sqrt{-\dot{\nu}\nu^{-3}},
 %\end{equation}
 %see \citet{Lyne2012book} for more details. We now make the assumption that the
 %fluctuations at frequency $F$ are due to free precession such that the elastic
@@ -1062,9 +1064,9 @@ that we use in the rest of this thesis.
 %precession}:
 %\begin{equation}
 %\epsI = \frac{1}{\nu F}.
-%\end{equation}•
+%\end{equation}
 %We use this as a first approximation to discuss the types of solution that may
-%be relevant to the NS population, but recognise that we have yet to account
+%be relevant to the neutron star population, but recognise that we have yet to account
 %for the damping due to any superfluid core.
 %\begin{figure}[ht]
 %\centering
@@ -1073,24 +1075,23 @@ that we use in the rest of this thesis.
 %                    {{Phase_Space_Realistic_Omega0}.png}
 %\caption{Phase space of the orderings of the three timescales using a realistic
 %    value of the spin frequency. This can be compared with estimates of where
-%    the NSs from \citet{Lyne2010} sit assuming the periodic oscillations
+%    the neutron stars from \citet{Lyne2010} sit assuming the periodic oscillations
 %are due to precession.}
 %\label{fig: phase space for actual spin frequency}
-%\end{figure}•
-%Plotting the results in figure~\ref{fig: phase space for actual spin frequency} we observe that all NSs exist in Region A of the phase diagram.
+%\end{figure}
+%Plotting the results in figure~\ref{fig: phase space for actual spin frequency} we observe that all neutron stars exist in Region A of the phase diagram.
 %
-%\FloatBarrier
 %
 %\subsection{Future work}
 %Having validated that our simple framework  agrees with the results in the
 %literature we can look forward to see how it may be used and what is not yet
 %included. Recent work by \citet{Seymour2012} has found evidence for chaotic
-%behaviour in several NSs, they predict that the governing equations should
+%behaviour in several neutron stars, they predict that the governing equations should
 %be 3 non linear coupled ODEs with one variable the spin-down. Our model fits
 %such a system and so we aim to search for any chaotic behaviour in our results
 %and use this as an observational test of out model. The primary objection to
 %precession as an underlying mechanism for timing noise is that any fluid core
-%of the NS will damp the precession. We aim to reproduce this result by
+%of the neutron star will damp the precession. We aim to reproduce this result by
 %adding a second core following the frictional coupling method of
 %\citet{Bondi1955}. Adding random kicks during the spin-down we can  evaluate
 %the suggestion of \citet{Cordes1993} that such kicks will excite the

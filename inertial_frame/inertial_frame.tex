@@ -143,26 +143,31 @@ shown by \citet{Landau1969} this results in a set of three ODEs which are
 coupled both to the other Euler angles and the components of the spin-vector.
 To have solutions both for the motion of the spin-vector in the rotating frame
 and the Euler angles we need to solve all six ODEs together. To be specific,
-the six ODEs are given in Equations~\eqref{eqn: ODEs}: in the left-hand triplet
-we give the the Euler rigid-body equations for a biaxial body with a moment of
-inertia tensor given by Eqn.~\eqref{eqn: MOI}; in the right-hand triplet we
-give the rearranged set of Euler angles ODEs from \citet{Landau1969}.
+the three Euler rigid-body equations for a biaxial body with a moment
+of inertia as defined in Eqn.~\eqref{eqn: MOI} as given by
 \begin{align}
-\begin{split}
 \dot{\Omega}_{x} & = \frac{1}{I_{0}}\left[T_{x} +
                       -\epsI \Omega_{y} \Omega_{z}\right],
+\label{eqn: 6ODE x}
 \\
 \dot{\Omega}_{y} & = \frac{1}{I_{0}}\left[T_{y} +
                       \epsI \Omega_{x} \Omega_{z}\right],
+\label{eqn: 6ODE y}
 \\
 \dot{\Omega}_{z} & =\frac{1}{I_{0}}T_{z},
-\end{split}
-\begin{split}
-\dot{\phi} & = \frac{\Omega_{x} \sin \psi + \Omega_{y} \cos \psi}{\sin \theta},\\
-\dot{\theta} & = \Omega_{x} \cos \psi - \Omega_{y} \sin \psi,\\
+\label{eqn: 6ODE z}
+\end{align}
+while the rearrange set of Euler angles ODEs from \citet{Landau1969} are given
+by
+\begin{align}
+\dot{\phi} & = \frac{\Omega_{x} \sin \psi + \Omega_{y} \cos \psi}{\sin \theta},
+\label{eqn: 6ODE phi}
+\\
+\dot{\theta} & = \Omega_{x} \cos \psi - \Omega_{y} \sin \psi,
+\label{eqn: 6ODE theta}
+\\
 \dot{\psi} & = \Omega_{z} - \dot{\phi} \cos \theta,
-\end{split}
-\label{eqn: ODEs}
+\label{eqn: 6ODE psi}
 \end{align}
 where $\epsI = \Delta I/I_0$ is the deformation of star.
 This set of six coupled ODEs can be solved numerically using a time stepper; we
@@ -196,11 +201,11 @@ $z'$ axis. This gives a set of three initial conditions
 where $\omega_0$ is the initial magnitude of the spin-vector, recalling that
 we define $\omega = |\Omega_a|$.
 
-For the Euler angle equations, the right-hand triplet in Eqn.~\eqref{eqn:
-ODEs}, the initial conditions need to be chosen carefully so that the result
-can be meaningfully interpreted. In particular, we need to be sure we understand
-how the inertial frame is orientated. Let us note that the angular
-momentum in the two frames are related by
+For the Euler angle equations, Eqns.~\eqref{eqn: 6ODE theta} to
+Eqn.~\eqref{eqn: 6ODE phi}, the initial conditions need to be chosen carefully
+so that the result can be meaningfully interpreted. In particular, we need to
+be sure we understand how the inertial frame is orientated. Let us note that
+the angular momentum in the two frames are related by
 \begin{equation}
 \Ji_a = R^{b}_{\;\;a} \Jr_b .
 \label{eqn: transform}
@@ -289,59 +294,56 @@ how the inertial frame is orientated.
 \section{Evolving the Euler angles}
 \label{sec: evolving the euler angles}
 
-Having defined the coupled ODEs in Eqn.~\eqref{eqn: ODEs} and appropriate
-initial conditions, we can now simulate the evolution of the spin-vector and
-Euler angles. The ultimate aim of this section is to go on to simulate physical
-observables, however, let us first consider the evolution of the simulation
-parameters themselves first (the components of $\Omega_a$ and the three Euler
-angles). We will consider first a torque free simulation in Section~\ref{sec:
-biaxial body with no torque} and then add in the full torque in Section~\ref{sec:
-biaxial body with torque}.
+Having defined the coupled ODEs in Eqns.~\eqref{eqn: 6ODE x} to Eqn.~\eqref{eqn:
+6ODE psi} and appropriate initial conditions, we can now simulate the evolution
+of the spin-vector and Euler angles. The ultimate aim of this section is to go
+on to simulate physical observables, however, let us first consider the
+evolution of the simulation parameters themselves first (the components of
+$\Omega_a$ and the three Euler angles). We will consider first a torque free
+simulation in Section~\ref{sec: biaxial body with no torque} and then add in
+the full torque in Section~\ref{sec: biaxial body with torque}.
 
 \subsection{Torque free biaxial body}
 \label{sec: biaxial body with no torque}
 
-The solutions to equations~\eqref{eqn: ODEs} were studied by \citet{Jones2001}
+The solutions to Eqns.~\eqref{eqn: 6ODE x} to Eqn.~\eqref{eqn: 6ODE psi} were
+studied by \citet{Jones2001}
 for a biaxial body free of torques, it was found that the Euler angles had
 simple analytic solutions given by
 \begin{align}
-\begin{split}
-    \theta(t) & = \theta_{0} \approx a_{0}, \\
-    \phi(t) & = \dot{\phi}t + \phi_{0} = \dot{\phi} t, \\
+    \theta(t) & = \theta_{0} \approx a_{0}, \label{eqn: theta TF}\\
+    \phi(t) & = \dot{\phi}t + \phi_{0} = \dot{\phi} t, \label{eqN; phi TF}\\
     \psi(t) & = \dot{\psi}t + \psi_{0}=
  -\frac{\Delta I}{I_0}\dot{\phi} t + \textrm{sign}(a_0)\frac{\pi}{2},
-\end{split}
-\label{eqn: euler angles torque free evolution}
+\label{eqn: psi TF}
 \end{align}
 where in the second step we have inserted the initial conditions. Solution to
 the rigid-body equations where derived in Eqn.~\eqref{eqn: free precession},
 transforming these into the spherical components we have
 \begin{align}
-|\Omega_a| = \omega_0, && a = a_0, &&\textrm{and} && \varphi=\epsI\omega_0 \cos(a_0) t.
-\label{eqn: spherical spin torque free evolution}
+|\Omega_a| = \omega_0, \label{eqn: omega TF}\\
+a = a_0, \label{eqn: a TF} \\
+\varphi=\epsI\omega_0 \cos(a_0) t. 
+\label{eqn: varphi TF}
 \end{align}
-This set of analytic solutions gives
-us a method to verify our numerical solver of Eqn.~\eqref{eqn: ODEs} with the
-appropriate initial conditions.
+This set of analytic solutions gives us a method to verify our numerical solver
+with the appropriate initial conditions.
 
-In Figure~\ref{fig: biaxial body no torque} we present the Euler angle solutions
-of equations~\eqref{eqn: ODEs} for some arbitrary values of the simulation
-parameters along with the analytic prediction of Eqn.~\eqref{eqn: euler angles
-torque free evolution} and Eqn.~\eqref{eqn: spherical spin torque free
-evolution}. This demonstrates `almost' perfect agreement between the two: the
-components of $\Omega_a$ behave as expected;
+In Figure~\ref{fig: biaxial body no torque} we present the numerical solutions
+for some arbitrary values of the simulation parameters along with the analytic
+prediction of Eqns.~\eqref{eqn: theta TF} to Eqn.~\eqref{eqn: varphi TF}. This
+demonstrates `almost' perfect agreement between the two: the components of
+$\Omega_a$ behave as expected;
 %for the Euler angles, 
-$\phi$ monotonically
-increases at the spin frequency; $\psi$ decreases at the slower precession
-frequency; the polar angle $\theta$ should remain constant during this
-simulation, however, we find it varies fractionally by
-$\sim 10^{-11}$.  This error is caused by the finite numerical precision when
-performing the subtraction in Eqn.~\eqref{eqn: ODEs} for $\dot{\theta}$. On
-short timescales, these errors remain small; over sufficiently long timescale
-these errors can accumulate anerror is eventually lead to a complete loss of numerical
-accuracy. We must therefore be vigilant to ensure this does not occur when
-considering realistic values.
-\afterpage{\clearpage}
+$\phi$ monotonically increases at the spin frequency; $\psi$ decreases at the
+slower precession frequency; the polar angle $\theta$ should remain constant
+during this simulation, however, we find it varies fractionally by $\sim
+10^{-11}$.  This error is caused by the finite numerical precision when
+performing the subtraction in Eqn.~\eqref{eqn: 6ODE theta}. On short
+timescales, these errors remain small; over sufficiently long timescale these
+errors can accumulate anerror is eventually lead to a complete loss of
+numerical accuracy. We must therefore be vigilant to ensure this does not occur
+when considering realistic values.  \afterpage{\clearpage}
 \begin{figure}[p]
     \centering
 \subfloat[Spherical components in the rotating frame]
@@ -350,10 +352,11 @@ considering realistic values.
 \subfloat[Euler angles ]
          {\includegraphics[width=0.7\textwidth]
          {{Euler_Angles_Unknown_SpindownTorqueSwitching_1_chi0_8.0000000000e+01_omega0_1.00e+01_epsI3_1.00e-03_AnomTorqueSwitching_1_n_10000_a0_1.5000000000e+01_T_5.00e+03_upsilon_0.00e+00_epsA_0.00e+00_epsI1_0.00e+00_AnomTorque_1}.pdf}}
-\caption{Solutions to the ODEs defined in Eqn.~\eqref{eqn: ODEs} for a
-torque free biaxial NS with a deformation of $\epsI = 10^{-3}$. The red
-dashed line is the analytic calculation found by \citet{Jones2001} for the
-evolution of the Euler angles as given in Eqn.~\eqref{eqn: euler angles torque free evolution}.}
+\caption{Solutions to the ODEs defined in Eqns.~\eqref{eqn: 6ODE x} to
+Eqn.~\eqref{eqn: 6ODE psi} for a
+torque free biaxial star with a deformation of $\epsI = 10^{-3}$. The red
+dashed line is the analytic calculation found by \citet{Jones2001}
+as given in Eqns.~\eqref{eqn: theta TF} to Eqn.~\eqref{eqn: varphi TF}.}
 \label{fig: biaxial body no torque}
 \end{figure}
 
@@ -378,7 +381,8 @@ the numerical errors produce the observed noise.
 \subfloat[Euler angles and selected derivatives]
          {\includegraphics[width=0.7\textwidth]
 {{Euler_Angles_Unknown_SpindownTorqueSwitching_1_chi0_8.0000000000e+01_omega0_1.00e+01_epsI3_1.00e-03_AnomTorqueSwitching_1_n_10000_a0_1.5000000000e+01_T_5.00e+03_upsilon_0.00e+00_epsA_5.00e-04_epsI1_0.00e+00_AnomTorque_1}.pdf}}
-\caption{Solutions to the ODEs defined in Eqn.~\eqref{eqn: ODEs} including the
+\caption{Solutions to the ODEs defined in Eqns.~\eqref{eqn: 6ODE x} to
+Eqn.~\eqref{eqn: 6ODE psi} including the
 torque defined in Eqn.~\eqref{eqn: torque} for a biaxial body with
 $\epsA=\epsI/2$ and $\epsI=1\times10^{-3}$; the ratio of the precession timescale
 to the spin-down age is $\approx 7\times10^{-4}$. Note the x-axis is in units of
@@ -386,7 +390,7 @@ $\tauP$, the initial precession period.}
 \label{fig: biaxial body with torque}
 \end{figure}
 
-These solutions show how, using numerical simulation of Eqn.~\eqref{eqn: ODEs},
+These solutions show how, using numerical simulations,
 we can easily simulate the effect of the full \citet{Deutsch1955} torque. In the rest
 of this chapter, we will discuss how to model the features of a star observed
 by pulsar astronomers. This will allow us to change the physics of the star,
@@ -485,8 +489,8 @@ and
 \begin{align}
 \dot{\psi} = -\frac{\Delta I}{I_0} \Omega_z.
 \end{align}
-To relate the rates of change of the two angles, we can use the $\dot{\psi}$
-equation from Eqn.~\eqref{eqn: ODEs}, giving
+To relate the rates of change of the two angles, we can use Eqn.~\eqref{eqn:
+6ODE psi}, giving
 \begin{align}
 \dot{\psi} = - \frac{\Delta I}{I_0 + \Delta I} \dot{\phi} \cos\theta
 \approx -\frac{\Delta I}{I_0} \dot{\phi} = -\epsI \dot{\phi}
@@ -530,7 +534,8 @@ understanding.
 
 \subsection{Dynamics of the magnetic dipole}
 
-Numerical solutions to Eqn.~\eqref{eqn: ODEs} allow us to calculate the motion
+Numerical solutions to Eqns.~\eqref{eqn: 6ODE x} to Eqn.~\eqref{eqn: 6ODE psi}
+allow us to calculate the motion
 of any quantity in the inertial frame from which the neutron star is observed.
 This can be used, for example, to calculate the motion of the spin-vector in the
 rotating frame under any arbitrary torque. However, pulsar astronomers observe the pulsar
@@ -575,7 +580,7 @@ while the polar angle is
 Eqn.~\eqref{eqn: Phi} and Eqn.~\eqref{eqn: Theta 2} are exact results and we
 we will use them later in this chapter to model the observable features such
 as the phase residuals and spin-down rate.
-Specifically, given a numerical solution of equations~\eqref{eqn: ODEs}, i.e.
+Specifically, given a numerical solution to our system of coupled ODEs, i.e.
 the evolution of the spin-vector and three Euler angles, we can use these two
 equations to describe the evolution of the magnetic dipole orientation in the
 inertial frame. Before we do this, let us now build some feeling for the dynamics of
@@ -588,7 +593,9 @@ and $\chi$ in Figure~\ref{fig: polar angle variations}
 \begin{figure}[htb]
 \centering
   \includegraphics[width=0.9\textwidth]{polar_angle_variation_with_chi.pdf}
-\caption{Variations in the polar angle of the dipole $\m_a$ under free precession}
+\caption{The effect of free precession on the polar angle of the dipole $\m_a$
+as given by Eqn.~\eqref{eqn: Theta 2} for three choices of $\chi$ and
+$\theta$.}
 \label{fig: polar angle variations}
 \end{figure}
 From this figure, we see that the polar angle is modulated at the precession
@@ -624,8 +631,9 @@ $\theta$ and $\chi$.
 \begin{figure}[htb]
 \centering
   \includegraphics[width=0.9\textwidth]{frequency_variation_with_chi.pdf}
-\caption{Variations in the instantaneous electromagnetic frequency for three choices
-of $\chi$ and $\theta$ under free precession}
+\caption{The effect of free precession on the instantaneous electromagnetic
+frequency given by Eqn.~\eqref{eqn: Phi_dot} for three choices of $\chi$ and
+$\theta$.}
 \label{fig: frequency variations}
 \end{figure}
 
@@ -675,10 +683,10 @@ Figure~\ref{fig: cones}.
     {chi_equal_theta.pdf}}
 	\subfloat[$\chi > \theta$]{\includegraphics[width=0.33\textwidth]
     {chi_more_theta.pdf}}
-\caption{Diagrams depicting the projections of the cone swept out by $\m_a$ about
-    $\n_a$ (in red) and the cone swept out by $\n_a$ about $J_a$ (in blue) onto the reference plane
-    for torque free precession. We show three orderings of $\chi$ and $\theta$.
-    }
+\caption{Diagrams depicting the projections of the cone swept out by $\m_a$
+about $\n_a$ (in red) and the cone swept out by $\n_a$ about $J_a$ (in blue)
+onto the reference plane for torque free precession. We show the three
+orderings of $\chi$ and $\theta$.}
 \label{fig: cones}
 \end{figure}
 
@@ -817,10 +825,10 @@ passes through the plane containing the observer and the angular momentum
 vector,  we can always reorient the observer such that the pulsation occurs
 every time $\Phi$ is a multiple of $2\pi$. In this way, $\Phi$ is also the
 phase of the observed pulsations. To generate $\Phi$ we define the stars
-properties i.e. the magnetic field and initial angles, then numerically
-evolve equations~\eqref{eqn: ODEs}. The resulting time series of the spin-vector
-components and Euler angles are then substituted into Eqn.~\eqref{eqn: Phi} to
-generate the exact phase.
+properties i.e. the magnetic field and initial angles, then numerically evolve
+Eqn.~\eqref{eqn: 6ODE x} to Eqn.~\eqref{eqn: 6ODE psi}. The resulting time
+series of the spin-vector components and Euler angles are then substituted into
+Eqn.~\eqref{eqn: Phi} to generate the exact phase.
 
 Following the methods used by observers, we define our `timing model' as
 a Taylor expansion to the phase about some reference time $\tref$ up to $\ddot{f}$:
@@ -893,12 +901,13 @@ Section~\ref{sec: initial conditions}.
 Equation \eqref{eqn: Jones 49} is calculated in the absence of any EM torque.
 Nevertheless, it is still appropriate when a torque is applied provided
 that the geometric effect is stronger that any other (this is discussed in
-the next few sections). As such, we begin by simulating a NS with the properties
-listed in Table~\ref{tab: PR 49}.
+the next few sections). As such, we begin by simulating a star with the
+properties listed in Table~\ref{tab: PR 49}.
 \begin{table}[htb]
 \centering
 \include{49_verification}
-\caption{Simulation parameters used for the phase residual plotted in Figure~\ref{fig: PR 49}}
+\caption{Simulation parameters used for the phase residual plotted in
+Figure~\ref{fig: PR 49}.}
 \label{tab: PR 49}
 \end{table}
 The resulting phase residual, in cycles, is
@@ -906,9 +915,9 @@ given in Figure~\ref{fig: PR 49}.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{49_verification}
-\caption{The simulated phase residual in cycles for a simulated NS with the
+\caption{The simulated phase residual in cycles for a simulated star with the
 properties described in Table~\ref{tab: PR 49}. We also plot the corresponding
-analytic prediction of Eqn.~\eqref{eqn: Jones 49}}
+analytic prediction of Eqn.~\eqref{eqn: Jones 49}.}
 \label{fig: PR 49}
 \end{figure}
 This figure shows strong agreement between the numerical result and the
@@ -954,7 +963,8 @@ unity.
 \begin{table}[htb]
 \centering
 \include{63_verification}
-\caption{Simulation parameters used for the phase residual plotted in Figure~\ref{fig: PR 63}}
+\caption{Simulation parameters used for the phase residual plotted in
+Figure~\ref{fig: PR 63}.}
 \label{tab: PR 63}
 \end{table}
 The resulting phase residual is plotted in Figure~\ref{fig: PR 63} along with the
@@ -966,9 +976,10 @@ given in Table~\ref{tab: PR 63}.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{63_verification}
-\caption{The simulated phase residual in cycles for a simulated NS with the
+\caption{The simulated phase residual in cycles for a simulated star with the
 properties described in Table~\ref{tab: PR 63}. We also plot the corresponding
-analytic prediction of Eqn.~\eqref{eqn: Jones 49} and Eqn.~\eqref{eqn: Jones 63}}
+analytic prediction of Eqn.~\eqref{eqn: Jones 49} and Eqn.~\eqref{eqn: Jones
+63}.}
 \label{fig: PR 63}
 \end{figure}
 
@@ -1176,8 +1187,8 @@ solutions are qualitatively unchanged.
 \begin{table}[htb]
 \centering
 \input{\thisdir/SpindownRate_normal}
-\caption{Simulation parameters for the spin-down rate plotted in Figure~\ref{fig:
-spin-down rate normal}}
+\caption{Simulation parameters for the spin-down rate plotted in
+Figure~\ref{fig: spin-down rate normal}.}
 \label{tab: spin-down rate normal}
 \end{table}
 
@@ -1189,7 +1200,7 @@ in Figure~\ref{fig: spin-down rate normal}.
 \includegraphics[]{SpindownRate_normal}
 \caption{Spin-down rate for simulation parameters listed in Table~\ref{tab:
 spin-down rate normal} compared against the corresponding analytic prediction
-of Eqn.\eqref{eqn: spin-down rate} }
+of Eqn.\eqref{eqn: spin-down rate}.}
 \label{fig: spin-down rate normal}
 \end{figure}
 This figure demonstrates good agreement: small variations result from the
@@ -1212,7 +1223,7 @@ orthog}.
 \centering
 \input{\thisdir/SpindownRate_orthog}
 \caption{Simulation parameters for the spin-down rate plotted in Figure~\ref{fig:
-spin-down rate orthog}}
+spin-down rate orthog}.}
 \label{tab: spin-down rate orthog}
 \end{table}
 The spin-down rate for this `almost orthogonal' dipole simulation is plotted
@@ -1586,7 +1597,7 @@ beta}.
 \centering
 \input{\thisdir/NoSwitching}
 \caption{Simulation properties used for Figure~\ref{fig: switching without anom}
-and Figure~\ref{fig: switching with anom}}
+and Figure~\ref{fig: switching with anom}.}
 \label{tab: switching props}
 \end{table}
 
@@ -1596,8 +1607,8 @@ in the angular momentum vector and as a result the wobble angle is not truly
 zero. For all the phase residuals calculated in this section, we will fit and
 remove a Taylor expansion up to and including $\ddot{\nu}$.
 
-We will now set up simulations of this `minimal precession` NS, and then
-manually switch the torque. We choose a NS where the EM torque amplification is
+We will now set up simulations of this `minimal precession` star, and then
+manually switch the torque. We choose a star where the EM torque amplification is
 important.  In the following sections, we will consider first switching in the
 spin-down torque, and then also in the anomalous torque. For all simulations
 considered here we will use the properties listed in Table~\ref{tab: switching
@@ -1681,12 +1692,12 @@ anomalous torque switching.
 
 The two-state switching changes the value of $\epsA$ according to
 Eqn.~\eqref{eqn: epsA switch}, which in turn redefined the effective rotating frame
-as defined in Section~\ref{sec: effective body frame}. A non-precessing NS at an
+as defined in Section~\ref{sec: effective body frame}. A non-precessing star at an
 angle $\beta(\epsI, \epsA, \chi)$ will, after an anomalous torque switch by a fractional
 amount $\Sa$, no longer be aligned with the rotating frame axis. This is
 because the effective rotating frame will have shifted to $\beta' = \beta(\epsI,
 \Sa\epsA, \chi)$. As a result, we should expect the previously
-non-precessing NS to begin precessing after a torque switching event.
+non-precessing star to begin precessing after a torque switching event.
 The exact size of the new precession wobble angle will depend on the phase of
 precession (if it was precessing) at the instant before the switching event.
 However, by referring to the reference plane of Figure~\ref{fig: reference plane}
@@ -1746,11 +1757,11 @@ any signs of precession.
 
 In this chapter, we have developed a method to simulate observable properties
 of neutron stars by evolving the governing system of ODEs. These equations,
-given in Eqn.~\eqref{eqn: ODEs}, contain both the components of the spin-vector
-in the rotating frame and the Euler rotation angles required to transform from
-the rotating frame to the inertial frame. This step is important since it is in
-this reference frame that observers view the effects of precession on the
-pulsars observation features.
+given in Eqns.~\eqref{eqn: 6ODE x} to Eqn.~\eqref{eqn: 6ODE psi}, contain both
+the components of the spin-vector in the rotating frame and the Euler rotation
+angles required to transform from the rotating frame to the inertial frame.
+This step is important since it is in this reference frame that observers view
+the effects of precession on the pulsars observation features.
 
 We developed an intuitive model for how the magnetic dipole, along which EM
 radiation is emitted, moves in the inertial frame. Comparing with analytic
