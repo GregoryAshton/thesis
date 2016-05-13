@@ -729,15 +729,18 @@ the half angle of the dipole cone increases.
 \label{sec: wobble angle}
 The angle $\theta$ (see Figure~\ref{fig: reference plane})) is referred to as the
 \emph{wobble angle} since, in torque-free precession, its magnitude determines
-the `amount' of precession. \citet{Jones2001} demonstrated that
-for nearly spherical stars where $\epsI \ll 1$ and when $\theta \ll 1$ the
-angles are related by
+the `amount' of precession. Taking Eqn.~\eqref{eqn: ang mom} at an instant when
+$\Omega_y=0$ without loss of generality it can be shown that
 \begin{align}
-\hat{\theta} \approx \epsI\theta.
+\tan\theta  = \frac{I_0}{I_0 + \Delta I} \tan(a) = \frac{1}{1+\epsI}\tan(\theta + \hat\theta)
+\end{align}
+Using the angle sum identity for $\tan(\theta + \hat{\theta})$ and expanding
+about $\epsI=0$ it can be shown \citep{Jones2001} that
+\begin{align}
+\hat{\theta} \approx \epsI\sin\theta\cos\theta,
 \label{eqn: theta hat theta}
 \end{align}
-Consequently, from Figure~\ref{fig: reference plane} we see that $a\approx
-\theta$.
+then for $\theta \ll 1$, we have that $a\approx \theta + \mathcal{O}(\epsI)$.
 
 When including the EM torque the wobble angle
 does not have the intuitive interpretation of the `amount' of precession.  In
