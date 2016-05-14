@@ -61,31 +61,379 @@ in the luminosity. From this we intend in the future to update the estimates by
 \label{sec: random walk models part II}
 \input{\thisdir/random_walk_models_part_II}
 
+\section{Application to the Crab pulsar}
+\meta{
+In Section~\ref{sec: timing noise as described by the crab ephemeris}, we
+introduced the Crab ephemeris.  The regular and independent measurements of the
+frequency and spin-down rate in the Crab ephemeris provide a unique view of
+timing noise as a `jump' in the phase, frequency, and spin-down rate each
+month. Specifically by a jump we mean the discontinuity at the interface
+between two months as illustrated in Figure~\ref{fig: template jumps}. In this
+section, we will intepret data from the ephemeris in the context of a random
+walk model. In the previous section, we derived the minimum fully-coherent
+metric-mismatch due to random walk in the phase or frequency, given the
+properties of the underlying random walk. We will therefor finish this section
+by making some estimates using the data from the Crab ephemeris which can be
+compared with the empirical description discussed in Section~\ref{sec: averaged
+mismatch as a function of the observation duration}.Note that in this section,
+we discus the rotational frequency and frequency derivatives, which we denote
+by $\nu$ and $\dot{\nu}$ which we will relate to the the gravitational wave
+frequency $f$ using the non-axisymmetric emmision model for which $f=2\nu$.
+
+\subsection{Distribution of jumps in the Crab ephemeris}
+\label{sec: jumps}
+\newcommand{\nuddotav}{\ddot{\nu}_{\textrm{av}}}
+We begin with a purely empirical look at the distribution of jumps in the
+Crab ephemeris. We will use these results in the next section to intepret the
+Crab ephemeris in the context of a random walk.
+
+From the Crab ephemeris, there are three distributions which we will calculate
+here: the jumps in frequency, spin-down rate, and phase. It is not meaningful
+to simply look at the difference in frequency (for example) between any two
+months, what we want is the difference which occurs at the interface. To
+calculate this we define $\nu_{i}(t)$ as the frequency according to the
+$i^{th}$ month as evaluated at time $t$. Then if $\Delta t_{i} = t_{i+1} -
+t_{i}$ the frequency jump between months is
+\begin{align}
+\delta\nu_{i} &= \nu_{i+1}\left(t_{i+1}-\Delta t_{i}/2\right) -  \nu_{i}\left(t_{i}+\Delta t_{i}/2\right), \\
+    &= \left[\nu_{i+1}- \frac{\Delta t_{i}}{2}\dot{\nu}_{i+1} + \left(\frac{\Delta t_{i}}{2}\right)^{2}\frac{\ddot{\nu}_{i+1}}{2}\right]
+     - \left[\nu_{i} + \frac{\Delta t_{i}}{2}\dot{\nu}_{i}+ \left(\frac{\Delta t_{i}}{2}\right)^{2}\frac{\ddot{\nu}_{i}}{2}\right] .
+\end{align}
+The Crab ephemeris does not include the second order spin-down, but since the
+first order spin-down is not constant we assume a constant average second order
+spin-down given by
+\begin{equation}
+   \nuddotav = \frac{1}{N}\sum_{i} \frac{\dot{\nu}_{i+1} - \dot{\nu_{i}}}{t_{i+1} - t_{i}},
+   \label{eqn: average second order spin-down}
+\end{equation}
+where $N$ is in the number of data points in the ephemeris file. Inserting this
+into the Taylor expansion the second order terms cancel leaving a frequency
+jump between months given by
+\begin{equation}
+\delta\nu_{i} = \left(\nu_{i+1}- \nu_{i}\right) -  \left(\dot{\nu}_{i+1}
+               + \dot{\nu}_{i}\right)\frac{\Delta t_{i}}{2}.
+\label{eqn: crab frequency residuals}
+\end{equation}
+Note, this is not the difference in frequency between monthly
+updates, but the jump between months in frequency at the interface as illustrated in figure
+\ref{fig: template jumps}.
+
+Calculating the result of Eqn.~\eqref{eqn: crab frequency residuals} for all
+the data points in the Crab ephemeris we plot the estimated density using the
+Gaussian kernel density estimate (KDE) method \citep{Scipy} in Figure~\ref{fig:
+crab kde}A. Note that we have filtered out differences which occur over known
+glitches as described by \citet{Espinoza2011}. This is because we are
+interested in the timing noise activity and not the effect of glitches
+themselves.
+\begin{figure}[ht]
+\centering
+\includegraphics[]{CrabTN_KDEs.pdf}
+\caption{KDEs for the `jumps' in frequency, spin-down rate, and residual number
+of rotations between adjacent per-month signals in the Crab ephemeris.
+Adjacent signals over glitches are filtered along with large anomalous values
+of $\delta N$ once it was confirmed they occur within 200 days after a glitch.}
+\label{fig: crab kde}
+\end{figure}
+
+Moving now to the spindown, we can calculate the jump between months in a similar way
+\begin{align}
+\delta\dot{\nu}_{i} & = \dot{\nu}_{i+1}\left(t_{i+1}-\Delta t_{i}/2\right) -  \dot{\nu}_{i}\left(t_{i}+\Delta t_{i}/2\right), \\
+& = \left(\dot{\nu}_{i+1}-\dot{\nu}_{i}\right) -  \nuddotav \Delta t_{i}
+\label{eqn: crab spindown residuals}
+\end{align}
+For the spindown rate a population of large negative jumps was observed, these are
+found to occur in the post-glitch periods and hence are not the timing noise
+activity that we are interested in. As such in Figure~\ref{fig: crab kde}B, we
+filter out these anomalous results to show the KDE for data points known to be
+related to timing noise.
+
+For the phase we can use that each reference time given in the ephemeris
+coincides with a pulse. Therefore between two adjacent references times, the
+star has undergone an integer number of rotations. We can evaluate how well the
+ephemeris performs here by calculating the residual number of rotations between
+the timing model at a given step and the pulse arrival time at the next step.
+The data in the ephemeris file does not directly provide information on the
+phase evolution, it provides the independent phase evolution in each month with
+the phase at the reference time being zero. To calculate the full phase
+evolution between two reference times, we need to calculate the phase
+difference between each reference time and the interface time between them.
+Take this interface to be halfway between such that $\tmid=(t_{i} +
+t_{i+1})/2$, then the total number of rotations between two reference times is
+\begin{equation}
+    N = \frac{1}{2\pi}\left(\left(\phi_{i}(\tmid) - \phi_{i}(t_{i})\right) -
+    \left(\phi_{i_i+1}(\tmid) - \phi_{i+1}(t_{i+1})\right)\right)
+\end{equation}
+The phase at the reference time is zero so this leaves $N =
+\frac{1}{2\pi}\left(\phi_{i}(\tmid) - \phi_{i+1}(\tmid)\right)$ where the terms
+are explicitly given by
+\begin{align}
+\phi_{i}(\tmid) & = 2\pi\left((\tmid - t_{i})\nu_{i} +  \frac{\dot{\nu}_{i}}{2!}(\tmid - t_{i})^{2}+\frac{\nuddotav}{3!}(\tmid - t_{i})^{3}\right) \\
+\phi_{i+1}(\tmid) & = 2\pi\left((\tmid - t_{i+1})\nu_{i+1} +  \frac{\dot{\nu}_{i+1}}{2!}(\tmid - t_{i+1})^{2}+\frac{\nuddotav}{3!}(\tmid - t_{i+1})^{3}\right) .
+\end{align}
+
+The total number of rotations $N$ between months is a function of
+the length of a given month and the spindown parameters. Calculating this
+allows us to check how well phase-connected lines of the ephemeris are,
+we quantify this by the residual number of rotations, defined as
+\begin{equation}
+\delta N = N - \textrm{round}(N),
+\end{equation}
+where by `round` we indicate rounding to the nearest integer number of rotations.
+
+In Figure~\ref{fig: crab kde}C we plot the Gaussian KDE of $\Delta N$ having filtered
+against known glitch events. We found four jumps where $0.1 < \Delta N < 1.0$;
+again these were found to be occur within~$\sim200$~days of known glitches and
+so were removed to focus attention on the timing noise activity.
+
+Figure~\ref{fig: crab kde} shows that the distribution of jumps in the frequency,
+spin-down rate, and residual number of rotations is centered on zero, as
+expected. The interesting part to note here is the size of the standard deviations,
+these can potentially be used to test timing noise models, in the next section
+we intepret these in the context of a random walk.
+
+\subsection{Interpretating jumps in the Crab ephemeris: random walk models}
+\label{sec: crab RW}
+%Many of the features used to distinguish the source of timing noise, for
+%example the state switching, occur over timescales much longer than typical
+%GW searches. The observation of \citet{Hobbs2010} that over sufficiently
+%long timescales residuals tend to admit quasi-periodic features can be
+%turned around to argue that over sufficiently short timescales timing noise
+%is approximated by a random walk. For our purposes then it is sufficient
+%to think of timing noise as a random walk.
+
+In this section, we will relate the Crab ephemeris data to a random walk model
+as first introduced in Section~\ref{sec: TN interpretations random walk models}.
+The methods used parallel the work of \citet{Cordes1980} and \citet{Groth1975},
+but are described here for as there are some subtleties to our analysis.
+
+Consider a parameter $\Delta X(t) \in [\Delta\phi, \Delta\nu,\Delta\dot{\nu}]$ being
+the difference between the real noisy signal and the search template. $\Delta
+X(t)$ then encodes the deviations due to timing noise without concerning the
+secular spindown.  We will model timing noise by allowing $\Delta X(t)$ to
+undergo a \emph{compound Poisson process}: a random walk where events are
+Poisson distributed in time occurring with a rate $\lambda$, but the size the
+events are drawn from a normal distribution with zero mean and a variance
+$\langle \Delta X^{2} \rangle$, or more formally
+\begin{align}
+\Delta X(t) = \sum_{i=1}^{N(t)} D_i^{X},
+\end{align}
+where $\{ N(t): t \ge 0\}$ is a Poisson process with rate $\lambda$ and
+$\{D_i^X: i \ge 1\}$ are independent and identically distributed with 
+$D_i^X \sim N(0, \langle (D^X)^{2}\rangle)$. Note that $\langle (D^X)^{2} \rangle$
+where $X \in [\phi, \nu, \dot{\nu}]$ is the variance of the random walk jumps.
+
+
+If initially $\Delta X(0)=0$, after an observation time $\dT$  the
+expectation and variance can be calculated using Wald's Eqn.~\citep{wald1944cumulative}
+and the law of total variance \citep{weiss2006course}
+\begin{align}
+\textrm{E}[\Delta X(\dT)] & = 0\\
+\textrm{Var}[\Delta X(\dT)] &  = \lambda \dT \langle (D^X)^{2}\rangle.\\
+\end{align}
+
+If we label the parameter offset measured for blocks of data $\dT$ as  $\Delta
+X_{i}(\dT)$ then $\{\Delta X_{1}(\dT), \Delta X_{2}(\dT), \dots\}$ is a
+sequence of independent and identically distributed random variables. In
+Figure~\ref{fig: crab kde}, we looked at the difference between adjacent
+blocks of data which, in this random walk model, would be given by
+\begin{align}
+\delta X_{i}(\dT) =  \Delta X_{i}(\dT) - \Delta X_{i-1}(\dT)
+\end{align}
+Since the random walks themselves are defined as summations, the difference
+between them must itself be a random walk. Therefore,
+\begin{align}
+\textrm{E}[\delta X(\dT)] & = 0
+\label{eqn: Poisson expectation} \\
+\textrm{Var}[\delta X(\dT)] &  = \lambda \dT \langle (D^X)^{2}\rangle.
+\label{eqn: Poisson variance}
+\end{align}
+
+Let us define $\mu_{X}(\dT)$ and $\sigma_X(\dT)$ as the mean and
+standard-deviation of the sequence of differences $\delta X_{i}(\dT)$.  This is
+precisely the values given in the titles of Figure~\ref{fig: crab kde} for the
+frequency, spin-down rate, and residual number of rotations.
+Then if we assume that the measured values of $\delta X_i(\dT)$ are the result of a
+random walk, then when we can equate the measured mean and variance with the
+predictions of Eqn.~\eqref{eqn: Poisson expectation} and Eqn.~\eqref{eqn:
+Poisson variance}. In all three instances, we do find a mean which is close to
+zero when compared to the size of the standard deviation. Moreover, in much the
+same way that was done by \citet{Cordes1980}, we can calculate a strength
+parameter (for details see Section~\ref{sec: TN interpretations random walk
+models}). These are given by
+\begin{align}
+S_{\mathrm{PN}} & = \lambda \langle (D^N)^{2} \rangle = \frac{\sigma_N(\dT)}{\Delta T}, \\
+S_{\mathrm{FN}} & = \lambda \langle (D^\nu)^{2} \rangle = \frac{\sigma_\nu(\dT)}{\Delta T},
+\label{eqn: SFN} \\
+S_{\mathrm{SN}} & = \lambda \langle (D^{\dot{\nu}})^{2} \rangle = 
+\frac{\sigma_{\dot{\nu}}(\dT)}{\Delta T}.
+\end{align}
+
+From the standard-deviations given in Figure~\ref{fig: crab kde} we can
+estimate the strength of each type of timing noise. In order to test the
+hypothesis that the variations seen in the ephemeris really are due to a random
+walk model, we could need to show that the strengths were invariant to changes
+in $\dT$ However, our data is fixed in blocks of length $\dT = 1$~month by the
+fact that we are using the Crab ephemeris. Due to this, we cannot test the
+hypothesis, but we can compare our computed strength with that given in
+the literature.
+
+Studies of the Crab pulsar consistently find that the random walk noise is
+best fit by a frequency like noise process. In Table~\ref{tab: SFN lit} we list
+the strengths reported from three works on the issue; this is by no means a
+complete list, but shows the typical values and spread.
+\begin{table}[htb]
+\centering
+\begin{tabular}{c|c}
+ & $S_{\textrm{FN}}$ Hz$^{2}$/s\\ \hline
+\citet{Boynton1972} & $0.9\times10^{-22}$\\
+\citet{Groth1975} & $ 0.53\times10^{-22}$\\
+\citet{Cordes1980} & $0.66\times10^{-22}$
+\end{tabular}
+\caption{Values for the strength of frequency noise in the Crab pulsar found
+         in the literature: all three authors demonstrated that this strength
+         was robust to changes in $\dT$, the time which the data is divided into
+         to calculate statistical quantities.}
+\label{tab: SFN lit}
+\end{table}
+
+We estimate the strength of frequency-like noise in the Crab by substituing
+$\sigma_{\nu}=1.8\times10^{-8}$~s$^{-1}$ (taken from Figure~\ref{fig: crab
+kde}) into Eqn.~\eqref{eqn: SFN} with $\Delta T = 30$~days, this gives
+\begin{align}
+S_{\mathrm{FN}} = 1.25 \times 10^{-22} \textrm{ Hz}^{2}/\textrm{s}.
+\label{eqn: SFN mine}
+\end{align}
+This strength is of the same order of magnitude as those listed in
+Table~\ref{tab: SFN lit}. In the future, it would be interesting to perform a
+full literature review and understand how consistent this value is and if
+the strength has changed over the $\sim40$~years of observation.
+
+\subsection{Predicting the mismatch in the Crab}
+In the previous section we showed how we could estimate the strength of timing
+noise in the Crab using the Crab ephemeris and compared these results to those
+in the literature. In this section, we will now use the prediction to estimate
+the expected mismatch as a function of observation time.
+
+Taking the leading order terms from Eqn.~\eqref{eqn: Expected mismatch RW in
+frequency k2}, we can write the expected mismatch in terms of the strength
+parameter as
+\begin{align}
+E[\mutilde] & = \frac{\pi^{2}}{630}\sigma_{f}^{2}\dT^{2}\Nsd^{3} \\
+& = \frac{\pi^{2}}{630} S_{\textrm{FN}} \Tobs^{3},
+\label{eqn: mu prediction}
+\end{align}
+from this we see how, when the random walk is considered as a compound Poisson
+random walk the mismatch does not depend on $\dT$. In Figure~\ref{fig: mismatch
+Tobs} we have already shown the dependence of the mismatch on the observation
+time for the Crab. Now we can additionally predict this dependence, given a
+value for the strength of frequency noise. This is done in Figure~\ref{fig:
+mismatch Tobs update} for two values of the strength parameter.
+\begin{figure}[htb]
+\centering
+\includegraphics[]{Crab_mismatch_Tobs_with_prediction}
+\caption{This figure, updated from Figure~\ref{fig: mismatch Tobs}, shows the
+dependence of the minimum mismatch on the observation time for the Crab, along
+with the prediction of Eqn.~\eqref{eqn: mu prediction} for two values of the
+strength parameter: the value $0.53\times10^{-22}$ is that given by \citet{Groth1975}
+while the value $1.25\times10^{-22}$ is the value calculated in Eqn.~\eqref{eqn: SFN mine}.}
+\label{fig: mismatch Tobs update}
+\end{figure}
+The prediction using the strength parameter calculated from the Crab ephemeris,
+as given in Eqn.~\eqref{eqn: SFN mine}, is remarkably accurate fitting almost
+precisely through the means of the data points.
+
+
+\section{Predicting the mismatch for other pulsars}
+\citet{Jones2004} considered the problem of timing noise in pulsars by
+calculating a decoherence time. They then used a fitting formulae from
+\citet{Dewey1989} to predict the strength of timing noise and estimate this
+decoherence time. The fitting formulae is given by defining the activiy
+parameter as the logarithm of the ratio root-mean-square phase residual
+to that of the Crab:
+\begin{align}
+A = \log\left(\frac{\sigma^{2}_{\phi}}{\sigma_{\phi\; \textrm{Crab}}^{2}}\right),
+\end{align}
+then, the fitting formulae is
+\begin{align}
+A = -1.4\log P + 0.8 \log \frac{\dot{P}}{10^{-15}} - 3.31
+\end{align}
+where $P$ is the pulsar's spin period in seconds and $\dot{P}$ is the
+dimensionless period derivative.
+
+From Eqn.~\eqref{eqn: S calc} we can convert this into a prediction for the
+strength of frequency noise
+\begin{align}
+S_{\textrm{FN}} = 10^{2A} S_{\textrm{FN}}^{\textrm{Crab}}
+\label{eqn: SFN prediction}
+\end{align}
+Then, using Eqn.~\eqref{eqn: mu prediction} we can predict the level of mismatch
+for a gravitational wave search for a pulsar.
+
+Many gravitational wave search may be effected by timing-noise, but blind
+searches are particuarly at risk due to the lack of EM information regarding
+the timing properties of the star. This includes all-sky searches along with
+directed searches where a small patch of sky is searches where it is thought
+there may be a neutron star. In Table~\ref{tab: searches} we listed the the
+parameter spaces, coherence times and observation times for several recent
+blind searches. With the exception of the search Cas A, all of these use an
+initial semi-coherent stage. We have not calculated the semi-coherent mismatch
+due to a random walk model of timing noise. However, candidates identified in this
+semi-coherent stage would be followed by a fully-coherent search. To estimate
+how timing noise in the signal may effect this fully-coherent stage, in
+Table~\ref{tab: past search RW} we list the \emph{maximum} predicted metric mismatch
+for the observation time and search parameters of each search.
+\begin{table}[htb]
+\begin{tabular}{l|l|l|l}
+\input{\thisdir/past_searches_worst_cases}
+\end{tabular}
+\caption{Predicted worst-case metric mismatch due to timing noise for the blind
+searches listed in Table~\ref{tab: searches}. These values are calculated by
+taking the maximum absolute frequency and spin-down rate searched for,
+using Eqn.~\eqref{eqn: SFN prediction} to predict the estimated strength of
+timing noise, then calculating the corresponding mismatch from Eqn.~\eqref{eqn:
+mu prediction}.}
+\label{tab: past search RW}
+\end{table}
+From this table, we see that for some searches, the predicted metric mismatch can be
+greater than one. This indicates that the true mismatch in such a search would be
+large and therefore the signal would be lost. However, we emphasise that these
+are worst-case predictions taken at the corner of parameter space where the
+mismatch is predicted to be the largest. Moreover, it is unclear if the
+fitting formulae of \citet{Dewey1989} is appropriate in these instances. In the
+future, we would like to investigate this issue in more detail and understand
+how these estimates vary the whole search-parameter space.
+
+
 \section{Conclusion}
 
-In this section, we have calculated the expectation of the fully-coherent
+In this Chapter, we have calculated the expectation of the fully-coherent
 mismatch when searching for a GW signal which undergoes a random walk in one of
-the phase, frequency, or spin-down rate. We did this initially for an
-unminimised system and then minimised with respect to the template parameters
-$f_\textrm{t}$ and $\dot{f}_\textrm{t}$. In the future, we would like to develop
-this work to make direct predictions for GW searches. For example,
-searches for GWs from LMXBs assume a constant frequency, but torque fluctuations
-could produce a random walk in the frequency; we could model this and, given
-an estimate for the random walk parameters, estimate for what observation span
-GW searches may be at risk of loosing the signal.
+the phase, frequency, or spin-down rate. We did this first for a system in
+which the difference between the signal and template was initially zero and
+then grew as a random walk. Since this is not a minimised results, we then
+demonstrated how to minimised the mismatch with respect to the template
+parameters $f_\textrm{t}$ and $\dot{f}_\textrm{t}$. The formulae derived in
+this section were verified against Monte-Carlo type simulations of the exact
+mismatch.
 
-Another observation which we would like to understand further is the
-implication of the power-law dependence on the observation time. In particular,
-in Eqn.~\eqref{eqn: Expected mismatch RW in frequency k2} we found that for
-a random walk in the frequency
-$E[\mutilde] \propto \Tobs ^{3}$ while in Chapter.~\ref{sec: timing noise in
-cgw} we found that the expected fully-coherent mismatch for timing noise as
-described by the Crab ephemeris scales as $\propto \Tobs^{2.88\pm-0.03}$ (see
-Eqn.~\eqref{eqn: fit values}). This suggests that the data in Crab ephemeris
-may be consistent with a random walk in the frequency (something that was
-first noted by \citet{Boynton1972}), but requires further investigation to
-establish this.
+Following this, we developed our understanding of random walk models in the
+context of the data from the Crab ephemeris. We showed that the frequency noise
+strength can be measured from this data and has a value consistent with other
+results in the literature. Eqn.~\eqref{eqn: mu prediction} is a key result of
+this chapter; it predicts the leading order expected mismatch for a search
+given the strength of frequency noise and the observation time. We then
+demonstrated the excellent agreement of this predictions with the results
+found in Chapter~\ref{sec: timing noise in cgw}.
 
+Finally, we gave preliminary estimates for the mismatch due to timing noise
+in some typical blind gravitational wave searches. This was done by converting
+the signal parameters into the rotation timing parameters, using the \citet{Dewey1989}
+fitting formulae to estimate the strength of timing noise, and then using
+Eqn.~\eqref{eqn: mu prediction} to predict the levels of mismatch. We
+considered worst-case scenarios and found results which indicates there may be
+an issue for some all-sky searches.
+
+}
 
 \begin{subappendices}
 \input{\thisdir/summation_identities}
