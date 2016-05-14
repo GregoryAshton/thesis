@@ -1,24 +1,31 @@
-\section{Summation identities}\label{sec: summation identities}
+\section{Summation identities}
+\label{sec: summation identities}
+In this appendix, we derive two useful summation identities used in
+Sec.~\ref{sec: random walk models part I}. First, we have
 \begin{align}
-\s{b=1}{c}\s{c=1}{b} X_{c} & = \left( X_{1}\right) 
+\s{b=1}{c}\s{a=1}{b} X_{a} & = \left( X_{1}\right) 
  + \left( X_{1} + X_{2} \right) + \ldots  +\left( X_{1} + X_{2} 
  + \ldots + X_{c-1} + X_{c}\right)\\
 & = c X_{1} + (c-1)X_{2} + \ldots + 2 X_{c-1} + X_{c} \\
-& = \s{b=1}{c}(c+1-b)X_{b}
-\end{align}•
-
+& = \s{b=1}{c}(c+1-b)X_{b},
+\label{eqn: SI 1}
+\end{align}
+which is used in deriving Eqn.~\eqref{eqn: delta f n}. Second, we have
 \begin{align}
 \s{j=1}{i-1}\s{k=1}{j-1}(j-k)X_{k} = & [0] + \left[ X_{1}\right] 
 + \left[2X_{1} + X_{2} \right] + \left[3X_{1} + 2X_{2} +X_{3}\right] 
-+ \ldots  \\
++ \ldots  \nonumber \\
 & + \left[\left(i-2\right)X_{1} + \left(i-3\right)X_{2} 
-+ \left(i-4\right)X_{3} + \ldots + 3X_{i-4} + 2X_{i-3} + X_{i-1}\right]  \\
-= & \left(1 + 2 + 3 + \ldots +  (i-4) + (i-3) + (i-2)\right)X_{1}   \\ 
-& + \left(1 + 2 + 3 + \ldots +(i-4) + (i-3) \right)X_{2}   \\ 
-& + \left(1 + 2 + 3 + \ldots + (i-4) \right)X_{3} + \ldots   \\ 
++ \left(i-4\right)X_{3} + \ldots \right. \nonumber \\
+& \left. \hspace{5mm}+ 3X_{i-4} + 2X_{i-3} + X_{i-2}\right]  \\
+= & \left(1 + 2 + 3 + \ldots +  (i-4) + (i-3) + (i-2)\right)X_{1} \nonumber  \\ 
+& + \left(1 + 2 + 3 + \ldots +(i-4) + (i-3) \right)X_{2}  \nonumber \\ 
+& + \left(1 + 2 + 3 + \ldots + (i-4) \right)X_{3} + \ldots  \nonumber \\ 
 & + (1 + 2 + 3)X_{i-4} + (1+2)X_{i-3} + X_{i-2}  \\
 = & \s{k=1}{i-2}k X_{1} + \s{k=1}{i-3}k X_{2}  + \ldots + \s{k=1}{2}k X_{i-3} 
 + \s{k=1}{1}kX_{i-2}  \\
 = & \s{j=1}{i-2}\left(\s{k=1}{i-1-j}k\right)X_{j} = 
-\frac{1}{2}\s{j=1}{i-2}(i-j)(i-j-1)X_{j}
+\frac{1}{2}\s{j=1}{i-2}(i-j)(i-j-1)X_{j},
+\label{eqn: SI 2}
 \end{align}
+which is used in deriving Eqn.~\eqref{eqn: delta phi n}.

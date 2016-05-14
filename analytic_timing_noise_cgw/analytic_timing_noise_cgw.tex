@@ -6,46 +6,59 @@
 
 \begin{document}
 
+\meta{
 It's unclear at this time what causes timing noise, but from Chapter.~\ref{sec:
 timing noise in cgw} we know that it may pose a problem for continuous GW
 searches if the phase evolution is effected by timing noise and that is not
 included in the search templates. In addition to searches for isolated neutron
-stars, searches for GWs from low-mass X-ray binary systems (LMXBs) may
-experience similar difficulties due to stronger form of timing noise known as
-`spin-wandering', which constrains the maximal coherence time to the order of a
-few days before it would lead to a complete loss of SNR, thereby limiting the
-best achievable sensitivity \citep[see][for
-details]{ligo2015scox1,leaci2015,ScoX1:MDC1}.
+stars, many searches \citep[see for
+example][]{ligo2015scox1,leaci2015,ScoX1:MDC1} have been performed for GWs from
+low-mass X-ray binary systems (LMXBs). These searches experience similar
+difficulties due to a stronger form of timing noise known as `spin-wandering'.
+This issue was investigated by \citet{watts2008} who quantifed the effect using
+a decoherence time $T_{\textrm{decoh}}$, after which the Taylor expansion can
+no longer track the phase, defined by
+\begin{align}
+T_{\textrm{decoh}}^{2} \dot{\nu}_{\textrm{s}} = 1.
+\end{align}
+They then estimated a worst-case decoherence time by using the maximimal
+spin-up rate due to the accretion torque and found that for some sources such
+as Sco-X1 the decoherence time can be short as $\sim 1$~week.
 
-Ideally, we would like to be able to predict when searches are at risk to
-timing noise.  We have already done this in Chapter.~\ref{sec: timing noise in
-cgw} by using an empirical description of timing noise from the Crab pulsar.
-However, this is limiting as the way timing noise manifests varies between
-sources. An alternative method is to model timing noise, predict the form of
-the continuous GW signal and then calculate the mismatch. In this chapter, we
-will do this for the random walk model of timing noise as described in
-Section~\ref{sec: TN interpretations random walk models}.  Recent observations
-\citep{Hobbs2010} suggest that such a description does not capture the physics
-of timing noise in isolated radio pulsars and hence is not a useful way to
-infer neutron star physics. Nevertheless, empirically the timing residuals of
-many pulsars are indistinct from a random walk, so while it cannot help with
-inference, it is a useful description if we only need to know what timing noise
-`looks like'. Moreover, the random walk model can also be applied to LMXBs
-where the amount of spin-wandering could be inferred from fluctuations in the
-luminosity. We will not apply the model to make such predictions in this
-chapter, but we will calculate the mismatch given the random walk model.
+In this chapter, we will present some preliminary calculations and results
+related to modelling timing noise in a continuous GW using a random walk model.
+Unlike the results of Chapter.~\ref{sec: timing noise in cgw}, which used an
+empirical description of timing noise given by the Crab ephemeris, the results
+derived here can be applied to any search in which it is thought the signal may
+undergo a random walk. In this sense, it is equivalent to Chapter~\ref{sec:
+glitches in cgw} in that the ultimate aim is to use observations to develop
+fitting formulae for the random walk model and then predict the amount of
+mismatch, given the search parameters. As given here, this task in incomplete
+and so we will present our initial findings with a view to develop this chapter
+further in the future.
 
+Recent observations by \citet{Hobbs2010} suggest that a random walk model does
+not capture the physics of timing noise in isolated radio pulsars and hence is
+not a useful way to infer neutron star physics. Nevertheless, the random walk
+model remains a practical empirical model; in this section then, we use it as
+such without requiring it to have any deeper substantive meaning for what
+causes timing noise. In the same way, the random walk model can also be applied
+to LMXBs where the amount of spin-wandering could be inferred from fluctuations
+in the luminosity. From this we intend in the future to update the estimates by
+\citet{watts2008} to estimate the mismatch for various searches.
+
+}
 
 \section{Defining a random walk}
 \label{sec: Defining a random walk}
 \input{\thisdir/defining_a_random_walk}
 
-\section{Random walk models part I}
-\label{sec: Random walk models part I}
+\section{Random walk models: a simple treatment}
+\label{sec: random walk models part I}
 \input{\thisdir/random_walk_models_part_I}
 
-\section{Random walk models part II} 
-\label{sec: Random walk models part II}
+\section{Random walk models: minimising the mismatch} 
+\label{sec: random walk models part II}
 \input{\thisdir/random_walk_models_part_II}
 
 \section{Conclusion}

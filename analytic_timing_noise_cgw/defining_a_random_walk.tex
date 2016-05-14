@@ -3,16 +3,17 @@ zero-mean Gaussian walk in the phase, frequency, and spin-down which occurs at
 $\Nsd$ fixed time intervals, $\Delta T$ such that the total observation time is
 $\Tobs = \Nsd \Delta T$.
 This allows us to write the signal as 
-a peicewise Taylor expansion with $N$ subdomans. Choosing fixed time intervals appears to
+a piecewise Taylor expansion with $N$ subdomans. Choosing fixed time intervals appears to
 introduce an additional timescale not usually present in random walk models.
 However, as discussed in Appendix~\ref{sec: physical interpretation of the monthly
 ephemeris} this is consistent with a large number of unresolved events which
 are measured over a fixed timescale.
 
-In this model, the spin-down rate will be the highest order term
-which undergoes a random walk. Therefore, between the $i$ and $i-1$ subdomains
-we may write the difference between the signal and template (defined in
-Eqn.~\eqref{eqn: Delta Phi}) as
+In this model, the spin-down rate will be the highest order term which
+undergoes a random walk. Recalling that $\Delta \dot{f}_i$ (defined in
+Eqn.~\eqref{eqn: Delta Phi}) is the difference between the signal and template
+in the $i^{th}$ subdomain, we may define the jump in this difference between
+the $i$ and $i-1$ subdomains as $\tn \fdot_i$, such that
 \begin{equation}
 \Delta \fdot_{i} - \Delta\fdot_{i-1} = \tn \fdot_{i} \sim \mathcal{N}(0, \sigS),
 \end{equation}
@@ -25,9 +26,10 @@ $i^{th}$ subdomain, by induction we can also write down the $i-1$ term
 \Delta\fdot_{i} &  = \tn\fdot_{i} + \Delta\fdot_{i-1}  \\
 \Delta\fdot_{i-1} &  = \tn\fdot_{i-1} + \Delta\fdot_{i-2}  .
 \end{align}
-Let us start each random walk from the origin (we will return to this point in 
-Section~\ref{sec: Random walk models part II}), then
-as each step proceeds from the previous step, we have that
+Let us set the initial difference between the signal and template as zero such
+that $\Delta\dot{f}_0=0$, that is we start each random walk from the origin
+(we will return to this point in Section~\ref{sec: Random walk models part
+II}). Then as each step proceeds from the previous step, we have that
 \begin{equation} 
 \Delta\fdot_{i} = \s{j=1}{i}\tn\fdot_{j}.
 \label{eqn: delta fdot n} 

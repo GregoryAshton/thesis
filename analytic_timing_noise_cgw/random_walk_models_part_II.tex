@@ -1,69 +1,67 @@
-%Searches for CW require a choice of parameters for the global template. For
-%narrow band searches we can use EM data to estimate the best choice of
-%parameters.  These are found by least-squares fitting a Taylor expansion to the
-%observed pulse TOAs, the resulting coefficients are the best fit parameters.
-%Peforming a narrow band search for a signal using matched filtering, we
-%identify a candidate as a local minimum in mismatch in parameter space. Finding
-%such a local minimum can be thought of as a minimisation problem of the
-%mismatch with respect to the parameters.  Using the $\mathcal{F}$-statistic
-%matched filtering algorithm the phase is analytically minimised by definition.
-%Each  parameter that is searched over adds an additional term in the Taylor
-%expansion to minimise over.  So searching over $\f$ and $\fdot$ is equivalent
-%to analytically minimising with a second order polynomial. To explain this
-%better we will use a first look at a generic toy model.
+In Section~\ref{sec: Defining a random walk} we have defined a random walk
+model for which we subsequently calculated the fully-coherent mismatch in
+Section~\ref{sec: Random walk models part I}. However, this is a special case
+in which the random walk for each parameter offset (the difference between the
+signal and the template) begins at the origin and then grows with time. It is
+the signal which undergoes a random walk, so in this case we have set the
+template to exactly match the signal and $t=0$. However, one could imagine choosing
+the template in a different way which would reduce the overall mismatch; as such
+Eqn.~\eqref{eqn: expectation} may overestimate the mismatch. The proper thing to
+do is to minimise the mismatch with respect to the
+template parameters~$\lt^{\alpha}$ which are implicitly in the calculation of
+Section~\ref{sec: random walk models part I} through
+\begin{align}
+\Delta \lambda^{\alpha i} = \ls^{\alpha i} - \lt^{\alpha i},
+\end{align}
+as first defined in Section~\ref{sec: generalising the metric mismatch}.
 
-In Section~\ref{sec: Defining a random walk} we have defined a random walk model
-for which we subsequently calculated the fully-coherent mismatch in
-Section~\ref{sec: Random walk models part I}. However, this is a special case in
-which the random walk for each parameter offsets begins at the origin and then
-grows with time. The parameter offsets $\Delta\lambda^{\alpha}$, depend both on
-the signal and the template $\lt^{\alpha}$. It is the signal which undergoes a random walk, in Section~\ref{sec:
-Random walk models part I} we chose the template such that the parameter offset
-was zero at the origin. This choice does not minimise the mismatch and therefore
-Eqn.~\eqref{eqn: expectation} may overestimate the minimum mismatch
-with which the random walk signal could be recovered if we minimised over the
-template parameters $\lt^{\alpha}$.
+Ideally, we would like to repeat the calculation leading to Eqn.~\eqref{eqn:
+expectation} minimising the mismatch with respect to the template parameters.
+However, this calculation has not yet been peformed so a practical alternative
+method which we will use here is to begin with the random walk starting at the
+origin, as defined in Section~\ref{sec: Defining a random walk}, and then fit and
+remove a polynomial of degree $k$. This leaves us with a residual random walk for
+which we then compute the mismatch. We will then verify that this captures the
+essential features of minimising the mismatch by comparing with numerical
+simulations in which the exact mismatch is minimised numerically.
 
-To calculate the minimised mismatch from random walks we first consider
-fitting and removing a $k^{th}$-order polynomial from a generic random walk. This
-is done in Appendix~\ref{sec: least squares minimisation of a random walk} and
-helps to build intuition for the more complicated case of random walk in
-GW signals. In the following sections, we will calculate the minimum
-mismatch for random walks in either the phase or frequency (i.e. we do
-consider both happening concurrently, only one at a time).
-
-We will model the parameter offsets $\Delta\phi_{i}, \Delta \f_{i}$
-following the definitions in Section~\ref{sec: Defining a random walk}.
-We will consider a narrow band search in the template parameters
-$\f_\textrm{t}$ and $\fdot_\textrm{t}$ which is
-is equivalent to minimising the mismatch up to a quadratic term in the Taylor
-expansion. So the parameter space offsets with which we should calculate the
-mismatch from, are given by
-\begin{equation}
-\Delta^{(2)}\lambda_{\alpha i} = \Delta\lambda_{\alpha i} - \Delta\lambda_{\alpha i}^{2}.
-\end{equation}
-
-The generic random walk considered in Appendix~\ref{sec: least squares
-minimisation of a random walk} was minimised with respect to the sum of squared
-differences between the fit and the random walk. Ideally in calculating the
-mismatch we should minimise $\Delta\lambda_{\alpha i}^{2}$ with respect to the
-mismatch. However, this adds an additional level of complexity and so we will
-consider here the minimisation with respect to the sum of squared differences
-which will be similar to the minimisation with respect to the mismatch.
+In Appendix~\ref{sec: least squares minimisation of a random walk}, we
+introduce the basic tools of least squares fitting and removing a polynomial of
+degree $k$ to a generic random walk. In the following sections, we will
+calculate the minimised mismatch for random walks in the phase or frequency; we
+have not yet calculated the corresponding result for mixtures or random walks
+in the spin-down rate. We have a choice in the degree of polynomial to fit and
+remove. Since most searches minimise the mismatch with respect to the template
+frequency $f_\textrm{t}$ and spin-down rate $\dot{f}_{\textrm{t}}$, this is
+equivalent to fitting and removing a $k=2$ polynomial to the phase residual.
 
 \subsection{Random walk in the phase}
-We begin with the simplest case of a random walk in phase for which we have
+\label{sec: minimised rw in phase}
+We begin with the simplest case of a random walk in phase, for which we have
 \begin{equation}
 \Delta\phi_{i} = \s{j=1}{i}\mathcal{N}(0, \sigP).
 \end{equation}
-Then we note that
+Then, as shown in Eqn.~\eqref{eqn: E yiyi} of Appendix~\ref{sec: least squares
+minimisation of a random walk}, we have that
 \begin{equation}
 E[\Delta\phi_{i} \Delta\phi_{j}] = \sigP \min(i, j).
 \end{equation}
-The mismatch for a random walk in the phase having removed a second order
-fit is given by
+
+Then, we define the residual difference between the signal and template
+after fitting and removing a $2^{nd}$ order polynomial, $\hat{y}_i^{(2)}$, as
 \begin{align}
-\mutilde & = g_{\alpha \beta i j} \Delta^{(2)}\lambda^{\alpha i}\Delta^{(2)}\lambda^{\beta j} \\
+\Delta^{(2)}\phi_i = \Delta\phi_i - \hat{y}_i^{(2)}.
+\label{eqn: D2phi}
+\end{align}
+Note that the superscript `(2)' indicates the degree of polynomial and by
+$\Delta^{(2)}\phi_i$ we mean the residual difference between the signal and
+template after fitting and removing the polynomial.
+
+We set the difference between the signal and template in all other parameters
+to zero such that the mismatch for a random walk in the residual phase is
+therefore
+\begin{align}
+\mutilde & = g_{0 0 i j} \Delta^{(2)}\phi^{i}\Delta^{(2)}\phi^{j} \\
 & = \s{i=1}{\Nsd}g_{00}^{E} \Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}
 + 2 \s{i=1}{\Nsd}\s{j=1}{i-1}g_{00}^{NE}\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{j}.
 \label{eqn: 4202540871}
@@ -74,16 +72,15 @@ expectation of
 \Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i} = & \left(\Delta\phi_{i}
 - \s{k=1}{\Nsd}\CT_{ik}\Delta\phi_{k}\right)
  \left(\Delta\phi_{j} - \s{l=1}{\Nsd}\CT_{jl}\Delta\phi_{l}\right) \\
-\begin{split}
 = & \Delta\phi_{i}\Delta\phi_{j} -
 \left(\s{k=1}{\Nsd}\CT_{ik} \Delta\phi_{j}\Delta\phi_{k}
-+ \s{l=1}{\Nsd}\CT_{jl}\Delta\phi_{i}\Delta\phi_{l}\right) \\
++ \s{l=1}{\Nsd}\CT_{jl}\Delta\phi_{i}\Delta\phi_{l}\right) \nonumber \\
 & +
 \s{k=1}{\Nsd}\s{l=1}{\Nsd}\CT_{ik}\CT_{jl} \Delta\phi_{k}\Delta\phi_{l},
-\end{split}
 \end{align}
-where $\CT_{ij}$ is defined Eqn.~\ref{eqn: C_2} and Eqn.~\ref{eqn:  MCC_2}
-and we have replaced $\Delta x$ with the time $\dT$. Then taking the expectation
+where $\CT_{ij}$ is defined in Eqn.~\ref{eqn: C_2} and Eqn.~\ref{eqn:  MCC_2}
+of Appendix~\ref{sec: least squares minimisation of a random walk} and we have
+replaced $\Delta x$ with the time $\dT$. Then taking the expectation
 \begin{align}
 \E{\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}} & =
 %E\left[\Delta\phi_{i}\Delta\phi_{j}\right] -
@@ -110,7 +107,9 @@ effect of the random walk in spin-down rate. Notably, we retain the same
 leading order scaling of $\Nsd$, but the overall coefficient is decreased.
 Rearranging the expression in the bracket demonstrates the mismatch is negative
 or zero for $1 \ge \Nsd \ge 3$: this is a reflection of the minimum number of
-points needed in order to perform the quadratic fit.
+points needed in order to perform the quadratic fit. This is shown later in
+Sec.~\ref{sec: appendix conclusions} for the simpler case of fitting and
+removing a polynomial from a generic random walk.
 
 \subsection{Random walk in the frequency}
 
@@ -123,42 +122,68 @@ have
 Recalling that we set the reference time at the beginning of each subdomain,
 then as in Section~\ref{sec: Defining a random walk}, the induced phase offset is
 \begin{align}
-\Delta\phi_{i} &=2\pi \s{j=1}{i-1}f_{j}\dT \\
+\Delta\phi_{i} &=2\pi \s{j=1}{i-1}\Delta f_{j}\dT \\
  & = 2\pi\dT \s{j=1}{i-1}\s{k=1}{j}\mathcal{N}(0, \sigF) \\
 & = 2\pi\dT \s{j=1}{i}(i-j)\mathcal{N}(0, \sigF).
+\label{eqn: P2F}
 \end{align}
-The expected values of combinations of these quantities we find to be
+Note that we do not include a random walk in the phase here.
+
+Then we calculate the expected values of combinations of the parameter space
+offsets
 \begin{align}
-E[\Delta\f_{i}\Delta\f_{j}] & = \sigF \min(i, j), \\
-E[\Delta\phi_{i}\Delta\f_{j}] & = 2 \pi \dT \sigF \s{k=1}{\min(i, j)}(i-k),\\
+E[\Delta\f_{i}\Delta\f_{j}] & = \sigF \min(i, j), \label{eqn: E1} \\
+E[\Delta\phi_{i}\Delta\f_{j}] & = 2 \pi \dT \sigF \s{k=1}{\min(i, j)}(i-k), \label{eqn: E2}\\
 E[\Delta\phi_{i}\Delta\phi_{j}] & =
 \left(2\pi\dT\right)^{2}\sigF \s{k=1}{\min(i, j)}(i-k)(j-k).
-\label{eqn: Expectations raw}
+\label{eqn: E3}
 \end{align}
-Then calculating the expected mismatch due to a random walk in frequency
+
+In Eqn.~\eqref{eqn: D2phi}, we defined the residual difference between the signal
+and template phase after fitting and removing a scond order polynomial. The
+second order polynomial was chosen to model the effect of minimising over the
+template frequency and frequency derivative. Let us now define
+\begin{align}
+\Delta^{(1)}f_i = \Delta f_i - \hat{y}^{(1)},
+\label{eqn: D2f}
+\end{align}
+as the residual difference between the signal and template frequency after
+fitting and removing a first order polynomial. In this instance, the first
+order polynomial models the effect of minimising over the template
+frequency and frequency derivative.
+
+To calculate the mismatch, we expand Eqn.~\eqref{eqn: mismatch} summing over
+the residual frequency offset $\Delta^{(1)}f_i$ (defined in Eqn.~\eqref{eqn:
+D2f}) and the residual phase offset $\Delta^{(2)}\phi_i$ (given by
+subsituting Eqn.~\eqref{eqn: P2F} into Eqn.~\eqref{eqn: D2phi}), this gives
 \begin{align}
 \begin{split}
 E[\mutilde] = &
 \s{i=1}{\Nsd}\left(g_{00}^{E}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{i}\right]
-+ 2 g_{01}^{E}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\f_{i}\right]
-+  g_{11}^{E} E\left[\Delta^{(2)}\f_{i}\Delta^{(2)}\f_{i}\right] \right) \\
++ 2 g_{01}^{E}E\left[\Delta^{(2)}\phi_{i}\Delta^{(1)}\f_{i}\right]
++  g_{11}^{E} E\left[\Delta^{(2)}\f_{i}\Delta^{(1)}\f_{i}\right] \right) \\
 & + 2\s{i=1}{\Nsd}\s{j=1}{i-1}\left(\right.
 g_{00}^{NE}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{j}\right] +
 g_{01}^{NE}E\left[\Delta^{(2)}\phi_{j}\Delta^{(2)}\f_{i}\right] +  \\
 &\hspace{20mm}\left. g_{10}^{NE}E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}\f_{j}\right] +
-g_{11}^{NE} E\left[\Delta^{(2)}\f_{i}\Delta^{(2)}\f_{j}\right] \right).
+g_{11}^{NE} E\left[\Delta^{(1)}\f_{i}\Delta^{(1)}\f_{j}\right] \right).
 \end{split}
 \end{align}
+
+
 We calculate each of these expressions in a similar manner to Eqn.~\eqref{eqn:
 expected mismatch dP0idP0j_k2} replacing the relevant expectations with those
-given in Eqn.~\eqref{eqn: Expectations raw}. This yields an expected
+given in Eqn.~\eqref{eqn: E1} to Eqn.~\eqref{eqn: E3}. This yields an expected
 mismatch given by
 \begin{equation}
-E[\mutilde] = \frac{\pi^{2} }{630} \sigF \dT^{2}  \left(\Nsd^{3} - 7\Nsd- \frac{18}{\Nsd} \right).
+E[\mutilde] = \frac{\pi^{2} }{630} \sigF \dT^{2}  \left(\Nsd^{3} + 13\Nsd + \frac{82}{\Nsd} \right).
 \label{eqn: Expected mismatch RW in frequency k2}
 \end{equation}
-Again this can be compared with Eqn.~\eqref{eqn: expectation} ignoring the
-mismatch due to the random walk in the spin-down rate.
+This can be compared with the frequency noise term alone in Eqn.~\eqref{eqn:
+expectation}. We note that the leading order power remains unchanged, but there
+is a reduction in the coefficient and a difference in the second highest
+power. The reduction in the coefficient is expected since we have minimised
+the mismatch; the change in the second highest power is not yet understood.
 
 \subsection{Verification}
 
@@ -166,10 +191,11 @@ We now verify Eqn.~\eqref{eqn: Expected mismatch RW in frequency k2} and
 Eqn.~\eqref{eqn: Expected mismatch RW in phase k2} by comparing with Monte
 Carlo simulations. The numerical signals undergo a random walk as described in
 Section~\ref{sec: Random walk models part I}, however, when searching for the
-signals we search over a grid of points in $f_\textrm{t}$ and $\dot{f}_\textrm{t}$ then select grid point
-with the minimum mismatch; this effectively minimises over the frequency and
-spin-down. The results are plotted in Figure~\ref{fig: verification of
-minimised RW} and demonstrate good agreement between the analytic and simulated
+signals we search over a grid of points in $f_\textrm{t}$ and
+$\dot{f}_\textrm{t}$ then select grid point with the minimum mismatch; this
+minimises the mismatch over the frequency and spin-down. The results are
+plotted in Figure~\ref{fig: verification of minimised RW} and demonstrate good
+agreement between the analytic prediction and the mean of the simulated
 mismatches.
 
 \begin{figure}[ht]

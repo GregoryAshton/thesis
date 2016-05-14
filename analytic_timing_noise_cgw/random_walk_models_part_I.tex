@@ -3,7 +3,9 @@ random walk in phase, frequency, and spin-down rate defined in the previous
 section.
 
 Let us begin by expanding the metric-mismatch summation from Eqn.~\eqref{eqn:
-mismatch}.  Writing the summations explicitly, we have
+mismatch}. Recalling that Greek indices label the parameter components and
+Roman indices label the subdomain, then writing the summations explicitly, we
+have
 \begin{align}
 \mutilde & = g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
 &=\s{i=1}{\Nsd}\s{j=1}{\Nsd}g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
@@ -30,12 +32,12 @@ Then the fully-coherent metric-mismatch can be calculated from
 \end{align}
 
 \subsection{Writing the parameter offsets in terms of normal distributions}
-Equations~\eqref{eqn: f offset} and \eqref{eqn: phi
-offset} give the offsets as functions of the offsets in higher order
-parameters. In order to calculate statistical values, we now write these in terms of
-the normal distributions from which the random walks are constructed.
-Substituting Eqn.~\eqref{eqn: delta fdot n} into Eqn.~\eqref{eqn: f offset} and using the summation properties defined
-in Appendix~\ref{sec: summation identities}, we have
+Equations~\eqref{eqn: f offset} and \eqref{eqn: phi offset} give the offsets as
+functions of the offsets in higher order parameters. In order to calculate
+statistical values, we now write these in terms of the normal distributions
+from which the random walks are constructed.  Substituting Eqn.~\eqref{eqn:
+delta fdot n} into Eqn.~\eqref{eqn: f offset} and using the indentity defined
+in Eqn.~\eqref{eqn: SI 1} of Appendix~\ref{sec: summation identities}, we have
 \begin{align}
 \Delta \f_{i}  & = \s{j=1}{i}\tn \f_{j}
 + \s{j=1}{i-1}\s{k=1}{j}\tn \fdot_{k} \dT ,  \\
@@ -43,8 +45,9 @@ in Appendix~\ref{sec: summation identities}, we have
 + \s{j=1}{i-1}(i-j)\tn \fdot_{j} \dT .
 \label{eqn: delta f n}
 \end{align}
-Similarly, substituting this equation into Eqn.~\eqref{eqn: phi offset} we
-have
+Similarly, substituting this equation into Eqn.~\eqref{eqn: phi offset} and
+using both Eqn.~\eqref{eqn: SI 1} and Eqn.~\eqref{eqn: SI 2} from
+Appendix~\ref{sec: summation identities}, we have
 \begin{align}
 \begin{split}
 \Delta\phi_{i} & = \s{j=1}{i}\tn \phi_{j}
@@ -60,10 +63,12 @@ have
  + \frac{1}{2}\s{j=1}{i-1}\left(\left(i-j\right)\left(i-j-1)\right)
  + (i-j)\right)\tn\fdot_{j}\dT^{2}\right)  \\
 & = \s{j=1}{i}\tn \phi_{j} + 2\pi\left(\s{j=1}{i-1}(i-j)\tn\f_{j}\dT
- + \frac{1}{2}\s{j=1}{i-1}(i-j)^{2}\tn\fdot_{j}\dT^{2}\right)
+ + \frac{1}{2}\s{j=1}{i-1}(i-j)^{2}\tn\fdot_{j}\dT^{2}\right).
 \end{split}
 \label{eqn: delta phi n}
 \end{align}
+This result can be interpretted as the accumulated phase over a time $i\Delta
+T$ due to a random walk in the phase, frequency, and spin-down rate.
 
 \subsection{Taking the expectation}
 
@@ -103,7 +108,7 @@ where
     A_{\f} = \sigF\Delta T^{2} \;\;\;\;\;
     A_{\fdot} = \sigS\Delta T^{4},
 \end{equation}
-define three `activity parameters'.
+define three dimensionless `activity parameters'.
 
 Recalling that $\Nsd=\Tobs/\Delta T$, Eqn.~\eqref{eqn: expectation} makes
 predictions for the leading order
@@ -114,7 +119,11 @@ E[\mutilde]_{\mathrm{FN}} \sim \sigF \frac{\Tobs^{3}}{\Delta T}, \hspace{10mm}
 E[\mutilde]_{\mathrm{SN}} \sim \sigS \frac{\Tobs^{5}}{\Delta T}.
 \label{eqn: scalings}
 \end{equation}
+We note here the exact relation to the scalings of the variance of the
+root-mean phase residual as calculated by \citet{Cordes1980} and given in
+Eqn.~\eqref{eqn: S calc}. We will return to this later in Sec.~\ref{sec: crab RW}.
 
+\meta{MOVE
 These results are a function both of the observation span $\Tobs$ and the
 random walk model parameters $\sigP, \sigF, \sigS$ and $\Delta T$. In
 Appendix~\ref{sec: physical interpretation of the monthly ephemeris}, we showed
@@ -124,6 +133,7 @@ order scalings in Eqn.~\eqref{eqn: scalings} are insensitive to how the random
 walk is parameterised: changing $\Delta T$ produces a corresponding change in
 $\sigma^{2}$ such that the leading order mismatch remains the same for a fixed
 observation time.
+}
 
 \subsection{Verifying the results}
 
@@ -149,6 +159,3 @@ of Eqn.~\eqref{eqn: expectation} for a random walk in the phase, frequency,
 and spin-down rate.}
 \label{fig: rw I}
 \end{figure}
-
-\subsection{Implied scalings}
-

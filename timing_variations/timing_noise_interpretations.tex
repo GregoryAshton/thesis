@@ -44,7 +44,7 @@ residual $\Delta\phi(t)$. \citet{Cordes1980} then showed that time averaging
 the squared phase residual for each block of duration $T$ and then averaging
 over all the blocks of data we have
 \begin{align}
-\sigma^{2}_\phi(T) = \left\langle\frac{1}{T}\int_{0}^{T}\Delta\phi(t) dt \right\rangle,
+\sigma^{2}_\phi(T) = \left\langle\frac{1}{T}\int_{0}^{T}\Delta\phi(t)^{2} dt \right\rangle,
 \label{eqn: sig phi T}
 \end{align}
 which is an estimate of the variance of the phase residual over a time span $T$.
@@ -118,19 +118,20 @@ phase, or its derivatives. They suggested that most of the activity is due to a
 mixture of events in the phase, frequency and/or frequency derivative.
 
 A recent observational review of timing noise was performed by
-\citet{Hobbs2010} for 366 pulsars, the authors do not comment on whether these
-observations constrain random walk models. Instead, they conclude that, when
-observed on sufficiently long timescales, the residuals which may before have
-looked like a random walk, contained quasi-periodic features. It is impossible
-to argue that this is not the case for pulsars which only display random-walk
-features over current observation periods, since the quasi-periodicity may have
-periods longer than the observation. This effect is apparent for the Crab
-pulsar which was found by \citet{Boynton1972} to be consistent with
-frequency-like noise, but in Figure~\ref{fig: timing noise example} we
-see quasiperiodic features. In conclusion, in agreement with \citet{Hobbs2010}
-we find that a pure random walk hypothesis is not entirely consistent with
-observations. However, if one simply wants to characterise timing noise over
-short periods of data, a random walk provides a good empirical description.
+\citet{Hobbs2010} for 366 pulsars, the authors do not use the observations to
+constrain random walk models. Instead, they conclude that timing noise cannot
+be explained by a simple random walk model and when observed on sufficiently
+long timescales, the residuals which may before have looked like a random walk,
+contained quasi-periodic features. It is impossible to argue that this is not
+the case for pulsars which only display random-walk features over current
+observation periods, since the quasi-periodicity may have periods longer than
+the observation. This effect is apparent for the Crab pulsar which was found by
+\citet{Boynton1972} to be consistent with frequency-like noise, but in
+Figure~\ref{fig: timing noise example} we see quasiperiodic features. In
+conclusion, in agreement with \citet{Hobbs2010} we find that a pure random walk
+hypothesis is not entirely consistent with observations. However, if one simply
+wants to characterise timing noise over short periods of data, a random walk
+provides a good empirical description.
 
 \subsection{Free precession}
 \label{sec: free precession}
