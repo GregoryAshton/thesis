@@ -20,7 +20,7 @@ frequency as introduced in Section~\ref{sec: glitches}, a phenomenon seen in the
 timing of many radio pulsars.  While the mechanism which causes pulsars to
 glitch is not fully understood, it is likely that any continuous
 gravitational waves emitted by the star will also be affected by the glitch since
-both are intimatly related to the neutron star crust.
+both are intimately related to the neutron star crust.
 
 In this chapter, we use information on the rate and size of pulsar glitches, as
 deduced from the observed population of glitching radio pulsars, to estimate
@@ -68,7 +68,7 @@ either case it seems reasonable to assume that both the crust and the core will
 be involved.
 
 Rotating isolated neutron stars can produce continuous gravitational-wave (GW)
-emission from non-axisymmetric distortions, colloquilly also known as `mountains'. These
+emission from non-axisymmetric distortions, colloquially also known as `mountains'. These
 require the mountain to be supported by either elastic stresses in the crust or
 magnetic fields. In this model, the star emits a monochromatic GW at a
 frequency $\nuS$ which is twice the rotation frequency $\nuS=2\nuR$.
@@ -205,7 +205,7 @@ we list the search parameters used in some recent searches.
 approximate, see the references for exact ranges. Note that S5
 refers to data from the fifth LIGO science run, similarly VSR
 refers to data from the second and fourth Virgo science runs. For the S5 supernova
-remnant search we present parameters for the Cas A search only and note that
+remnant search we present parameters for the Cassiopeia A search only and note that
 this was a fully-coherent search with no semi-coherent stage.}
 \label{tab: searches}
 \end{table}
@@ -303,7 +303,7 @@ a significant skew.
 
 \begin{table}[htb]
 \begin{tabular}{lcccc}
-& mean & std-dev & weight & skew \\ \hline
+& Mean &Std. Dev. & Weight & Skew \\ \hline
 \input{\thisdir/mixture_model}
 \end{tabular}
 \caption{Log-normal mean, standard deviation and weight for the components of
@@ -423,7 +423,7 @@ that the glitch activity (defined in the first of these references) correlates
 well with $|\nudotR|$ and the characteristic age
 $\tauAge$. We choose not to combine the rate and
 magnitude information together into the activity, but estimate both separately
-as these are of most direct relavance to GW searches.
+as these are of most direct relevance to GW searches.
 
 We investigated correlations of the
 glitch magnitudes $\DnuRglitch$ and $\DnudotRglitch$ with the frequency,
@@ -465,7 +465,7 @@ glitch magnitude of a single pulsar as from the entire population.
 \includegraphics[width=0.75\textwidth]{Fit_Deltanu_Deltanudot}
 \caption{\textbf{A}: the magnitude of $\DnuRglitch$ as a function of the source
 pulsar's spin-down rate. \textbf{B}: the absolute value of the magnitude of
-$\DnudotRglitch$ against the measured spin-down rate. The colored lines and shaded
+$\DnudotRglitch$ against the measured spin-down rate. The coloured lines and shaded
 bands are the best fits from Eqn.~\eqref{eqn: Delta nu fit} for $\delta\nu$,
 and Eqn.~\eqref{eqn: Delta nudot fit} for $\delta \dot{\nu}$; the green lines
 mark the Vela-like fit while the purple lines park the fit to the normal population.
@@ -585,7 +585,7 @@ quasiperiodic this is $\sim 1.7\%$ of the total number of observed glitches. It
 it possible that other pulsars also exhibit a quasiperiodic component, so the
 total fraction of glitches from a quasiperiodic component should be greater
 that $1.7\%$. However, we may still claim that the majority of glitches in the
-catalouge are due to a Poisson like process.
+catalogue are due to a Poisson like process.
 
 Assuming that all glitches used to estimate $\NdotgAve$ are due to a Poisson
 process, we can calculate the probability of one or more glitches occurring during
@@ -622,7 +622,7 @@ phase, frequency, and frequency derivative of the GW signal; the magnitudes of
 these quantities we will denote by $\Dphiglitch, \Dnuglitch,$ and
 $\Dnudotglitch$.  Since we don't yet understand the glitch mechanism and what
 happens during the glitch, its unclear how meaningful it is to discuss a jump
-in the GW phase.  Nevertheless, modelling the signal with a peicewise Taylor
+in the GW phase.  Nevertheless, modelling the signal with a piecewise Taylor
 expansion naturally includes such a phase jump, therefore we will include it in
 our discussion.  The size of the jump in the GW frequency and frequency
 derivative can be estimated from the observed jumps in Section~\ref{sec:
@@ -725,7 +725,7 @@ Taylor expansion template is
 \label{eqn: mutilde fully-coherent unminimised}
 \end{align}
 The first three terms are the independent contributions to the
-mismatch from the jumps in phase, frequency, and spindown; the last term is the mixture
+mismatch from the jumps in phase, frequency, and spin-down; the last term is the mixture
 term between the phase and the spin-down.  This expression has a maximum
 when $R = 1/2$, and vanishes when $R$ is 0 and 1 when the glitch does not effect the
 search. Furthermore, we checked that when the magnitude of the glitch is zero,
@@ -940,60 +940,86 @@ large. This gives
 \begin{align}
 \langle\muhat\rangle_{R} = \frac{\pi^{2}\Tcoh^{2}}{45}\Dnuglitch^{2}
       + \frac{\pi^{2}\Tcoh^{2}\Tobs^{2}}{1260}\Dnudotglitch^{2}.
-\label{eqn: R-averaged semi coherent}
+\label{eqn: R-averaged semi-coherent}
 \end{align}
 In the last step we substituted $\Nseg=\Tobs/\Tcoh$.
 
 \subsubsection{Checking the validity of the assumption}
+
 Eqn.~\eqref{eqn: mu semi-coherent R} relies on the assumption that the glitch
 occurs exactly at the interface between two semi-coherent segments. This
 assumption is valid in the limit for which $\Nseg \gg 1$, but will be imprecise
-for small numbers of segments. To investigate what happens when this is not the
-case, and also to
-examine the rich behaviour of Eqn.~\eqref{eqn: mu semi-coherent R}, in
-Figure~\ref{fig: varyingR} we compare the analytic result with numerical
-experiments in which the mismatch is calculated exactly. This is done for three
-triplets of $\Dnuglitch$, $\Dnudotglitch$ and $\Tobs$ chosen to show the behaviours of the
-three terms in Eqn.~\eqref{eqn: mu semi-coherent R}. For all three we use
-$\Nseg=10$ and vary $R$, the fractional point at which the glitch occurs.
-\begin{figure}
+for small numbers of segments. To demonstrate this, in Figure~\ref{fig: n seg
+convergence} we plot the residual difference between the $R$-averaged
+metric-mismatch approximation $\langle \muhat \rangle_R$, as given in
+Eqn.~\eqref{eqn: R-averaged semi-coherent}, and the $R$-averaged exact mismatch
+$\left(\langle \muhat \rangle_{R}\right)_{\textrm{exact}}$ which we calculate
+numerically. To test both of the terms in Eqn.~\eqref{eqn: R-averaged semi-coherent}
+we plot the residual difference for two glitches: one in the frequency and
+the other in the spin-down rate, the exact values are given in the legend.
+\begin{figure}[htb]
 \centering
-\includegraphics[]{SimulatedGlitches_VaryingR}
-\caption{Comparison of the semi-coherent mismatch as estimated by the analytic
-         approximation Eqn.~\eqref{eqn: mu semi-coherent R} with
-         exact numerical experiments for three stes of $\Dnuglitch$,
-         $\Dnudotglitch$, and $\Tobs$. For all three we use $\Nseg=10$ and add vertical bars
-         to indicate the points when the glitch occurs exactly at an interface 
-         between two semi-coherent segments.}
-\label{fig: varyingR}
+\includegraphics[]{SimulatedGlitches_NsegConvergence}
+\caption{Residual difference between $R$-averaged
+metric-mismatch approximation $\langle \muhat \rangle_R$, as given in
+Eqn.~\eqref{eqn: R-averaged semi-coherent}, and the $R$-averaged exact mismatch
+$\left(\langle \muhat \rangle_{R}\right)_{\textrm{exact}}$. The exact mismatch
+is calculated numerically and does not suffer from either the metric mismatch
+approximation or the assumption that the glitch occurs exactly at the interface
+between two segments of the semi-coherent search.}
+\label{fig: n seg convergence}
 \end{figure}
+This figure shows that for $\Nseg > 10$ the error due to our assumption that
+the glitch occurs exactly at the interface between two segments of the
+semi-coherent search vanishes.
 
-There are two causes of disagreement between the analytic and numerical results
-in Figure~\ref{fig: varyingR}. First, we have error due to the assumption of
-small mismatch which goes into the metric-mismatch approximation. Since the
-mismatches here are quite large $\muhat \sim 0.1$, this assumption is invalid
-and causes the analytic result to overestimate the exact numeric result. In the
-limit that $\muhat \ll 1$ when either the observation time is shorter or the
-glitch size is smaller, this source of error vanishes and the numeric and
-analytic results agree exactly, aside from the second source of disagreement.
-The second disagreement is the breakdown of the assumption that the glitch
-occurs exactly at the interface between two glitches: this is shown for all
-three plots in Figure~\ref{fig: varyingR} at point where the glitch deos not
-occur at the interface between two segments (shown as vertical lines). We have
-intentionally chosen a small number of segments,$\Nseg=10$, so that at the
-vertical lines, where $R=0.1, 0.2, \dots$, the assumption is valid and the
-analytic and numerical results will agree exactly aside from the first cause of
-disagreement mentioned above.
-
-Figure~\ref{fig: varyingR} demonstrates that Eqn.~\eqref{eqn: mu semi-coherent R}
-and hence Eqn.~\eqref{eqn: R-averaged semi coherent} captures the essential
-features and order-of-magnitude of the semi-coherent mismatch. We will always
-use these equations in the limit that $\Nseg \ge 10$ such that the second source
-of error is negligible. The first source of error will be discussed when it is
-relevant.
+%\subsubsection{Behaviour of the semi-coherent mismatch}
+%and also to
+%examine the rich behaviour of Eqn.~\eqref{eqn: mu semi-coherent R}, in
+%Figure~\ref{fig: varyingR} we compare the analytic result with numerical
+%experiments in which the mismatch is calculated exactly. This is done for three
+%triplets of $\Dnuglitch$, $\Dnudotglitch$ and $\Tobs$ chosen to show the behaviours of the
+%three terms in Eqn.~\eqref{eqn: mu semi-coherent R}. For all three we use
+%$\Nseg=10$ and vary $R$, the fractional point at which the glitch occurs.
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[]{SimulatedGlitches_VaryingR}
+%\caption{Comparison of the semi-coherent mismatch as estimated by the analytic
+%         approximation Eqn.~\eqref{eqn: mu semi-coherent R} with
+%         exact numerical experiments for three stes of $\Dnuglitch$,
+%         $\Dnudotglitch$, and $\Tobs$. For all three we use $\Nseg=10$ and add vertical bars
+%         to indicate the points when the glitch occurs exactly at an interface 
+%         between two semi-coherent segments.}
+%\label{fig: varyingR}
+%\end{figure}
+%
+%There are two causes of disagreement between the analytic and numerical results
+%in Figure~\ref{fig: varyingR}. First, we have error due to the assumption of
+%small mismatch which goes into the metric-mismatch approximation. Since the
+%mismatches here are quite large $\muhat \sim 0.1$, this assumption is invalid
+%and causes the analytic result to overestimate the exact numeric result. In the
+%limit that $\muhat \ll 1$ when either the observation time is shorter or the
+%glitch size is smaller, this source of error vanishes and the numeric and
+%analytic results agree exactly, aside from the second source of disagreement.
+%The second disagreement is the breakdown of the assumption that the glitch
+%occurs exactly at the interface between two glitches: this is shown for all
+%three plots in Figure~\ref{fig: varyingR} at point where the glitch deos not
+%occur at the interface between two segments (shown as vertical lines). We have
+%intentionally chosen a small number of segments,$\Nseg=10$, so that at the
+%vertical lines, where $R=0.1, 0.2, \dots$, the assumption is valid and the
+%analytic and numerical results will agree exactly aside from the first cause of
+%disagreement mentioned above.
+%
+%Figure~\ref{fig: varyingR} demonstrates that Eqn.~\eqref{eqn: mu semi-coherent R}
+%and hence Eqn.~\eqref{eqn: R-averaged semi-coherent} captures the essential
+%features and order-of-magnitude of the semi-coherent mismatch. We will always
+%use these equations in the limit that $\Nseg \ge 10$ such that the second source
+%of error is negligible. The first source of error will be discussed when it is
+%relevant.
 
 \subsubsection{Simple estimates}
-Taking Eqn.~\eqref{eqn: R-averaged semi coherent}, the $R$-averaged expression,
+Taking Eqn.~\eqref{eqn: R-averaged semi-coherent}, the $R$-averaged semi-coherent
+metric mismatch,
 we can estimate the maximum coherence time
 for a semi-coherent search allowing for a mismatch $\mu=0.1$. For the jumps in
 frequency this gives
@@ -1026,13 +1052,13 @@ In this section, we will use fitting formulae of Section~\ref{sec: observed glit
 magnitude} to predict the magnitude of glitches for a range of parameters
 typical of all-sky searches. We will use the tools of Section~\ref{sec: mismatch
 due to glitches} to transform the magnitudes into an estimate of the
-fully-coherent and semi-coherent mismatch assuming a single glitch occured
+fully-coherent and semi-coherent mismatch assuming a single glitch occurred
 during the search. However this mismatch does not give a complete picture of
 the risk, since we must also consider the predicted rate of glitches.
 Specifically, in converting a predicted glitch magnitude into an estimate for
 the fully-coherent and semi-coherent mismatch we will make use of
 Eqn.~\eqref{eqn: R-averaged fully coherent} and Eqn.~\eqref{eqn: R-averaged
-semi coherent}: the $R$-averaged mismatch assuming that a \emph{single} glitch
+semi-coherent}: the $R$-averaged mismatch assuming that a \emph{single} glitch
 occurs uniformly and at random during the observation time. We can therefore
 take these results as a lower bound when there is likely to be more than one
 glitch. On the other hand, in regions where there is an estimated number of
@@ -1112,7 +1138,7 @@ effect here.
 In this section, we present results on the expected mismatch and expected number
 of glitches for fully-coherent searches. In Figure~\ref{fig: fully-coherent mismatch
 Tobs} we plot contours of fixed mismatch as a function of the coherence time
-$\Tcoh$ and the GW spindown rate $\nudotS$. Alongside are plotted the number of
+$\Tcoh$ and the GW spin-down rate $\nudotS$. Alongside are plotted the number of
 glitches as a function of the observation time and spin-down rate.
 \begin{figure}[htb] \centering
 \includegraphics{fully_coherent_mismatch}
@@ -1133,7 +1159,7 @@ associated with larger glitch magnitudes; as a result larger absolute spin-down
 rates are predicted to suffer more severe mismatches. For the Vela-like
 population, the mismatch is largely independent of $\nudotR$, this is because
 the fitting formulae Eqn.~\eqref{eqn: Delta nu fit} finds little variation in
-the glitch size with the spindown rate.
+the glitch size with the spin-down rate.
 
 For long observation times the mismatch can be severe, however this is only a
 concern if a glitch occurs. The expected number of glitches in both populations
@@ -1149,7 +1175,7 @@ contour lines.
 \subsection{Semi-coherent searches}
 
 For the semi-coherent search we repeat the process of predicting the glitch
-magnitudes, but then use Eqn.~\eqref{eqn: R-averaged semi coherent} to
+magnitudes, but then use Eqn.~\eqref{eqn: R-averaged semi-coherent} to
 transform them into predictions for the semi-coherent mismatch. A semi-coherent search has two
 fixed times: the total observation span $\Tobs$ and the coherent segment length
 $\Tcoh$. In Figure~\ref{fig: semi-coherent mismatch Tobs 100} and Figure~\ref{fig:
@@ -1203,13 +1229,13 @@ In Figure~\ref{fig: follow-up} we plot the the semi-coherent mismatch for this
 glitch as a function of the number of segments at a fixed observation time; this
 is inversely proportional to the coherence time which we also give on the upper
 axis. This is predicted
-analytically from the $R$-averaged Eqn.~\eqref{eqn: R-averaged semi coherent}.
+analytically from the $R$-averaged Eqn.~\eqref{eqn: R-averaged semi-coherent}.
 We also performed a Monte-Carlo numerical simulation in which the mismatch was
 calculated exactly for a fixed glitch size, but an $R$ chosen uniformly
 throughout the observation period. The resulting mismatches are then histogrammed and the
 density is shaded on to Figure~\ref{fig: follow-up}: this demonstrates the spread of
 mismatches about the average value. Notably there is a tight band centred on
-the analytic $R$-averaged prediction of Eqn.~\eqref{eqn: R-averaged semi coherent};
+the analytic $R$-averaged prediction of Eqn.~\eqref{eqn: R-averaged semi-coherent};
 there is a low-density of mismatches below this band, these occur when $R$ is
 close to 0 or 1.
 
@@ -1218,7 +1244,7 @@ close to 0 or 1.
 \includegraphics[width=0.75\textwidth]{S5_follow_up}
 \caption{An example of how the semi-coherent mismatch changes with $\Nseg$ for
          a fixed glitch size. The red line is the prediction of the $R$-averaged
-         Eqn.~\eqref{eqn: R-averaged semi coherent}. The density map is constructed
+         Eqn.~\eqref{eqn: R-averaged semi-coherent}. The density map is constructed
          by performing numerical Monte-Carlo simulations over $R$ and binning the mismatches
          into histograms.}
 \label{fig: follow-up}
@@ -1239,7 +1265,7 @@ exponential relaxation of some fraction of the total glitch magnitude over
 times of tens to hundreds of days. \citet{Lyne2000} characterised the
 fractional recovery by $Q = \sum \Deltanu_i/\DnuRglitch$ where $\sum
 \Deltanu_i$ is the total glitch magnitude summed over the number of relaxation
-componentsr. For each component $\Deltanu_i$ is recovered over an
+components. For each component $\Deltanu_i$ is recovered over an
 e-folding timescale $\tau^d_i$. In most cases, only a single component is
 identified.
 
@@ -1314,7 +1340,7 @@ estimate for the search for Cas A only.}
 This table gives a clear picture that for all searches in the fully-coherent
 follow up, the worst mismatches are greater than one. It is true that the probability
 of a glitch is less than one, but not by a sufficient margin to consider them
-uneffected. However, the mismatch in the semi-coherent stage can be sufficiently
+unaffected. However, the mismatch in the semi-coherent stage can be sufficiently
 small to be immune to glitches, provided the coherence times and observation
 times are small enough.
 
@@ -1339,7 +1365,7 @@ In Section~\ref{sec: mismatch due to glitches} we calculated the metric
 mismatch for a
 glitch with no exponential relation. This was done both for a
 fully-coherent and semi-coherent searches (Eqn.~\eqref{eqn: R-averaged fully
-coherent} and Eqn.~\eqref{eqn: R-averaged semi coherent} respectively) assuming
+coherent} and Eqn.~\eqref{eqn: R-averaged semi-coherent} respectively) assuming
 that a single glitch occurs during the search. For each type of search, we provided
 some simple estimates of the mismatch for the largest glitches seen in the
 glitch catalogue.
@@ -1354,7 +1380,7 @@ rate. If a candidate signal with a glitch does get captured in the
 semi-coherent stage, we show that, if naively followed up by a single
 fully-coherent search over the full observation time, it will most likely have
 a mismatch greater than 10\% unless it has a very low absolute spin-down rate.
-These calculations assume that a single glitch occured during the search. To
+These calculations assume that a single glitch occurred during the search. To
 complete the picture, we used our fitting formulae for the expected number of
 glitches to show that for typical search durations there is a reasonable chance
 that a glitch will occur.
