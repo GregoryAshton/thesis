@@ -6,24 +6,20 @@
 
 \begin{document}
 
-\meta{
-It's unclear at this time what causes timing noise, but from Chapter.~\ref{sec:
-timing noise in cgw} we know that it may pose a problem for continuous GW
-searches if the phase evolution is effected by timing noise and that is not
-included in the search templates. In addition to searches for isolated neutron
-stars, many searches \citep[see for
+\meta{ It's unclear at this time what causes timing noise, but from
+Chapter.~\ref{sec: timing noise in cgw} we know that it may pose a problem for
+continuous GW searches if the phase evolution is effected by timing noise and
+this is not included in the search templates. In addition to searches for
+isolated neutron stars, many searches \citep[see for
 example][]{ligo2015scox1,leaci2015,ScoX1:MDC1} have been performed for GWs from
 low-mass X-ray binary systems (LMXBs). These searches experience similar
 difficulties due to a stronger form of timing noise known as `spin-wandering'.
 This issue was investigated by \citet{watts2008} who quantifed the effect using
 a decoherence time $T_{\textrm{decoh}}$, after which the Taylor expansion can
-no longer track the phase, defined by
-\begin{align}
-T_{\textrm{decoh}}^{2} \dot{\nu}_{\textrm{s}} = 1.
-\end{align}
+no longer track the phase, defined by $T_{\textrm{decoh}}^{2} \dot{\nu} = 1.$
 They then estimated a worst-case decoherence time by using the maximimal
-spin-up rate due to the accretion torque and found that for some sources such
-as Sco-X1 the decoherence time can be short as $\sim 1$~week.
+spin-up rate $\dot{\nu}$ due to the accretion torque and found that for some
+sources such as the LMXB Scorpius-X1, the decoherence time can be short as $\sim 1$~week.
 
 In this chapter, we will present some preliminary calculations and results
 related to modelling timing noise in a continuous GW using a random walk model.
@@ -31,11 +27,10 @@ Unlike the results of Chapter.~\ref{sec: timing noise in cgw}, which used an
 empirical description of timing noise given by the Crab ephemeris, the results
 derived here can be applied to any search in which it is thought the signal may
 undergo a random walk. In this sense, it is equivalent to Chapter~\ref{sec:
-glitches in cgw} in that the ultimate aim is to use observations to develop
-fitting formulae for the random walk model and then predict the amount of
-mismatch, given the search parameters. As given here, this task in incomplete
-and so we will present our initial findings with a view to develop this chapter
-further in the future.
+glitches in cgw} in that the ultimate aim is to use estimate the risk faced by
+various searches by inferring from the observed pulsar population.  As given
+here, the task in incomplete and so we will present our calculations and
+some preliminary results.
 
 Recent observations by \citet{Hobbs2010} suggest that a random walk model does
 not capture the physics of timing noise in isolated radio pulsars and hence is
@@ -47,10 +42,25 @@ to LMXBs where the amount of spin-wandering could be inferred from fluctuations
 in the luminosity. From this we intend in the future to update the estimates by
 \citet{watts2008} to estimate the mismatch for various searches.
 
+This chapter is organised in the following way. In Section~\ref{sec: defining a
+random walk} we will define the random walk as a piecewise Taylor expansion in
+which the difference between the signal and template is initially zero. We will
+then calculate the mismatch for this simple description in Section~\ref{sec:
+random walkm models part I}. However, setting the difference between the signal
+and template to zero initially does not minimise the mismatch, so in
+Section~\ref{sec: random walk models part II} we discuss a pragmatic to
+estimate the minimised mismatch; for each predicted mismatch we veryify our
+calculations using Monte-Carlo like numerical simulations. In Section~\ref{sec:
+application to the crab} we interpret the Crab ephemeris (introduced in
+Chapter~\ref{sec: timing noise cgw}) as a random walk and then use this to
+predict the mismatch as a function of observation time. Finally in
+Section~\ref{sec: other pulsars} we will use a fitting formulae to predict the
+worst-case mismatch in some recent gravitational wave searches.
+
 }
 
 \section{Defining a random walk}
-\label{sec: Defining a random walk}
+\label{sec: defining a random walk}
 To calculate the fully-coherent mismatch, we will model the random walk as a
 zero-mean Gaussian walk in the phase, frequency, and spin-down which occurs at
 $\Nsd$ fixed time intervals, $\Delta T$ such that the total observation time is
@@ -320,7 +330,7 @@ and spin-down rate.}
 
 \section{Random walk models: minimising the mismatch} 
 \label{sec: random walk models part II}
-In Section~\ref{sec: Defining a random walk} we have defined a random walk
+In Section~\ref{sec: defining a random walk} we have defined a random walk
 model for which we subsequently calculated the fully-coherent mismatch in
 Section~\ref{sec: random walk models part I}. However, this is a special case
 in which the random walk for each parameter offset (the difference between the
@@ -341,7 +351,7 @@ Ideally, we would like to repeat the calculation leading to Eqn.~\eqref{eqn:
 expectation} minimising the mismatch with respect to the template parameters.
 However, this calculation has not yet been peformed so a practical alternative
 method which we will use here is to begin with the random walk starting at the
-origin, as defined in Section~\ref{sec: Defining a random walk}, and then fit and
+origin, as defined in Section~\ref{sec: defining a random walk}, and then fit and
 remove a polynomial of degree $k$. This leaves us with a residual random walk for
 which we then compute the mismatch. We will then verify that this captures the
 essential features of minimising the mismatch by comparing with numerical
@@ -442,7 +452,7 @@ have
 \Delta f_{i} &= \s{j=1}{i}\mathcal{N}(0, \sigF).
 \end{align}
 Recalling that we set the reference time at the beginning of each subdomain,
-then as in Section~\ref{sec: Defining a random walk}, the induced phase offset is
+then as in Section~\ref{sec: defining a random walk}, the induced phase offset is
 \begin{align}
 \Delta\phi_{i} &=2\pi \s{j=1}{i-1}\Delta f_{j}\dT \\
  & = 2\pi\dT \s{j=1}{i-1}\s{k=1}{j}\mathcal{N}(0, \sigF) \\
@@ -534,6 +544,7 @@ the smallest mismatch from a grid of points in $f_\textrm{t}$ and $\dot{f}_\text
 \end{figure}
 
 \section{Application to the Crab pulsar}
+\label{sec: application to crab}
 \meta{
 In Section~\ref{sec: timing noise as described by the crab ephemeris}, we
 introduced the Crab ephemeris.  The regular and independent measurements of the
@@ -816,6 +827,7 @@ precisely through the means of the data points.
 
 
 \section{Predicting the mismatch for other pulsars}
+\label{sec: other pulsars}
 \citet{Jones2004} considered the problem of timing noise in pulsars by
 calculating a decoherence time. They then used a fitting formulae from
 \citet{Dewey1989} to predict the strength of timing noise and estimate this
