@@ -410,7 +410,7 @@ noise-only model parameters of the beam-width data.}
 \end{figure}
 
 In Figure~\ref{fig: noise-only beam-width posterior fit} we plot the
-\emph{maximum posterior estimate} (MPE) of the signal alongside the data, i.e.
+\emph{maximum posterior estimate} (MPE) of the signal alongside the data, i.e.\
 the model prediction when the parameters are set equal to the peak values of
 the posterior probability distributions.  This figure demonstrates that, for
 the noise-only model, the observed $W_{10}$ has a mean value of approximately
@@ -422,7 +422,7 @@ explained by periodic modulations.
 \includegraphics[width=0.75\textwidth]{Beamwidth_NoiseOnly_PosteriorFit}
 \caption{Posterior predictive check of the fit of the noise-only model
 posterior distribution to the data: the solid black line is the maximum
-posterior estimate (MPE), i.e. the model prediction when the parameters are set
+posterior estimate (MPE), i.e.\ the model prediction when the parameters are set
 equal to the values corresponding to the peaks of the posterior probability
 distributions.   The shaded region indicates the MPE of the 1-$\sigma_{W_{10}}$
 noise about the beam-width model, black dots are the original data.}
@@ -548,7 +548,7 @@ The resulting spin-down rates constitutes our signal model which is the
 time-average of Eqn.~\eqref{eqn: switching spin-down model}.  A schematic
 representation of the sort of spin-down that is then found is given by the
 dotted curve in Figure~\ref{fig: perera illustration}.  Clearly, the
-time-averaged spin-down is much smoother than than the underlying spin-down.
+time-averaged spin-down is much smoother than the underlying spin-down.
 
 
 It is worth taking a moment to realise that the relation of the time-average
@@ -778,7 +778,7 @@ ansatz may be written as
 \dot{\nu} = -k\nu^{n}\sin^{2}\Theta,
 \end{equation}
 where $k$ is a positive constant, and $\Theta$ is the
-polar angle between the dipole and the angular momentum vector as
+polar angle between the dipole and the angular momentum vector
 as calculated in Eqn.~(52) of \citet{Jones2001}.
 Then we calculate \emph{secular} solutions in which $\Theta$ takes its fixed, time-averaged
 value. We denote by $\theta$  the angle between the symmetry axis of the
@@ -947,7 +947,7 @@ if $\Theta(t)$ varies due to changes in $\Delta\Theta(t)$, then the observer
 will measure the beam to vary on the slow precession time-scale. To help visualise the setup, in
 Figure~\ref{fig: delta theta delta phi} we plot the unit sphere with points
 corresponding to the beam-axis $\mathbf{m}$ and the observer. For each of these
-we have added lines of latitude and longitude. Then we see that that
+we have added lines of latitude and longitude. Then we see that
 $\Delta\Theta$ is the difference between the lines of latitude and we can also
 define $\Delta\Phi(t) = \Phi(t) - \Phi_{\textrm{obs}}$ as the difference in the
 lines of longitude.
@@ -1261,7 +1261,7 @@ intensity to that at the observed peak $\In_{\textrm{max}}$.
 
 This loss of a degree of freedom means that Eqn.~\eqref{eqn: W10 elliptical} is
 an equivalent to an expansion of Eqn.~\eqref{eqn: w10 beam-width Gaussian} in
-the planar limit (i.e. the non-circular nature introduced by Eqn.~\eqref{eqn: 2D intensity}
+the planar limit (i.e.\ the non-circular nature introduced by Eqn.~\eqref{eqn: 2D intensity}
 does not manifest in the prediction for $W_{10}$)
 and so will suffer the same problems if fitted to the data. To further
 generalise our intensity model we will therefore modify the beam-geometry by
@@ -1281,7 +1281,7 @@ and $\rho_2''$ due to degeneracy. In light of this, we drop the first
 term, but keep the second, which we feel is the simplest model which is able to
 fit the data.
 
-Solving for the beam-width (i.e. with Eqn.~\eqref{eqn: rho2} substituted into
+Solving for the beam-width (i.e.\ with Eqn.~\eqref{eqn: rho2} substituted into
 Eqn.~\eqref{eqn: 2D intensity}) we obtain a signal model
 \begin{align}
 W_{10}(t) = \frac{P}{\pi}\sqrt{\frac{2\ln10}{\sin\Theta(t)\sin\iota}}
@@ -1459,8 +1459,8 @@ and raising the likelihood to a power $1/T$ where $T$ is the `temperature' of
 the chain. This method was originally proposed by \citet{Swendsen1986} to
 improve the efficiency of MCMC simulations for multimodal distributions.
 In this work we use this method not to help with the efficiency of the
-simulations \footnote{All the posteriors are either unimodal or multimodal with
-little separation between the modes}, but instead so that we can apply the
+simulations\footnote{All the posteriors are either unimodal or multimodal with
+little separation between the modes.}, but instead so that we can apply the
 method prescribed by \citet{Goggans2004} to estimate the evidence as follows.
 
 First we define the inverse temperature $\beta = 1/T$, then let the marginal
@@ -1794,7 +1794,7 @@ Having run an MCMC simulation we check that the chains have properly converged
 (for a discussion on this see \citet{gelman2013bayesian}).  The MCMC
 simulations provide an estimate of the posterior densities for the model
 parameters. We will also perform `posterior predictive checks' to ensure the
-posterior is a suitable fit to the data, i.e. we compare the data to the model
+posterior is a suitable fit to the data, i.e.\ we compare the data to the model
 prediction when the model parameters are set to the values corresponding to the
 peaks of the posterior probability  distributions.
 
