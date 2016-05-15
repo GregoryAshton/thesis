@@ -181,12 +181,12 @@ We are then left with a set of
 two coupled ODEs, solving these with appropriate initial conditions
 the solutions take the form
 \begin{align}
-\begin{split}
-    \Omega_{x} & = \Omega_{0}\sin(a_0)\sin\left(\Omega_{0}\cos(a_0)\epsilon t\right), \\
-    \Omega_{y} & = \Omega_{0}\sin(a_0)\cos\left(\Omega_{0}\cos(a_0)\epsilon t\right),\\
+    \Omega_{x} & = \Omega_{0}\sin(a_0)\sin\left(\Omega_{0}\cos(a_0)\epsilon t\right),
+\label{eqn: free precession x} \\
+    \Omega_{y} & = \Omega_{0}\sin(a_0)\cos\left(\Omega_{0}\cos(a_0)\epsilon t\right),
+\label{eqn: free precession y} \\
     \Omega_{z} & = \Omega_0 \cos(a_0),
-\label{eqn: free precession}
-\end{split}
+\label{eqn: free precession z}
 \end{align}
 where $a_0$ is the angle between the spin-vector and the body frame $z$ axis, and
 $\Omega_0$ is the magnitude of the spin-vector.
@@ -497,8 +497,10 @@ phase residual for this model to illustrate the variations in the residuals.
     \centering
     \includegraphics[]{Perera}
     \caption{Illustration of the \citet{Perera2014} extension to the
-    \citet{Lyne2010} model in which the system switching between the two states
-    four times per cycle, giving four independent switching periods. For a description
+    \citet{Lyne2010} model in which the system switches between the two states
+    four times per cycle, giving four independent switching periods. In this
+    figure, $t_\textrm{tot}=t_\textrm{A}+t_\textrm{B}+t_\textrm{C}+t_\textrm{D}$.
+    For a description
     of the three panels see Figure~\ref{fig: lyne example D=0}.}
     \label{fig: perera example}
 \end{figure}

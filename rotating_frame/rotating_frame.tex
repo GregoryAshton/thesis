@@ -496,40 +496,42 @@ finally simplifying to
 Expanding the
 summation on the right hand side, all terms for which $i=j$ will be zero. Working with a biaxial mass
 distribution where $I_{1}=I_{2}$, then the only non-zero terms are given by
-\begin{eqnarray*}
-T^{i}\omega_{i}\omega_{j}(I\omega)^{j}\left(I^{i}_{\;i}-I^{j}_{\;j}\right)&=&
+\begin{align}
+T^{i}\omega_{i}\omega_{j}(I\omega)^{j}\left(I^{i}_{\;i}-I^{j}_{\;j}\right) =&
 T_{1}\omega_{1}I_{0}(1-\epsilon_{i})\omega^{2}_{3}
-(I_{0}-I_{0}(1+\epsI)) \\
- && + T_{2}\omega_{2}I_{0}(1-\epsilon_{i})\omega^{2}_{3}(I_{0}-I_{0}(1+\epsI))
-\\ && +
+(I_{0}-I_{0}(1+\epsI))
+\nonumber \\
+ & + T_{2}\omega_{2}I_{0}(1-\epsilon_{i})\omega^{2}_{3}(I_{0}-I_{0}(1+\epsI))
+\nonumber \\ 
+& +
 T_{3}\omega_{3}(I_{0}(1+\epsI)-I_{0})
                (I_{0}\omega_{1}^{2}+I_{0}\omega_{2}^{2}), \\
-&=& I_{0}^{2}\epsI\omega_{3}\left(T_{3}(\omega_{1}^{2}+\omega_{2}^{2})
+=& I_{0}^{2}\epsI\omega_{3}\left(T_{3}(\omega_{1}^{2}+\omega_{2}^{2})
     - \omega_{3}(1+\epsI)(T_{1}\omega_{1}+T_{2}\omega_{2})\right).
-\end{eqnarray*}
+\end{align}
 Working up to 1st order in $\epsI$ and transforming to spherical polar
 coordinates, we then insert the spin-down torque and neglect the anomalous torque.
 This yields
-\begin{eqnarray*}
-\dot{A}E^{2}&=& I_{0}^{2}\epsI\omega^{3}
+\begin{align}
+\dot{A}E^{2} = & I_{0}^{2}\epsI\omega^{3}
     \left(\frac{2R}{3c}\epsA\omega^{3}\right)
     \cos a \left([\sin \chi \cos \chi \sin a \cos \phi
-                 - \sin^{2}\chi \cos a]\sin^{2} a \right. \\
-&& \left.- \cos a ([\sin \chi \cos \chi \sin a \cos \phi
+                 - \sin^{2}\chi \cos a]\sin^{2} a \right. \nonumber \\
+& \left.- \cos a ([\sin \chi \cos \chi \sin a \cos \phi
                    - \sin^{2}\chi \cos a]\cos \phi \sin a
                    - \sin^{2}a \sin^{2}\phi)\right).
-\end{eqnarray*}
+\end{align}
 
 Now we work in the limit $\tau_P \ll \tau_S$ where $\phi$ varies on the
 precession timescale, which is much faster than the evolution in either $a$ or $\omega$.
 Therefore, we can average over a free precession period and drop the constant
 coefficients:
-\begin{eqnarray*}
+\begin{align}
 \langle\dot{A}\rangle &\propto& \cos a \left(-\sin^{2}a\cos a \sin^{2}\chi +
        \frac{1}{2}\left(\sin^{2}a\cos a \cos^{2}\chi +
        \sin^{2}a \cos a \right) \right) \\
 & \propto& \cos^{2} a \sin^{2}a\left(1-\frac{3}{2}\sin^{2}\chi\right).
-\end{eqnarray*}
+\end{align}
 Finally, putting all the coefficients back in, we have an expression for the averaged
 rate of change of $A$ under the same assumptions made by \citet{Goldreich1970}
 \begin{equation}
@@ -629,7 +631,7 @@ rearrangment of the equations of motion as first noted by \citet{Glampedakis2010
 
 Writing Eqn.~\eqref{eqn: eom} with the Deutsch torque, we then manipulate it to
 give
-\begin{eqnarray*}
+\begin{eqnarray}
 J^{i}_{\;,t}+\epsilon^{ijk}\Omega_{j}J_{k} & =
 & N^{i}_{\textrm{spin-down}}+
 \epsA I_{0}\Omega^{a}\hat{m}_{a}\epsilon^{ijk}\Omega_{j}\hat{m}_{k}, \\
@@ -639,11 +641,10 @@ J^{i}_{\;,t}+\epsilon^{ijk}\Omega_{j}J_{k} & =
 \Rightarrow J^{i}_{\;,t}+
 \epsilon^{ijk}\Omega_{j}\left(I_{ka}-\epsA I_{0}\hat{m}_{a}\hat{m}_{k}\right)\Omega^{a}
 & = & N^{i}_{\textrm{spin-down}}.
-\end{eqnarray*}
+\end{eqnarray}
 By arranging the equation this way and making use of $J_{i}=I_{ij}\Omega^{j}$,
 we can write an \emph{effective moment of inertia tensor} given by
 \begin{align}
-\begin{split}
 I'_{jk}&=I_{jk}-I_{0}\epsA\hat{m}_{j}\hat{m}_{k}, \\
 &= \left[
 \begin{array}{ccc}
@@ -652,7 +653,6 @@ I_{0}(1-\epsA\sin^{2}\chi) & 0 & -I_{0}\epsA\sin\chi \cos \chi \\
 I_{0}(1+\epsI-\epsA\cos^{2}\chi)
 \end{array}
 \right].
-\end{split}
 \label{eqn: effective MOI}
 \end{align}
 Note that we will use the prime to denote the coordinates in the
@@ -1107,16 +1107,16 @@ to categorise the results. However, clearly the magnitude of the spin-vector
 will decrease and the different dependencies on the spin-vector could cause a
 `crossing' of the timescales producing unexpected results. Writing the
 timescales as
-\begin{equation}
-\tauP(t)=\frac{2\pi}{\epsilon_{I}\omega(t)}, \;\;\;\;\;
-\tauA(t)=\frac{2\pi}{\epsilon_{A}\omega(t)},  \;\;\;\;\;
-\tauS(t)=\frac{3c}{2R}\frac{2\pi}{\epsilon_{A}\omega(t)^{2}},
-\end{equation}
+\begin{align}
+\tauP(t)&=\frac{2\pi}{\epsilon_{I}\omega(t)}, \\
+\tauA(t)&=\frac{2\pi}{\epsilon_{A}\omega(t)}, \\
+\tauS(t)&=\frac{3c}{2R}\frac{2\pi}{\epsilon_{A}\omega(t)^{2}},\\
+\end{align}
 only $\tauS$ could `cross' with the other two timescales since the spin-down
 and anomalous timescales obey $\tauS>\tauA$ provided that
-\begin{equation*}
+\begin{equation}
 \omega(t)>\frac{3c}{2R}.
-\end{equation*}
+\end{equation}
 This condition is satisfied by setting the initial rotational spin frequency at
 less than $\omega_{0} \sim 10^{4}$ [rad/s], that is the star should not break
 special relativity. At later times, the spin frequency will decay and so this

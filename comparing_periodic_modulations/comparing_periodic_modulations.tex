@@ -109,7 +109,7 @@ the switching model, as discussed in Section~\ref{sec: switching}, to be capable
 of producing the double-peak spin-down rate; it is this modification of the
 switching model which we will be comparing with precession.
 
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[]{B1828-11_data}
 \caption{Observed data for PSR~B1828-11 spanning from MJD~49710 to MJD~54980.
@@ -401,7 +401,7 @@ variations in $W_{10}$ about a fixed mean. For other models, we hope to explain
 some of the variations with periodic modulation and the rest with Gaussian
 noise. So for these models we should expect $\sigma_{W_{10}} < 2$~ms.
 
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[]{Beamwidth_NoiseOnly_Posterior}
 \caption{The estimated marginal posterior probability distributions for the
@@ -417,9 +417,9 @@ the noise-only model, the observed $W_{10}$ has a mean value of approximately
 $8$~ms, then all the variations about this mean are due to the noise. In the
 following section we will develop models where at least some the variation is
 explained by periodic modulations.
-\begin{figure}
+\begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{Beamwidth_NoiseOnly_PosteriorFit}
+\includegraphics[width=0.75\textwidth]{Beamwidth_NoiseOnly_PosteriorFit}
 \caption{Posterior predictive check of the fit of the noise-only model
 posterior distribution to the data: the solid black line is the maximum
 posterior estimate (MPE), i.e. the model prediction when the parameters are set
@@ -477,7 +477,7 @@ analysis, firstly defining the \emph{underlying} spin-down model and then the
 time-averaging process. To aid in this discussion we plot both the underlying
 spin-down model and time-average in Figure~\ref{fig: perera illustration} and
 gradually introduce each feature.
-\begin{figure}
+\begin{figure}[htb]
 \centering \includegraphics[width=0.5\textwidth]{SwitchingExample.pdf}
 \caption{Schematic of the doubly-periodic spin-down rate model proposed by
 \citet{Perera2015}. The solid line is the underlying spin-down evolution while
@@ -577,7 +577,8 @@ data twice: once in setting up the priors and once for the fitting. Therefore
 it would be inappropriate to use the results in a model comparison and this is
 not our intention: we want to use the posterior distribution as a prior for the
 beam-width parameter estimation.
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Prior distributions for the spin-down switching model.}
 \label{tab: perera spin-down prior}
@@ -599,7 +600,8 @@ posterior}. In the case of parameters with uniform priors, this indicates that t
 is informative and a well defined `best-fit' has been selected. For $\ddot{\nu}$
 the posterior has not departed significantly from the (informative) prior meaning that the
 data agrees with the prior.
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Posterior estimates for the spin-down switching model.}
 \label{tab: perera spin-down posterior}
@@ -680,7 +682,8 @@ requires a prior distribution is the noise-component: as described in
 Section~\ref{sec: noise-only} we apply a prior to $\sigma_{W_{10}}$ using a crude
 estimate from the data; this is tabulated along with the other priors in
 Table~\ref{tab: perera beam-width prior}.
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Prior distributions for the beam-width switching model. Parameters
 for which the prior is taken from spin-down posteriors are labelled by $^{*}$.}
@@ -705,7 +708,8 @@ In Table~\ref{tab: perera beam-width posterior} we summarise the posterior. We
 find that the posterior modes satisfy $\Wone > \Wtwo$: larger
 beam-widths are associated with the smaller absolute spin-down rates as found
 by \citet{Lyne2010}.
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Posterior estimates for the beam-width switching model.}
 \label{tab: perera beam-width posterior}
@@ -814,7 +818,8 @@ PSR~B1828-11.
 
 In Table~\ref{tab: precession spin-down prior} we list the priors selected for
 the spin-down precession model.
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Prior distributions for the spin-down precession model.}
 \label{tab: precession spin-down prior}
@@ -827,7 +832,8 @@ taking the mean and standard deviation from PSR~B1828-11 measurements reported i
 ATNF catalogue: the values are listed in Table~\ref{tab: ATNF}. In the analysis,
 we present the posteriors of the difference to the means of these values for
 convenience.
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Measured and inferred values of the precession spin-down model parameters
 from the ATNF pulsar catalogue \citep{ATNF}, these are given at epoch MJD~49621.}
@@ -836,7 +842,6 @@ from the ATNF pulsar catalogue \citep{ATNF}, these are given at epoch MJD~49621.
 $P^{\mathrm{ATNF}}$ & 0.405043321630 $\pm 1.2\times10^{-11}$~s \\
 $n^{\mathrm{ATNF}}$ & 16.08 $\pm$ 0.17 \\
 $\tauAge^{\mathrm{ATNF}}$ & 213827.91 $\pm 0.32$~ yrs\\
- \hhline{==}
 \end{tabular}
 \end{table}
 Finally for $\psi_0$ we give the full domain of
@@ -865,7 +870,8 @@ a uniform prior, this indicates that the spin-down data is informative. For the
 parameters using an informative prior (from the ATNF catalogue), the posterior
 and prior are similar, this indicates the data agrees with the prior, but does
 not significantly improve our estimates.
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Posterior estimates for the spin-down precession model. For the secular spin-down
 quantities, we report the posterior difference with respect to the values as listed in
@@ -920,7 +926,7 @@ Taking the plane containing the angular momentum vector and the observer, in
 Figure~\ref{fig: J observer plane} we demonstrate the range of motion of
 $\mathbf{m}$ over a precessional cycle by a gray shaded region.  The region has
 a mean polar value of $\chi$ and a range of $2\theta$.
-\begin{figure}
+\begin{figure}[htb]
 \centering \includegraphics[width=0.2\textwidth]{J_ObserverPlane}
 \caption{Illustration of the angles as the beam-axis $\mathbf{m}$ cuts the
          plane containing the observer and the angular momentum~$\mathbf{J}$.
@@ -945,7 +951,7 @@ we have added lines of latitude and longitude. Then we see that that
 $\Delta\Theta$ is the difference between the lines of latitude and we can also
 define $\Delta\Phi(t) = \Phi(t) - \Phi_{\textrm{obs}}$ as the difference in the
 lines of longitude.
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics{Observer_to_M}
 \caption{The angular position of the observer and the magnetic dipole
@@ -1090,7 +1096,8 @@ allowing $\iota$ to range from $[0, \pi]$ (the observer could be in either
 hemisphere); for $\rho$ we apply the prior from Eqn.~\eqref{eqn: rho
 prior}; and for $\sigma_{W_{10}}$ we use a crude estimate based on the
 data (again we use the same prior for all three models).
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Prior distributions for the beam-width Gaussian precession model. Parameters
 for which the prior is taken from spin-down posteriors are labelled by $^{*}$.}
@@ -1319,7 +1326,8 @@ We also tested different choices of $\rho_2''$ and found that the
 posteriors and odds-ratios where robust to the choice, provided the
 standard-deviation did not exclude the posterior value reported in
 Table~\ref{tab: modified-gaussian beam-width posterior}.
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Prior distributions for the beam-width modified-Gaussian precession
 model. Parameters for which the prior is taken from spin-down posteriors are
@@ -1343,7 +1351,8 @@ Eqn.~\eqref{eqn: rho2}, is important in fitting the data.
 \caption{\bigfigurecaptions{modified-Gaussian precession}{beam-width}}
 \label{fig: modified-gaussian beam-width posterior}
 \end{figure*}
-\begin{table}
+\begin{table}[htb]
+\small
 \centering
 \caption{Posterior estimates for the beam-width modified-Gaussian precession model.}
 \label{tab: modified-gaussian beam-width posterior}
@@ -1394,7 +1403,7 @@ shaded region in Figure~\ref{fig: modified-gaussian beam-width recreate geometry
 to show the extent, $\chi-\iota \pm \theta$, over which $\Delta\Theta$ varies
 during a precessional cycle.
 
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.48\textwidth]{{Beamwidth_ModifiedGaussian_0.1_RecreateGeometry}.png}
 \caption{Recreating the beam geometry from the MPE of the modified-Gaussian
@@ -1425,7 +1434,7 @@ Figure~\ref{fig: modified-gaussian beam-width recreate pulse} we plot the
 normalised intensity for three values of $\Delta\Theta$ corresponding to the
 mean, and edges of the gray region in Figure~\ref{fig: modified-gaussian
 beam-width recreate geometry}.
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.48\textwidth]{{Beamwidth_ModifiedGaussian_0.1_RecreatePulse}.pdf}
 \caption{Recreating the pulse profiles for three particular slices through the
@@ -1491,7 +1500,8 @@ Table~\ref{tab: log odds-ratio}. A positive value indicates
 that the data prefers model A over model B.
 Note that the error here is an estimate of the systematic error due to the
 choice of $\beta$ values \citep[see][for details]{Foreman-Mackay2013}.
-\begin{table}
+\begin{table}[htb]
+\small
 \caption{Tabulated log-odds-ratios for all models. $^{*}$By the precession
 model here we mean the precession with a modified Gaussian beam model as
 discussed in Section~\ref{sec: refining the beam-width model}.}
@@ -1582,7 +1592,7 @@ In this case it is the precession solutions which are unnaturally disadvantaged
 by our choice of prior and so, as in the $f\lesssim 0.024$ case, we do not consider
 such odds-ratios as a fair comparison of the models.
 
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.45\textwidth]{Beamwidth_Switching_Frac_Variation}
 \caption{Dependence of the
@@ -1838,7 +1848,7 @@ interpulses for double-pole interpulses in Table~1. of \cite{Maciesiak2011}).
 Allowing for such kinks in both beams is a possible extension to the
 precessional model.
 
-\begin{figure}
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.4\textwidth]{J_ObserverPlane_otherpole}
 \caption{Extension to Figure~\ref{fig: J observer plane} adding in the south pole

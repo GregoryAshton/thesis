@@ -73,7 +73,6 @@ to determine the three Euler angles which transform the rotating frame axes,
 denoted by $(x',y', z')$, to the inertial frame axis, denoted by $(x, y, z)$.
 In particular, we define three rotation matrices
 \begin{align}
-\begin{split}
 D & = \left[\begin{array}{ccc}
 \cos\phi & \sin\phi & 0 \\
 -\sin\phi & \cos\phi & 0 \\
@@ -94,7 +93,6 @@ B & = \left[\begin{array}{ccc}
 0 & 0 & 1
 \end{array}
 \right].
-\end{split}
 \end{align}
 Then their product defines the Euler angle rotation matrix
 \begin{align}
@@ -102,6 +100,9 @@ R & = BCD,
 \end{align}
 in index notation the components are
 \begin{align}
+\medmuskip=0mu
+\thinmuskip=1.5mu
+\thickmuskip=0mu
 R^{b}_{\;a} = \left[
 \begin{array}{ccc}
 \cos\psi \cos\phi - \cos\theta \sin\phi \sin \psi &
@@ -319,9 +320,10 @@ simple analytic solutions given by
  -\frac{\Delta I}{I_0}\dot{\phi} t + \textrm{sign}(a_0)\frac{\pi}{2},
 \label{eqn: psi TF}
 \end{align}
-where in the second equalities we have inserted the initial conditions. Solution to
-the rigid-body equations where derived in Eqn.~\eqref{eqn: free precession},
-transforming these into the spherical components we have
+where in the second equalities we have inserted the initial conditions.
+Solution to the rigid-body equations where derived in Eqn.~\eqref{eqn: free
+precession x} to Eqn.~\eqref{eqn: free precession z}, transforming these into
+the spherical components we have
 \begin{align}
 |\Omega_a| = \omega_0, \label{eqn: omega TF}\\
 a = a_0, \label{eqn: a TF} \\

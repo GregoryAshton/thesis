@@ -78,7 +78,7 @@ the emmision mechanism; in this work we will consider only searches for emission
 non-axisymmetric neutron stars such that $f=2\nu$~\citep{Shapiro83}.
 
 The rest of this chapter is organised as follows: in Section~\ref{sec:
-introduction to the mismatch} we will define the \emph{mismatch} which
+introduction to the mismatch} we will define the mismatch which
 quantifies the loss of signal to noise ratio for imperfectly matched signals.
 In Section~\ref{sec: mismatch from differences in the gw phase} we will
 familiarise the reader with methods to calculate the mismatch when the phase of
@@ -256,7 +256,7 @@ are defined, but not the signal itself. Partially evaluating the metric, we find
 \label{eqn: fully-coherent metric simple}
 \end{align}
 
-This metric formulation provides a method to measure mismatches between a
+This metric formulation provides a method to measure the \emph{metric-mismatch} between a
 signal and template that are both Taylor expansions. \citet{Brady1998} proposed
 this method with the aim of picking the spacing of templates in parameter space
 such that the maximum allowable mismatch would not rise above a pre-defined
@@ -266,7 +266,7 @@ calculate mismatches between signals and Taylor expansion templates.
 It is worth commenting that the full mismatch, as calculated from
 Eqn.~\eqref{eqn: full mismatch}, is bounded by $[0, 1]$. In contrast, the
 approximate metric-mismatch is bounded by $[0, \infty)$. This is because the
-expansion of the mismatch in equation~\eqref{eqn: mismatch metric single} was
+expansion of the mismatch in Eqn.~\eqref{eqn: mismatch metric single} was
 taken about $\Delta\lambda^{\alpha}=0$ and so for sufficiently large parameter
 space offsets the expansion breaks down. In this case, the metric-mismatch
 approximation non-linearly overestimates the true mismatch. A metric-mismatch
@@ -444,12 +444,12 @@ a stepping stone to understanding the more complicated complete result.
 %    \Delta \phi_{1} &= 0 &  \textrm{ and } && \Delta \phi_{2} =& \Delta\phi.
 %\end{align}
 %Varying $\Delta\phi$ we plot the exact numerical result along with the
-%prediction of equation~\eqref{eqn: two segment phase mismatch} in
+%prediction of Eqn.~\eqref{eqn: two segment phase mismatch} in
 %Figure~\ref{fig: two plot}
 %\begin{figure}
 %\centering
 %\includegraphics[width=0.65\textwidth]{Exact_analytic_phase_two_segments}
-%\caption{Plot of the theoretical prediction of equation~\eqref{eqn: two segment
+%\caption{Plot of the theoretical prediction of Eqn.~\eqref{eqn: two segment
 %phase mismatch} given a time dependent phase offset as in equation\eqref{eqn:
 %phase offset}. This is compared  with a signal injection and recovery
 %using \texttt{LALapps} software.}
@@ -472,7 +472,7 @@ X & = & \frac{1}{T}\left(\int_{0}^{t_{1}}e^{i\Delta\phi_{1}} dt +
 Squaring the matched filtering amplitude and simplifying
 \begin{eqnarray}
 |X|^{2} & = &  \frac{1}{N^{2}} \left(\sum_{i=1}^{N}e^{i\Delta \phi_{i}}\right)\left(\sum_{j=1}^{N}e^{-i\Delta \phi_{j}}\right) \\
-|X|^{2} & = &  \frac{1}{N^{2}} \sum_{i=1}^{N}e^{i\Delta \phi_{i}}\left(\sum_{j=1}^{N}e^{-i\Delta \phi_{j}}\right) \\
+& = &  \frac{1}{N^{2}} \sum_{i=1}^{N}e^{i\Delta \phi_{i}}\left(\sum_{j=1}^{N}e^{-i\Delta \phi_{j}}\right) \\
 & = & \frac{1}{N^{2}} \sum_{i=1}^{N}e^{i\Delta \phi_{i}}\left(e^{-i\Delta \phi_{i}} +  \sum_{\substack{j=1 \\j\ne i}}^{N}e^{-i\Delta \phi_{j}}\right) \\
 & = & \frac{1}{N^{2}} \left(\sum_{i=1}^{N}1 +   \sum_{i=1}^{N}\sum_{\substack{j=1 \\j\ne i}}^{N}e^{i(\Delta\phi_{i}-\Delta \phi_{j})}\right) \\
 & = & \frac{1}{N^{2}} \left(N +   \sum_{i=1}^{N}\sum_{\substack{j=1 \\j\ne i}}^{N}\cos(\Delta\phi_{i} - \Delta\phi_{j}) + i\sin(\Delta\phi_{i} - \Delta\phi_{j})\right).
@@ -521,7 +521,7 @@ X = \frac{1}{T}\int_{T}
 dt
 + \mathcal{O}\left(\epsilon^{4}\right).
 \end{equation}
-Inserting this into equation~\eqref{eqn: full mismatch} and computing the
+Inserting this into Eqn.~\eqref{eqn: full mismatch} and computing the
 fully-coherent mismatch we find that
 \begin{equation}
 \mutilde = \varepsilon^{2} \left(\frac{1}{2}
@@ -634,14 +634,12 @@ relations may be written as
 Note the subtle distinction between $\tref$, the global reference time and
 $\tref^{a}$ the reference time for the $a^{th}$ subdomain.
 
-Finally we can generalise Eqn.~\eqref{eqn: Delta Phi} for the phase difference
+Finally, we can generalise Eqn.~\eqref{eqn: Delta Phi} for the phase difference
 to the piecewise Taylor expansion description of the signal and template:
 \begin{align}
-\begin{split}
 \Delta\Phi^{a}(t)& =  \PhiS(t; \ls^{\alpha a}) - \PhiT(t; \lt^{\alpha a})\\
 & = \Deltaphi^{a} + 2\pi\left(\Deltanu^{a}(t-\tref^{a})
 + \frac{\Deltanudot^{a}}{2}(t - \tref^{a})^{2}\right).
-\end{split}
 \end{align}
 
 \subsection{The generalised metric-mismatch approximation for fully-coherent
@@ -660,11 +658,9 @@ the additivity of integration on intervals. The matched filtering amplitude,
 given the set of template parameters and parameter offsets $\{\lt^{\alpha a},
 \dl^{\alpha a}\}$, is then
 \begin{align}
-\begin{split}
 X(\{\lt^{\alpha a}, \dl^{\alpha a}\}) & =
 \frac{1}{\Tcoh}\int_{0}^{\Tcoh}e^{i \Delta \Phi(t)}dt  \\
 & =  \frac{1}{\Tcoh}\sum_{c}^{\Nsd} \int_{t^{c}}e^{i \Delta \Phi^{c}}dt,
-\end{split}
 \end{align}
 where the integration is taken over the bounds of the $c^{th}$ subdomain. The
 mismatch, in this general formulation, is then defined by
@@ -691,7 +687,7 @@ g_{\alpha\beta ab} =
             \mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\})
             \zerolim.
 \end{equation}
-We can then write the fully-coherent metric-mismatch as
+We can then define the fully-coherent \emph{generalised metric-mismatch} as
 \begin{equation}
 \mutilde(\{\lt^{\alpha a}, \dl^{\alpha a}\}) =
  g_{\alpha\beta ab} \dl^{\alpha a}\dl^{\beta b}.
@@ -811,6 +807,9 @@ If instead we set the reference time to be at the start of each subdomain then,
 following the method used to derive Eqn.~\eqref{eqn: metric tref half}, the
 metric can be written compactly as
 \begin{equation}
+\medmuskip=0mu
+\thinmuskip=1.5mu
+\thickmuskip=0mu
 g_{\alpha\beta ij}  =  \left[\begin{array}{ccc}
 \delta_{ij}N^{-1}  -N^{-2}  &
 \pi\dT \left( \delta_{ij}N^{-1} - N^{-2}\right)&

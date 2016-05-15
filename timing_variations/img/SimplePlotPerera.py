@@ -80,13 +80,13 @@ ax3.yaxis.set_major_locator(MaxNLocator(5))
 
 
 T = tA + tB + tC + tD
-labels =  ["${}(t_\mathrm{{A}} + t_\mathrm{{B}} + t_\mathrm{{C}} + t_\mathrm{{D}})$".format(
-    i) for i in range(2, 6)]
+#labels =  ["${}(t_\mathrm{{A}} + t_\mathrm{{B}} + t_\mathrm{{C}} + t_\mathrm{{D}})$".format(
+#    i) for i in range(2, 6)]
+labels =  ["${}t_\mathrm{{tot}}$".format(i) for i in range(2, 6)]
 ax3.set_xticks([0] + [i*T for i in range(1, 5)])
 ax3.set_xticklabels([0,
-                     "$(t_\mathrm{A} + t_\mathrm{B} + t_\mathrm{C} + t_\mathrm{D})$"]
-                     + labels,
-                     fontsize=5)
+                     "$t_\mathrm{tot}$"]
+                    + labels)
 
 
 ax3.set_xlim(0, 3*T)

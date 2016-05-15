@@ -20,8 +20,8 @@
 %X & = \frac{1}{T}\left(\int_{A}e^{i\Delta\Phi(t)} dt + \int_{B}e^{i\Delta\Phi(t)} dt\right)
 %\label{eqn: matched filtering amplitude}
 %\end{align}•
-%The form of the phase residual in equation~\eqref{eqn: full phase residual} does not allow for an easy integration.
-%We can proceed by considering the limit  $\Delta\f_{T} \rightarrow 0$ and Taylor expand equation~\eqref{eqn: full phase residual} about this point
+%The form of the phase residual in Eqn.~\eqref{eqn: full phase residual} does not allow for an easy integration.
+%We can proceed by considering the limit  $\Delta\f_{T} \rightarrow 0$ and Taylor expand Eqn.~\eqref{eqn: full phase residual} about this point
 %\begin{align}
 %\int_{A}e^{i\Delta\Phi(t)} dt & \approx \int_{0}^{RT} 1 + i\pi(1-R)t\left(t-RT\right)\dST +
 %\frac{i^{2}\pi^{2}}{2}\left(1-R\right)^{2}t^{2}(t-RT)^{2}\dST^{2} dt \ntag\\
@@ -63,7 +63,7 @@ Then the mismatch over a single cycle can be calculated from
 \begin{align}
 m = & g_{\alpha\beta ij}\bdl^{\alpha i} \bdl^{\beta j},
 \end{align}
-where $g_{\alpha\beta i j}$ can be calculated from equation~\eqref{eqn: metric}
+where $g_{\alpha\beta i j}$ can be calculated from Eqn.~\eqref{eqn: metric}
 using the reference times for each subdomain and setting the observation time
 from $t=0$ to $t=T$ (e.g. one cycle). Substituting the correct expression in we find a mismatch given by
 \begin{equation}
@@ -113,7 +113,7 @@ m & = g_{\alpha \beta i j} \bdl^{\alpha i} \bdl^{\beta j} \\
 & = N\left(\s{j=1}{2N} g_{\alpha \beta A j} \bdl^{\alpha A} \bdl^{\beta j} + \s{j=1}{2N} g_{\alpha \beta B j} \bdl^{\alpha B} \bdl^{\beta j} \right) \\
 & = N^{2}\left(g_{\alpha\beta AA} \bdl^{\alpha A} \bdl^{\beta A} + g_{\alpha \beta AB} \bdl^{\alpha A} \bdl^{\beta B} + g_{\alpha \beta BB} \bdl^{\alpha B} \bdl^{\beta B} + g_{\alpha\beta BA} \bdl^{\alpha B} \bdl^{\beta A}  \right)
 \end{align}
-Calculating the metric elements from equation~\eqref{eqn: metric} and inserting the parameter space offsets
+Calculating the metric elements from Eqn.~\eqref{eqn: metric} and inserting the parameter space offsets
 \eqref{eqn: Lyne parameter space offsets} yields a mismatch given by
 \begin{equation}
 m(T, R, N) = \frac{\pi^{2}}{180}T^{4}\dST^{2} R^{2}\left(1-R\right)^{2} \left(N \left(18 R^{2} - 18 R + 6\right) - 5 \left(2 R - 1\right)^{2}\right)
