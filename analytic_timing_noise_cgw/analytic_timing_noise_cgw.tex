@@ -70,21 +70,21 @@ timing noise in cgw}.
 \section{Defining a random walk}
 \label{sec: defining a random walk}
 To calculate the fully-coherent mismatch, we will model the random walk as a
-zero-mean Gaussian walk in the phase, frequency, and spin-down which occurs at
-$\Nsd$ fixed time intervals, $\Delta T$ such that the total observation time is
-$\Tobs = \Nsd \Delta T$.
-This allows us to write the signal as 
-a piecewise Taylor expansion with $N$ subdomains. Choosing fixed time intervals appears to
-introduce an additional timescale not usually present in random walk models.
-However, as shown later in Section~\ref{sec: understanding the random walk model} this is consistent with a
-large number of unresolved events which
-are measured over a fixed timescale.
+zero-mean Gaussian walk in the phase, frequency, and spin-down which jumps
+regularly at $\Nsd$ fixed time intervals, $\Delta T$ such that the total
+observation time is $\Tobs = \Nsd \Delta T$.  This allows us to write the
+signal as a piecewise Taylor expansion with $N$ subdomains. Choosing fixed time
+intervals appears to introduce an additional timescale not usually present in
+random walk models.  However, as shown later in Section~\ref{sec: understanding
+the random walk model} this is consistent with a large number of unresolved
+events which are measured over the fixed timescale.
 
-In this model, the spin-down rate will be the highest order term which
-undergoes a random walk. Recalling that $\Delta \dot{f}_i$ (defined in
-Eqn.~\eqref{eqn: Delta Phi}) is the difference between the signal and template
-in the $i^{th}$ subdomain, we may define the jump in this difference between
-the $i$ and $i-1$ subdomains as $\tn \fdot_i$, such that
+\subsection{Initial definitions} In this model, we choose the spin-down rate to
+be the highest order term which undergoes a random walk. Recalling that the
+parameter space offset $\Delta \dot{f}_i$ (defined in Eqn.~\eqref{eqn: Delta
+Phi}) is the difference between the signal and template in the $i^{th}$
+subdomain, we may define the jump in this difference between the $i$ and $i-1$
+subdomains as $\tn \fdot_i$, such that
 \begin{equation}
 \Delta \fdot_{i} - \Delta\fdot_{i-1} = \tn \fdot_{i} \sim \mathcal{N}(0, \sigS),
 \label{eqn: fdot N}
@@ -94,24 +94,24 @@ as the standard-deviation of the step sizes in the spin-down rate. Rearranging
 this gives an expression for the offset in the
 $i^{th}$ subdomain, by induction we can also write down the $i-1$ term
 \begin{align}
-\Delta\fdot_{i} &  = \tn\fdot_{i} + \Delta\fdot_{i-1}  \\
+\Delta\fdot_{i} &  = \tn\fdot_{i} + \Delta\fdot_{i-1},  \\
 \Delta\fdot_{i-1} &  = \tn\fdot_{i-1} + \Delta\fdot_{i-2}  .
 \end{align}
-Let us set the initial difference between the signal and template as zero such
+We set the initial difference between the signal and template as zero such
 that $\Delta\dot{f}_0=0$, that is we start each random walk from the origin
 (we will return to this point in Section~\ref{sec: random walk models part
 II}). Then as each step proceeds from the previous step, we have that
-\begin{equation} 
+\begin{equation}
 \Delta\fdot_{i} = \s{j=1}{i}\tn\fdot_{j}.
-\label{eqn: delta fdot n} 
+\label{eqn: delta fdot n}
 \end{equation}
 
 To illustrate this, in Figure~\ref{fig: Illustration fdot int} we plot an example
-of a random walk in spin-down as given by Eqn.~\eqref{eqn: delta fdot n}.
+of a random walk in the spin-down as given by Eqn.~\eqref{eqn: delta fdot n}.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.7\textwidth]{Illustration_F1_int}
-\caption{An example of a random walk in the spin-down rate, 
+\caption{An example of a random walk in the spin-down rate,
 Eqn.~\eqref{eqn: delta fdot n}. The filled green blocks indicate the
 summation defined in Eqn.~\eqref{eqn: f offset induced} required to
 calculate the induced change in frequency at $t^{i}$ due to the random walk in
@@ -123,46 +123,45 @@ If we want to model a random walk in the phase, frequency, and spin-down rate
 concurrently, then we must consider the effect that a
 random walk in spin-down will have on the frequency and phase. For example, if we
 increase the spin-down rate for a period of time, then we would expect the frequency
-to decrease at a greater rate during this period. In our discreet model, it is
+to decrease at a greater rate during this period. In our discrete model, it is
 not possible to dynamically change the frequency during a single subdomain.
 However, we can approximate this by updating the frequency in the next
-subdomain with the induced frequency offset due to the spin-down in previous
+subdomain with the induced frequency offset due to the spin-down in all the previous
 subdomains. This must be done for the induced effect from the random walk in spin-down rate on
 the phase and frequency, and for the induced effect from the random walk in frequency
-on the phase. There is induced effect for the spin-down rate: the effect only
+on the phase. There is no induced effect for the spin-down rate: the effect only
 propagates to lower order terms.
 
-Because the random walk is discreet and constant in any given subdomain, we can
+Because the random walk is discrete and constant in any given subdomain, we can
 calculate the offset in the lower order terms from a Taylor expansion. The
 total offset at the  $i^{th}$ reference time is then given by the summation of
-the offset caused by all higher order terms up to that reference time. The
-reference times can be arbitrarily chosen, but setting each to start at the
-beginning of the subdomain simplifies the calculation. 
-The frequency offset induced by the spin-down can be
-calculated using a Taylor expansion
+the offset caused by all higher order terms up to that reference time. We can
+choose the reference times arbitrarily, but setting each to start at the
+beginning of the subdomain simplifies the calculation.
+For the frequency offset induced by the spin-down, we have
 \begin{equation}
 \Delta \f_{i} = \s{j=1}{i-1}\Delta\fdot_{j} \dT .
-\label{eqn: f offset induced} 
+\label{eqn: f offset induced}
 \end{equation}
-This can be though of as the integration of the spin-down up to the $i^{th}$
+This can be thought of as the integration of the spin-down up to the $i^{th}$
 reference time and is illustrated by the green blocks in Figure~\ref{fig:
-Illustration fdot int}. 
+Illustration fdot int}.
 
-Since we want to consider random walks in all three parameters we now add in a
+We want to consider random walks in all three parameters so we now add in a
 random walk in frequency. Each step is independent of the induced effect from
 the spin-down and is given by \mbox{$\tn \f_{i} \sim \mathcal{N}(0, \sigF)$}. The two
 effects will sum linearly such that the frequency offset is
 \begin{equation}
 \Delta \f_{i} = \s{j=1}{i}\tn \f_{j} + \s{j=1}{i-1}\Delta\fdot_{j} \dT.
-\label{eqn: f offset} 
+\label{eqn: f offset}
 \end{equation}
 
 By a similar process we can calculate the induced effect of the frequency and
 spin-down on the phase. Including the random walk in the phase
 for which $\tn \phi_i \sim \mathcal{N}(0, \sigP)$, the phase offset is given by
 \begin{equation}
-\Delta\phi_{i}  =  \s{j=1}{i}\tn \phi_{j} 
-+ 2\pi\left(\s{j=1}{i-1}\Delta \f_{j}\dT 
+\Delta\phi_{i}  =  \s{j=1}{i}\tn \phi_{j}
++ 2\pi\left(\s{j=1}{i-1}\Delta \f_{j}\dT
 + \frac{1}{2}\s{j=1}{i-1}\Delta \fdot_{j}\dT^{2}\right).
 \label{eqn: phi offset}
 \end{equation}
@@ -170,46 +169,10 @@ for which $\tn \phi_i \sim \mathcal{N}(0, \sigP)$, the phase offset is given by
 %Equations \eqref{eqn: f offset} and \eqref{eqn: phi offset} will allows us to
 %construct the parameter space offsets in all three terms from the distibutions
 %$\tn \phi_i$, $\tn \phi_i$, and $\tn \phi_i$.
-
-
-\section{Random walk models: a simple treatment}
-\label{sec: random walk models part I}
-We will now calculate the mismatch for a fully-coherent search given the
-random walk in phase, frequency, and spin-down rate defined in the previous
-section.
-
-Let us begin by expanding the metric-mismatch summation from Eqn.~\eqref{eqn:
-mismatch}. Recalling that Greek indices label the parameter components and
-Roman indices label the subdomain, then writing the summations explicitly, we
-have
-\begin{align}
-\mutilde & = g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
-&=\s{i=1}{\Nsd}\s{j=1}{\Nsd}g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
-&= \s{i=1}{\Nsd}g_{\alpha\beta i i}\dl^{\alpha i}\dl^{\beta i}
-+ \s{i=1}{\Nsd} \s{\substack{j=1\\ j \ne i}}{\Nsd} g_{\alpha \beta ij}\dl^{\alpha i}\dl^{\beta j}.
-\end{align}
-The summation has been intentionally split into terms for which the two
-subdomains are the same and those for which they are different. The metric when
-the reference time is at the beginning of each subdomain is given by
-Eqn.~\eqref{eqn: metric equal subdomains tref 0}. By considering the metric for
-the two cases, we can write the two distinct components as
-\begin{equation}
-g_{\alpha\beta ij} = \left\{
-\begin{array}{cc}
-g_{\alpha\beta}^{\mathrm{E}} & \textrm{ if } i =j \\
-g_{\alpha\beta}^{\mathrm{NE}} & \textrm{ if } i  \ne j
-\end{array}\right.  .
-\end{equation}
-Then the fully-coherent metric-mismatch can be calculated from
-\begin{align}
-\mutilde &= \s{i=1}{\Nsd}g_{\alpha\beta}^{\mathrm{E}}\dl^{\alpha i}\dl^{\beta i}
-+ 2\s{i=1}{\Nsd} \s{j=1}{i-1} g_{\alpha \beta}^{\mathrm{NE}}\dl^{\alpha i}\dl^{\beta j} .
-\label{eqn: mismatch sep}
-\end{align}
-
 \subsection{Writing the parameter offsets in terms of normal distributions}
-Equations~\eqref{eqn: f offset} and \eqref{eqn: phi offset} give the offsets as
-functions of the offsets in higher order parameters. In order to calculate
+Eqn~\eqref{eqn: f offset} and Eqn.~\eqref{eqn: phi offset} give the difference
+between the signal and template as
+functions of the random walks in higher order parameters. In order to calculate
 statistical values, we now write these in terms of the normal distributions
 from which the random walks are constructed.  Substituting Eqn.~\eqref{eqn:
 delta fdot n} into Eqn.~\eqref{eqn: f offset} and using the identity defined
@@ -245,6 +208,43 @@ Appendix~\ref{sec: summation identities}, we have
 \end{align}
 This result can be interpreted as the accumulated phase over a time $i\Delta
 T$ due to a random walk in the phase, frequency, and spin-down rate.
+
+
+
+\section{Random walk models: a simple treatment}
+\label{sec: random walk models part I}
+We will now calculate the mismatch for a fully-coherent search given the
+random walk in phase, frequency, and spin-down rate defined in the previous
+section.
+
+Let us begin by expanding the metric-mismatch summation from Eqn.~\eqref{eqn:
+mismatch}. Recalling that Greek indices label the parameter components and
+Roman indices label the subdomain, then writing the summations explicitly, we
+have
+\begin{align}
+\mutilde & = g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
+&=\s{i=1}{\Nsd}\s{j=1}{\Nsd}g_{\alpha\beta i j}\dl^{\alpha i}\dl^{\beta j}  \\
+&= \s{i=1}{\Nsd}g_{\alpha\beta i i}\dl^{\alpha i}\dl^{\beta i}
++ \s{i=1}{\Nsd} \s{\substack{j=1\\ j \ne i}}{\Nsd} g_{\alpha \beta ij}\dl^{\alpha i}\dl^{\beta j}.
+\end{align}
+The summation has been intentionally split into terms for which the two
+subdomains are the same and those for which they are different. We calculated
+the metric when the reference time is at the beginning of each subdomain in
+Eqn.~\eqref{eqn: metric equal subdomains tref 0}; by considering this metric for
+the two cases, we can define two distinct components as
+\begin{equation}
+g_{\alpha\beta ij} = \left\{
+\begin{array}{cc}
+g_{\alpha\beta}^{\mathrm{E}} & \textrm{ if } i =j \\
+g_{\alpha\beta}^{\mathrm{NE}} & \textrm{ if } i  \ne j
+\end{array}\right.  .
+\end{equation}
+Finally, we can calculate the fully-coherent metric-mismatch from
+\begin{align}
+\mutilde &= \s{i=1}{\Nsd}g_{\alpha\beta}^{\mathrm{E}}\dl^{\alpha i}\dl^{\beta i}
++ 2\s{i=1}{\Nsd} \s{j=1}{i-1} g_{\alpha \beta}^{\mathrm{NE}}\dl^{\alpha i}\dl^{\beta j} .
+\label{eqn: mismatch sep}
+\end{align}
 
 \subsection{Taking the expectation}
 
@@ -295,7 +295,7 @@ E[\mutilde]_{\mathrm{FN}} \sim \sigF \frac{\Tobs^{3}}{\Delta T}, \hspace{10mm}
 E[\mutilde]_{\mathrm{SN}} \sim \sigS \frac{\Tobs^{5}}{\Delta T}.
 \label{eqn: scalings}
 \end{equation}
-We note here the exact relation to the scalings of the variance of the
+We note here the exact relation to the scaling of the variance of the
 root-mean phase residual as calculated by \citet{Cordes1980} and given in
 Eqn.~\eqref{eqn: S calc}. We will return to this later in Sec.~\ref{sec: understanding the random walk model}.
 
@@ -324,7 +324,7 @@ and spin-down rate.}
 \label{fig: rw I}
 \end{figure}
 
-\section{Random walk models: minimising the mismatch} 
+\section{Random walk models: minimising the mismatch}
 \label{sec: random walk models part II}
 In Section~\ref{sec: defining a random walk} we have defined a random walk
 model for which we subsequently calculated the fully-coherent mismatch in
@@ -333,11 +333,12 @@ in which the random walk for each parameter offset (the difference between the
 signal and the template) begins at the origin and then grows with time. It is
 the signal which undergoes a random walk, so in this case we have set the
 template to exactly match the signal and $t=0$. However, one could imagine choosing
-the template in a different way which would reduce the overall mismatch; as such
+a different template which would reduce the overall mismatch; as such
 Eqn.~\eqref{eqn: expectation} may overestimate the mismatch. The proper thing to
 do is to minimise the mismatch with respect to the
 template parameters~$\lt^{\alpha}$ which are implicitly in the calculation of
-Section~\ref{sec: random walk models part I} through
+Section~\ref{sec: random walk models part I} through the parameter space
+offset
 \begin{align}
 \Delta \lambda^{\alpha i} = \ls^{\alpha i} - \lt^{\alpha i},
 \end{align}
@@ -358,10 +359,13 @@ introduce the basic tools of least squares fitting and removing a polynomial of
 degree $k$ to a generic random walk. In the following sections, we will
 calculate the minimised mismatch for random walks in the phase or frequency; we
 have not yet calculated the corresponding result for mixtures or random walks
-in the spin-down rate. We have a choice in the degree of polynomial to fit and
-remove. Since most searches minimise the mismatch with respect to the template
-frequency $f_\textrm{t}$ and spin-down rate $\dot{f}_{\textrm{t}}$, this is
-equivalent to fitting and removing a $k=2$ polynomial to the phase residual.
+in the spin-down rate. In this process, we have a choice in the degree of
+polynomial to fit and remove. Since most searches minimise the mismatch with
+respect to the template frequency $f_\textrm{t}$ and spin-down rate
+$\dot{f}_{\textrm{t}}$, this is equivalent to fitting and removing a $k=2$
+polynomial to the phase residual. In the following sections we will first
+calculate the analytic results and then verify that these agree with exact
+numerical results in Section~\ref{sec: verifying minimised}.
 
 \subsection{Random walk in the phase}
 \label{sec: minimised rw in phase}
@@ -375,8 +379,8 @@ minimisation of a random walk}, we have that
 E[\Delta\phi_{i} \Delta\phi_{j}] = \sigP \min(i, j).
 \end{equation}
 
-Then, we define the residual difference between the signal and template
-after fitting and removing a $2^{nd}$ order polynomial, $\hat{y}_i^{(2)}$, as
+We define the residual difference between the signal and template
+after fitting and removing the best-fit $2^{nd}$ order polynomial, $\hat{y}_i^{(2)}$, as
 \begin{align}
 \Delta^{(2)}\phi_i = \Delta\phi_i - \hat{y}_i^{(2)}.
 \label{eqn: D2phi}
@@ -415,7 +419,7 @@ replaced $\Delta x$ with the time $\dT$. Then taking the expectation
 %\left(\s{k=1}{\Nsd}E[\Delta\phi_{j}\Delta\phi_{k}]
 %+ \s{l=1}{\Nsd}E[\Delta\phi_{i}\Delta\phi_{l}]\right) +
 %\s{k=1}{\Nsd}\s{l=1}{\Nsd}E[\Delta\phi_{k}\Delta\phi_{l}]\\
-%& = 
+%& =
 \sigma^{2}_{\phi} \left(\min(i, j) - \left(\s{k=1}{\Nsd}\CT_{ik} \min(j, k)
 + \s{l=1}{\Nsd}\CT_{jl}\min(i, l) \right)\right. \notag \\
 & \hspace{13mm} \left. + \s{k=1}{\Nsd}\s{l=1}{\Nsd}\CT_{ik}\CT_{jl}\min(k, l)\right).
@@ -432,12 +436,15 @@ E[\mutilde]  & = \s{i=1}{\Nsd}g_{00}^{E} E\left[\Delta^{(2)}\phi_{i}\Delta^{(2)}
 \end{align}
 This expression can be compared to Eqn.~\eqref{eqn: expectation} ignoring the
 effect of the random walk in spin-down rate. Notably, we retain the same
-leading order scaling of $\Nsd$, but the overall coefficient is decreased.
+leading order scaling of $\Nsd$, but the overall coefficient is decreased; the
+same effect was found by \citet{Cordes1980} for the root-mean-square phase
+residual after removing a polynomial.
+
 Rearranging the expression in the bracket demonstrates the mismatch is negative
-or zero for $1 \ge \Nsd \ge 3$: this is a reflection of the minimum number of
-points needed in order to perform the quadratic fit. This is shown later in
-Sec.~\ref{sec: appendix conclusions} for the simpler case of fitting and
-removing a polynomial from a generic random walk.
+or zero for $1 \ge \Nsd \ge 3$. This is a reflection of the minimum number of
+points needed in order to perform the quadratic fit. We will discuss this in more
+detail in Sec.~\ref{sec: appendix conclusions} for the simpler case of fitting
+and removing a polynomial from a generic random walk.
 
 \subsection{Random walk in the frequency}
 
@@ -513,7 +520,8 @@ is a reduction in the coefficient and a difference in the second highest
 power. The reduction in the coefficient is expected since we have minimised
 the mismatch; the change in the second highest power is not yet understood.
 
-\subsection{Verification}
+\subsection{Verifying the results}
+\label{sec: verifying minimised}
 
 We now verify Eqn.~\eqref{eqn: Expected mismatch RW in frequency k2} and
 Eqn.~\eqref{eqn: Expected mismatch RW in phase k2} by comparing with Monte
@@ -568,15 +576,16 @@ events are drawn from a normal distribution with zero mean and a variance
 $\langle \Delta X^{2} \rangle$, or more formally
 \begin{align}
 \Delta X(t) = \sum_{i=1}^{N(t)} \delta X_i,
+\label{eqn: X def}
 \end{align}
 where $\{ N(t): t \ge 0\}$ is a Poisson process with rate $\lambda$ and
-$\{\delta X_i: i \ge 1\}$ are independent and identically distributed with 
+$\{\delta X_i: i \ge 1\}$ are independent and identically distributed with
 $\delta X_i \sim N(0, \langle \delta X^{2}\rangle)$. Note that $\langle \delta X^{2} \rangle$
 where $X \in [\phi, \nu, \dot{\nu}]$ is the variance of the random walk jumps.
 
 If the event rate $\lambda$ of the compound Poisson process is sufficiently
 large such that in a time $\dT$ the number of events is large, it can be shown
-that, due to the central limit theorum
+that, due to the central limit theorem
 (see for example \citet{weiss2006course}), $\Delta X_i(\dT)$ is normally
 distributed. The mean can be calculated using Wald's
 Eqn.~\citep{wald1944cumulative} which gives
@@ -599,16 +608,24 @@ respectively.
 
 In the model defined in Section~\ref{sec: defining a random walk}, we defined
 \begin{align}
-\tn X_{i}(\dT) =  \Delta X_{i}(\dT) - \Delta X_{i-1}(\dT),
+\tn X_{i} = \Delta X_{i} - \Delta X_{i-1},
 \end{align}
 as the difference between two adjacent subdomains of the piecewise Taylor
 expansion. Moreover, we assumed that $\tn X_i(\dT)$ was normally distributed
 with zero mean and a variance $\sigma_{X}^{2}$.  This assumption is valid if
-the underlying random walk process is a compound Poisson process. This is
-because, as discussed before, $\Delta X_{i}(\dT)$ and $\Delta X_{i-1}(\dT)$ are
-normally distributed random variables and therefore it can be shown (see for
-example \citeauthor{wolframdifference}) that $\tn X_i (\dT)$ is also normally
-distributed with a mean which is the difference in the means of
+the underlying random walk process is a compound Poisson process. To see this,
+we note that if both $\Delta X_{i}$ and $\Delta X_{i-1}$ can be described by
+the compound Poisson process in Eqn.~\eqref{eqn: X def} and the assumption of
+a large number of events in each is valid, then
+\begin{align}
+\tn X_{i}(\dT) =  \Delta X_{i}\left(\frac{\dT}{2}\right)
+                - \Delta X_{i-1}\left(\frac{\dT}{2}\right),
+\end{align}
+is the difference between normally distributed random variables. The factors of
+a half are due to splitting the period of $\tn X_i(\Delta T)$ into two equal
+durations. It can be shown (see for example \citeauthor{wolframdifference})
+that the difference between two normal distributions, i.e. $\tn X_i (\dT)$, is
+also normally distributed with a mean which is the difference in the means of
 $\Delta X_{i}(\dT)$ and $\Delta X_{i-1}(\dT)$:
 \begin{align}
 \langle \tn X(\dT) \rangle & = 0,
@@ -617,7 +634,9 @@ $\Delta X_{i}(\dT)$ and $\Delta X_{i-1}(\dT)$:
 and a variance which is the sum of the variance of
 $\Delta X_{i}(\dT)$ and $\Delta X_{i-1}(\dT)$:
 \begin{align}
-\langle \tn X(\dT)^{2} \rangle &  = 2\lambda \dT \langle \delta X^{2}\rangle.
+\langle \tn X(\dT)^{2} \rangle &  =
+2 \lambda \frac{\dT}{2} \langle \delta X^{2}\rangle
+= \lambda \dT \langle \delta X^{2}\rangle,
 \label{eqn: Poisson variance}
 \end{align}
 
@@ -625,17 +644,17 @@ The metric-mismatch calculations derived in the previous two sections are
 written as a function of $\sigma_{X}^{2} \in [\sigP, \sigF, \sigS]$
 which is the variance of $\tn X(\dT)$. We can therefore relate the two by
 \begin{align}
-2\lambda \dT \langle \delta X^{2}\rangle = \sigma_{X}^{2}.
+\lambda \dT \langle \delta X^{2}\rangle = \sigma_{X}^{2}.
 \end{align}
 Rearranging this equation, we can equate $\lambda \langle \delta X^2\rangle$ with
 a \emph{GW random walk strength parameter} which we define as
 \begin{align}
-S_{\mathrm{GWPN}} & = \lambda \langle \delta \phi^{2} \rangle = 
-\frac{\sigP}{2\dT}, \label{eqn: SPN 2}\\
-S_{\mathrm{GWFN}} & = \lambda \langle \delta f^{2} \rangle = 
-\frac{\sigF}{2\dT}, \label{eqn: SFN 2}\\
-S_{\mathrm{GWSN}} & = \lambda \langle \delta \dot{f}^{2} \rangle = 
-\frac{\sigS}{2\dT}.  \label{eqn: SSN 2}
+S_{\mathrm{GWPN}} & \coloneqq \lambda \langle \delta \phi^{2} \rangle =
+\frac{\sigP}{\dT}, \label{eqn: SPN 2}\\
+S_{\mathrm{GWFN}} & \coloneqq \lambda \langle \delta f^{2} \rangle =
+\frac{\sigF}{\dT}, \label{eqn: SFN 2}\\
+S_{\mathrm{GWSN}} & \coloneqq \lambda \langle \delta \dot{f}^{2} \rangle =
+\frac{\sigS}{\dT}.  \label{eqn: SSN 2}
 \end{align}
 
 We distinguish between the strength of gravitational wave noise
@@ -643,10 +662,23 @@ We distinguish between the strength of gravitational wave noise
 usual strength of noise in the rotational parameters ($S_{\textrm{PN}},
 S_{\textrm{FN}}$ and $S_{\textrm{PN}}$). To relate between these we need to
 define the mechanism of gravitational wave emission. In the canonical
-non-axisymmetric distortion mechanism, $f = 2\nu$, so the variances of the
-random walks in the frequency are related by $\sigma_{f}^{2} = 4
-\sigma_{\nu}^{2}$ and hence $S_{\textrm{GWFN}} = 4S_{\textrm{FN}}$; the
-equivalent relation holds for phase noise and spin-down noise.
+non-axisymmetric distortion mechanism, $f = 2\nu$, therefore the underlying
+jumps in signals are related by
+\begin{align}
+\delta \phi & = 2\delta \varphi, \\
+\delta f & = 2\delta\nu, \\
+\delta \dot{f}& =2\delta\dot{\nu},
+\end{align}
+where $\varphi, \nu$ and $\dot{\nu}$ are the rotational phase,
+frequency, and spin-down rate. The variances of the GW parameters are related
+therefore equal to the variances of the rotational parameters multiplied by a
+factor of $4$. Therefore, using the definition the rotation noise strengths from
+Eqn.~\eqref{eqn: SPN def} to Eqn.~\eqref{eqn: SSN def}, we see that
+\begin{align}
+S_{\textrm{GWPN}} = 4S_{\textrm{PN}}, \\
+S_{\textrm{GWFN}} = 4S_{\textrm{FN}}, \label{eqn: relation}\\
+S_{\textrm{GWSN}} = 4S_{\textrm{SN}}.
+\end{align}
 
 We can now write the expectation of the fully-coherent metric-mismatch due to
 a random walk in terms of these strength parameters. First, for a random walk
@@ -654,13 +686,13 @@ in the phase given by Eqn.~\eqref{eqn: Expected mismatch RW in phase k2} we
 take just the leading order term and substitute in Eqn.~\eqref{eqn: SPN 2},
 this results in
 \begin{align}
-\textrm{E}[\mutilde] = \frac{3}{35} S_{\textrm{GWPN}} \Tobs.
+\textrm{E}[\mutilde] = \frac{3}{70} S_{\textrm{GWPN}} \Tobs.
 \label{eqn: mu prediction phase}
 \end{align}
 Second, we take the leading order terms from Eqn.~\eqref{eqn: Expected mismatch RW in
 frequency k2} and substitute using Eqn.~\eqref{eqn: SFN 2}, this gives
 \begin{align}
-E[\mutilde] & = \frac{\pi^{2}}{315} S_{\textrm{GWFN}} \Tobs^{3},
+E[\mutilde] & = \frac{\pi^{2}}{630} S_{\textrm{GWFN}} \Tobs^{3},
 \label{eqn: mu prediction}
 \end{align}
 from this we see how, when the random walk is considered as a compound Poisson
@@ -794,9 +826,9 @@ we interpret these in the context of a random walk.
 \subsection{Predicting the mismatch in the Crab}
 
 Studies of the Crab pulsar consistently find that the random walk noise is
-best fit by a frequency like noise process. In Table~\ref{tab: SFN lit} we list
+best fit by a frequency like noise process. In Table~\ref{tab: SFN lit}, we list
 the strengths reported from three works on the issue; this is by no means a
-complete list, but shows the typical values and spread.
+complete literature review, but shows the typical values and spread.
 \begin{table}[htb]
 \centering
 \begin{tabular}{c|c}
@@ -820,17 +852,16 @@ S_{\textrm{FN}} = \lambda \langle \delta \nu^{2}\rangle
 then, as we did in Eqn.~\eqref{eqn: SFN 2} for the gravitational wave frequency,
 we have that
 \begin{align}
-S_{\textrm{FN}} = \frac{\langle \tn \nu(\dT)^{2} \rangle }{2\dT},
+S_{\textrm{FN}} = \frac{\langle \tn \nu(\dT)^{2} \rangle }{\dT}.
 \label{eqn: SFN}
 \end{align}
-where the factor of $1/2$ comes from the fact that $d\nu(\dT)$ is the
-difference between two random walks. Substituting
-$\textrm{Var}[d\nu(\dT)]=3.1\times10^{-16}$~s$^{-1}$ (taken from Figure~\ref{fig: crab
+Substituting
+$\langle d\nu(\dT)^2 \rangle =3.1\times10^{-16}$~s$^{-1}$ (taken from Figure~\ref{fig: crab
 kde}A) into Eqn.~\eqref{eqn: SFN} with $\Delta T = 30$~days, this gives
 \begin{align}
-S_{\mathrm{FN}} = 0.60 \times 10^{-22} \textrm{Hz}^{2}/\textrm{s}.
+S_{\mathrm{FN}} = 1.20 \times 10^{-22} \textrm{Hz}^{2}/\textrm{s}.
 \label{eqn: SFN mine}
-\end{align} 
+\end{align}
 This strength is of the
 same order of magnitude as those listed in Table~\ref{tab: SFN lit}. We are not
 able to test if this strength is invariant to changes in $\dT$ because the
@@ -841,7 +872,7 @@ In Figure~\ref{fig: mismatch Tobs} we have already shown the dependence of the
 mismatch on the observation time for the Crab; fitting a power law to this
 we found that the mismatch scaled as
 \begin{align}
-\langle \mu \rangle_{\textrm{fit}} \approx 1.5 \times 10^{-23} 
+\langle \mu \rangle_{\textrm{fit}} \approx 1.5 \times 10^{-23}
 \left(\frac{\Tobs}{1 \textrm{ sec}}\right)^{2.88}.
 \end{align}
 We can compare this directly with Eqn.~\eqref{eqn: mu prediction}. The power,
@@ -849,8 +880,8 @@ being close to $3$, suggests some similarity with the frequency like random
 walk in the mismatch.  Now we can additionally predict this dependence given a
 value for the strength of frequency noise. This is done in Figure~\ref{fig:
 mismatch Tobs update} for our estimated value of the strength parameter and
-assuming that $S_{\textrm{GWFN}} = 4S_\textrm{FN}$ (see Section~\ref{sec:
-understanding the random walk model} for a justification of this relation).
+using that $S_{\textrm{GWFN}} = 4S_\textrm{FN}$ (see Eqn.~\eqref{eqn:
+relation}).
 \begin{figure}[htb]
 \centering
 \includegraphics[]{Crab_mismatch_Tobs_with_prediction}
@@ -862,12 +893,12 @@ the frequency noise strength parameter calculated in Eqn.~\eqref{eqn: SFN mine}.
 \end{figure}
 The prediction using the strength parameter calculated from the Crab ephemeris,
 as given in Eqn.~\eqref{eqn: SFN mine}, overestimates the dependence of the
-mismatch calculated exactly from the data. This is most likely due to timing
+mismatch calculated exactly from the data. We feel this is most likely due to timing
 noise in the Crab being unlike a random walk. Nevertheless, we have
 demonstrated the essential elements of making such predictions which may be useful
 in the future, if there is a clear case where the timing noise is well
 modelled by a random walk.
- 
+
 
 %\section{Predicting the mismatch for other pulsars}
 %\label{sec: other pulsars}
@@ -940,23 +971,26 @@ which the difference between the signal and template was initially zero and
 then grew as a random walk. Since this is not a minimised results, we then
 demonstrated how to minimised the mismatch with respect to the template
 parameters $f_\textrm{t}$ and $\dot{f}_\textrm{t}$. The formulae derived in
-this section were verified against Monte-Carlo type simulations of the exact
+this section have been verified against Monte-Carlo type simulations of the exact
 mismatch.
 
-In Section~\ref{sec: understanding the random walk model} we related the random
-walk model to a more physical compound Poisson random walk. Using this
+In Section~\ref{sec: understanding the random walk model}, we related the
+random walk model to a more physical compound Poisson random walk. Using this
 description, we formulated the two key results of this chapter:
-Eqn.~\eqref{eqn: mu prediction phase} and Eqn.~\eqref{eqn: mu prediction} which
-are the expectation of the minimum metric-mismatch due to random walk in the
-phase and frequency respectively.
+Eqn.~\eqref{eqn: mu prediction phase} and Eqn.~\eqref{eqn: mu prediction}.
+These are the expectation of the minimum metric-mismatch due to random walk in
+the phase and frequency respectively as a function of the strength of phase and
+frequency noise.
 
 Following this, we developed our understanding of random walk models in the
 context of the data from the Crab ephemeris. We showed that the frequency noise
 strength can be measured from this data and has a value consistent with other
-results in the literature. We then demonstrated the using this derived
+results in the literature. We then demonstrated the use of this derived
 prediction of the strength of frequency noise and Eqn.~\eqref{eqn: mu
 prediction} to predict the results found in Chapter~\ref{sec: timing noise in
-cgw}.
+cgw} for the dependence of the mismatch on the observation time. The prediction
+is not perfect, but does provide a rough order of magnitude figure of the
+expected mismatch.
 
 %Finally, we gave preliminary estimates for the mismatch due to timing noise
 %in some typical blind gravitational wave searches. This was done by converting
@@ -975,8 +1009,8 @@ cgw}.
 In this appendix, we derive two useful summation identities used in
 Sec.~\ref{sec: random walk models part I}. First, we have
 \begin{align}
-\s{b=1}{c}\s{a=1}{b} X_{a} & = \left( X_{1}\right) 
- + \left( X_{1} + X_{2} \right) + \ldots  +\left( X_{1} + X_{2} 
+\s{b=1}{c}\s{a=1}{b} X_{a} & = \left( X_{1}\right)
+ + \left( X_{1} + X_{2} \right) + \ldots  +\left( X_{1} + X_{2}
  + \ldots + X_{c-1} + X_{c}\right)\\
 & = c X_{1} + (c-1)X_{2} + \ldots + 2 X_{c-1} + X_{c} \\
 & = \s{b=1}{c}(c+1-b)X_{b},
@@ -984,19 +1018,19 @@ Sec.~\ref{sec: random walk models part I}. First, we have
 \end{align}
 which is used in deriving Eqn.~\eqref{eqn: delta f n}. Second, we have
 \begin{align}
-\s{j=1}{i-1}\s{k=1}{j-1}(j-k)X_{k} = & [0] + \left[ X_{1}\right] 
-+ \left[2X_{1} + X_{2} \right] + \left[3X_{1} + 2X_{2} +X_{3}\right] 
+\s{j=1}{i-1}\s{k=1}{j-1}(j-k)X_{k} = & [0] + \left[ X_{1}\right]
++ \left[2X_{1} + X_{2} \right] + \left[3X_{1} + 2X_{2} +X_{3}\right]
 + \ldots  \nonumber \\
-& + \left[\left(i-2\right)X_{1} + \left(i-3\right)X_{2} 
+& + \left[\left(i-2\right)X_{1} + \left(i-3\right)X_{2}
 + \left(i-4\right)X_{3} + \ldots \right. \nonumber \\
 & \left. \hspace{5mm}+ 3X_{i-4} + 2X_{i-3} + X_{i-2}\right]  \\
-= & \left(1 + 2 + 3 + \ldots +  (i-4) + (i-3) + (i-2)\right)X_{1} \nonumber  \\ 
-& + \left(1 + 2 + 3 + \ldots +(i-4) + (i-3) \right)X_{2}  \nonumber \\ 
-& + \left(1 + 2 + 3 + \ldots + (i-4) \right)X_{3} + \ldots  \nonumber \\ 
+= & \left(1 + 2 + 3 + \ldots +  (i-4) + (i-3) + (i-2)\right)X_{1} \nonumber  \\
+& + \left(1 + 2 + 3 + \ldots +(i-4) + (i-3) \right)X_{2}  \nonumber \\
+& + \left(1 + 2 + 3 + \ldots + (i-4) \right)X_{3} + \ldots  \nonumber \\
 & + (1 + 2 + 3)X_{i-4} + (1+2)X_{i-3} + X_{i-2}  \\
-= & \s{k=1}{i-2}k X_{1} + \s{k=1}{i-3}k X_{2}  + \ldots + \s{k=1}{2}k X_{i-3} 
+= & \s{k=1}{i-2}k X_{1} + \s{k=1}{i-3}k X_{2}  + \ldots + \s{k=1}{2}k X_{i-3}
 + \s{k=1}{1}kX_{i-2}  \\
-= & \s{j=1}{i-2}\left(\s{k=1}{i-1-j}k\right)X_{j} = 
+= & \s{j=1}{i-2}\left(\s{k=1}{i-1-j}k\right)X_{j} =
 \frac{1}{2}\s{j=1}{i-2}(i-j)(i-j-1)X_{j},
 \label{eqn: SI 2}
 \end{align}
@@ -1157,7 +1191,7 @@ E\left[\s{i=1}{N} y_{i}^{2}\right] = \s{i=1}{N} i \sigma^{2} =
 \end{equation}
 On the other hand, the sum of squares for the residual random walk is given by
 \begin{equation}
-E\left[\s{i=1}{N} \left(r^{(0)}_{i}\right)^{2}\right] = 
+E\left[\s{i=1}{N} \left(r^{(0)}_{i}\right)^{2}\right] =
 \frac{1}{6}\left(N^{2} -1\right)\sigma^{2}.
 \label{eqn: sum of squares k0}
 \end{equation}
@@ -1248,7 +1282,7 @@ which can be compared with the classic result for a random walk given in
 Eqn.~\eqref{eqn: RW classic}. Alternatively, comparing with Eqn.~\eqref{eqn:
 sum of squares}, the expected sum of squares for the residual random walk is
 \begin{equation}
-E\left[\s{i=1}{N} \left(r^{(1)}_{i}\right)^{2}\right] 
+E\left[\s{i=1}{N} \left(r^{(1)}_{i}\right)^{2}\right]
 = \frac{1}{15}\left(N^{2} -4\right)\sigma^{2},
 \label{eqn: sum of squares k1}
 \end{equation}

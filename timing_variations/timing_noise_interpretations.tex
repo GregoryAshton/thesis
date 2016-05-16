@@ -30,27 +30,27 @@ large such in a typical observation time $\Tobs$ we observe the superposition
 of many events. Following the method of \citet{Cordes1980}, the \emph{strength}
 of the three types of timing noise can be defined as
 \begin{align}
-S_{\textrm{PN}} = \lambda \langle \delta \phi^{2}\rangle, \label{eqn: SPN def} \\
+S_{\textrm{PN}} = \lambda \langle \delta \varphi^{2}\rangle, \label{eqn: SPN def} \\
 S_{\textrm{FN}} = \lambda \langle \delta \nu^{2}\rangle, \label{eqn: SFN def} \\
 S_{\textrm{SN}} = \lambda \langle \delta \dot{\nu}^{2}\rangle, \label{eqn: SSN def}
 \end{align}
-where $\langle \delta \phi^{2} \rangle$, $\langle \delta \nu^{2} \rangle$, and
+where $\langle \delta \varphi^{2} \rangle$, $\langle \delta \nu^{2} \rangle$, and
 $\langle \delta \dot{\nu}^{2} \rangle$ are the mean-square values of the steps
 in phase, frequency, and spin-down rate. These strength parameters form the
 basis of much of the analysis of random walk models. They are determined by
 separating the observed TOA into blocks of data of duration $T$ and fitting a
 timing model to each block.  In each block, one can then calculate the phase
-residual $\Delta\phi(t)$. \citet{Cordes1980} then showed that time averaging
+residual $\Delta\varphi(t)$. \citet{Cordes1980} then showed that time averaging
 the squared phase residual for each block of duration $T$ and then averaging
 over all the blocks of data we have
 \begin{align}
-\sigma^{2}_\phi(T) = \left\langle\frac{1}{T}\int_{0}^{T}\Delta\phi(t)^{2} dt \right\rangle,
+\sigma^{2}_\varphi(T) = \left\langle\frac{1}{T}\int_{0}^{T}\Delta\varphi(t)^{2} dt \right\rangle,
 \label{eqn: sig phi T}
 \end{align}
 which is an estimate of the variance of the phase residual over a time span $T$.
 Furthermore, the authors related this to the strengths of each noise component
 \begin{align}
-\sigma^{2}_{\phi}(T) = \left\{
+\sigma^{2}_{\varphi}(T) = \left\{
 \begin{array}{cc}
 \frac{S_{\textrm{PN}} T}{2}, \\
 \frac{S_{\textrm{FN}} T^{3}}{12}, \\
@@ -59,7 +59,7 @@ Furthermore, the authors related this to the strengths of each noise component
 \right.
 \label{eqn: S calc}
 \end{align}
-So combining this with an estimate of $\sigma^{2}_\phi$ as derived from the
+So combining this with an estimate of $\sigma^{2}_\varphi$ as derived from the
 data using Eqn.~\eqref{eqn: sig phi T}, these relations give the strength of
 each noise component for blocks of duration $T$.
 
@@ -90,7 +90,7 @@ the relevant parameter. For this reason, it is felt unlikely that the mechanism
 responsible for a random walk timing noise model is the same as model proposed
 to explain glitches. Since it is assumed that the number of events
 is large so that we can take a statistical average, this does not test if the
-process is indeed discreet, or if it is continuous.
+process is indeed discrete, or if it is continuous.
 
 The first substantive physical model to explain the random walk was proposed by
 \citet{Boynton1972}, the noise process consisted of the accretion of small
