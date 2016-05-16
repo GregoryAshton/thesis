@@ -247,7 +247,7 @@ to get the glitching pulsar's timing properties.
 
 Of the 472 listed glitches, we find 15 with no ATNF cross-reference, 1 with
 $\DnuRglitch < 0$, and 4 with no measured $\nudotR$ in the ATNF catalogue; these
-pulsars are removed from our data set. Additionally we find 54 glitches which
+pulsars are removed from our data set. Additionally, we find 54 glitches which
 have either no measured $\DnudotRglitch$, or a measured value consistent with 0,
 these will be included where possible.
 
@@ -270,7 +270,7 @@ estimate (KDE). Specifically we use the \citet{Scipy} implementation, this is
 also plotted in Figure~\ref{fig: Delta nu mixture} and demonstrates two distinct
 peaks, although the lower peak could be interpreted as two modes close together.
 
-By eye it is clear that there are at least two modes to the histogram. However,
+By eye, it is clear that there are at least two modes to the histogram. However,
 it is also possible that there may be more modes with less distinct differences
 in their mean. We investigate this issue in Appendix~\ref{sec: Bayesian model
 comparison} by applying a Bayesian model comparison for so-called Gaussian
@@ -297,7 +297,7 @@ The resulting mixture components and individual
 distributions are plotted in Figure~\ref{fig: Delta nu mixture} and in
 Table~\ref{tab: mixture components} we provide the resulting mean, standard
 deviation, weights and skewness of the two components in log-space.
-This method identifies the two subpopulations in a manor consistent with the
+This method identifies the two subpopulations in a manner consistent with the
 observations by \citet{Espinoza2011} and notably the Vela-like component suffers
 a significant skew.
 
@@ -325,7 +325,7 @@ In Figure~\ref{fig: Espinoza dF dF1}, we plot histograms for $\DnuRglitch$ and
 $\DnudotRglitch$ along with the raw data in a scatter plot. We have separated
 the data into the individual sub-populations, as labelled by the Gaussian
 mixture model, and colour coded to aid the eye. Several pulsars of interest are
-picked out using coloured halos. It is of general interest that not all of the
+picked out using coloured halos. It is of general interest that not all the
 Vela glitches are categorised by our method as Vela-like; this can be seen by
 looking at the distribution of Vela glitches (J0537-6910) in Figure~\ref{fig:
 Espinoza dF dF1}.
@@ -394,7 +394,7 @@ higher than in the normal population. Vela-like glitches occur predominantly
 in the young pulsars with none seen in pulsars with $\tauAge > 10^{7}$~yrs. It
 is also noticeable that younger pulsars display a greater number of glitches. Note
 that, since we have not observed all pulsars
-for the some period of time, one cannot infer the relative glitch rate from the
+for the same duration, one cannot infer the relative glitch rate from the
 number of glitches alone.
 
 %The E@H search space spans all observed spin-down rates; however, the discretisation
@@ -406,7 +406,7 @@ For the normal-glitch population, \citet{Espinoza2011} noted that pulsars with
 $\tauAge < 5\times10^{3} $~yr undergo small or medium sized glitches
 ($\DnuRglitch < 10^{5}$~Hz).  It is postulated that the higher temperatures in
 younger pulsars prevents the glitch mechanism working effectively. This effect
-is consistent with Figure~\ref{fig: nu nudot}B: the pulsars with largest
+is consistent with Figure~\ref{fig: nu nudot}B: the pulsars with the largest
 average glitch sizes have $\tauAge \sim 10^{5}$~yrs, while younger pulsars tend
 to exhibit smaller glitches on average.
 
@@ -564,7 +564,7 @@ also plotted in Figure~\ref{fig: EAH_NdotgAve}A, on the right-hand axis.
 $\nudotS$ over the range of values used in the E@H search. On the right axis is
 the corresponding average number of glitches for a search of duration $1$~yr.
 \textbf{B}: the probability of observing one or
-more glitches during a search lasting for one year assuming a Poisson distribution. Coloured
+more glitches during a search lasting for $1$~year assuming a Poisson distribution. Coloured
 halos highlight interesting pulsars using the same colour labels as in
 Figure~\ref{fig: Espinoza dF dF1}.}
 \label{fig: EAH_NdotgAve}
@@ -589,7 +589,7 @@ catalogue are due to a Poisson like process.
 
 Assuming that all glitches used to estimate $\NdotgAve$ are due to a Poisson
 process, we can calculate the probability of one or more glitches occurring during
-the a typical search as a function of $\nudotS$. To do this we take the
+a typical search lasting $1$~year as a function of $\nudotS$. To do this we take the
 estimated number of glitches during a typical search
 $\lambda_{s}$, as given on the right axis of Figure~\ref{fig: EAH_NdotgAve}A,
 and sum the Poisson probability mass function from 1 to infinity
@@ -806,7 +806,7 @@ which would produce a mismatch of $\mutilde=0.1$
 \end{align}
 
 For the frequency and spin-down rate jumps,
-a simply way to quantify the significance of a given glitch is to ask `over
+a simple way to quantify the significance of a given glitch is to ask `over
 what coherence time would a fully-coherent search accumulate a mismatch of
 $\mutilde=0.1$?'. We will consider each type of jump independently, since we are
 only hoping to make order of magnitude estimates.
@@ -1053,7 +1053,7 @@ magnitude} to predict the magnitude of glitches for a range of parameters
 typical of all-sky searches. We will use the tools of Section~\ref{sec: mismatch
 due to glitches} to transform the magnitudes into an estimate of the
 fully-coherent and semi-coherent mismatch assuming a single glitch occurred
-during the search. However this mismatch does not give a complete picture of
+during the search. However, this mismatch does not give a complete picture of
 the risk, since we must also consider the predicted rate of glitches.
 Specifically, in converting a predicted glitch magnitude into an estimate for
 the fully-coherent and semi-coherent mismatch we will make use of
@@ -1078,7 +1078,7 @@ and $w_\mathrm{Vela-like}$ are the weights of the two populations as given in
 Table~\ref{tab: mixture components}, and $\NdotgAve$ is the fitted glitch rate as
 given by Eqn.~\eqref{eqn: Ng fit}. Notice that we have made a prior specification
 here that the proportion of normal and Vela-like pulsars in the target population
-is the same as in the observed population. There is some evidence that in actual
+is the same as in the observed population. There is some evidence that in
 fact the proportion of Vela-like pulsars increases with $\nudotR$; this could
 be modelled by a $\nudotR$-dependent weighting, however we will ignore this
 effect here.
@@ -1215,7 +1215,7 @@ longer observation times.
 
 \subsection{The follow-up stage}
 
-A semi-coherent search begins by searching with a large number of segments to
+A semi-coherent search begins by searching with number of segments $\Nseg$ to
 find candidates. Following successful identification of such candidates, these
 are followed-up by semi-coherent searches with fewer segments, zooming in to
 constrain the parameter space. We will now show how a signal can
@@ -1272,9 +1272,9 @@ identified.
 This may have an important effect on our estimates since, if a large fraction
 of the glitch is recovered in a time-scale short compared to the observation
 time, we will over estimate the mismatch. On the other hand, the exponential
-relaxation itself could also cause an mismatch which would tend to vanish when
+relaxation itself could also cause a mismatch which would tend to vanish when
 $\tau^d_i \ll \Tobs$, but be maximal when $\tau^d_i \sim \Tobs$.  Ideally we would
-like to model the exponential relaxation in detail , but the more practical
+like to model the exponential relaxation in detail, but the more practical
 approach that we will take is to assume that the relaxation time is zero, such
 that the actual long-term glitch magnitude is $(1-Q)\DnuRglitch$; the results in
 this work can be considered to correspond to $Q=0$. The effect of this is that,
@@ -1282,7 +1282,7 @@ since $\mu \propto \DnuRglitch^2$, all mismatches can be rescaled by a factor
 $(1-Q)^{2}$, given the size of $Q$.
 
 To determine the appropriate size of $Q$ that we may expect, we can use the
-analysis by \citet{Lyne2000}. In general it is found that for older pulsars,
+analysis by \citet{Lyne2000}. In general, it is found that for older pulsars,
 with lower spin-down rates, $Q\ll1$, but $Q$ correlates well with
 $\log_{10}|\nudotR|$. Taking all measured Q values for the Crab pulsar
 \citep{Lyne2000, Wang2001, Wang2012}, which has the highest spin-down rate
@@ -1306,9 +1306,9 @@ to typical glitches. Nevertheless, even given this, many searches would still
 be at risk to lost signals due to the presence of a glitch. These estimates are
 a `best-case scenario' in that they assume $\tau^d_i =0$. A more detailed
 analysis is required to understand how a recovery time which is comparable to
-the observation time changes these estimate. However, we can be sure that it
-will tend to increase the level of mismatch and not decrease it as compared to
-the simple rescaling argument given here.
+the observation time changes these estimate. However, it seems likely that it
+will tend to increase the level of mismatch as compared to
+the simple rescaling argument given here and not decrease it further.
 
 \subsection{Application to past and future searches}
 In Table~\ref{tab: past searches predictions} we present the expected number
@@ -1328,7 +1328,7 @@ rates. We present results both for the number of expected glitches $\langle N
 \rangle$, the fully-coherent metric-mismatch $\langle \mutilde \rangle$, and the
 semi-coherent metric-mismatch $\langle \muhat \rangle$.  Note that the
 supernova remnants search had no semi-coherent stage and we give the
-estimate for the search for Cas A only.}
+estimate for the search for Cassiopeia A only.}
 
 \label{tab: past searches predictions}
 \tabcolsep=0.06cm
@@ -1478,7 +1478,7 @@ with $N=1$ does not include $\lambda_i$.
 We use this choice of prior for the model parameters of each component in the
 GMM with $N$ components.  In this way, models with larger values of $N$ have a
 larger `prior volume' and hence there is a natural Occam-factor favouring the
-simpler models with less components; this prevents over-fitting.
+simpler models with fewer components; this prevents over-fitting.
 
 We will present results for the Bayes factor between a GMM with $N$ components
 and the simplest model, a GMM with $N=1$  components. This is computed by
@@ -1630,7 +1630,7 @@ In Figure~\ref{fig: fully-coherent number Tobs errors}
 we repeat the exercise showing the uncertainty on the number of glitches as
 given by the error in Eqn.~\eqref{eqn: Ng fit}.
 
-These figures illustrates that our uncertainty in exactly where the contour lines
+These figures illustrate that our uncertainty in exactly where the contour lines
 sit is large. Nevertheless, even in the best case scenarios large portions of the
 parameter space remain at risk.
 \end{subappendices}
