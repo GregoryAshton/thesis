@@ -911,9 +911,10 @@ the next few sections). As such, we begin by simulating a star with the
 properties listed in Table~\ref{tab: PR 49}.
 \begin{table}[htb]
 \centering
-\include{49_verification}
+\input{\thisdir/49_verification}
 \caption{Simulation parameters used for the phase residual plotted in
-Figure~\ref{fig: PR 49}.}
+Figure~\ref{fig: PR 49}. Note that $\Aem$ is the electromagnetic amplification
+factor defined later in Eqn.~\eqref{eqn: EM amplification}.}
 \label{tab: PR 49}
 \end{table}
 The resulting phase residual, in cycles, is
@@ -968,7 +969,7 @@ Table~\ref{tab: PR 63} for which the amplification factor is greater than
 unity.
 \begin{table}[htb]
 \centering
-\include{63_verification}
+\input{\thisdir/63_verification}
 \caption{Simulation parameters used for the phase residual plotted in
 Figure~\ref{fig: PR 63}.}
 \label{tab: PR 63}
@@ -1244,9 +1245,11 @@ distinctive double peak.
 \centering
 \includegraphics[]{SpindownRate_orthog}
 \caption{Top panel: spin-down rate for simulation parameters listed in Table~\ref{tab:
-spin-down rate normal} compared against the corresponding analytic prediction
-of Eqn.\eqref{eqn: spin-down rate}. Bottom panel: the variation in the polar
-angle of the magnetic dipole, $\Theta$, for the simulation.}
+spin-down rate orthog} compared against the corresponding analytic prediction
+of Eqn.\eqref{eqn: spin-down rate}. This simulation differs from
+Fig.~\ref{fig: spin-down rate normal} in that we chose $\chi$ such that the
+magnetic dipole lies close to the rotation equator. Bottom panel: the variation
+in the polar angle of the magnetic dipole, $\Theta$, for the simulation.}
 \label{fig: spin-down rate orthog}
 \end{figure}
 
@@ -1600,15 +1603,16 @@ beta}.
 \begin{figure}[htb]
 \includegraphics[width=0.5\textwidth]{NoSwitching.pdf}
 \caption{The phase residual for a minimal precession simulation with no
-         switching event. In this case, we have fitted and removed a Taylor
-         up to and including $\ddot{\nu}$.}
+         switching event; the simulation properties are listed in
+         Table~\ref{tab: switching props}. In this case, we have fitted and
+         removed a Taylor up to and including $\ddot{\nu}$.}
 \label{fig: no switching}
 \end{figure}
 \begin{table}[htb]
 \centering
 \input{\thisdir/NoSwitching}
-\caption{Simulation properties used for Figure~\ref{fig: switching without anom}
-and Figure~\ref{fig: switching with anom}.}
+\caption{Simulation properties used for Figure~\ref{fig: no switching},
+Figure~\ref{fig: switching without anom}, and Figure~\ref{fig: switching with anom}.}
 \label{tab: switching props}
 \end{table}
 
@@ -1631,6 +1635,7 @@ simulation, with no switch occurring in the anomalous component.
 That is we set
 \begin{align}
     t_{\mathrm{switch}} = \frac{\To}{2}, &&& \Ss = 0.4, &&& \Sa = 0.0,
+\label{eqn: SD only}
 \end{align}
 such that halfway though the simulation the spin-down torque is reduced by a
 fraction $0.4$ while the anomalous torque remains unaffected.
@@ -1650,9 +1655,11 @@ switch.
 \begin{figure}[htb]
 \includegraphics[]{SwitchingWithoutAnomTorque}
 \caption{Phase residuals for a simulation with a single switch in the spin-down
-torque. In the top plot we show the residual calculated using the whole observation
-time, in the bottom plot is the separate residuals calculated in the region before
-and after the switch.}
+torque with the parameters given in Eqn.~\eqref{eqn: SD only} and the
+simulation properties listed in Table~\ref{tab: switching props}. In the top
+plot we show the residual calculated using the whole observation time, in the
+bottom plot is the separate residuals calculated in the region before and after
+the switch.}
 \label{fig: switching without anom}
 \end{figure}
 This reduction in the size of modulations is because the precession is due to
@@ -1666,6 +1673,7 @@ We now consider manually switching both the spin-down and anomalous torque
 halfway though the simulation.  That is we set
 \begin{align}
     t_{\mathrm{switch}} = \frac{\To}{2}, &&& \Ss = \Sa = 0.01
+\label{eqn: SD and A}
 \end{align}
 
 In a similar fashion to Figure~\ref{fig: switching without anom} we show first
@@ -1688,11 +1696,13 @@ not observable when fitting to the entire simulation period since the switching
 event remains dominant. In the next section we will calculate this new wobble
 angle.
 \begin{figure}[htb]
-\includegraphics[]{SwitchingWithAnomTorque} \caption{Phase
-residuals for a simulation with a single switch in the spin-down and anomalous
-torque. In the top plot we show the residual calculated using the whole
-observation time, in the bottom plot is the separate residuals calculated in
-the region before and after the switch.}
+\includegraphics[]{SwitchingWithAnomTorque}
+\caption{Phase residuals for a simulation with a single switch in the spin-down
+and anomalous torque with the parameters given in Eqn.~\eqref{eqn: SD and A}
+and the simulation parameters listed in Table~\ref{tab: switching props}. In
+the top plot we show the residual calculated using the whole observation time,
+in the bottom plot is the separate residuals calculated in the region before
+and after the switch.}
 \label{fig: switching with anom}
 \end{figure}
 
