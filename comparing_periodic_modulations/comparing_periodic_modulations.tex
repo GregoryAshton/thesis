@@ -15,13 +15,13 @@ posterior fit} for a complete description.}
 \begin{document}
 \input{\thisdir/Evidence.tex}
 
-In this thesis, we endeavor to understand the cause of timing variations in pulsars
+In this thesis, we endeavour to understand the cause of timing variations in pulsars
 with the aim being that in doing so, we can understand more about their physics.
 In Chapter.~\ref{sec: timing variations} we discussed a variety of models to
 explain timing noise including two, precession and magnetospheric switching,
-which applied to pulsars with periodic modulations. Such pulsars are particuarly
+which applied to pulsars with periodic modulations. Such pulsars are particularly
 interesting given the conclusion of \citet{Hobbs2010} that, as more data is
-collected for pulsars, more quasi-periodic features are observed. Therefore it
+collected for pulsars, more quasi-periodic features are observed. Therefore, it
 is hoped that understanding what causes the periodic modulations may eventually
 lead to a more complete understanding of timing noise across the population.
 
@@ -31,7 +31,7 @@ pulsars. One pulsar, PSR~B1828-11, provides strong evidence for precession
 \citep{Stairs2000}, but has also been put forth as a candidate for
 magnetospheric switching \citep{Lyne2010}. There is no decisive feature in the
 data on PSR~B1828-11 which rules out either model. Therefore, in this chapter
-we will apply a Bayesian model comparison to determine quantiatively, which
+we will apply a Bayesian model comparison to determine quantitatively, which
 model best fits the data. In doing this, we will fully develop both the
 precession model and the switching model into complete predictive models for
 the spin-down rate and beam-width for which we have observational data.  This
@@ -49,7 +49,7 @@ modulations in the timing was first taken as evidence that the pulsar is
 orbited by a system of planets by \citet{Bailes1993}. A more complete analysis
 by \citet{Stairs2000} concluded that the corresponding changes in the
 beam-shape would require at least two of the planets to interact with the
-magnetosphere, which does not seem credible. Instead the authors proposed that
+magnetosphere, which does not seem credible. Instead, the authors proposed that
 the correlation between timing data and beam-shape suggested the pulsar was
 undergoing free precession. If true, such a claim would require rethinking of
 the vortex-pinning model used to explain the pulsar glitches since the pinning
@@ -169,7 +169,7 @@ probability of model $\M_{i}$ given some data:
 The quantity $P(\data | \M_{i})$ in known as the \emph{marginal likelihood} of
 model $\M_i$ given the data.
 
-In general we cannot compute the probability given in equation (\ref{eqn: bayes
+In general, we cannot compute the probability given in equation (\ref{eqn: bayes
 theorem})  because we do not have an exhaustive set of models to calculate
 $P(\data)$.  However, we can compare two models, say $A$ and $B$, by
 calculation of their \emph{odds-ratio}:
@@ -210,7 +210,7 @@ P(\params| \data, \M_{i}) =
 Note that the marginal likelihood $P(\data| \M_{i})$ described above plays the
 role of a normalising factor in this equation.
 
-In general the integrand of Eqn.~\eqref{eqn: marginal likelihood} makes
+In general, the integrand of Eqn.~\eqref{eqn: marginal likelihood} makes
 analytic, or even simple numeric integration difficult or impossible. This is
 the case for the probability model that we will use and so instead we must turn
 to sophisticated numerical methods.  For this study we use Markov-Chain
@@ -288,7 +288,7 @@ defined in Eqn.~\eqref{eqn: marginal likelihood} which requires a prior
 distribution $P(\params|\M_{j})$.
 
 The choice of prior distribution is important in a model comparison since it
-can potentially have a large impact on the resulting odds-ratio.  In general we
+can potentially have a large impact on the resulting odds-ratio. We
 want to use astrophysically informed priors wherever possible, or suitable
 uninformative (but proper) priors otherwise. However, the switching model
 presents a particular challenge in this respect, as its switching parameters
@@ -382,7 +382,7 @@ from the ATNF database
 see \cite{ATNF}). This value, $\PATNF=0.405043321630\pm 1.2\times10^{-11}$~s,
 provides a strict upper bound on $W_{10}$, although typically integrated
 pulse profiles only occupy between 2\% and 10\% of the period \citep{Lyne1988}.
-Therefore we will use a uniform prior on $[0, 0.1 \PATNF]$ for $\Wave$.
+Therefore, we will use a uniform prior on $[0, 0.1 \PATNF]$ for $\Wave$.
 The choice of 10\% adds a degree of ambiguity into the model comparison since
 varying it will change the odds-ratio; we investigate this in
 Section~\ref{sec: effect of the choice of prior}.
@@ -527,7 +527,7 @@ This gives the intrinsic spin-down rate of the pulsar which would be observed if
 measurements could be taken \emph{without} time-averaging
 
 To simulate the observed spin-down rate, we could time-average Eqn.~\eqref{eqn:
-switching spin-down model} directly. Instead we choose to mimic the data
+switching spin-down model} directly. Instead, we choose to mimic the data
 collection process responsible for the time-averaging. Let
 us first discuss the data collection process as described by \citet{Lyne2010} (this
 has already been described in other parts of this thesis as the observer-method of
@@ -573,7 +573,7 @@ standard deviation. In the tables we show the difference with respect to this
 value. For the remaining parameters we select uniform priors using
 crude estimates of the data in panel A of Figure~\ref{fig: B1828-11 data}.
 As previously mentioned, this means we are using the
-data twice: once in setting up the priors and once for the fitting. Therefore
+data twice: once in setting up the priors and once for the fitting. Therefore,
 it would be inappropriate to use the results in a model comparison and this is
 not our intention: we want to use the posterior distribution as a prior for the
 beam-width parameter estimation.
@@ -737,7 +737,7 @@ dipole $\mathbf{m}$ which makes an angle $\chi$ with the symmetry axis of the
 moment of inertia, and $\theta$ is the so-called wobble angle made between the
 symmetry axis and the angular momentum vector. We will consider the
 small-wobble angle regime where $\theta \ll 1$ since this is thought to be the
-most physical solution for PSR~B1828-11.  Finally we define $P$ as the rotation
+most physical solution for PSR~B1828-11.  Finally, we define $P$ as the rotation
 period, and $\dot P$ its time derivative, where the small variations due to
 precession have been averaged over, and
 \begin{align}
@@ -800,7 +800,7 @@ where
 \psi(t)= 2\pi\frac{t-\tref}{\tauP} + \psi_{0}.
 \end{equation}
 This is Eqn.~\ref{eqn: spin-down rate} derived in Section~\ref{sec: derivation of
-the spin-down rate} with the tranformation $t \rightarrow t-\tref$ where,
+the spin-down rate} with the transformation $t \rightarrow t-\tref$ where,
 as in the switching model, $\tref= \textrm{MJD } 49621$.
 The first two terms are the secular spin-down rate and its first derivative.
 The term in the square brackets is the modulation and can be found from appropriate
@@ -899,7 +899,7 @@ Modulation of the observed beam due to precession is a purely geometric effect.
 We have already investigated the beam-width for a Gaussian intensity using our
 numerical model in Section~\ref{sec: numerical beam-width}; in this subsection
 we will develop the corresponding analytic model of the beam-width under a
-Gaussian intensity. This is an original development of the pressesion model,
+Gaussian intensity. This is an original development of the precession model,
 although \citet{Akgun2006} have considered the equivalent calculation for the
 so-called shape parameter $S$. Ultimately, in agreement with \citet{Akgun2006},
 we will find that a Gaussian intensity profile will not produce the required
@@ -955,7 +955,7 @@ lines of longitude.
 \centering
 \includegraphics{Observer_to_M}
 \caption{The angular position of the observer and the magnetic dipole
-         $\mathbf{m}$ on the unit sphere centered on the star; $\Delta\Theta$
+         $\mathbf{m}$ on the unit sphere centred on the star; $\Delta\Theta$
          and $\Delta\Phi$ are then the polar and azimuthal angles between
          them.}
 \label{fig: delta theta delta phi}
@@ -1058,7 +1058,7 @@ W_{10}(t) = \frac{P}{\pi} \cos^{-1}\left(
 
 In order for the observer to measure the width at 10\% of the maximum, the beam
 intensity must of course drop below this value before increasing again. In
-reality we typically observe pulse durations lasting for small fractions of the
+reality, we typically observe pulse durations lasting for small fractions of the
 period, especially when they are close to orthogonal rotators \citep{Lyne1988}.
 
 To set a prior on $\rho$ we consider a special case in which the polar angle of
@@ -1082,7 +1082,7 @@ $\rho$ from 0 to
 so that, for this special case, the prior range of $\rho$ corresponds exactly
 to the prior range of the beam-widths in the switching model.
 This prior range will change, but not by orders of magnitude when
-considering a system close to, but not exactly at, this special case. Therefore
+considering a system close to, but not exactly at, this special case. Therefore,
 this prior assures that the model comparison does not introduce any significant
 bias into the model comparison.
 
@@ -1122,7 +1122,7 @@ posterior}A) is Gaussian for all of the parameters except $\cos\iota$ for which
 it concentrates the probability at $\iota\approx0$: the observer looks almost
 down the angular momentum vector. Since $\chi\approx\pi/2$ and $\theta \ll 1$,
 for each pulsation the beam must therefore sweep out a cone with such a large opening angle
-it is close to a plane orthogonal to the rotation vector. Meanwhile the
+it is close to a plane orthogonal to the rotation vector. Meanwhile, the
 rotation vector is nearly parallel to the angular momentum, since $\theta \ll
 1$. As a result, the beam remains approximately orthogonal to the observer for
 the entirety of each pulsation.  We find this result difficult to believe on
@@ -1300,7 +1300,7 @@ apply the prior on intensity widths as given by Eqn.~\eqref{eqn: rho
 prior}; and for $\rho_2''$ we will use a normal prior with zero mean
 favouring a Gaussian intensity. The \emph{standard-deviation} of this prior can
 have a measurable impact on the inference: if it is too small then the degree
-of freedom introduced by Eqn.~\ref{eqn: rho2} is effectively removed. Instead
+of freedom introduced by Eqn.~\ref{eqn: rho2} is effectively removed. Instead,
 we want to make it significantly larger than the (apriori unknown) posterior
 value of $\rho_2''$: this generates a so-called non-informative prior. To set
 the prior standard-deviation then, we need to provide a rough scale for what
@@ -1683,9 +1683,9 @@ In addition to the data considered here, a number of
 high-time-resolution observations of PSR~B1828-11 were performed
 by the Parkes telescope, as discussed in \citet{Stairs2003}.
 This data set shows interesting variability in beam-width on short
-timescales of ~O(100) pulses. While the qualitative `noisiness' of the
-beam-width data is already apparent from the current data-set (eg. see
-Figure1), such high-time-resolution data could be very interesting to
+timescales of $~\mathcal{O}(100)$ pulses. While the qualitative `noisiness' of the
+beam-width data is already apparent from the current data-set (e.g. see
+Figure~\ref{fig: B1828-11 data}), such high-time-resolution data could be very interesting to
 include in a more detailed future model comparison.
 
 The process of fitting the models to the data and performing posterior
@@ -1758,8 +1758,8 @@ by improvements to the data sources.
 \label{sec: procedure for the mcmc parameter estimation}
 
 The procedure used to simulate the posterior distribution can determine the
-quality of the estimation. Therefore we will now set out an algorithmic method
-to ensure the our results are reproducible.
+quality of the estimation. Therefore, we will now set out an algorithmic method
+to ensure that our results are reproducible.
 
 To estimate the posterior given a signal model and prior, we run two MCMC
 simulations: an initialisation and production. In the following the term
