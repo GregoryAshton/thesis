@@ -14,12 +14,13 @@ isolated neutron stars, many searches \citep[see for
 example][]{ligo2015scox1,leaci2015,ScoX1:MDC1} have been performed for GWs from
 low-mass X-ray binary systems (LMXBs). These searches experience similar
 difficulties due to a stronger form of timing noise known as `spin-wandering'.
-This issue was investigated by \citet{watts2008} who quantified the effect using
-a decoherence time $T_{\textrm{decoh}}$, after which the Taylor expansion can
-no longer track the phase, defined by $T_{\textrm{decoh}}^{2} \dot{\nu} = 1.$
-They then estimated a worst-case decoherence time by using the maximal
-spin-up rate $\dot{\nu}$ due to the accretion torque and found that for some
-sources such as the LMXB Scorpius-X1, the decoherence time can be short as $\sim 1$~week.
+This issue was investigated by \citet{watts2008} who quantified the effect for
+a spin-up of $\dot{\nu}_{\textrm{s}}$ by defining a decoherence time
+$T_{\textrm{decoh}}^{2} \dot{\nu}_{\textrm{s}} = 1$, after which the Taylor
+expansion can no longer track the phase.  They then estimated a worst-case
+decoherence time by using the maximal spin-up rate due to the accretion torque
+and found that for some sources such as the LMXB Scorpius-X1, the decoherence
+time can be short as $\sim 1$~week.
 
 In this chapter, we will present some preliminary calculations and results
 related to modelling timing noise in a continuous GW using a random walk model.
@@ -27,7 +28,7 @@ Unlike the results of Chapter.~\ref{sec: timing noise in cgw}, which used an
 empirical description of timing noise given by the Crab ephemeris, the results
 derived here can be applied to any search in which it is thought the signal may
 undergo a random walk. In this sense, it is equivalent to Chapter~\ref{sec:
-glitches in cgw} in that the ultimate aim is to use estimate the risk faced by
+glitches in cgw} in that the ultimate aim is to estimate the risk faced by
 various searches by inferring from the observed pulsar population.  As given
 here, the task in incomplete and so we will present our calculations and
 some preliminary results.
@@ -39,8 +40,9 @@ model remains a practical empirical model; in this section then, we use it as
 such without requiring it to have any deeper substantive meaning for what
 causes timing noise. In the same way, the random walk model can also be applied
 to LMXBs where the amount of spin-wandering could be inferred from fluctuations
-in the luminosity. From this we intend in the future to update the estimates by
-\citet{watts2008} to estimate the mismatch for various searches.
+in the luminosity. From this, we would like in the future to update the estimates by
+\citet{watts2008} to estimate the mismatch for searches for continuous gravitational
+waves from LMXBs.
 
 This chapter is organised in the following way. In Section~\ref{sec: defining a
 random walk} we will define the random walk as a piecewise Taylor expansion in
@@ -48,17 +50,20 @@ which the difference between the signal and template is initially zero. We will
 then calculate the mismatch for this simple description in Section~\ref{sec:
 random walk models part I}. However, setting the difference between the signal
 and template to zero initially does not minimise the mismatch, so in
-Section~\ref{sec: random walk models part II} we discuss a pragmatic to
+Section~\ref{sec: random walk models part II} we discuss a pragmatic method
 estimate the minimised mismatch; for each predicted mismatch we verify our
 calculations using Monte-Carlo like numerical simulations. In Section~\ref{sec:
-understanding the random walk model} we relate this description of a random walk to
-the compound Poisson process random walk usually discussed in the literature.
-Finally, in Section~\ref{sec: application to the crab} we investigate further
-the Crab ephemeris (introduced in Chapter~\ref{sec: timing noise in cgw}) before
-applying the results found earlier in the chapter.
-%Finally in
-%Section~\ref{sec: other pulsars} we will use a fitting formulae to predict the
-%worst-case mismatch in some recent gravitational wave searches.
+understanding the random walk model} we relate this description of a random
+walk to the compound Poisson process random walk usually discussed in the
+literature.  Finally, in Section~\ref{sec: timing noise as described by the
+crab ephemeris} we first investigate the data from the Crab ephemeris (first
+introduced in Section~\ref{sec: timing noise in cgw}). We then go on to apply the
+results found earlier in the chapter to predict how the mismatch in the Crab
+depends on the observation time assuming that it undergoes a random walk in the
+frequency; this is then compared to the results found in Chapter~\ref{sec:
+timing noise in cgw}.
+%Finally in Section~\ref{sec: other pulsars} we will use a fitting formulae to
+%predict the worst-case mismatch in some recent gravitational wave searches.
 
 }
 
@@ -82,6 +87,7 @@ in the $i^{th}$ subdomain, we may define the jump in this difference between
 the $i$ and $i-1$ subdomains as $\tn \fdot_i$, such that
 \begin{equation}
 \Delta \fdot_{i} - \Delta\fdot_{i-1} = \tn \fdot_{i} \sim \mathcal{N}(0, \sigS),
+\label{eqn: fdot N}
 \end{equation}
 where $\mathcal{N}$ denotes the normal distribution and we have defined $\sigS$
 as the standard-deviation of the step sizes in the spin-down rate. Rearranging
@@ -537,10 +543,14 @@ the smallest mismatch from a grid of points in $f_\textrm{t}$ and $\dot{f}_\text
 \section{Understanding the random walk model}
 \label{sec: understanding the random walk model}
 
-In the previous two sections, we have used the random walk model of timing,
-given in Section~\ref{sec: defining a random walk} which may appear
-non-physical: the random walk `jumps' every $\dT$, but what
-physics determines this length?  In this section, we will show that such a
+In the previous two sections, we have used the random walk model
+defined in Section~\ref{sec: defining a random walk} which appears at first to
+be non-physical: the random walk `jumps' every $\dT$, but what
+physics determines this length? Furthermore, we assumed that the jumps between
+adjacent steps (see for example Eqn.~\eqref{eqn: fdot N}) were normally
+distributed with zero mean and variance $\sigP, \sigF$, and $\sigS$, but how
+physical is this assumption?
+In this section, we will show that such a
 random walk is equivalent to the more natural `compound Poisson random walk
 process' introduced in Section~\ref{sec: TN interpretations random walk models}
 which is used in the literature to model timing noise as a random walk.  The
@@ -566,17 +576,18 @@ where $X \in [\phi, \nu, \dot{\nu}]$ is the variance of the random walk jumps.
 
 If the event rate $\lambda$ of the compound Poisson process is sufficiently
 large such that in a time $\dT$ the number of events is large, it can be shown
-(see for example \citet{weiss2006course}) that $\Delta X_i(\dT)$ is normally
-distributed. To mean can be calculated using Wald's
-Eqn.~\citep{wald1944cumulative} which gives expectation and 
+that, due to the central limit theorum
+(see for example \citet{weiss2006course}), $\Delta X_i(\dT)$ is normally
+distributed. The mean can be calculated using Wald's
+Eqn.~\citep{wald1944cumulative} which gives
 \begin{align}
-\textrm{E}[\Delta X(\dT)] & = 0,
+\langle \Delta X(\dT) \rangle = 0,
 \label{eqn: DX mean}
 \end{align}
 while the variance can be calculated using the law of total variance
 \citep{weiss2006course} from which we find that
 \begin{align}
-\textrm{Var}[\Delta X(\dT)] &  = \lambda \dT \langle \delta X^{2}\rangle.
+\langle \Delta X(\dT)^{2} \rangle &  = \lambda \dT \langle \delta X^{2}\rangle.
 \label{eqn: DX var}
 \end{align}
 
@@ -594,28 +605,30 @@ as the difference between two adjacent subdomains of the piecewise Taylor
 expansion. Moreover, we assumed that $\tn X_i(\dT)$ was normally distributed
 with zero mean and a variance $\sigma_{X}^{2}$.  This assumption is valid if
 the underlying random walk process is a compound Poisson process. This is
-because $\Delta X_{i}(\dT)$ and $\Delta X_{i-1}(\dT)$ are normally distributed
-random variables and therefore it can be shown (see for example
-\citeauthor{wolframdifference}) that $\tn X_i (\dT)$ is also normally
-distributed with a mean
+because, as discussed before, $\Delta X_{i}(\dT)$ and $\Delta X_{i-1}(\dT)$ are
+normally distributed random variables and therefore it can be shown (see for
+example \citeauthor{wolframdifference}) that $\tn X_i (\dT)$ is also normally
+distributed with a mean which is the difference in the means of
+$\Delta X_{i}(\dT)$ and $\Delta X_{i-1}(\dT)$:
 \begin{align}
-\textrm{E}[\tn X(\dT)] & = 0,
+\langle \tn X(\dT) \rangle & = 0,
 \label{eqn: Poisson expectation}
 \end{align}
-and variance
+and a variance which is the sum of the variance of
+$\Delta X_{i}(\dT)$ and $\Delta X_{i-1}(\dT)$:
 \begin{align}
-\textrm{Var}[\tn X(\dT)] &  = 2\lambda \dT \langle \delta X^{2}\rangle.
+\langle \tn X(\dT)^{2} \rangle &  = 2\lambda \dT \langle \delta X^{2}\rangle.
 \label{eqn: Poisson variance}
 \end{align}
 
 The metric-mismatch calculations derived in the previous two sections are
-written a function of $\sigma_{X}^{2} \in [\sigP, \sigF, \sigS]$
+written as a function of $\sigma_{X}^{2} \in [\sigP, \sigF, \sigS]$
 which is the variance of $\tn X(\dT)$. We can therefore relate the two by
 \begin{align}
 2\lambda \dT \langle \delta X^{2}\rangle = \sigma_{X}^{2}.
 \end{align}
 Rearranging this equation, we can equate $\lambda \langle \delta X^2\rangle$ with
-a GW signal random walk strength parameters which we define as
+a \emph{GW random walk strength parameter} which we define as
 \begin{align}
 S_{\mathrm{GWPN}} & = \lambda \langle \delta \phi^{2} \rangle = 
 \frac{\sigP}{2\dT}, \label{eqn: SPN 2}\\
@@ -627,7 +640,7 @@ S_{\mathrm{GWSN}} & = \lambda \langle \delta \dot{f}^{2} \rangle =
 
 We distinguish between the strength of gravitational wave noise
 ($S_{\textrm{GWPN}}, S_{\textrm{GWFN}}$ and $S_{\textrm{GWSN}}$) and the
-strength of noise in the rotational parameters ($S_{\textrm{PN}},
+usual strength of noise in the rotational parameters ($S_{\textrm{PN}},
 S_{\textrm{FN}}$ and $S_{\textrm{PN}}$). To relate between these we need to
 define the mechanism of gravitational wave emission. In the canonical
 non-axisymmetric distortion mechanism, $f = 2\nu$, so the variances of the
@@ -807,7 +820,7 @@ S_{\textrm{FN}} = \lambda \langle \delta \nu^{2}\rangle
 then, as we did in Eqn.~\eqref{eqn: SFN 2} for the gravitational wave frequency,
 we have that
 \begin{align}
-S_{\textrm{FN}} = \frac{\textrm{Var}[d\nu(\dT)]}{2\dT},
+S_{\textrm{FN}} = \frac{\langle \tn \nu(\dT)^{2} \rangle }{2\dT},
 \label{eqn: SFN}
 \end{align}
 where the factor of $1/2$ comes from the fact that $d\nu(\dT)$ is the

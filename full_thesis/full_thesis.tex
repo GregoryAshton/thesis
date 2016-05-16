@@ -54,7 +54,7 @@ they may mean that the gravitational wave signal is not detected in the first
 place. We investigate this issue for both timing noise and glitches, using
 electromagnetic observations to predict for what types of gravitational wave
 searches this may be an issue. We find that while timing noise is unlikely to
-be an issue for current searches, glitches may cause a significant problem for
+be an issue for current gravitational wave searches, glitches may cause a significant problem for
 all-sky searches for gravitational waves from neutron stars.
 
 \end{abstract}
@@ -93,19 +93,19 @@ tireless efforts to guide my research in a meaningful direction, his clear and
 honest evaluation, but most importantly for being a friendly and enthusiastic
 mentor. Reinhard Prix, my supervisor in Hannover, also deserves a hearty thanks
 for his enduring commitment, useful insights, and for introducing me to
-Bayesian probability theory without which much of this thesis would not exist. 
+Bayesian probability theory, without which much of this thesis would not exist. 
 Thanks also to my advisor, Nils Anderson, for his useful insights early on
 and his continued humour throughout such as his suggestion to title the
 work `A waste of timing noise'.
 
-For the work presented in Chapter.~\ref{sec: testing models} I would like to
+For the work presented in Chapter.~\ref{sec: testing models}, I would like to
 thank Will Farr, Danai Antonopoulou, and Ben Stappers for valuable discussions
 and comments, \citet{dan_foreman_mackey_2014_11020} for the software used in
 generating posterior probability distributions, and \citet{Lyne2010} for
 generously sharing the data for PSR~B1828-11.  For the work presented in
 Chapter.~\ref{sec: glitches in cgw} I kindly thank Christobal Espinoza for
-advice on working with the glitch catalogue. I would like to express my
-gratitude to Matthew Pitkin whos advice and words of encouragement were a great
+advice on working with the glitch catalogue. I would also like to express my
+gratitude to Matthew Pitkin who's advice and words of encouragement were a great
 help.
 
 All of my friends in the Maths departments deserve my praise both for
@@ -164,7 +164,7 @@ and beam-width for PSR B1828-11}
 \label{sec: timing noise in cgw analytic}
 \subfile{../analytic_timing_noise_cgw/analytic_timing_noise_cgw}
 
-\chapter{Conclusion}
+\chapter{Conclusion and outlook}
 \label{sec: final conclusion}
 
 Timing variations in pulsars have long been used as a way to infer the
@@ -174,9 +174,12 @@ are some way from having a complete and universal understanding. For timing
 noise, this may be due to the varied ways in which it manifests, but in the
 comprehensive review by \citet{Hobbs2010} the authors suggest that over
 sufficiently long timescales (which may be much longer than we are able to
-observe) timing residuals show quasi-periodic features. With this in mind, in
-this thesis we investigated two mechanisms of strictly periodic variations in
-detail: magnetospheric switching and precession.
+observe) timing residuals show quasi-periodic features. Moreover, some pulsars
+(see \citet{Lyne2010} for examples) have pronounced periodic modulations in not
+only their timing residuals, but also the shape of pulsations, PSR~B1828-11 is
+the best example of this.  With this in mind, in this thesis we investigated
+two mechanisms of strictly periodic variations in detail: magnetospheric
+switching and precession.
 
 We began in Chapter~\ref{sec: rotating frame} by studying the action of the
 electromagnetic torque on precessing pulsars using numerical solutions to the
@@ -209,19 +212,19 @@ feedback between the torque switching  and precession.
 PSR~B1828-11 stands out in the literature for the strong $\sim 500$~day
 periodic modulations observed in its timing properties. As a result, it has
 been used as evidence for both precession \citep{Stairs2000} and periodic
-magnetospheric torque switching \citep{Lyne2010}. \citet{Jones2001} and
-\citet{Cordes2013} suggested that these models may not be mutually exclusive,
+magnetospheric torque switching \citep{Lyne2010}. \citet{Jones2012} and
+\citet{Cordes2013} suggested that these used models may not be mutually exclusive,
 which prompted our hybrid model discussed in Chapter~\ref{sec: inertial frame}.
 Neglecting these hybrid models, precession and magnetospheric
 switching are mutually exclusive, but it is important to know which is favoured
 since both have important implications for neutron star physics. To decide
-this, in Chapter~\ref{sec: inertial frame}, we applied a Bayesian model
+this, in Chapter~\ref{sec: testing models}, we applied a Bayesian model
 comparison. We found an odds-ratio of $10^{2.7\pm 0.5}$ in favour of the
 precession model, a key result of this thesis which we published in
 \citet{Ashton2016}. This does not rule out the switching interpretation
 entirely as we have not tested an exhaustive set of models, but it does provide
 a quantitative framework to evaluate models. In this chapter  we focus
-primarily n the methods to ensure that we make an unbiased comparison, although
+primarily on the methods used to ensure that we make an unbiased comparison, although
 there is some development for the modulations of the beam-width due to
 precession. In the future, we intend to use these tools to test further
 modifications of the models. Furthermore, we would like to combine the data
@@ -233,29 +236,29 @@ Detecting gravitational waves from an isolated neutron star would provide a
 unique opportunity to learn about them, especially if we additionally saw the
 object electromagnetically as well. However, signals which are subject to
 timing variations may be difficult to detect if, as in the case of many current
-searches, we use matched filtering templates which do not include timing
-variations. This issue has not been properly tackled in the literature and so
-in the last chapters of this thesis we begin the process of quantifying the
-risks.
+gravitational wave searches, we use matched filtering templates which do not
+include timing variations. This issue has not been properly tackled in the
+literature and so in the last chapters of this thesis we begin the process of
+quantifying the risks.
 
-In Chapter~\ref{sec: intro to cgw} we set out the tools which we use to
+In Chapter~\ref{sec: intro to cgw} we set out the tools which we will use to
 calculate the mismatch, defined to be the loss of signal to noise ratio. In
 doing so we defined a new approach, the generalised metric-mismatch, which can
 calculate the mismatch for any arbitrary signal by approximating it by a
 piecewise Taylor expansion.
 
 Searches for gravitational waves from known pulsars can handle glitches in the
-signal since they can see that they have occurred. In Chapter~\ref{sec: glitches in
-cgw} we showed that for blind searches, where we have no electromagnetic
-signal, glitches pose a substantial risk, especially since many searches target
-young rapidly spinning-down pulsars which we found to have a larger and more
-frequent glitches. Many of these searches use an initial semi-coherent stage
-and then follow up candidates with fully-coherent searches.  We showed how a
-signal can be identified as a candidate in the semi-coherent stage and then
-subsequently lost in the follow up. In the future, we would like to develop
-search methods which are robust to glitches. These could then be applied to
-past data to ensure that we have not already missed a continuous gravitational
-wave signal.
+signal since they can see that they have occurred. In Chapter~\ref{sec:
+glitches in cgw} we showed that for blind searches, where we have no
+electromagnetic signal, glitches pose a substantial risk, especially since many
+searches target young rapidly spinning-down pulsars which we found to be
+likely to have larger and more frequent glitches. Many of these searches use
+an initial semi-coherent stage and then follow-up candidates with
+fully-coherent searches.  We showed how a signal can be identified as a
+candidate in the semi-coherent stage and then subsequently lost in the
+follow-up. In the future, we would like to develop search methods which are
+robust to glitches. These could then be applied to past data to ensure that we
+have not already missed a continuous gravitational wave signal.
 
 Quantifying the effect of timing noise on gravitational wave searches is a more
 difficult task due to the fact that we have no universal empirical description
@@ -277,7 +280,7 @@ observation time after which the SNR decreases with observation time; for the
 Crab pulsar this was found to be $ \approx 600$~days.
 
 In Chapter~\ref{sec: timing noise in cgw analytic} we approached the issue of
-timing noise in continuous gravitational waves from a different angle. Namely
+timing noise in continuous gravitational waves from a different angle. Namely,
 by modelling timing noise as a random walk in the phase, frequency, or
 spin-down rate: a phenomenological description dating back to
 \citet{Boynton1972}. Recently, this model has been disfavoured
@@ -291,9 +294,9 @@ showed how to include the minimisation step modelling a narrow-band search over
 the template frequency and spin-down rate.  We go on to use the Crab ephemeris
 to predict the strength of frequency noise in the Crab pulsar and hence the
 dependence of the mismatch on observation time found in Chapter~\ref{sec:
-timing noise in cgw}. This demonstrates the methods we would like to use in the
-future to estimate the levels of mismatch for other searches which may be effected
-by random walk models of timing noise.
+timing noise in cgw}. This will be useful in developing models that we would
+like to use in the future to estimate the levels of mismatch for other searches
+which may be effected by random walk models of timing noise.
 
 %Finally, we present some preliminary results predicting the mismatch due to
 %random walk models of timing noise in blind gravitational wave searches by
