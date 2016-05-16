@@ -73,7 +73,7 @@ accuracy motivates the use of the same Taylor expansion phase models to account
 for the spin-down.  Pulsar astronomers measure the frequency $\nu$ and higher
 order coefficients describing the rotation of the pulsar itself. In this work
 we will denote the GW frequency and its derivatives by $f, \dot{f}$, etc.\ The relation between the GW frequency and rotation frequency depends on
-the emmision mechanism; in this work we will consider only searches for emission from
+the emission mechanism; in this work we will consider only searches for emission from
 non-axisymmetric neutron stars such that $f=2\nu$~\citep{Shapiro83}.
 
 The rest of this chapter is organised as follows: in Section~\ref{sec:
@@ -213,7 +213,7 @@ completely lost.
 Substituting Eqn.~\eqref{eqn: Delta Phi} into Eqn.~\eqref{eqn: full mismatch}
 gives the mismatch between a smooth Taylor expansion signal and template. In
 this work we will calculate the mismatch for a signal that is not a smooth
-Taylor expansion. This can done in this way for some special cases. For
+Taylor expansion. This can be done in this way for some special cases. For
 example, taking $\dl^{\alpha} = [\Deltaphi, 0, 0]$, the mismatch is found to be
 zero: this reflects the fact that fully-coherent matched filtering is
 insensitive to any arbitrary phase offset between the signal and template. In
@@ -278,7 +278,7 @@ corresponds to a large true mismatch, and hence a significant loss of SNR.
 \label{sec: semi-coherent mismatch}
 
 Fully-coherent searches are computationally demanding, so much so that it is
-unfeasible to perform fully-coherent searches for wide-parameter searches
+infeasible to perform fully-coherent searches for wide-parameter searches
 such as the all-sky search. Instead, \emph{semi-coherent}
 searches are used which require far fewer templates and result in more
 sensitive searches at a fixed computing cost \citep{Prix2009}. There are numerous
@@ -339,13 +339,13 @@ must be careful to sum all the mismatches at the same point in parameter space.
 In this section we have introduced: the fully-coherent mismatch, used to
 quantify the loss of SNR in fully-coherent GW searches; the metric-mismatch
 approximation, a useful way to calculate mismatches that avoids the complicated
-integrations; and the semi-coherent mismatch, quantifying the loss of SNR in
+integration; and the semi-coherent mismatch, quantifying the loss of SNR in
 semi-coherent GW searches. The mismatch is a useful way to quantify how well a
 search performs given a particular GW signal. However, the tools discussed in
 this section to calculate this mismatch apply only to smooth Taylor expansion
 signals and templates. Signals which contain timing variations are by definition
 not smooth Taylor expansions. Therefore, we need a method to calculate the
-mismatch for arbitary signals. In the next section, we will discuss some
+mismatch for arbitrary signals. In the next section, we will discuss some
 special cases of timing variations where the mismatch can be calculated
 exactly. Then in the final section, we will introduce a new tool which can be
 used to calculate the mismatch for arbitrary signals.
@@ -354,7 +354,7 @@ used to calculate the mismatch for arbitrary signals.
 \label{sec: mismatch from differences in the gw phase}
 
 The $\mathcal{F}$-statistic considered in \citet{Brady1998} analytically
-minimises over the phase. Therefore if the signal and template can both be
+minimises over the phase. Therefore, if the signal and template can both be
 modelled by a single smooth Taylor expansion, but with a finite phase-offset,
 the mismatch is zero: the mismatch is insensitive to any overall phase
 difference between the signal and template. However, a mismatch will occur if
@@ -424,8 +424,8 @@ important, but the total phase jump at their interface. For $\Delta \phi_{1} =
 \Delta \phi_{2}$ the mismatch vanishes, this recovering the case of a single
 Taylor expansion signal with an arbitrary overall phase offset, which always has
 zero mismatch. This result can be used to calculate the mismatch due to a glitch,
-if the glitch is purely in the phase. In reality we know that glitches are
-discontinuities in the frequency and spin-down rate, this will discussed further
+if the glitch is purely in the phase. In reality, we know that glitches are
+discontinuities in the frequency and spin-down rate, this will be discussed later
 in Chapter~\ref{sec: glitches in cgw}, but this simple calculation provides
 a stepping stone to understanding the more complicated complete result.
 
@@ -582,7 +582,7 @@ timing noise.
 %$\Nsd$ subdomains.
 
 \subsection{Piecewise Taylor expansion}
-Before we get into the details of formulating a general metric-mismatch it is
+Before we get into the details of formulating a general metric-mismatch, it is
 worth stating some details about piecewise Taylor expansions.
 Allowing the signal to be piecewise amounts to placing a second index on the
 signal parameters, $\ls^{\alpha a}$, which labels the subdomain of the piecewise function.
