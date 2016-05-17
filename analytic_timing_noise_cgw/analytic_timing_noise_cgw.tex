@@ -297,19 +297,20 @@ root-mean phase residual as calculated by \citet{Cordes1980} and given in
 Eqn.~\eqref{eqn: S calc}. We will return to this later in Sec.~\ref{sec: understanding the random walk model}.
 
 \subsection{Verifying the results}
+\label{sec: verifying}
 
-We can observe the leading order scaling of Eqn.~\eqref{eqn: scalings}
-directly and verify the predictions made by Eqn.~\eqref{eqn: expectation} by
-comparing with exact numerical results. That is, using the signal injection and
-recovery tools developed in Section~\ref{sec: narrow-band method} of
-Chapter.~\ref{sec: timing noise in cgw} we simulate signals undergoing a random
-walk and calculate the corresponding mismatch (no minimisation step is done
-here, this is discussed in the next section). In particular, we perform three
-Monte Carlo studies for a random walk in the phase, frequency, and spin-down
-rate and in each case compare the simulated results with the analytic
-prediction. The results are shown in Figure~\ref{fig: rw I} and demonstrate good
-agreement between the simulation means and the prediction of Eqn.~\eqref{eqn:
-expectation}.
+We can observe the leading order scaling of Eqn.~\eqref{eqn: scalings} directly
+and verify the predictions made by Eqn.~\eqref{eqn: expectation} by comparing
+with exact numerical results. That is, using the \verb+LALSuite+
+\cite{lalsuite}  signal injection and recovery tools developed in
+Section~\ref{sec: narrow-band method} of Chapter.~\ref{sec: timing noise in
+cgw} we simulate signals undergoing a random walk and calculate the
+corresponding mismatch (no minimisation step is done here, this is discussed in
+the next section). In particular, we perform three Monte Carlo studies for a
+random walk in the phase, frequency, and spin-down rate and in each case
+compare the simulated results with the analytic prediction. The results are
+shown in Figure~\ref{fig: rw I} and demonstrate good agreement between the
+simulation means and the prediction of Eqn.~\eqref{eqn: expectation}.
 
 \begin{figure}[ht]
 \centering
@@ -483,7 +484,7 @@ and template phase after fitting and removing a second order polynomial. The
 second order polynomial was chosen to model the effect of minimising over the
 template frequency and frequency derivative. Let us now define
 \begin{align}
-\Delta^{(1)}f_i = \Delta f_i - \hat{y}^{(1)},
+\Delta^{(1)}f_i = \Delta f_i - \hat{y}^{(1)}_i,
 \label{eqn: D2f}
 \end{align}
 as the residual difference between the signal and template frequency after
@@ -530,14 +531,14 @@ second highest power.
 
 We now verify Eqn.~\eqref{eqn: Expected mismatch RW in frequency k2} and
 Eqn.~\eqref{eqn: Expected mismatch RW in phase k2} by comparing with Monte
-Carlo simulations. The numerical signals undergo a random walk as described in
-Section~\ref{sec: random walk models part I}, however, when searching for the
-signals we search over a grid of points in $f_\textrm{t}$ and
-$\dot{f}_\textrm{t}$, then we select the grid point with the minimum mismatch; this
-minimises the mismatch over the frequency and spin-down. The results are
-plotted in Figure~\ref{fig: verification of minimised RW} and demonstrate good
-agreement between the analytic prediction and the mean of the simulated
-mismatches.
+Carlo simulations as we first did in Section~\ref{sec: verifying}. The
+numerical signals undergo a random walk as described in Section~\ref{sec:
+random walk models part I}, however, when searching for the signals we now search
+over a grid of points in $f_\textrm{t}$ and $\dot{f}_\textrm{t}$, then we
+select the grid point with the minimum mismatch; this minimises the mismatch
+over the frequency and spin-down. The results are plotted in Figure~\ref{fig:
+verification of minimised RW} and demonstrate good agreement between the
+analytic prediction and the mean of the simulated mismatches.
 
 \begin{figure}[ht]
 \centering
