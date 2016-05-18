@@ -435,7 +435,7 @@ all the data together, then individually for the normal population and the
 Vela-like population.
 \begin{table}[htb]
 \begin{tabular}{l|l|ccc}
-&  & $\log_{10}|\tau|$ & $\log_{10}|\nuR|$ & $\log_{10}|\nudotR|$ \\\hline
+&  & $\log_{10}|\tauAge|$ & $\log_{10}|\nuR|$ & $\log_{10}|\nudotR|$ \\\hline
 \input{\thisdir/correlation_table}
 \end{tabular}
 \caption{The correlation coefficient (in log-log space) between the glitch
@@ -448,7 +448,7 @@ a weak correlation with all predictor variables, but $\DnudotRglitch$ does
 correlate well showing the strongest correlation with the characteristic age.
 We choose to use $\nudotR$ as a predictor variable for both the normal and
 Vela-like populations. For the latter the correlation coefficient suggests that
-$\tau$ may be a better predictor, however $\nudotR$ is only marginally
+$\tauAge$ may be a better predictor, however $\nudotR$ is only marginally
 worse and it makes it simpler to interpret later results if the same predictor is
 used for both populations. In practise, our results will be robust to either choice
 of the predictor variable.
@@ -564,7 +564,7 @@ also plotted in Figure~\ref{fig: EAH_NdotgAve}A, on the right-hand axis.
 $\nudotS$ over the range of values used in the E@H search. On the right axis is
 the corresponding average number of glitches for a search of duration $1$~yr.
 \textbf{B}: the probability of observing one or
-more glitches during a search lasting for $1$~year assuming a Poisson distribution. Coloured
+more glitches during a search lasting for $1$~yr assuming a Poisson distribution. Coloured
 halos highlight interesting pulsars using the same colour labels as in
 Figure~\ref{fig: Espinoza dF dF1}.}
 \label{fig: EAH_NdotgAve}
@@ -581,7 +581,7 @@ process and accounts for about $20\%$ of the events.
 
 Of the glitch catalogue, J0537-6910 accounts for 23 and J0835-4510 for 17 of
 the total 472 events. Assuming that $20\%$ of these are due to the
-quasiperiodic this is $\sim 1.7\%$ of the total number of observed glitches. It
+quasiperiodic component, this is $\sim 1.7\%$ of the total number of observed glitches. It
 is possible that other pulsars also exhibit a quasiperiodic component, so the
 total fraction of glitches from a quasiperiodic component should be greater
 that $1.7\%$. However, we may still claim that the majority of glitches in the
@@ -589,7 +589,7 @@ catalogue are due to a Poisson like process.
 
 Assuming that all glitches used to estimate $\NdotgAve$ are due to a Poisson
 process, we can calculate the probability of one or more glitches occurring during
-a typical search lasting $1$~year as a function of $\nudotS$. To do this we take the
+a typical search lasting $1$~yr as a function of $\nudotS$. To do this we take the
 estimated number of glitches during a typical search
 $\lambda_{s}$, as given on the right axis of Figure~\ref{fig: EAH_NdotgAve}A,
 and sum the Poisson probability mass function from 1 to infinity
@@ -764,7 +764,7 @@ Inserting these into Eqn.~\eqref{eqn: mutilde fully-coherent unminimised} and
 simplifying yields a minimum fully-coherent mismatch of
 \begin{align}
 \begin{split}
-\mutilde = & R(1-R){3}(4R(1-R)(5R(1-R)-2) + 1)\Dphiglitch^{2} \\
+\mutilde = & R(1-R)(4R(1-R)(5R(1-R)-2) + 1)\Dphiglitch^{2} \\
 & + \frac{\pi^{2}\Tcoh^{2}}{3} R^{3}(1-R)^{3}(4 - 15R(1-R)) \Dnuglitch^{2}\\
 & + \frac{\pi^{2}\Tcoh^{4}}{5} R^{5}(1-R)^{5}\Dnudotglitch^{2} \\
 & + 2\pi\Tcoh R^{2}(1-R)^{2}(1-2R)(5R(1-R)-1)\Dnuglitch\Dphiglitch\\
@@ -839,7 +839,7 @@ now consider the same glitch, but in a semi-coherent search as introduced in
 Section~\ref{sec: semi-coherent mismatch}. The important
 point to recall is that the semi-coherent segments must be summed along the
 same point in parameter space. In practise, this means all values of the
-template parameters $\lt^{\alpha}$ must be the equal when expressed at the same
+template parameters $\lt^{\alpha}$ must be equal when expressed at the same
 reference time.
 
 \subsubsection{A semi-coherent search: analytic metric-mismatch}
@@ -1215,7 +1215,7 @@ longer observation times.
 
 \subsection{The follow-up stage}
 
-A semi-coherent search begins by searching with number of segments $\Nseg$ to
+A semi-coherent search begins by searching with $\Nseg$ segments to
 find candidates. Following successful identification of such candidates, these
 are followed-up by semi-coherent searches with fewer segments, zooming in to
 constrain the parameter space. We will now show how a signal can
