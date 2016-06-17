@@ -939,9 +939,12 @@ the amplified phase residuals are given by
                                \left(\frac{\tau_{P}}{\tauAge}\right)
                                \theta
                                \cot\chi
-                               \sin(\dot{\psi} t + \pi/2).
+                               \sin(\dot{\psi} t + \pi/2),
 \label{eqn: Jones 63}
 \end{align}
+where $\tauAge=|\dot{\Phi}/\ddot{\Phi}|$, note this is equivalent up to a factor
+2 with the original definition in Eqn.~\eqref{eqn: tauAge definition}; here,
+we will use the definition from \citet{Jones2001} for consistency.
 This result is derived in \citet{Jones2001} for the magnitude of modulations,
 here we keep the exact time evolution behaviour intact. We will derive this
 expression later on in Section~\ref{sec: derivation of the spin-down rate}.
@@ -1010,7 +1013,7 @@ in its spin-down rate. This has been modelled analytically by several authors
 residuals and spin-down rate modulations were consistent with EM-dominated
 precession. We can confirm this by noting that the inferred precession period for this
 pulsar is $\tauP \approx 500$~days, the period is $P\approx0.405$~s, and
-the spin-down age is $\tauAge = P/\dot{P} \approx 2.1 \times10^{5}$~yrs (values
+the spin-down age is $\tauAge \approx P/\dot{P} \approx 2.1 \times10^{5}$~yrs (values
 taken from the ATNF catalogue \citet{ATNF}), therefore the EM amplification factor
 defined in Eqn.~\ref{eqn: EM amplification} is
 \begin{align}
@@ -1071,13 +1074,14 @@ then solving Eqn.~\eqref{eqn: EM DE} with this constant value we get
                       + (n-1)k\sin^{2}\Theta_0 t + \right)^{\frac{-1}{n-1}},
 \label{eqn: zeroth order soln}
 \end{align}
-where $\dot{\Phi}_0 = \dot{\Phi}(0)$. Now the spin-down time-scale,
-as first defined in Eqn.~\eqref{eqn: tauAge definition}, is
+where $\dot{\Phi}_0 = \dot{\Phi}(0)$. Now the spin-down timescale is
 \begin{align}
 \tauAge = \frac{|\dot{\Phi}_0|}{|\ddot{\Phi}_0|}
-\approx \frac{1}{k|\dot{\Phi}_0|^{(n-1)} \sin^{2}\Theta_0}.
+\approx \frac{1}{k|\dot{\Phi}_0|^{(n-1)} \sin^{2}\Theta_0},
 \end{align}
-Rearranging gives
+again we note that this differs by a factor of 2 to the definition in
+Eqn.~\eqref{eqn: tauAge definition}, we use this definition here for
+consistency with \citet{Jones2001}. Rearranging gives
 \begin{align}
 k = \frac{1}{\tauAge \dot{|\Phi}_0|^{(n-1)} \sin^{2}\Theta_0}.
 \end{align}
