@@ -23,15 +23,17 @@ axis.
 From \citet{Landau2013classical} the total radiation from a dipole rotated at
 angular frequency $\Omega$ is given by
 \begin{align}
-I = \frac{2}{3}\frac{\Omega^{4}}{c^{3}} d_{0}^{2},
+\mathcal{I} = \frac{2}{3}\frac{\Omega^{4}}{c^{3}} d_{0}^{2},
 \end{align}
 where $d_0$ is the projection of the dipole moment on the plane perpendicular
-to the axis of rotation \citep{Pacini1967}. Following \citet{Shapiro83}, the
+to the axis of rotation \citep{Pacini1967}. We note that we could alternatively
+parameterise with the pulse period $P=\frac{2\pi}{\Omega}$.
+Following \citet{Shapiro83}, the
 magnitude of the magnetic dipole moment for a star with radius $R$ and surface magnetic
 field strength $B_0$ is $B_{0}R^{3}/2$. Including the projection onto the
 plane perpendicular to the rotation axis, the total radiation is then
 \begin{align}
-I = \frac{1}{6}\frac{\Omega^{4}}{c^{3}} B_0^2 R^{6} \sin^{2}\alpha.
+\mathcal{I} = \frac{1}{6}\frac{\Omega^{4}}{c^{3}} B_0^2 R^{6} \sin^{2}\alpha.
 \end{align}
 
 The rotational energy of a body spinning at $\Omega$ with a moment of inertia
@@ -40,9 +42,12 @@ $I_{0}$ is given by
     E = \frac{1}{2}I_{0}\Omega^{2}.
 \end{equation}
 Differentiating this expression with respect to time gives the loss of rotational
-energy, $\dot{E}=I_0 \Omega\dot{\Omega}$. Assuming that all the energy is lost
+energy, $\dot{E}=I_0 \Omega\dot{\Omega}$ where $\dot{\Omega}$ is the angular
+\emph{spin-down rate} which can be related to the changing pulse period by
+$\dot{P}=-2\pi\frac{\dot{\Omega}}{\Omega^{2}}$.
+Assuming that all the energy is lost
 to the rotation of the dipole, hence the name rotation powered pulsars, we can
-equate $\dot{E} = -I$. We then rearrange
+equate $\dot{E} = -\mathcal{I}$. We then rearrange
 to give a power-law relation between the spin-down rate and the spin-frequency:
 \begin{align}
 \dot{\Omega} = -\frac{B_0^{2} R^{6} \sin^{2}\alpha}{6 c^{3} I_0} \Omega^{3}.
@@ -71,7 +76,7 @@ value. Work by \citet{Biryukov2012} found (see Figure~\ref{fig: biryukov}) that
 younger pulsars tend to have braking indices of the correct order of
 magnitude. However, beyond~$\tau_{ch}\approx10^{5}$~years
 the absolute value of the braking index rapidly grows,
-reaching values as large as $10^{6}$~yrs for the oldest pulsar. In addition, an
+reaching values as large as $10^{6}$ for the oldest pulsar. In addition, an
 almost equal number of pulsars have positive and negative values of the braking
 index.
 \begin{figure}[htb]
@@ -93,26 +98,21 @@ observed value ($\Omega_{\mathrm{o}}$) to give
 \end{equation}
 Typically, we make the assumption that all
 pulsars, regardless of their measured braking index, are dominated by EM braking
-such that $N=3$. Then additionally assuming that $\Omega_{i} \gg
+such that $n=3$. Then additionally assuming that $\Omega_{i} \gg
 \Omega_{\mathrm{o}}$ we can approximate to a characteristic age
 \begin{equation}
-    \tauAge = -\frac{\Omega_{\mathrm{o}}}{\dot\Omega_{\mathrm{o}}}
-         = \frac{P}{\Pdot},
+    \tauAge = -\frac{\Omega_{\mathrm{o}}}{2\dot\Omega_{\mathrm{o}}}
+         = \frac{P}{2\Pdot}.
 \label{eqn: tauAge definition}
 \end{equation}
-where $P=\frac{2\pi}{\Omega}$ is the pulse period and
-$\dot{P}=-2\pi\frac{\dot{\Omega}}{\Omega^{2}}$ is the period derivative.  Note
-that, this differs by a factor of $\frac{1}{2}$ to some other definitions which
-assume $n=3$; we drop this coefficient in this work as we often do not know the
-braking index $n$.
 
 To infer the approximate surface magnetic field strength, we first note that
 in the EM dipole braking model:
 \begin{align}
 k = \frac{B_0^{2} R^{6} \sin^{2}\alpha}{6c^{3}I_0}.
 \end{align}
-Then rearranging in Eqn.~\eqref{eqn: n3 braking} we can estimate the surface
-magnetic field strength by
+Then rearranging Eqn.~\eqref{eqn: n3 braking} we can estimate the surface
+magnetic field strength at the poles by
 \begin{equation}
     B_{0} = \left(\frac{6 c^{3} I_{0}}{R^{6} \sin^{2}\alpha}\right)^{\frac{1}{2}} 
             \left(\frac{-\dot{\Omega}}{\Omega^{3}}\right)^{\frac{1}{2}}
@@ -120,12 +120,15 @@ magnetic field strength by
            \sqrt{P \Pdot}
 \label{eqn: surface magnetic field}
 \end{equation}
-In general we do not know the inclination angle $\alpha$, but we can evaluate a 
+In general we do not know the inclination angle $\alpha$, but we can evaluate a
 minimum magnetic field strength by setting $\alpha=\pi/2$. In CGS units, for a
-canonical pulsar with $R=10^{6}$~cm, $I_{0}=10^{45}$~g~cm$^{2}$ \citep{Lyne2012book}, we can approximate
-the magnetic field strength as
+canonical pulsar with $R=10^{6}$~cm, $I_{0}=10^{45}$~g~cm$^{2}$, we can
+approximate the magnetic field strength as $B_{0} = 6.4 \times 10^{19} \sqrt{P
+\Pdot}$~Gauss. It is convention, however, to quote the magnetic field at the equator
+$B_\mathrm{s}$ which differs by a factor of 2 (see \citet{Lyne2012book} for
+details) such that
 \begin{equation}
-    B_{0} = 3.2 \times 10^{19} \sqrt{P \Pdot}.
+    B_{\mathrm{s}} = 3.2 \times 10^{19} \sqrt{P \Pdot}\textrm{ Gauss}.
 \label{eqn: surface magnetic field canonical}
 \end{equation}
 

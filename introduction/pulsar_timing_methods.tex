@@ -1,12 +1,13 @@
 Pulsars can be observed by measuring the variation in amplitude of the radio
-waves from a particular sky location. A single observation consists of measuring
-the amplitude over a period of approximately $30$ minutes or so, which, for pulsars
-with periods $\sim 1$~s, means recording up to several thousand individual pulsations.
+waves from a particular sky location. A single observation consists of
+measuring the amplitude over a time period of approximately $30$ minutes or so,
+which, for pulsars with spin period~$\sim1$~s, means recording up to several
+thousand individual pulsations.
 
 The shape of individual pulses can vary substantially during a single
-observation; to demonstrate this, in Figure~\ref{fig: CP1919 stacked}, successive pulses
-from the first pulsar discovered, PSR B1919+21, are vertically stacked and
-aligned.
+observation; to demonstrate this, in Figure~\ref{fig: CP1919 stacked},
+successive pulses from PSR~B1919+21, the first discovered pulsar, are
+vertically stacked and aligned.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.5\textwidth]{CP1919_stacked}
@@ -18,20 +19,19 @@ produced by \citet{craft1970}.}
 Each pulsation lasts for a small fraction of the pulse period. As an example,
 the pulses in PSR~B1919+21, shown in Figure~\ref{fig: CP1919 stacked}, have
 typical widths of $0.031$~s, but the pulse period is $1.337$~s; note that the
-stacked plot is truncated to show only the pulsation itself. Later,
-in Figure~\ref{fig: pop stats others}, we will show this to be true for the
-normal radio pulsar population by looking at the duty-cycle, the ratio of the
-pulse duration to the pulse period.
+stacked plot is truncated to show only the pulsation itself. Later, in
+Figure~\ref{fig: pop stats others}, we will show this to be a common
+characteristic for the normal radio pulsar population by looking at the
+duty-cycle, the ratio of the pulse duration to the pulse period.
 
 In order to understand the gross features of a pulsar, astronomers average over
 the hundreds to thousands of pulses observed during a single observation to
 create a single integrated pulse profile. This is done by sampling the radio
 signal at fixed time intervals then `folding' all the samples at the pulse
-period (for a complete review see \citet{Lyne2012book}). The integrated pulse
-profile of a pulsar looks similar to any of the individual pulses seen in
-Figure~\ref{fig: CP1919 stacked}, but in contrast to the individual pulses which
-create it, it can be highly stable when measured independently over timescales
-of years.
+period (for a complete review see \citet{Lyne2012book}). In contrast to the
+individual pulses which, as shown in Figure~\ref{fig: CP1919 stacked}, can be
+highly variable, the integrated pulse profile can be highly stable between
+independent observations over timescales of years.
 
 The integrated pulse profile not only gives a stable picture of what the
 pulsations look like on average, but it also provides a highly accurate
@@ -56,16 +56,16 @@ the earth) which is governed by the \emph{timing properties} of the star itself.
 As described by \citet{Edwards2006} these can be modelled by a Taylor expansion
 in the phase at time $t$, given by
 \begin{equation}
-\phi(t) = \sum_{n\ge 1}\frac{\nu^{(n-1)}}{n!}(t - \tref)^{n} + \phi_{0},
+\phi(t) = \phi_0 + 2\pi \sum_{n\ge 1}\frac{\nu^{(n-1)}}{n!}(t - \tref)^{n},
 \label{eqn: Taylor compact}
 \end{equation}
-where $\{\nu^{(n)}\}$ is the frequency $\nu$, spin-down rate $\dot{\nu}$, etc.
-of the rotating body, $\phi_0$ is the initial phase, and $\tref$ is an
-arbitrary reference time. This expansion is usually truncated at $n=3$, the
-second order spin-down rate $\ddot{\nu}$. The timing model then includes
-corrections to this to model the relative motion of the source and detector,
-intergalactic transit, and other effects; these are described in full in
-\citet{Edwards2006}.
+where $\{\nu^{(n)}\}$ is the $n^\mathrm{th}$ time derivative of the spin
+frequency of the rotating body, $\phi_0$ is the initial phase, and
+$\tref$ is an arbitrary reference time. This expansion is usually truncated at
+$n=3$, the second order spin-down rate $\ddot{\nu}$. The timing model then
+includes corrections to this to model the relative motion of the source and
+detector, intergalactic transit, and other effects; these are described in full
+in \citet{Edwards2006}.
 
 Between any two TOAs, if the timing model is correct, an integer number of
 rotations must have occurred; this allows the use of the deviation of
@@ -78,7 +78,7 @@ errors.  The corrections applied in a timing model provide a method to
 investigate pulsar physics: for example in some pulsars an orbital correction
 must be applied which models the periodic motion of the star due to an orbital
 companion. Using this technique, \citet{wolszczan1992planetary} discovered the
-first \emph{exoplanet} orbiting the pulsar PSR~B1257+12.
+first \emph{exoplanets} orbiting the pulsar PSR~B1257+12.
 
 A minimisation of the timing model parameters will converge regardless of
 whether of not the model itself is appropriate. To qualitatively check if the
