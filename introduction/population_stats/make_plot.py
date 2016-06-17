@@ -86,7 +86,7 @@ print("len(tauAge): {}".format(len(tauAge)))
 tauAge = tauAge[~np.isnan(tauAge)] # Yrs
 log10tauAge = np.log10(tauAge)
 ax1 = setup_hist(log10tauAge, ax1, 30)
-ax1.set_xlabel(r"$\log_{10}(\tau_{\textrm{age}}/\textrm{yrs})$")
+ax1.set_xlabel(r"$\log_{10}(\tau_{\mathrm{age}}/\textrm{yrs})$")
 ax1 = AddNormal(ax1, log10tauAge)
 ax1.set_ylabel("Normalised count")
 
