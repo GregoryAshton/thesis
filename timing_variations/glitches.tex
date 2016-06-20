@@ -1,19 +1,28 @@
-In addition to the regular spin-down of radio pulsars due to magnetic braking,
+In addition to the regular spin-down of isolated radio pulsars due to magnetic
+braking,
 some pulsars undergo anomalies in their timing solutions known as
-\emph{glitches}.  These are sudden rapid increases in the pulsation frequency
+\emph{glitches}.  These are sudden rapid increases\footnote{A single `anti glitch'
+in an isolated magnetar has also been reported by \citet{archibald2013anti} in
+which the pulsation frequency spontaneously decreased. The implications of this
+remain unclear, but its existence has support in the literature (see for example
+\citet{hu2014glitch}).}
+ in the pulsation frequency
 which were first observed in the Crab \citep{Boynton1969, Richards1969} and
 Vela pulsars \citep{RadhakrishnanManchester1969, Reichley1969}. Pulsar
 timing methods model this as a permanent increase in the phase, frequency, and
 first frequency derivative in addition to a frequency increment that
-subsequently decays exponentially to zero \citep{Edwards2006}.  To model this,
+subsequently decays exponentially to zero.  To model this,
 for each glitch pulsar astronomers add on an additional term to
-Eqn.~\eqref{eqn: Taylor compact}:
+Eqn.~\eqref{eqn: Taylor compact} which is described in
+Eqn.~(121) of \citet{Edwards2006}\footnote{Note that there is a typographical
+error in Eqn.~(121) of \citet{Edwards2006}: the final $t-\tg$ should in fact
+be $\tau$}:
 \begin{align}
 \begin{split}
 \phi_{\textrm{g}} = H(t - \tg)& {}\left(
-\Delta\phi + \Delta\nu(t - \tg) + \frac{\Delta\dot{\nu}}{2}(t - \tg)^{2} \right.\\
-& \hspace{3mm}+ \left.\left[1-\exp\left(-\frac{t - \tg}{\tau}\right)\right]
-\Delta\nu_{\textrm{t}}(t - \tg)
+\Delta\phi + \Delta\nu(t - \tg) + \frac{\Delta\dot{\nu}}{2}(t - \tg)^{2}
++ \left[1-\exp\left(-\frac{t - \tg}{\tau}\right)\right]
+\Delta\nu_{\textrm{t}}\tau
 \right),
 \end{split}
 \label{eqn: glitch timing model}
@@ -49,13 +58,13 @@ we reproduce data from this review on a glitch in the Crab pulsar.
     \centering
     \includegraphics[width=0.5\textwidth]{GlitchExample_jbman}
     \caption{
-A glitch in the PSR B0531+21, the Crab pulsar. It occurred around MJD
-53067 and had a fractional frequency jump of $\Delta\nu/\nu = 5.33 \pm 0.05
-{\times}10^{−9}$. (a) The timing residuals relative to a
+A glitch in PSR~B0531+21, the Crab pulsar. It occurred around MJD\protect\footnotemark
+~53067 and had a permanent fractional frequency jump of $\Delta\nu/\nu = 5.33 \pm 0.05
+{\times}10^{-9}$. (a) The timing residuals relative to a
 slowdown model with two frequency derivatives when fitting data only up to the
 glitch date. (b) Timing residuals after fitting all data in the plot; note
 that the glitch feature is still visible. Both these panels have the same
-scale, covering 500 ms. (c) Frequency residuals, obtained by subtracting the
+$y$-scale, covering 500 ms. (c) Frequency residuals, obtained by subtracting the
 main slope given by an average $\dot\nu$. (d) The behaviour of $\dot\nu$
 through the glitch. This figure and caption are adapted from Figure~(1) of
 \citet{Espinoza2011}.}
@@ -67,21 +76,21 @@ times. Typical values of the instantaneous frequency change range from
 $10^{-9}$~Hz to $10^{-4}$~Hz For some pulsars this is accompanied by a change,
 with either sign, in the spin-down rate $\Delta\dot{\nu}$ with absolute
 magnitudes between $10^{-19}$~Hz/s to $10^{-12}$~Hz/s.
-In most pulsars the \emph{glitch recovery parameter}, defined as
+The \emph{glitch recovery parameter} is defined as
 \begin{align}
-Q = \frac{\Delta\nu_\textrm{t}}{\Delta\nu + \Delta\nu_\textrm{t}},
+Q = \frac{\Delta\nu_\textrm{t}}{\Delta\nu + \Delta\nu_\textrm{t}}.
 \end{align}
-can not be measured. This may be due either to infrequent observations of the
-pulsar, or simply that $Q\ll1$.  A review of pulsars with measured values of
-$Q$ was conducted by \citet{Lyne2000}; they found that in glitches from 18
-pulsars, $Q$ correlates with $|\dot{\nu}|$ reaching values as large as
-$\sim0.9$ for the youngest pulsar with the highest absolute spin-down rate,
-the Crab pulsar.
+Most glitches are not resolved with sufficient detail to determine this
+recovery parameter accurately. A review of those pulsar glitches with measured
+values of $Q$ was conducted by \citet{Lyne2000}; they found that in glitches
+from 18 pulsars, $Q$ correlates with $|\dot{\nu}|$ reaching values as large as
+$\sim0.9$ for the youngest pulsar with the highest absolute spin-down rate, the
+Crab pulsar.
 
 Many pulsars have been observed to glitch several times, \citet{Melatos2008}
 considered the waiting times between glitches and concluded that in most
 glitching pulsars the glitches happen randomly with waiting times consistent
-with a Poisson process, except in PSR J0537-6910 and PSR J0835-4510 which
+with a Poisson process, except in PSR~J0537-6910 and Vela which
 displayed quasi-periodicity in the waiting times.
 
 In Chapter~\ref{sec: glitches in cgw}, we perform our own investigation into the
@@ -92,10 +101,13 @@ magnitudes has multiple modes which suggests that glitches may come from more
 than one mechanism. We go on to apply a statistical model and determine empirically
 the properties of the underlying source populations.
 
+\footnotetext{
+The modified Julian date (MJD) calender counts days from an epoch of
+midnight on the $17{\mathrm{th}}$ of November 1858.}
+
 Glitches provide a unique opportunity to investigate the physics of neutron
-stars and many of the leading insights have been gained by their study. Two
-leading models exist known as the \emph{superfluid unpinning} model and the
-\emph{starquake} model.
+stars. The two models able to explain some of the observations are known as the
+\emph{superfluid unpinning} model and the \emph{starquake} model.
 
 In the superfluid unpinning model proposed by \citet{Anderson1975}, the star
 contains a superfluid component in which the angular momentum is stored in an
@@ -113,24 +125,24 @@ occurs, we see a rapid increase in the frequency.
 
 The second model, starquakes, follows from the observation that a rapidly
 spinning fluid body has an oblate `rest shape' with a bulge about its equator
-due to the centrifugal force. The crust of a star spinning at a some frequency
-will solidify with a corresponding oblateness which we call the reference
-oblateness. Subsequently, as the star spins down, it will have a different rest
-oblateness due to its decreased frequency, but the crust will retain a memory
-of the earlier reference oblateness at which it solidified. This will cause
-strains in the crust which eventually cause a starquake relieving the strain,
-resetting the reference rest shape, and producing glitch like features. This
-model was first proposed by \citet{Ruderman1969} and later built upon by
-\citet{Baym1971}.
+due to the centrifugal force. The crust of a star spinning at some frequency
+will solidify as the star cools with a corresponding oblateness which we call
+the reference oblateness. Subsequently, as the star spins down, it will have a
+different rest oblateness due to its decreased frequency, but the crust will
+retain a memory of the earlier reference oblateness at which it solidified.
+This will cause strains in the crust which eventually cause a starquake
+relieving the strain, resetting the reference rest shape, and producing glitch
+like features. This model was first proposed by \citet{Ruderman1969} and later
+built upon by \citet{Baym1971}.
 
 Both of these models have support in the literature and have been developed
 significantly to explain the variety of observed glitches. However, there are
 observations which cause difficulties for both models: glitches seen in the
-Vela pulsar are too large and too often to be consistent with a starquakes
-model, while the unpinning model requires a superfluid component which is at
-odds with observation of precession (we discuss this further in
-Chapter~\ref{sec: testing models}). In this thesis, we will not use glitches
-as a tool for inferring neutron star physics, but any predictions we do make
-must be compatible with what has already been learnt from glitches.
+Vela pulsar are too large and too often to be consistent with a starquake model
+\citep{chamel2008physics}, while the unpinning model requires a superfluid
+component which is at odds with observation of precession (we discuss this
+further in Chapter~\ref{sec: testing models}). In this thesis, we will not use
+glitches as a tool for inferring neutron star physics, but any predictions we
+do make must be compatible with what has already been learnt from glitches.
 
 

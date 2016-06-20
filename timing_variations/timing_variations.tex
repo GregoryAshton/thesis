@@ -7,7 +7,8 @@
 \begin{document}
 
 Timing variations are, broadly speaking, any time when the usual Taylor
-expansion in the phase Eqn.~\eqref{eqn: Taylor compact} does not accurately
+expansion in the phase Eqn.~\eqref{eqn: Taylor compact} (typically up to the 
+second-order spin-down rate $\ddot{\nu}$) does not accurately
 describe the phase evolution of the pulsations. Two distinct types of variations
 exist: the sporadic event-like \emph{glitches} seen in some pulsars
 and the ubiquitous \emph{timing noise} present, at some level, in all pulsars.
@@ -71,7 +72,7 @@ The motion of the particle has two components, the deterministic effect of the
 potential and random fluctuations.
 
 We now modify the potential to be acted on by a weak periodic function; this
-introduced a third possible type of behaviour. Writing the time dependant
+introduced a third possible type of behaviour. Writing the time dependent
 potential as
 \begin{equation}
     V(x,t) = \frac{x^{4}}{4}-\frac{x^{2}}{2} + \epsilon x \cos(\omega_{0} t).
@@ -86,13 +87,13 @@ $\omega_{0}=\frac{2\pi}{10}$ and choose three values of $\sigma$ which illustrat
 typical behaviours of the solution
 \begin{figure}[ht]
 \centering
-   \includegraphics[width=0.4\textwidth,trim=0mm -10mm 0mm 0mm]
+   \includegraphics[]
    {{Stochastic_resonance}.png}
 
 \caption{Three solutions to Eqn.~\eqref{eqn:stochastic eom} changing the
     random forcing functions strength $\sigma$. The first and last panels show the
     non-resonant solutions for the particle position: either the forcing
-    function is weak compared to the potential, the particle remains in well in
+    function is weak compared to the potential and so the particle remains in well in
     which it begins; or the forcing function is much stronger than the
     potential and so the particle freely moves about the two wells. The middle
     panel illustrates the special case of stochastic resonance whereby the

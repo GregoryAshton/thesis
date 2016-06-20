@@ -13,7 +13,7 @@ like a random walk over a short timescale, may in fact be periodic or something
 else entirely over longer timescales.  Observations of new features prompt new
 models for timing noise; as a result the timing noise interpretations have
 evolved with the observations. In this section, we will present an overview of
-these interpretations and the existing evidence which supports them.
+these interpretations and the evidence which supports them.
 
 \subsection{Random walk models}
 \label{sec: TN interpretations random walk models}
@@ -26,7 +26,7 @@ the pulse phase, frequency, or spin-down will undergo a sudden step; these are
 referred to as phase noise (PN), frequency noise (FN) and spin-down noise (SN).
 The waiting times between steps are Poisson distributed with a rate $\lambda$.
 The number of events in such a model is considered to be
-large such in a typical observation time $\Tobs$ we observe the superposition
+large such that in a typical observation time $\Tobs$ we observe the superposition
 of many events. Following the method of \citet{Cordes1980}, the \emph{strength}
 of the three types of timing noise can be defined as
 \begin{align}
@@ -42,7 +42,7 @@ separating the observed TOA into blocks of data of duration $T$ and fitting a
 timing model to each block.  In each block, one can then calculate the phase
 residual $\Delta\varphi(t)$. Time averaging
 the squared phase residual for each block of duration $T$ and then averaging
-over all the blocks of data we define
+over all the blocks of data, we define
 \begin{align}
 \sigma^{2}_\varphi(T) = \left\langle\frac{1}{T}\int_{0}^{T}\Delta\varphi(t)^{2} dt \right\rangle,
 \label{eqn: sig phi T}
@@ -83,18 +83,18 @@ Crab was subsequently analysed by \citet{Groth1975} and \citet{Cordes1980}; the
 analysis was extended to other pulsars by \citet{Helfand1980} and
 \citet{CordesHelfand1980}.
 
-The interpretation of timing noise as a Poisson random walk is a purely
+The modelling of timing noise as a Poisson random walk is a purely
 empirical statistical model. It is however backed up for a rich variety of
 possible substantive physical models.  A key feature of any physical random
 walk model is that it must be able to produce both increases and decreases in
-the relevant parameter. For this reason, it is felt unlikely that the mechanism
-responsible for a random walk timing noise model is the same as model proposed
+the relevant parameter. For this reason, it is unlikely that the mechanism
+responsible for a random walk timing noise is the same as that proposed
 to explain glitches. Since it is assumed that the number of events
 is large so that we can take a statistical average, this does not test if the
 process is indeed discrete, or if it is continuous.
 
 The first substantive physical model to explain the random walk was proposed by
-\citet{Boynton1972}, the noise process consisted of the accretion of small
+\citet{Boynton1972}. The noise process consisted of the accretion of small
 lumps of matter onto the star from the interstellar medium. Lumps of matter fall
 randomly onto the surface of the star causing either a spin-up or spin-down
 through the transfer of angular momentum. After this, many models were proposed
@@ -103,23 +103,25 @@ were reviewed by \citet{Cordes1981} and evaluated against observational
 constraints. Of these, only three mechanisms where found to be consistent with
 observations: crust breaking by vortex pinning, a response to heat pulses, and
 luminosity related torque fluctuations. Since this review, new random walk
-mechanisms have been proposed such as: variations in the magnetospheric gap
-size \citep{Cheng1987}; the interference by debris entering the magnetosphere
-\citep{Cordes2008}; and the accumulation of multiple micro-glitches
+mechanisms have been proposed such as variations in the magnetospheric gap
+size \citep{Cheng1987}, the interference by debris entering the magnetosphere
+\citep{Cordes2008}, and the accumulation of multiple micro-glitches
 \citep{Janssen2006}. It would be a useful exercise to review both the new and
-old mechanisms against the current observational catalogue since new and
-improved observations may better constrain some of these physical models.
+old mechanisms against the current observational catalogue since improvements in
+the quality and duration of data, and a larger number of source may better
+constrain some of these physical models.
 
-The first measurement of individual events was made by \citet{Cordes1985} who
-identified $\sim20$ events in both frequency and spin-down which could not be
-explained by a glitch. In the same work, considering 24 pulsars over a period
-of~$\sim13$~years, the authors concluded that: the timing noise seen in the
-data could not be explained solely by an idealised random walk processes in the
-phase, or its derivatives. They suggested that most of the activity is due to a
-mixture of events in the phase, frequency and/or frequency derivative.
+The first measurement of apparent individual timing noise events was made by
+\citet{Cordes1985} who identified $\sim20$ events in both frequency and
+spin-down which could not be explained by a glitch. By considering 24 pulsars
+over a period of~$\sim13$~years, the authors concluded that the timing noise
+seen in the data could not be explained solely by an idealised random walk
+processes in either the phase, or its derivatives. They suggested instead that
+most of the activity is due to a mixture of events in the phase, frequency
+and/or frequency derivative.
 
 A recent observational review of timing noise was performed by
-\citet{Hobbs2010} for 366 pulsars, the authors do not use the observations to
+\citet{Hobbs2010} for 366 pulsars. The authors do not use the observations to
 constrain random walk models. Instead, they state that timing noise cannot be
 explained by a simple random walk model and when observed on sufficiently long
 timescales, the residuals which may before have looked like a random walk,
@@ -140,11 +142,11 @@ periods of data, a random walk provides a good empirical description.
 A mechanism which could quite naturally produce strictly periodic variations in
 the observable features of a pulsar is \emph{free precession}. This occurs in
 any non-spherical rigid body for which the angular momentum is not aligned with a
-principle axis of the moment of inertia. Such a circumstance could arise given
+principal axis of the moment of inertia. Such a circumstance could arise given
 the chaotic birth of neutron stars. However, we must be clear that the timing noise
 induced by precession alone would be strictly deterministic; this is something
 which we do not typically observe except in a handful of pulsars, one of which
-is considered in Chapter.~\ref{sec: testing models}. We will now
+is considered in Chapter~\ref{sec: testing models}. We will now
 consider the mechanics of free precession.
 
 In the simplest case, we take a biaxial body,
@@ -171,7 +173,7 @@ equations of motion \citep{Landau1969} are given by
 \end{equation}
 This is a system of three coupled ordinary differential equations (ODEs).
 Writing the components of the
-spin-vector as $\bm{\Omega} = [\Omega_{x}, \Omega_{y}, \Omega{z}]$, we have
+spin-vector as $\bm{\Omega} = [\Omega_{x}, \Omega_{y}, \Omega_{z}]$, we have
 \begin{align}
 \dot{\Omega}_x = -\epsI \Omega_y\Omega_z, &&
 \dot{\Omega}_y = \epsI \Omega_x \Omega_z, &&
@@ -182,9 +184,9 @@ We are then left with a set of
 two coupled ODEs, solving these with appropriate initial conditions
 the solutions take the form
 \begin{align}
-    \Omega_{x} & = \Omega_{0}\sin(a_0)\sin\left(\Omega_{0}\cos(a_0)\epsilon t\right),
+    \Omega_{x} & = \Omega_{0}\sin(a_0)\sin\left(\Omega_{0}\cos(a_0)\epsI t\right),
 \label{eqn: free precession x} \\
-    \Omega_{y} & = \Omega_{0}\sin(a_0)\cos\left(\Omega_{0}\cos(a_0)\epsilon t\right),
+    \Omega_{y} & = \Omega_{0}\sin(a_0)\cos\left(\Omega_{0}\cos(a_0)\epsI t\right),
 \label{eqn: free precession y} \\
     \Omega_{z} & = \Omega_0 \cos(a_0),
 \label{eqn: free precession z}
@@ -193,9 +195,9 @@ where $a_0$ is the angle between the spin-vector and the body frame $z$ axis, an
 $\Omega_0$ is the magnitude of the spin-vector.
 
 We observe that the spin axis of the body will trace out a cone about the $z$
-principle axis of the moment of inertia with a period of
+principal axis of the moment of inertia with a period of
 \begin{align}
-\tau_P = \frac{1}{\Omega_{z}\epsilon}.
+\tau_P = \frac{2\pi}{\Omega_{z}\epsI}.
 \label{eqn: tauP free}
 \end{align}
 The half-angle of the cone is set by the
@@ -207,36 +209,40 @@ and is illustrated in Figure~\ref{fig: precession}.
 \caption{Illustration of free precession for a simple biaxial body. The spin
     axis $\mathbf{\Omega}$ traces out a cone about the angular momentum vector $\mathbf{J}$.}
 \label{fig: precession}
-\end{figure}•
+\end{figure}
 
-Neutron stars are assumed to have a solid crust, as such they may be
-non-axially symmetric. Precession, as a candidate to explain timing noise
+It was shown by \citet{ruderman1969neutron} that neutron stars should have a
+solid crystalline crust which is capable of supporting shear stresses such
+that there may be differences in the components of associated moment of inertia
+tensor. Precession, as a candidate to explain timing noise
 fluctuations, was first discussed by \citet{Ruderman1970}. He found that the
-free precession period was, for reasonable values of the  ellipticity
-$\epsilon$, able to explain periodic fluctuations in the Crab pulsar.
-Precession is one of the few periodic mechanism that could act on neutron star
-with the typical periods observed in typical timing residuals.
+free precession period was, for an ellipticity of $\epsI \sim 10^{-9}$, able to
+explain periodic fluctuations in the Crab pulsar.
+Precession is one of the few periodic mechanism that could act on neutron stars
+with the periods observed in typical timing residuals.
 
 However, the superfluid unpinning interpretation for glitches poses a problem for
 sustained free precession as an interpretation of timing noise. If correct,
 then the interior of a neutron star must contain a superfluid component pinned
 to the crust. It was shown by \citet{Shaham1977} that for perfect pinning the
-deformation of the star is modified resulting in
+deformation of the star is modified, resulting in
 \begin{align}
-\epsilon = \frac{\Delta I}{I_0} + \frac{I_{\textrm{psf}}}{I_0},
+\epsI = \frac{\Delta I}{I_0} + \frac{I_{\textrm{psf}}}{I_0},
 \end{align}
 where $I_\textrm{psf}$ is the moment of inertia of the superfluid pinned to the
-crust. To explain the magnitude of observed glitches this second term was found
-to be $\sim 0.01$. Inserting this into Eqn.~\eqref{eqn: tauP free}, we see that
-the free precession period must be approximately 100 times the spin-period. Therefore,
-the existence of a perfectly pinned superfluid precludes long-period precession
-where the precession period is millions of times longer than the spin-period.
+crust. To explain the magnitude of observed large glitches this second term is
+typically found to be $\sim 0.01$ (see for example Table~(1) of
+\citet{andersson2012}). Inserting this into Eqn.~\eqref{eqn: tauP free}, we see
+that the free precession period must be approximately 100 times the
+spin-period. Therefore, the existence of a perfectly pinned superfluid
+precludes long-period precession where the precession period is millions of
+times longer than the spin-period.
 
 Despite the inconsistency with the superfluid pinning model for glitches,
 evidence was presented by \citet{Stairs2000} of free precession in
 PSR~B1828-11. They found the phase residuals and variations in the pulse profile
 could be accounted for by precession. This pulsar has been studied by others
-since and in Chapter.~\ref{sec: testing models} we will discuss this pulsar and
+since and in Chapter~\ref{sec: testing models} we will discuss this pulsar and
 the precession interpretation in more detail.
 
 One resolution to this comes from relaxing the assumption that the superfluid
@@ -245,10 +251,10 @@ superfluid allows long-lived precession with damping. It is therefore possible,
 as noted by \citet{Cordes1993} that free precession may be excited by torque
 fluctuations that counter the damping process; in turn, the precession can
 drive torque fluctuations. However, there remains some uncertainty as to the
-details of this model so whether precession can coexist with a superfluid core
+details of this model, so whether precession can coexist with a superfluid core
 remains an open question. Resolving this, and determining exactly how the
 models are incompatible is an important task which we hope to make some headway
-on in this thesis by studying the case for precession in Chapter.~\ref{sec:
+on in this thesis by studying the case for precession in Chapter~\ref{sec:
 testing models}.
 
 
@@ -256,9 +262,9 @@ testing models}.
 \label{sec: two state switching}
 
 Recently a new model has been proposed by \citet{Lyne2010} to explain the
-observation that of quasi-periodicity in timing noise structure.
+observation of quasi-periodicity in timing noise structure.
 This work was motivated by the observations of \citet{Kramer2006} that the
-pulses from PSR~B1931+24 where intermittent: the pulsar acts as a normal pulsar
+pulses from PSR~B1931+24 were intermittent: the pulsar acts as a normal pulsar
 for $\sim10$~days and then switches off, being undetectable for $\sim25$~days,
 before switching on again. This behaviour can be understood as the pulsar switching
 between two states. Analysing the spin-down rate between the on and off
@@ -284,21 +290,21 @@ the timing residual; this shows significant quasi-periodic modulations
 correlated with the switching.
 
 PSR~B1931+24 evidently switches suddenly and periodically between two distinct
-states. The authors, \citet{Kramer2006}, realised that the neutron star
+states. \citet{Kramer2006} realised that the neutron star
 magnetosphere is the only mechanism which could produce such sharp changes with
-correlated changes in the spin-down rate and beam.  It intuitively makes sense
+correlated changes in the spin-down rate and beam.  It makes sense
 that magnetospheric state which does not produce EM emission may have a lower
 spin-down rate while the state which does produce radiation has a higher
 spin-down rate.
 
-Motivated by this observation, the authors of \citet{Lyne2010} tested a range
+Motivated by this observation, \citet{Lyne2010} tested a set
 of other pulsars and presented a study of 17 pulsars for which they found
 evidence for `two-state magnetospheric switching'. Unlike in PSR~B1931+24,
 these pulsars are not intermittent, but are seen to continuously pulse. The
 authors measured changes in the spin-down rate $\dot{\nu}$ of each pulsar by
 using what we will call in this thesis the \emph{observer-method}. This
 consists of fitting a Taylor expansion to short segments of data of duration
-$T$, in each segment the fitted coefficient $\dot{\nu}$ is taken as a
+$T$. In each segment, the fitted coefficient $\dot{\nu}$ is taken as a
 measurement of the spin-down rate at the mid-point of the segment. Repeating
 this process in a sliding window at intervals $T/4$ throughout the whole data set gives the
 evolution of the spin-down rate over the entire observation.  Over a
@@ -315,7 +321,7 @@ original plot showing the periodic variations in spin-down rates.
 
 The method used to calculate the spin-down in Figure~\ref{fig: lyne 2010 fig2}
 required time averaging; the baseline used $T$ is given below the pulsar name
-on the right-hand side of the plot, typically $T\sim100$~days. The authors of
+on the right-hand side of the plot, typically $T\sim100$~days.
 \citet{Lyne2010} argue that, if the pulsar is in fact switching between
 magnetospheric states, then its spin-down rate will be periodically switching
 between at least two values. In the event that the switching occurs over
@@ -337,7 +343,7 @@ To test if the mechanism causing these variations is smooth or instantaneous
 to the time-averaging process.  This is possible by looking at individual
 measurements of the pulse width which are taken during each short $\sim30$~minute
 observation. In this way, they are time averaged over a duration much shorter
-than the modulation period and could, in principle, resolve individual
+than the modulation period and could, in principal, resolve individual
 switching events. They were able to do this for two pulsars, PSRs~B1822-09 and
 B1828-11, and argue that the individual beam-width measurements, by eye, can be
 interpreted as taking one of two values with few observations seen in between.
@@ -345,26 +351,26 @@ They took this as evidence that the pulsars were indeed undergoing sudden,
 instantaneous, and periodic switching between two states. We note that the
 stronger of these two candidates, PSR~B1828-11, was previously discussed in the
 context of free precession in Section~\ref{sec: free precession}.
+\citet{Lyne2010} argue that the fast state changes seem to rule out free
+precession as the origin of oscillatory behaviour observed in timing residuals,
+in particular for PSR~B1828-11.
 
 Since this initial study, evidence for switching in two others pulsars have
-been reported by \citet{Perera2014} and \citet{Perera2016} with additions added
+been reported by \citet{Perera2015} and \citet{Perera2016} with additions added
 to the model in terms of the detail of the switching. However, so far the
 magnetospheric switching hypothesis is missing an underlying physical model
 which both causes the switching between states and provides the clock regulating
 the period.
 
-\citet{Lyne2010} argue that the fast state changes seem to rule out free
-precession as the origin of oscillatory behaviour observed in timing residuals,
-in particular for PSR~B1828-11.
 
-\citet{Jones2012} argues that such dismissal of precession is premature since
+\citet{Jones2012} argues that the dismissal of precession is premature since
 the modulation period of the switching has yet to be explained.  Instead, the
 author raises the idea that precession and magnetospheric switching are not
 mutually exclusive, but precession may in fact cause the switching. Pulsars are
-most probably born in a randomly distributed magnetospheric state, at least
+most probably born in a randomly distributed magnetospheric state. At least
 some may therefore exist under a delicate balance between two states.
 Precession may be capable of periodically varying the statistical probability
-of existing in one state or the other, sharp changes would be caused by an
+of existing in one state or the other. Sharp changes would be caused by an
 `avalanche effect' as the particle energies reach a threshold.  This provides
 the timescale for switching along with the ability for the switching to be
 quasi-periodic since the precession only biases the probability.
@@ -384,9 +390,9 @@ important implications for neutron star physics. Later on in Chapter~\ref{sec:
 testing models} we will investigate this issue, particularly in the context of
 PSR~B1828-11, using a quantitative model comparison. In the remainder of this
 section we will build a model for magnetospheric switching incorporating all
-the ideas of \citet{Lyne2010} and \citet{Perera2014}; this model forms the basis
+the ideas of \citet{Lyne2010} and \citet{Perera2015}; this model forms the basis
 of the model compared against precession in Chapter~\ref{sec: testing models}.
-Finally, in Section\ref{sec: switching predictions} we show how this simple
+Finally, in Section~\ref{sec: switching predictions} we show how this simple
 empirical model of switching makes a testable prediction which could be
 checked by pulsar astronomers using current data.
 
@@ -404,7 +410,7 @@ we label $A$ and $B$. The star spends a time $t_A$ and $t_B$ in each state such
 that $t_A+t_B$ gives the total period of switching. We then associate spin-down
 rates, $\dot{\nu}_{A}$ and $\dot{\nu}_{B}$ to each of the states such that the
 underlying spin-down rate is a square wave oscillating between these values.
-Since we do not concern our self in this description with the exact periods,
+Since we do not concern ourselves in this description with the exact periods,
 only the gross features, let us define the ratio of time spent state in state
 $A$ and $B$ as $R = t_{B}/t_{A}$.
 
@@ -462,7 +468,7 @@ two durations which the system spends in those states. These results can be
 contrasted with the spin-down rates of PSR~B1828-11 seen in Figure~\ref{fig: lyne
 2010 fig2}.  With only the ingredients described by \citet{Lyne2010}, it is not
 possible to consistently replicate the double peaked spin-down rate variations
-seen for this pulsar. A similar problem was faced by \citet{Perera2014} for
+seen for this pulsar. A similar problem was faced by \citet{Perera2015} for
 PSR~B0919+06, in response the authors devised the following solution. Rather
 than introduce a third spin-down state, they simply required that the system
 has four periods instead of two as in the original \citet{Lyne2010}
@@ -476,7 +482,7 @@ days.
     \centering
     \includegraphics[]{TestLyneUnderlying}
     \caption{The spin-down rate $\dot{\nu}$ and its time-average $\langle\dot{\nu}\rangle$
-    for a single cycle of the \citet{Perera2014} switching model in which the
+    for a single cycle of the \citet{Perera2015} switching model in which the
     system switches between the two states four times during a single cycle.
     For the time-averaged spin-down rate, we have used a baseline of $100$~days,
     which is longer than the shortest period of $\tI{C}=$50~days; for this period we
@@ -485,7 +491,7 @@ days.
     \label{fig: test lyne underlying}
 \end{figure}
 
-The \citet{Perera2014} switching model naturally produces the doubly peaked
+The \citet{Perera2015} switching model naturally produces the doubly peaked
 time-averaged spin-down rate seen in PSR~B1828-11 when the time-averaging baseline is longer
 than one of the switching periods. To explain more fully, when the time
 averaging baseline is longer than a single period, then the time-average over
@@ -497,7 +503,7 @@ phase residual for this model to illustrate the variations in the residuals.
 \begin{figure}[htb]
     \centering
     \includegraphics[]{Perera}
-    \caption{Illustration of the \citet{Perera2014} extension to the
+    \caption{Illustration of the \citet{Perera2015} extension to the
     \citet{Lyne2010} model in which the system switches between the two states
     four times per cycle, giving four independent switching periods. In this
     figure, $t_\textrm{tot}=t_\textrm{A}+t_\textrm{B}+t_\textrm{C}+t_\textrm{D}$.
@@ -516,14 +522,14 @@ PSR~B1828-11, which has a distinct doubly peaked spin-down, is one of two
 pulsars for which the authors of \citet{Lyne2010} applied their magnetospheric
 switching hypothesis too. Since
 that result, several other pulsars have been found with a similar double-peaked
-structure \citep{Perera2014, Perera2016}. In the previous section we introduced
+structure \citep{Perera2015, Perera2016}. In the previous section we introduced
 a basic empirical model to explain this double-peak in the context of
 magnetospheric switching. We will now describe a simple method to test this
 switching hypothesis which so far, to our knowledge, has not been attempted,
 but could be applied to current observational data.
 
 If the double peaked spin-down rates of PSRs~B1828-11, B0919+06, or any other pulsar
-is due to the model proposed by \citet{Perera2014}, then the maximum spin-down rate
+is due to the model proposed by \citet{Perera2015}, then the maximum spin-down rate
 of the lower of the two peaks is a function of the time-averaging process and not
 the pulsar itself.  Specifically, if the time-averaging was shorter than the
 shortest period there would be no second lower peak: both peaks would have the same
@@ -559,7 +565,7 @@ time-averaging is of a similar length to the total period of switching and so
 we can't resolve any of the features.
 
 We have shown that variations in the ratio of the two peaks in spin-down rate
-would provide clear evidence in support of the \citet{Perera2014} model. Of
+would provide clear evidence in support of the \citet{Perera2015} model. Of
 course in this example we have considered a simple situation where we have
 known a priori which peak is being underestimated due to the observer-method of
 calculating the time averaged spin-down rate. In real data, the situation may
@@ -606,7 +612,7 @@ Perera model.
 %
 %\citet{Biryukov2012} proposed that the spin-down $\dot{\nu}(t)$ may contain the
 %secular spin-down $\dot{\nu}_{\textrm{sec}}(t)$ and a cyclic component
-%$\dot{\nu}_{\textrm{sec}}(t)\epsilon(t)\nu(t)$ oscillating the spin-down about
+%$\dot{\nu}_{\textrm{sec}}(t)\epsI(t)\nu(t)$ oscillating the spin-down about
 %a mean value. Taking a simple case where the cyclic term has the form $A
 %\cos\phi(t)$ where $A$ is the relative amplitude of the oscillations and
 %$\phi(t)$ is linear in $t$, the authors derive an equation for the observed braking
