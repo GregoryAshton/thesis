@@ -29,18 +29,18 @@ the analytic calculations. In this chapter, we will build a numerical model
 solving the Euler rigid-body equations with the Deutsch torque. This will allow
 us to compare solutions in which the anomalous torque is `switched off' with
 solutions to the full torque; in doing so we hope to better understand the
-important of the anomalous torque and verify that in cases where it has been
+importance of the anomalous torque and verify that in cases where it has been
 neglected (see for example \citep{Goldreich1970}) that such an assumption was
 appropriate. A similar numerical model was studied by \citet{Melatos2000},
 although the authors did not switch on and off the anomalous component.
 Furthermore, the authors found solutions which they labelled as `persistent
 precession': in Section~\ref{sec: biaxial neutron star with anomalous torque} we will
 confirm that such solutions exist, but give a physical explanation from which we
-conclude that the precession is not persistent.
+conclude that precession is not persistent.
 
 The rest of this chapter is organised as follows: in Section~\ref{sec:
 defining the model} we will define the Euler rigid-body equations and the
-\citet{Deutsch1955} torque. In Section~\ref{sec: spherical} we will discuss the
+\citet{Deutsch1955} torque. In Section~\ref{sec: spherical}, we will discuss the
 simple case of a spherical star, then in Section~\ref{sec: biaxial neutron star with no anomalous
 torque} and Section~\ref{sec: biaxial neutron star with anomalous torque} we will discuss a
 biaxial star with and without the anomalous part of the torque; in these
@@ -112,7 +112,7 @@ where $\omega=|\mathbf{\Omega}|$ and $\epsA$ is an effective magnetic
 the ratio of the magnetostatic energy to the rest-mass energy of the star and
 is given by
 \begin{align}
-\epsA = \frac{m^{2}}{I_{0}R c^{2}} = 10^{-7} \left(\frac{B_0}{10^{15}\textrm G}\right)^{2},
+\epsA = \frac{m^{2}}{I_{0}R c^{2}} \approx 10^{-7} \left(\frac{B_0}{10^{15}\textrm G}\right)^{2},
 \end{align}
 where in the second step we have expressed it in terms of the surface magnetic
 dipole field strength. Alternatively, it may be useful to solve for the surface
@@ -170,7 +170,7 @@ Magnetic dipole &  $\boldsymbol{m}$ & $m$ & $\chi$ & 0 \\ \hline
 \input{\thisdir/sketch01}
 \caption{A sketch of the  $\x-\z$ plane,  the magnetic dipole lies solely in
 this plane such that its azimuthal component is always zero.  Only the
-projection into this plane of the spin-vector is shown, in general it has an
+projection into this plane of the spin-vector is shown. In general it has an
 azimuthal component given by $\phi$.}
 	\label{fig: sketch01}
 \end{figure}
@@ -190,10 +190,10 @@ timescales over which they evolve.
 
 The rest of this chapter is organised as follows: in Section~\ref{sec:
 spherical} we will begin by discussing a spherical star. Since we particularly
-aim to understand the role of the anomalous torque, in Chapter.~\ref{sec:
+aim to understand the role of the anomalous torque, in Chapter~\ref{sec:
 biaxial neutron star with no anomalous torque} we will investigate a biaxial
 star acted on by only the spin-down component of the torque. In
-Chapter.~\ref{sec: biaxial neutron star with anomalous torque} we then repeat
+Chapter~\ref{sec: biaxial neutron star with anomalous torque} we then repeat
 the investigation of a biaxial star, but this time include the anomalous torque
 and compare the results. In doing this we hope to better understand the role of
 the anomalous torque on precession.
@@ -209,18 +209,18 @@ the spin-down timescale.
 
 To observe this behaviour, we set $\chi=30^{\circ}$ with the spin-vector
 initially at $a=50^{\circ}$ and $\epsA=5\times10^{-11}$. Evolving the model
-numerically, we plot the spherical coordinates of the spin-vector in figure~\ref{fig:
+numerically, we plot the spherical coordinates of the spin-vector in Figure~\ref{fig:
 neutron star spherical}. This shows a brief spin-down which halts once the spin-vector
 aligns with the magnetic dipole $a \rightarrow \chi=30^{\circ}$.  The azimuthal
 angle $\phi$ does not vary; this is expected since precession, a monotonic
 increase in $\phi$, does not occur for spherical bodies. This result agrees
-with the analytic calculations: the alignment occurs on the spin-down time
-scale $\sim 3.6\times 10^{8}$~s.
+with the analytic calculations: the alignment occurs on a few times the
+spin-down time scale $\tauS = 9\times 10^{6}$~s.
 \begin{figure}[ht]
 \centering
 	\centering
 	\includegraphics[width=0.5\textwidth]
-     {{Spherical_Plot_no_anom_chi_30.0_epsI_0.0_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}
+     {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_3.0000000000e+01_omega0_1.00e+04_epsI3_0.00e+00_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_0}.png}
 \caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for a
 spherical star. Note that the magnetic dipole is inclined at $\chi=30^{\circ}$
 to the $\z$ axis.}
@@ -252,17 +252,14 @@ in Table~\ref{tab: A B C params} will help us to understand the types of solutio
 for each ordering of the timescales.
 
 \renewcommand{\arraystretch}{1.2}
-\begin{table}[htb]
+\begin{table}[h]
 \centering
-{\small
-\tabcolsep=0.11cm
-	\begin{tabular}[h]{|l|c|c|c|c|c|}\hline
-		&  $\epsI$  & $\epsA $ & 	$B_{0} \; $[Gauss] & $\tauS$ [s] & $ \tauP$  [s] \\ \hline
-	Neutron star A 	&  $  1.0{\times} 10^{-9}  $  & $  0.5{\times} 10^{-10}  $ & 	$  1.3{\times} 10^{13}  $   & $  3.6{\times} 10^{8}  $ & $  6.3{\times} 10^{5}  $\\
-	Neutron star B 	&  $  0.4{\times} 10^{-10}  $  & $  0.5{\times} 10^{-10}  $ & 	$  1.3{\times} 10^{13}  $   & $  3.6{\times} 10^{8}  $ & $  1.6{\times} 10^{7}  $\\
-	Neutron star C 	&  $  1.0{\times} 10^{-15}  $  & $  0.5{\times} 10^{-10}  $ & 	$  1.3{\times} 10^{13}  $   & $  3.6{\times} 10^{8}  $ & $  6.3{\times} 10^{11}  $\\ \hline
-	\end{tabular}
-}
+\begin{tabular}[h]{|l|c|c|c|c|c|}\hline
+&$\epsilon_{\mathrm{I}}$ & $\epsilon_{\mathrm{A}} $ & $B_{0} $[Gauss] & $\tau_{\mathrm{S}}$ [s] & $ \tau_{\mathrm{P}}$  [s] \\ \hline
+Pulsar A & $ {1.0}\times 10^{-9} $ & $ {5.0}\times 10^{-11} $ & $ {1.3}\times 10^{13} $ & $ {9.0}\times 10^{6} $ & $ {9.8}\times 10^{5} $\\
+Pulsar B & $ {4.0}\times 10^{-11} $ & $ {5.0}\times 10^{-11} $ & $ {1.3}\times 10^{13} $ & $ {9.0}\times 10^{6} $ & $ {2.4}\times 10^{7} $\\
+Pulsar C & $ {1.0}\times 10^{-15} $ & $ {5.0}\times 10^{-11} $ & $ {1.3}\times 10^{13} $ & $ {9.0}\times 10^{6} $ & $ {9.8}\times 10^{11} $\\ \hline
+\end{tabular}
 \caption{Table of relevant values for the selected points. In calculating the
     magnetic fields and timescales, we have used a canonical value of
     $R=1\times10^{6}$~cm for the radius and the initial value
