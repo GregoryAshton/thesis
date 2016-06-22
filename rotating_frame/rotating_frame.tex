@@ -160,7 +160,7 @@ the projection of the vector onto the $\x-\y$ plane and the $\x$ axis.
 \centering
 \begin{tabular}{|l|c|c|c|c|} \hline
  \multicolumn{2}{|c|}{} & Magnitude & Polar angle & Azimuthal angle \\ \hline
-Spin-vector  & $\boldsymbol{\Omega}$ & $\omega$ & $a$ & $\phi$ \\ \hline
+Spin-vector  & $\boldsymbol{\Omega}$ & $\omega$ & $a$ & $\varphi$ \\ \hline
 Magnetic dipole &  $\boldsymbol{m}$ & $m$ & $\chi$ & 0 \\ \hline
 \end{tabular}
 \caption{Spherical coordinates of the spin-vector and magnetic dipole.}
@@ -173,7 +173,7 @@ Magnetic dipole &  $\boldsymbol{m}$ & $m$ & $\chi$ & 0 \\ \hline
 \caption{A sketch of the  $\x-\z$ plane,  the magnetic dipole lies solely in
 this plane such that its azimuthal component is always zero.  Only the
 projection into this plane of the spin-vector is shown. In general it has an
-azimuthal component given by $\phi$.}
+azimuthal component given by $\varphi$.}
 	\label{fig: sketch01}
 \end{figure}
 
@@ -214,8 +214,8 @@ initially at $a=50^{\circ}$ and $\epsA=5\times10^{-11}$. Evolving the model
 numerically, we plot the spherical coordinates of the spin-vector in Figure~\ref{fig:
 neutron star spherical}. This shows a brief spin-down which halts once the spin-vector
 aligns with the magnetic dipole $a \rightarrow \chi=30^{\circ}$.  The azimuthal
-angle $\phi$ does not vary; this is expected since precession, a monotonic
-increase in $\phi$, does not occur for spherical bodies. This result agrees
+angle $\varphi$ does not vary; this is expected since precession, a monotonic
+increase in $\varphi$, does not occur for spherical bodies. This result agrees
 with the analytic calculations: the alignment occurs on a few times the
 spin-down time scale $\tauS = 9\times 10^{6}$~s.
 \begin{figure}[ht]
@@ -264,12 +264,13 @@ Pulsar C & $ {1.0}\times 10^{-15} $ & $ {5.0}\times 10^{-11} $ & $ {1.3}\times 1
 \end{tabular}
 \caption{Table of relevant values for the selected points. In calculating the
     magnetic fields and timescales, we have used a canonical value of
-    $R=1\times10^{6}$~cm for the radius and the initial value
-    of the spin frequency, $\omega_{0} = 1\times10^{4}$ rads/s.}
+    $R=1\times10^{6}$~cm for the radius, the initial value
+    of the spin frequency, $\omega_{0} = 1\times10^{4}$ rads/s and the initial
+    value of $a_0=50^{\circ}$.}
 \label{tab: A B C params}
 \end{table}
 
-The phase space of solutions is plotted in figure~\ref{fig: phase space no
+The phase space of solutions is plotted in Figure~\ref{fig: phase space no
 anom}, parameterised by the elastic deformation $\epsI$ and the surface
 magnetic field
 \begin{equation}
@@ -299,12 +300,12 @@ value; these correspond to either an oblate or prolate mass distribution.  In
 the following work, we use only positive values of $\epsI$. It will be noted
 when this is important, but otherwise solutions are invariant to the sign of
 $\epsI$. Finally, we must choose the angle between the magnetic dipole and the
-elastic deformations $\chi$, we choose two values ($30^\circ$ and $75^\circ$)
+elastic deformations $\chi$. We choose two values ($30^\circ$ and $75^\circ$)
 to demonstrate important cases discussed in the next section. Initial
 conditions are thought to have some bearing on the solutions
 \citep[see][]{Melatos2000}. In the current work, we will start with the
 spin-vector having an inclination angle of $a_0=50^{\circ}$ and azimuth of
-$\phi=0^{\circ}$.
+$\varphi=0^{\circ}$.
 
 
 \subsection{Neutron star A in region \texorpdfstring{$\tauS\gg \tauP$}{}}
@@ -326,19 +327,19 @@ either grow or decay on the spin-down timescale depending on whether $\chi$ was
 greater or less than a critical value~$\chi_{\textrm{cr}} \approx 55^{\circ}$.
 
 We first present results for all the spherical coordinates during the spin-down
-in figure~\ref{fig: neutron star A_NA}. For the angle $\chi$, we use two values,
+in Figure~\ref{fig: neutron star A_NA}. For the angle $\chi$, we use two values,
 $30^{\circ}$ and $75^{\circ}$, and find that $a$ tends to either $0$ or $\pi/2$
-on the spin-down timescale in agreement with \citet{Goldreich1970}.
+on the spin-down timescale, in agreement with \citet{Goldreich1970}.
 During this alignment, the spin magnitude decays
-and $\phi$ monotonically increases corresponding to the spin-vector precessing
+and $\varphi$ monotonically increases corresponding to the spin-vector precessing
 about the $\z$ axis.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
-	\subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]
-             {{Spherical_Plot_no_anom_chi_30.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
-    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]
-             {{Spherical_Plot_no_anom_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
+	\subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+             {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_3.0000000000e+01_omega0_1.00e+04_epsI3_1.00e-09_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+10_epsI1_0.00e+00_AnomTorque_0}.png}} & 
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+             {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_7.5000000000e+01_omega0_1.00e+04_epsI3_1.00e-09_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+10_epsI1_0.00e+00_AnomTorque_0}.png}}
 \end{tabular}
 \caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star
 A. The two choices of $\chi$ allow us to confirm Goldreich's dependence of the
@@ -352,26 +353,28 @@ goldreich_averaged_eqns} and the exact solution without averaging.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
-    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]
+    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
              {{Plot_a_averaged_and_exact_chi_30}.png}} &
-    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
              {{Plot_a_averaged_and_exact_chi_75}.png}}
 \end{tabular}
-\caption{Plot of the angle $a$ for both the exact solution of \eqref{eqn: eom}
-and the solution to the averaged equations \eqref{eqn: goldreich_averaged_eqns}.}
+\caption{Plot of the angle $a$ for both the numerical solution of Eqn.~\eqref{eqn: eom}
+and the solution to the averaged equation given in Eqn.~\eqref{eqn: goldreich_averaged_eqns}.}
 \label{fig: neutron star A_NA comparison}
 \end{figure}
 This shows that, while both agree on the long term behaviour, the averaged
 equations do not include short term oscillations which are due to the precession.
 
+\clearpage
 \paragraph{A geometric interpretation of the critical value $\chi_\textrm{cr}$}\mbox{}\\
 The significance of the critical value $\chi_\textrm{cr} \sim 55^{\circ}$
 has not been discussed in the literature. We will now develop a novel
-geometric argument which provides a way to interpret this value as a natural
+geometric argument, based on the intuitive ideas of \citet{Landau1969},
+which provides a way to interpret this value as a natural
 consequence of the conservation of energy and angular momentum.
 
-For a biaxial mass distribution as described above, the conservation of energy
-requires that
+For a biaxial mass distribution as described above, over short timescales compared
+to the spin-down, the conservation of energy requires that
 \begin{eqnarray}
 1 & = & \frac{J_{x}^{2}}{2I_{xx}E}+\frac{J_{y}^{2}}{2I_{yy}E}+\frac{J_{z}^{2}}{2I_{zz}E}
 =\frac{J_{x}^{2}}{2I_{0}E}+\frac{J_{y}^{2}}{2I_{0}E}+\frac{J_{z}^{2}}{2I_{0}(1+\epsI)E},
@@ -390,7 +393,7 @@ describes a biaxial ellipsoid with semi-axes given by $\sqrt{2I_{0}E}$,
 $\sqrt{2I_{0}E}$ and $\sqrt{2I_{0}(1+\epsI)E}$ centred on the origin,
 while Eqn.~\eqref{eqn: conservation of momentum biaxial} describes a sphere of
 radius $J$ also centred on the origin. The ellipsoid is \emph{oblate} if $\epsI
-> $ while it is \emph{prolate} if $\epsI < 0$. To keep the following discussion
+> 0$ while it is \emph{prolate} if $\epsI < 0$. To keep the following discussion
 simple, we will assume that $\epsI > 0$ and then we will discuss this choice at
 the end of this section.
 
@@ -413,10 +416,10 @@ equations and therefore the set of all physical solutions.
 \begin{figure}[ht]
 \centering
 \includegraphics[trim = 50mm 50mm 50mm 20mm, clip=true ,scale=0.8]{Ellipsoid_Sphere_Biaxial}
-\caption{Intersection of the sphere and ellipsoid defined in Eqn.~\eqref{eqn:
-conservation of momentum biaxial} and Eqn.~\eqref{eqn: conservation of energy
+\caption{Intersections of the ellipsoid and sphere defined in Eqn.~\eqref{eqn:
+conservation of energy biaxial} and Eqn.~\eqref{eqn: conservation of momentum
 biaxial} respectively for three different values of $M$ at
-fixed $E$. The sphere's of radius $M$ are not visible, only the blue line shows
+fixed $E$. The spheres of radius $M$ are not visible, only the blue line shows
 where they would intersect the fixed ellipsoid.}
 \label{fig: plot sphere ellipse biaxial}
 \end{figure}
@@ -426,7 +429,7 @@ of our biaxial star acted on by the spin-down torque are fixed. As we have seen
 above, in order to satisfy the conservation equations this means that the
 angular momentum vector $J_i$ has a class of possible solution consisting of a
 ring about the momentum-space $\z$.  Since $J_{i}=I_{ij}\omega^{j}$, the star
-is biaxial, and moment of inertia tensor is static, solutions for the spin-vector $\omega^j$
+is biaxial, and moment of inertia tensor is static. Solutions for the spin-vector $\omega^j$
 must also exist as points on a related circle. This related circle is exactly
 the precession of $\spin$ about the $\z$ axis.
 
@@ -451,14 +454,14 @@ which are parameterised by the sign of $\dot{A}$:
     the intersection circles will `close up' around the $\z$ axis. This
     agrees with the solution for $\chi=30^{\circ}$ given in
     figure~\ref{fig: neutron star A_NA comparison}(a). The angle between
-    $\boldsymbol{\omega}$ and the $\z$ axis tends to zero while $\phi$
+    $\boldsymbol{\omega}$ and the $\z$ axis tends to zero while $\varphi$
     monotonically increases. This describes the spin-vectors following a circle
     about the $\z$ axis, which gradually decreases in radius.
 \item $\dot{A}<0$ The sphere shrinks with respect to the ellipsoid. In this
     case the intersection circles will increase in radius until $J\rightarrow
     \sqrt{2EI_{0}}$. This describes exactly the solution in
-    figure~\ref{fig: neutron star A_NA comparison}(b): that is $a\rightarrow
-    90^{\circ}$ while $\phi$ monotonically increases.
+    Figure~\ref{fig: neutron star A_NA comparison}(b): that is $a\rightarrow
+    90^{\circ}$ while $\varphi$ monotonically increases.
 \end{enumerate}
 
 The sign of $\dot{A}$ tells us about the long-term evolution of the system. To
@@ -469,7 +472,7 @@ determine it, we begin by differentiating Eqn.~\eqref{eqn: A}
 \end{equation}
 simplifying and writing in index notation such that $J^{2}=J^iJ_i$, we have that
 \begin{equation}
-\dot{A}=\frac{1}{E^{2}}\left(2J^{i}\dot{J}_{i}E-\dot{E}J^{i}J_{i}\right).
+\dot{A}=\frac{1}{2E^{2}I_0}\left(2J^{i}\dot{J}_{i}E-\dot{E}J^{i}J_{i}\right).
 \end{equation}
 Now the energy is purely kinetic such that
 $E=\frac{1}{2}I_{ij}\omega^{i}\omega^{j}$, and therefore $\dot{E}=T^{i}\omega_{i}$.
@@ -512,14 +515,14 @@ This yields
 \begin{align}
 \dot{A}E^{2} = & I_{0}^{2}\epsI\omega^{3}
     \left(\frac{2R}{3c}\epsA\omega^{3}\right)
-    \cos a \left([\sin \chi \cos \chi \sin a \cos \phi
+    \cos a \left([\sin \chi \cos \chi \sin a \cos \varphi
                  - \sin^{2}\chi \cos a]\sin^{2} a \right. \nonumber \\
-& \left.- \cos a ([\sin \chi \cos \chi \sin a \cos \phi
-                   - \sin^{2}\chi \cos a]\cos \phi \sin a
-                   - \sin^{2}a \sin^{2}\phi)\right).
+& \left.- \cos a ([\sin \chi \cos \chi \sin a \cos \varphi
+                   - \sin^{2}\chi \cos a]\cos \varphi \sin a
+                   - \sin^{2}a \sin^{2}\varphi)\right).
 \end{align}
 
-Now we work in the limit $\tau_P \ll \tau_S$ where $\phi$ varies on the
+Now we work in the limit $\tau_P \ll \tau_S$ where $\varphi$ varies on the
 precession timescale, which is much faster than the evolution in either $a$ or $\omega$.
 Therefore, we can average over a free precession period and drop the constant
 coefficients:
@@ -570,13 +573,13 @@ this region is the spherical star
 ($\epsI\rightarrow0$) discussed in section~\ref{sec: spherical}; as such
 we should expect the results to be similar. Solving
 the equations of motion for neutron star C, the spherical coordinates of the spin axis
-are given in figure~\ref{fig: neutron star C_NA}. Both choices of $\chi$ yield a
+are given in Figure~\ref{fig: neutron star C_NA}. Both choices of $\chi$ yield a
 similar result; the polar angle $a$ tends to $\chi$ on the spin-down timescale
 as anticipated by the likeness to the spherical star. In contrast, the azimuthal
-angle $\phi$ appears to begin increasing monotonically before decreasing to a
+angle $\varphi$ appears to begin increasing monotonically before decreasing to a
 constant value. It is thought that this is due to the small but non-vanishing
 magnitude of $\epsI$. In the perfectly spherical limit, we observe no
-such increase in $\phi$. Therefore, the small
+such increase in $\varphi$. Therefore, the small
 deformation offsets the steady state solution of the spin axis from the
 magnetic dipole.
 
@@ -594,8 +597,12 @@ value.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
-    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]{{Spherical_Plot_no_anom_chi_30.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}&
-    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]{{Spherical_Plot_no_anom_chi_75.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}
+    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+             {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_3.0000000000e+01_omega0_1.00e+04_epsI3_1.00e-15_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_0}.png}} &
+% {{Spherical_Plot_no_anom_chi_30.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}&
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+             {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_7.5000000000e+01_omega0_1.00e+04_epsI3_1.00e-15_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_0}.png}}
+% {{Spherical_Plot_no_anom_chi_75.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}
 \end{tabular}
 \caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star C. }
 \label{fig: neutron star C_NA}
@@ -807,8 +814,8 @@ torque.
 \begin{figure}
 \centering
 \begin{tabular}{cc}
-    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]{{Spherical_Plot_Transform_chi_30.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
-    \subfloat[$\chi=70^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]{{Spherical_Plot_Transform_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
+    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]{{Spherical_Plot_Transform_chi_30.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
+    \subfloat[$\chi=70^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]{{Spherical_Plot_Transform_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}
 \caption{Plot of the spherical coordinates of the spin-vector during the
 spin-down of neutron star A.}
@@ -865,7 +872,7 @@ intersections as drawn in figure~\ref{fig: sphere ellipsoid}.
              {\includegraphics[trim=70mm 50mm 50mm 20mm, clip=true ,width=0.333\textwidth]
              {{Ellipsoid_Sphere_high}.pdf}}
 \end{tabular}
-\caption{Intersection of the sphere and ellipsoid defined in Eqn.~\eqref{eqn:
+\caption{Intersections of the ellipsoid and sphere defined in Eqn.~\eqref{eqn:
 conservation of energy triaxial} and Eqn.~\eqref{eqn: conservation of mass
 triaxial} respectively for three different values of $M$ at fixed $E$.}
 \label{fig: sphere ellipsoid}
@@ -902,7 +909,7 @@ When this happens, we will observe a change in the axis about which the solution
 precesses.
 
 Both sets of solution start with the solution precessing about the $\3$ axis
-($\phi$ monotonically increasing) corresponding to Figure~\ref{fig: sphere ellipsoid}(c).
+($\varphi$ monotonically increasing) corresponding to Figure~\ref{fig: sphere ellipsoid}(c).
 In Figure~\ref{fig: neutron star A}(b), the discontinuity is in fact exactly the point
 when the solution changes the axis of precession.
 
@@ -921,8 +928,8 @@ precesses.
 \begin{figure}
 \centering
 \begin{tabular}{cc}
-    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.495\textwidth]{{Angle_Space_Plot_3D_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
-    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.495\textwidth]{{ThreeD_Plot_Cartesian_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
+    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.45\textwidth]{{Angle_Space_Plot_3D_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
+    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.45\textwidth]{{ThreeD_Plot_Cartesian_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}
 \caption{Numerical solutions for neutron star A plotted on the unit sphere in the
 body frame axis. Figure~(a) shows three distinct time steps; blue, the time before the
@@ -953,7 +960,7 @@ moment of inertia tensor ($a' \rightarrow \pi /2$).  Therefore, the persistent
 precession angle found by Melatos is precisely the angle $\beta$.  The
 spin-vector has aligned with the principal axis of the effective
 moment of inertia tensor associated with the smallest eigenvalue.  Since both
-the polar angle $a'$ and azimuthal angle $\phi'$ are constant, we argue
+the polar angle $a'$ and azimuthal angle $\varphi'$ are constant, we argue
 that the angular velocity is constant and this is not persistent precession:
 the spin-vector always aligns with the effective body frame and in doing so
 the precession of the body is damped.
@@ -962,10 +969,10 @@ the precession of the body is damped.
 \centering
 \begin{tabular}{cc}
     \subfloat[In the body frame axis]
-             {\includegraphics[width=0.495\textwidth]
+             {\includegraphics[width=0.45\textwidth]
              {{Spherical_Plot_chi_75.0_epsI_4.0e-11_epsA_5.0e-11_omega0_1.0e4_t1_2.0e8}.png}} &
     \subfloat[In the effective body frame axis]
-             {\includegraphics[width=0.495\textwidth]
+             {\includegraphics[width=0.45\textwidth]
              {{Spherical_Plot_Transform_chi_75.0_epsI_4.0e-11_epsA_5.0e-11_omega0_1.0e4_t1_2.0e8}.png}}
 \end{tabular}
 \caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star B.
@@ -988,9 +995,9 @@ torque introduces oscillations on the anomalous torque timescale.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
-    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]
+    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
              {{Spherical_Plot_Transform_chi_30.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}} &
-    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.495\textwidth]
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
              {{Spherical_Plot_Transform_chi_75.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}
 \end{tabular}
 \caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star
