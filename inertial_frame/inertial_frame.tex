@@ -1350,20 +1350,20 @@ the vector from the centre of the star to the observer and the magnetic dipole
 vector. By considering the intersection of these vectors with the unit sphere,
 the angular separation can be shown to be
 \begin{equation}
-\Delta\sigma = \cos^{-1}\left(\sin(\Theta)\sin(\iota) +
-                             \cos(\Theta)\cos(\iota)\cos(\Phi - \PhiO)\right)
+\Delta d = \cos^{-1}\left(\cos(\Theta)\cos(\iota) +
+                             \sin(\Theta)\sin(\iota)\cos(\Phi - \PhiO)\right)
 \label{eqn: angular sep inv cos}
 \end{equation}
 Then, taking a Gaussian beam geometry, the intensity of the pulse will be given by
 \begin{equation}
-A(\Theta, \Phi, \iota, \PhiO, \sigmaB) =
-A_{0} \exp\left(-\frac{\Delta\sigma^{2}(\Theta, \Phi, \iota, \PhiO)}{2\sigmaB^{2}}\right)
+\mathcal{I}(\Theta, \Phi, \iota, \PhiO, \rho) =
+\mathcal{I}_{0} \exp\left(-\frac{\Delta d^{2}(\Theta, \Phi, \iota, \PhiO)}{2\rho^{2}}\right)
 \label{eqn: Gaussian beam intensity}
 \end{equation}
-where $A_{0}$ is some constant amplitude and $\sigmaB$ is a measure of the
+where $\mathcal{I}_{0}$ is some constant amplitude and $\rho$ is a measure of the
 width of the Gaussian intensity.
 
-Given a value for $A_0$ and $\sigmaB$, we can use a numerical solution to the
+Given a value for $\mathcal{I}_0$ and $\rho$, we can use a numerical solution to the
 governing ODEs to simulate this pulse intensity exactly. This is done in
 Figure~\ref{fig: intensity variation} for a system where the variations in
 $\Theta$ occur on a timescale not much longer than the pulse period. This
@@ -1378,8 +1378,8 @@ pulsations due to precession.
 We can also predict the maximum pulse intensity at any given instant by setting
 $\Phi=\PhiO$. Then simplifying, we find that
 \begin{align}
-A_{\mathrm{max}}(\Theta, \Phi, \iota, \sigmaB) =
-A_{0}\exp\left(\frac{-(\Theta-\iota)^{2}}{2\sigmaB^{2}}\right),
+\mathcal{I}_{\mathrm{max}}(\Theta, \Phi, \iota, \rho) =
+\mathcal{I}_{0}\exp\left(\frac{-(\Theta-\iota)^{2}}{2\rho^{2}}\right),
 \label{eqn: A max}
 \end{align}
 this is also shown in Figure~\ref{fig: intensity variation}.
@@ -1404,16 +1404,16 @@ with respect to the slow precession timescale.  The pulse width is measured by
 the time spent above a percentage $p$ of the maximum pulse intensity, this can
 be defined as
 \begin{align}
-A(\Phi, \Theta, \iota, \PhiO, \sigmaB) > A_{\textrm{max}} \frac{p}{100}.
+\mathcal{I}(\Phi, \Theta, \iota, \PhiO, \rho) > \mathcal{I}_{\textrm{max}} \frac{p}{100}.
 \end{align}
 Substituting in Eqn.~\eqref{eqn: Gaussian beam intensity} and Eqn.~\eqref{eqn: A max}
 then rearranging yields
 \begin{equation}
 \cos(\Phi - \PhiO) < \frac{
 \cos\left(
-\sqrt{-2\sigmaB^{2}
-\ln\left[\frac{p}{100}\frac{A_\textrm{max}}{A_0}\right]}\right) -
-\sin(\Theta)\sin(\iota)} {\cos(\Theta)\cos(\iota)}
+\sqrt{-2\rho^{2}
+\ln\left[\frac{p}{100}\frac{\mathcal{I}_\textrm{max}}{\mathcal{I}_0}\right]}\right) -
+\cos(\Theta)\cos(\iota)} {\sin(\Theta)\sin(\iota)}
 \label{eqn: 6737}
 \end{equation}
 where we note that $A_\textrm{max}$ is not a constant, but will evolve with the
@@ -1441,43 +1441,57 @@ constant, i.e. Inequality~\eqref{eqn: 6737} is satisfied.
 \end{figure}
 
 The angular fraction at which the inequality \emph{is} satisfied is given by
-$2\pi - \Delta\Phi$. To convert this into the beam-width reported by pulsar
+$\Delta\Phi$. To convert this into the beam-width reported by pulsar
 astronomers we multiply by the pulse period. So from $\Delta\Phi$, we can
 calculate the beam-width as
 \begin{align}
-    W_{p} & = P \frac{2\pi - \Delta\Phi}{2\pi}
+    W_{p} & = P \frac{\Delta\Phi}{2\pi}
 \end{align}
 where $P$ is the spin period.
 
-The angular width $\Delta\Phi$ when the inequality is not satisfied is given by
+The angular width $\Delta\Phi$ when the inequality is satisfied is given by
 \begin{equation}
     \Delta\Phi = 2\cos^{-1}\left(
-                \frac{\cos\left(\sqrt{2\sigmaB^{2} \ln(f)}\right) - \sin(\Theta)\sin(\Theta)}
-                          {\cos(\Theta)\cos(\iota)}
+                \frac{
+\cos\left(\sqrt{-2\rho^{2}\ln\left[\frac{p}{100}\frac{\mathcal{I}_{\mathrm{max}}}{\mathcal{I}_0}\right]}\right) - \cos(\Theta)\cos(\iota)}
+                          {\sin(\Theta)\sin(\iota)}
                       \right),
 \end{equation}
-and so finally the beam-width is
+and so the beam-width is
 \begin{align}
-    W_{p} & = \frac{1}{\pi \dot{\Phi}}\left(1 -
+    W_{p} & = \frac{1}{\pi\dot{\Phi}}
                \cos^{-1}\left(
-                   \frac{\cos\left(\sqrt{2\sigmaB^{2} \ln(\frac{100}{p})}\right) - \sin(\Theta)\sin(\Theta)}
-                          {\cos(\Theta)\cos(\iota)}
-                      \right)
+                   \frac{\cos\left(
+\sqrt{-2\rho^{2}\ln\left[\frac{p}{100}\frac{A_{\mathrm{max}}}{A_0}\right]}
+\right) - \cos(\Theta)\cos(\Theta)}
+                          {\sin(\Theta)\sin(\iota)}
+                  \right).
+\end{align}
+Finally, we can also simplify this results using Eqn.~\eqref{eqn: A max} to give
+\begin{align}
+    W_{p} & = \frac{1}{\pi\dot{\Phi}}
+               \cos^{-1}\left(
+                   \frac{\cos\left(
+\sqrt{(\Theta-\iota)^2 - 2\rho^2 \ln\left(\frac{p}{100}\right)}
+\right) - \cos(\Theta)\cos(\Theta)}
+                          {\sin(\Theta)\sin(\iota)}
                   \right).
 \label{eqn: Wp}
 \end{align}
 
+
 To demonstrate an example of the beam-width modulation, in Figure~\ref{fig: Pulse width
 modulation} we plot $\Theta$ calculated from a numerical simulation with the
 simulation parameter listed in Table~\ref{tab: pulse width modulation} and
-$W_{10}$ as calculated from Eqn.~\eqref{eqn: Wp} with $\iota=6^{\circ}$.
+$W_{10}$ as calculated from Eqn.~\eqref{eqn: Wp} with $\iota=82^{\circ}$ and
+$\rho=0.3$.
 \begin{figure}[ht]
 \centering
 \includegraphics[]{Pulse_width_modulation.pdf}
 \caption{Simulation results for the polar angle $\Theta$ and $W_{10}$, a
 measure of the observed beam-width as calculated from Eqn.~\eqref{eqn: Wp}.
 The simulation parameters for this are listed in Table~\ref{tab: pulse width modulation}
-and we additionally set $\iota=6^{\circ}$ when calculating~$W_{10}$.}
+and we additionally set $\iota=82^{\circ}$ and $\rho=0.3$ when calculating~$W_{10}$.}
 \label{fig: Pulse width modulation}
 \end{figure}
 \begin{table}[htb]

@@ -16,17 +16,18 @@ posterior fit} for a complete description.}
 \input{\thisdir/Evidence.tex}
 
 In this thesis, we endeavour to understand the cause of timing variations in pulsars
-with the aim being that in doing so, we can understand more about their physics.
+with the aim being that in doing so, we can understand more about the physics
+of neutron stars.
 In Chapter~\ref{sec: timing variations} we discussed a variety of models to
 explain timing noise including two, precession and magnetospheric switching,
-which applied to pulsars with periodic modulations. Such pulsars are particularly
+which apply to pulsars with periodic modulations. Such pulsars are particularly
 interesting given the conclusion of \citet{Hobbs2010} that, as more data is
 collected for pulsars, more quasi-periodic features are observed. Therefore, it
 is hoped that understanding what causes the periodic modulations may eventually
 lead to a more complete understanding of timing noise across the population.
 
 In Chapter~\ref{sec: rotating frame} and Chapter~\ref{sec: inertial frame}, we
-have investigated precession and its predictions for the observed features of
+investigated precession and its effects on the observed features of
 pulsars. One pulsar, PSR~B1828-11, provides strong evidence for precession
 \citep{Stairs2000}, but has also been put forth as a candidate for
 magnetospheric switching \citep{Lyne2010}. There is no decisive feature in the
@@ -61,10 +62,10 @@ literature: \citet{Jones2001} derived the observable modulations due to
 precession and noted that the electromagnetic spin-down torque will amplify
 these modulations (see Section~\ref{sec: phase residual torqued} for more
 details).  \citet{Link2001} fitted a torqued-precession model to the spin-down
-and beam-shape followed by \citet{Akgun2006} where a variety of shapes and the
+and beam-shape, followed by \citet{Akgun2006} where a variety of shapes and the
 form of the spin-down torque were tested.  All of these authors agree that
-precession is a credible candidate to explain the observed periodic variations:
-furthermore, as we found in Section~\ref{sec: spin-down rate numerical}, to explain
+precession is a credible candidate to explain the observed periodic variations.
+Furthermore, as we found in Section~\ref{sec: spin-down rate numerical}, to explain
 the double-peaked spin-down modulations, the so-called wobble angle must be
 small while the angle between the symmetry axis of the biaxial moment of
 inertia tensor and the magnetic dipole must be close to $\pi/2$.
@@ -83,9 +84,9 @@ This further motivates the precession model since it results from applying
 Euler's three rigid-body equations to a non-spherical body \citep{Landau1969}.
 
 The precession hypothesis was challenged by \citet{Lyne2010} when reanalysing
-the data.   They noted that in order to measure the spin-down and beam-shape
-with any accuracy required time averaging over periods~$\sim100$~days,
-smoothing out any behaviour acting on this time-scale. Motivated by the
+the data.   They noted that measuring the spin-down and beam-shape
+with any accuracy requires time averaging over periods~$\sim100$~days,
+which smoothes out any behaviour acting on this time-scale. Motivated by the
 intermittent pulsar PSR~B1931+24, they put forward the phenomenological hypothesis
 that instead the magnetosphere is undergoing periodic switching between (at
 least) two metastable states. Such switching would result in correlated changes
@@ -96,7 +97,7 @@ $W_{10}$. This quantity is time-averaged, but only for each observation
 lasting~$\sim1$hr. This makes $W_{10}$ insensitive to any changes which occur on
 timescales shorter than an hour. If the meta-stable states last longer than
 this, $W_{10}$ will be able to resolve the switching. The  relevant data was
-kindly supplied to us courtesy of \citet{Lyne2010}, and is reproduced in
+kindly supplied to us courtesy of Andrew Lyne \citet{Lyne2010}, and is reproduced in
 Figure~\ref{fig: B1828-11 data}. From these observations,
 \citet{Lyne2010} concluded that the individual measurements of $W_{10}$ for
 PSR~B1828-11 did in fact appear to switch between distinct high and low values, as
@@ -122,7 +123,7 @@ switching model which we will be comparing with precession.
 
 In our view, it is not immediately clear by eye whether the data presented in
 Figure~\ref{fig: B1828-11 data} is sufficient to rule out or even favour either
-of the precession or switching interpretations.  For this reason, in this work
+of the precession or switching interpretations.  For this reason,
 we develop a framework in which to evaluate models built from these concepts
 and argue their merits quantitatively using a Bayesian model comparison. We
 note that a distinction must be made between a conceptual idea, such as
@@ -133,6 +134,27 @@ the `clock' that modulates the probability of the magnetosphere being in one
 state or the other, an idea developed by  \citet{Jones2012}. The models
 considered here cover the precession and switching interpretations, but we do
 not claim the models to be the `best' that these hypotheses could produce.
+
+We note that there also exists high-resolution observations of the \emph{shape
+parameter} of PSR~B1828-11 which are presented in \citet{Stairs2003} and
+\citet{Lyne2012}. The shape parameter is defined to be the proportion of time
+spent in one of two modes as determined from the integrated pulse profile.
+These show that PSR~B1828-11 appears to `switch' between the modes on short
+timescales (less than $\sim 8$~hrs). This, it seems, provides evidence for any
+model where the switching occurs on short timescales, but is biased by a longer
+timescale of $\sim 500$~days. The effect of precession on the shape parameter
+has yet to be investigated, but it seems likely that it would be unable to
+explain this short term variability. Nevertheless, this does not rule out
+precession since there could independently exist short term magnetospheric
+variability or a coupled hybrid model of precession biasing the switching (see
+for example \citet{Jones2012}).  Moreover, for the switching model, this
+observation also complicates the story since it requires stability over two
+quite different timescales.  In this chapter, we will focus only on the long
+timescale variations shown in Fig.~\ref{fig: B1828-11 data} and how these can
+be interpreted under a deterministic switching model or precession; in effect
+assuming that the short timescale variations are unrelated to the models under
+investigation. In future, we would like to include these data sets and see how
+this changes the picture.
 
 The rest of the chapter is organised as follows: in Section~\ref{sec: methodology} we
 will describe the framework to fit and evaluate a given model, in
@@ -150,8 +172,8 @@ comparison. Finally, the results are discussed in Section~\ref{sec: discussion}.
 We now introduce a general methodology to compare and evaluate models for this
 form of data. The technique is well practised in this and other fields and so
 in this section we intend only to give a brief overview; for a more complete
-introduction to this subject see \cite{jaynes2003probability,
-gelman2013bayesian, sivia1996data}.
+introduction to this subject see \cite{sivia1996data, jaynes2003probability,
+gelman2013bayesian}.
 
 \subsection{The odds-ratio and posterior probabilities}
 
@@ -166,7 +188,7 @@ probability of model $\M_{i}$ given some data:
     P(\M_{i} | \data) = P(\data | \M_{i}) \frac{P(\M_{i})}{P(\data)}.
 \label{eqn: bayes theorem}
 \end{equation}
-The quantity $P(\data | \M_{i})$ in known as the \emph{marginal likelihood} of
+The quantity $P(\data | \M_{i})$ is known as the \emph{marginal likelihood} of
 model $\M_i$ given the data.
 
 In general, we cannot compute the probability given in equation (\ref{eqn: bayes
@@ -174,7 +196,7 @@ theorem})  because we do not have an exhaustive set of models to calculate
 $P(\data)$.  However, we can compare two models, say $A$ and $B$, by
 calculation of their \emph{odds-ratio}:
 \begin{equation}
-\mathcal{O} = \frac{P(\M_{A}|\data)}{P\M_{B}|(\data)}=
+\mathcal{O} = \frac{P(\M_{A}|\data)}{P(\M_{B}|\data)}=
             \frac{P(\data|\M_{A})}{P(\data|\M_{B})}
             \frac{P(\M_{A})}{P(\M_{B})}.
 \label{eqn: odds-ratio}
@@ -363,7 +385,7 @@ between the two data sources.
 Before evaluating the precession and switching hypothesis, let us first
 consider a noise-only model.  This will introduce some generic concepts and
 provide a benchmark against which to test other models. The noise-only model
-asserts that the beam-width data (as seen in panel B of Figure\ref{fig: B1828-11
+asserts that the beam-width data (as seen in panel B of Figure~\ref{fig: B1828-11
 data}) does not contain any periodic modulation, but is the result of noise
 about a fixed beam-width: the signal model $f(t) = W_{10}$ is a constant.
 
@@ -414,7 +436,7 @@ In Figure~\ref{fig: noise-only beam-width posterior fit} we plot the
 the model prediction when the parameters are set equal to the peak values of
 the posterior probability distributions.  This figure demonstrates that, for
 the noise-only model, the observed $W_{10}$ has a mean value of approximately
-$8$~ms, then all the variations about this mean are due to the noise. In the
+$8$~ms, and all the variations about this mean are due to the noise. In the
 following section we will develop models where at least some the variation is
 explained by periodic modulations.
 \begin{figure}[htb]
@@ -424,8 +446,8 @@ explained by periodic modulations.
 posterior distribution to the data: the solid black line is the maximum
 posterior estimate (MPE), i.e.\ the model prediction when the parameters are set
 equal to the values corresponding to the peaks of the posterior probability
-distributions.   The shaded region indicates the MPE of the 1-$\sigma_{W_{10}}$
-noise about the beam-width model, black dots are the original data.}
+distributions.   The shaded region indicates the MPE of the 1$\sigma_{W_{10}}$
+noise about the beam-width model. Black dots are the original data.}
 \label{fig: noise-only beam-width posterior fit}
 \end{figure}
 
@@ -558,7 +580,7 @@ $i^{th}$ segment, if the duration $t_{i} > \tI{ave}$ then the time-averaged
 spin-down will `saturate' and have a flat spot as in segment A of the
 illustration in Figure~\ref{fig: perera illustration}. On the other hand, if
 $t_{i} < \tI{ave}$ then the maximum spin-down rate in this segment will be a
-weighted sum of the two underlying spin-down rates as in segment B of the
+weighted sum of the two underlying spin-down rates as in segment C of the
 illustration. The weighting is determined by the amount of time the underlying
 spin-down rate spends in each state during the time-average window.
 
@@ -729,7 +751,7 @@ We will now define the precession model and its predictions for the expected
 signal in the spin-down and beam-width data.
 
 Classical free precession refers to the rotation of a rigid non-spherical body
-when there is a misalignment between its spin and rotation axes. For this work
+when there is a misalignment between its spin axis and angular momentum vector. For this work
 we will consider a biaxial star, acted upon by an electromagnetic torque as
 discussed in the next section. We will work with the angles defined in
 \citet{Jones2001}: that is the star emits its EM radiation beam along the magnetic
@@ -836,7 +858,7 @@ convenience.
 \small
 \centering
 \caption{Measured and inferred values of the precession spin-down model parameters
-from the ATNF pulsar catalogue \citep{ATNF}, these are given at epoch MJD~49621.}
+from the ATNF pulsar catalogue \citep{ATNF}. These are given at epoch MJD~49621.}
 \label{tab: ATNF}
 \begin{tabular}{ll} \hline \rule{0pt}{3ex}
 $P^{\mathrm{ATNF}}$ & 0.405043321630 $\pm 1.2\times10^{-11}$~s \\
@@ -868,7 +890,7 @@ summary in Table~\ref{tab: precession spin-down posterior}. For all parameters
 the posterior distribution is Gaussian: in the case of parameters which we gave
 a uniform prior, this indicates that the spin-down data is informative. For the
 parameters using an informative prior (from the ATNF catalogue), the posterior
-and prior are similar, this indicates the data agrees with the prior, but does
+and prior are similar. This indicates the data agrees with the prior, but does
 not significantly improve our estimates.
 \begin{table}[htb]
 \small
@@ -886,7 +908,7 @@ well with only a small amount of noise required to explain the data.
 
 The posterior distributions conditioned on the spin-down data (as summarised in
 Table~\ref{tab: precession spin-down posterior}) can be compared with the
-values reported in Table~2 of \citet{Link2001}. When comparing it should be
+values reported in Table~2 of \citet{Link2001}. When comparing, it should be
 noted that we are considering a longer stretch of data which includes most, but
 not all of the period studied by \citet{Link2001}. For the two angles $\chi$
 and $\theta$, the fractional difference is 0.001 and 0.14 respectively while
@@ -975,34 +997,26 @@ If we want to use the beam-width to make a model comparison, we will require a
 model for $W_{10}$ that is not informed by the data.
 
 The integrated pulse profile of PSR~B1828-11 (Figure 4 of \citet{Lyne2010})
-shows a single peak, often described as  core emission \mbox{\citep{Lyne1988}}.  Since
-we do not have a detailed model of the emission mechanism, we will now consider
-the most rudimentary and natural beam geometry which fits this: a circularly
-symmetric (about the beam-axis) intensity which falls-of with a Gaussian
-function.  Specifically, let us define $\Delta d$ as the central angle between
-the observer's line-of-sight and the beam (this is the spherical distance
-between the two points marked in Figure~\ref{fig: delta theta delta phi}), then
-the intensity is
-\begin{equation}
-\In(t) = \In_{0}\exp\left(-\frac{\Delta d(t)^{2}}{2\rho^{2}}\right).
-\label{eqn: beam intensity}
-\end{equation}
-Here $\In_0$ is the intensity when observed directly along the dipole and
-$\rho$ measures the angular width of the beam.
-From the spherical law of cosines, for an observer located at $(\PhiO, \iota)$,
-we have
-\begin{align}
-\Delta d(t) &= \cos^{-1}\left[\cos\Theta(t)\cos\iota +
-                              \sin\Theta(t)\sin\iota\cos|\Delta\Phi(t)|\right].
-\label{eqn: angular sep}
-\end{align}
-The observer will see a maximum pulse intensity at $\Delta\Phi = 0$, given by
-\begin{align}
-\In_\textrm{max} = \In_{0} \exp\left(
-    -\frac{\left(\Theta(t) - \iota\right)^{2}}
-          {2\rho^{2}}\right).
-\label{eqn: imax}
-\end{align}
+shows a single peak, often described as  core emission \mbox{\citep{Lyne1988}}.
+Since we do not have a detailed model of the emission mechanism, we will now
+consider the most rudimentary and natural beam geometry which fits this: a
+circularly symmetric (about the beam-axis) intensity which falls-of with a
+Gaussian function. In the following, we will repeat some of the work of
+Sec.~\ref{sec: numerical beam-width} for completeness. Specifically, let us
+define $\Delta d$ as the central angle between the observer's line-of-sight and
+the beam (this is the spherical distance between the two points marked in
+Figure~\ref{fig: delta theta delta phi}), then the intensity is
+\begin{equation} \In(t) = \In_{0}\exp\left(-\frac{\Delta
+d(t)^{2}}{2\rho^{2}}\right).  \label{eqn: beam intensity} \end{equation} Here
+$\In_0$ is the intensity when observed directly along the dipole and $\rho$
+measures the angular width of the beam.  From the spherical law of cosines, for
+an observer located at $(\PhiO, \iota)$, we have \begin{align} \Delta d(t) &=
+\cos^{-1}\left[\cos\Theta(t)\cos\iota +
+\sin\Theta(t)\sin\iota\cos|\Delta\Phi(t)|\right].  \label{eqn: angular sep}
+\end{align} The observer will see a maximum pulse intensity at $\Delta\Phi =
+0$, given by \begin{align} \In_\textrm{max} = \In_{0} \exp\left(
+-\frac{\left(\Theta(t) - \iota\right)^{2}} {2\rho^{2}}\right).  \label{eqn:
+imax} \end{align}
 
 Now let us recognise that $\Theta$ varies on the slow precession time-scale,
 while $\Phi$ varies on the rapid spin time-scale: a single pulse consists of
@@ -1570,11 +1584,11 @@ several features to understand. First, for $f\lesssim 0.024$ the
 odds-ratio rapidly grows, favouring precession; this is because for such small
 values of $f$ the beam-width switching prior excludes the values of
 $\Wone$ required to fit the data. As a result the switching solutions are
-unnaturally disadvantaged compared to the precession solutions, such odds-ratios do not
+unnaturally disadvantaged compared to the precession solutions. Such odds-ratios do not
 fairly compare the models.
 
 For $0.024 \lesssim f \lesssim 0.3$ the log-odds-ratio is approximately linear
-growing from $1.44$ when $f=0.24$ to $3.21$ when $f=0.3$. In this region the
+growing from $1.44$ when $f=0.024$ to $3.21$ when $f=0.3$. In this region the
 solutions for both models are supported by the prior in that it does not
 exclude or disfavour the posterior value. The variation in the odds-ratio
 results from changes in the prior volume of the switching model, the evidence
@@ -1681,7 +1695,7 @@ application switching and precession}.
 
 In addition to the data considered here, a number of
 high-time-resolution observations of PSR~B1828-11 were performed
-by the Parkes telescope, as discussed in \citet{Stairs2003}.
+by the Parkes telescope, as discussed in \citet{Stairs2003} and \citet{Lyne2012}.
 This data set shows interesting variability in beam-width on short
 timescales of $~\mathcal{O}(100)$ pulses. While the qualitative `noisiness' of the
 beam-width data is already apparent from the current data-set (e.g. see
@@ -1710,7 +1724,7 @@ variations observed in PSR~B1828-11. This is not intended as an exhaustive revie
 of all models, but rather a discussion on the intricacies that arise such as
 setting up proper and well-motivated priors. This lays the groundwork
 for a more exhaustive test of all available models and can also be extended
-by improvements to the data sources.
+by including other data sources.
 
 \biblio
 
@@ -1763,7 +1777,7 @@ to ensure that our results are reproducible.
 
 To estimate the posterior given a signal model and prior, we run two MCMC
 simulations: an initialisation and production. In the following the term
-\emph{walker} refers to single chains in the MCMC simulation, the
+\emph{walker} refers to single chains in the MCMC simulation. The
 \citet{Foreman-Mackay2013} implementation runs a number of these in parallel
 for each simulation.
 
@@ -1784,7 +1798,7 @@ models in this analysis.
 dispersing them in a small range about the maximum-likelihood found in the
 previous step. The simulation proceeds from this initial state and we divide
 the resulting samples equally into two: discarding the first half as a
-so-called `burn-in', we retain the second half as the production data used to
+so-called `burn-in'. We retain the second half as the production data used to
 estimate the posterior.  The burn-in removes any memory of the artificial
 initialisation of the walkers at the start of this step.
 
@@ -1804,12 +1818,12 @@ peaks of the posterior probability  distributions.
 The precession model developed here assumes the observer only ever sees one
 pole of the beam-axis, but in the canonical model we often imagine there is
 also emission from an opposite magnetic pole. In several pulsars this can be
-seen as an \emph{interpulse} $180\degr$ out of phase from the main pulse
+seen as an \emph{interpulse}, $180\degr$ out of phase from the main pulse
 \citep{Lyne1988, Maciesiak2011}; these pulsars are generally found to be close
 to orthogonal rotators\footnote{The use of `interpulse' here strictly refers to
 seeing the opposite beam of the pulsar, and not cases where the pulsar is
 almost aligned and interpulses are thought to come from the same beam}. No
-such interpulse is reported for PSR~B1828-11, we will now discuss the implications
+such interpulse is reported for PSR~B1828-11. We will now discuss the implications
 of this given the precession interpretation.
 
 Let us imagine a scenario where the observer is in the northern (magnetic)
@@ -1844,13 +1858,13 @@ pole}). From our MPE this gives a lower bound of $4.6\degr$ for the polar kink
 angle. This latitudinal kink can be compared with the longitudinal kink of
 interpulses observed in other pulsars: often these are not found at exactly
 $180\degr$, but can deviate by 10's of degrees (see the separation of
-interpulses for double-pole interpulses in Table~1. of \cite{Maciesiak2011}).
+interpulses for double-pole interpulses in Table~1 of \cite{Maciesiak2011}).
 Allowing for such kinks in both beams is a possible extension to the
 precessional model.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.4\textwidth]{J_ObserverPlane_otherpole}
+\includegraphics[width=0.5\textwidth]{J_ObserverPlane_otherpole}
 \caption{Extension to Figure~\ref{fig: J observer plane} adding in the south pole
 (demarked by a white triangle and solid line) for an instance in which the
 north pole is in the southern hemisphere. The dotted line with a white
