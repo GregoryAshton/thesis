@@ -70,7 +70,7 @@ area of parameter space.  These narrow-band searches aim to allow for small
 frequency offsets between the EM and GW signals, such as could be caused by
 free precession, or a finite coupling time between the two components of the
 neutron star \citep{ligo2008}. \emph{Directed} searches look for non-pulsing
-neutron stars predicted by other means such as at the centre of the super-nova
+neutron stars predicted by other means such as at the centre of the supernova
 remnant Cassiopeia A. An \emph{all-sky} search involves searching over the
 entire sky for unknown pulsars. For both directed and all-sky searches the lack
 of EM data necessitates wide bands in the frequency and its derivatives. For
@@ -108,7 +108,7 @@ phase model.
 
 \end{itemize}
 
-In this work, we will mimic narrow-band and single-template searches to
+In this chapter, we will mimic narrow-band and single-template searches to
 directly simulate special case 1. Specifically, we will inject a fake GW signal
 which contains a realisation of timing noise, and recover it using templates
 based on a single global Taylor series. This tests the scenarios in which the
@@ -174,10 +174,10 @@ a month is short enough such that these coefficients and the Taylor
 expansion, Eqn.~\eqref{eqn: Taylor compact} track the rotational phase during
 the month. The Crab ephemeris tracks
 the rotational frequency and frequency derivative of the Crab pulsar ($\nu$ and
-$\dot{\nu}$. In this work, we will consider searches for gravitational
+$\dot{\nu}$). In this chapter, we will consider searches for gravitational
 wave emission from
-non-axisymmetric neutron stars at twice this frequency $f = 2\nu$; from hereon
-all frequencies $f$ and spin-downs $\dot{f}$ refer to the pulsar's CW emission.
+non-axisymmetric neutron stars at twice this frequency $f = 2\nu$; hereafter
+all frequencies $f$ and spin-downs $\dot{f}$ refer to the pulsar's GW emission.
 
 The Crab ephemeris gives a distinct picture of the variations due to timing
 noise superimposed on the monotonic spin-down. To illustrate how this manifests
@@ -217,7 +217,7 @@ single global template to the non-smooth signal.
 \label{fig: template jumps}
 \end{figure}
 
-In this work, we aim to quantify the significance of timing
+In this chapter, we aim to quantify the significance of timing
 noise in GW searches by generating signals from the Crab ephemeris. This
 is an empirical description of timing noise and so we
 make no assumptions on the underlying astrophysical model.
@@ -249,7 +249,7 @@ $\dot{\f}_i$ for each month $i$.
 
 \item \label{fit} Generate the phase as a function of time from the data and
 then fit a global Taylor expansion up to $\ddot{f}$ for the whole
-observation time.  The fit results in set of interpolated coefficients
+observation time.  The fit results in a set of interpolated coefficients
 $[\f_{0}, \dot{\f}_{0}, \ddot{\f}_{0}]$ at a global reference time halfway through
 the data. These coefficients are used to centre the narrow-band search
 parameters.
@@ -263,8 +263,8 @@ ephemeris, which by construction coincides with a pulse arrival time.
 
 In this process we have assumed that a fixed value of $\ddot{\f}_{0}$ is
 sufficient. This can be justified by considering the next term in the Taylor
-expansion and typical values of $\dddot{\f} \sim 10^{-30}$
-Hz/s$^{3}$.  Over typical search durations~$\sim 1$yr this term contributes
+expansion and typical values of $\dddot{\f}\sim 10^{-30}$~Hz/s$^{3}$.  Over
+typical search durations~$\sim 1$~year, this term contributes
 less than a radian to the phase, and it can therefore be safely neglected.
 
 We use the \verb+LALSuite+ \cite{lalsuite} gravitational-wave analysis routines
@@ -294,7 +294,7 @@ template search at the interpolated coefficients $[\f_{0}, \dot{\f}_{0},
 \ddot{\f}_{0}]$ and a narrow-band search in $\f$ and $\dot{\f}$ centred on the
 interpolated coefficients. These searches were found to be sufficient
 to find the signal to within a reasonable mismatch, so more sophisticated
-methods where not required.
+methods were not required.
 
 The narrow-band consists of a grid of points in
 $f$ and $\dot{\f}$. As found by \citet{ligo2008} we find searching over
@@ -348,7 +348,7 @@ single-template search.
 \subsection{The effect of timing noise on narrow-band searches} We begin by
 describing how timing noise degrades a narrow-band search. This is done by
 comparing the result for a signal containing no timing noise with a signal
-generated from the Crab ephemeris between MJD 45150 and 56668. This period
+generated from the Crab ephemeris between MJD 45150 and 45668. This period
 holds no special significance and is used simply to demonstrate the essential
 features of a signal containing timing noise.
 
@@ -368,10 +368,10 @@ search.
 \begin{figure}[htb]
 \centering
 \includegraphics{narrow-band_examples}
-\caption{In Figure~(a) we show the mismatch as a function of parameter space
+\caption{In Figure~{\bf A} we show the mismatch as a function of parameter space
     for a signal without timing noise. The injected signal has
-    parameters~$[f_{0}, \dot{f}_{0}, \ddot{\f}_{0}]$, as a result the mismatch has
-    a minimum at this point. This can be compared with Figure~(b) showing the
+    parameters~$[f_{0}, \dot{f}_{0}, \ddot{\f}_{0}]$. As a result, the mismatch has
+    a minimum at this point. This can be compared with Figure~{\bf B} showing the
 mismatch from a signal including timing noise. The signal is generated from the
 Crab ephemeris between MJD 45150 and 45668.}
 \label{fig: narrow-band example}
@@ -398,7 +398,7 @@ In addition to producing a mismatch, timing noise may result in the best
 candidate being found at some distance from the centre of the narrow-band
 search.  However, we find that the distance from the centre of the grid is
 small when compared to the grid spacing used in actual narrow-band searches
-such as the S5 and VSR4.  For the S5 period narrow-band search, we find that
+such as that used for the S5 and VSR4 searches. For the S5 period narrow-band search, we find that
 the minimum mismatch was a fraction~$\sim 0.01$ of the grid spacing used in the
 \citet{ligo2008} search.  At the resolutions used in real narrow-band searches,
 the effects of timing noise on the location of the minimum mismatch will not be
@@ -460,16 +460,18 @@ restricted to multiples of 1 month by the frequency of updates to the Crab
 ephemeris.
 
 Timing noise is not the only variability in the spin-down of pulsars - they can
-also undergo sudden increases in rotation frequency known as \emph{glitches}.
+also undergo sudden increases in rotation frequency known as \emph{glitches}
+(for an introduction, see Section~\ref{sec: glitches}).
 The Crab frequently glitches and these are catalogued by \citet{Espinoza2011}
 and available at \url{http://www.jb.man.ac.uk/pulsar/glitches.html}.
 The mechanism which causes a glitch is not well understood and may involve
 unpredictable variations in the GW signal. As a result, targeted GW searches
 either avoid periods with known glitches \citep{ligo2008}, or
 allow for an arbitrary jump in gravitational wave phase at the time of
-the glitch \citep{ligo2010}. For this work, we ignore
-the complicating factor introduced by glitches and consider
-only the effect of timing noise. We do this by
+the glitch \citep{ligo2010}. For this chapter, we will ignore
+the complicating factor introduced by glitches (which was considered
+in Chapter~\ref{sec: glitches in cgw}) and consider
+separately the effect of timing noise. We do this by
 omitting windows which include glitches from the search by using
 the aforementioned glitch catalogue.
 
@@ -651,7 +653,7 @@ signal, then we find it will only have a small~($\approx1\%$) effect on the
 measured squared SNR of the putative signal.  We found the mismatch in
 single-template searches to be only fractionally larger than the narrow-band
 searches.  This also suggests phase-adapted searches would not be significantly
-effected if the signal does not contain timing noise.
+affected if the signal does not contain timing noise.
 
 Secondly, searching over all available Crab data with a 6-month window, we
 looked at the mismatch as a function of observation epoch. Post glitch periods
