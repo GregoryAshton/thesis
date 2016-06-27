@@ -10,7 +10,7 @@
 
 
 Continuous gravitational waves from neutron stars could provide an invaluable
-resource to learn about their interior physics. The detection method involves
+resource to learn about their interior physics. One common detection method involves
 matched filtering a modelled template against the noisy gravitational wave data
 to find unknown signals. As introduced in Chapter~\ref{sec: intro to cgw}, this
 method suffers a mismatch (a loss of signal to noise ratio) if the unknown
@@ -53,11 +53,11 @@ coherence over the event.
 
 Two leading models exist to explain glitches. In the \emph{superfluid pinning}
 model, some portion of the interior superfluid is pinned, and does not
-participate in the smooth external torque-driven spin-down of the rest of the
+participate in the smooth torque-driven spin-down of the rest of the
 crust (where `crust' refers to the actual crust, plus whatever other parts of
-the star are strongly coupled to it).  After some period, the crust will
+the star that are strongly coupled to it).  After some period, the crust will
 therefore have developed a frequency lag compared to the pinned superfluid. A
-glitch occurs when the two components spontaneously recouple, transferring
+glitch occurs when the two components recouple, transferring
 angular momentum from the pinned superfluid to the crust and producing a
 spin-up of the crust \citep{Anderson1975, Alpar1984}.  Alternatively glitches
 could be caused by \emph{crust cracking} as the crust readjusts to a minimum
@@ -71,11 +71,11 @@ Rotating isolated neutron stars can produce continuous gravitational-wave (GW)
 emission from non-axisymmetric distortions, colloquially also known as `mountains'. These
 require the mountain to be supported by either elastic stresses in the crust or
 magnetic fields. In this model, the star emits a monochromatic GW at a
-frequency $\nuS$ which is twice the rotation frequency $\nuS=2\nuR$.
+frequency $\nuS$ which is twice the rotation frequency $\nuS$, i.e, $\nuS=2\nuR$.
 
 It is unclear exactly how a glitch, as observed in the EM channel, will
 manifest in the GW channel.  Observing a glitch in both the EM and GW channels
-would provide a unique opportunity to investigate both mechanism, but to do
+would provide a unique opportunity to investigate the neutron star interior, but to do
 this we must first detect GW emissions.
 
 Estimates for the intrinsic gravitational wave strain amplitude
@@ -119,7 +119,7 @@ statistics to estimate the size and rate of radio pulsar glitches for the
 parameter spaces considered in continuous GW searches. Then, we assume that the
 EM and GW channels are locked in phase, such that a glitch observed in radio
 pulsations also exist in the GW signal at twice the phase, frequency and
-spin-down. Having obtained an estimate for the magnitude and rate of glitches
+spin-down rate. Having obtained an estimate for the magnitude and rate of glitches
 for potential continuous GW sources, we quantify the effect such glitches will
 have on current continuous GW detection methods by calculating the mismatch. We
 will do this using the generalised metric-mismatch introduced in Section~\ref{sec:
@@ -142,15 +142,15 @@ searches to glitches in their target population.
 %there is no glitch, are most at risk from glitches.
 
 The remainder of this chapter is organised in the follow way. We begin in
-Section~\ref{sec: continuous gravitational-wave searches}, with a description of
-current GW searches and how glitches may effect them. Then, in Section~\ref{sec:
-statistical properties} we investigate the statistical properties of the
-observed radio pulsar glitches. In Section~\ref{sec: mismatch due to glitches} we
-translate the statistical properties of the observed glitches into a prediction
-for mismatches during current and future continuous wave searches. To give
-quantitative results relevant to real GW searches, in Section~\ref{sec: estimating
-the mismatch} we will present predictions for the mismatch and rate of glitches for
-some current GW searches.
+Section~\ref{sec: continuous gravitational-wave searches}, with a description
+of current GW searches and how glitches may effect them. Then, in
+Section~\ref{sec: statistical properties} we investigate the statistical
+properties of the observed radio pulsar glitches. In Section~\ref{sec: mismatch
+due to glitches} we calculate, given the properties of a single glitch, the
+corresponding mismatch for a semi-coherent and fully-coherent search.  To give
+quantitative results relevant to real GW searches, in Section~\ref{sec:
+estimating the mismatch} we use these calculations to transform the predicted
+glitch sizes into predicted mismatches and rates for GW searches.
 
 \section{Continuous gravitational-wave searches}
 \label{sec: continuous gravitational-wave searches}
@@ -166,19 +166,18 @@ evolution of the EM channel.
 In contrast, blind GW searches which, by definition, search for signals without an
 EM counterpart do not have any such prior knowledge. This category of searches
 includes both \emph{directed} searches where a small patch of sky is searched,
-where a neutron star is believed to exist (e.g. the \citet{ligo_SNR2015} search
+in which a neutron star is believed to exist (e.g. the \citet{ligo_SNR2015} search
 for continuous GWs from supernova remnants), and \emph{all-sky} searches; in
 both instances a band of frequencies and frequency-derivatives are usually
 searched since they are inherently unknown. These searches
-matched filter against smooth templates built from a Taylor expansion in
+match filter against smooth templates built from a Taylor expansion in
 the phase; as such they do not include glitches. If a neutron star, emitting
 detectable levels of GW emission, undergoes a glitch in the GW channel, then the
 matched filtering method may fail because the template is a poor match to the
 real, glitching signal.
 
 All-sky and targeted blind searches are most notably at risk of glitch
-disruption and so it is these which we fill focus on this work. Without
-restraints on computing costs, continuous GW searches ideally employ a
+disruption and so it is these which we fill focus on in this chapter. Continuous GW searches ideally employ a
 \emph{fully-coherent} search which consists of matched filtering the template
 against the data over a coherence time $\Tcoh$.  However, such a search is
 computationally intensive and so GW searches typically revert to using a
@@ -189,7 +188,7 @@ measurement which is insensitive to phase jumps between segments. This method
 provides more sensitive searches at fixed computing cost \citep{Prix2012}.
 Typically, a semi-coherent search is performed first,
 then interesting candidates are \emph{followed-up}, reducing the number of
-segments, aiming to finally detect the signal with a fully-coherent search,
+segments, aiming to finally detect the signal with a fully-coherent search;
 see \citet{Shaltev2013} for a two-stage follow-up procedure.
 
 A variety of targeted and all-sky searches have already been completed, with
@@ -210,7 +209,7 @@ this was a fully-coherent search with no semi-coherent stage.}
 \label{tab: searches}
 \end{table}
 
-To make practical use of the results obtained in this work, we will make
+To make practical use of the results obtained in this chapter, we will make
 predictions for the glitch rate and magnitude in the context of typical GW
 searches. As an illustrative example, we will use the search parameters that
 were used in LIGO's Einstein@Home all-sky search for periodic gravitational waves
@@ -227,29 +226,32 @@ spin-down parameter space to $\nudotS = [-2, 0]\times10^{-9}$~Hz~s$^{-1}$.
 \section{Statistical properties of the observed glitch database}
 \label{sec: statistical properties}
 In this section, we will discuss the properties of glitches in the observed
-radio pulsar population using the glitch-database maintained by \citet{Espinoza2011}
-and available at \url{www.jb.man.ac.uk/pulsar/glitches.html}.
-Our goal is to make a statement about how often glitches occur and their
-magnitudes for the types of neutron star which may be emitting GWs in the E@H
-parameter space. This task is made difficult by the low numbers of pulsars observed
-in this region of parameter space. As a result, the results presented here must
-moderately extrapolate from the observed radio pulsar population.
+radio pulsar population using the glitch-database maintained by
+\citet{Espinoza2011} and available at
+\url{www.jb.man.ac.uk/pulsar/glitches.html}.  Our goal is to make a statement
+about how often glitches occur and their magnitudes for the types of neutron
+stars which may be emitting GWs in the parameter space of typical GW searches.
+This task is made difficult since many searches look for young, rapidly
+rotating stars for which we only have a small sample of observations. Therefore,
+we must moderately extrapolate to apply our results to the
+observed radio pulsar population.
 
-Radio pulsar timing methods detect glitches by fitting a piecewise Taylor expansion in
-the phase either side of the event, with a modelled jump in between (see
-\citet{Edwards2006} for a detailed discussion). The glitch catalogue
-\citep{Espinoza2011} reports 472 events from 165 pulsars; for each of these
-events a value is reported for the frequency jump $\DnuRglitch$ and frequency
-derivative $\DnudotRglitch$, if it can be measured. We
-cross-reference the glitch catalogue with the ATNF \citet{ATNF} pulsar
-catalogue available at \url{www.atnf.csiro.au/people/pulsar/psrcat/} in order
-to get the glitching pulsar's timing properties.
+Radio pulsar timing methods detect glitches by fitting a piecewise Taylor
+expansion in the phase on either side of the event, with a modelled jump in
+between (see \citet{Edwards2006} or Section~\ref{sec: glitches} for a detailed
+discussion). The glitch catalogue \citep{Espinoza2011} reports 472 events from
+165 pulsars (as of the 27$^{\rm th}$ of June 2016); for each of these events a
+value is reported for the frequency jump $\DnuRglitch$ and frequency derivative
+$\DnudotRglitch$, if it can be measured. We cross-reference the glitch
+catalogue with the ATNF \citet{ATNF} pulsar catalogue available at
+\url{www.atnf.csiro.au/people/pulsar/psrcat/} in order to get the glitching
+pulsar's timing properties.
 
 Of the 472 listed glitches, we find 15 with no ATNF cross-reference, 1 with
 $\DnuRglitch < 0$, and 4 with no measured $\nudotR$ in the ATNF catalogue; these
 pulsars are removed from our data set. Additionally, we find 54 glitches which
-have either no measured $\DnudotRglitch$, or a measured value consistent with 0,
-these will be included where possible.
+have either no measured $\DnudotRglitch$, or a measured value consistent with 0.
+These will be included where possible.
 
 \subsection{Glitch magnitudes}
 \label{sec: observed glitch magnitude}
@@ -258,17 +260,17 @@ these will be included where possible.
 two distinct sub-populations of pulsars. There is the main population with
 $\DnuRglitch$ magnitudes ranging from $10^{-9}$ to $10^{-5}$~Hz, and a second,
 less numerous population with larger magnitudes of $\DnuRglitch$. The smaller
-population are described as `Vela-like' in that they have similar
-characteristic ages and magnetic fields to the Vela pulsar and all undergo
-large jumps in $\DnuRglitch$.  We reproduce the evidence for this finding in
+population are described as `Vela-like' in that the pulsars that undergo these
+glitches have similar
+characteristic ages and magnetic fields to the Vela pulsar (B0833-45).  We reproduce the evidence for this finding in
 Figure~\ref{fig: Delta nu mixture} where we plot the histogram of all observed
-$\DnuRglitch$ values, this demonstrates the bimodality found by \citet{Espinoza2011}.
+$\DnuRglitch$ values. This demonstrates the bimodality found by \citet{Espinoza2011}.
 
 To check that the bimodality is not an artefact of the histogram bin sizes we
 estimate the probability density function using a Gaussian kernel density
-estimate (KDE). Specifically we use the \citet{Scipy} implementation, this is
+estimate (KDE). Specifically we use the \citet{Scipy} implementation. This is
 also plotted in Figure~\ref{fig: Delta nu mixture} and demonstrates two distinct
-peaks, although the lower peak could be interpreted as two modes close together.
+peaks, although the smaller peak could be interpreted as two modes close together.
 
 By eye, it is clear that there are at least two modes to the histogram. However,
 it is also possible that there may be more modes with less distinct differences
@@ -327,7 +329,7 @@ the data into the individual sub-populations, as labelled by the Gaussian
 mixture model, and colour coded to aid the eye. Several pulsars of interest are
 picked out using coloured halos. It is of general interest that not all the
 Vela glitches are categorised by our method as Vela-like; this can be seen by
-looking at the distribution of Vela glitches (J0537-6910) in Figure~\ref{fig:
+looking at the distribution of Vela glitches in Figure~\ref{fig:
 Espinoza dF dF1}.
 \begin{figure*}[htb]
 \centering
@@ -429,7 +431,7 @@ We investigated correlations of the
 glitch magnitudes $\DnuRglitch$ and $\DnudotRglitch$ with the frequency,
 frequency-derivative and characteristic age.
 In Table~\ref{tab: correlation} we present the Pearson correlation coefficient
-in log-log space for each glitch magnitude ($\DnuRglitch$ and $\DnudotRglitch$).
+for each glitch magnitude ($\DnuRglitch$ and $\DnudotRglitch$).
 This is done for three groups:
 all the data together, then individually for the normal population and the
 Vela-like population.
@@ -438,20 +440,22 @@ Vela-like population.
 &  & $\log_{10}|\tauAge|$ & $\log_{10}|\nuR|$ & $\log_{10}|\nudotR|$ \\\hline
 \input{\thisdir/correlation_table}
 \end{tabular}
-\caption{The correlation coefficient (in log-log space) between the glitch
-magnitudes and the measured and inferred timing properties of the source pulsar.}
+\caption{The correlation coefficient between the glitch
+magnitudes and the measured and inferred timing properties of the source
+pulsar. For each row, the largest value is highlighted in bold.}
 \label{tab: correlation}
 \end{table}
 For the normal population, both glitch magnitudes most strongly correlates with
-spin-down rate $\nudotR$. In contrast, $\DnuRglitch$ for the Vela-like population has
+spin-down rate $\nudotR$, although we recognise that $\tauAge$ is only
+marginally worse.  In contrast, $\DnuRglitch$ for the Vela-like population has
 a weak correlation with all predictor variables, but $\DnudotRglitch$ does
 correlate well showing the strongest correlation with the characteristic age.
 We choose to use $\nudotR$ as a predictor variable for both the normal and
 Vela-like populations. For the latter the correlation coefficient suggests that
-$\tauAge$ may be a better predictor, however $\nudotR$ is only marginally
-worse and it makes it simpler to interpret later results if the same predictor is
-used for both populations. In practise, our results will be robust to either choice
-of the predictor variable.
+$\tauAge$ may be a better predictor, however $\nudotR$ is only marginally worse
+and it makes it simpler to interpret later results if the same predictor is
+used for both populations. In practise, our results will be robust to either
+choice of the predictor variable.
 
 In Figure~\ref{fig: extrapolation fit}A  and Figure~\ref{fig: extrapolation fit}B
 we scatter-plot
@@ -471,8 +475,7 @@ and Eqn.~\eqref{eqn: Delta nudot fit} for $\delta \dot{\nu}$; the green lines
 mark the Vela-like fit while the purple lines park the fit to the normal population.
 Vertical clustering in the observed data points is the
 result of multiple glitches observed from a single source. Coloured halos
-highlight glitches from some interesting pulsars using the
-same labels as in Figure~\ref{fig: Espinoza dF dF1}.}
+highlight glitches from some interesting pulsars.}
 \label{fig: extrapolation fit}
 \end{figure}
 
@@ -505,10 +508,10 @@ transformed the variation estimate and plotted it as a shaded band.
 \begin{figure}[htb]
 \centering
 \includegraphics[]{EAH_Deltanu_Deltanudot_Prediction}
-\caption{Predicted glitch magnitude of $\DnuRglitch$, in panel \textbf{A}, and
-$\DnudotRglitch$, in panel \textbf{B}. These are plotted over the E@H parameter
+\caption{Predicted glitch magnitude of $\DnuRglitch$, in the upper panels, and
+$\DnudotRglitch$, in the lower panels. These are plotted over the E@H parameter
 space using the fitting formulae of Eqn.~\eqref{eqn: Delta nu fit} and
-Eqn.~\eqref{eqn: Delta nudot fit}, the shaded bands indicate the estimated error
+Eqn.~\eqref{eqn: Delta nudot fit}. The shaded bands indicate the estimated error
 neglecting correlations.}
 \label{fig: EAH Delta nu nudot prediction}
 \end{figure}
@@ -564,9 +567,7 @@ also plotted in Figure~\ref{fig: EAH_NdotgAve}A, on the right-hand axis.
 $\nudotS$ over the range of values used in the E@H search. On the right axis is
 the corresponding average number of glitches for a search of duration $1$~yr.
 \textbf{B}: the probability of observing one or
-more glitches during a search lasting for $1$~yr assuming a Poisson distribution. Coloured
-halos highlight interesting pulsars using the same colour labels as in
-Figure~\ref{fig: Espinoza dF dF1}.}
+more glitches during a search lasting for $1$~yr assuming a Poisson distribution.}
 \label{fig: EAH_NdotgAve}
 \end{figure}
 
@@ -576,10 +577,10 @@ with an avalanche process transferring angular momentum from the core superfluid
 to the crust. Choosing 9 pulsars which had glitched 5 times or more, they found
 that 7 of these where consistent with a constant rate Poisson process such that
 each glitch event is statistically independent. In the remaining two, J0537-6910
-and J0835-4510, they find that a quasiperiodic component coexists with the Poisson
+and B0833-45 (Vela), they find that a quasiperiodic component coexists with the Poisson
 process and accounts for about $20\%$ of the events.
 
-Of the glitch catalogue, J0537-6910 accounts for 23 and J0835-4510 for 17 of
+Of the glitch catalogue, J0537-6910 accounts for 23 and B0833-45 (Vela) for 17 of
 the total 472 events. Assuming that $20\%$ of these are due to the
 quasiperiodic component, this is $\sim 1.7\%$ of the total number of observed glitches. It
 is possible that other pulsars also exhibit a quasiperiodic component, so the
@@ -621,7 +622,7 @@ For this work, we consider a glitch to consist of an instantaneous jump in the
 phase, frequency, and frequency derivative of the GW signal; the magnitudes of
 these quantities we will denote by $\Dphiglitch, \Dnuglitch,$ and
 $\Dnudotglitch$.  Since we don't yet understand the glitch mechanism and what
-happens during the glitch, its unclear how meaningful it is to discuss a jump
+happens during the glitch, it's unclear how meaningful it is to discuss a jump
 in the GW phase.  Nevertheless, modelling the signal with a piecewise Taylor
 expansion naturally includes such a phase jump, therefore we will include it in
 our discussion.  The size of the jump in the GW frequency and frequency
@@ -674,7 +675,7 @@ The jumps at the glitch itself may then be parameterised as
 The time-dependence here indicates that one must account for the
 changes due to lower order terms between the reference time, halfway through
 the subdomain, and the glitch. Since we do not consider second-order spin-down
-terms this is not required for the $\Dnudotglitch$ calculation.
+terms, this is not required for the $\Dnudotglitch$ calculation.
 
 In the following sections, we consider fully-coherent and semi-coherent GW
 searches for this signal which contains a single glitch. In general these
@@ -724,12 +725,13 @@ Taylor expansion template is
 \end{split}
 \label{eqn: mutilde fully-coherent unminimised}
 \end{align}
-The first three terms are the independent contributions to the
-mismatch from the jumps in phase, frequency, and spin-down; the last term is the mixture
-term between the phase and the spin-down.  This expression has a maximum
-when $R = 1/2$, and vanishes when $R$ is 0 and 1 when the glitch does not effect the
-search. Furthermore, we checked that when the magnitude of the glitch is zero,
-one recovers the usual fully-coherent mismatch between two smooth Taylor expansions.
+The first three terms are the independent contributions to the mismatch from
+the jumps in phase, frequency, and spin-down; the last term is the mixture term
+between the phase and the spin-down.  This expression has a maximum when $R =
+1/2$, and collapses to the usual mismatch between two smooth Taylor expansions when
+$R$ is 0 and 1. Furthermore, it was verified that when the magnitude of the glitch
+is zero, one recovers the usual fully-coherent mismatch between two smooth
+Taylor expansions.
 
 %defined in Eqn.~\eqref{eqn: parameter space offsets}
 The mismatch in Eqn.~\eqref{eqn: mutilde fully-coherent unminimised} is a
@@ -802,7 +804,7 @@ $\Dphiglitch$. For such a glitch, we can calculate the size of a phase-jump
 which would produce a mismatch of $\mutilde=0.1$
 \begin{align}
 \Dphiglitch =
-\sqrt{\frac{70\mu}{3}} \approx 1.8 \textrm{ rad} \left(\frac{\mutilde}{0.1}\right)
+\sqrt{\frac{70\mutilde}{3}} \approx 1.5 \textrm{ rad} \left(\frac{\mutilde}{0.1}\right)
 \end{align}
 
 For the frequency and spin-down rate jumps,
@@ -1145,7 +1147,7 @@ glitches as a function of the observation time and spin-down rate.
 \caption{The estimated fully-coherent
 mismatch as a function of $\Tcoh$ and $\nudotS$. In the top panel is the
 prediction based on the fit
-to the normal population, in the bottom panel is the prediction based on
+to the normal population. In the bottom panel is the prediction based on
 the fit to the Vela-like population. Solid black lines provide contours of fixed
 mismatch. Red dashed lines have been added to indicate $\langle
 N_\textrm{normal} \rangle$ and $\langle N_\textrm{Vela-like} \rangle$ as given
@@ -1236,7 +1238,7 @@ throughout the observation period. The resulting mismatches are then histogramme
 density is shaded on to Figure~\ref{fig: follow-up}: this demonstrates the spread of
 mismatches about the average value. Notably there is a tight band centred on
 the analytic $R$-averaged prediction of Eqn.~\eqref{eqn: R-averaged semi-coherent};
-there is a low-density of mismatches below this band, these occur when $R$ is
+there is a low-density of mismatches below this band. These occur when $R$ is
 close to 0 or 1.
 
 \begin{figure}[htb]
@@ -1253,7 +1255,7 @@ This plot shows that for this glitch during the initial search at $\Nseg=667$,
 the number of segments used in the E@H all-sky search, the mismatch would be
 negligible $\sim10^{-3.5}$. As a result the signal would be classified as a
 candidate and subsequently followed-up. We see then that, as the number of
-segments is increased, the mismatch rapidly increases and hence the candidate
+segments is decreased, the mismatch rapidly increases and hence the candidate
 would be dismissed.
 
 \subsection{Including the recovery from glitches}
@@ -1265,13 +1267,13 @@ exponential relaxation of some fraction of the total glitch magnitude over
 times of tens to hundreds of days. \citet{Lyne2000} characterised the
 fractional recovery by $Q = \sum \Deltanu_i/\DnuRglitch$ where $\sum
 \Deltanu_i$ is the total glitch magnitude summed over the number of relaxation
-components. For each component $\Deltanu_i$ is recovered over an
+components. For each component, $\Deltanu_i$ is recovered over an
 e-folding timescale $\tau^d_i$. In most cases, only a single component is
 identified.
 
 This may have an important effect on our estimates since, if a large fraction
 of the glitch is recovered in a time-scale short compared to the observation
-time, we will over estimate the mismatch. On the other hand, the exponential
+time, we will over-estimate the mismatch. On the other hand, the exponential
 relaxation itself could also cause a mismatch which would tend to vanish when
 $\tau^d_i \ll \Tobs$, but be maximal when $\tau^d_i \sim \Tobs$.  Ideally we would
 like to model the exponential relaxation in detail, but the more practical
@@ -1286,12 +1288,12 @@ analysis by \citet{Lyne2000}. In general, it is found that for older pulsars,
 with lower spin-down rates, $Q\ll1$, but $Q$ correlates well with
 $\log_{10}|\nudotR|$. Taking all measured Q values for the Crab pulsar
 \citep{Lyne2000, Wang2001, Wang2012}, which has the highest spin-down rate
-$-0.038$~nHz/s in the analysis, we find an average and standard-deviation of
+$-0.38$~nHz/s in the analysis, we find an average and standard-deviation of
 $0.77\pm0.2$ for $Q$ and $9.45\pm6.7$~days for the relaxation time-scale. We
 note that in three cases the same glitch was measured with differing values of
 $Q$ and relaxation time; this presumably reflects the fact that the
 measurements are uncertain and depend on the data span used. In contrast, the
-Vela pulsar, which has the second largest spin-down rate $0.0016$~nHz/s has an
+Vela pulsar, which has the second largest spin-down rate $0.016$~nHz/s has an
 average $Q$ of 0.08 for the glitches in \citet{Lyne2000}, with none exceeding
 0.2.
 
@@ -1387,9 +1389,9 @@ that a glitch will occur.
 The mismatch estimates potentially overestimate the effect by ignoring
 the exponential recovery from glitches. If these have short recovery timescales
 compared with typical observation times, this could reduce the mismatch by a
-factor of $(1-Q)^{2}$, where $Q$ is the glitch recovery parameter. Its unclear
+factor of $(1-Q)^{2}$, where $Q$ is the glitch recovery parameter. It's unclear
 exactly what value $Q$ should take for the target population, but we feel this
-is unlikely, even in the most optimistic scenarios to nullify the risk.
+is unlikely, even in the most optimistic scenarios, to nullify the risk.
 
 The levels of mismatch measured here are of concern to both future and past
 all-sky searches for continuous GWs from neutron stars. If the effect of
@@ -1400,7 +1402,7 @@ considering different sections of data. A glitch has a weaker effect on a
 semi-coherent search and so it is possible the signal will be identified as a
 candidate, but subsequently lost in the follow-up.  We therefore recommend
 modifying follow-up procedures by introducing a greater number of steps. By
-studying how the mismatch increases with the coherence time candidates with a
+studying how the mismatch increases with the coherence time candidates when a
 glitch can be identified and followed up using a search template which includes
 a glitch.
 
@@ -1512,7 +1514,8 @@ This table clearly shows that the data is decisive: a Gaussian mixture model
 with $N \ge 2$ fits the data a great deal better than the simple $N=1$ GMM.
 This is unsurprising given the distinct multimodal nature of the data.
 However, the differences between the other models is more subtle. No single model
-distinguishes itself by a factor of greater than $10^{2}$ from the others. We
+distinguishes itself by a decisive odds ratio compared to its neighbouring
+models. We
 have checked that these results are robust to small changes in the prior
 specification.
 
@@ -1527,7 +1530,7 @@ found for each model.
          can be found in Table~\ref{tab: BF}.}
 \label{fig: pdf}
 \end{figure}
-It is clear from these plots that the $N=2$ model is unable to explain
+It is clear from these plots that the $N=2$ model is not perfect, especially in predicting
 the number of glitches found in between the two primary subpopulations,
 around $\log_{10}|\DnuRglitch/\textrm{Hz}|=-5.5$; by comparison the
 $N>2$ models and the $N=2$ model which allows for skewness can explain these
@@ -1565,7 +1568,7 @@ distributions we use non-informative priors and test that these do not induce
 any bias. In all cases we find the resulting posteriors to be Gaussian and so
 can take their mean values to get best-fit parameters.
 The advantage of this
-method above a simple least-squares linear regression is that we also estimate
+method compared to a simple least-squares linear regression is that we also estimate
 $\langle\sigma\rangle$, the variation about the linear fit. The linear fit can
 therefore be written as
 \begin{align}
@@ -1576,7 +1579,7 @@ in linear space
 \begin{align}
 y(x) = 10^{\langle c\rangle}x^{\langle m \rangle} 10^{\pm \langle\sigma\rangle}
 \end{align}
-where the last term gives the variability about the mean, hence neglecting
+where the last term gives the variability about the mean. Hence neglecting
 this term gives the mean.
 
 This is an inherently problematic approach since many functions besides a
@@ -1601,7 +1604,7 @@ shaded bands plotted in Figure~\ref{fig: extrapolation fit}.
 \caption{A reproduction of the mismatch contours in Figure~\ref{fig:
 fully-coherent mismatch Tobs} with a
 reduced number of contours, but showing the variation in predicted mismatch
-due to the $1-\sigma$ uncertainty in the predicted distributions as given by
+due to the $1\sigma$ uncertainty in the predicted distributions as given by
 the shaded bands in Figure~\ref{fig: extrapolation fit}. The two uncertainty
 bands overlap, giving rise to the cross-hatched region.}
 \label{fig: fully-coherent mismatch Tobs errors}
