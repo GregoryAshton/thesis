@@ -95,7 +95,7 @@ These methods are powerful, but harbour a vulnerability in any instance where
 the template, a Taylor expansion in the phase usually up to second order, does
 not match the signal. For GW signals from non-axisymmetric distortions of neutron stars,
 we can expect that discrepancies from such a template may manifest in one of
-two ways. Firstly, we know from pulsar timing that the spin-down of a pulsar
+two ways. Firstly, we know from radio pulsar timing that the spin-down of a pulsar
 differs from a Taylor expansion due to timing noise. We will
 consider the effect of timing noise in Chapter~\ref{sec: timing noise in cgw}
 and Chapter~\ref{sec: timing noise in cgw analytic};
@@ -165,7 +165,7 @@ evolution of the EM channel.
 
 In contrast, blind GW searches which, by definition, search for signals without an
 EM counterpart do not have any such prior knowledge. This category of searches
-includes both \emph{directed} searches where a small patch of sky is searched,
+includes both \emph{directed} searches where a small patch of sky is searched
 in which a neutron star is believed to exist (e.g. the \citet{ligo_SNR2015} search
 for continuous GWs from supernova remnants), and \emph{all-sky} searches; in
 both instances a band of frequencies and frequency-derivatives are usually
@@ -181,7 +181,7 @@ disruption and so it is these which we fill focus on in this chapter. Continuous
 \emph{fully-coherent} search which consists of matched filtering the template
 against the data over a coherence time $\Tcoh$.  However, such a search is
 computationally intensive and so GW searches typically revert to using a
-\emph{semi-coherent} method in which the total observation time $\Tobs$ is
+\emph{semi-coherent} method in which the total observation time $\Tspan$ is
 divided into $\Nseg$ segments each of duration $\Tcoh$. Each of these is then
 fully-coherently searched and then recombined to give a semi-coherent
 measurement which is insensitive to phase jumps between segments. This method
@@ -226,20 +226,19 @@ spin-down parameter space to $\nudotS = [-2, 0]\times10^{-9}$~Hz~s$^{-1}$.
 \section{Statistical properties of the observed glitch database}
 \label{sec: statistical properties}
 In this section, we will discuss the properties of glitches in the observed
-radio pulsar population using the glitch-database maintained by
-\citet{Espinoza2011} and available at
-\url{www.jb.man.ac.uk/pulsar/glitches.html}.  Our goal is to make a statement
-about how often glitches occur and their magnitudes for the types of neutron
-stars which may be emitting GWs in the parameter space of typical GW searches.
-This task is made difficult since many searches look for young, rapidly
-rotating stars for which we only have a small sample of observations. Therefore,
-we must moderately extrapolate to apply our results to the
-observed radio pulsar population.
+radio pulsar population using the glitch catalogue maintained by \citet{Espinoza2011}
+and available at \url{www.jb.man.ac.uk/pulsar/glitches.html}.
+Our goal is to make a statement about how often glitches occur and their
+magnitudes for the types of neutron star which may be emitting GWs in the
+parameter space of typical GW searches.  This task is made difficult since many
+searches look for young, rapidly rotating stars for which we only have a small
+sample of observations. Therefore, we must moderately extrapolate to apply our
+results to the observed radio pulsar population.
 
 Radio pulsar timing methods detect glitches by fitting a piecewise Taylor
 expansion in the phase on either side of the event, with a modelled jump in
 between (see \citet{Edwards2006} or Section~\ref{sec: glitches} for a detailed
-discussion). The glitch catalogue \citep{Espinoza2011} reports 472 events from
+discussion). The glitch catalogue reports 472 events from
 165 pulsars (as of the 27$^{\rm th}$ of June 2016); for each of these events a
 value is reported for the frequency jump $\DnuRglitch$ and frequency derivative
 $\DnudotRglitch$, if it can be measured. We cross-reference the glitch
@@ -366,7 +365,7 @@ the area of the coloured halo marks the pulsar's average glitch magnitude.
 For both plots, different
 colours have been used to partition the Vela-like and normal glitches (note that some
 pulsars display glitches from both populations) and a shaded box marks the
-parameter space searched by the E@H search. Finally, dashed lines mark isoclines
+parameter space searched by the S5R5 E@H search. Finally, dashed lines mark isoclines
 of constant characteristic age as defined by $\tauAge = \left|\nuR/\nudotR\right|$.
 \begin{figure}[htb]
 \centering
@@ -399,7 +398,7 @@ that, since we have not observed all pulsars
 for the same duration, one cannot infer the relative glitch rate from the
 number of glitches alone.
 
-%The E@H search space spans all observed spin-down rates; however, the discretisation
+%The S5R5 E@H search space spans all observed spin-down rates; however, the discretisation
 %is done linearly. The population of old pulsars with large frequencies, but small
 %$\nudotR$ values which lie in the E@H parameter space are the
 %so-called millisecond pulsars \citet{Lyne1988}; these are not targeted by the E@H search.
@@ -447,7 +446,7 @@ pulsar. For each row, the largest value is highlighted in bold.}
 \end{table}
 For the normal population, both glitch magnitudes most strongly correlates with
 spin-down rate $\nudotR$, although we recognise that $\tauAge$ is only
-marginally worse.  In contrast, $\DnuRglitch$ for the Vela-like population has
+marginally worse. In contrast, $\DnuRglitch$ for the Vela-like population has
 a weak correlation with all predictor variables, but $\DnudotRglitch$ does
 correlate well showing the strongest correlation with the characteristic age.
 We choose to use $\nudotR$ as a predictor variable for both the normal and
@@ -503,7 +502,8 @@ We plot both of these fitting formulae in Figure~\ref{fig: extrapolation fit};
 the estimate of the variability is indicated by a shaded band.
 
 Taking these fitting formulae, in Figure~\ref{fig: EAH Delta nu nudot prediction} we plot
-the predicted glitch magnitudes over the E@H search parameters. We have similarly
+the predicted glitch magnitudes (in frequency and spin-down rate respectively) over the 
+S5R5 E@H search parameters. We have similarly
 transformed the variation estimate and plotted it as a shaded band.
 \begin{figure}[htb]
 \centering
@@ -537,7 +537,7 @@ the glitch rate per second (left axis) and per year (right axis). Black
 dots are the original data points, the solid line and shaded region are
 our best-fit line and a measure of the variability as given in Eqn.~\eqref{eqn:
 Ng fit}. A vertical dashed line marks $-2\times10^{-9}$, the largest absolute
-spin-down rate used in the S5 E@H search.}
+spin-down rate used in the S5R5 E@H search.}
 \label{fig: Espinoza 10}
 \end{figure}
 
@@ -555,16 +555,16 @@ where $\nudotR$ is measured in Hz/s.  The exponent agrees with that found by
 the original authors (they do not provide the pre-factor).
 
 We plot this average glitch rate in Figure~\ref{fig: EAH_NdotgAve}A over the
-range of $\nudotS$ values considered in the E@H search. We also multiply this
-rate by the duration of a typical search, $\Tobs\approx1$~yr, to obtain
-$\lambda_{s}$, the expected number of glitches during the search; this is
+range of $\nudotS$ values considered in the S5R5 E@H search. We also multiply this
+rate by the span of a typical search, $\Tspan\approx1$~yr, to obtain
+$\lambda(\Tspan{=}1\mathrm{yr})$, the expected number of glitches during the search; this is
 also plotted in Figure~\ref{fig: EAH_NdotgAve}A, on the right-hand axis.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{EAH_NdotgAve}
 \caption{\textbf{A}: the average glitch rate against the spin-down rate
-$\nudotS$ over the range of values used in the E@H search. On the right axis is
+$\nudotS$ over the range of values used in the S5R5 E@H search. On the right axis is
 the corresponding average number of glitches for a search of duration $1$~yr.
 \textbf{B}: the probability of observing one or
 more glitches during a search lasting for $1$~yr assuming a Poisson distribution.}
@@ -590,13 +590,15 @@ catalogue are due to a Poisson like process.
 
 Assuming that all glitches used to estimate $\NdotgAve$ are due to a Poisson
 process, we can calculate the probability of one or more glitches occurring during
-a typical search lasting $1$~yr as a function of $\nudotS$. To do this we take the
+a typical search lasting $1$~yr as a function of $\nudotS$. To do this, we take the
 estimated number of glitches during a typical search
-$\lambda_{s}$, as given on the right axis of Figure~\ref{fig: EAH_NdotgAve}A,
+$\lambda$, as given on the right axis of Figure~\ref{fig: EAH_NdotgAve}A,
 and sum the Poisson probability mass function from 1 to infinity
 \begin{align}
-P(N_{g} \ge 1) = \sum_{\Ng=1}^{\infty}\frac{\lambda_{s}^{\Ng}e^{-\lambda_{s}}}{\Ng!}.
+P(N_{g} \ge 1; \Tspan) = \sum_{\Ng=1}^{\infty}\frac{\lambda^{\Ng}e^{-\lambda}}{\Ng!},
+\label{eqn: p one glitch or more}
 \end{align}
+where the dependence on $\Tspan$ is in $\lambda=\lambda(\Tspan)$.
 Note that in practise we truncate the summation at a finite level where the
 mass function is negligible.
 
@@ -633,8 +635,8 @@ dynamics and a rise-time during which the glitch occurs; for now all such
 phenomena will be ignored, but we return to this in Section~\ref{sec: recovery}.
 
 Our glitch signal can be modelled by a piecewise Taylor-expansion with two
-subdomains. We denote the time of the glitch as $R\Tobs$ where $R$
-is a dimensionless fractional quantity such that $R\in[0, 1]$ and $\Tobs$ is
+subdomains. We denote the time of the glitch as $R\Tspan$ where $R$
+is a dimensionless fractional quantity such that $R\in[0, 1]$ and $\Tspan$ is
 the observation time of the search.
 Then labelling the period before the glitch as $A$ and after as
 $B$, the parameter offsets may be written
@@ -729,7 +731,7 @@ The first three terms are the independent contributions to the mismatch from
 the jumps in phase, frequency, and spin-down; the last term is the mixture term
 between the phase and the spin-down.  This expression has a maximum when $R =
 1/2$, and collapses to the usual mismatch between two smooth Taylor expansions when
-$R$ is 0 and 1. Furthermore, it was verified that when the magnitude of the glitch
+$R$ is 0 and 1. Furthermore, we verified that when the magnitude of the glitch
 is zero, one recovers the usual fully-coherent mismatch between two smooth
 Taylor expansions.
 
@@ -847,7 +849,7 @@ reference time.
 \subsubsection{A semi-coherent search: analytic metric-mismatch}
 \label{sec: semi-coherent searches: analytic mismatch}
 
-For a semi-coherent search the observation time $\Tobs$ is
+For a semi-coherent search the observation time $\Tspan$ is
 divided into $\Nseg$ equal length segments of duration $\Tcoh$. We then compute
 the fully-coherent mismatch in each segment and then sum the squared SNR along the template
 parameters to get the squared semi-coherent SNR. To calculate
@@ -865,7 +867,7 @@ Section~\ref{sec: generalising the metric-mismatch}.
 
 For each segment we distinguish between the local reference time $\tref^j$ for
 the $j^{th}$ segment and $\tref$ the global reference time, taken to be at the
-glitch $R\Tobs$. Then, in the $j^{th}$ segment, the parameter offsets are calculated
+glitch $R\Tspan$. Then, in the $j^{th}$ segment, the parameter offsets are calculated
 by transforming the global parameters to the local offset:
 \begin{align}
 \Deltanu^j & = \left\{
@@ -941,10 +943,10 @@ during the observation, we average over $R$ and take the limit of $\Nseg$ being
 large. This gives
 \begin{align}
 \langle\muhat\rangle_{R} = \frac{\pi^{2}\Tcoh^{2}}{45}\Dnuglitch^{2}
-      + \frac{\pi^{2}\Tcoh^{2}\Tobs^{2}}{1260}\Dnudotglitch^{2}.
+      + \frac{\pi^{2}\Tcoh^{2}\Tspan^{2}}{1260}\Dnudotglitch^{2}.
 \label{eqn: R-averaged semi-coherent}
 \end{align}
-In the last step we substituted $\Nseg=\Tobs/\Tcoh$.
+In the last step we substituted $\Nseg=\Tspan/\Tcoh$.
 
 \subsubsection{Checking the validity of the assumption}
 
@@ -952,7 +954,7 @@ Eqn.~\eqref{eqn: mu semi-coherent R} relies on the assumption that the glitch
 occurs exactly at the interface between two semi-coherent segments. This
 assumption is valid in the limit for which $\Nseg \gg 1$, but will be imprecise
 for small numbers of segments. To demonstrate this, in Figure~\ref{fig: n seg
-convergence} we plot the residual difference between the $R$-averaged
+convergence} we plot the fractional absolute difference between the $R$-averaged
 metric-mismatch approximation $\langle \muhat \rangle_R$, as given in
 Eqn.~\eqref{eqn: R-averaged semi-coherent}, and the $R$-averaged exact mismatch
 $\left(\langle \muhat \rangle_{R}\right)_{\textrm{exact}}$ which we calculate
@@ -962,7 +964,7 @@ the other in the spin-down rate, the exact values are given in the legend.
 \begin{figure}[htb]
 \centering
 \includegraphics[]{SimulatedGlitches_NsegConvergence}
-\caption{Residual difference between $R$-averaged
+\caption{Fractional difference between the $R$-averaged
 metric-mismatch approximation $\langle \muhat \rangle_R$, as given in
 Eqn.~\eqref{eqn: R-averaged semi-coherent}, and the $R$-averaged exact mismatch
 $\left(\langle \muhat \rangle_{R}\right)_{\textrm{exact}}$. The exact mismatch
@@ -973,14 +975,15 @@ between two segments of the semi-coherent search.}
 \end{figure}
 This figure shows that for $\Nseg > 10$ the error due to our assumption that
 the glitch occurs exactly at the interface between two segments of the
-semi-coherent search vanishes.
+semi-coherent search decreases. The error which persists for $\Nseg >> 1$ is
+due to the metric-mismatch approximation which is expected and understood.
 
 %\subsubsection{Behaviour of the semi-coherent mismatch}
 %and also to
 %examine the rich behaviour of Eqn.~\eqref{eqn: mu semi-coherent R}, in
 %Figure~\ref{fig: varyingR} we compare the analytic result with numerical
 %experiments in which the mismatch is calculated exactly. This is done for three
-%triplets of $\Dnuglitch$, $\Dnudotglitch$ and $\Tobs$ chosen to show the behaviours of the
+%triplets of $\Dnuglitch$, $\Dnudotglitch$ and $\Tspan$ chosen to show the behaviours of the
 %three terms in Eqn.~\eqref{eqn: mu semi-coherent R}. For all three we use
 %$\Nseg=10$ and vary $R$, the fractional point at which the glitch occurs.
 %\begin{figure}[htb]
@@ -989,7 +992,7 @@ semi-coherent search vanishes.
 %\caption{Comparison of the semi-coherent mismatch as estimated by the analytic
 %         approximation Eqn.~\eqref{eqn: mu semi-coherent R} with
 %         exact numerical experiments for three stes of $\Dnuglitch$,
-%         $\Dnudotglitch$, and $\Tobs$. For all three we use $\Nseg=10$ and add vertical bars
+%         $\Dnudotglitch$, and $\Tspan$. For all three we use $\Nseg=10$ and add vertical bars
 %         to indicate the points when the glitch occurs exactly at an interface 
 %         between two semi-coherent segments.}
 %\label{fig: varyingR}
@@ -1034,14 +1037,14 @@ frequency this gives
 while for the jumps in frequency-derivative this gives
 \begin{align}
 \begin{split}
-\Tcoh & = \frac{\sqrt{1260\muhat}}{\pi\Dnudotglitch\Tobs} \\
+\Tcoh & = \frac{\sqrt{1260\muhat}}{\pi\Dnudotglitch\Tspan} \\
 & \approx 0.689 \;\mathrm{ days}
 \left(\frac{\muhat}{0.1}\right)^{\frac{1}{2}}
-\left(\frac{\Tobs}{694 \textrm{ days}}\right)^{-1}
+\left(\frac{\Tspan}{694 \textrm{ days}}\right)^{-1}
 \left(\frac{\Dnudotglitch}{10^{-12}\textrm{ Hz}}\right)^{-1}
 \end{split}
 \end{align}
-These values are less than the coherence time used in the E@H search, which
+These values are less than the coherence time used in the S5R5 E@H search, which
 was 25~hrs. These simple estimates therefore suggest that for the largest
 observed glitches, semi-coherent searches may suffer a non-negligible mismatch.
 We will investigate this and the fully-coherent mismatch case more rigorously
@@ -1050,7 +1053,7 @@ in the next section.
 \section{Predicting the mismatch and rate of glitches in gravitational wave searches}
 \label{sec: estimating the mismatch}
 
-In this section, we will use fitting formulae of Section~\ref{sec: observed glitch
+In this section, we will use the fitting formulae of Section~\ref{sec: observed glitch
 magnitude} to predict the magnitude of glitches for a range of parameters
 typical of all-sky searches. We will use the tools of Section~\ref{sec: mismatch
 due to glitches} to transform the magnitudes into an estimate of the
@@ -1062,31 +1065,36 @@ the fully-coherent and semi-coherent mismatch we will make use of
 Eqn.~\eqref{eqn: R-averaged fully coherent} and Eqn.~\eqref{eqn: R-averaged
 semi-coherent}: the $R$-averaged mismatch assuming that a \emph{single} glitch
 occurs uniformly and at random during the observation time. We can therefore
-take these results as a lower bound when there is likely to be more than one
-glitch. On the other hand, in regions where there is an estimated number of
-glitches $\lambda < 1$, a large mismatch only indicates that the signal would
-be lost if a glitch had occurred. To provide the reader with both pieces of
-this puzzle we will present results on both the expected mismatch due to a
-single glitch and the expected number of glitches. In particular, let us define
+take these results as a lower bound when there is likely to be one or more
+glitches. On the other hand, in regions where the chances of a glitch are low,
+a large mismatch only indicates that the signal would be lost in the rare event
+that a glitch had occurred. To provide the reader with both pieces of this
+puzzle, we will present results on both the expected mismatch due to a single
+glitch and the probability of one or more glitches occurring. This will be done
+for each population of glitches separately. Let us define
 \begin{align}
-\begin{split}
-\langle N_{\textrm{normal}} \rangle & = w_\textrm{normal}\NdotgAve \Tobs \\
-\langle N_{\textrm{Vela-like}} \rangle & = w_\textrm{Vela-like}\NdotgAve \Tobs,
-\end{split}
-\label{eqn: N}
+\lambda_{\textrm{normal}}(\dot{\nu}, \Tspan) & = w_\textrm{normal}\NdotgAve \Tspan 
+\label{eqn: N normal}\\
+\lambda_{\textrm{Vela-like}}(\dot{\nu}, \Tspan) & = w_\textrm{Vela-like}\NdotgAve \Tspan,
+\label{eqn: N vela}
 \end{align}
-as the expected number of normal and Vela-like glitches where $w_\mathrm{normal}$
-and $w_\mathrm{Vela-like}$ are the weights of the two populations as given in
-Table~\ref{tab: mixture components}, and $\NdotgAve$ is the fitted glitch rate as
-given by Eqn.~\eqref{eqn: Ng fit}. Notice that we have made a prior specification
-here that the proportion of normal and Vela-like pulsars in the target population
-is the same as in the observed population. There is some evidence that in
-fact the proportion of Vela-like pulsars increases with $\nudotR$; this could
-be modelled by a $\nudotR$-dependent weighting, however we will ignore this
-effect here.
+as the expected number of normal and Vela-like glitches where
+$w_\mathrm{normal}$ and $w_\mathrm{Vela-like}$ are the weights of the two
+populations as given in Table~\ref{tab: mixture components} and $\NdotgAve$ is
+the fitted glitch rate as a function of $\dot{\nu}$ which is given by
+Eqn.~\eqref{eqn: Ng fit}. Notice that we have made a prior specification here
+that the proportion of normal and Vela-like pulsars in the target population is
+the same as in the observed population. There is some evidence that in fact the
+proportion of Vela-like pulsars increases with $\nudotR$; this could be
+modelled by a $\nudotR$-dependent weighting, however we will ignore this effect
+here. Eqn.~\eqref{eqn: N normal} and Eqn.~\eqref{eqn: N vela} can be
+transformed into the probability of one glitch or more occurring during the
+search by substitution into Eqn.~\eqref{eqn: p one glitch or more}. In the
+following discussion it is this probability which we will report on.
+
 
 %The expected (fully-coherent or semi-coherent) mismatch for a signal which may
-%undergo any number of glitches during some observation span $\Tobs$ is given by
+%undergo any number of glitches during some observation span $\Tspan$ is given by
 %\begin{align}
 %\textrm{E}\left[\mu\right] = \sum_{i=0}^{\infty}
 %P(i\textrm{ glitches})\textrm{E}\left[\mu \textrm{ for } i \textrm{ glitches}\right]
@@ -1134,25 +1142,38 @@ effect here.
 %the probabilities are given by the weights of the two mixtures as given in
 %Table~\ref{tab: mixture components}.
 
+We note that in reality, the true mismatch for fully coherent searches will
+always be bounded by $[0, 1]$, but the results of this section can exceed this
+since we are using the metric-mismatch approximation. Similarly, for the
+semi-coherent searches, it is in fact bounded by the minimmum of $R$ and $1-R$;
+this can be seen by realising that if the glitch is sufficiently large, the
+minimum mismatch is achieved by fitting to the semi-coherent segments on
+only one side of the glitch. Here, we
+report the simpler results of naively applying Eqn.~\eqref{eqn: R-averaged
+fully coherent} and Eqn.~\eqref{eqn: R-averaged semi-coherent}. The results
+can therefore be intepretted by realising that if the metric-mismatch is greater than
+1, there will be large true mismatch.
+
 
 \subsection{Fully-coherent searches}
 
 In this section, we present results on the expected mismatch and expected number
 of glitches for fully-coherent searches. In Figure~\ref{fig: fully-coherent mismatch
-Tobs} we plot contours of fixed mismatch as a function of the coherence time
+Tspan} we plot contours of fixed mismatch as a function of the coherence time
 $\Tcoh$ and the GW spin-down rate $\nudotS$. Alongside are plotted the number of
 glitches as a function of the observation time and spin-down rate.
-\begin{figure}[htb] \centering
+\begin{figure}[htb]
+\centering
 \includegraphics{fully_coherent_mismatch}
-\caption{The estimated fully-coherent
-mismatch as a function of $\Tcoh$ and $\nudotS$. In the top panel is the
-prediction based on the fit
-to the normal population. In the bottom panel is the prediction based on
-the fit to the Vela-like population. Solid black lines provide contours of fixed
-mismatch. Red dashed lines have been added to indicate $\langle
-N_\textrm{normal} \rangle$ and $\langle N_\textrm{Vela-like} \rangle$ as given
-by Eqn.~\eqref{eqn: N}.}
-\label{fig: fully-coherent mismatch Tobs}
+\caption{The estimated fully-coherent mismatch as a function of $\Tcoh$ and
+$\nudotS$. In the top panel is the prediction based on the fit to the normal
+population, in the bottom panel is the prediction based on the fit to the
+Vela-like population. Solid black lines provide contours of fixed mismatch. Red
+dashed lines have been added to indicate the probability of one or more normal
+glitch occurring calculated by substitution of Eqn.~\eqref{eqn: N normal} (for
+the normal population) or Eqn.~\eqref{eqn: N vela} (for the Vela-like
+populations) into Eqn.~\eqref{eqn: p one glitch or more}.}
+\label{fig: fully-coherent mismatch Tspan}
 \end{figure}
 
 These figures illustrate that the predicted mismatch depends on the source
@@ -1179,9 +1200,9 @@ contour lines.
 For the semi-coherent search we repeat the process of predicting the glitch
 magnitudes, but then use Eqn.~\eqref{eqn: R-averaged semi-coherent} to
 transform them into predictions for the semi-coherent mismatch. A semi-coherent search has two
-fixed times: the total observation span $\Tobs$ and the coherent segment length
-$\Tcoh$. In Figure~\ref{fig: semi-coherent mismatch Tobs 100} and Figure~\ref{fig:
-semi-coherent mismatch Tobs 365} we present results at fixed observation times
+fixed times: the total observation span $\Tspan$ and the coherent segment length
+$\Tcoh$. In Figure~\ref{fig: semi-coherent mismatch Tspan 100} and Figure~\ref{fig:
+semi-coherent mismatch Tspan 365} we present results at fixed observation times
 of 100~days and 365~days and show contours of the expected semi-coherent mismatch and number
 of glitches as a function of the spin-down rate and coherence time.
 \begin{figure}
@@ -1189,18 +1210,18 @@ of glitches as a function of the spin-down rate and coherence time.
 \includegraphics{semi_coherent_mismatch_Tobs_100}
 \caption{
 The estimated semi-coherent mismatch as a function of $\Tcoh$ and $\nudotS$ for
-a fixed observation time $\Tobs=100$~days; see Figure~\ref{fig: fully-coherent
-mismatch Tobs} for a description of the contour lines.}
-\label{fig: semi-coherent mismatch Tobs 100}
+a fixed observation time $\Tspan=100$~days; see Figure~\ref{fig: fully-coherent
+mismatch Tspan} for a description of the contour lines.}
+\label{fig: semi-coherent mismatch Tspan 100}
 \end{figure}
 \begin{figure}
 \centering
 \includegraphics{semi_coherent_mismatch_Tobs_365}
 \caption{
 The estimated semi-coherent mismatch as a function of $\Tcoh$ and $\nudotS$ for
-a fixed observation time $\Tobs=365$~days; see Figure~\ref{fig: fully-coherent
-mismatch Tobs} for a description of the contour lines.}
-\label{fig: semi-coherent mismatch Tobs 365}
+a fixed observation time $\Tspan=365$~days; see Figure~\ref{fig: fully-coherent
+mismatch Tspan} for a description of the contour lines.}
+\label{fig: semi-coherent mismatch Tspan 365}
 \end{figure}
 
 For the semi-coherent mismatch, the contour lines tell much the same story as
@@ -1208,12 +1229,14 @@ the fully-coherent search. The normal population produces a lower overall level 
 mismatch with strong $\nudotS$ dependence while the Vela-like population has
 larger mismatches with weak dependence on $\nudotS$.
 
-As in Figure~\ref{fig: fully-coherent mismatch Tobs}, additional red dashed lines
-indicate  number of glitch per observation as defined in Eqn.~\eqref{eqn: N}.
-Note these are not a function of $\Tcoh$ since we multiply the glitch rate per
-unit time by the fixed observation period $\Tobs$ to give an estimate of the
-number of glitches expected; as a result the contours are shifted down for
-longer observation times.
+As in Figure~\ref{fig: fully-coherent mismatch Tspan}, red dashed lines have
+been added to indicate the probability of one or more normal glitches occurring,
+this is
+calculated by substitution of Eqn.~\eqref{eqn: N normal} (for the normal
+population) or Eqn.~\eqref{eqn: N vela} (for the Vela-like population) into
+Eqn.~\eqref{eqn: p one glitch or more}.  Note these are not a function of
+$\Tcoh$ since we multiply the glitch rate per unit time by the fixed
+observation period $\Tspan$.
 
 \subsection{The follow-up stage}
 
@@ -1272,10 +1295,10 @@ e-folding timescale $\tau^d_i$. In most cases, only a single component is
 identified.
 
 This may have an important effect on our estimates since, if a large fraction
-of the glitch is recovered in a time-scale short compared to the observation
+of the glitch is recovered in a timescale short compared to the observation
 time, we will over-estimate the mismatch. On the other hand, the exponential
 relaxation itself could also cause a mismatch which would tend to vanish when
-$\tau^d_i \ll \Tobs$, but be maximal when $\tau^d_i \sim \Tobs$.  Ideally we would
+$\tau^d_i \ll \Tspan$, but be maximal when $\tau^d_i \sim \Tspan$.  Ideally we would
 like to model the exponential relaxation in detail, but the more practical
 approach that we will take is to assume that the relaxation time is zero, such
 that the actual long-term glitch magnitude is $(1-Q)\DnuRglitch$; the results in
@@ -1289,7 +1312,7 @@ with lower spin-down rates, $Q\ll1$, but $Q$ correlates well with
 $\log_{10}|\nudotR|$. Taking all measured Q values for the Crab pulsar
 \citep{Lyne2000, Wang2001, Wang2012}, which has the highest spin-down rate
 $-0.38$~nHz/s in the analysis, we find an average and standard-deviation of
-$0.77\pm0.2$ for $Q$ and $9.45\pm6.7$~days for the relaxation time-scale. We
+$0.77\pm0.2$ for $Q$ and $9.45\pm6.7$~days for the relaxation timescale. We
 note that in three cases the same glitch was measured with differing values of
 $Q$ and relaxation time; this presumably reflects the fact that the
 measurements are uncertain and depend on the data span used. In contrast, the
@@ -1301,8 +1324,8 @@ It is unclear what $Q$ we might expect for the target population of all-sky
 searches, but we can make an estimate by taking $Q=0.8$. Given this and
 assuming the relaxation time is much shorter than the observation period, this
 would mean the mismatch labels of the black contour lines in Figure~\ref{fig:
-fully-coherent mismatch Tobs}, Figure~\ref{fig: semi-coherent mismatch Tobs 100},
-and Figure~\ref{fig: semi-coherent mismatch Tobs 365} would decrease by a factor
+fully-coherent mismatch Tspan}, Figure~\ref{fig: semi-coherent mismatch Tspan 100},
+and Figure~\ref{fig: semi-coherent mismatch Tspan 365} would decrease by a factor
 $\sim0.04$, ultimately meaning that longer coherence times would be more robust
 to typical glitches. Nevertheless, even given this, many searches would still
 be at risk to lost signals due to the presence of a glitch. These estimates are
@@ -1319,7 +1342,7 @@ Table~\ref{tab: searches}. This is done taking the \emph{worst-case} scenario
 of the largest absolute spin-down rate and hence largest glitches one might
 expect with no glitch recovery. Note that this is reporting the metric-mismatch
 which is unbounded above: a large metric-mismatch (greater than one) indicates
-a large mismatch.
+a large mismatch. 
 \begin{table}[htb]
 \centering
 
@@ -1339,6 +1362,7 @@ estimate for the search for Cassiopeia A only.}
 \input{\thisdir/past_searches_worst_cases}
 \end{tabular}
 \end{table}
+
 This table gives a clear picture that for all searches in the fully-coherent
 follow-up, the worst mismatches are greater than one. It is true that the probability
 of a glitch is less than one, but not by a sufficient margin to consider them
@@ -1514,7 +1538,7 @@ This table clearly shows that the data is decisive: a Gaussian mixture model
 with $N \ge 2$ fits the data a great deal better than the simple $N=1$ GMM.
 This is unsurprising given the distinct multimodal nature of the data.
 However, the differences between the other models is more subtle. No single model
-distinguishes itself by a decisive odds ratio compared to its neighbouring
+distinguishes itself by a decisive odds-ratio compared to its neighbouring
 models. We
 have checked that these results are robust to small changes in the prior
 specification.
@@ -1602,18 +1626,18 @@ shaded bands plotted in Figure~\ref{fig: extrapolation fit}.
 \centering
 \includegraphics{fully_coherent_mismatch_errors}
 \caption{A reproduction of the mismatch contours in Figure~\ref{fig:
-fully-coherent mismatch Tobs} with a
+fully-coherent mismatch Tspan} with a
 reduced number of contours, but showing the variation in predicted mismatch
 due to the $1\sigma$ uncertainty in the predicted distributions as given by
 the shaded bands in Figure~\ref{fig: extrapolation fit}. The two uncertainty
 bands overlap, giving rise to the cross-hatched region.}
-\label{fig: fully-coherent mismatch Tobs errors}
+\label{fig: fully-coherent mismatch Tspan errors}
 \end{figure}
 Also, calculating the expected number of glitches we have
 uncertainty from the variability as shown by the shaded bands in Figure~\ref{fig:
 Espinoza 10}. To understand how these uncertainties may change our belief in
-the conclusions, in Figure~\ref{fig: fully-coherent mismatch Tobs errors} we have
-repeated the analysis that led to Figure~\ref{fig: fully-coherent mismatch Tobs},
+the conclusions, in Figure~\ref{fig: fully-coherent mismatch Tspan errors} we have
+repeated the analysis that led to Figure~\ref{fig: fully-coherent mismatch Tspan},
 with a reduced number of
 contour lines, and propagated the measure of uncertainty in the glitch sizes.
 Specifically, we fill contour lines between the uncertainties in the mismatch, given by
@@ -1623,13 +1647,13 @@ Eqn.~\eqref{eqn: Delta nudot fit}.
 \centering
 \includegraphics{fully_coherent_number_errors}
 \caption{A reproduction of the number of glitches in Figure~\ref{fig:
-fully-coherent mismatch Tobs} with a
+fully-coherent mismatch Tspan} with a
 reduced number of contours, but showing the variation in the expected number
 of glitches due to the uncertainty in the glitch rate fit of Eqn.~\eqref{eqn:
 Ng fit}.}
-\label{fig: fully-coherent number Tobs errors}
+\label{fig: fully-coherent number Tspan errors}
 \end{figure}
-In Figure~\ref{fig: fully-coherent number Tobs errors}
+In Figure~\ref{fig: fully-coherent number Tspan errors}
 we repeat the exercise showing the uncertainty on the number of glitches as
 given by the error in Eqn.~\eqref{eqn: Ng fit}.
 
