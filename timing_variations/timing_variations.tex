@@ -75,19 +75,19 @@ We now modify the potential to be acted on by a weak periodic function; this
 introduced a third possible type of behaviour. Writing the time dependent
 potential as
 \begin{equation}
-    V(x,t) = \frac{x^{4}}{4}-\frac{x^{2}}{2} + \epsilon x \cos(\omega_{0} t).
+    V(x,t) = \frac{x^{4}}{4}-\frac{x^{2}}{2} + \varepsilon x \cos(\omega_{0} t).
 \end{equation}
 Inserting this potential into the equations of motion:
 \begin{equation}
-    \frac{dx}{dt} =  x - x^{3} + F(t) + \epsilon \cos(\omega_{0} t).
+    \frac{dx}{dt} =  x - x^{3} + F(t) + \varepsilon \cos(\omega_{0} t).
 \label{eqn:stochastic eom}
 \end{equation}
-Solving this numerically we fix $\epsilon=0.001$,
+Solving this numerically we fix $\varepsilon=0.001$,
 $\omega_{0}=\frac{2\pi}{10}$ and choose three values of $\sigma$ which illustrate
 typical behaviours of the solution
 \begin{figure}[ht]
 \centering
-   \includegraphics[]
+   \includegraphics[width=\textwidth]
    {{Stochastic_resonance}.png}
 
 \caption{Three solutions to Eqn.~\eqref{eqn:stochastic eom} changing the
