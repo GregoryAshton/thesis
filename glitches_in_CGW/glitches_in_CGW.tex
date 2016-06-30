@@ -44,7 +44,7 @@ generalising the metric-mismatch}, in due course.
 \label{sec: glitches introduction}
 
 Electromagnetic (EM) observations of pulsar glitches have long been one of the most
-fruitful sources of insight into neutron star physics. They are characterised
+fruitful sources of insight into neutron star physics. Glitches are characterised
 by a sudden increase in the rotation frequency, often accompanied by a jump in
 the frequency derivative and an exponential recovery of some fraction of the
 initial frequency jump. The events happen
@@ -76,7 +76,7 @@ frequency $\nuS$ which is twice the rotation frequency $\nuS$, i.e, $\nuS=2\nuR$
 It is unclear exactly how a glitch, as observed in the EM channel, will
 manifest in the GW channel.  Observing a glitch in both the EM and GW channels
 would provide a unique opportunity to investigate the neutron star interior, but to do
-this we must first detect GW emissions.
+this we must first detect continuous GW emission.
 
 Estimates for the intrinsic gravitational wave strain amplitude
 $h_0$ for canonical models of GW emissions (see for example \citet{abbott2008beating})
@@ -141,7 +141,7 @@ searches to glitches in their target population.
 %location. It is the second type of GW searches that, if the search assumes
 %there is no glitch, are most at risk from glitches.
 
-The remainder of this chapter is organised in the follow way. We begin in
+The remainder of this chapter is organised in the following way. We begin in
 Section~\ref{sec: continuous gravitational-wave searches}, with a description
 of current GW searches and how glitches may effect them. Then, in
 Section~\ref{sec: statistical properties} we investigate the statistical
@@ -169,9 +169,9 @@ includes both \emph{directed} searches where a small patch of sky is searched
 in which a neutron star is believed to exist (e.g. the \citet{aasi2015searches} search
 for continuous GWs from supernova remnants), and \emph{all-sky} searches; in
 both instances a band of frequencies and frequency-derivatives are usually
-searched since they are inherently unknown. These searches
+searched since they are inherently unknown. Typically, these searches
 match filter against smooth templates built from a Taylor expansion in
-the phase; as such they do not include glitches. If a neutron star, emitting
+the phase; as such the templated do not include glitches. If a neutron star, emitting
 detectable levels of GW emission, undergoes a glitch in the GW channel, then the
 matched filtering method may fail because the template is a poor match to the
 real, glitching signal.
@@ -267,7 +267,7 @@ $\DnuRglitch$ values. This demonstrates the bimodality found by \citet{Espinoza2
 
 To check that the bimodality is not an artefact of the histogram bin sizes we
 estimate the probability density function using a Gaussian kernel density
-estimate (KDE). Specifically we use the \citet{Scipy} implementation. This is
+estimate (KDE). Specifically we use the \citet*{Scipy} implementation. This is
 also plotted in Figure~\ref{fig: Delta nu mixture} and demonstrates two distinct
 peaks, although the smaller peak could be interpreted as two modes close together.
 
@@ -365,7 +365,7 @@ the area of the coloured halo marks the pulsar's average glitch magnitude.
 For both plots, different
 colours have been used to partition the Vela-like and normal glitches (note that some
 pulsars display glitches from both populations) and a shaded box marks the
-parameter space searched by the S5R5 E@H search. Finally, dashed lines mark isoclines
+parameter space searched by the S5 E@H search. Finally, dashed lines mark isoclines
 of constant characteristic age as defined by $\tauAge = \left|\nuR/\nudotR\right|$.
 \begin{figure}[htb]
 \centering
@@ -398,7 +398,7 @@ that, since we have not observed all pulsars
 for the same duration, one cannot infer the relative glitch rate from the
 number of glitches alone.
 
-%The S5R5 E@H search space spans all observed spin-down rates; however, the discretisation
+%The S5 E@H search space spans all observed spin-down rates; however, the discretisation
 %is done linearly. The population of old pulsars with large frequencies, but small
 %$\nudotR$ values which lie in the E@H parameter space are the
 %so-called millisecond pulsars \citet{Lyne1988}; these are not targeted by the E@H search.
@@ -503,7 +503,7 @@ the estimate of the variability is indicated by a shaded band.
 
 Taking these fitting formulae, in Figure~\ref{fig: EAH Delta nu nudot prediction} we plot
 the predicted glitch magnitudes (in frequency and spin-down rate respectively) over the 
-S5R5 E@H search parameters. We have similarly
+S5 E@H search parameters. We have similarly
 transformed the variation estimate and plotted it as a shaded band.
 \begin{figure}[htb]
 \centering
@@ -537,7 +537,7 @@ the glitch rate per second (left axis) and per year (right axis). Black
 dots are the original data points, the solid line and shaded region are
 our best-fit line and a measure of the variability as given in Eqn.~\eqref{eqn:
 Ng fit}. A vertical dashed line marks $-2\times10^{-9}$, the largest absolute
-spin-down rate used in the S5R5 E@H search.}
+spin-down rate used in the S5 E@H search.}
 \label{fig: Espinoza 10}
 \end{figure}
 
@@ -555,7 +555,7 @@ where $\nudotR$ is measured in Hz/s.  The exponent agrees with that found by
 the original authors (they do not provide the pre-factor).
 
 We plot this average glitch rate in Figure~\ref{fig: EAH_NdotgAve}A over the
-range of $\nudotS$ values considered in the S5R5 E@H search. We also multiply this
+range of $\nudotS$ values considered in the S5 E@H search. We also multiply this
 rate by the span of a typical search, $\Tspan\approx1$~yr, to obtain
 $\lambda(\Tspan{=}1\mathrm{yr})$, the expected number of glitches during the search; this is
 also plotted in Figure~\ref{fig: EAH_NdotgAve}A, on the right-hand axis.
@@ -564,7 +564,7 @@ also plotted in Figure~\ref{fig: EAH_NdotgAve}A, on the right-hand axis.
 \centering
 \includegraphics[width=0.75\textwidth]{EAH_NdotgAve}
 \caption{\textbf{A}: the average glitch rate against the spin-down rate
-$\nudotS$ over the range of values used in the S5R5 E@H search. On the right axis is
+$\nudotS$ over the range of values used in the S5 E@H search. On the right axis is
 the corresponding average number of glitches for a search of duration $1$~yr.
 \textbf{B}: the probability of observing one or
 more glitches during a search lasting for $1$~yr assuming a Poisson distribution.}
@@ -1044,7 +1044,7 @@ while for the jumps in frequency-derivative this gives
 \left(\frac{\Dnudotglitch}{10^{-12}\textrm{ Hz}}\right)^{-1}
 \end{split}
 \end{align}
-These values are less than the coherence time used in the S5R5 E@H search, which
+These values are less than the coherence time used in the S5 E@H search, which
 was 25~hrs. These simple estimates therefore suggest that for the largest
 observed glitches, semi-coherent searches may suffer a non-negligible mismatch.
 We will investigate this and the fully-coherent mismatch case more rigorously
@@ -1152,7 +1152,8 @@ only one side of the glitch. Here, we
 report the simpler results of naively applying Eqn.~\eqref{eqn: R-averaged
 fully coherent} and Eqn.~\eqref{eqn: R-averaged semi-coherent}. The results
 can therefore be intepretted by realising that if the metric-mismatch is greater than
-1, there will be large true mismatch.
+1, there will be large true mismatch, although the exact value will depend on
+where that glitch occured during the observation span.
 
 
 \subsection{Fully-coherent searches}
