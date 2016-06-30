@@ -42,8 +42,8 @@ which compare the output of the detector with a template.  These techniques are
 powerful, provided that the signal and template remain coherent for the duration
 of the observation. If the signal can be perfectly matched by a template, then
 the signal to noise ratio, $\rho$, used to quantify the detection likelihood, scales as
-$\rho^{2} \propto \To$ (e.g.\ see~\citep{Prix2009}) where $\Tobs$ is the duration
-of the observation time. This suggests searching
+$\rho^{2} \propto \Tcoh$ (e.g.\ see~\citep{Prix2009}) where $\Tcoh$ is the
+coherent observation time. This suggests searching
 over longer observations increases the chances of making a detection.
 
 The templates must model the monotonic spin-down of the source due to the
@@ -157,7 +157,7 @@ it may be useful to interpret a mismatch in the following way. For a perfectly
 matched continuous GW signal it can be shown \citep{Jaranowski1998} that the SNR scales as
 \begin{equation}
 \rho_{\mathrm{pm}} \propto \frac{h_{0}}{\sqrt{\textrm{S}_{\textrm{n}}}}
-                               \sqrt{\Tobs \mathcal{N}},
+                               \sqrt{\Tcoh \mathcal{N}},
 \end{equation}
 where $h_{0}$ is the strain-amplitude for an optimally oriented source with
 respect to the detector, $\textrm{S}_{\textrm{n}}$ the noise measured
@@ -167,7 +167,7 @@ Combining this equation with Eqn.~\eqref{eqn: numeric mismatch}, the SNR of a si
 with fully-coherent mismatch $\mutilde$ scales as
 \begin{equation}
 \rho \propto \sqrt{1-\mutilde} \frac{h_{0}}{\sqrt{\textrm{S}_{\textrm{n}}}}
-                               \sqrt{\Tobs \mathcal{N}},
+                               \sqrt{\Tcoh \mathcal{N}},
 \end{equation}
 which is to say it reduces the sensitivity by a factor~$\sqrt{1-\mutilde}$.
 
@@ -378,7 +378,7 @@ there is a phase discontinuity at their interface; we illustrate this setup in
 Figure~\ref{fig: PhaseJump}.
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.5\textwidth]{PhaseJump}
+    \includegraphics[width=.75\textwidth]{PhaseJump}
     \caption{Illustration of the signal and template defined in equation
         \eqref{eqn: phase offset}}
     \label{fig: PhaseJump}

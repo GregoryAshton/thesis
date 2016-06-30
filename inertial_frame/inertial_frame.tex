@@ -1542,7 +1542,7 @@ realise the ideas discussed above in a full numerical model. However, for now
 we will simply consider the effect of a single magnetospheric torque switching
 event. Our numerical code is able to model the full hybrid model, but we must
 first understand the basic physics. In particular, we will simulate a star in
-which at $t_{\mathrm{switch}} = \To/2$ the EM torque suddenly decreases. This is
+which at $t_{\mathrm{switch}} = \Tobs/2$ the EM torque suddenly decreases. This is
 a qualitatively new idea which has not yet been discussed in the literature.
 
 In the EM dipole spin-down model, the torque has two distinct components: the
@@ -1673,7 +1673,7 @@ We now consider manually switching the spin-down torque halfway though the
 simulation, with no switch occurring in the anomalous component.
 That is we set
 \begin{align}
-    t_{\mathrm{switch}} = \frac{\To}{2}, &&& \Ss = 0.4, &&& \Sa = 0.0,
+    t_{\mathrm{switch}} = \frac{\Tobs}{2}, &&& \Ss = 0.4, &&& \Sa = 0.0,
 \label{eqn: SD only}
 \end{align}
 such that halfway though the simulation the spin-down torque is reduced by a
@@ -1682,12 +1682,12 @@ fraction $0.4$ while the anomalous torque remains unaffected.
 In Figure~\ref{fig: switching without anom} we plot the phase residuals from
 this simulation. In the top plot is the residual as calculated over the entire
 observation period. We find a single periodic variation with a period of the
-observation time $\To$: due to sudden change in spin-down rate the Taylor
+observation time $\Tobs$: due to sudden change in spin-down rate the Taylor
 expansion fit is not finding a suitable fit. The precession features which
 existed in the initial minimal precession are swamped by the larger variations
 due to the switch. To study this simulation further, in the lower plot we plot
 two residuals: the first is calculated in the region $[0, t_{\mathrm{switch}}]$
-and the second in $[t_{\mathrm{switch}}, \To]$. Because the switch does not
+and the second in $[t_{\mathrm{switch}}, \Tobs]$. Because the switch does not
 occur in either of these periods we can resolve the free precession during each
 period and note that the precession modulation is in fact smaller after the
 switch.
@@ -1711,14 +1711,14 @@ reduced.
 We now consider manually switching both the spin-down and anomalous torque
 halfway though the simulation.  That is we set
 \begin{align}
-    t_{\mathrm{switch}} = \frac{\To}{2}, &&& \Ss = \Sa = 0.01
+    t_{\mathrm{switch}} = \frac{\Tobs}{2}, &&& \Ss = \Sa = 0.01
 \label{eqn: SD and A}
 \end{align}
 
 In a similar fashion to Figure~\ref{fig: switching without anom}, we first show
 the total residual in the top plot of Figure~\ref{fig: switching with anom}, and
 then the individual residuals in the lower plot. Again, the overall phase
-residual exhibits periodic modulation with a period of the observation time $\To$
+residual exhibits periodic modulation with a period of the observation time $\Tobs$
 resulting from the failing of the fitting algorithm to find an appropriate fit.
 In contrast to the spin-down only switching, the amount of precession when
 considered before and after the glitch now increases.

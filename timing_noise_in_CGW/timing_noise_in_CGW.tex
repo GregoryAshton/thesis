@@ -305,11 +305,11 @@ by $\mGRID$, the one-dimensional maximal mismatch between two adjacent Taylor
 expansion templates. From
 \citet{aasi2013einstein} the corresponding grid spacing is given by
 \begin{align}
-    d\f = \frac{\sqrt{12 \mGRID}}{\pi \To} &&&
-    d\dot{\f} = \frac{\sqrt{720 \mGRID}}{\pi \To^{2}},
+    d\f = \frac{\sqrt{12 \mGRID}}{\pi \Tobs} &&&
+    d\dot{\f} = \frac{\sqrt{720 \mGRID}}{\pi \Tobs^{2}},
 \label{eqn: Grid spacing}
 \end{align}
-where $\To$ labels the observation time.
+where $\Tobs$ labels the observation time.
 
 For the single-template and at each grid point in the narrow-band search, we
 measure the squared SNR value~$\rho^{2}$.  In order to quantify the relative
@@ -562,7 +562,7 @@ To quantify the growth of the mismatch, we perform a least-squares fitting
 to a power law. Fitting the expression:
 \begin{equation}
 \muminAvg_{\textrm{fit}} = \kappa
-                                   \left(\frac{\To}{1\textrm{ sec}}\right)^{n},
+                                   \left(\frac{\Tobs}{1\textrm{ sec}}\right)^{n},
 \end{equation}
 we find the best fit parameters
 \begin{align}
@@ -589,18 +589,18 @@ to give
 Substituting the time dependencies for the perfectly matched SNR and the
 averaged mismatch we have
 \begin{equation}
-    \rho^{2} \propto \To - \kappa \To^{n+1}.
+    \rho^{2} \propto \Tobs - \kappa \Tobs^{n+1}.
 \end{equation}
-Differentiating and solving for~$\To$ yields an expression for the
+Differentiating and solving for~$\Tobs$ yields an expression for the
 observation time (in seconds)
 beyond which the~$\rho^{2}$ value of a signal containing timing
 noise starts to decrease
 \begin{equation}
-\To = \left(\frac{1}{\kappa(1+n)}\right)^{1/n}.
+\Tobs = \left(\frac{1}{\kappa(1+n)}\right)^{1/n}.
 \end{equation}
 For the fit values from Eqn.~\eqref{eqn: fit values}, this yields
 a critical observation time of
-$\To\approx 600$~days after which the mismatch exceeds
+$\Tobs\approx 600$~days after which the mismatch exceeds
 $\muminAvg \approx 0.25$.
 % These results can be found in the FitResultsNarrowBand.tex file
 In this case it is no longer true that further increases in
@@ -611,7 +611,7 @@ remain coherent given a random walk in  frequency. A crude method used a
 phase residual of 1 rad for the decoherence criteria. For the Crab, this
 estimates the decoherence time at 200 days. We can improve upon this result by
 setting a mismatch of~$0.1$ as the decoherence criteria; using the fit to the
-averaged mismatch this gives us a decoherence time of $\To\approx 400 $~days.
+averaged mismatch this gives us a decoherence time of $\Tobs\approx 400 $~days.
 
 The growth of mismatch as a power law is suggestive of random walk
 timing noise models for which, as shown in Section~\ref{sec: TN interpretations
