@@ -443,16 +443,16 @@ vectors into rotations about cones.
 \subsection{The reference plane}
 \label{sec: reference plane}
 
-Considering a biaxial body, let us define $\n^a$ is the \emph{deformation
-vector} as a unit vector pointing along the body's symmetry axis, $I_0$ the
-moment of inertia along the $I_{xx}$ and $I_{yy}$, and $I_{0} + \Delta I$
-as the moment of inertia along the $I_{zz}$ component. We can then write the
-full moment of inertia compactly as
+Considering a biaxial body, let us define $\n^a$ as the \emph{deformation
+vector} (a unit vector pointing along the body's symmetry axis), then the
+moment of inertia tensor can be written compactly as
 \begin{align}
 I^{a}_{\;\;b} = I_{0} \delta^{a}_{\;\;b} + \Delta I \n^a \n_b,
 \end{align}
-where $\delta^{a}_{\;\;b}$ is the Kronecka delta. Then, if the body is biaxial with $\n_{a}$ lying along
-the $\z$ axis, the angular momentum is given by
+where $\delta^{a}_{\;\;b}$ is the Kronecka delta. The principal moments are
+given by $I_0=I_{xx}=I_{yy}$ and
+$I_{zz} = I_0 + \Delta I$ such that the body is biaxial with $\n_{a}$ lying along
+the $\z$ axis. As such, the angular momentum is given by
 \begin{align}
 J_{a} = I_0 \Omega_a + \Delta I \Omega_z \n_a.
 \label{eqn: ang mom}
@@ -1341,7 +1341,7 @@ precessing, then the periodic pulses of intensity due to the azimuthal rotation
 of the star will be modulated by the slower variations in $\Theta$ seen in
 Figure~\ref{fig: polar angle variations}.
 
-To model this we take an observer's azimuth and polar angle to be $(\PhiO,
+To model this, we take an observer's azimuth and polar angle to be $(\PhiO,
 \iota)$ and then assume the beam geometry follows a Gaussian profile with a
 single conal emission.  This could later be adapted, for example to include
 conal emission as modelled by \citet{Akgun2006}.  For such a model of the beam
@@ -1360,7 +1360,7 @@ Then, taking a Gaussian beam geometry, the intensity of the pulse will be given 
 \mathcal{I}_{0} \exp\left(-\frac{\Delta d^{2}(\Theta, \Phi, \iota, \PhiO)}{2\rho^{2}}\right)
 \label{eqn: Gaussian beam intensity}
 \end{equation}
-where $\mathcal{I}_{0}$ is some constant amplitude and $\rho$ is a measure of the
+where $\mathcal{I}_{0}$ is the maximum intensity and $\rho$ is a measure of the
 width of the Gaussian intensity.
 
 Given a value for $\mathcal{I}_0$ and $\rho$, we can use a numerical solution to the
@@ -1393,8 +1393,8 @@ to variations in the amount of scintillation from the interstellar medium.
 Therefore, pulsar astronomers do not typically report on intensities
 themselves, but characterise the pulsation by their beam-width. This is the
 width of the pulse at some percentage $p$ of the observed maximum intensity.
-Note that this is not the maximum intensity that the beam produces, $A_0$, but
-the maximum at that instant in time $A_{\mathrm{max}}$, as given by
+Note that this is not the maximum intensity that the beam produces, $\mathcal{I}_0$, but
+the maximum at that instant in time $\mathcal{I}_{\mathrm{max}}$, as given by
 Eqn.~\eqref{eqn: A max}
 
 To calculate the beam-width, we first note that in Eqn.~\eqref{eqn: Gaussian
@@ -1402,21 +1402,21 @@ beam intensity}, $\Theta$ varies on the slow precession timescale, while $\Phi$
 varies on the rapid spin timescale: we are looking to measure the variations
 with respect to the slow precession timescale.  The pulse width is measured by
 the time spent above a percentage $p$ of the maximum pulse intensity, this can
-be defined as
+be defined as an inequality
 \begin{align}
 \mathcal{I}(\Phi, \Theta, \iota, \PhiO, \rho) > \mathcal{I}_{\textrm{max}} \frac{p}{100}.
 \end{align}
 Substituting in Eqn.~\eqref{eqn: Gaussian beam intensity} and Eqn.~\eqref{eqn: A max}
 then rearranging yields
 \begin{equation}
-\cos(\Phi - \PhiO) < \frac{
+\cos(\Phi - \PhiO) > \frac{
 \cos\left(
 \sqrt{-2\rho^{2}
 \ln\left[\frac{p}{100}\frac{\mathcal{I}_\textrm{max}}{\mathcal{I}_0}\right]}\right) -
 \cos(\Theta)\cos(\iota)} {\sin(\Theta)\sin(\iota)}
 \label{eqn: 6737}
 \end{equation}
-where we note that $A_\textrm{max}$ is not a constant, but will evolve with the
+where we note that $\mathcal{I}_\textrm{max}$ is not a constant, but will evolve with the
 polar angle $\Theta$ as given by Eqn.~\eqref{eqn: Theta 2}.
 
 Let's consider a single rotation with the magnetic dipole starting and ending in
@@ -1638,7 +1638,7 @@ beta}.
          switching event; the simulation properties are listed in
          Table~\ref{tab: switching props}. In this case, we have fitted and
          removed a Taylor expansion up to and including $\ddot{\nu}$.
-         Note, that due to inherent errors in the fitting process, the residual
+         Note that, due to inherent errors in the fitting process, the residual
          exhibits an apparent periodicity which matches its span (or some integer
          number of periods fits into the span, in this case 2). This was shown
          to be the case by varying the observation span and observing a
@@ -1787,7 +1787,7 @@ A simple application of this work is to apply our findings to PSR~B1828-11,
 which was interpreted by \citet{Lyne2010} as undergoing switching with a fractional
 change in the spin-down rate given by
 \begin{align}
-\frac{\Delta\dot{\nu}}{\dot{\nu}} = 0.0071.
+\frac{\Delta\dot{\nu}}{\dot{\nu}} = 0.007.
 \end{align}
 Manipulating Eqn.~\eqref{eqn: nudot switch}, we see that
 \begin{align}
@@ -1797,7 +1797,7 @@ Using data from the ATNF catalogue \citep{ATNF}, PSR~B1828-11 has a frequency
 $\nu = 2.47$~Hz, a spin-down rate $\dot{\nu}=-3.65\times10^{-13}$~Hz/s.
 Rearranging Eqn.~\eqref{eqn: spin-down of epsA} we then have
 \begin{align}
-\epsA^{B1828-11} = \frac{c}{8\pi R\nu^{3}}\dot{\nu} \approx 2.89 \times 10^{-11}.
+\epsA^{B1828-11} = \frac{c}{8\pi R\nu^{3}}\dot{\nu} \approx 3 \times 10^{-11}.
 \end{align}
 
 Now in this interpretation, $\epsI$ is unconstrained for PSR~B1828-11 since the
@@ -1806,7 +1806,7 @@ precession. Nevertheless, we numerically maximise $\Delta\beta$ over $\epsI$ to
 find
 \begin{align}
 \Delta\beta_{\textrm{max}}(\epsA=2.89\times10^{-11}, \epsI=2.87\times10^{-11})
-= 0.048 \textrm{ degs}.
+= 0.05 \textrm{ degs}.
 \end{align}
 This is the maximum new wobble angle which must occur every time PSR~B1828-11 undergoes a
 switching event, if the switch also occurs in the anomalous torque. This
