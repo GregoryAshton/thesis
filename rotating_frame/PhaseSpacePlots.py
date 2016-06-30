@@ -22,7 +22,7 @@ B23 = [pre * epsA_list[i] for i in range(N)]
 def base_plot(ax):
     # plot a line of tau_p = tau_s
     ax.loglog(Bs_list, B23, label=r"$\tau_{\mathrm{P}}=\tau_{\mathrm{S}}$",
-               dashes=(4, 2), color="k")
+               dashes=(3, 1.5), color="k")
 
     # Add labels
     ax.set_xlabel(r"$B_{0}$ [Gauss]")
@@ -49,7 +49,7 @@ def base_plot(ax):
     ax.scatter(Bs, epsI, marker="o", s=10, label=r"Neutron star C", color="r",
                edgecolor="k")
 
-    ax.legend(loc=2, scatterpoints=1, fontsize=5, frameon=False)
+    ax.legend(loc=2, scatterpoints=1, fontsize=8, frameon=False)
     ax.set_yticks(ax.get_yticks()[2:-1:2])
     ax.set_xlim(1e10, 1e16)
     ax.set_ylim(1e-22, 1e-1)
@@ -57,7 +57,7 @@ def base_plot(ax):
 
     return ax
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(4, 3))
 # plot a line of eps_I = eps_A (given by epsA list!)
 ax.loglog(Bs_list, epsA_list, label=r"$\tau_{\mathrm{P}}=\tau_{\mathrm{A}}$",
           ls="-", color="k")
@@ -65,20 +65,20 @@ ax.loglog(Bs_list, epsA_list, label=r"$\tau_{\mathrm{P}}=\tau_{\mathrm{A}}$",
 # Add text to denote regions
 ax.text(5e12, 1e-5,
         r"$\tau_{\mathrm{S}} > \tau_{\mathrm{A}} > \tau_{\mathrm{P}}$",
-        size=6, rotation=0)
+        size=8, rotation=0)
 ax.text(5e12, 1e-19,
         r"$\tau_{\mathrm{P}} > \tau_{\mathrm{S}} > \tau_{\mathrm{A}}$",
-        size=6, rotation=0)
+        size=8, rotation=0)
 ax.fill_between(Bs_list, B23, epsA_list, facecolor="0.6", alpha=0.7)
 ax = base_plot(ax)
-fig.savefig("img/phase_space.png")
+fig.savefig("img/phase_space.png", dpi=500)
 
 
 # Phase space without anomalous torque
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(4, 3))
 ax.text(5e12, 1e-5, r"$\tau_{\mathrm{S}} > \tau_{\mathrm{P}}$",
-        size=6, rotation=0)
+        size=8, rotation=0)
 ax.text(5e12, 1e-19, r"$\tau_{\mathrm{P}} > \tau_{\mathrm{S}} $",
-        size=6, rotation=0)
+        size=8, rotation=0)
 ax = base_plot(ax)
-fig.savefig("img/phase_space_no_anom.png")
+fig.savefig("img/phase_space_no_anom.png", dpi=500)

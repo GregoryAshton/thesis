@@ -223,7 +223,7 @@ spin-down time scale $\tauS = 9\times 10^{6}$~s.
 	\centering
 	\includegraphics[width=0.5\textwidth]
      {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_3.0000000000e+01_omega0_1.00e+04_epsI3_0.00e+00_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_0}.png}
-\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for a
+\caption{Plot of the spherical coordinates of the spin-vector for a
 spherical star. Note that the magnetic dipole is inclined at $\chi=30^{\circ}$
 to the $\z$ axis.}
 \label{fig: neutron star spherical}
@@ -258,9 +258,9 @@ for each ordering of the timescales.
 \centering
 \begin{tabular}[h]{|c|c|c|c|c|c|}\hline
 Star &$\epsilon_{\mathrm{I}}$ & $\epsilon_{\mathrm{A}} $ & $B_{0} $[Gauss] & $\tau_{\mathrm{S}}$ [s] & $ \tau_{\mathrm{P}}$  [s] \\ \hline
-A & $ {1.0}\times 10^{-9} $ & $ {5.0}\times 10^{-11} $ & $ {1.3}\times 10^{13} $ & $ {9.0}\times 10^{6} $ & $ {9.8}\times 10^{5} $\\
-B & $ {4.0}\times 10^{-11} $ & $ {5.0}\times 10^{-11} $ & $ {1.3}\times 10^{13} $ & $ {9.0}\times 10^{6} $ & $ {2.4}\times 10^{7} $\\
-C & $ {1.0}\times 10^{-15} $ & $ {5.0}\times 10^{-11} $ & $ {1.3}\times 10^{13} $ & $ {9.0}\times 10^{6} $ & $ {9.8}\times 10^{11} $\\ \hline
+A & $ {1.0}{\times} 10^{-9} $ & $ {5.0}{\times} 10^{-11} $ & $ {1.3}{\times} 10^{13} $ & $ {9.0}{\times} 10^{6} $ & $ {9.8}{\times} 10^{5} $\\
+B & $ {4.0}{\times} 10^{-11} $ & $ {5.0}{\times} 10^{-11} $ & $ {1.3}{\times} 10^{13} $ & $ {9.0}{\times} 10^{6} $ & $ {2.4}{\times} 10^{7} $\\
+C & $ {1.0}{\times} 10^{-15} $ & $ {5.0}{\times} 10^{-11} $ & $ {1.3}{\times} 10^{13} $ & $ {9.0}{\times} 10^{6} $ & $ {9.8}{\times} 10^{11} $\\ \hline
 \end{tabular}
 \caption{Table of relevant values for the selected points. In calculating the
     magnetic fields and timescales, we have used a canonical value of
@@ -336,14 +336,16 @@ about the $\z$ axis.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
-	\subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+	\subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
              {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_3.0000000000e+01_omega0_1.00e+04_epsI3_1.00e-09_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+10_epsI1_0.00e+00_AnomTorque_0}.png}} & 
-    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
              {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_7.5000000000e+01_omega0_1.00e+04_epsI3_1.00e-09_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+10_epsI1_0.00e+00_AnomTorque_0}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star
-A. The two choices of $\chi$ allow us to confirm Goldreich's dependence of the
-alignment of the spin-vector on $\chi$.  }
+\caption{Plot of the spherical coordinates of the spin-vector for neutron
+star~A without the anomalous torque component. The two choices of $\chi$ allow us to
+confirm Goldreich's dependence of the alignment of the spin-vector on $\chi$:
+eventually we see that $a\rightarrow0$ for $\chi=30^{\circ}$ while
+$a\rightarrow90^{\circ}$ for $\chi=75^{\circ}$.}
 \label{fig: neutron star A_NA}
 \end{figure}
 
@@ -353,13 +355,14 @@ goldreich_averaged_eqns} and the exact solution without averaging.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
-    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
              {{Plot_a_averaged_and_exact_chi_30}.png}} &
-    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
              {{Plot_a_averaged_and_exact_chi_75}.png}}
 \end{tabular}
-\caption{Plot of the angle $a$ for both the numerical solution of Eqn.~\eqref{eqn: eom}
-and the solution to the averaged equation given in Eqn.~\eqref{eqn: goldreich_averaged_eqns}.}
+\caption{Plot of the angle $a$ comparing the numerical solution of Eqn.~\eqref{eqn: eom}
+and the solution to the averaged equation given in Eqn.~\eqref{eqn: goldreich_averaged_eqns}
+for neutron star A without the anomalous torque component.}
 \label{fig: neutron star A_NA comparison}
 \end{figure}
 This shows that, while both agree on the long term behaviour, the averaged
@@ -597,14 +600,15 @@ value.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
-    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
              {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_3.0000000000e+01_omega0_1.00e+04_epsI3_1.00e-15_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_0}.png}} &
 % {{Spherical_Plot_no_anom_chi_30.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}&
-    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
              {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_7.5000000000e+01_omega0_1.00e+04_epsI3_1.00e-15_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_0}.png}}
 % {{Spherical_Plot_no_anom_chi_75.0_epsI_1.0e-15_epsA_5.0e-11_omega0_1.0e4_t1_1e8}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of $\boldsymbol{\omega}$ for neutron star C. }
+\caption{Plot of the spherical coordinates of the spin-vector for neutron star~C
+without the anomalous torque component.}
 \label{fig: neutron star C_NA}
 \end{figure}
 
@@ -661,12 +665,14 @@ I_{0}(1+\epsI-\epsA\cos^{2}\chi)
 Note that we will use the prime to denote the coordinates in the
 effective body frame.
 
-We can calculate the eigenvalues of the effective moment of inertia tensor, which are given by
+We can calculate the eigenvalues of the effective moment of inertia tensor,
+which are given by
 \begin{align}
 \lambda_{2}=I_{0}, &&&
 \lambda_{\pm}=\frac{I_{0}}{2}
 \left(2+\epsI-\epsA\pm
 \sqrt{\epsA^{2}+\epsI^{2}-2\epsA\epsI\cos(2\chi)}\right).
+\label{eqn: effective MOI comps}
 \end{align}
 If we diagonalise this effective moment of inertia tensor, these eigenvalues
 are the diagonal entries, and the associated eigenvectors are the principal
@@ -718,7 +724,7 @@ aligns the $\1$ axis (which has the smallest eigenvalue) with the magnetic
 dipole.
 \begin{figure}[ht]
 \centering
-\includegraphics[]{{beta}.png}
+\includegraphics[width=0.75\textwidth]{{beta}.png}
 \caption{Plot of $\beta$ as a function of the ratio
     $|\epsA/\epsI|$ for a prolate, $\epsI<0$, and oblate,
     $\epsI>0$, mass distribution with $\chi=30^{\circ}$. In the limit $\epsA \gg
@@ -808,20 +814,21 @@ rotates the solutions (for star A) by a few degrees as shown in Table~\ref{tab:
 A B C params beta}.  Plotted in Figure~\ref{fig: neutron star A} are the
 spherical coordinates of the spin-vector in the effective body. This can be
 compared with the result in Figure~\ref{fig: neutron star A_NA}, which is the
-same system without the anomalous torque.
+same system without the anomalous torque component.
 
 \begin{figure}
 \centering
 \begin{tabular}{cc}
-    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
 {{Spherical_Plot_Transform_one-component-model_eta_0.00e+00_chi0_3.0000000000e+01_omega0_1.00e+04_epsI3_1.00e-09_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+10_epsI1_0.00e+00_AnomTorque_1}.png}} &
 % {{Spherical_Plot_Transform_chi_30.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
-    \subfloat[$\chi=70^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
 {{Spherical_Plot_Transform_one-component-model_eta_0.00e+00_chi0_7.5000000000e+01_omega0_1.00e+04_epsI3_1.00e-09_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+10_epsI1_0.00e+00_AnomTorque_1}.png}}
 %{{Spherical_Plot_Transform_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of the spin-vector during the
-spin-down of neutron star A.}
+\caption{Plot of the spherical coordinates of the spin-vector for neutron star~A.
+We note that for the $\chi=75^{\circ}$
+solution, eventually $a' \rightarrow 90^{\circ}$ as the oscillations damp.}
 \label{fig: neutron star A}
 \end{figure}
 
@@ -835,7 +842,8 @@ geometric argument made in Section~\ref{sec: A_NA}.
 
 \paragraph{A geometric interpretation}
 Working in the effective body frame for which the effective moment of inertia
-tensor is triaxial, the conservation of energy equation is
+tensor is triaxial with principal moments of inertia given by Eqn.~\eqref{eqn:
+effective MOI comps}, the conservation of energy equation is
 \begin{equation}
 1 = \frac{J_{1}^{2}}{2\lambda_{-}E}+\frac{J_{2}^{2}}{2I_{0}E}+\frac{J_{3}^{2}}{2\lambda_{+}E},
 \label{eqn: conservation of energy triaxial}
@@ -856,7 +864,7 @@ bounding the radius of the sphere by
 2E\lambda_{-}<J^{2}<2E\lambda_{+}.
 \end{equation}
 
-In the case of a biaxial moment of inertia, we found that the solution for which both
+In the case of a biaxial moment of inertia, we find that the solution for which both
 conservation laws are satisfied corresponded to circles around the $\z$ axis.
 Now that we have a triaxial moment of inertia tensor (due to the addition of the anomalous torque),
 the solutions correspond to the intersection of the triaxial ellipsoid with the
@@ -865,14 +873,14 @@ intersections as drawn in Figure~\ref{fig: sphere ellipsoid}.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{ccc}
-    \subfloat[$2E\lambda_{-}<J^{2}<2EI_{0}$]
-             {\includegraphics[trim = 70mm 50mm 50mm 20mm, clip=true, width=0.333\textwidth]
+    \subfloat[$2E\lambda_{-}{<}J^{2}{<}2EI_{0}$]
+             {\includegraphics[trim = 70mm 50mm 60mm 20mm, clip=true, width=0.3\textwidth]
              {Ellipsoid_Sphere_low.pdf}} &
-    \subfloat[$ J^{2} = 2EI_{0}$]
-             {\includegraphics[trim = 70mm 50mm 50mm 20mm, clip=true, width=0.333\textwidth]
+    \subfloat[$ J^{2} {=} 2EI_{0}$]
+             {\includegraphics[trim = 70mm 50mm 60mm 20mm, clip=true, width=0.3\textwidth]
              {Ellipsoid_Sphere.pdf}} &
-    \subfloat[$2EI_{2}<J^{2}<2EI_{3}$]
-             {\includegraphics[trim=70mm 50mm 50mm 20mm, clip=true ,width=0.333\textwidth]
+    \subfloat[$2EI_{0}{<}J^{2}{<}2\lambda_{+}$]
+             {\includegraphics[trim=70mm 50mm 60mm 20mm, clip=true ,width=0.3\textwidth]
              {{Ellipsoid_Sphere_high}.pdf}}
 \end{tabular}
 \caption{Intersections of the ellipsoid and sphere defined in Eqn.~\eqref{eqn:
@@ -931,13 +939,17 @@ precesses.
 \begin{figure}
 \centering
 \begin{tabular}{cc}
-    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.45\textwidth]{{Angle_Space_Plot_3D_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
-    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.45\textwidth]{{ThreeD_Plot_Cartesian_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
+    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.48\textwidth]{{Angle_Space_Plot_3D_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}} &
+    \subfloat[]{\includegraphics[trim = 30mm 30mm 30mm 30mm, clip=true , width=0.48\textwidth]{{ThreeD_Plot_Cartesian_chi_75.0_epsI_1.0e-9_epsA_5.0e-11_omega0_1.0e4_eta_1.0e-4}.png}}
 \end{tabular}
-\caption{Numerical solutions for neutron star A plotted on the unit sphere in the
-body frame axis. Figure~(a) shows three distinct time steps; blue, the time before the
+\caption{Numerical solutions for neutron star~A with $\chi =75^{\circ}$ plotted
+in 3D showing the point where the spin-vector changes the axis about which
+it precesses. Figure~(a) shows
+the evolution of the spin-vector on the unit sphere at three distinct time
+steps: blue marks the time before the
 discontinuity, red is during the discontinuity, and black is some time after.
-Figure~(b) demonstrates the solution during the discontinuity, the changing colour is
+Figure~(b) shows the complicated behaviour of the spin-vector during the
+discontinuity, the changing colour is
 used to illustrate the evolution with time, progressing from green to blue.}
 \label{fig: neutron star A 3D}
 \end{figure}
@@ -945,8 +957,8 @@ used to illustrate the evolution with time, progressing from green to blue.}
 \subsubsection{Neutron star B in region \texorpdfstring{$\tauS> \tauP>\tauA$}{}}
 \label{sec: B}
 
-Solution for neutron star B take on a new significance having included the
-anomalous torque - we can now make a comparison with the work of
+Solutions for neutron star B take on a new significance having included the
+anomalous torque -- we can now make a comparison with the work of
 \citet{Melatos2000}. In this work, Melatos found that when the precession
 timescale and anomalous torque timescales are comparable, the solutions involve
 \emph{persistent precession}. Specifically, this is defined as the polar angle
@@ -954,11 +966,17 @@ $a$ tending to a constant, non-zero value with the nutation amplitude
 (oscillations in $a$) either decaying or remaining constant.  Because the
 spin-vector has not aligned with a principal axis of the moment of inertia,
 this was interpreted as the spin-vector undergoing persistent precession.
-Working in the body frame axis, we confirm that $a\ne\pi/2$ at the end of the
-evolution in Figure~\ref{fig: neutron star B}(a).
 
-Transforming to the effective body frame in Figure~\ref{fig: neutron star
-B}(b), we find that the spin-vector in fact aligns with the principal axis of
+We simulate neutron star B with the properties listed in Table~\ref{tab: A B C params beta}
+and a magnetic inclination angle $\chi=75^{\circ}$. In Figure~\ref{fig: neutron
+star B}(a) and Figure~\ref{fig: neutron star B}(b) we plot the spherical
+components of the spin-vector in the body frame and effective body frame
+respectively. Figure~\ref{fig: neutron star B}(a), the components in the body
+frame, confirms the finding by Melatos that $a\ne90^{\circ}$ at the end of the
+simulation.
+
+However, transforming to the effective body frame in Figure~\ref{fig: neutron star
+B}(b), we find that the spin-vector aligns with the principal axis of
 the effective moment of inertia tensor ($a' \rightarrow \pi /2$).  Therefore,
 the persistent precession angle found by Melatos is precisely the angle
 $\beta$.  The spin-vector has aligned with the principal axis of the effective
@@ -972,16 +990,15 @@ effective body frame and in doing so the precession of the body is damped.
 \centering
 \begin{tabular}{cc}
     \subfloat[In the body frame axis]
-             {\includegraphics[width=0.45\textwidth]
+             {\includegraphics[width=0.48\textwidth]
 {{Spherical_Plot_one-component-model_eta_0.00e+00_chi0_7.5000000000e+01_omega0_1.00e+04_epsI3_4.00e-11_epsA_5.00e-11_a0_5.0000000000e+01_T_2.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_1}.png}}
     \subfloat[In the effective body frame axis]
-             {\includegraphics[width=0.45\textwidth]
+             {\includegraphics[width=0.48\textwidth]
 {{Spherical_Plot_Transform_one-component-model_eta_0.00e+00_chi0_7.5000000000e+01_omega0_1.00e+04_epsI3_4.00e-11_epsA_5.00e-11_a0_5.0000000000e+01_T_2.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_1}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of the spin-vector during the spin-down
-         of neutron star B.
+\caption{Plot of the spherical coordinates of the spin-vector for neutron star~B.
          Crucially, at late times the polar angles $a$ and $a'$ differ by a
-         factor $8.35^{\circ}$, the value of $\beta$ in Table~\ref{tab: A B C params beta}.}
+         factor $8.4^{\circ}$, the value of $\beta$ in Table~\ref{tab: A B C params beta}.}
 \label{fig: neutron star B}
 \end{figure}
 
@@ -999,13 +1016,12 @@ torque introduces oscillations on the anomalous torque timescale.
 \begin{figure}[ht]
 \centering
 \begin{tabular}{cc}
-    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
 {{Spherical_Plot_Transform_one-component-model_eta_0.00e+00_chi0_3.0000000000e+01_omega0_1.00e+04_epsI3_1.00e-15_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_1}.png}}
-    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.45\textwidth]
+    \subfloat[$\chi=75^{\circ}>\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
 {{Spherical_Plot_Transform_one-component-model_eta_0.00e+00_chi0_7.5000000000e+01_omega0_1.00e+04_epsI3_1.00e-15_epsA_5.00e-11_a0_5.0000000000e+01_T_1.00e+08_n_1000_epsI1_0.00e+00_AnomTorque_1}.png}}
 \end{tabular}
-\caption{Plot of the spherical coordinates of the spin-vector during the
-spin-down of neutron star C.}
+\caption{Plot of the spherical coordinates of the spin-vector for neutron star~C.}
 \label{fig: neutron star C}
 \end{figure}
 

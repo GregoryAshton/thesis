@@ -14,7 +14,7 @@ N = 100
 chi = 30.0*np.pi/180
 
 # Plot chi etc.
-fig = plt.figure(figsize=(5,  3))
+fig = plt.figure(figsize=(4,  3))
 ax = plt.subplot(111)
 plt.axhline(chi*180/np.pi, ls="-", color="b")
 plt.axhline(chi*180/np.pi-90, ls="--", color="r")
@@ -60,5 +60,5 @@ leg.draw_frame(False)
 plt.xlim(pow(10, -3), pow(10, 3))
 
 plt.tight_layout()
-plt.savefig("img/beta.png")
+plt.savefig("img/beta.png", dpi=500)
 
