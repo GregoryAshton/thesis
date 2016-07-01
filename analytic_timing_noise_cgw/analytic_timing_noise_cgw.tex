@@ -20,7 +20,7 @@ such that $T_{\mathrm{decoh}}^{2} \dot{\nu}_{\textrm{s}} = 1$, after which the T
 expansion can no longer track the phase.  They then estimated a worst-case
 decoherence time by using the maximal spin-up rate due to the accretion torque
 and found that for some sources such as the LMXB Scorpius X-1, the decoherence
-time can be short as $\sim 1$~week.
+time can be short as~$\sim1$~week.
 
 In this chapter, we will present some preliminary calculations and results
 related to modelling timing noise in a continuous GW using a random walk model.
@@ -32,7 +32,7 @@ glitches in cgw} in that the ultimate aim is to estimate the risk faced by
 various searches by inferring from the observed pulsar population.  As given
 here, the task in incomplete and so we will present our calculations and
 some preliminary results. We will study the effect in the context of searches
-which assume a smooth Taylor expansion template; advanced methods such the
+which assume a smooth Taylor expansion template; advanced methods such as the
 `loosely-coherent' search introduced by \citet{dergachev2010blind} could provide
 a way to search for noisy signals without a loss of signal to noise ratio.
 
@@ -187,8 +187,7 @@ in Eqn.~\eqref{eqn: SI 1} of Appendix~\ref{sec: summation identities}, we have
 Similarly, substituting this equation into Eqn.~\eqref{eqn: phi offset} and
 using both Eqn.~\eqref{eqn: SI 1} and Eqn.~\eqref{eqn: SI 2} from
 Appendix~\ref{sec: summation identities}, we have
-\begin{align}
-\begin{split}
+\begin{align*}
 \Delta\phi_{i} & = \s{j=1}{i}\tn \phi_{j}
 + 2\pi \left(\s{j=1}{i-1}\Delta\f_{j}\dT
 + \frac{1}{2}\s{j=1}{i-1}\Delta\fdot_{j}\dT^{2}\right) \\
@@ -203,9 +202,9 @@ Appendix~\ref{sec: summation identities}, we have
  + (i-j)\right)\tn\fdot_{j}\dT^{2}\right)  \\
 & = \s{j=1}{i}\tn \phi_{j} + 2\pi\left(\s{j=1}{i-1}(i-j)\tn\f_{j}\dT
  + \frac{1}{2}\s{j=1}{i-1}(i-j)^{2}\tn\fdot_{j}\dT^{2}\right).
-\end{split}
+\numberthis
 \label{eqn: delta phi n}
-\end{align}
+\end{align*}
 This result can be interpreted as the accumulated phase over a time $i\Delta
 T$ due to a random walk in the phase, frequency, and spin-down rate.
 
@@ -420,11 +419,6 @@ replaced the $\Delta x$ notation of the appendix with the time $\dT$. Then
 taking the expectation
 \begin{align}
 \E{\Delta^{(2)}\phi_{i}\Delta^{(2)}\phi_{j}} & =
-%E\left[\Delta\phi_{i}\Delta\phi_{j}\right] -
-%\left(\s{k=1}{\Nsd}E[\Delta\phi_{j}\Delta\phi_{k}]
-%+ \s{l=1}{\Nsd}E[\Delta\phi_{i}\Delta\phi_{l}]\right) +
-%\s{k=1}{\Nsd}\s{l=1}{\Nsd}E[\Delta\phi_{k}\Delta\phi_{l}]\\
-%& =
 \sigma^{2}_{\phi} \left(\min(i, j) - \left(\s{k=1}{\Nsd}\CT_{ik} \min(j, k)
 + \s{l=1}{\Nsd}\CT_{jl}\min(i, l) \right)\right. \notag \\
 & \hspace{13mm} \left. + \s{k=1}{\Nsd}\s{l=1}{\Nsd}\CT_{ik}\CT_{jl}\min(k, l)\right).
@@ -513,7 +507,6 @@ g_{11}^{NE} E\left[\Delta^{(1)}\f_{i}\Delta^{(1)}\f_{j}\right] \right).
 \end{split}
 \end{align}
 
-
 We calculate each of these expressions in a similar manner to Eqn.~\eqref{eqn:
 expected mismatch dP0idP0j_k2} replacing the relevant expectations with those
 given in Eqn.~\eqref{eqn: E1} to Eqn.~\eqref{eqn: E3}. This yields an expected
@@ -566,7 +559,7 @@ physics determines this length? Furthermore, we assumed that the jumps between
 adjacent steps (see for example Eqn.~\eqref{eqn: fdot N}) were normally
 distributed with zero mean and variance $\sigP, \sigF$, and $\sigS$. But how
 physical is this assumption?
-In this section, we will show that such a
+In this section, we will answer both these questions and show that such a
 random walk is equivalent to the more natural `compound Poisson random walk
 process' introduced in Section~\ref{sec: TN interpretations random walk models}
 which is used in the literature to model timing noise as a random walk.  The
@@ -596,7 +589,7 @@ large such that in a time $\dT$ the number of events is large, it can be shown
 that, due to the central limit theorem
 (see for example \citet{weiss2006course}), $\Delta X_i(\dT)$ is normally
 distributed. The mean can be calculated using Wald's
-Eqn.~\citep{wald1944cumulative} which gives
+equation \citep{wald1944cumulative} which gives
 \begin{align}
 \langle \Delta X(\dT) \rangle = 0,
 \label{eqn: DX mean}
@@ -608,7 +601,8 @@ while the variance can be calculated using the law of total variance
 \label{eqn: DX var}
 \end{align}
 
-If we label the parameter offset measured for blocks of data $\dT$ as  $\Delta
+If we label the parameter offset measured for non-overlapping blocks of data
+$\dT$ as  $\Delta
 X_{i}(\dT)$ then $\{\Delta X_{1}(\dT), \Delta X_{2}(\dT), \dots\}$ is a
 sequence of independent and identically distributed random variables with a mean
 and variance given by Eqn.~\eqref{eqn: DX mean} and Eqn.~\eqref{eqn: DX var}
@@ -905,8 +899,8 @@ the frequency noise strength parameter calculated in Eqn.~\eqref{eqn: SFN mine}.
 \end{figure}
 The prediction using the strength parameter calculated from the Crab ephemeris,
 as given in Eqn.~\eqref{eqn: SFN mine}, overestimates the dependence of the
-mismatch calculated exactly from the data. We feel this is most likely due to timing
-noise in the Crab being unlike a random walk. Nevertheless, we have
+mismatch calculated exactly from the data. It is unclear at the time what
+causes this, but we have nevertheless
 demonstrated the essential elements of making such predictions which may be useful
 in the future, if there is a clear case where the timing noise is well
 modelled by a random walk.

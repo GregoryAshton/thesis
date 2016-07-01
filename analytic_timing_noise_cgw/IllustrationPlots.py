@@ -5,8 +5,10 @@ import TNtools as TN
 import numpy as np
 import sys
 from matplotlib.patches import Rectangle
+import matplotlib as mpl
 
 TN.PlotDefaults()
+mpl.rcParams['axes.labelsize'] = 22
 
 # Set up the axes and data
 ax1 = plt.subplot(111)
@@ -102,5 +104,6 @@ plt.legend([p0, r],
             #r"$\Delta f_{i}$"
             ],
             loc=2, frameon=False)
+ax1.tick_params(axis='both', which='major', labelsize=18)
 plt.tight_layout()
 plt.savefig("img/Illustration_F1_int.pdf")
