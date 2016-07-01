@@ -152,7 +152,7 @@ recovery method.  Results from this method are presented in Section~\ref{sec:
 narrow-band results}: we begin by considering the effect timing noise has on
 narrow-band searches, then we consider the mismatch on stretches of data for
 which narrow-band searches have been performed; we further investigate how the
-mismatch depends upon epoch; and finally examine how the mismatch depends on
+mismatch depends upon epoch; and we finally examine how the mismatch depends on
 the duration of observation. Finally, we summarise our results in Section~\ref{sec:
 narrow-band conclusions}.
 
@@ -198,8 +198,8 @@ by removing the best fit Taylor expansion to the phase from the real phase
 evolution. A best fit Taylor expansion consists of a single set of coefficients
 $\f_{0}$, $\dot{\f}_{0}$, and $\ddot{\f}_{0}$ valid over the \emph{entire}
 observation period. To make this distinct from the \emph{local} Taylor
-expansions describing the evolution in each month this will be referred to as
-the \emph{global template}.  In figure~\ref{fig: template jumps} we see that if
+expansions describing the evolution in each month, this will be referred to as
+the \emph{global template}.  In Figure~\ref{fig: template jumps} we see that if
 the discontinuity is non-zero, then it is impossible for any global Taylor
 expansion template to exactly match the local signal in both months. The
 phase residual, and hence timing noise, results from the inability to match a
@@ -264,11 +264,12 @@ ephemeris, which by construction coincides with a pulse arrival time.
 In this process we have assumed that a fixed value of $\ddot{\f}_{0}$ is
 sufficient. This can be justified by considering the next term in the Taylor
 expansion and typical values of $\dddot{\f}\sim 10^{-30}$~Hz/s$^{3}$.  Over
-typical search durations~$\sim 1$~year, this term contributes
-less than a radian to the phase, and it can therefore be safely neglected.
+typical search durations~$\sim 1$~year, this term contributes less than a
+radian to the phase (which is less than typical contributions from timing noise
+in the frequency and spin-down rate), and it can therefore be safely neglected.
 
 We use the \verb+LALSuite+ \cite{lalsuite} gravitational-wave analysis routines
-to generate a fake GW signal; for these experiments we work
+to generate data with a fake GW signal; for these experiments we work
 without any simulated detector noise. The standard tool to generate fake GW
 signals uses single Taylor expansion models. Therefore, to include timing noise
 in the signal we do the following.
@@ -276,11 +277,10 @@ in the signal we do the following.
 \begin{enumerate}
 \setcounter{enumi}{3}
 
-\item We inject each month-long Taylor expansion generated from the Crab ephemeris
-lasting for only the duration of that month.
-This
-method creates a fake GW signal, lasting several months, which includes timing noise corresponding to the monthly
-ephemeris.
+\item Into the data which we search for a signal, we inject each month-long
+Taylor expansion generated from the Crab ephemeris lasting for only the
+duration of that month.  This method creates a fake GW signal, lasting several
+months, which includes timing noise corresponding to the monthly ephemeris.
 
 \end{enumerate}
 
@@ -348,7 +348,7 @@ single-template search.
 \subsection{The effect of timing noise on narrow-band searches} We begin by
 describing how timing noise degrades a narrow-band search. This is done by
 comparing the result for a signal containing no timing noise with a signal
-generated from the Crab ephemeris between MJD 45150 and 45668. This period
+generated from the Crab ephemeris between MJD~45150 and 45668. This period
 holds no special significance and is used simply to demonstrate the essential
 features of a signal containing timing noise.
 
@@ -373,7 +373,7 @@ search.
     parameters~$[f_{0}, \dot{f}_{0}, \ddot{\f}_{0}]$. As a result, the mismatch has
     a minimum at this point. This can be compared with Figure~{\bf B} showing the
 mismatch from a signal including timing noise. The signal is generated from the
-Crab ephemeris between MJD 45150 and 45668.}
+Crab ephemeris between MJD~45150 and 45668.}
 \label{fig: narrow-band example}
 \end{figure}
 
@@ -492,7 +492,7 @@ occurring in between glitches. Greater mismatches are observed in the
 post-glitch periods; this is expected as the relaxation time after glitches for
 the Crab is of the order 1 month \citep{Lyne2012book}.  We note the presence of
 an anomalous period of large mismatch for all  windows that include the
-ephemeris time MJD 55362. The cause for this is unclear from the available
+ephemeris time MJD~55362. The cause for this is unclear from the available
 data, but it may be caused either by a measurement error or a small undetected
 glitch. In general, we find that the level of mismatch due to timing noise is
 between $\mumin \sim 10^{-3} - 10^{-2}$ for these 6-month searches.
@@ -504,7 +504,7 @@ between $\mumin \sim 10^{-3} - 10^{-2}$ for these 6-month searches.
     as a function of epoch
      at the centre of  window.  Vertical dashed lines
     indicate glitch events as described by \citet{Espinoza2011}. The solid
-    vertical line indicates the date MJD 55362, a period of anomalously
+    vertical line indicates the date MJD~55362, a period of anomalously
     large mismatch.}
 \label{fig: sliding window}
 \end{figure}
@@ -545,7 +545,7 @@ following ways:
 
 \end{itemize}
 
-In figure~\ref{fig: mismatch Tobs} we plot the averaged minimum
+In Figure~\ref{fig: mismatch Tobs} we plot the averaged minimum
 mismatch $\muminAvg$ as a function of observation time.
 This indicates a growth of $\muminAvg$ with observation time
 resembling a power law.
