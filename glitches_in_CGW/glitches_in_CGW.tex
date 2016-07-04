@@ -171,7 +171,7 @@ for continuous GWs from supernova remnants), and \emph{all-sky} searches; in
 both instances a band of frequencies and frequency-derivatives are usually
 searched since they are inherently unknown. Typically, these searches
 match filter against smooth templates built from a Taylor expansion in
-the phase; as such the templated do not include glitches. If a neutron star, emitting
+the phase; as such the templates do not include glitches. If a neutron star, emitting
 detectable levels of GW emission, undergoes a glitch in the GW channel, then the
 matched filtering method may fail because the template is a poor match to the
 real, glitching signal.
@@ -282,17 +282,17 @@ gains are found by allowing the models to be skewed and have 4 or more
 components, but no single model is outstanding amongst the others. For this
 reason we choose to use a 2-component model with skew; this provides a good
 empirical description of the data and is pragmatic in that we limit the number
-of components to two for interpretability. We note that this description is
+of components to 2 for interpretability. We note that this description is
 empirical and we do not intend to make any substantive claim relating the two
 components to the two mechanisms discussed in Chapter~\ref{sec: glitches}.
 
 Having obtained a fit to the magnitude of the glitch in frequency using a
-two-component skewed-Gaussian mixture model, we use this fit to label
-each data point as originating from one of two skewed-Gaussian distributions
-(see \citet{gelman2013bayesian} for a review). Specifically, to each data point
-we assign the label based on the maximum probabilities of each of the two
-components, given the maximum posterior model parameters derived in the fitting
-process.
+2-component skewed-Gaussian mixture model, we use this fit to label each data
+point as originating from one of the 2 skewed-Gaussian components (see
+\citet{gelman2013bayesian} for a review of mixture models). Specifically, to
+each data point we assign the label based on the maximum probabilities of each
+of the two components, given the maximum posterior model parameters derived in
+the fitting process.
 
 The resulting mixture components and individual
 distributions are plotted in Figure~\ref{fig: Delta nu mixture} and in
@@ -543,7 +543,7 @@ spin-down rate used in the S5 E@H search.}
 
 In order to extrapolate, we perform a linear regression to the data in
 log-space following the method described in Appendix~\ref{sec: linear
-regression in log-space}.  This gives a description of the glitch rate as
+regression in log-space}.  This gives a prediction of the glitch rate as
 \begin{align}
 \begin{split}
 \input{\thisdir/Ndotg.tex}
@@ -602,7 +602,7 @@ where the dependence on $\Tspan$ is in $\lambda=\lambda(\Tspan)$.
 Note that in practise we truncate the summation at a finite level where the
 mass function is negligible.
 
-In Figure~\ref{fig: EAH_NdotgAve}B we plot this probability using $\lambda_{s}$
+In Figure~\ref{fig: EAH_NdotgAve}B we plot this probability using $\lambda$
 from the upper plot. This suggests that for almost all of the E@H spin-down
 rate parameter space, it is more probable to have at least one glitch per year
 than to have none. This estimation will suffer bias from the inclusion of the
@@ -1145,15 +1145,15 @@ following discussion it is this probability which we will report on.
 We note that in reality, the true mismatch for fully coherent searches will
 always be bounded by $[0, 1]$, but the results of this section can exceed this
 since we are using the metric-mismatch approximation. Similarly, for the
-semi-coherent searches, it is in fact bounded by the minimmum of $R$ and $1-R$;
+semi-coherent searches, it is in fact bounded by the minimum of $R$ and $1-R$;
 this can be seen by realising that if the glitch is sufficiently large, the
 minimum mismatch is achieved by fitting to the semi-coherent segments on
 only one side of the glitch. Here, we
 report the simpler results of naively applying Eqn.~\eqref{eqn: R-averaged
 fully coherent} and Eqn.~\eqref{eqn: R-averaged semi-coherent}. The results
-can therefore be intepretted by realising that if the metric-mismatch is greater than
+can therefore be interpreted by realising that if the metric-mismatch is greater than
 1, there will be large true mismatch, although the exact value will depend on
-where that glitch occured during the observation span.
+where that glitch occurred during the observation span.
 
 
 \subsection{Fully-coherent searches}
@@ -1170,7 +1170,8 @@ glitches as a function of the observation time and spin-down rate.
 $\nudotS$. In the top panel is the prediction based on the fit to the normal
 population, in the bottom panel is the prediction based on the fit to the
 Vela-like population. Solid black lines provide contours of fixed mismatch. Red
-dashed lines have been added to indicate the probability of one or more normal
+dashed lines have been added to indicate the probability (as a percentage) of
+one or more normal
 glitch occurring calculated by substitution of Eqn.~\eqref{eqn: N normal} (for
 the normal population) or Eqn.~\eqref{eqn: N vela} (for the Vela-like
 populations) into Eqn.~\eqref{eqn: p one glitch or more}.}
@@ -1383,7 +1384,7 @@ distinct populations named Vela-like and normal, with the Vela-like undergoing
 larger glitches. We then separated the data according to their predicted source
 population and found fitting formulae for the glitches magnitudes using the
 spin-down rate $\nudotR$ as a predictor variable. Separating the populations
-was necessarily to avoid overestimating the glitch magnitudes when
+was necessary to avoid overestimating the glitch magnitudes when
 extrapolating into the parameter space of all-sky gravitational wave searches where few pulsars
 have been observed. We then used fitting formulae based on data from
 \citet{Espinoza2011} to investigate the rate of glitches.
