@@ -274,8 +274,9 @@ peaks, although the smaller peak could be interpreted as two modes close togethe
 By eye, it is clear that there are at least two modes to the histogram. However,
 it is also possible that there may be more modes with less distinct differences
 in their mean. We investigate this issue in Appendix~\ref{sec: Bayesian model
-comparison} by applying a Bayesian model comparison for so-called Gaussian
-mixture models varying the number of components and also allowing for a skew as
+comparison} by applying a Bayesian model comparison to Gaussian
+mixture models (see
+Chapter~18 of \citet{gelman2013bayesian} for an introduction to mixture models) varying the number of components and also allowing for a skew as
 described in \citet{Ohagan1976}.  We find that all models with 2 or more
 components fit the data decisively better than a single component. Marginal
 gains are found by allowing the models to be skewed and have 4 or more
@@ -288,8 +289,7 @@ components to the two mechanisms discussed in Chapter~\ref{sec: glitches}.
 
 Having obtained a fit to the magnitude of the glitch in frequency using a
 2-component skewed-Gaussian mixture model, we use this fit to label each data
-point as originating from one of the 2 skewed-Gaussian components (see
-\citet{gelman2013bayesian} for a review of mixture models). Specifically, to
+point as originating from one of the 2 skewed-Gaussian components . Specifically, to
 each data point we assign the label based on the maximum probabilities of each
 of the two components, given the maximum posterior model parameters derived in
 the fitting process.
@@ -1470,9 +1470,10 @@ P(y_i| \textrm{model}, \vartheta) =
  \sum_{i=1}^{N} \lambda_i f (y_i; \mu_i, \sigma_i, \alpha_i).
 \end{align}
 
-To compare different choices of $N$, we will perform a Bayesian model comparison
-\citep{jaynes2003probability} between each of the mixture models and the
-simplest hypothesis, a mixture model with N=1.
+To compare different choices of $N$, we will perform a Bayesian model
+comparison (see \S 4.2 of \citet{jaynes2003probability} for an introduction)
+between each of the mixture models and the simplest hypothesis, a mixture model
+with N=1.
 
 \newcommand{\yave}{\langle y \rangle}
 \newcommand{\yran}{| y |}
