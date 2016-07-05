@@ -910,6 +910,10 @@ Nevertheless, it is still appropriate when a torque is applied provided
 that the geometric effect is stronger that any other (this is discussed in
 the next few sections). As such, we begin by simulating a star with the
 properties listed in Table~\ref{tab: PR 49}.
+The resulting phase residual, in cycles, is given in Figure~\ref{fig: PR 49}.
+This figure shows strong agreement between the numerical result and the
+analytic prediction of Eqn.~\eqref{eqn: Jones 49}.
+
 \begin{table}[htb]
 \centering
 \input{\thisdir/49_verification}
@@ -918,8 +922,7 @@ Figure~\ref{fig: PR 49}. Note that $\Aem$ is the electromagnetic amplification
 factor defined later in Eqn.~\eqref{eqn: EM amplification}.}
 \label{tab: PR 49}
 \end{table}
-The resulting phase residual, in cycles, is
-given in Figure~\ref{fig: PR 49}.
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{49_verification}
@@ -929,8 +932,6 @@ analytic prediction of Eqn.~\eqref{eqn: Jones 49} which is the geometric effect
 of precession on the phase residual.}
 \label{fig: PR 49}
 \end{figure}
-This figure shows strong agreement between the numerical result and the
-analytic prediction of Eqn.~\eqref{eqn: Jones 49}.
 
 \subsection{Effect of torqued precession on the phase residual: electromagnetic amplification}
 \label{sec: phase residual torqued}
@@ -975,6 +976,13 @@ Eqn.~\eqref{eqn: Jones 49} and Eqn.~\eqref{eqn: Jones 63}.
 To verify this amplification, we simulate a star using the properties in
 Table~\ref{tab: PR 63} for which the amplification factor is greater than
 unity.
+The resulting phase residual is plotted in Figure~\ref{fig: PR 63} along with the
+predictions of Eqn.~\eqref{eqn: Jones 63} and Eqn.~\eqref{eqn: Jones 49}. This
+clearly demonstrates that the amplified residuals agree with the results
+calculated numerically while the geometric effect is both out of phase and
+has a smaller amplitude by a factor $\Aem/\pi$, where the amplification factor is
+given in Table~\ref{tab: PR 63}.
+
 \begin{table}[htb]
 \centering
 \input{\thisdir/63_verification}
@@ -982,12 +990,7 @@ unity.
 Figure~\ref{fig: PR 63}.}
 \label{tab: PR 63}
 \end{table}
-The resulting phase residual is plotted in Figure~\ref{fig: PR 63} along with the
-predictions of Eqn.~\eqref{eqn: Jones 63} and Eqn.~\eqref{eqn: Jones 49}. This
-clearly demonstrates that the amplified residuals agree with the results
-calculated numerically while the geometric effect is both out of phase and
-has a smaller amplitude by a factor $\Aem/\pi$, where the amplification factor is
-given in Table~\ref{tab: PR 63}.
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{63_verification}
@@ -1217,6 +1220,9 @@ Figure~\ref{fig: spin-down rate normal}.}
 The numerical spin-down rate variations, calculated using the observer-method
 are plotted along with the analytic predictions of Eqn.\eqref{eqn: spin-down rate}
 in Figure~\ref{fig: spin-down rate normal}.
+This figure demonstrates good agreement: small variations result from the
+application of the observer-method, most notably the numerical results under
+and over estimates the minimum and maximums due to the time averaging.
 \begin{figure}[htb]
 \centering
 \includegraphics[]{SpindownRate_normal}
@@ -1225,9 +1231,6 @@ spin-down rate normal} compared against the corresponding analytic prediction
 of Eqn.\eqref{eqn: spin-down rate}.}
 \label{fig: spin-down rate normal}
 \end{figure}
-This figure demonstrates good agreement: small variations result from the
-application of the observer-method, most notably the numerical results under
-and over estimates the minimum and maximums due to the time averaging.
 
 Figure~\ref{fig: spin-down rate normal} captures the essential features of the
 spin-down rate of a precessing pulsar amplified by an EM torque. However, there
@@ -1241,6 +1244,10 @@ harmonic at $\tauP/2$. To illustrate this, we will repeat the simulation of
 Figure~\ref{fig: spin-down rate normal}, but set $\chi=88^{\circ}$; the full
 set of simulation parameters are listed in Table~\ref{tab: spin-down rate
 orthog}.
+The spin-down rate for this `almost orthogonal' dipole simulation is plotted
+in the top panel of Figure~\ref{fig: spin-down rate orthog} and demonstrates the
+distinctive double peak.
+
 \begin{table}[htb]
 \centering
 \input{\thisdir/SpindownRate_orthog}
@@ -1248,9 +1255,7 @@ orthog}.
 spin-down rate orthog}.}
 \label{tab: spin-down rate orthog}
 \end{table}
-The spin-down rate for this `almost orthogonal' dipole simulation is plotted
-in the top panel of Figure~\ref{fig: spin-down rate orthog} and demonstrates the
-distinctive double peak.
+
 \begin{figure}[htb]
 \centering
 \includegraphics[]{SpindownRate_orthog}
@@ -1485,6 +1490,15 @@ modulation} we plot $\Theta$ calculated from a numerical simulation with the
 simulation parameter listed in Table~\ref{tab: pulse width modulation} and
 $W_{10}$ as calculated from Eqn.~\eqref{eqn: Wp} with $\iota=82^{\circ}$ and
 $\rho=0.3$.
+
+\begin{table}[htb]
+\centering
+\input{\thisdir/Pulse_width_modulation}
+\caption{Simulation parameters for the beam-width modulations plotted in
+Figure~\ref{fig: Pulse width modulation}.}
+\label{tab: pulse width modulation}
+\end{table}
+
 \begin{figure}[ht]
 \centering
 \includegraphics[]{Pulse_width_modulation.pdf}
@@ -1494,13 +1508,7 @@ The simulation parameters for this are listed in Table~\ref{tab: pulse width mod
 and we additionally set $\iota=82^{\circ}$ and $\rho=0.3$ when calculating~$W_{10}$.}
 \label{fig: Pulse width modulation}
 \end{figure}
-\begin{table}[htb]
-\centering
-\input{\thisdir/Pulse_width_modulation}
-\caption{Simulation parameters for the beam-width modulations plotted in
-Figure~\ref{fig: Pulse width modulation}.}
-\label{tab: pulse width modulation}
-\end{table}
+
 
 This shows that there is periodic modulation of the beam-width, with an
 interesting two-peak structure. This structure can be understood by realising
@@ -1632,6 +1640,7 @@ simulation in the absence of a switching event; the simulation parameters are
 listed in Table~\ref{tab: switching props}. Note that the initial polar angle
 is exactly the angle $\beta$ which can be calculated using Eqn.~\eqref{eqn:
 beta}.
+
 \begin{figure}[htb]
 \includegraphics[width=0.5\textwidth]{NoSwitching.pdf}
 \caption{The phase residual for a minimal precession simulation with no
@@ -1647,6 +1656,7 @@ beta}.
 }
 \label{fig: no switching}
 \end{figure}
+
 \begin{table}[htb]
 \centering
 \input{\thisdir/NoSwitching}
