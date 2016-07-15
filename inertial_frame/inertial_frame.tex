@@ -444,7 +444,7 @@ vectors into rotations about cones.
 \label{sec: reference plane}
 
 Considering a biaxial body, let us define $\n^a$ as the \emph{deformation
-vector} (a unit vector pointing along the body's symmetry axis), then the
+vector} (a unit vector pointing along the body's symmetry axis). Then the
 moment of inertia tensor can be written compactly as
 \begin{align}
 I^{a}_{\;\;b} = I_{0} \delta^{a}_{\;\;b} + \Delta I \n^a \n_b,
@@ -499,7 +499,7 @@ To relate the rates of change of the two angles, we can use Eqn.~\eqref{eqn:
 \approx -\frac{\Delta I}{I_0} \dot{\phi} = -\epsI \dot{\phi}
 \label{eqn: psi phi}
 \end{align}
-where we have approximated assuming $\Delta I \ll I_0$ and $\theta \ll 1$ in
+where we assumed $\Delta I \ll I_0$ and $\theta \ll 1$ in
 the last step.
 
 We can relate both of these frequencies to the angular frequency $\omega = |\Omega_a|$.
@@ -1430,18 +1430,18 @@ the antipodal point to the observer's position. During this rotation, $\Phi -
 inequality is a simple cosine function as illustrated in Figure~\ref{fig:
 CosineIllustration}.  Since we expect $\Theta$ to vary slowly compared to the
 rotation period we can, over a single pulsation, think of $\Theta$ as a
-constant; then the whole right hand side of Inequality~\eqref{eqn: 6737} is a
+constant; then the whole right hand side of Eqn.~\eqref{eqn: 6737} is a
 constant. In Figure~\ref{fig: CosineIllustration}, we illustrate this constant
 along with the evolution of the left hand side. Then we also illustrate $\Delta\Phi$,
 the fraction of the rotation period for which the cosine is less than the
-constant, i.e. Inequality~\eqref{eqn: 6737} is satisfied.
+constant, i.e. Eqn.~\eqref{eqn: 6737} is satisfied.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=.75\textwidth]{CosineIllustration.pdf}
 \caption{Illustration of $\cos(\Phi-\PhiO)$ during a single rotation. The constant
          value represents the right hand side of this equation. The
          width $\Delta\Phi$ indicates the angular period during which
-         Inequality~\eqref{eqn: 6737} is satisfied.}
+         Eqn.~\eqref{eqn: 6737} is satisfied.}
 \label{fig: CosineIllustration}
 \end{figure}
 
@@ -1468,7 +1468,7 @@ and so the beam-width is
                \cos^{-1}\left(
                    \frac{\cos\left(
 \sqrt{-2\rho^{2}\ln\left[\frac{p}{100}\frac{A_{\mathrm{max}}}{A_0}\right]}
-\right) - \cos(\Theta)\cos(\Theta)}
+\right) - \cos(\Theta)\cos(\iota)}
                           {\sin(\Theta)\sin(\iota)}
                   \right).
 \end{align}
@@ -1478,7 +1478,7 @@ Finally, we can also simplify this results using Eqn.~\eqref{eqn: A max} to give
                \cos^{-1}\left(
                    \frac{\cos\left(
 \sqrt{(\Theta-\iota)^2 - 2\rho^2 \ln\left(\frac{p}{100}\right)}
-\right) - \cos(\Theta)\cos(\Theta)}
+\right) - \cos(\Theta)\cos(\iota)}
                           {\sin(\Theta)\sin(\iota)}
                   \right).
 \label{eqn: Wp}
@@ -1651,8 +1651,8 @@ beta}.
          exhibits an apparent periodicity which matches its span (or some integer
          number of periods fits into the span, in this case 2). This was shown
          to be the case by varying the observation span and observing a
-         corresponding shift in the period, as such it is a non-physical effect
-         which can be ignored.
+         corresponding shift in the period. As such it is a non-physical effect
+         that can be ignored.
 }
 \label{fig: no switching}
 \end{figure}
@@ -1771,7 +1771,7 @@ non-precessing star to begin precessing after a torque switching event.
 The exact size of the new precession wobble angle will depend on the phase of
 precession (if it was precessing) at the instant before the switching event.
 The exact change in the wobble angle will depend on the precessional phase at
-the time of the glitch, however, we can approximate it in a crude way by considering
+the time of the glitch. We can approximate it in a crude way by considering
 \begin{equation}
     \Delta\beta(\epsI, \epsA, \chi, \Sa) \sim |\beta - \beta'|.
 \label{eqn: d b}
