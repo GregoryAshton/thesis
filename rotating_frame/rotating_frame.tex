@@ -263,11 +263,13 @@ A & $ {1.0}{\times} 10^{-9} $ & $ {5.0}{\times} 10^{-11} $ & $ {1.3}{\times} 10^
 B & $ {4.0}{\times} 10^{-11} $ & $ {5.0}{\times} 10^{-11} $ & $ {1.3}{\times} 10^{13} $ & $ {9.0}{\times} 10^{6} $ & $ {2.4}{\times} 10^{7} $\\
 C & $ {1.0}{\times} 10^{-15} $ & $ {5.0}{\times} 10^{-11} $ & $ {1.3}{\times} 10^{13} $ & $ {9.0}{\times} 10^{6} $ & $ {9.8}{\times} 10^{11} $\\ \hline
 \end{tabular}
-\caption{Table of relevant values for the selected points. In calculating the
+\caption{Table of $\epsI$ and $\epsA$ and the inferred magnetic field and
+    initial timescales for the three simulated stars. In calculating the
     magnetic fields and timescales, we have used a canonical value of
     $R=10^{6}$~cm for the radius, the initial value
     of the spin frequency, $\omega_{0} = 10^{4}$ rads/s and the initial
-    value of $a_0=50^{\circ}$.}
+    value of $a_0=50^{\circ}$. As $\omega$ and $a$ evolve, the timescales of
+    each star will also evolve from these initial values.}
 \label{tab: A B C params}
 \end{table}
 
@@ -334,7 +336,7 @@ on the spin-down timescale, in agreement with \citet{Goldreich1970}.
 During this alignment, the spin magnitude decays
 and $\varphi$ monotonically increases corresponding to the spin-vector precessing
 about the $\z$ axis.
-\begin{figure}[ht]
+\begin{figure}[htb]
 \centering
 \begin{tabular}{cc}
 	\subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
@@ -350,10 +352,7 @@ $a\rightarrow90^{\circ}$ for $\chi=75^{\circ}$.}
 \label{fig: neutron star A_NA}
 \end{figure}
 
-In Figure~\ref{fig: neutron star A_NA comparison}, we investigate the differences between
-solutions to Goldreich's averaged equations \eqref{eqn:
-goldreich_averaged_eqns} and the exact solution without averaging.
-\begin{figure}[ht]
+\begin{figure}[!bt]
 \centering
 \begin{tabular}{cc}
     \subfloat[$\chi=30^{\circ}<\chi_{\textrm{cr}}$]{\includegraphics[width=0.48\textwidth]
@@ -366,10 +365,20 @@ and the solution to the averaged equation given in Eqn.~\eqref{eqn: goldreich_av
 for neutron star A without the anomalous torque component.}
 \label{fig: neutron star A_NA comparison}
 \end{figure}
-This shows that, while both agree on the long term behaviour, the averaged
-equations do not include short term oscillations which are due to the precession.
 
-\clearpage
+In Figure~\ref{fig: neutron star A_NA comparison}, we investigate the
+differences between solutions to Goldreich's averaged equations \eqref{eqn:
+goldreich_averaged_eqns} and the exact solution without averaging.  This shows
+that both agree on the long term behaviour occurring on the spin-down
+timescale. However, in the exact solutions we see additional oscillations at
+the faster precession timescale; this precession timescale is longer than the
+initial value defined in Table~\ref{tab: A B C params} due to the spin-down of
+the star. Moreover, since the two values of $\chi$ produce opposing evolutions
+in $a$, the precession timescale is also different in the two solutions being
+shorter for $\chi=30^{\circ}$ than for $\chi=75^{\circ}$. In contrast, the
+averaged equations do not include these short term oscillations because
+\citeauthor{Goldreich1970} averaged over the precessional modulations.
+
 \paragraph{A geometric interpretation of the critical value $\chi_\textrm{cr}$}\mbox{}\\
 The significance of the critical value $\chi_\textrm{cr} \sim 55^{\circ}$
 has not been discussed in the literature. We will now develop a novel
