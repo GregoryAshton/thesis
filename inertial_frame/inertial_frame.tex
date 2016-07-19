@@ -909,7 +909,9 @@ Equation \eqref{eqn: Jones 49} is calculated in the absence of any EM torque.
 Nevertheless, it is still appropriate when a torque is applied provided
 that the geometric effect is stronger that any other (this is discussed in
 the next few sections). As such, we begin by simulating a star with the
-properties listed in Table~\ref{tab: PR 49}.
+properties listed in Table~\ref{tab: PR 49}. This uses typical values
+for the angular spin frequency, magnetic field, and a small, but non-zero
+angle $a$.
 The resulting phase residual, in cycles, is given in Figure~\ref{fig: PR 49}.
 This figure shows strong agreement between the numerical result and the
 analytic prediction of Eqn.~\eqref{eqn: Jones 49}.
@@ -974,9 +976,11 @@ noting however, that there is a relative phase difference between
 Eqn.~\eqref{eqn: Jones 49} and Eqn.~\eqref{eqn: Jones 63}.
 
 To verify this amplification, we simulate a star using the properties in
-Table~\ref{tab: PR 63} for which the amplification factor is greater than
-unity.
-The resulting phase residual is plotted in Figure~\ref{fig: PR 63} along with the
+Table~\ref{tab: PR 63} for which we use a larger angular spin frequency (this
+aids in speeding up the computation) and a
+larger magnetic field than the properties listed in Table~\ref{tab: PR 49}:
+this results in an amplification factor which is greater than unity.  The
+resulting phase residual is plotted in Figure~\ref{fig: PR 63} along with the
 predictions of Eqn.~\eqref{eqn: Jones 63} and Eqn.~\eqref{eqn: Jones 49}. This
 clearly demonstrates that the amplified residuals agree with the results
 calculated numerically while the geometric effect is both out of phase and
@@ -987,7 +991,8 @@ given in Table~\ref{tab: PR 63}.
 \centering
 \input{\thisdir/63_verification}
 \caption{Simulation parameters used for the phase residual plotted in
-Figure~\ref{fig: PR 63}.}
+Figure~\ref{fig: PR 63} and the spin-down rate plotted in
+Figure~\ref{fig: spin-down rate normal}.}
 \label{tab: PR 63}
 \end{table}
 
@@ -1203,19 +1208,20 @@ order to resolve the observed modulations.
 
 To verify that Eqn.~\eqref{eqn: spin-down rate} accurately models the spin-down
 rate evolution of precessing pulsars in an EM amplification regime, we simulate
-a star with the properties given in Table~\ref{tab: spin-down rate normal}.
+a star with the properties given in Table~\ref{tab: PR 63} (the same set of
+properties used for the simulated phase residual in Figure~\ref{fig: PR 63}).
 Most significantly, $\Aem \gg 1$, which ensures that the EM torque amplifies
 the spin-down rate modulations. We use an initial spin frequency $\omega_0$
 much larger than typical values, this is to allow the numerical solutions to
 evolve with reasonable computational power; for more physical values the
 solutions are qualitatively unchanged.
-\begin{table}[htb]
-\centering
-\input{\thisdir/SpindownRate_normal}
-\caption{Simulation parameters for the spin-down rate plotted in
-Figure~\ref{fig: spin-down rate normal}.}
-\label{tab: spin-down rate normal}
-\end{table}
+%\begin{table}[htb]
+%\centering
+%\input{\thisdir/SpindownRate_normal}
+%\caption{Simulation parameters for the spin-down rate plotted in
+%Figure~\ref{fig: spin-down rate normal}.}
+%\label{tab: spin-down rate normal}
+%\end{table}
 
 The numerical spin-down rate variations, calculated using the observer-method
 are plotted along with the analytic predictions of Eqn.\eqref{eqn: spin-down rate}
@@ -1226,8 +1232,8 @@ and over estimates the minimum and maximums due to the time averaging.
 \begin{figure}[htb]
 \centering
 \includegraphics[]{SpindownRate_normal}
-\caption{Spin-down rate for simulation parameters listed in Table~\ref{tab:
-spin-down rate normal} compared against the corresponding analytic prediction
+\caption{Spin-down rate for simulation parameters listed in Table~\ref{tab: PR
+63} compared against the corresponding analytic prediction
 of Eqn.\eqref{eqn: spin-down rate}.}
 \label{fig: spin-down rate normal}
 \end{figure}
@@ -1248,13 +1254,6 @@ The spin-down rate for this `almost orthogonal' dipole simulation is plotted
 in the top panel of Figure~\ref{fig: spin-down rate orthog} and demonstrates the
 distinctive double peak.
 
-\begin{table}[htb]
-\centering
-\input{\thisdir/SpindownRate_orthog}
-\caption{Simulation parameters for the spin-down rate plotted in Figure~\ref{fig:
-spin-down rate orthog}.}
-\label{tab: spin-down rate orthog}
-\end{table}
 
 \begin{figure}[htb]
 \centering
@@ -1267,6 +1266,14 @@ magnetic dipole lies close to the rotation equator. Bottom panel: the variation
 in the polar angle of the magnetic dipole, $\Theta$, for the simulation.}
 \label{fig: spin-down rate orthog}
 \end{figure}
+
+\begin{table}[htb]
+\centering
+\input{\thisdir/SpindownRate_orthog}
+\caption{Simulation parameters for the spin-down rate plotted in Figure~\ref{fig:
+spin-down rate orthog}.}
+\label{tab: spin-down rate orthog}
+\end{table}
 
 We can understand this double-peaked feature by recalling that the dipole-cone
 (introduced in Section~\ref{sec: understanding the motion of m}) is the
@@ -1636,10 +1643,11 @@ a_{0} = \beta(\epsI, \epsA, \chi),
 where $\beta$ is defined in Eqn.~\eqref{eqn: beta}.
 
 In Figure~\ref{fig: no switching} we illustrate the phase residual of our
-simulation in the absence of a switching event; the simulation parameters are
-listed in Table~\ref{tab: switching props}. Note that the initial polar angle
-is exactly the angle $\beta$ which can be calculated using Eqn.~\eqref{eqn:
-beta}.
+simulation in the absence of a switching event; the selected simulation
+parameters are listed in Table~\ref{tab: switching props}. We use a large
+magnetic field so that the effect of switching can be easily identified, a
+typical angular spin frequency, and an initial polar angle which is exactly the
+angle $\beta$ as calculated using Eqn.~\eqref{eqn: beta}.
 
 \begin{figure}[htb]
 \includegraphics[width=0.5\textwidth]{NoSwitching.pdf}
